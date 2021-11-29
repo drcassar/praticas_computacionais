@@ -33,7 +33,7 @@ Ao fim de todas as práticas é necessário enviar o seu caderno de notas Jupyte
 * Jupyter, variáveis, e como buscar ajuda
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_01
-:EXPORT_OPTIONS: toc:nil
+:EXPORT_OPTIONS: toc:t
 :ID:       60b5365d-1c0c-4944-bb64-dcbb673a2e4f
 :END:
 

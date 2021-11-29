@@ -24,7 +24,7 @@ Realize as práticas seguindo as instruções discutidas em sala de aula. Lembre
 
 + A maioria das práticas são individuais. Tente resolver as questões no seu computador antes de discutir em grupo. Depois de tentar resolver, fique à vontade para discutir em grupo e observar outras formas de resolver o mesmo problema;
 
-+ Algumas práticas te convidam a executar algum código pronto para ver o que acontece. Mesmo sendo possível copiar e colar o código, é fortemente recomendado /escrever/ o código pois aprendemos muito mais quando escrevemos do que quando copiamos e colamos;
++ Algumas práticas te convidam a executar algum código pronto para ver o que acontece. Mesmo sendo possível copiar e colar o código, é fortemente recomendado /escrever/ o código pois aprendemos mais quando escrevemos do que quando copiamos e colamos;
 
 + Praticamente todos os problemas computacionais que serão explorados nesta disciplina já foram resolvidos por alguém e a solução pode ser encontrada em livros ou na internet. Isso é inevitável para problemas /simples/. Mais adiante no curso (ou na vida) iremos nos deparar com problemas mais /difíceis/ e mais específicos, que não têm soluções prontas. Para resolver problemas difícies precisamos ter uma base sólida que só adquirimos resolvendo problemas mais simples. Aproveite esse momento de aprendizado e evite buscar respostas prontas /antes/ de tentar resolver o problema! Depois que você tentou resolver, fique à vontade para procurar e estudar outras soluções.
 
@@ -325,7 +325,7 @@ Existem 6 operadores de comparação em Python:
   A != B < C == E - D - C
 #+end_src
 
-_Cuidado_: é muito comum confundir o operador de atribuição (===) com o operador de comparação de igualdade (====). O operador de atribuição é usado para atribuir um valor a uma variável, por exemplo: =A = 10= atribui o valor 10 para a variável =A=. Já o operador de comparação de igualdade responde a pergunta se os objetos sendo comparados são iguais. Neste caso, a expressão =A == 10= responde a pergunta se o valor armazenado em =A= é igual a 10, resposta esta que pode ser verdadeiro ou falso.
+_Cuidado_: é muito comum confundir o operador de atribuição (===) com o operador de comparação de igualdade (====). O operador de atribuição é usado para atribuir um valor a uma variável, por exemplo: =A = 10= atribui o valor 10 para a variável =A=. Já o operador de comparação de igualdade responde a pergunta se os objetos sendo comparados são iguais. Neste caso, a expressão =A === =10= responde a pergunta se o valor armazenado em =A= é igual a 10, resposta esta que pode ser verdadeiro ou falso.
 
 ** TODO Estrutura de decisão e operador condicional
 

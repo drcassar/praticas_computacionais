@@ -7,14 +7,13 @@
 #+LATEX_HEADER: \usepackage[brazilian]{babel}
 #+LATEX_HEADER: \addto\captionsenglish{\renewcommand\contentsname{Conteúdo}}
 
-
 * Introdução
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_00
 :EXPORT_OPTIONS: toc:nil
 :END:
 
-#+HTML: Bem-vindo à disciplina de Práticas Computacionais I.
+#+HTML: Bem-vinda(o) à disciplina de Práticas Computacionais I.
 
 #+LATEX: Você está lendo o caderno de práticas da disciplina Práticas Computacionais I. Como o próprio nome sugere, aqui você encontrará as práticas que serão realizadas durante a disciplina Práticas Computacionais I da Ilum. As práticas estão apresentadas na ordem de construção do conhecimento e é altamente recomendado realizá-las em sequência sem pular nenhuma etapa.
 
@@ -38,7 +37,7 @@ Ao fim de todas as práticas é necessário enviar o seu caderno de notas Jupyte
 
 ** Meu primeiro caderno de notas Jupyter
 
-Usualmente, a primeira prática quando se está aprendendo uma linguagem de programação nova é a chamada "Olá, mundo!". Nesta prática, o objetivo é criar seu primeiro programa na linguage Python que funciona sem erros.
+Usualmente, a primeira prática quando se está aprendendo uma linguagem de programação nova é a chamada "Olá, mundo!". Nesta prática, o objetivo é criar seu primeiro programa na linguagem Python que, quando executado, exiba a mensagem "Olá, Mundo!".
 
 *[A]* Crie um caderno de notas Jupyter seguindo o modelo discutido na Introdução. Neste caderno, crie uma célula de código contendo o código abaixo. Execute esta célula e observe o que acontece. Escreva brevemente sobre o que você observou.
 
@@ -151,7 +150,8 @@ O que você faria se não soubesse o que função =print= faz? Digamos, por exem
 * Operadores
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_02
-:EXPORT_OPTIONS: toc:nil
+:EXPORT_OPTIONS: toc:t
+:ID:       af8757f4-e890-4b3d-96ea-a9c2c73c39e5
 :END:
 
 ** Operadores aritméticos

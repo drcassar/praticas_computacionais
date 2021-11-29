@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-11-29 seg 13:53 -->
+<!-- 2021-11-29 seg 16:52 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Operadores</title>
@@ -201,15 +201,15 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org3612ada">1. Operadores aritméticos</a></li>
-<li><a href="#org3246aab">2. Operadores lógicos</a></li>
-<li><a href="#orgb6fe1ca">3. Operadores de comparação</a></li>
-<li><a href="#org4b7b400">4. <span class="todo TODO">TODO</span> Estrutura de decisão e operador condicional</a></li>
+<li><a href="#orgc833848">1. Operadores aritméticos</a></li>
+<li><a href="#orgea97777">2. Operadores lógicos</a></li>
+<li><a href="#org148d265">3. Operadores de comparação</a></li>
+<li><a href="#orged49638">4. <span class="todo TODO">TODO</span> Estrutura de decisão e operador condicional</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org3612ada" class="outline-2">
-<h2 id="org3612ada"><span class="section-number-2">1.</span> Operadores aritméticos</h2>
+<div id="outline-container-orgc833848" class="outline-2">
+<h2 id="orgc833848"><span class="section-number-2">1.</span> Operadores aritméticos</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 A linguagem Python contém diversos operadores aritméticos como adição (<code>+</code>), subtração (<code>-</code>), multiplicação (<code>*</code>), divisão (<code>/</code>), e exponencial (<code>**</code>). Estes operadores permitem realizar cálculos aritméticos com números inteiros, reais, e complexos. <span class="underline">Cuidado</span>: em Python, a exponenciação é representada por dois asteriscos; não confundir com o acento circunflexo (<code>^</code>) que é o operador de exponenciação usado no Excel!
@@ -288,8 +288,8 @@ A ordem de precedência dos operadores aritméticos (isto é, qual é a ordem de
 </div>
 </div>
 
-<div id="outline-container-org3246aab" class="outline-2">
-<h2 id="org3246aab"><span class="section-number-2">2.</span> Operadores lógicos</h2>
+<div id="outline-container-orgea97777" class="outline-2">
+<h2 id="orgea97777"><span class="section-number-2">2.</span> Operadores lógicos</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Variáveis lógicas (também conhecidas como variáveis booleanas) são objetos que podem assumir apenas dois valores diferentes: verdadeiro ou falso. Na sintaxe de Python, escrevemos verdadeiro ou falso em inglês e com a primeira letra maiúscula: <code>True</code> ou <code>False</code>.
@@ -357,8 +357,8 @@ Operadores lógicos podem ser combinados na mesma declaração. Sempre que for f
 </div>
 </div>
 
-<div id="outline-container-orgb6fe1ca" class="outline-2">
-<h2 id="orgb6fe1ca"><span class="section-number-2">3.</span> Operadores de comparação</h2>
+<div id="outline-container-org148d265" class="outline-2">
+<h2 id="org148d265"><span class="section-number-2">3.</span> Operadores de comparação</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Operadores de comparação (também conhecidos como operadores relacionais) fazem exatamente o que o nome sugere: comparam dois objetos. O resultado dessa comparação é uma variável booleana (<code>True</code> ou <code>False</code>).
@@ -396,13 +396,13 @@ A != B &lt; C == E - D - C
 </div>
 
 <p>
-<span class="underline">Cuidado</span>: é muito comum confundir o operador de atribuição (<code>=</code>) com o operador de comparação de igualdade (<code>==</code>). O operador de atribuição é usado para atribuir um valor a uma variável, por exemplo: <code>A = 10</code> atribui o valor 10 para a variável <code>A</code>. Já o operador de comparação de igualdade responde a pergunta se os objetos sendo comparados são iguais. Neste caso, a expressão <code>A =</code> 10= responde a pergunta se o valor armazenado em <code>A</code> é igual a 10, resposta esta que pode ser verdadeiro ou falso.
+<span class="underline">Cuidado</span>: é muito comum confundir o operador de atribuição (<code>=</code>) com o operador de comparação de igualdade (<code>==</code>). O operador de atribuição é usado para atribuir um valor a uma variável, por exemplo: <code>A = 10</code> atribui o valor 10 para a variável <code>A</code>. Já o operador de comparação de igualdade responde a pergunta se os objetos sendo comparados são iguais. Neste caso, a expressão <code>A ==</code> <code>10</code> responde a pergunta se o valor armazenado em <code>A</code> é igual a 10, resposta esta que pode ser verdadeiro ou falso.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org4b7b400" class="outline-2">
-<h2 id="org4b7b400"><span class="section-number-2">4.</span> <span class="todo TODO">TODO</span> Estrutura de decisão e operador condicional</h2>
+<div id="outline-container-orged49638" class="outline-2">
+<h2 id="orged49638"><span class="section-number-2">4.</span> <span class="todo TODO">TODO</span> Estrutura de decisão e operador condicional</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Em diversos momentos da vida nos adaptamos mediante às condições do ambiente. Por exemplo, ao sair de casa, <i>se</i> estiver chovendo <i>então</i> pegamos o guarda-chuva, <i>se não</i> nós saímos de casa sem o guarda-chuva. Esta estrutura condicional também existe nas linguagens de programação. Em certos momentos, queremos que a execução de um determinado comando só ocorra caso uma ou mais condições sejam atendidas.
@@ -416,7 +416,7 @@ Em diversos momentos da vida nos adaptamos mediante às condições do ambiente.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Daniel R. Cassar</p>
-<p class="date">Created: 2021-11-29 seg 13:53</p>
+<p class="date">Created: 2021-11-29 seg 16:52</p>
 </div>
 </body>
 </html>

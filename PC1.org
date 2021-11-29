@@ -11,6 +11,7 @@
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_00
 :EXPORT_OPTIONS: toc:nil
+:ID:       be365bdb-8e61-4ed3-89ae-397c7855cdeb
 :END:
 
 #+HTML: Bem-vinda(o) à disciplina de Práticas Computacionais I.
@@ -33,6 +34,7 @@ Ao fim de todas as práticas é necessário enviar o seu caderno de notas Jupyte
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_01
 :EXPORT_OPTIONS: toc:nil
+:ID:       60b5365d-1c0c-4944-bb64-dcbb673a2e4f
 :END:
 
 ** Meu primeiro caderno de notas Jupyter

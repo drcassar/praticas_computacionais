@@ -9,7 +9,7 @@
 
 * Introdução
 :PROPERTIES:
-:EXPORT_FILE_NAME: PC1/PC1_00
+:EXPORT_FILE_NAME: PC1/PC1_intro
 :EXPORT_OPTIONS: toc:nil
 :ID:       be365bdb-8e61-4ed3-89ae-397c7855cdeb
 :END:
@@ -32,7 +32,7 @@ Ao fim de todas as práticas é necessário enviar o seu caderno de notas Jupyte
 
 * Jupyter, variáveis, e como buscar ajuda
 :PROPERTIES:
-:EXPORT_FILE_NAME: PC1/PC1_01
+:EXPORT_FILE_NAME: PC1/PC1_jupyter
 :EXPORT_OPTIONS: toc:t
 :ID:       60b5365d-1c0c-4944-bb64-dcbb673a2e4f
 :END:
@@ -151,7 +151,7 @@ O que você faria se não soubesse o que função =print= faz? Digamos, por exem
 
 * Operadores
 :PROPERTIES:
-:EXPORT_FILE_NAME: PC1/PC1_02
+:EXPORT_FILE_NAME: PC1/PC1_operadores
 :EXPORT_OPTIONS: toc:t
 :ID:       af8757f4-e890-4b3d-96ea-a9c2c73c39e5
 :END:
@@ -335,4 +335,240 @@ Em diversos momentos da vida nos adaptamos mediante às condições do ambiente.
 
 # if then elif else
 # operador ternário
+# indentação de blocos
+# comando =pass=
 
+* Listas, tuplas, e conjuntos
+:PROPERTIES:
+:EXPORT_FILE_NAME: PC1/PC1_listas
+:EXPORT_OPTIONS: toc:t
+:ID:       979099a4-9da2-48d1-9d6a-308a97868f1c
+:END:
+
+** Agrupando objetos com listas
++ listas simples
++ listas dentro de listas
+
+** Modificando, particionando e desempacotando listas
++ métodos =append=, =extend=, =pop=
++ slicing
++ a, \ast{}b, c = lista
+
+** "Tuplas são listas imutáveis"
++ diferença entre objetos mutáveis e imutáveis
++ cópia rasa e cópia profunda
+
+** "Conjuntos são listas sem elementos repetidos"
++ métodos de união, subtração, e intersecção de conjuntos
+
+* Laço de repetição
+:PROPERTIES:
+:EXPORT_FILE_NAME: PC1/PC1_laco
+:EXPORT_OPTIONS: toc:t
+:ID:       25e5272b-ad01-463a-815a-7b4345a4b35a
+:END:
+
+** Laço de repetição usando =while=
++ não esquecer de comentar do loop infinito =while True=
+
+** Laço de repetição usando =for=
+** Iterando sobre listas com o operador de filiação
++ operador =in=
+
+** Compreensão de listas
++ açúcar sintático
++ pode ser tanto mais rápido quanto mais legível (mas nem sempre!)
+
+* Funções
+:PROPERTIES:
+:EXPORT_FILE_NAME: PC1/PC1_funcoes
+:EXPORT_OPTIONS: toc:t
+:ID:       b20f8635-108a-49d4-9903-6a397dc4fed2
+:END:
+
+** Funções embutidas
+
+dir(__builtins__)
+
++ =len=
++ =print=
++ =range=
++ =list=
++ =set=
++ =type=
++ =input=
++ =help=
+
+** Definindo novas funções
++ argumentos
++ corpo da função
++ retorno
+
+** Argumentos posicionais, argumentos nomeados, e argumentos com valor padrão
+
+** Variáveis globais e variáveis locais
+** Documentando suas funções com docstring
++ comentar sobre =pep8=
+
+
+* Depuração de programas
+:PROPERTIES:
+:EXPORT_FILE_NAME: PC1/PC1_debug
+:EXPORT_OPTIONS: toc:t
+:ID:       a822fa0b-e43c-4dc6-99f4-0f4f8a2e97fc
+:END:
+
+** Meu programa não roda pois dá um erro, e agora?
++ tipos de erros
+
+** Meu programa não faz o que eu queria que ele fizesse, e agora?
++ técnicas de debug
++ pythontutor https://pythontutor.com/visualize.html#mode=edit
++ módulo =pdb=
++ recordar o tópico "buscando ajuda"
+
+** Tratamento de exceções
++ bloco =try= / =except= / =finally=
+
+* Dicionários
+:PROPERTIES:
+:EXPORT_FILE_NAME: PC1/PC1_dicionarios
+:EXPORT_OPTIONS: toc:t
+:ID:       982992c4-400b-4d79-a738-e86116b14ebc
+:END:
+
+** Associando objetos com dicionários
+** Modificando e desempacotando dicionários
++ método =pop=
++ adicionando nova chave
++ deletando uma chave
+
+** Iterando sobre dicionários
++ métodos =items=, =get=, =keys=, =values=
+
+** Funções com argumentos estrela \ast{}args e \ast\ast{}kwargs
+
+* Strings e processamento de texto
+:PROPERTIES:
+:EXPORT_FILE_NAME: PC1/PC1_strings
+:EXPORT_OPTIONS: toc:t
+:ID:       6feb275c-31de-49dd-87a1-d3576f4dbfc2
+:END:
+
+** Agrupando caracteres com strings
++ strings são imutáveis
++ convertendo objetos para strings com =str=
++ convertendo strings para inteiros e reais com =int= e =float=
++ iterando em strings com =for=
++ checando prefixos e sufixos com =startswith= e =endswith=
++ checando caracteres com =isnumeric=, =isupper=, =islower=
+
+** Recebendo informações do usuário com o comando =input=
+
+** Tipos de strings
++ utf-8
+  - caracteres especiais tipo \n e \t
++ raw
++ fstring
+
+** Processamento de texto
++ =split= e =join=
++ =translate= e =maketrans=
++ =capitalize=, =title=, =lower=, =upper=, =swapcase=
++ =replace=
+
+** Expressões regulares
+
+* Programação orientada a objetos
+:PROPERTIES:
+:EXPORT_FILE_NAME: PC1/PC1_classes
+:EXPORT_OPTIONS: toc:t
+:ID:       59343370-093c-4c7c-b549-9e102aed7b5b
+:END:
+
+** Agrupando objetos com classes
++ classes como um único objeto para tratar de dados e funções
++ sintaxe
++ instância
++ parâmetros
++ =self=
+
+** Classes e seus métodos
+** Métodos mágicos
++ dunders
++ __init__
++ __str__
++ __repr__
+
+** Herança de classes
+
+* Biblioteca padrão
+:PROPERTIES:
+:EXPORT_FILE_NAME: PC1/PC1_bibpadrao
+:EXPORT_OPTIONS: toc:t
+:ID:       a5a1dec7-4ac1-4c97-a064-75b93b837a5c
+:END:
+
+** O que são e como importar módulos de Python
++ sintaxe para importar um módulo (com ou sem apelido)
++ sintaxe para importar objetos de um módulo
++ conceito de namespace ("espaço de nome")
++ reforçar que cada módulo tem sua documentação (ou deveria ter...)
++ Módulos para usar como exemplo: =math= e =random=
+
+** Módulos embutidos
++ os que eu acho mais interessantes são:
+  + os
+  + sys
+  + functools
+  + itertools
+  + math
+  + pathlib
+  + pdb
+  + pprint
+  + random
+  + re
+  + statistics
+  + pickle
+  + abc?
+  + collections
+  + datetime
+
+* Leitura e manipulação de dados com o módulo =pandas=
+:PROPERTIES:
+:EXPORT_FILE_NAME: PC1/PC1_pandas
+:EXPORT_OPTIONS: toc:t
+:ID:       94937cb1-718d-4eee-a3be-611c4badeb4b
+:END:
+
+** Criando e manipulando DataFrames a partir de arquivos
+** Análise dos dados
++ Estatística descritiva
+** Criando e exportando um DataFrame a partir de listas
++ Criando um dataframe usando listas de python
++ Exportar para csv
++ Exportar para xlsx
+
+* Graficando dados
+:PROPERTIES:
+:EXPORT_FILE_NAME: PC1/PC1_graficos
+:EXPORT_OPTIONS: toc:t
+:ID:       5c9942b1-d397-4d59-9891-6f6bfee01809
+:END:
+
+** Graficando dados de um DataFrame
+** Graficando dados usando =matplotlib=
+
+* Controle de versão usando =git=
+:PROPERTIES:
+:EXPORT_FILE_NAME: PC1/PC1_git
+:EXPORT_OPTIONS: toc:t
+:ID:       7ec34a02-1c92-4a3f-940a-955daab7050f
+:END:
+
+* Computação científica com =numpy= e =scipy=
+:PROPERTIES:
+:EXPORT_FILE_NAME: PC1/PC1_numpy
+:EXPORT_OPTIONS: toc:t
+:ID:       fc29118f-e0b5-4816-9034-4a83e7b520b4
+:END:

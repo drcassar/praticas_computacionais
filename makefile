@@ -1,4 +1,5 @@
 pci = PC1.org
+pci_folder = PC1
 
 id_intro := be365bdb-8e61-4ed3-89ae-397c7855cdeb
 id_jupyter := 60b5365d-1c0c-4944-bb64-dcbb673a2e4f
@@ -76,3 +77,5 @@ pci_html:
 	emacsclient -e "(progn (find-file \"$(pci)\") \
 					(org-id-goto \"$(id_numpy)\") \
 					(org-html-export-to-html nil t))"
+
+	@cd $(pci_folder); find . -name '*.html' -exec sed -i 's/Table of Contents/Índice/' {} \;

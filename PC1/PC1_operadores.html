@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-12-01 qua 08:47 -->
+<!-- 2021-12-01 qua 15:33 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Operadores</title>
+<title>Operadores e estrutura de decisão</title>
 <meta name="author" content="Daniel R. Cassar" />
 <meta name="generator" content="Org Mode" />
 <style>
@@ -199,20 +199,20 @@
 </head>
 <body>
 <div id="content" class="content">
-<h1 class="title">Operadores</h1>
+<h1 class="title">Operadores e estrutura de decisão</h1>
 <div id="table-of-contents" role="doc-toc">
 <h2>Índice</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org68f4b22">1. Operadores aritméticos</a></li>
-<li><a href="#orgd5d6945">2. Operadores lógicos</a></li>
-<li><a href="#orgf7dd175">3. Operadores de comparação</a></li>
-<li><a href="#org5d85997">4. <span class="todo TODO">TODO</span> Estrutura de decisão e operador condicional</a></li>
+<li><a href="#orgcd3751a">1. Operadores aritméticos</a></li>
+<li><a href="#org13bd36c">2. Operadores lógicos</a></li>
+<li><a href="#org6d76d80">3. Operadores de comparação</a></li>
+<li><a href="#orge0f1e1a">4. <span class="todo TODO">TODO</span> Estrutura de decisão e operador condicional</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org68f4b22" class="outline-2">
-<h2 id="org68f4b22"><span class="section-number-2">1.</span> Operadores aritméticos</h2>
+<div id="outline-container-orgcd3751a" class="outline-2">
+<h2 id="orgcd3751a"><span class="section-number-2">1.</span> Operadores aritméticos</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 A linguagem Python contém diversos operadores aritméticos como adição (<code>+</code>), subtração (<code>-</code>), multiplicação (<code>*</code>), divisão (<code>/</code>), e exponencial (<code>**</code>). Estes operadores permitem realizar cálculos aritméticos com números inteiros, reais, e complexos. <span class="underline">Cuidado</span>: em Python, a exponenciação é representada por dois asteriscos; não confundir com o acento circunflexo (<code>^</code>) que é o operador de exponenciação usado no Excel!
@@ -244,7 +244,7 @@ A ordem de precedência dos operadores aritméticos (isto é, qual é a ordem de
 <ol class="org-ol">
 <li>Quantos segundos existem em 16 horas e 42 minutos?</li>
 <li>Quantos centímetros existem em 72,8 milhas?</li>
-<li>Se você percorer 72,8 milhas em 16 horas e 42 minutos, qual a sua velocidade média em centímetros por segundo?</li>
+<li>Se você percorrer 72,8 milhas em 16 horas e 42 minutos, qual a sua velocidade média em centímetros por segundo?</li>
 <li>Quanto tempo você demoraria para percorrer a circunferência da Terra na linha do equador se permanecer na velocidade média obtida no item acima?</li>
 </ol>
 
@@ -291,8 +291,8 @@ A ordem de precedência dos operadores aritméticos (isto é, qual é a ordem de
 </div>
 </div>
 
-<div id="outline-container-orgd5d6945" class="outline-2">
-<h2 id="orgd5d6945"><span class="section-number-2">2.</span> Operadores lógicos</h2>
+<div id="outline-container-org13bd36c" class="outline-2">
+<h2 id="org13bd36c"><span class="section-number-2">2.</span> Operadores lógicos</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Variáveis lógicas (também conhecidas como variáveis booleanas) são objetos que podem assumir apenas dois valores diferentes: verdadeiro ou falso. Na sintaxe de Python, escrevemos verdadeiro ou falso em inglês e com a primeira letra maiúscula: <code>True</code> ou <code>False</code>.
@@ -360,8 +360,8 @@ Operadores lógicos podem ser combinados na mesma declaração. Sempre que for f
 </div>
 </div>
 
-<div id="outline-container-orgf7dd175" class="outline-2">
-<h2 id="orgf7dd175"><span class="section-number-2">3.</span> Operadores de comparação</h2>
+<div id="outline-container-org6d76d80" class="outline-2">
+<h2 id="org6d76d80"><span class="section-number-2">3.</span> Operadores de comparação</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Operadores de comparação (também conhecidos como operadores relacionais) fazem exatamente o que o nome sugere: comparam dois objetos. O resultado dessa comparação é uma variável booleana (<code>True</code> ou <code>False</code>).
@@ -404,29 +404,32 @@ A != B &lt; C == E - D - C
 </div>
 </div>
 
-<div id="outline-container-org5d85997" class="outline-2">
-<h2 id="org5d85997"><span class="section-number-2">4.</span> <span class="todo TODO">TODO</span> Estrutura de decisão e operador condicional</h2>
+<div id="outline-container-orge0f1e1a" class="outline-2">
+<h2 id="orge0f1e1a"><span class="section-number-2">4.</span> <span class="todo TODO">TODO</span> Estrutura de decisão e operador condicional</h2>
 <div class="outline-text-2" id="text-4">
 <p>
-Em diversos momentos da vida nos adaptamos mediante às condições do ambiente. Por exemplo, ao sair de casa, <i>se</i> estiver chovendo <i>então</i> pegamos o guarda-chuva, <i>se não</i> nós saímos de casa sem o guarda-chuva. Esta estrutura condicional também existe nas linguagens de programação. Em certos momentos, queremos que a execução de um determinado comando só ocorra caso uma ou mais condições sejam atendidas.
+Em diversos momentos da vida nos adaptamos mediante às condições do ambiente. Por exemplo, ao sair de casa, <i>se</i> estiver chovendo <i>então</i> pegamos o guarda-chuva, <i>se não</i> nós saímos de casa sem o guarda-chuva. Esta estrutura condicional também existe nas linguagens de programação. Em certos momentos, queremos que a execução de um ou mais comandos só ocorra caso uma ou mais condições sejam atendidas.
 </p>
 
 <p>
-<b>[A]</b> Em que outros momentos da sua vida você aplica uma estrutura condicional contendo <i>se</i>, <i>então</i>, e <i>se não</i>? Escreva sobre três destes momentos dizendo como você se comporta de forma similar ao exemplo do guarda-chuva.
+<b>[A]</b> Em que outros momentos da sua vida você faz escolhas segundo uma estrutura condicional contendo <i>se</i>, <i>então</i>, e <i>se não</i>? Escreva sobre três destes momentos dizendo como você se comporta (tome como base o exemplo do guarda-chuva).
 </p>
 
 <p>
-O exemplo da decisão acima sobre o guarda-chuva pode ser escrito em Python. Vamos supor que a variável booleana <code>esta_chovendo</code> armazena o valor <code>True</code> caso esteja chovendo ou o valor <code>False</code> caso não esteja chovendo. Queremos armazenar na variável booleana <code>pegar_guardachuva</code> o valor de <code>True</code> para o caso onde vamos pegar o guarda-chuva e o valor de <code>False</code> para o caso onde não vamos pegar o guarda-chuva. O código abaixo ilustra uma forma possível de programar essa decisão em Python.
+O exemplo do guarda-chuva pode ser escrito em Python. Vamos supor que a variável booleana <code>esta_chovendo</code> armazena o valor <code>True</code> caso esteja chovendo ou o valor <code>False</code> caso não esteja chovendo. Queremos armazenar na variável booleana <code>pegar_guardachuva</code> o valor de <code>True</code> para o caso onde vamos pegar o guarda-chuva e o valor de <code>False</code> para o caso onde não vamos pegar o guarda-chuva. O código abaixo ilustra uma forma possível de programar essa decisão em Python (note o uso dos dois-pontos na sintaxe abaixo!).
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span class="linenr">1: </span><span style="color: #859900; font-weight: bold;">if</span> esta_chovendo == <span style="color: #6c71c4; font-weight: bold;">True</span>:
-<span class="linenr">2: </span>    <span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
-<span class="linenr">3: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Vou pegar o guarda-chuva"</span>)
-<span class="linenr">4: </span><span style="color: #859900; font-weight: bold;">else</span>:
-<span class="linenr">5: </span>    <span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">False</span>
-<span class="linenr">6: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"N&#227;o vou pegar o guarda-chuva"</span>)
-<span class="linenr">7: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Fim do programa"</span>)
+<pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #268bd2;">esta_chovendo</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">troque esse True for False para ver o que acontece</span>
+<span class="linenr"> 2: </span>
+<span class="linenr"> 3: </span><span style="color: #859900; font-weight: bold;">if</span> esta_chovendo == <span style="color: #6c71c4; font-weight: bold;">True</span>:
+<span class="linenr"> 4: </span>    <span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
+<span class="linenr"> 5: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Vou pegar o guarda-chuva"</span>)
+<span class="linenr"> 6: </span><span style="color: #859900; font-weight: bold;">else</span>:
+<span class="linenr"> 7: </span>    <span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">False</span>
+<span class="linenr"> 8: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"N&#227;o vou pegar o guarda-chuva"</span>)
+<span class="linenr"> 9: </span>
+<span class="linenr">10: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Fim do programa"</span>)
 </pre>
 </div>
 
@@ -435,24 +438,182 @@ No código acima, o comando <code>if</code> checa se a condição &ldquo;<code>e
 </p>
 
 <ol class="org-ol">
-<li>Se a condição checada for <i>verdadeira</i>, o bloco do <code>if</code> será executado e o bloco do <code>else</code> será ignorado (neste caso, isso quer dizer que as linhas 2 e 3 do código serão executadas);</li>
+<li>Se a condição checada for <i>verdadeira</i>, o bloco do <code>if</code> será executado e o bloco do <code>else</code> será ignorado (neste caso, isso quer dizer que as linhas 4 e 5 do código serão executadas e as linhas 7 e 8 não serão executadas);</li>
 
-<li>Se a condição checada for <i>falsa</i>, o bloco do <code>if</code> será ignorado, e o bloco do <code>else</code> será executado (neste caso, isso quer dizer que as linhas 5 e 6 do código serão executadas).</li>
+<li>Se a condição checada for <i>falsa</i>, o bloco do <code>if</code> será ignorado, e o bloco do <code>else</code> será executado (neste caso, isso quer dizer que as linhas 4 e 5 do código serão ignoradas e as linhas 7 e 8 serão executadas).</li>
 </ol>
 
 <p>
-Independentemente do resultado, a última linha será executada pois ela não está dentro da estrutura de decisão.
+Independentemente do resultado do teste da condição, a primeira e a última linha do código serão executadas pois elas não estão dentro da estrutura de decisão.
 </p>
 
 <p>
-Observe que a sintaxe de estruturas de decisão requer que o bloco referente ao <code>if</code> e o bloco referente ao <code>else</code> estejam <i>indentados</i>. Indentação de código é quando utilizamos uma certa quantidade de espaços para agrupar visualmente linhas de código pertencentes a um mesmo bloco. Segundo o guia de estilo do Python, é recomendado usar 4 espaços para indentar seu código. É bom saber que se seu código não estiver indentado corretamente ele muito provavelmente não irá realizar a tarefa que você envisionou quando escreveu o código. Em certos casos, seu programa irá acusar um erro e simplesmente não rodar caso seu código não estiver indentado corretamente.
+Observe que a sintaxe de estruturas de decisão requer que o bloco referente ao <code>if</code> e o bloco referente ao <code>else</code> estejam <i>indentados</i>. Indentação de código é quando utilizamos uma certa quantidade de espaços para agrupar visualmente linhas de código pertencentes a um mesmo bloco. Segundo o guia de estilo do Python (chamado de PEP8 caso tenha curiosidade de saber mais), é recomendado usar 4 espaços para indentar seu código.
 </p>
+
+<p>
+É bom saber que se seu código não estiver indentado corretamente, ele muito provavelmente não irá realizar a tarefa que você tinha em mente. Em certos casos, uma falha e indentar corretamente seu programa irá acusar um erro. Tente rodar o código abaixo e veja o que acontece (veja que ele é o mesmo código que vimos acima, porém sem indentação).
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #268bd2;">esta_chovendo</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">troque esse True for False para ver o que acontece</span>
+<span class="linenr"> 2: </span>
+<span class="linenr"> 3: </span><span style="color: #859900; font-weight: bold;">if</span> esta_chovendo == <span style="color: #6c71c4; font-weight: bold;">True</span>:
+<span class="linenr"> 4: </span><span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
+<span class="linenr"> 5: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Vou pegar o guarda-chuva"</span>)
+<span class="linenr"> 6: </span><span style="color: #859900; font-weight: bold;">else</span>:
+<span class="linenr"> 7: </span><span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">False</span>
+<span class="linenr"> 8: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"N&#227;o vou pegar o guarda-chuva"</span>)
+<span class="linenr"> 9: </span>
+<span class="linenr">10: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Fim do programa"</span>)
+</pre>
+</div>
+
+<p>
+<b>[B]</b> Escreva um código de Python para cada um dos três momentos de decisão que você descreveu na questão <b>A</b>.
+</p>
+
+<p>
+É bastante comum nos depararmos com situações onde nossa decisão depende de mais de uma condição. Digamos, por exemplo, que só queremos pegar o guarda-chuva se estiver chovendo e se for um dia de semana (do contrário, decidimos que vamos ficar em casa e não precisamos do guarda-chuva). Para isso precisaremos de um <code>if</code> adicional; veja o exemplo abaixo e note que o contexto de cada bloco de código é ditado pela sua indentação (sempre em múltiplos de 4 espaços).
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">esta_chovendo</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
+<span style="color: #268bd2;">final_de_semana</span> = <span style="color: #6c71c4; font-weight: bold;">False</span>
+
+<span style="color: #859900; font-weight: bold;">if</span> esta_chovendo == <span style="color: #6c71c4; font-weight: bold;">True</span>:
+    <span style="color: #859900; font-weight: bold;">if</span> final_de_semana == <span style="color: #6c71c4; font-weight: bold;">False</span>:
+        <span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
+        <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Vou pegar o guarda-chuva"</span>)
+    <span style="color: #859900; font-weight: bold;">else</span>:  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">este else est&#225; relacionado ao if da variavel final_de_semana</span>
+        <span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">False</span>
+        <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"N&#227;o vou pegar o guarda-chuva"</span>)
+<span style="color: #859900; font-weight: bold;">else</span>:  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">este else est&#225; relacionado ao if da variavel esta_chovendo</span>
+    <span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">False</span>
+    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"N&#227;o vou pegar o guarda-chuva"</span>)
+
+<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Fim do programa"</span>)
+</pre>
+</div>
+
+<p>
+<b>[C]</b> Pense em uma situação onde você precisa considerar duas condições para tomar uma decisão e escreva ela em um código de Python.
+</p>
+
+<p>
+A linguagem Python contém uma série de expressões que são o que chamamos de <i>açúcar sintático</i>. Um açúcar sintático é uma forma de comunicar uma informação de maneira mais fácil ou mais expressiva. O código acima pode ser reescrito da seguinte maneira:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">esta_chovendo</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
+<span style="color: #268bd2;">final_de_semana</span> = <span style="color: #6c71c4; font-weight: bold;">False</span>
+
+<span style="color: #859900; font-weight: bold;">if</span> esta_chovendo:
+    <span style="color: #859900; font-weight: bold;">if</span> <span style="color: #859900; font-weight: bold;">not</span> final_de_semana:
+        <span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
+        <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Vou pegar o guarda-chuva"</span>)
+    <span style="color: #859900; font-weight: bold;">else</span>:
+        <span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">False</span>
+        <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"N&#227;o vou pegar o guarda-chuva"</span>)
+<span style="color: #859900; font-weight: bold;">else</span>:
+    <span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">False</span>
+    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"N&#227;o vou pegar o guarda-chuva"</span>)
+
+<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Fim do programa"</span>)
+</pre>
+</div>
+
+<p>
+<b>[E]</b> Teste e reporte se novo código funciona. O que mudou em comparação com o original? Explique como funciona o açúcar sintático exemplificado acima. Na sua opinião, este tipo de açúcar sintático facilitou a sua leitura do código?
+</p>
+
+<p>
+<b>[D]</b> Reescreva o código acima de forma que ele se comporte da mesma maneira, porém usando apenas um <code>if</code> e apenas um <code>else</code>. Dica: pense em qual operador lógico poderia te ajudar aqui!
+</p>
+
+<p>
+O código abaixo checa em qual faixa está o valor de pH fornecido (<a href="https://pt.wikipedia.org/wiki/PH">https://pt.wikipedia.org/wiki/PH</a>) e reporta para o usuário se sua solução é ácida, básica, neutra, ou se houve algum equívoco e o valor de pH é inválido. Veja que a cláusula <code>else</code> é opcional e não foi usada no código abaixo.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">teste o c&#243;digo com diferentes valores para a vari&#225;vel ph</span>
+<span class="linenr"> 2: </span><span style="color: #268bd2;">ph</span> = <span style="color: #6c71c4; font-weight: bold;">7</span>
+<span class="linenr"> 3: </span>
+<span class="linenr"> 4: </span><span style="color: #859900; font-weight: bold;">if</span> (ph &lt; <span style="color: #6c71c4; font-weight: bold;">0</span>) <span style="color: #859900; font-weight: bold;">or</span> (ph &gt; <span style="color: #6c71c4; font-weight: bold;">14</span>):
+<span class="linenr"> 5: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"pH inv&#225;lido"</span>)
+<span class="linenr"> 6: </span>
+<span class="linenr"> 7: </span><span style="color: #859900; font-weight: bold;">if</span> <span style="color: #6c71c4; font-weight: bold;">0</span> &lt;= ph &lt; <span style="color: #6c71c4; font-weight: bold;">6.5</span>:
+<span class="linenr"> 8: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"pH &#225;cido"</span>)
+<span class="linenr"> 9: </span>
+<span class="linenr">10: </span><span style="color: #859900; font-weight: bold;">if</span> <span style="color: #6c71c4; font-weight: bold;">6.5</span> &lt;= ph &lt;= <span style="color: #6c71c4; font-weight: bold;">7.5</span>:
+<span class="linenr">11: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"pH neutro"</span>)
+<span class="linenr">12: </span>
+<span class="linenr">13: </span><span style="color: #859900; font-weight: bold;">if</span> <span style="color: #6c71c4; font-weight: bold;">7.5</span> &lt; ph &lt;= <span style="color: #6c71c4; font-weight: bold;">14</span>:
+<span class="linenr">14: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"pH b&#225;sico"</span>)
+</pre>
+</div>
+
+<p>
+Imagine que você mediu o pH de um vinagre e obteve o valor de 2,5. Ao rodar o código acima, o programa irá te dizer &ldquo;pH ácido&rdquo; (teste você mesma(o)!). Veja que o programa poderia ter parado de rodar depois de resolver o <code>if</code> da linha 7 (afinal, não faz sentido checar se o pH é neutro ou básico após identificar que se trata de um pH ácido), porém ele <b>irá</b> rodar os <code>if</code> das linhas 10 e 13.
+</p>
+
+<p>
+<b>[E]</b> Reescreva o código acima usando cláusulas <code>else</code> de forma que o programa não rode nenhuma cláusula <code>if</code> desnecessária para entregar a resposta ao usuário (isto é: após ter encontrado a resposta, nenhum outro <code>if</code> deve ser executado).
+</p>
+
+<p>
+Uma estrutura muito comum em programação é quando queremos dizer &ldquo;se a condição testada não for verdadeira, então teste esta outra condição aqui&rdquo;. Para isso usamos a cláusula <code>elif</code> que seria um <code>else</code> com um <code>if</code> &ldquo;grudados&rdquo;. O código abaixo é similar ao anterior, porém usando <code>elif</code>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">teste o c&#243;digo com diferentes valores para a vari&#225;vel ph</span>
+<span class="linenr"> 2: </span><span style="color: #268bd2;">ph</span> = <span style="color: #6c71c4; font-weight: bold;">7</span>
+<span class="linenr"> 3: </span>
+<span class="linenr"> 4: </span><span style="color: #859900; font-weight: bold;">if</span> <span style="color: #6c71c4; font-weight: bold;">0</span> &lt;= ph &lt; <span style="color: #6c71c4; font-weight: bold;">6.5</span>:
+<span class="linenr"> 5: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"pH &#225;cido"</span>)
+<span class="linenr"> 6: </span>
+<span class="linenr"> 7: </span><span style="color: #859900; font-weight: bold;">elif</span> <span style="color: #6c71c4; font-weight: bold;">6.5</span> &lt;= ph &lt;= <span style="color: #6c71c4; font-weight: bold;">7.5</span>:
+<span class="linenr"> 8: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"pH neutro"</span>)
+<span class="linenr"> 9: </span>
+<span class="linenr">10: </span><span style="color: #859900; font-weight: bold;">elif</span> <span style="color: #6c71c4; font-weight: bold;">7.5</span> &lt; ph &lt;= <span style="color: #6c71c4; font-weight: bold;">14</span>:
+<span class="linenr">11: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"pH b&#225;sico"</span>)
+<span class="linenr">12: </span>
+<span class="linenr">13: </span><span style="color: #859900; font-weight: bold;">else</span>:
+<span class="linenr">14: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"pH inv&#225;lido"</span>)
+</pre>
+</div>
+
+<p>
+O código acima checa se o pH é ácido. Caso seja ácido o programa exibe &ldquo;pH ácido&rdquo; para o usuáro e nada mais será executado. Caso não seja ácido, o programa checa então se é neutro. Caso seja neutro o programa exibe &ldquo;pH neutro&rdquo; para o usuário e nada mais será executado. Caso não seja neutro também, o programa faz uma última checagem para confirmar se é um pH básico. Assim sendo o usuário verá o texto &ldquo;pH básico&rdquo; e o programa se encerra. Se o pH não for ácido, nem neutro, nem básico, então podemos afirmar que o programa recebeu um valor inválido de pH.
+</p>
+
+<p>
+<b>[F]</b> Escreva um programa similar ao programa do pH que checa alguma grandeza escalar e exibe para o usuário uma informação sobre esta grandeza. Utilize pelo menos duas cláusulas <code>elif</code> no seu programa.
+</p>
+
+<p>
+Além da estrutura de decisão <code>if~/~else</code> existe o operador condicional. É importante saber que ele existe, porém na maioria dos casos é preferível que você use a estrutura de decisão mesmo por ser uma construção mais legível. O exemplo abaixo mostra uma estrutura condicional e o operador condicional, ambos realizam a mesma tarefa. Note que a cláusula <code>else</code> é opcional na estrutura condicional porém obrigatória no operador condicional.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">condicao</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
+
+<span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">estrutura condicional</span>
+<span style="color: #859900; font-weight: bold;">if</span> condicao:
+    <span style="color: #268bd2;">a</span> = <span style="color: #6c71c4; font-weight: bold;">100</span>
+<span style="color: #859900; font-weight: bold;">else</span>:
+    <span style="color: #268bd2;">a</span> = <span style="color: #6c71c4; font-weight: bold;">5</span>
+
+<span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">operador condicional</span>
+<span style="color: #268bd2;">a</span> = <span style="color: #6c71c4; font-weight: bold;">100</span> <span style="color: #859900; font-weight: bold;">if</span> condicao <span style="color: #859900; font-weight: bold;">else</span> <span style="color: #6c71c4; font-weight: bold;">5</span>
+</pre>
+</div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Daniel R. Cassar</p>
-<p class="date">Created: 2021-12-01 qua 08:47</p>
+<p class="date">Created: 2021-12-01 qua 15:33</p>
 </div>
 </body>
 </html>

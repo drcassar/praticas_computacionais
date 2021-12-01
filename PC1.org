@@ -1,4 +1,4 @@
-#+TITLE: Práticas Computacionais I (=v0.0.1=)
+#+TITLE: Práticas Computacionais I (~v0.0.1~)
 #+AUTHOR: Daniel R. Cassar
 #+EXPORT_FILE_NAME: PC1/PC1
 #+STARTUP: overview
@@ -51,21 +51,21 @@ Usualmente, a primeira prática quando se está aprendendo uma linguagem de prog
   print("Olá, mundo!")
 #+end_src
 
-Observe que no código acima temos três elementos: o comando =print=, um conjunto de parênteses, e um texto delimitado por aspas duplas. O comando =print= é o que chamamos de função. Veremos funções mais adiante, mas por hora basta saber que funções são "apelidos" para executar códigos que já foram escritos. Neste caso, =print= é uma função embutida de Python cujo código já foi escrito pelos próprios criadores do Python, por isso você pode usar esta função sem a necessidade de defini-la. A palavra /print/ poderia ser traduzida para o português como /imprimir/, porém o termo /exibir/ se encaixa melhor no uso corriqueiro desta função.
+Observe que no código acima temos três elementos: o comando ~print~, um conjunto de parênteses, e um texto delimitado por aspas duplas. O comando ~print~ é o que chamamos de função. Veremos funções mais adiante, mas por hora basta saber que funções são "apelidos" para executar códigos que já foram escritos. Neste caso, ~print~ é uma função embutida de Python cujo código já foi escrito pelos próprios criadores do Python, por isso você pode usar esta função sem a necessidade de defini-la. A palavra /print/ poderia ser traduzida para o português como /imprimir/, porém o termo /exibir/ se encaixa melhor no uso corriqueiro desta função.
 
-Para executar funções precisamos chamá-las usando os parênteses. Se tiver curiosidade, tente criar e executar uma célula no Jupyter apenas com a palavra =print= para ver o que acontece quando escrevemos o nome de uma função sem chamá-la com o parênteses.
+Para executar funções precisamos chamá-las usando os parênteses. Se tiver curiosidade, tente criar e executar uma célula no Jupyter apenas com a palavra ~print~ para ver o que acontece quando escrevemos o nome de uma função sem chamá-la com o parênteses.
 
-Por fim, dentro dos parênteses que usamos para chamar a função =print= nós escrevemos os argumentos da função. Neste caso, temos apenas um argumento e ele foi o texto "Olá, mundo!".
+Por fim, dentro dos parênteses que usamos para chamar a função ~print~ nós escrevemos os argumentos da função. Neste caso, temos apenas um argumento e ele foi o texto "Olá, mundo!".
 
 Aprender qualquer linguagem, seja ela de programação ou não, requer treino. Não se preocupe se as regras de Python parecem esquisitas, com o passar do tempo você irá ler e escrever códigos em Python com mais facilidade. Afinal, você não aprendeu português de um dia para o outro, não é?
 
 ** Criando variáveis de diferentes tipos
 
-É comum em programação situações onde precisamos armazenar informações em variáveis para usá-las mais tarde. Python oferece diversos tipos de variáveis como, por exemplo, números inteiros (=int=), números reais (=float=), e variáveis que armazenam texto (=string=).
+É comum em programação situações onde precisamos armazenar informações em variáveis para usá-las mais tarde. Python oferece diversos tipos de variáveis como, por exemplo, números inteiros (~int~), números reais (~float~), e variáveis que armazenam texto (~string~).
 
-*[A]* O código abaixo cria diversas variáveis. Reescreva e execute este código em uma célula do Jupyter. Veja que para atribuir valores à variáveis nós usamos o sinal de igual (===). Note que para o Python, o separador decimal é o ponto (=.=) e não a vírgula (=,=); muita atenção com essa distinção pois a vírgula tem outro significado em Python e não necessariamente vai acusar um erro no seu código!! _Lembrete_: mesmo sendo possível copiar e colar o código, sugiro fortemente /escrever/ o código abaixo pois aprendemos muito mais quando escrevemos do que quando copiamos e colamos.
+*[A]* O código abaixo cria diversas variáveis. Reescreva e execute este código em uma célula do Jupyter. Veja que para atribuir valores à variáveis nós usamos o sinal de igual (~=~). Note que para o Python, o separador decimal é o ponto (~.~) e não a vírgula (~,~); muita atenção com essa distinção pois a vírgula tem outro significado em Python e não necessariamente vai acusar um erro no seu código!! _Lembrete_: mesmo sendo possível copiar e colar o código, sugiro fortemente /escrever/ o código abaixo pois aprendemos muito mais quando escrevemos do que quando copiamos e colamos.
 
-Usando a função =type= e a função =print=, identifique os tipos das variáveis definidas no código que você escreveu. Exemplo: =print(type(numero_inteiro))=. Quantos tipos diferentes você identificou? Quais foram eles?
+Usando a função ~type~ e a função ~print~, identifique os tipos das variáveis definidas no código que você escreveu. Exemplo: ~print(type(numero_inteiro))~. Quantos tipos diferentes você identificou? Quais foram eles?
 
 #+LATEX: \par\noindent\rule{\textwidth}{0.4pt}
 #+begin_src python
@@ -102,9 +102,9 @@ Usando a função =type= e a função =print=, identifique os tipos das variáve
 
 1) Existe diferença de se criar uma string usando aspas simples, duplas, ou triplas? Reflita sobre a resposta e busque informações na internet antes de escrever. Não se esqueça de colocar as fontes na sua resposta.
 2) Qual a diferença entre um número real e um número inteiro? Pelos exemplos do código acima, qual seria a regra para definir números inteiros e números reais?
-3) Qual a regra para declarar números complexos? O que é o =j= na declaração dos números complexos?
-4) Na sua opinião, existe diferença entre as variáveis =numero_inteiro= e =numero_inteiro_positivo=? Explique brevemente seu raciocínio.
-5) Na sua opinião, existe diferença entre as variáveis =numero_real=, e =numero_real_positivo=, e =numero_real_sem_digitos_depois_do_ponto=? Explique brevemente seu raciocínio. De que forma você faria para confirmar a sua resposta?
+3) Qual a regra para declarar números complexos? O que é o ~j~ na declaração dos números complexos?
+4) Na sua opinião, existe diferença entre as variáveis ~numero_inteiro~ e ~numero_inteiro_positivo~? Explique brevemente seu raciocínio.
+5) Na sua opinião, existe diferença entre as variáveis ~numero_real~, e ~numero_real_positivo~, e ~numero_real_sem_digitos_depois_do_ponto~? Explique brevemente seu raciocínio. De que forma você faria para confirmar a sua resposta?
 
 *[C]* O código abaixo /supostamente/ cria novas variáveis. No entanto, algumas das declarações parecem... diferente... quem sabe até estranhas! Seu objetivo é testar cada uma destas declarações e separar as que funcionam das que não funcionam. Para as declarações que não funcionam, descreva o erro que ocorreu e proponha uma correção.
 
@@ -133,25 +133,25 @@ Usando a função =type= e a função =print=, identifique os tipos das variáve
 
 ** Buscando ajuda
 
-Nas práticas anteriores usamos a função =print= para exibir informações na forma de texto dentro do próprio caderno de notas do Jupyter. A função =print= é uma /função embutida/ do Python. Isto que dizer que qualquer usuário que tenha o Python instalado (idealmente na mesma versão que a sua) terá acesso a esta função sem a necessidade de executar nenhum comando adicional.
+Nas práticas anteriores usamos a função ~print~ para exibir informações na forma de texto dentro do próprio caderno de notas do Jupyter. A função ~print~ é uma /função embutida/ do Python. Isto que dizer que qualquer usuário que tenha o Python instalado (idealmente na mesma versão que a sua) terá acesso a esta função sem a necessidade de executar nenhum comando adicional.
 
-Na prática, nós já sabemos que a função =print= recebe como argumento o texto ou variável que será exibido. Argumentos de funções são as informações que estão dentro dos parênteses quando executamos as funções; o argumento da função =print= em =print(1234)= é o número 1234. Funções podem receber um ou mais argumentos, bem como podem receber zero argumentos (tente rodar =print()= e veja o que acontece!). Os argumentos das funções são definidos no momento quando a função é definida (vamos ver isso em mais detalhes em uma prática futura).
+Na prática, nós já sabemos que a função ~print~ recebe como argumento o texto ou variável que será exibido. Argumentos de funções são as informações que estão dentro dos parênteses quando executamos as funções; o argumento da função ~print~ em ~print(1234)~ é o número 1234. Funções podem receber um ou mais argumentos, bem como podem receber zero argumentos (tente rodar ~print()~ e veja o que acontece!). Os argumentos das funções são definidos no momento quando a função é definida (vamos ver isso em mais detalhes em uma prática futura).
 
-O que você faria se não soubesse o que função =print= faz? Digamos, por exemplo, que você viu essa fução sendo usada em um código de Python mas não sabe sua funcionalidade. Como proceder? Algumas sugestões neste caso são:
+O que você faria se não soubesse o que função ~print~ faz? Digamos, por exemplo, que você viu essa fução sendo usada em um código de Python mas não sabe sua funcionalidade. Como proceder? Algumas sugestões neste caso são:
 
 1) Pesquisar na internet em busca de alguma página com explicações (Python é uma linguagem de programação muito usada, existe muito material didático disponível online);
 2) Pesquisar na documentação oficial do Python disponível em português no link https://docs.python.org/pt-br/3/. Todas as funções embutidas de Python, por exemplo, estão descritas aqui: https://docs.python.org/pt-br/3/library/functions.html;
-3) Usar a função =help= do próprio Python (tente rodar =help(print)= no seu caderno de notas e veja o que acontece);
-4) Usar a sintaxe própria do Jupyter para buscar ajuda. Para isso basta digitar a função que quer saber mais informações junto com um sinal de interrogação. Neste caso seria =print?=.
+3) Usar a função ~help~ do próprio Python (tente rodar ~help(print)~ no seu caderno de notas e veja o que acontece);
+4) Usar a sintaxe própria do Jupyter para buscar ajuda. Para isso basta digitar a função que quer saber mais informações junto com um sinal de interrogação. Neste caso seria ~print?~.
 
-*[A]* Escolha uma das quatro sugestões acima para ler mais sobre a função =print= do Python. Observe que a função =print= aceita diferentes argumentos, sendo eles: =value=, =file=, =flush=, =end=, e =sep=. Escreva como foi sua busca (incluindo fontes se for o caso) e descreva com suas palavras o que os argumentos =end= e =sep= fazem. Tente outras formas de busca caso julge necessário.
+*[A]* Escolha uma das quatro sugestões acima para ler mais sobre a função ~print~ do Python. Observe que a função ~print~ aceita diferentes argumentos, sendo eles: ~value~, ~file~, ~flush~, ~end~, e ~sep~. Escreva como foi sua busca (incluindo fontes se for o caso) e descreva com suas palavras o que os argumentos ~end~ e ~sep~ fazem. Tente outras formas de busca caso julge necessário.
 
 *[B]* Escolha pelo menos duas funções da lista abaixo. Para cada função escolhida, faça uma busca online (buscas 1 ou 2) e uma busca offline (buscas 3 ou 4) para entender o que estas funções fazem. Escreva como foi sua busca (incluindo fontes) e descreva com suas palavras o que estas funções fazem.
 
-+ =round=
-+ =pow=
-+ =oct=
-+ =abs=
++ ~round~
++ ~pow~
++ ~oct~
++ ~abs~
 
 * Operadores
 :PROPERTIES:
@@ -162,9 +162,9 @@ O que você faria se não soubesse o que função =print= faz? Digamos, por exem
 
 ** Operadores aritméticos
 
-A linguagem Python contém diversos operadores aritméticos como adição (=+=), subtração (=-=), multiplicação (=*=), divisão (=/=), e exponencial (=**=). Estes operadores permitem realizar cálculos aritméticos com números inteiros, reais, e complexos. _Cuidado_: em Python, a exponenciação é representada por dois asteriscos; não confundir com o acento circunflexo (=^=) que é o operador de exponenciação usado no Excel!
+A linguagem Python contém diversos operadores aritméticos como adição (~+~), subtração (~-~), multiplicação (~*~), divisão (~/~), e exponencial (~**~). Estes operadores permitem realizar cálculos aritméticos com números inteiros, reais, e complexos. _Cuidado_: em Python, a exponenciação é representada por dois asteriscos; não confundir com o acento circunflexo (~^~) que é o operador de exponenciação usado no Excel!
 
-*[A]* Reescreva o código abaixo em uma célula do Jupyter e veja o que acontece. Comente porque o resultado da terceira linha foi =100.25= e não =5.25=.
+*[A]* Reescreva o código abaixo em uma célula do Jupyter e veja o que acontece. Comente porque o resultado da terceira linha foi ~100.25~ e não ~5.25~.
 
 #+begin_src python
   print(1 + 1)
@@ -195,7 +195,7 @@ A ordem de precedência dos operadores aritméticos (isto é, qual é a ordem de
 3) Se você percorer 72,8 milhas em 16 horas e 42 minutos, qual a sua velocidade média em centímetros por segundo?
 4) Quanto tempo você demoraria para percorrer a circunferência da Terra na linha do equador se permanecer na velocidade média obtida no item acima?
 
-*[C]* Além dos operadores discutidos acima, existem diversos outros em Python. Dois operadores bastante úteis são a divisão inteira (=//=) e o módulo (=%=, também conhecido como resto da divisão inteira). Teste estes operadores e descreva como eles funcionam (em caso de dúvida, busque ajuda assim como discutido na Seção Buscando Ajuda). Discorra brevemente sobre possíveis situações onde estes operadores podem ser úteis.
+*[C]* Além dos operadores discutidos acima, existem diversos outros em Python. Dois operadores bastante úteis são a divisão inteira (~//~) e o módulo (~%~, também conhecido como resto da divisão inteira). Teste estes operadores e descreva como eles funcionam (em caso de dúvida, busque ajuda assim como discutido na Seção Buscando Ajuda). Discorra brevemente sobre possíveis situações onde estes operadores podem ser úteis.
 
 _Atenção_: operadores aritméticos usualmente funcionam com qualquer combinação de números inteiros, reais, ou complexos. No entanto, preste atenção no tipo do resultado final!
 
@@ -238,11 +238,11 @@ _Atenção_: operadores aritméticos usualmente funcionam com qualquer combinaç
 
 ** Operadores lógicos
 
-Variáveis lógicas (também conhecidas como variáveis booleanas) são objetos que podem assumir apenas dois valores diferentes: verdadeiro ou falso. Na sintaxe de Python, escrevemos verdadeiro ou falso em inglês e com a primeira letra maiúscula: =True= ou =False=.
+Variáveis lógicas (também conhecidas como variáveis booleanas) são objetos que podem assumir apenas dois valores diferentes: verdadeiro ou falso. Na sintaxe de Python, escrevemos verdadeiro ou falso em inglês e com a primeira letra maiúscula: ~True~ ou ~False~.
 
-Uma expressão booleana é uma expressão que, quando resolvida, resulta em um valor verdadeiro (=True=) ou em um valor falso (=False=). Expressões booleanas podem ser escritas com os operadores lógicos E (=and=), OU (=or=), e NÃO (=not=). Os operadores =and= e =or= são chamados de operadores binários pois requerem sempre dois argumentos para serem resolvidos. A sintaxe para usar estes operadores com os argumentos =A= e =B=, por exemplo, é a seguinte: =A and B= e =A or B=.
+Uma expressão booleana é uma expressão que, quando resolvida, resulta em um valor verdadeiro (~True~) ou em um valor falso (~False~). Expressões booleanas podem ser escritas com os operadores lógicos E (~and~), OU (~or~), e NÃO (~not~). Os operadores ~and~ e ~or~ são chamados de operadores binários pois requerem sempre dois argumentos para serem resolvidos. A sintaxe para usar estes operadores com os argumentos ~A~ e ~B~, por exemplo, é a seguinte: ~A and B~ e ~A or B~.
 
-*[A]* Escreva e execute o código abaixo; comente sobre qual ou quais situações o operador =and= retorna o valor =True=.
+*[A]* Escreva e execute o código abaixo; comente sobre qual ou quais situações o operador ~and~ retorna o valor ~True~.
 
 #+begin_src python
   print(True and True)
@@ -275,11 +275,11 @@ Se quisermos, podemos rescrever o código acima usando variáveis para facilitar
 : False
 : False
 
-*[B]* Escreva e execute um código similar ao código acima, substituindo =and= por =or=; comente sobre qual ou quais situações o operador =or= retorna o valor =True=.
+*[B]* Escreva e execute um código similar ao código acima, substituindo ~and~ por ~or~; comente sobre qual ou quais situações o operador ~or~ retorna o valor ~True~.
 
-O operador =not= é um operador unário; ele requer apenas um argumento para ser computado. A sintaxe para usar este operador com o argumento =A=, por exemplo, é a seguinte: =not A=.
+O operador ~not~ é um operador unário; ele requer apenas um argumento para ser computado. A sintaxe para usar este operador com o argumento ~A~, por exemplo, é a seguinte: ~not A~.
 
-*[C]* Escreva e execute o código abaixo e comente sobre como o operador =not= funciona.
+*[C]* Escreva e execute o código abaixo e comente sobre como o operador ~not~ funciona.
 
 #+begin_src python
   print(not True)
@@ -303,17 +303,17 @@ Operadores lógicos podem ser combinados na mesma declaração. Sempre que for f
 
 ** Operadores de comparação
 
-Operadores de comparação (também conhecidos como operadores relacionais) fazem exatamente o que o nome sugere: comparam dois objetos. O resultado dessa comparação é uma variável booleana (=True= ou =False=).
+Operadores de comparação (também conhecidos como operadores relacionais) fazem exatamente o que o nome sugere: comparam dois objetos. O resultado dessa comparação é uma variável booleana (~True~ ou ~False~).
 
 Existem 6 operadores de comparação em Python:
-+ igualdade (====)
-+ diferença (=!==)
-+ maior que (=>=)
-+ menor que (=<=)
-+ maior ou igual que (=>==)
-+ menor ou igual que (=<==)
++ igualdade (~==~)
++ diferença (~!=~)
++ maior que (~>~)
++ menor que (~<~)
++ maior ou igual que (~>=~)
++ menor ou igual que (~<=~)
 
-*[A]* Suponha que =A = 1=, =B = 2=, =C = 4=, =D = 8=, e =E = 16=. Atribua o valor verdadeiro ou falso para cada uma das expressões abaixo. Escreva um código em Python para checar se você acertou. Comente sobre como funcionam as expressões com mais de um operador de comparação.
+*[A]* Suponha que ~A = 1~, ~B = 2~, ~C = 4~, ~D = 8~, e ~E = 16~. Atribua o valor verdadeiro ou falso para cada uma das expressões abaixo. Escreva um código em Python para checar se você acertou. Comente sobre como funcionam as expressões com mais de um operador de comparação.
 
 #+begin_src python
   A == B
@@ -329,20 +329,43 @@ Existem 6 operadores de comparação em Python:
   A != B < C == E - D - C
 #+end_src
 
-_Cuidado_: é muito comum confundir o operador de atribuição (===) com o operador de comparação de igualdade (====). O operador de atribuição é usado para atribuir um valor a uma variável, por exemplo: =A = 10= atribui o valor 10 para a variável =A=. Já o operador de comparação de igualdade responde a pergunta se os objetos sendo comparados são iguais. Neste caso, a expressão =A === =10= responde a pergunta se o valor armazenado em =A= é igual a 10, resposta esta que pode ser verdadeiro ou falso.
+_Cuidado_: é muito comum confundir o operador de atribuição (~=~) com o operador de comparação de igualdade (~==~). O operador de atribuição é usado para atribuir um valor a uma variável, por exemplo: ~A = 10~ atribui o valor 10 para a variável ~A~. Já o operador de comparação de igualdade responde a pergunta se os objetos sendo comparados são iguais. Neste caso, a expressão ~A == 10~ responde a pergunta se o valor armazenado em ~A~ é igual a 10, resposta esta que pode ser verdadeiro ou falso.
 
 ** TODO Estrutura de decisão e operador condicional
 
 Em diversos momentos da vida nos adaptamos mediante às condições do ambiente. Por exemplo, ao sair de casa, /se/ estiver chovendo /então/ pegamos o guarda-chuva, /se não/ nós saímos de casa sem o guarda-chuva. Esta estrutura condicional também existe nas linguagens de programação. Em certos momentos, queremos que a execução de um determinado comando só ocorra caso uma ou mais condições sejam atendidas.
 
-[Podemos escrever a coisa acima em python]
+*[A]* Em que outros momentos da sua vida você aplica uma estrutura condicional contendo /se/, /então/, e /se não/? Escreva sobre três destes momentos dizendo como você se comporta de forma similar ao exemplo do guarda-chuva.
+
+O exemplo da decisão acima sobre o guarda-chuva pode ser escrito em Python. Vamos supor que a variável booleana ~esta_chovendo~ armazena o valor ~True~ caso esteja chovendo ou o valor ~False~ caso não esteja chovendo. Queremos armazenar na variável booleana ~pegar_guardachuva~ o valor de ~True~ para o caso onde vamos pegar o guarda-chuva e o valor de ~False~ para o caso onde não vamos pegar o guarda-chuva. O código abaixo ilustra uma forma possível de programar essa decisão em Python.
+
+#+begin_src python -n
+  if esta_chovendo == True:
+      pegar_guardachuva = True
+      print("Vou pegar o guarda-chuva")
+  else:
+      pegar_guardachuva = False
+      print("Não vou pegar o guarda-chuva")
+  print("Fim do programa")
+#+end_src
+
+No código acima, o comando ~if~ checa se a condição "~esta_chovendo == True~" é verdadeira. Esta condição será verdadeira se a variável ~esta_chovendo~ tiver o valor ~True~. Existem duas possibilidades:
+
+1) Se a condição checada for /verdadeira/, o bloco do ~if~ será executado e o bloco do ~else~ será ignorado (neste caso, isso quer dizer que as linhas 2 e 3 do código serão executadas);
+
+2) Se a condição checada for /falsa/, o bloco do ~if~ será ignorado, e o bloco do ~else~ será executado (neste caso, isso quer dizer que as linhas 5 e 6 do código serão executadas).
+
+Independentemente do resultado, a última linha será executada pois ela não está dentro da estrutura de decisão.
+
+Observe que a sintaxe de estruturas de decisão requer que o bloco referente ao ~if~ e o bloco referente ao ~else~ estejam /indentados/. Indentação de código é quando utilizamos uma certa quantidade de espaços para agrupar visualmente linhas de código pertencentes a um mesmo bloco. Segundo o guia de estilo do Python, é recomendado usar 4 espaços para indentar seu código. É bom saber que se seu código não estiver indentado corretamente ele muito provavelmente não irá realizar a tarefa que você envisionou quando escreveu o código. Em certos casos, seu programa irá acusar um erro e simplesmente não rodar caso seu código não estiver indentado corretamente.
+
+
 
 # if then elif else
 # operador ternário
-# indentação de blocos
 # comando =pass=
 
-* Listas, tuplas, e conjuntos
+* TODO Listas, tuplas, e conjuntos
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_listas
 :EXPORT_OPTIONS: toc:t
@@ -365,7 +388,7 @@ Em diversos momentos da vida nos adaptamos mediante às condições do ambiente.
 ** "Conjuntos são listas sem elementos repetidos"
 + métodos de união, subtração, e intersecção de conjuntos
 
-* Laço de repetição
+* TODO Laço de repetição
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_laco
 :EXPORT_OPTIONS: toc:t
@@ -383,7 +406,7 @@ Em diversos momentos da vida nos adaptamos mediante às condições do ambiente.
 + açúcar sintático
 + pode ser tanto mais rápido quanto mais legível (mas nem sempre!)
 
-* Funções
+* TODO Funções
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_funcoes
 :EXPORT_OPTIONS: toc:t
@@ -414,8 +437,7 @@ dir(__builtins__)
 ** Documentando suas funções com docstring
 + comentar sobre =pep8=
 
-
-* Depuração de programas
+* TODO Depuração de programas
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_debug
 :EXPORT_OPTIONS: toc:t
@@ -434,7 +456,7 @@ dir(__builtins__)
 ** Tratamento de exceções
 + bloco =try= / =except= / =finally=
 
-* Dicionários
+* TODO Dicionários
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_dicionarios
 :EXPORT_OPTIONS: toc:t
@@ -452,7 +474,7 @@ dir(__builtins__)
 
 ** Funções com argumentos estrela \ast{}args e \ast\ast{}kwargs
 
-* Strings e processamento de texto
+* TODO Strings e processamento de texto
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_strings
 :EXPORT_OPTIONS: toc:t
@@ -483,7 +505,7 @@ dir(__builtins__)
 
 ** Expressões regulares
 
-* Programação orientada a objetos
+* TODO Programação orientada a objetos
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_classes
 :EXPORT_OPTIONS: toc:t
@@ -506,7 +528,7 @@ dir(__builtins__)
 
 ** Herança de classes
 
-* Biblioteca padrão
+* TODO Biblioteca padrão
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_bibpadrao
 :EXPORT_OPTIONS: toc:t
@@ -538,7 +560,7 @@ dir(__builtins__)
   + collections
   + datetime
 
-* Leitura e manipulação de dados com o módulo =pandas=
+* TODO Leitura e manipulação de dados com o módulo =pandas=
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_pandas
 :EXPORT_OPTIONS: toc:t
@@ -553,7 +575,7 @@ dir(__builtins__)
 + Exportar para csv
 + Exportar para xlsx
 
-* Graficando dados
+* TODO Graficando dados
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_graficos
 :EXPORT_OPTIONS: toc:t
@@ -563,14 +585,14 @@ dir(__builtins__)
 ** Graficando dados de um DataFrame
 ** Graficando dados usando =matplotlib=
 
-* Controle de versão usando =git=
+* TODO Controle de versão usando =git=
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_git
 :EXPORT_OPTIONS: toc:t
 :ID:       7ec34a02-1c92-4a3f-940a-955daab7050f
 :END:
 
-* Computação científica com =numpy= e =scipy=
+* TODO Computação científica com =numpy= e =scipy=
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_numpy
 :EXPORT_OPTIONS: toc:t

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-11-30 ter 10:43 -->
+<!-- 2021-12-01 qua 08:47 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Operadores</title>
@@ -193,23 +193,26 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { width: 90%; }
 </style>
+<style>
+.linenr {color: #669999; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
+</style>
 </head>
 <body>
 <div id="content" class="content">
 <h1 class="title">Operadores</h1>
 <div id="table-of-contents" role="doc-toc">
-<h2>Table of Contents</h2>
+<h2>Índice</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org151ee7a">1. Operadores aritméticos</a></li>
-<li><a href="#org1255fba">2. Operadores lógicos</a></li>
-<li><a href="#org8e65c61">3. Operadores de comparação</a></li>
-<li><a href="#orgc433e35">4. <span class="todo TODO">TODO</span> Estrutura de decisão e operador condicional</a></li>
+<li><a href="#org68f4b22">1. Operadores aritméticos</a></li>
+<li><a href="#orgd5d6945">2. Operadores lógicos</a></li>
+<li><a href="#orgf7dd175">3. Operadores de comparação</a></li>
+<li><a href="#org5d85997">4. <span class="todo TODO">TODO</span> Estrutura de decisão e operador condicional</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org151ee7a" class="outline-2">
-<h2 id="org151ee7a"><span class="section-number-2">1.</span> Operadores aritméticos</h2>
+<div id="outline-container-org68f4b22" class="outline-2">
+<h2 id="org68f4b22"><span class="section-number-2">1.</span> Operadores aritméticos</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 A linguagem Python contém diversos operadores aritméticos como adição (<code>+</code>), subtração (<code>-</code>), multiplicação (<code>*</code>), divisão (<code>/</code>), e exponencial (<code>**</code>). Estes operadores permitem realizar cálculos aritméticos com números inteiros, reais, e complexos. <span class="underline">Cuidado</span>: em Python, a exponenciação é representada por dois asteriscos; não confundir com o acento circunflexo (<code>^</code>) que é o operador de exponenciação usado no Excel!
@@ -288,8 +291,8 @@ A ordem de precedência dos operadores aritméticos (isto é, qual é a ordem de
 </div>
 </div>
 
-<div id="outline-container-org1255fba" class="outline-2">
-<h2 id="org1255fba"><span class="section-number-2">2.</span> Operadores lógicos</h2>
+<div id="outline-container-orgd5d6945" class="outline-2">
+<h2 id="orgd5d6945"><span class="section-number-2">2.</span> Operadores lógicos</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Variáveis lógicas (também conhecidas como variáveis booleanas) são objetos que podem assumir apenas dois valores diferentes: verdadeiro ou falso. Na sintaxe de Python, escrevemos verdadeiro ou falso em inglês e com a primeira letra maiúscula: <code>True</code> ou <code>False</code>.
@@ -357,8 +360,8 @@ Operadores lógicos podem ser combinados na mesma declaração. Sempre que for f
 </div>
 </div>
 
-<div id="outline-container-org8e65c61" class="outline-2">
-<h2 id="org8e65c61"><span class="section-number-2">3.</span> Operadores de comparação</h2>
+<div id="outline-container-orgf7dd175" class="outline-2">
+<h2 id="orgf7dd175"><span class="section-number-2">3.</span> Operadores de comparação</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Operadores de comparação (também conhecidos como operadores relacionais) fazem exatamente o que o nome sugere: comparam dois objetos. O resultado dessa comparação é uma variável booleana (<code>True</code> ou <code>False</code>).
@@ -396,27 +399,60 @@ A != B &lt; C == E - D - C
 </div>
 
 <p>
-<span class="underline">Cuidado</span>: é muito comum confundir o operador de atribuição (<code>=</code>) com o operador de comparação de igualdade (<code>==</code>). O operador de atribuição é usado para atribuir um valor a uma variável, por exemplo: <code>A = 10</code> atribui o valor 10 para a variável <code>A</code>. Já o operador de comparação de igualdade responde a pergunta se os objetos sendo comparados são iguais. Neste caso, a expressão <code>A ==</code> <code>10</code> responde a pergunta se o valor armazenado em <code>A</code> é igual a 10, resposta esta que pode ser verdadeiro ou falso.
+<span class="underline">Cuidado</span>: é muito comum confundir o operador de atribuição (<code>=</code>) com o operador de comparação de igualdade (<code>==</code>). O operador de atribuição é usado para atribuir um valor a uma variável, por exemplo: <code>A = 10</code> atribui o valor 10 para a variável <code>A</code>. Já o operador de comparação de igualdade responde a pergunta se os objetos sendo comparados são iguais. Neste caso, a expressão <code>A == 10</code> responde a pergunta se o valor armazenado em <code>A</code> é igual a 10, resposta esta que pode ser verdadeiro ou falso.
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgc433e35" class="outline-2">
-<h2 id="orgc433e35"><span class="section-number-2">4.</span> <span class="todo TODO">TODO</span> Estrutura de decisão e operador condicional</h2>
+<div id="outline-container-org5d85997" class="outline-2">
+<h2 id="org5d85997"><span class="section-number-2">4.</span> <span class="todo TODO">TODO</span> Estrutura de decisão e operador condicional</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 Em diversos momentos da vida nos adaptamos mediante às condições do ambiente. Por exemplo, ao sair de casa, <i>se</i> estiver chovendo <i>então</i> pegamos o guarda-chuva, <i>se não</i> nós saímos de casa sem o guarda-chuva. Esta estrutura condicional também existe nas linguagens de programação. Em certos momentos, queremos que a execução de um determinado comando só ocorra caso uma ou mais condições sejam atendidas.
 </p>
 
 <p>
-[Podemos escrever a coisa acima em python]
+<b>[A]</b> Em que outros momentos da sua vida você aplica uma estrutura condicional contendo <i>se</i>, <i>então</i>, e <i>se não</i>? Escreva sobre três destes momentos dizendo como você se comporta de forma similar ao exemplo do guarda-chuva.
+</p>
+
+<p>
+O exemplo da decisão acima sobre o guarda-chuva pode ser escrito em Python. Vamos supor que a variável booleana <code>esta_chovendo</code> armazena o valor <code>True</code> caso esteja chovendo ou o valor <code>False</code> caso não esteja chovendo. Queremos armazenar na variável booleana <code>pegar_guardachuva</code> o valor de <code>True</code> para o caso onde vamos pegar o guarda-chuva e o valor de <code>False</code> para o caso onde não vamos pegar o guarda-chuva. O código abaixo ilustra uma forma possível de programar essa decisão em Python.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="linenr">1: </span><span style="color: #859900; font-weight: bold;">if</span> esta_chovendo == <span style="color: #6c71c4; font-weight: bold;">True</span>:
+<span class="linenr">2: </span>    <span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
+<span class="linenr">3: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Vou pegar o guarda-chuva"</span>)
+<span class="linenr">4: </span><span style="color: #859900; font-weight: bold;">else</span>:
+<span class="linenr">5: </span>    <span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">False</span>
+<span class="linenr">6: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"N&#227;o vou pegar o guarda-chuva"</span>)
+<span class="linenr">7: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Fim do programa"</span>)
+</pre>
+</div>
+
+<p>
+No código acima, o comando <code>if</code> checa se a condição &ldquo;<code>esta_chovendo == True</code>&rdquo; é verdadeira. Esta condição será verdadeira se a variável <code>esta_chovendo</code> tiver o valor <code>True</code>. Existem duas possibilidades:
+</p>
+
+<ol class="org-ol">
+<li>Se a condição checada for <i>verdadeira</i>, o bloco do <code>if</code> será executado e o bloco do <code>else</code> será ignorado (neste caso, isso quer dizer que as linhas 2 e 3 do código serão executadas);</li>
+
+<li>Se a condição checada for <i>falsa</i>, o bloco do <code>if</code> será ignorado, e o bloco do <code>else</code> será executado (neste caso, isso quer dizer que as linhas 5 e 6 do código serão executadas).</li>
+</ol>
+
+<p>
+Independentemente do resultado, a última linha será executada pois ela não está dentro da estrutura de decisão.
+</p>
+
+<p>
+Observe que a sintaxe de estruturas de decisão requer que o bloco referente ao <code>if</code> e o bloco referente ao <code>else</code> estejam <i>indentados</i>. Indentação de código é quando utilizamos uma certa quantidade de espaços para agrupar visualmente linhas de código pertencentes a um mesmo bloco. Segundo o guia de estilo do Python, é recomendado usar 4 espaços para indentar seu código. É bom saber que se seu código não estiver indentado corretamente ele muito provavelmente não irá realizar a tarefa que você envisionou quando escreveu o código. Em certos casos, seu programa irá acusar um erro e simplesmente não rodar caso seu código não estiver indentado corretamente.
 </p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Daniel R. Cassar</p>
-<p class="date">Created: 2021-11-30 ter 10:43</p>
+<p class="date">Created: 2021-12-01 qua 08:47</p>
 </div>
 </body>
 </html>

@@ -30,7 +30,7 @@ Realize as práticas seguindo as instruções discutidas em sala de aula. Lembre
 
 + Algumas práticas te convidam a executar algum código pronto para ver o que acontece. Mesmo sendo possível copiar e colar o código, é fortemente recomendado /escrever/ o código pois aprendemos mais quando escrevemos do que quando copiamos e colamos;
 
-+ Praticamente todos os problemas computacionais que serão explorados nesta disciplina já foram resolvidos por alguém e a solução pode ser encontrada em livros ou na internet. Isso é inevitável para problemas /simples/. Mais adiante no curso (ou na vida) iremos nos deparar com problemas mais /difíceis/ e mais específicos, que não têm soluções prontas. Para resolver problemas difícies precisamos ter uma base sólida que só adquirimos resolvendo problemas mais simples. Aproveite esse momento de aprendizado e evite buscar respostas prontas /antes/ de tentar resolver o problema! Depois que você tentou resolver, fique à vontade para procurar e estudar outras soluções.
++ Praticamente todos os problemas computacionais que serão explorados nesta disciplina já foram resolvidos por alguém e a solução pode ser encontrada em livros ou na internet. Isso é inevitável para problemas /simples/. Mais adiante no curso (ou na vida) iremos nos deparar com problemas mais /difíceis/ e mais específicos, que não têm soluções prontas. Para resolver problemas difíceis precisamos ter uma base sólida que só adquirimos resolvendo problemas mais simples. Aproveite esse momento de aprendizado e evite buscar respostas prontas /antes/ de tentar resolver o problema! Depois que você tentou resolver, fique à vontade para procurar e estudar outras soluções.
 
 Ao fim de todas as práticas é necessário enviar o seu caderno de notas Jupyter na plataforma Moodle. Preencha seu caderno de notas seguindo o modelo fornecido. O nome do arquivo deve conter seu nome, sobrenome e RA.
 
@@ -137,7 +137,7 @@ Nas práticas anteriores usamos a função ~print~ para exibir informações na 
 
 Na prática, nós já sabemos que a função ~print~ recebe como argumento o texto ou variável que será exibido. Argumentos de funções são as informações que estão dentro dos parênteses quando executamos as funções; o argumento da função ~print~ em ~print(1234)~ é o número 1234. Funções podem receber um ou mais argumentos, bem como podem receber zero argumentos (tente rodar ~print()~ e veja o que acontece!). Os argumentos das funções são definidos no momento quando a função é definida (vamos ver isso em mais detalhes em uma prática futura).
 
-O que você faria se não soubesse o que função ~print~ faz? Digamos, por exemplo, que você viu essa fução sendo usada em um código de Python mas não sabe sua funcionalidade. Como proceder? Algumas sugestões neste caso são:
+O que você faria se não soubesse o que função ~print~ faz? Digamos, por exemplo, que você viu essa função sendo usada em um código de Python mas não sabe sua funcionalidade. Como proceder? Algumas sugestões neste caso são:
 
 1) Pesquisar na internet em busca de alguma página com explicações (Python é uma linguagem de programação muito usada, existe muito material didático disponível online);
 2) Pesquisar na documentação oficial do Python disponível em português no link https://docs.python.org/pt-br/3/. Todas as funções embutidas de Python, por exemplo, estão descritas aqui: https://docs.python.org/pt-br/3/library/functions.html;
@@ -153,7 +153,7 @@ O que você faria se não soubesse o que função ~print~ faz? Digamos, por exem
 + ~oct~
 + ~abs~
 
-* Operadores
+* Operadores e estrutura de decisão
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_operadores
 :EXPORT_OPTIONS: toc:t
@@ -192,7 +192,7 @@ A ordem de precedência dos operadores aritméticos (isto é, qual é a ordem de
 *[B]* Utilizando os operadores aritméticos do Python, compute:
 1) Quantos segundos existem em 16 horas e 42 minutos?
 2) Quantos centímetros existem em 72,8 milhas?
-3) Se você percorer 72,8 milhas em 16 horas e 42 minutos, qual a sua velocidade média em centímetros por segundo?
+3) Se você percorrer 72,8 milhas em 16 horas e 42 minutos, qual a sua velocidade média em centímetros por segundo?
 4) Quanto tempo você demoraria para percorrer a circunferência da Terra na linha do equador se permanecer na velocidade média obtida no item acima?
 
 *[C]* Além dos operadores discutidos acima, existem diversos outros em Python. Dois operadores bastante úteis são a divisão inteira (~//~) e o módulo (~%~, também conhecido como resto da divisão inteira). Teste estes operadores e descreva como eles funcionam (em caso de dúvida, busque ajuda assim como discutido na Seção Buscando Ajuda). Discorra brevemente sobre possíveis situações onde estes operadores podem ser úteis.
@@ -333,37 +333,172 @@ _Cuidado_: é muito comum confundir o operador de atribuição (~=~) com o opera
 
 ** TODO Estrutura de decisão e operador condicional
 
-Em diversos momentos da vida nos adaptamos mediante às condições do ambiente. Por exemplo, ao sair de casa, /se/ estiver chovendo /então/ pegamos o guarda-chuva, /se não/ nós saímos de casa sem o guarda-chuva. Esta estrutura condicional também existe nas linguagens de programação. Em certos momentos, queremos que a execução de um determinado comando só ocorra caso uma ou mais condições sejam atendidas.
+Em diversos momentos da vida nos adaptamos mediante às condições do ambiente. Por exemplo, ao sair de casa, /se/ estiver chovendo /então/ pegamos o guarda-chuva, /se não/ nós saímos de casa sem o guarda-chuva. Esta estrutura condicional também existe nas linguagens de programação. Em certos momentos, queremos que a execução de um ou mais comandos só ocorra caso uma ou mais condições sejam atendidas.
 
-*[A]* Em que outros momentos da sua vida você aplica uma estrutura condicional contendo /se/, /então/, e /se não/? Escreva sobre três destes momentos dizendo como você se comporta de forma similar ao exemplo do guarda-chuva.
+*[A]* Em que outros momentos da sua vida você faz escolhas segundo uma estrutura condicional contendo /se/, /então/, e /se não/? Escreva sobre três destes momentos dizendo como você se comporta (tome como base o exemplo do guarda-chuva).
 
-O exemplo da decisão acima sobre o guarda-chuva pode ser escrito em Python. Vamos supor que a variável booleana ~esta_chovendo~ armazena o valor ~True~ caso esteja chovendo ou o valor ~False~ caso não esteja chovendo. Queremos armazenar na variável booleana ~pegar_guardachuva~ o valor de ~True~ para o caso onde vamos pegar o guarda-chuva e o valor de ~False~ para o caso onde não vamos pegar o guarda-chuva. O código abaixo ilustra uma forma possível de programar essa decisão em Python.
+O exemplo do guarda-chuva pode ser escrito em Python. Vamos supor que a variável booleana ~esta_chovendo~ armazena o valor ~True~ caso esteja chovendo ou o valor ~False~ caso não esteja chovendo. Queremos armazenar na variável booleana ~pegar_guardachuva~ o valor de ~True~ para o caso onde vamos pegar o guarda-chuva e o valor de ~False~ para o caso onde não vamos pegar o guarda-chuva. O código abaixo ilustra uma forma possível de programar essa decisão em Python (note o uso dos dois-pontos na sintaxe abaixo!).
 
 #+begin_src python -n
+  esta_chovendo = True  # troque esse True for False para ver o que acontece
+
   if esta_chovendo == True:
       pegar_guardachuva = True
       print("Vou pegar o guarda-chuva")
   else:
       pegar_guardachuva = False
       print("Não vou pegar o guarda-chuva")
+
   print("Fim do programa")
 #+end_src
 
+#+RESULTS:
+: Vou pegar o guarda-chuva
+: Fim do programa
+
 No código acima, o comando ~if~ checa se a condição "~esta_chovendo == True~" é verdadeira. Esta condição será verdadeira se a variável ~esta_chovendo~ tiver o valor ~True~. Existem duas possibilidades:
 
-1) Se a condição checada for /verdadeira/, o bloco do ~if~ será executado e o bloco do ~else~ será ignorado (neste caso, isso quer dizer que as linhas 2 e 3 do código serão executadas);
+1) Se a condição checada for /verdadeira/, o bloco do ~if~ será executado e o bloco do ~else~ será ignorado (neste caso, isso quer dizer que as linhas 4 e 5 do código serão executadas e as linhas 7 e 8 não serão executadas);
 
-2) Se a condição checada for /falsa/, o bloco do ~if~ será ignorado, e o bloco do ~else~ será executado (neste caso, isso quer dizer que as linhas 5 e 6 do código serão executadas).
+2) Se a condição checada for /falsa/, o bloco do ~if~ será ignorado, e o bloco do ~else~ será executado (neste caso, isso quer dizer que as linhas 4 e 5 do código serão ignoradas e as linhas 7 e 8 serão executadas).
 
-Independentemente do resultado, a última linha será executada pois ela não está dentro da estrutura de decisão.
+Independentemente do resultado do teste da condição, a primeira e a última linha do código serão executadas pois elas não estão dentro da estrutura de decisão.
 
-Observe que a sintaxe de estruturas de decisão requer que o bloco referente ao ~if~ e o bloco referente ao ~else~ estejam /indentados/. Indentação de código é quando utilizamos uma certa quantidade de espaços para agrupar visualmente linhas de código pertencentes a um mesmo bloco. Segundo o guia de estilo do Python, é recomendado usar 4 espaços para indentar seu código. É bom saber que se seu código não estiver indentado corretamente ele muito provavelmente não irá realizar a tarefa que você envisionou quando escreveu o código. Em certos casos, seu programa irá acusar um erro e simplesmente não rodar caso seu código não estiver indentado corretamente.
+Observe que a sintaxe de estruturas de decisão requer que o bloco referente ao ~if~ e o bloco referente ao ~else~ estejam /indentados/. Indentação de código é quando utilizamos uma certa quantidade de espaços para agrupar visualmente linhas de código pertencentes a um mesmo bloco. Segundo o guia de estilo do Python (chamado de PEP8 caso tenha curiosidade de saber mais), é recomendado usar 4 espaços para indentar seu código.
 
+É bom saber que se seu código não estiver indentado corretamente, ele muito provavelmente não irá realizar a tarefa que você tinha em mente. Em certos casos, uma falha e indentar corretamente seu programa irá acusar um erro. Tente rodar o código abaixo e veja o que acontece (veja que ele é o mesmo código que vimos acima, porém sem indentação).
 
+#+begin_src python -n
+  esta_chovendo = True  # troque esse True for False para ver o que acontece
 
-# if then elif else
-# operador ternário
-# comando =pass=
+  if esta_chovendo == True:
+  pegar_guardachuva = True
+  print("Vou pegar o guarda-chuva")
+  else:
+  pegar_guardachuva = False
+  print("Não vou pegar o guarda-chuva")
+
+  print("Fim do programa")
+#+end_src
+
+*[B]* Escreva um código de Python para cada um dos três momentos de decisão que você descreveu na questão *A*.
+
+É bastante comum nos depararmos com situações onde nossa decisão depende de mais de uma condição. Digamos, por exemplo, que só queremos pegar o guarda-chuva se estiver chovendo e se for um dia de semana (do contrário, decidimos que vamos ficar em casa e não precisamos do guarda-chuva). Para isso precisaremos de um ~if~ adicional; veja o exemplo abaixo e note que o contexto de cada bloco de código é ditado pela sua indentação (sempre em múltiplos de 4 espaços).
+
+#+begin_src python
+  esta_chovendo = True
+  final_de_semana = False
+
+  if esta_chovendo == True:
+      if final_de_semana == False:
+          pegar_guardachuva = True
+          print("Vou pegar o guarda-chuva")
+      else:  # este else está relacionado ao if da variavel final_de_semana
+          pegar_guardachuva = False
+          print("Não vou pegar o guarda-chuva")
+  else:  # este else está relacionado ao if da variavel esta_chovendo
+      pegar_guardachuva = False
+      print("Não vou pegar o guarda-chuva")
+
+  print("Fim do programa")
+#+end_src
+
+#+RESULTS:
+: Vou pegar o guarda-chuva
+: Fim do programa
+
+*[C]* Pense em uma situação onde você precisa considerar duas condições para tomar uma decisão e escreva ela em um código de Python.
+
+A linguagem Python contém uma série de expressões que são o que chamamos de /açúcar sintático/. Um açúcar sintático é uma forma de comunicar uma informação de maneira mais fácil ou mais expressiva. O código acima pode ser reescrito da seguinte maneira:
+
+#+begin_src python
+  esta_chovendo = True
+  final_de_semana = False
+
+  if esta_chovendo:
+      if not final_de_semana:
+          pegar_guardachuva = True
+          print("Vou pegar o guarda-chuva")
+      else:
+          pegar_guardachuva = False
+          print("Não vou pegar o guarda-chuva")
+  else:
+      pegar_guardachuva = False
+      print("Não vou pegar o guarda-chuva")
+
+  print("Fim do programa")
+#+end_src
+
+*[E]* Teste e reporte se novo código funciona. O que mudou em comparação com o original? Explique como funciona o açúcar sintático exemplificado acima. Na sua opinião, este tipo de açúcar sintático facilitou a sua leitura do código?
+
+*[D]* Reescreva o código acima de forma que ele se comporte da mesma maneira, porém usando apenas um ~if~ e apenas um ~else~. Dica: pense em qual operador lógico poderia te ajudar aqui!
+
+O código abaixo checa em qual faixa está o valor de pH fornecido (https://pt.wikipedia.org/wiki/PH) e reporta para o usuário se sua solução é ácida, básica, neutra, ou se houve algum equívoco e o valor de pH é inválido. Veja que a cláusula ~else~ é opcional e não foi usada no código abaixo.
+
+#+begin_src python -n
+  # teste o código com diferentes valores para a variável ph
+  ph = 7
+
+  if (ph < 0) or (ph > 14):
+      print("pH inválido")
+
+  if 0 <= ph < 6.5:
+      print("pH ácido")
+
+  if 6.5 <= ph <= 7.5:
+      print("pH neutro")
+
+  if 7.5 < ph <= 14:
+      print("pH básico")
+#+end_src
+
+#+RESULTS:
+: PH neutro
+
+Imagine que você mediu o pH de um vinagre e obteve o valor de 2,5. Ao rodar o código acima, o programa irá te dizer "pH ácido" (teste você mesma(o)!). Veja que o programa poderia ter parado de rodar depois de resolver o ~if~ da linha 7 (afinal, não faz sentido checar se o pH é neutro ou básico após identificar que se trata de um pH ácido), porém ele *irá* rodar os ~if~ das linhas 10 e 13.
+
+*[E]* Reescreva o código acima usando cláusulas ~else~ de forma que o programa não rode nenhuma cláusula ~if~ desnecessária para entregar a resposta ao usuário (isto é: após ter encontrado a resposta, nenhum outro ~if~ deve ser executado).
+
+Uma estrutura muito comum em programação é quando queremos dizer "se a condição testada não for verdadeira, então teste esta outra condição aqui". Para isso usamos a cláusula ~elif~ que seria um ~else~ com um ~if~ "grudados". O código abaixo é similar ao anterior, porém usando ~elif~
+
+#+begin_src python -n
+  # teste o código com diferentes valores para a variável ph
+  ph = 7
+
+  if 0 <= ph < 6.5:
+      print("pH ácido")
+
+  elif 6.5 <= ph <= 7.5:
+      print("pH neutro")
+
+  elif 7.5 < ph <= 14:
+      print("pH básico")
+
+  else:
+      print("pH inválido")
+#+end_src
+
+#+RESULTS:
+: pH neutro
+
+O código acima checa se o pH é ácido. Caso seja ácido o programa exibe "pH ácido" para o usuáro e nada mais será executado. Caso não seja ácido, o programa checa então se é neutro. Caso seja neutro o programa exibe "pH neutro" para o usuário e nada mais será executado. Caso não seja neutro também, o programa faz uma última checagem para confirmar se é um pH básico. Assim sendo o usuário verá o texto "pH básico" e o programa se encerra. Se o pH não for ácido, nem neutro, nem básico, então podemos afirmar que o programa recebeu um valor inválido de pH.
+
+*[F]* Escreva um programa similar ao programa do pH que checa alguma grandeza escalar e exibe para o usuário uma informação sobre esta grandeza. Utilize pelo menos duas cláusulas ~elif~ no seu programa.
+
+Além da estrutura de decisão ~if~/~else~ existe o operador condicional. É importante saber que ele existe, porém na maioria dos casos é preferível que você use a estrutura de decisão mesmo por ser uma construção mais legível. O exemplo abaixo mostra uma estrutura condicional e o operador condicional, ambos realizam a mesma tarefa. Note que a cláusula ~else~ é opcional na estrutura condicional porém obrigatória no operador condicional.
+
+#+begin_src python
+  condicao = True
+
+  # estrutura condicional
+  if condicao:
+      a = 100
+  else:
+      a = 5
+
+  # operador condicional
+  a = 100 if condicao else 5
+#+end_src
 
 * TODO Listas, tuplas, e conjuntos
 :PROPERTIES:

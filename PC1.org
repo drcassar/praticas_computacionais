@@ -3,9 +3,13 @@
 #+EXPORT_FILE_NAME: PC1/PC1
 #+STARTUP: overview
 #+PROPERTY: header-args:python :results output
-#+OPTIONS:  TeX:t LaTeX:t toc:t
+#+OPTIONS:  TeX:t LaTeX:t toc:t html-style:t e:t
 #+LATEX_HEADER: \usepackage[brazilian]{babel}
 #+LATEX_HEADER: \addto\captionsenglish{\renewcommand\contentsname{Conteúdo}}
+#+HTML_HEAD:<style>
+#+HTML_HEAD:.linenr {color: #669999; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
+#+HTML_HEAD:</style>
+
 
 * Introdução
 :PROPERTIES:

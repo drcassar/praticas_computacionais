@@ -1,9 +1,9 @@
-#+TITLE: Práticas Computacionais I (~v0.0.1~)
+#+TITLE: Práticas Computacionais I (~v0.0.2~)
 #+AUTHOR: Daniel R. Cassar
 #+EXPORT_FILE_NAME: PC1/PC1
 #+STARTUP: overview
 #+PROPERTY: header-args:python :results output
-#+OPTIONS:  TeX:t LaTeX:t toc:t html-style:t e:t
+#+OPTIONS: TeX:t LaTeX:t toc:t html-style:t e:t
 #+LATEX_HEADER: \usepackage[brazilian]{babel}
 #+LATEX_HEADER: \addto\captionsenglish{\renewcommand\contentsname{Conteúdo}}
 #+HTML_HEAD:<style>
@@ -32,7 +32,7 @@ Realize as práticas seguindo as instruções discutidas em sala de aula. Lembre
 
 + Praticamente todos os problemas computacionais que serão explorados nesta disciplina já foram resolvidos por alguém e a solução pode ser encontrada em livros ou na internet. Isso é inevitável para problemas /simples/. Mais adiante no curso (ou na vida) iremos nos deparar com problemas mais /difíceis/ e mais específicos, que não têm soluções prontas. Para resolver problemas difíceis precisamos ter uma base sólida que só adquirimos resolvendo problemas mais simples. Aproveite esse momento de aprendizado e evite buscar respostas prontas /antes/ de tentar resolver o problema! Depois que você tentou resolver, fique à vontade para procurar e estudar outras soluções.
 
-Ao fim de todas as práticas é necessário enviar o seu caderno de notas Jupyter na plataforma Moodle. Preencha seu caderno de notas seguindo o modelo fornecido. O nome do arquivo deve conter seu nome, sobrenome e RA.
+Ao fim de todas as práticas é necessário enviar o seu caderno de notas Jupyter na plataforma Moodle. Preencha seu caderno de notas seguindo o modelo fornecido. O nome do arquivo deve conter seu nome, sobrenome, e RA.
 
 * Jupyter, variáveis, e como buscar ajuda
 :PROPERTIES:
@@ -126,6 +126,7 @@ Usando a função ~type~ e a função ~print~, identifique os tipos das variáve
   muitos_espacos_entre_o_sinal_de_igual     =      10
   nenhum_espaco_entre_o_sinal_de_igual=10
 
+  texto = Olá, Mundo!
   texto = "Olá, Mundo!'
 #+end_src
 
@@ -331,7 +332,7 @@ Existem 6 operadores de comparação em Python:
 
 _Cuidado_: é muito comum confundir o operador de atribuição (~=~) com o operador de comparação de igualdade (~==~). O operador de atribuição é usado para atribuir um valor a uma variável, por exemplo: ~A = 10~ atribui o valor 10 para a variável ~A~. Já o operador de comparação de igualdade responde a pergunta se os objetos sendo comparados são iguais. Neste caso, a expressão ~A == 10~ responde a pergunta se o valor armazenado em ~A~ é igual a 10, resposta esta que pode ser verdadeiro ou falso.
 
-** TODO Estrutura de decisão e operador condicional
+** Estrutura de decisão e operador condicional
 
 Em diversos momentos da vida nos adaptamos mediante às condições do ambiente. Por exemplo, ao sair de casa, /se/ estiver chovendo /então/ pegamos o guarda-chuva, /se não/ nós saímos de casa sem o guarda-chuva. Esta estrutura condicional também existe nas linguagens de programação. Em certos momentos, queremos que a execução de um ou mais comandos só ocorra caso uma ou mais condições sejam atendidas.
 
@@ -511,7 +512,7 @@ Além da estrutura de decisão ~if~/~else~ existe o operador condicional. É imp
 + listas simples
 + listas dentro de listas
 
-** Modificando, particionando e desempacotando listas
+** Modificando, particionando, e desempacotando listas
 + métodos =append=, =extend=, =pop=
 + slicing
 + a, \ast{}b, c = lista
@@ -733,3 +734,39 @@ dir(__builtins__)
 :EXPORT_OPTIONS: toc:t
 :ID:       fc29118f-e0b5-4816-9034-4a83e7b520b4
 :END:
+* TODO Exercícios :noexport:
+
++ Computar numericamente a soma de uma PA ou PG
++ Função que checa se um número é palímdromo (sem usar string!)
++ Checar os números divisíveis por 5 em uma lista
++ Contar quais são as palavras mais comuns em um texto
++ Dadas duas listas, montar uma terceira com os maiores números de cada (element-wise)
++ mostrar a sequencia de fibonacci até o número n
++ checar se um número é primo
++ função que soma todos os números do 1 até o n
++ programa que conta quantos digitos existem em um numero inteiro
++ inverter a ordem de uma lista
++ programa que calcula o fatorial de um inteiro positivo
++ programa que cria uma lista apenas com os itens nas posições impares de uma lista original
++ encontre o segundo maior número em uma lista
++ função que conta quantas letras, dígitos e caracteres especiais tem em uma string
++ histograma de contagem de caracteres em uma string
++ encontrar números em uma string e armazena-los em uma lista
++ histograma de valores em uma lista
++ criar uma lista sem itens repetidos
++ identificar os elementos em comum entre duas listas
++ separar valores e chaves de dicionários em duas listas
++ concatenar duas listas de string element-wise
++ Create a program that asks the user to enter their name and their age. Print out a message addressed to them that tells them the year that they will turn 100 years old.
++ Ask the user for a number. Depending on whether the number is even or odd, print out an appropriate message to the user.
++ use compreensão de lista para identificar números impares em uma lista
++ criar um jogo de jokenpo a ser jogado por duas pessoas
++ exercicio onde o computador escolhe um numero aleatorio e o usuario deve adivinhar com dicas de maior ou menor
+
+
+intermediário:
++ reverter cada palavra de uma lista
+  - 'My Name is Jessa'
+  - yM emaN si asseJ
++ inverter chave e valores de um dicionário
++ mostrar todos os itens duplicados em uma lista

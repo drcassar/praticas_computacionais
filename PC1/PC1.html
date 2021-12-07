@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-12-07 ter 11:43 -->
+<!-- 2021-12-06 seg 11:21 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Operadores e estrutura de decisão</title>
+<title>Práticas Computacionais I (~v0.0.2~)</title>
 <meta name="author" content="Daniel R. Cassar" />
 <meta name="generator" content="Org Mode" />
 <style>
@@ -196,24 +196,331 @@
 <style>
 .linenr {color: #669999; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
 </style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content" class="content">
-<h1 class="title">Operadores e estrutura de decisão</h1>
+<h1 class="title">Práticas Computacionais I (<code>v0.0.2</code>)</h1>
 <div id="table-of-contents" role="doc-toc">
 <h2>Índice</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgde345ad">1. Operadores aritméticos</a></li>
-<li><a href="#orgc842e40">2. Operadores lógicos</a></li>
-<li><a href="#org8e7a5ce">3. Operadores de comparação</a></li>
-<li><a href="#orgee90fe2">4. Estrutura de decisão e operador condicional</a></li>
+<li><a href="#org12c8356">1. Introdução</a></li>
+<li><a href="#orga6bd518">2. Jupyter, variáveis, e como buscar ajuda</a>
+<ul>
+<li><a href="#org0ed0bda">2.1. Meu primeiro caderno de notas Jupyter</a></li>
+<li><a href="#orgd9027ef">2.2. Criando variáveis de diferentes tipos</a></li>
+<li><a href="#org94d9f51">2.3. Buscando ajuda</a></li>
+</ul>
+</li>
+<li><a href="#org2aeb91a">3. Operadores e estrutura de decisão</a>
+<ul>
+<li><a href="#org5fdb0d1">3.1. Operadores aritméticos</a></li>
+<li><a href="#org8d57f9a">3.2. Operadores lógicos</a></li>
+<li><a href="#org145646e">3.3. Operadores de comparação</a></li>
+<li><a href="#orge35a8e3">3.4. Estrutura de decisão e operador condicional</a></li>
+</ul>
+</li>
+<li><a href="#orgfa61fe9">4. <span class="todo TODO">TODO</span> Listas, tuplas, e conjuntos</a>
+<ul>
+<li><a href="#org2a182b5">4.1. Agrupando objetos com listas</a></li>
+<li><a href="#orgdb155fa">4.2. Modificando, particionando e desempacotando listas</a></li>
+<li><a href="#orgeaeb9f9">4.3. &ldquo;Tuplas são listas imutáveis&rdquo;</a></li>
+<li><a href="#org693d31a">4.4. &ldquo;Conjuntos são listas sem elementos repetidos&rdquo;</a></li>
+</ul>
+</li>
+<li><a href="#orgb388dcb">5. <span class="todo TODO">TODO</span> Laço de repetição</a>
+<ul>
+<li><a href="#orgfeee559">5.1. Laço de repetição usando <code>while</code></a></li>
+<li><a href="#org3fe5009">5.2. Laço de repetição usando <code>for</code></a></li>
+<li><a href="#org5a3f406">5.3. Iterando sobre listas com o operador de filiação</a></li>
+<li><a href="#org6d227da">5.4. Compreensão de listas</a></li>
+</ul>
+</li>
+<li><a href="#org0486358">6. <span class="todo TODO">TODO</span> Funções</a>
+<ul>
+<li><a href="#orgc96b230">6.1. Funções embutidas</a></li>
+<li><a href="#orgf5acad6">6.2. Definindo novas funções</a></li>
+<li><a href="#orgfb19413">6.3. Argumentos posicionais, argumentos nomeados, e argumentos com valor padrão</a></li>
+<li><a href="#orgc1649b8">6.4. Variáveis globais e variáveis locais</a></li>
+<li><a href="#org48d4309">6.5. Documentando suas funções com docstring</a></li>
+</ul>
+</li>
+<li><a href="#org988ab43">7. <span class="todo TODO">TODO</span> Depuração de programas</a>
+<ul>
+<li><a href="#orgedc98f8">7.1. Meu programa não roda pois dá um erro, e agora?</a></li>
+<li><a href="#org9c63e97">7.2. Meu programa não faz o que eu queria que ele fizesse, e agora?</a></li>
+<li><a href="#orgc7bb44c">7.3. Tratamento de exceções</a></li>
+</ul>
+</li>
+<li><a href="#orga5715a0">8. <span class="todo TODO">TODO</span> Dicionários</a>
+<ul>
+<li><a href="#orgd0cc089">8.1. Associando objetos com dicionários</a></li>
+<li><a href="#org85b1cca">8.2. Modificando e desempacotando dicionários</a></li>
+<li><a href="#org2d12b6b">8.3. Iterando sobre dicionários</a></li>
+<li><a href="#orgd008729">8.4. Funções com argumentos estrela &lowast;args e &lowast;&lowast;kwargs</a></li>
+</ul>
+</li>
+<li><a href="#org4341747">9. <span class="todo TODO">TODO</span> Strings e processamento de texto</a>
+<ul>
+<li><a href="#org6d48e9a">9.1. Agrupando caracteres com strings</a></li>
+<li><a href="#org58607c1">9.2. Recebendo informações do usuário com o comando <code>input</code></a></li>
+<li><a href="#orgbb5e9b8">9.3. Tipos de strings</a></li>
+<li><a href="#org94d2a5a">9.4. Processamento de texto</a></li>
+<li><a href="#org65f87da">9.5. Expressões regulares</a></li>
+</ul>
+</li>
+<li><a href="#orge128ff5">10. <span class="todo TODO">TODO</span> Programação orientada a objetos</a>
+<ul>
+<li><a href="#org0357e93">10.1. Agrupando objetos com classes</a></li>
+<li><a href="#org43f9885">10.2. Classes e seus métodos</a></li>
+<li><a href="#orga536f48">10.3. Métodos mágicos</a></li>
+<li><a href="#orge71e067">10.4. Herança de classes</a></li>
+</ul>
+</li>
+<li><a href="#orgc6759c7">11. <span class="todo TODO">TODO</span> Biblioteca padrão</a>
+<ul>
+<li><a href="#org6ac010d">11.1. O que são e como importar módulos de Python</a></li>
+<li><a href="#orgd6a31b6">11.2. Módulos embutidos</a></li>
+</ul>
+</li>
+<li><a href="#orgd11aff0">12. <span class="todo TODO">TODO</span> Leitura e manipulação de dados com o módulo <code>pandas</code></a>
+<ul>
+<li><a href="#org39c1d68">12.1. Criando e manipulando DataFrames a partir de arquivos</a></li>
+<li><a href="#org0506a28">12.2. Análise dos dados</a></li>
+<li><a href="#org7927a5f">12.3. Criando e exportando um DataFrame a partir de listas</a></li>
+</ul>
+</li>
+<li><a href="#orgf65e884">13. <span class="todo TODO">TODO</span> Graficando dados</a>
+<ul>
+<li><a href="#orgcf47095">13.1. Graficando dados de um DataFrame</a></li>
+<li><a href="#orgeb3222d">13.2. Graficando dados usando <code>matplotlib</code></a></li>
+</ul>
+</li>
+<li><a href="#org34cfc69">14. <span class="todo TODO">TODO</span> Controle de versão usando <code>git</code></a></li>
+<li><a href="#org87f9bf7">15. <span class="todo TODO">TODO</span> Computação científica com <code>numpy</code> e <code>scipy</code></a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgde345ad" class="outline-2">
-<h2 id="orgde345ad"><span class="section-number-2">1.</span> Operadores aritméticos</h2>
+
+
+<div id="outline-container-org12c8356" class="outline-2">
+<h2 id="org12c8356"><span class="section-number-2">1.</span> Introdução</h2>
 <div class="outline-text-2" id="text-1">
+Bem-vinda(o) à disciplina de Práticas Computacionais I.
+
+<p>
+A maioria das práticas contém um breve texto introdutório e uma ou mais questões. As questões são marcadas com uma letra em negrito e entre chaves. <b>[A]</b> Por exemplo, aqui seria o enunciado da questão <b>A</b> se estivéssemos dentro do escopo de uma prática.
+</p>
+
+<p>
+Realize as práticas seguindo as instruções discutidas em sala de aula. Lembre-se que a capacidade de ler, entender, escrever, e depurar seu próprio código de computador é <i>fundamental</i> para realizar diversas disciplinas da Ilum (incluindo, obviamente, todas as disciplinas de computação). Por este motivo, se atente às dicas abaixo:
+</p>
+
+<ul class="org-ul">
+<li>A maioria das práticas são individuais. Tente resolver as questões no seu computador antes de discutir em grupo. Depois de tentar resolver, fique à vontade para discutir em grupo e observar outras formas de resolver o mesmo problema;</li>
+
+<li>Algumas práticas te convidam a executar algum código pronto para ver o que acontece. Mesmo sendo possível copiar e colar o código, é fortemente recomendado <i>escrever</i> o código pois aprendemos mais quando escrevemos do que quando copiamos e colamos;</li>
+
+<li>Praticamente todos os problemas computacionais que serão explorados nesta disciplina já foram resolvidos por alguém e a solução pode ser encontrada em livros ou na internet. Isso é inevitável para problemas <i>simples</i>. Mais adiante no curso (ou na vida) iremos nos deparar com problemas mais <i>difíceis</i> e mais específicos, que não têm soluções prontas. Para resolver problemas difíceis precisamos ter uma base sólida que só adquirimos resolvendo problemas mais simples. Aproveite esse momento de aprendizado e evite buscar respostas prontas <i>antes</i> de tentar resolver o problema! Depois que você tentou resolver, fique à vontade para procurar e estudar outras soluções.</li>
+</ul>
+
+<p>
+Ao fim de todas as práticas é necessário enviar o seu caderno de notas Jupyter na plataforma Moodle. Preencha seu caderno de notas seguindo o modelo fornecido. O nome do arquivo deve conter seu nome, sobrenome e RA.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga6bd518" class="outline-2">
+<h2 id="orga6bd518"><span class="section-number-2">2.</span> Jupyter, variáveis, e como buscar ajuda</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+
+<div id="outline-container-org0ed0bda" class="outline-3">
+<h3 id="org0ed0bda"><span class="section-number-3">2.1.</span> Meu primeiro caderno de notas Jupyter</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Usualmente, a primeira prática quando se está aprendendo uma linguagem de programação nova é a chamada &ldquo;Olá, mundo!&rdquo;. Nesta prática, o objetivo é criar seu primeiro programa na linguagem Python que, quando executado, exiba a mensagem &ldquo;Olá, Mundo!&rdquo;.
+</p>
+
+<p>
+<b>[A]</b> Crie um caderno de notas Jupyter seguindo o modelo discutido na Introdução. Neste caderno, crie uma célula de código contendo o código abaixo. Execute esta célula e observe o que acontece. Escreva brevemente sobre o que você observou.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Ol&#225;, mundo!"</span>)
+</pre>
+</div>
+
+<p>
+Observe que no código acima temos três elementos: o comando <code>print</code>, um conjunto de parênteses, e um texto delimitado por aspas duplas. O comando <code>print</code> é o que chamamos de função. Veremos funções mais adiante, mas por hora basta saber que funções são &ldquo;apelidos&rdquo; para executar códigos que já foram escritos. Neste caso, <code>print</code> é uma função embutida de Python cujo código já foi escrito pelos próprios criadores do Python, por isso você pode usar esta função sem a necessidade de defini-la. A palavra <i>print</i> poderia ser traduzida para o português como <i>imprimir</i>, porém o termo <i>exibir</i> se encaixa melhor no uso corriqueiro desta função.
+</p>
+
+<p>
+Para executar funções precisamos chamá-las usando os parênteses. Se tiver curiosidade, tente criar e executar uma célula no Jupyter apenas com a palavra <code>print</code> para ver o que acontece quando escrevemos o nome de uma função sem chamá-la com o parênteses.
+</p>
+
+<p>
+Por fim, dentro dos parênteses que usamos para chamar a função <code>print</code> nós escrevemos os argumentos da função. Neste caso, temos apenas um argumento e ele foi o texto &ldquo;Olá, mundo!&rdquo;.
+</p>
+
+<p>
+Aprender qualquer linguagem, seja ela de programação ou não, requer treino. Não se preocupe se as regras de Python parecem esquisitas, com o passar do tempo você irá ler e escrever códigos em Python com mais facilidade. Afinal, você não aprendeu português de um dia para o outro, não é?
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd9027ef" class="outline-3">
+<h3 id="orgd9027ef"><span class="section-number-3">2.2.</span> Criando variáveis de diferentes tipos</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+É comum em programação situações onde precisamos armazenar informações em variáveis para usá-las mais tarde. Python oferece diversos tipos de variáveis como, por exemplo, números inteiros (<code>int</code>), números reais (<code>float</code>), e variáveis que armazenam texto (<code>string</code>).
+</p>
+
+<p>
+<b>[A]</b> O código abaixo cria diversas variáveis. Reescreva e execute este código em uma célula do Jupyter. Veja que para atribuir valores à variáveis nós usamos o sinal de igual (<code>=</code>). Note que para o Python, o separador decimal é o ponto (<code>.</code>) e não a vírgula (<code>,</code>); muita atenção com essa distinção pois a vírgula tem outro significado em Python e não necessariamente vai acusar um erro no seu código!! <span class="underline">Lembrete</span>: mesmo sendo possível copiar e colar o código, sugiro fortemente <i>escrever</i> o código abaixo pois aprendemos muito mais quando escrevemos do que quando copiamos e colamos.
+</p>
+
+<p>
+Usando a função <code>type</code> e a função <code>print</code>, identifique os tipos das variáveis definidas no código que você escreveu. Exemplo: <code>print(type(numero_inteiro))</code>. Quantos tipos diferentes você identificou? Quais foram eles?
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">texto_com_aspas_simples</span> = <span style="color: #2aa198;">'Ol&#225;, Mundo!'</span>
+<span style="color: #268bd2;">texto_com_aspas_duplas</span> = <span style="color: #2aa198;">"Ol&#225;, Mundo!"</span>
+<span style="color: #268bd2;">texto_com_aspas_triplas</span> = <span style="color: #2aa198;">'''Ol&#225;, Mundo!'''</span>
+
+<span style="color: #268bd2;">numero_inteiro</span> = <span style="color: #6c71c4; font-weight: bold;">10</span>
+<span style="color: #268bd2;">numero_inteiro_positivo</span> = +<span style="color: #6c71c4; font-weight: bold;">10</span>
+<span style="color: #268bd2;">numero_inteiro_negativo</span> = -<span style="color: #6c71c4; font-weight: bold;">10</span>
+
+<span style="color: #268bd2;">numero_real</span> = <span style="color: #6c71c4; font-weight: bold;">10.0</span>
+<span style="color: #268bd2;">numero_real_sem_digitos_depois_do_ponto</span> = <span style="color: #6c71c4; font-weight: bold;">10</span>.
+<span style="color: #268bd2;">numero_real_positivo</span> = +<span style="color: #6c71c4; font-weight: bold;">10.0000</span>
+<span style="color: #268bd2;">numero_real_negativo</span> = -<span style="color: #6c71c4; font-weight: bold;">10.0000</span>
+<span style="color: #268bd2;">numero_real_base_dez</span> = <span style="color: #6c71c4; font-weight: bold;">1</span>.5e7
+<span style="color: #268bd2;">pi</span> = <span style="color: #6c71c4; font-weight: bold;">3.1415</span>
+
+<span style="color: #268bd2;">numero_complexo</span> = <span style="color: #6c71c4; font-weight: bold;">2</span> + 3j
+<span style="color: #268bd2;">numero_complexo_apenas_parte_imaginaria</span> = 5j
+<span style="color: #268bd2;">numero_complexo_apenas_parte_real</span> = <span style="color: #6c71c4; font-weight: bold;">1</span> + 0j
+
+<span style="color: #268bd2;">variavel_booleana_verdadeiro</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
+<span style="color: #268bd2;">variavel_booleana_falso</span> = <span style="color: #6c71c4; font-weight: bold;">False</span>
+
+<span style="color: #268bd2;">variavel_nula</span> = <span style="color: #6c71c4; font-weight: bold;">None</span>
+</pre>
+</div>
+
+<p>
+<b>[B]</b> Em uma célula de texto responda as perguntas:
+</p>
+
+<ol class="org-ol">
+<li>Existe diferença de se criar uma string usando aspas simples, duplas, ou triplas? Reflita sobre a resposta e busque informações na internet antes de escrever. Não se esqueça de colocar as fontes na sua resposta.</li>
+<li>Qual a diferença entre um número real e um número inteiro? Pelos exemplos do código acima, qual seria a regra para definir números inteiros e números reais?</li>
+<li>Qual a regra para declarar números complexos? O que é o <code>j</code> na declaração dos números complexos?</li>
+<li>Na sua opinião, existe diferença entre as variáveis <code>numero_inteiro</code> e <code>numero_inteiro_positivo</code>? Explique brevemente seu raciocínio.</li>
+<li>Na sua opinião, existe diferença entre as variáveis <code>numero_real</code>, e <code>numero_real_positivo</code>, e <code>numero_real_sem_digitos_depois_do_ponto</code>? Explique brevemente seu raciocínio. De que forma você faria para confirmar a sua resposta?</li>
+</ol>
+
+<p>
+<b>[C]</b> O código abaixo <i>supostamente</i> cria novas variáveis. No entanto, algumas das declarações parecem&#x2026; diferente&#x2026; quem sabe até estranhas! Seu objetivo é testar cada uma destas declarações e separar as que funcionam das que não funcionam. Para as declarações que não funcionam, descreva o erro que ocorreu e proponha uma correção.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">variavel_que_o_nome_termina_com_numero_100</span> = <span style="color: #6c71c4; font-weight: bold;">1</span>
+<span style="color: #268bd2;">100_variavel_que_o_nome_comeca_com_numero</span> = <span style="color: #6c71c4; font-weight: bold;">1</span>
+<span style="color: #268bd2;">numero_do_agente_secreto</span> = <span style="color: #6c71c4; font-weight: bold;">007</span>
+
+<span style="color: #268bd2;">nome_da_vari&#225;vel_com_acento</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
+<span style="color: #268bd2;">booleano_sem_primeira_letra_maiuscula</span> = true
+
+<span style="color: #268bd2;">espaco_entre_os_numeros</span> = <span style="color: #6c71c4; font-weight: bold;">100</span> <span style="color: #6c71c4; font-weight: bold;">000</span>
+<span style="color: #268bd2;">numero_com_sublinhado</span> = 10_000_000
+
+<span style="color: #268bd2;">numero_com_muitos_sinais_de_menos</span> = -----<span style="color: #6c71c4; font-weight: bold;">10</span>
+<span style="color: #268bd2;">numero_com_muitos_sinais_de_mais</span> = +++++<span style="color: #6c71c4; font-weight: bold;">10</span>
+<span style="color: #268bd2;">numero_com_muitos_sinais_de_mais_e_menos</span> = +--++-<span style="color: #6c71c4; font-weight: bold;">10</span>
+
+<span style="color: #268bd2;">muitos_espacos_entre_o_sinal_de_igual</span>     =      <span style="color: #6c71c4; font-weight: bold;">10</span>
+<span style="color: #268bd2;">nenhum_espaco_entre_o_sinal_de_igual</span>=<span style="color: #6c71c4; font-weight: bold;">10</span>
+
+<span style="color: #268bd2;">texto</span> = Ol&#225;, Mundo!
+<span style="color: #268bd2;">texto</span> = <span style="color: #2aa198;">"Ol&#225;, Mundo!'</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org94d9f51" class="outline-3">
+<h3 id="org94d9f51"><span class="section-number-3">2.3.</span> Buscando ajuda</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+Nas práticas anteriores usamos a função <code>print</code> para exibir informações na forma de texto dentro do próprio caderno de notas do Jupyter. A função <code>print</code> é uma <i>função embutida</i> do Python. Isto que dizer que qualquer usuário que tenha o Python instalado (idealmente na mesma versão que a sua) terá acesso a esta função sem a necessidade de executar nenhum comando adicional.
+</p>
+
+<p>
+Na prática, nós já sabemos que a função <code>print</code> recebe como argumento o texto ou variável que será exibido. Argumentos de funções são as informações que estão dentro dos parênteses quando executamos as funções; o argumento da função <code>print</code> em <code>print(1234)</code> é o número 1234. Funções podem receber um ou mais argumentos, bem como podem receber zero argumentos (tente rodar <code>print()</code> e veja o que acontece!). Os argumentos das funções são definidos no momento quando a função é definida (vamos ver isso em mais detalhes em uma prática futura).
+</p>
+
+<p>
+O que você faria se não soubesse o que função <code>print</code> faz? Digamos, por exemplo, que você viu essa função sendo usada em um código de Python mas não sabe sua funcionalidade. Como proceder? Algumas sugestões neste caso são:
+</p>
+
+<ol class="org-ol">
+<li>Pesquisar na internet em busca de alguma página com explicações (Python é uma linguagem de programação muito usada, existe muito material didático disponível online);</li>
+<li>Pesquisar na documentação oficial do Python disponível em português no link <a href="https://docs.python.org/pt-br/3/">https://docs.python.org/pt-br/3/</a>. Todas as funções embutidas de Python, por exemplo, estão descritas aqui: <a href="https://docs.python.org/pt-br/3/library/functions.html">https://docs.python.org/pt-br/3/library/functions.html</a>;</li>
+<li>Usar a função <code>help</code> do próprio Python (tente rodar <code>help(print)</code> no seu caderno de notas e veja o que acontece);</li>
+<li>Usar a sintaxe própria do Jupyter para buscar ajuda. Para isso basta digitar a função que quer saber mais informações junto com um sinal de interrogação. Neste caso seria <code>print?</code>.</li>
+</ol>
+
+<p>
+<b>[A]</b> Escolha uma das quatro sugestões acima para ler mais sobre a função <code>print</code> do Python. Observe que a função <code>print</code> aceita diferentes argumentos, sendo eles: <code>value</code>, <code>file</code>, <code>flush</code>, <code>end</code>, e <code>sep</code>. Escreva como foi sua busca (incluindo fontes se for o caso) e descreva com suas palavras o que os argumentos <code>end</code> e <code>sep</code> fazem. Tente outras formas de busca caso julge necessário.
+</p>
+
+<p>
+<b>[B]</b> Escolha pelo menos duas funções da lista abaixo. Para cada função escolhida, faça uma busca online (buscas 1 ou 2) e uma busca offline (buscas 3 ou 4) para entender o que estas funções fazem. Escreva como foi sua busca (incluindo fontes) e descreva com suas palavras o que estas funções fazem.
+</p>
+
+<ul class="org-ul">
+<li><code>round</code></li>
+<li><code>pow</code></li>
+<li><code>oct</code></li>
+<li><code>abs</code></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2aeb91a" class="outline-2">
+<h2 id="org2aeb91a"><span class="section-number-2">3.</span> Operadores e estrutura de decisão</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+
+<div id="outline-container-org5fdb0d1" class="outline-3">
+<h3 id="org5fdb0d1"><span class="section-number-3">3.1.</span> Operadores aritméticos</h3>
+<div class="outline-text-3" id="text-3-1">
 <p>
 A linguagem Python contém diversos operadores aritméticos como adição (<code>+</code>), subtração (<code>-</code>), multiplicação (<code>*</code>), divisão (<code>/</code>), e exponencial (<code>**</code>). Estes operadores permitem realizar cálculos aritméticos com números inteiros, reais, e complexos. <span class="underline">Cuidado</span>: em Python, a exponenciação é representada por dois asteriscos; não confundir com o acento circunflexo (<code>^</code>) que é o operador de exponenciação usado no Excel!
 </p>
@@ -291,9 +598,9 @@ A ordem de precedência dos operadores aritméticos (isto é, qual é a ordem de
 </div>
 </div>
 
-<div id="outline-container-orgc842e40" class="outline-2">
-<h2 id="orgc842e40"><span class="section-number-2">2.</span> Operadores lógicos</h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-org8d57f9a" class="outline-3">
+<h3 id="org8d57f9a"><span class="section-number-3">3.2.</span> Operadores lógicos</h3>
+<div class="outline-text-3" id="text-3-2">
 <p>
 Variáveis lógicas (também conhecidas como variáveis booleanas) são objetos que podem assumir apenas dois valores diferentes: verdadeiro ou falso. Na sintaxe de Python, escrevemos verdadeiro ou falso em inglês e com a primeira letra maiúscula: <code>True</code> ou <code>False</code>.
 </p>
@@ -360,9 +667,9 @@ Operadores lógicos podem ser combinados na mesma declaração. Sempre que for f
 </div>
 </div>
 
-<div id="outline-container-org8e7a5ce" class="outline-2">
-<h2 id="org8e7a5ce"><span class="section-number-2">3.</span> Operadores de comparação</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-org145646e" class="outline-3">
+<h3 id="org145646e"><span class="section-number-3">3.3.</span> Operadores de comparação</h3>
+<div class="outline-text-3" id="text-3-3">
 <p>
 Operadores de comparação (também conhecidos como operadores relacionais) fazem exatamente o que o nome sugere: comparam dois objetos. O resultado dessa comparação é uma variável booleana (<code>True</code> ou <code>False</code>).
 </p>
@@ -404,9 +711,9 @@ A != B &lt; C == E - D - C
 </div>
 </div>
 
-<div id="outline-container-orgee90fe2" class="outline-2">
-<h2 id="orgee90fe2"><span class="section-number-2">4.</span> Estrutura de decisão e operador condicional</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-orge35a8e3" class="outline-3">
+<h3 id="orge35a8e3"><span class="section-number-3">3.4.</span> Estrutura de decisão e operador condicional</h3>
+<div class="outline-text-3" id="text-3-4">
 <p>
 Em diversos momentos da vida nos adaptamos mediante às condições do ambiente. Por exemplo, ao sair de casa, <i>se</i> estiver chovendo <i>então</i> pegamos o guarda-chuva, <i>se não</i> nós saímos de casa sem o guarda-chuva. Esta estrutura condicional também existe nas linguagens de programação. Em certos momentos, queremos que a execução de um ou mais comandos só ocorra caso uma ou mais condições sejam atendidas.
 </p>
@@ -611,9 +918,405 @@ Além da estrutura de decisão <code>if~/~else</code> existe o operador condicio
 </div>
 </div>
 </div>
+
+<div id="outline-container-orgfa61fe9" class="outline-2">
+<h2 id="orgfa61fe9"><span class="section-number-2">4.</span> <span class="todo TODO">TODO</span> Listas, tuplas, e conjuntos</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+
+<div id="outline-container-org2a182b5" class="outline-3">
+<h3 id="org2a182b5"><span class="section-number-3">4.1.</span> Agrupando objetos com listas</h3>
+<div class="outline-text-3" id="text-4-1">
+<ul class="org-ul">
+<li>listas simples</li>
+<li>listas dentro de listas</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgdb155fa" class="outline-3">
+<h3 id="orgdb155fa"><span class="section-number-3">4.2.</span> Modificando, particionando e desempacotando listas</h3>
+<div class="outline-text-3" id="text-4-2">
+<ul class="org-ul">
+<li>métodos <code>append</code>, <code>extend</code>, <code>pop</code></li>
+<li>slicing</li>
+<li>a, &lowast;b, c = lista</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgeaeb9f9" class="outline-3">
+<h3 id="orgeaeb9f9"><span class="section-number-3">4.3.</span> &ldquo;Tuplas são listas imutáveis&rdquo;</h3>
+<div class="outline-text-3" id="text-4-3">
+<ul class="org-ul">
+<li>diferença entre objetos mutáveis e imutáveis</li>
+<li>cópia rasa e cópia profunda</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org693d31a" class="outline-3">
+<h3 id="org693d31a"><span class="section-number-3">4.4.</span> &ldquo;Conjuntos são listas sem elementos repetidos&rdquo;</h3>
+<div class="outline-text-3" id="text-4-4">
+<ul class="org-ul">
+<li>métodos de união, subtração, e intersecção de conjuntos</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb388dcb" class="outline-2">
+<h2 id="orgb388dcb"><span class="section-number-2">5.</span> <span class="todo TODO">TODO</span> Laço de repetição</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+
+<div id="outline-container-orgfeee559" class="outline-3">
+<h3 id="orgfeee559"><span class="section-number-3">5.1.</span> Laço de repetição usando <code>while</code></h3>
+<div class="outline-text-3" id="text-5-1">
+<ul class="org-ul">
+<li>não esquecer de comentar do loop infinito <code>while True</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3fe5009" class="outline-3">
+<h3 id="org3fe5009"><span class="section-number-3">5.2.</span> Laço de repetição usando <code>for</code></h3>
+</div>
+<div id="outline-container-org5a3f406" class="outline-3">
+<h3 id="org5a3f406"><span class="section-number-3">5.3.</span> Iterando sobre listas com o operador de filiação</h3>
+<div class="outline-text-3" id="text-5-3">
+<ul class="org-ul">
+<li>operador <code>in</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6d227da" class="outline-3">
+<h3 id="org6d227da"><span class="section-number-3">5.4.</span> Compreensão de listas</h3>
+<div class="outline-text-3" id="text-5-4">
+<ul class="org-ul">
+<li>açúcar sintático</li>
+<li>pode ser tanto mais rápido quanto mais legível (mas nem sempre!)</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0486358" class="outline-2">
+<h2 id="org0486358"><span class="section-number-2">6.</span> <span class="todo TODO">TODO</span> Funções</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+
+<div id="outline-container-orgc96b230" class="outline-3">
+<h3 id="orgc96b230"><span class="section-number-3">6.1.</span> Funções embutidas</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+dir(<span class="underline"><span class="underline">builtins</span></span>)
+</p>
+
+<ul class="org-ul">
+<li><code>len</code></li>
+<li><code>print</code></li>
+<li><code>range</code></li>
+<li><code>list</code></li>
+<li><code>set</code></li>
+<li><code>type</code></li>
+<li><code>input</code></li>
+<li><code>help</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf5acad6" class="outline-3">
+<h3 id="orgf5acad6"><span class="section-number-3">6.2.</span> Definindo novas funções</h3>
+<div class="outline-text-3" id="text-6-2">
+<ul class="org-ul">
+<li>argumentos</li>
+<li>corpo da função</li>
+<li>retorno</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgfb19413" class="outline-3">
+<h3 id="orgfb19413"><span class="section-number-3">6.3.</span> Argumentos posicionais, argumentos nomeados, e argumentos com valor padrão</h3>
+</div>
+
+<div id="outline-container-orgc1649b8" class="outline-3">
+<h3 id="orgc1649b8"><span class="section-number-3">6.4.</span> Variáveis globais e variáveis locais</h3>
+</div>
+<div id="outline-container-org48d4309" class="outline-3">
+<h3 id="org48d4309"><span class="section-number-3">6.5.</span> Documentando suas funções com docstring</h3>
+<div class="outline-text-3" id="text-6-5">
+<ul class="org-ul">
+<li>comentar sobre <code>pep8</code></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org988ab43" class="outline-2">
+<h2 id="org988ab43"><span class="section-number-2">7.</span> <span class="todo TODO">TODO</span> Depuração de programas</h2>
+<div class="outline-text-2" id="text-7">
+</div>
+
+<div id="outline-container-orgedc98f8" class="outline-3">
+<h3 id="orgedc98f8"><span class="section-number-3">7.1.</span> Meu programa não roda pois dá um erro, e agora?</h3>
+<div class="outline-text-3" id="text-7-1">
+<ul class="org-ul">
+<li>tipos de erros</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9c63e97" class="outline-3">
+<h3 id="org9c63e97"><span class="section-number-3">7.2.</span> Meu programa não faz o que eu queria que ele fizesse, e agora?</h3>
+<div class="outline-text-3" id="text-7-2">
+<ul class="org-ul">
+<li>técnicas de debug</li>
+<li>pythontutor <a href="https://pythontutor.com/visualize.html#mode=edit">https://pythontutor.com/visualize.html#mode=edit</a></li>
+<li>módulo <code>pdb</code></li>
+<li>recordar o tópico &ldquo;buscando ajuda&rdquo;</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc7bb44c" class="outline-3">
+<h3 id="orgc7bb44c"><span class="section-number-3">7.3.</span> Tratamento de exceções</h3>
+<div class="outline-text-3" id="text-7-3">
+<ul class="org-ul">
+<li>bloco <code>try</code> / <code>except</code> / <code>finally</code></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga5715a0" class="outline-2">
+<h2 id="orga5715a0"><span class="section-number-2">8.</span> <span class="todo TODO">TODO</span> Dicionários</h2>
+<div class="outline-text-2" id="text-8">
+</div>
+
+<div id="outline-container-orgd0cc089" class="outline-3">
+<h3 id="orgd0cc089"><span class="section-number-3">8.1.</span> Associando objetos com dicionários</h3>
+</div>
+<div id="outline-container-org85b1cca" class="outline-3">
+<h3 id="org85b1cca"><span class="section-number-3">8.2.</span> Modificando e desempacotando dicionários</h3>
+<div class="outline-text-3" id="text-8-2">
+<ul class="org-ul">
+<li>método <code>pop</code></li>
+<li>adicionando nova chave</li>
+<li>deletando uma chave</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2d12b6b" class="outline-3">
+<h3 id="org2d12b6b"><span class="section-number-3">8.3.</span> Iterando sobre dicionários</h3>
+<div class="outline-text-3" id="text-8-3">
+<ul class="org-ul">
+<li>métodos <code>items</code>, <code>get</code>, <code>keys</code>, <code>values</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd008729" class="outline-3">
+<h3 id="orgd008729"><span class="section-number-3">8.4.</span> Funções com argumentos estrela &lowast;args e &lowast;&lowast;kwargs</h3>
+</div>
+</div>
+
+<div id="outline-container-org4341747" class="outline-2">
+<h2 id="org4341747"><span class="section-number-2">9.</span> <span class="todo TODO">TODO</span> Strings e processamento de texto</h2>
+<div class="outline-text-2" id="text-9">
+</div>
+
+<div id="outline-container-org6d48e9a" class="outline-3">
+<h3 id="org6d48e9a"><span class="section-number-3">9.1.</span> Agrupando caracteres com strings</h3>
+<div class="outline-text-3" id="text-9-1">
+<ul class="org-ul">
+<li>strings são imutáveis</li>
+<li>convertendo objetos para strings com <code>str</code></li>
+<li>convertendo strings para inteiros e reais com <code>int</code> e <code>float</code></li>
+<li>iterando em strings com <code>for</code></li>
+<li>checando prefixos e sufixos com <code>startswith</code> e <code>endswith</code></li>
+<li>checando caracteres com <code>isnumeric</code>, <code>isupper</code>, <code>islower</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org58607c1" class="outline-3">
+<h3 id="org58607c1"><span class="section-number-3">9.2.</span> Recebendo informações do usuário com o comando <code>input</code></h3>
+</div>
+
+<div id="outline-container-orgbb5e9b8" class="outline-3">
+<h3 id="orgbb5e9b8"><span class="section-number-3">9.3.</span> Tipos de strings</h3>
+<div class="outline-text-3" id="text-9-3">
+<ul class="org-ul">
+<li>utf-8
+<ul class="org-ul">
+<li>caracteres especiais tipo \n e \t</li>
+</ul></li>
+<li>raw</li>
+<li>fstring</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org94d2a5a" class="outline-3">
+<h3 id="org94d2a5a"><span class="section-number-3">9.4.</span> Processamento de texto</h3>
+<div class="outline-text-3" id="text-9-4">
+<ul class="org-ul">
+<li><code>split</code> e <code>join</code></li>
+<li><code>translate</code> e <code>maketrans</code></li>
+<li><code>capitalize</code>, <code>title</code>, <code>lower</code>, <code>upper</code>, <code>swapcase</code></li>
+<li><code>replace</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org65f87da" class="outline-3">
+<h3 id="org65f87da"><span class="section-number-3">9.5.</span> Expressões regulares</h3>
+</div>
+</div>
+
+<div id="outline-container-orge128ff5" class="outline-2">
+<h2 id="orge128ff5"><span class="section-number-2">10.</span> <span class="todo TODO">TODO</span> Programação orientada a objetos</h2>
+<div class="outline-text-2" id="text-10">
+</div>
+
+<div id="outline-container-org0357e93" class="outline-3">
+<h3 id="org0357e93"><span class="section-number-3">10.1.</span> Agrupando objetos com classes</h3>
+<div class="outline-text-3" id="text-10-1">
+<ul class="org-ul">
+<li>classes como um único objeto para tratar de dados e funções</li>
+<li>sintaxe</li>
+<li>instância</li>
+<li>parâmetros</li>
+<li><code>self</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org43f9885" class="outline-3">
+<h3 id="org43f9885"><span class="section-number-3">10.2.</span> Classes e seus métodos</h3>
+</div>
+<div id="outline-container-orga536f48" class="outline-3">
+<h3 id="orga536f48"><span class="section-number-3">10.3.</span> Métodos mágicos</h3>
+<div class="outline-text-3" id="text-10-3">
+<ul class="org-ul">
+<li>dunders</li>
+<li>_<sub>init</sub>__</li>
+<li>_<sub>str</sub>__</li>
+<li>_<sub>repr</sub>__</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge71e067" class="outline-3">
+<h3 id="orge71e067"><span class="section-number-3">10.4.</span> Herança de classes</h3>
+</div>
+</div>
+
+<div id="outline-container-orgc6759c7" class="outline-2">
+<h2 id="orgc6759c7"><span class="section-number-2">11.</span> <span class="todo TODO">TODO</span> Biblioteca padrão</h2>
+<div class="outline-text-2" id="text-11">
+</div>
+
+<div id="outline-container-org6ac010d" class="outline-3">
+<h3 id="org6ac010d"><span class="section-number-3">11.1.</span> O que são e como importar módulos de Python</h3>
+<div class="outline-text-3" id="text-11-1">
+<ul class="org-ul">
+<li>sintaxe para importar um módulo (com ou sem apelido)</li>
+<li>sintaxe para importar objetos de um módulo</li>
+<li>conceito de namespace (&ldquo;espaço de nome&rdquo;)</li>
+<li>reforçar que cada módulo tem sua documentação (ou deveria ter&#x2026;)</li>
+<li>Módulos para usar como exemplo: <code>math</code> e <code>random</code></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd6a31b6" class="outline-3">
+<h3 id="orgd6a31b6"><span class="section-number-3">11.2.</span> Módulos embutidos</h3>
+<div class="outline-text-3" id="text-11-2">
+<ul class="org-ul">
+<li>os que eu acho mais interessantes são:
+<ul class="org-ul">
+<li>os</li>
+<li>sys</li>
+<li>functools</li>
+<li>itertools</li>
+<li>math</li>
+<li>pathlib</li>
+<li>pdb</li>
+<li>pprint</li>
+<li>random</li>
+<li>re</li>
+<li>statistics</li>
+<li>pickle</li>
+<li>abc?</li>
+<li>collections</li>
+<li>datetime</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd11aff0" class="outline-2">
+<h2 id="orgd11aff0"><span class="section-number-2">12.</span> <span class="todo TODO">TODO</span> Leitura e manipulação de dados com o módulo <code>pandas</code></h2>
+<div class="outline-text-2" id="text-12">
+</div>
+
+<div id="outline-container-org39c1d68" class="outline-3">
+<h3 id="org39c1d68"><span class="section-number-3">12.1.</span> Criando e manipulando DataFrames a partir de arquivos</h3>
+</div>
+<div id="outline-container-org0506a28" class="outline-3">
+<h3 id="org0506a28"><span class="section-number-3">12.2.</span> Análise dos dados</h3>
+<div class="outline-text-3" id="text-12-2">
+<ul class="org-ul">
+<li>Estatística descritiva</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7927a5f" class="outline-3">
+<h3 id="org7927a5f"><span class="section-number-3">12.3.</span> Criando e exportando um DataFrame a partir de listas</h3>
+<div class="outline-text-3" id="text-12-3">
+<ul class="org-ul">
+<li>Criando um dataframe usando listas de python</li>
+<li>Exportar para csv</li>
+<li>Exportar para xlsx</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf65e884" class="outline-2">
+<h2 id="orgf65e884"><span class="section-number-2">13.</span> <span class="todo TODO">TODO</span> Graficando dados</h2>
+<div class="outline-text-2" id="text-13">
+</div>
+
+<div id="outline-container-orgcf47095" class="outline-3">
+<h3 id="orgcf47095"><span class="section-number-3">13.1.</span> Graficando dados de um DataFrame</h3>
+</div>
+<div id="outline-container-orgeb3222d" class="outline-3">
+<h3 id="orgeb3222d"><span class="section-number-3">13.2.</span> Graficando dados usando <code>matplotlib</code></h3>
+</div>
+</div>
+
+<div id="outline-container-org34cfc69" class="outline-2">
+<h2 id="org34cfc69"><span class="section-number-2">14.</span> <span class="todo TODO">TODO</span> Controle de versão usando <code>git</code></h2>
+<div class="outline-text-2" id="text-14">
+</div>
+</div>
+
+<div id="outline-container-org87f9bf7" class="outline-2">
+<h2 id="org87f9bf7"><span class="section-number-2">15.</span> <span class="todo TODO">TODO</span> Computação científica com <code>numpy</code> e <code>scipy</code></h2>
+<div class="outline-text-2" id="text-15">
+</div>
+</div>
+</div>
 <div id="postamble" class="status">
 <p class="author">Author: Daniel R. Cassar</p>
-<p class="date">Created: 2021-12-07 ter 11:43</p>
+<p class="date">Created: 2021-12-06 seg 11:21</p>
 </div>
 </body>
 </html>

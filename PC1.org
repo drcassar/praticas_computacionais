@@ -551,6 +551,10 @@ Além da estrutura de decisão ~if~/~else~ existe o operador condicional. É imp
 
 ** Funções embutidas
 
+O que é uma função? O que são argumentos? O que é o valor de retorno?
+
+Existem diversas funções embutidas em Python.
+
 dir(__builtins__)
 
 + =len=
@@ -640,7 +644,7 @@ dir(__builtins__)
 + =replace=
 
 ** Expressões regulares
-
+* TODO script .py + Bash + HPC
 * TODO Programação orientada a objetos
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_classes
@@ -734,6 +738,8 @@ dir(__builtins__)
 :EXPORT_OPTIONS: toc:t
 :ID:       fc29118f-e0b5-4816-9034-4a83e7b520b4
 :END:
+* TODO Algebra simbólica com =sympy=
+* TODO Propagação de erros com =uncertainties=
 * TODO Exercícios :noexport:
 
 + Computar numericamente a soma de uma PA ou PG
@@ -770,3 +776,8 @@ intermediário:
   - yM emaN si asseJ
 + inverter chave e valores de um dicionário
 + mostrar todos os itens duplicados em uma lista
+* TODO Ideias de tópicos :noexport:
+
++ criando módulos de python
++ geradores
++ decoradores

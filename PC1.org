@@ -9,6 +9,7 @@
 #+HTML_HEAD:<style>
 #+HTML_HEAD:.linenr {color: #669999; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
 #+HTML_HEAD:</style>
+#+todo: TODO(t) DANIEL(d) JAMES(j) | DONE(x)
 
 
 * Introdução
@@ -501,7 +502,7 @@ Além da estrutura de decisão ~if~/~else~ existe o operador condicional. É imp
   a = 100 if condicao else 5
 #+end_src
 
-* TODO Listas, tuplas, e conjuntos
+* JAMES Listas, tuplas, e conjuntos
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_listas
 :EXPORT_OPTIONS: toc:t
@@ -524,7 +525,7 @@ Além da estrutura de decisão ~if~/~else~ existe o operador condicional. É imp
 ** "Conjuntos são listas sem elementos repetidos"
 + métodos de união, subtração, e intersecção de conjuntos
 
-* TODO Laço de repetição
+* JAMES Laço de repetição
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_laco
 :EXPORT_OPTIONS: toc:t
@@ -542,7 +543,7 @@ Além da estrutura de decisão ~if~/~else~ existe o operador condicional. É imp
 + açúcar sintático
 + pode ser tanto mais rápido quanto mais legível (mas nem sempre!)
 
-* TODO Funções
+* DANIEL Funções
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_funcoes
 :EXPORT_OPTIONS: toc:t
@@ -644,7 +645,7 @@ dir(__builtins__)
 + =replace=
 
 ** Expressões regulares
-* TODO script .py + Bash + HPC
+* JAMES script .py + Bash + HPC
 * TODO Programação orientada a objetos
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_classes

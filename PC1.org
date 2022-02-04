@@ -19,7 +19,7 @@
 :ID:       be365bdb-8e61-4ed3-89ae-397c7855cdeb
 :END:
 
-#+HTML: Bem-vinda(o) à disciplina de Práticas Computacionais I.
+#+HTML: Bem-vinda(o) à disciplina de Práticas em Ciência de Dados.
 
 #+LATEX: Você está lendo o caderno de práticas da disciplina Práticas Computacionais I. Como o próprio nome sugere, aqui você encontrará as práticas que serão realizadas durante a disciplina Práticas Computacionais I da Ilum. As práticas estão apresentadas na ordem de construção do conhecimento e é altamente recomendado realizá-las em sequência sem pular nenhuma etapa.
 
@@ -550,33 +550,251 @@ Além da estrutura de decisão ~if~/~else~ existe o operador condicional. É imp
 :ID:       b20f8635-108a-49d4-9903-6a397dc4fed2
 :END:
 
+** O que é uma função?
+
+Durante o exercício "Olá, Mundo!" nós utilizamos a função ~print~. Naquele momento, definimos funções como sendo "apelidos" para executar códigos que já foram escritos. De fato, esta é uma das grandes vantagens de funções: você escreve o código apenas uma vez e reaproveita ele quantas vezes forem necessárias! Além de economizar tempo, o uso apropriado de funções deixa o propósido do código mais fácil de ser entendido.
+
+De maneira geral, uma função tem quatro partes:
+
+1) um /nome/,
+2) zero ou mais objetos chamados de /argumento/,
+3) um bloco de código chamado de /corpo da função/,
+4) zero ou mais objetos chamados de /retorno/.
+
+Basicamente, ao executar uma função ela recebe zero ou mais objetos (argumento), executa seu bloco de código (usando ou não os argumentos recebidos) e retorna zero ou mais objetos (retorno). Veja que o conceito de função em programação não é o mesmo que o conceito de função em matemática. Certas funções em programação podem ser chamadas de funções matemáticas, porém não todas!
+
 ** Funções embutidas
 
-O que é uma função? O que são argumentos? O que é o valor de retorno?
+Existem diversas funções embutidas em Python. Estas funções podem ser usadas _a qualquer momento_, sem a necessidade de executar nenhum comando prévio. Além das funções embutidas que já vimos (~print~ e ~help~, por exemplo) existem diversas outras! A lista completa pode ser checada aqui https://docs.python.org/pt-br/3/library/functions.html
 
-Existem diversas funções embutidas em Python.
+*[A]* Existem diversas funções embutidas em Python. Para cada uma das funções abaixo, escreva em uma célula de texto o nome da função, descreva seus argumentos, explique em suas palavras o que a função faz e descreva seus valores de retorno. Na célula seguinte, escreva um código que use esta função.
 
-dir(__builtins__)
-
-+ =len=
-+ =print=
-+ =range=
-+ =list=
-+ =set=
-+ =type=
-+ =input=
-+ =help=
++ ~any~
++ ~all~
++ ~len~
++ ~abs~
 
 ** Definindo novas funções
-+ argumentos
-+ corpo da função
-+ retorno
 
-** Argumentos posicionais, argumentos nomeados, e argumentos com valor padrão
+Podemos definir nossas próprias funções utilizando a instrução ~def~. O código abaixo mostra diversos exemplos de definições de funções. Observe que todas as definições começam com ~def~, seguido do nome da função, seguido de parêntesis e por fim dois-pontos. É considerado bom estilo pular duas linhas antes e depois da definição de funções e nomear funções com a primeira letra minúscula. Ao fim do código as funções definidas são executadas. Para executar funções basta escrever o nome delas seguido de parênteses.
+
+#+begin_src python -n
+  def funcao_1():
+      print("Esta é a função 1")
+
+
+  def funcao_2(argumento1):
+      print("Esta é a função 2")
+      print(argumento1)
+
+
+  def funcao_3(argumento1, argumento2):
+      print("Esta é a função 3")
+      print(argumento1)
+      print(argumento2)
+
+
+  def funcao_4(argumento1, argumento2):
+      print("Esta é a função 4")
+      soma = argumento1 + argumento2
+      return soma
+
+
+  def funcao_5(argumento1, argumento2):
+      print("Esta é a função 5")
+      return 10
+
+
+  def funcao_6(argumento1, argumento2, argumento3):
+      print("Esta é a função 6")
+      return argumento3, argumento2, argumento1
+
+
+  print('Testando a funcao_1')
+  retorno = funcao_1()
+  print(retorno)
+  print()
+
+  print('Testando a funcao_2')
+  retorno = funcao_2("Olá")
+  print(retorno)
+  print()
+
+  print('Testando a funcao_3')
+  retorno = funcao_3("Olá", "mundo")
+  print(retorno)
+  print()
+
+  print('Testando a funcao_4')
+  retorno = funcao_4(1, 2)
+  print(retorno)
+  print()
+
+  print('Testando a funcao_5')
+  retorno = funcao_5(1, 2)
+  print(retorno)
+  print()
+
+  print('Testando a funcao_6')
+  retorno = funcao_6("a", "b", "c")
+  print(retorno)
+  print()
+
+  print('Testando a funcao_6 novamente')
+  retorno1, retorno2, retorno3 = funcao_6("a", "b", "c")
+  print(retorno1, retorno2, retorno3)
+  print()
+#+end_src
+
+#+RESULTS:
+#+begin_example
+Testando a funcao_1
+Esta é a função 1
+None
+
+Testando a funcao_2
+Esta é a função 2
+Olá
+None
+
+Testando a funcao_3
+Esta é a função 3
+Olá
+mundo
+None
+
+Testando a funcao_4
+Esta é a função 4
+3
+
+Testando a funcao_5
+Esta é a função 5
+10
+
+Testando a funcao_6
+Esta é a função 6
+('c', 'b', 'a')
+
+Testando a funcao_6 novamente
+Esta é a função 6
+c b a
+
+#+end_example
+
+A ~funcao_1~ não recebe nenhum argumento. Sabemos que este é o caso pois não existe nenhuma informação dentro dos parênteses logo após o ~def funcao_1~. Quando executada, esta função exibe a mensagem "Esta é a função 1". Não existem valores de retorno pois em nenhum local do corpo da função existe a instrução ~return~. Funções que não possuem valor de retorno explícito sempre retornam ~None~ quando encerram sua execução.
+
+A ~funcao_2~ recebe um argumento chamado ~argumento1~. Todos os argumentos recebidos pelas funções podem ser utilizados no corpo da função. No caso desta função, o valor do ~argumento1~ é exibido ao usuário através da função ~print~. Novamente, não existem valores de retorno.
+
+A ~funcao_3~ recebe dois argumentos, ~argumento1~ e ~argumento2~. Note que os nomes dos argumentos são separados por vírgula. Funções podem ter quantos argumentos forem necessários, desde que todos eles sejam declarados no local apropriado (isto é, dentro dos parênteses). Novamente, não existem valores de retorno.
+
+A ~funcao_4~ recebe dois argumentos, calcula a soma deles e retorna este valor. O retorno do valor é feito pela instrução ~return~ no corpo do da função. Observe na linha 48 como podemos armazenar o valor retornado pela função em uma variável.
+
+A ~funcao_5~ recebe dois argumentos e retorna o valor 10. Observe que não é necessário utilizar os argumentos da função no corpo da mesma. No entanto, não é uma boa prática definir argumentos que não serão utilizados no corpo da função.
+
+Finalmente, a ~funcao_6~ recebe três argumentos e retorna os mesmos argumentos em ordem inversa. Observe que a instrução ~return~ permite retornar mais que um valor. Se retornar mais que um valor, estes devem estar separados por vírgulas. Na linha 58 temos uma situação inusitada: a ~funcao_6~ retorna três valores, mas estamos atribuindo o retorno desta função a apenas uma variável chamada ~retorno~. Se você rodar este código perceberá que não ocorrem erros. Neste caso, os três valores de retorno são agrupados em uma tupla e armazenados na variável ~retorno~. Observe a sintaxe da linha 63 para ver como separar os valores de retorno em variáveis independentes.
+
+*[B]* Crie e execute funções para realizar as tarefas abaixo:
+
++ Uma função que recebe um valor numérico e retorna o cubo deste valor.
++ Uma função que recebe cinco valores e retorna o valor médio e o desvio padrão destes valores.
++ Uma função que recebe uma lista contendo números e retorna uma lista com os números ordenados de forma crescente.
+
+*[C]* Crie uma função que recebe um argumento e tente executar ela sem fornecer nenhum argumento. Após este teste, tente executar ela fornecendo dois argumentos. Observe e relate o que aconteceu.
+
+*[D]* Execute o código abaixo e comente o que ocorre quando executamos a linha 5. Nesta linha a função ~ola~ foi executada sem os parênteses. Seu código rodou com erro ou se erro? De qualquer forma elabore o que aconteceu.
+
+#+begin_src python -n
+  def ola():
+      return "Olá!"
+
+  print(ola())
+  print(ola)
+#+end_src
+
+** Argumentos posicionais, argumentos nomeados e argumentos com valor padrão
+
+A ordem dos argumentos é muito importante durante a execução de funções com dois ou mais argumentos. O exemplo abaixo ilustra isso: a inversão da ordem dos argumentos altera o resultado do retorno da função. Cada argumento de uma função tem a sua _posição_, então é necessário se atentar a ordem dos argumentos para evitar erros.
+
+#+begin_src python
+  def exponenciacao(base, expoente):
+      return base ** expoente
+
+
+  print(exponenciacao(10, 2))  # resulta em 100
+  print(exponenciacao(2, 10))  # resulta em 1024
+#+end_src
+
+#+RESULTS:
+: 100
+: 1024
+
+Todo argumento tem um _nome_. Na função ~exponenciacao~ acima temos dois argumentos, um chamado de ~base~ e outro de ~expoente~. Podemos executar essa função chamando os argumentos pelo nome! Veja no exemplo abaixo.
+
+#+begin_src python -n
+  def exponenciacao(base, expoente):
+      return base ** expoente
+
+
+  print(exponenciacao(base=10, expoente=2))  # resulta em 100
+  print(exponenciacao(expoente=2, base=10))  # resulta em 100
+  print(exponenciacao(10, expoente=2))       # resulta em 100
+  print(exponenciacao(expoente=2, 10))       # ERRO!
+  print(exponenciacao(expoente=2))           # ERRO!
+  print(exponenciacao(base=10))              # ERRO!
+#+end_src
+
+#+RESULTS:
+: 100
+: 100
+: 100
+
+Na linha 5 acima, a função ~exponenciacao~ é executada com seus argumentos chamados pelo nome.
+
+Na linha 6 vemos que não é necessário seguir a mesma ordem dos argumentos da função, desde que todos os argumentos necessários sejam nomeados.
+
+Na linha 7 vemos que é possível misturar argumentos nomeados com argumentos posicionais. Neste caso, o valor "10" está na posição zero, logo ele será atribuído à variável ~base~ da função ~exponenciacao~. O valor do argumento ~expoente~ foi nomeado durante a execução e atribuído o valor de "2".
+
+A linha 8 parece similar a linha 7, porém ela não executa! O programa da erro! Isso porque não é permitido argumentos posicionais _após_ argumetos nomeados. Se você for utilizar uma mistura de argumentos posicionais com nomeados, certifique-se que os argumentos nomeados estão todos após os argumentos posicionais.
+
+As linhas 9 e 10 mostram que precisamos garantir que todos os argumentos tenham valores, do contrário a função não executa.
+
+Argumentos nomeados ajudam na leitura do código, principalmente quando as funções e argumentos receberam bons nomes. As linhas 5 e 6 do código acima deixam bem clara a intenção do código.
+
+Por fim, além de uma posição e um nome, argumentos opcionalmente podem ter um _valor padrão_. O valor padrão é atribuido com o operador de atribuição ~=~ logo após o nome do argumento. Veja o exemplo abaixo.
+
+#+begin_src python -n
+  def exponenciacao(base, expoente=5):
+      return base ** expoente
+
+
+  print(exponenciacao(base=10, expoente=2))  # resulta em 100
+  print(exponenciacao(base=10))              # resulta em 100000
+  print(exponenciacao(10))                   # resulta em 100000
+  print(exponenciacao(expoente=2))           # ERRO! Falta o valor da base
+#+end_src
+
+#+RESULTS:
+: 100
+: 100000
+: 100000
+
+A nova função ~exponenciacao~ tem um valor padrão para o argumento expoente (no caso, é o valor 5). Ela continua funcionando da mesma maneira que a função anterior. Execute a linha 5 e verá que isso é verdade. Com o valor padrão do argumento ~expoente~, podemos executar as linhas 6 e 7 sem problema. Em ambos os casos nós informamos apenas o valor do argumento ~base~ quando executamos a função. Ao fazer isso, informamos a função que ela deve usar o valor padrão para o argumento ~expoente~. Finalmente, a linha 8 resulta em um erro pois o valor para o argumento ~base~ não foi informado para a execução da função ~exponenciacao~.
+
+Observe que não é permitido declarar argumentos sem valor padrão após argumentos com valor padrão. Por conta disso o código abaixo resulta em erro ao ser executado.
+
+#+begin_src python
+  def exponenciacao(base=10, expoente):
+      return base ** expoente
+#+end_src
 
 ** Variáveis globais e variáveis locais
+
+
 ** Documentando suas funções com docstring
 + comentar sobre =pep8=
+
+** Funções lambda
++ falar de função recebendo função
 
 * TODO Depuração de programas
 :PROPERTIES:
@@ -645,7 +863,7 @@ dir(__builtins__)
 + =replace=
 
 ** Expressões regulares
-* JAMES script .py + Bash + HPC
+* JAMES Scripts de python, bash e HPC
 * TODO Programação orientada a objetos
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_classes

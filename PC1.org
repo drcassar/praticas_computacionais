@@ -1,5 +1,5 @@
-#+TITLE: Práticas Computacionais I (~v0.0.2~)
-#+AUTHOR: Daniel R. Cassar
+#+TITLE: Práticas Computacionais I (~v0.0.3~)
+#+AUTHOR: Daniel R. Cassar & James M. de Almeida
 #+EXPORT_FILE_NAME: PC1/PC1
 #+STARTUP: overview
 #+PROPERTY: header-args:python :results output
@@ -502,7 +502,7 @@ Além da estrutura de decisão ~if~/~else~ existe o operador condicional. É imp
   a = 100 if condicao else 5
 #+end_src
 
-* JAMES Listas, tuplas, e conjuntos
+* Listas, tuplas, e conjuntos
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_listas
 :EXPORT_OPTIONS: toc:t
@@ -510,38 +510,602 @@ Além da estrutura de decisão ~if~/~else~ existe o operador condicional. É imp
 :END:
 
 ** Agrupando objetos com listas
-+ listas simples
-+ listas dentro de listas
+Vamos começar pensando no seguinte cenário, você está em casa e não tem nada para comer, portanto, precisa ir até o supermercado comprar ingredientes para uma receita. A primeira coisa que vem a sua cabeça é comprar um pacote de miojo, afinal, é fácil de preparar. Mas, sua fome está grande, então poderia comprar dois pacotes de miojo, mas isso não parece tão atraente. Lhe ocorre a ideia de encrementar o miojo, posso adicionar queijo ralado, talvez cozinhar um ovo junto com o miojo. Além disso, você resolve comprar uma bebida para acompanhar, um refrigerante. Então, você lembra que a pasta de dentes está acabando, então decide comprar também, para aproveitar a ida ao mercado. O número de itens a se comprar já começa a ficar grande, então é melhor organizar suas compras em uma lista. Vamos escrever tal lista então:
++ Miojo
++ Queijo Ralado
++ Ovo
++ Pasta de Dentes
 
-** Modificando, particionando, e desempacotando listas
-+ métodos =append=, =extend=, =pop=
-+ slicing
-+ a, \ast{}b, c = lista
+Maravilha! Agora você pode ir ao mercado fazer minhas compras. Então você passa no banheiro antes de sair e nota que falta papel higiênico. Hora, então você adiciona mais este item em sua lista, agora ela passa a ser assim:
++ Miojo
++ Queijo Ralado
++ Ovo
++ Pasta de Dentes
++ Papel Higiênico
 
-** "Tuplas são listas imutáveis"
-+ diferença entre objetos mutáveis e imutáveis
-+ cópia rasa e cópia profunda
+Ótimo, agora está tudo pronto e você vai ao mercado fazer suas compras!
+
+*** Listas Simples
+Este tipo de organização de itens ou objetos em listas é muito prático, podemos então aplicar o mesmo conceito a programação. Vamos criar uma lista de compras em um código Python, a sintaxe será a seguinte:
+#+begin_src python
+listadecompras = ['Miojo', 'Queijo Ralado', 'Ovo', 'Pasta de Dentes']
+print(listadecompras)
+#+end_src
+
+#+RESULTS:
+: ['Miojo', 'Queijo Ralado', 'Ovo', 'Pasta de Dentes']
+
+Poxa, mas esqueci de incluir o Papel Higiênico na lista! Tudo bem, podemos adicionar itens a nossa lista com o método append do Python. Façamos o seguinte:
+
+#+begin_src python
+listadecompras.append('Papel Higiênico')
+print(listadecompras)
+#+end_src
+
+#+RESULTS:
+: ['Miojo', 'Queijo Ralado', 'Ovo', 'Pasta de Dentes', 'Papel Higiênico']
+
+Perfeito, veja que o item foi adicionado a sua lista.
+
+*** Listas dentro de listas.
+
+Agora voltando a sua saída ao supermercado, antes de sair você lembra que precisa comprar um caderno, papel e caneta. Mas, infelizmente o mercado que você irá não tem esses itens, você precisará ir a papelaria ao lado para comprar esses itens. Então você naturalmente faz uma nova lista de compras para a papelaria, incluindo os itens necessários.
++ Caderno
++ Papel
++ Caneta
+
+No Python, podemos fazer listas dentro de listas, então vamos fazer uma lista de listas com os objetos do mercado e da papelaria:
+
+#+begin_src python
+listadecompras = [['Miojo', 'Queijo Ralado', 'Ovo', 'Pasta de Dentes'], ['Caderno', 'Papel', 'Caneta']]
+print(listadecompras)
+#+end_src
+
+#+RESULTS:
+: [['Miojo', 'Queijo Ralado', 'Ovo', 'Pasta de Dentes'], ['Caderno', 'Papel', 'Caneta']]
+
+Agora você pode notar que temos duas listas na listadecompras, uma com os itens do mercado e uma com os itens da papelaria.
+Podemos imprimir as listas individualmente, para isso façamos o seguinte:
+
+#+begin_src python
+print(listadecompras[0])
+print(listadecompras[1])
+#+end_src
+
+#+RESULTS:
+: ['Miojo', 'Queijo Ralado', 'Ovo', 'Pasta de Dentes']
+: ['Caderno', 'Papel', 'Caneta']
+
+Note que primeiro é impresso a primeira lista, de índice 0 e depois a segunda lista, de índice 1. Lembrando que no Python a contagem começa sempre de zero.
+Perfeito, mas agora deu vontade de comer uma sobremesa após o seu miojo incrementado, então você quer adicionar este item a lista do supermercado. Além disso, você achou que convém comprar um pacote de post-it, para colocar na geladeira, para não esquecer tanto dos itens que você tem que comprar. Portanto, é necessário adicionarmos estes itens nas listas. Podemos fazer isso com a seguinte sintaxe no Python:
+
+#+begin_src python
+listadecompras[0].append('Chocolate')
+listadecompras[1].append('Post-it')
+print(listadecompras[0])
+print(listadecompras[1])
+#+end_src
+
+#+RESULTS:
+: ['Miojo', 'Queijo Ralado', 'Ovo', 'Pasta de Dentes', 'Chocolate']
+: ['Caderno', 'Papel', 'Caneta', 'Post-it']
+
+Pronto, as listas estão atualizadas com os itens que você incluiu.
+
+*** Modificando, particionando, e desempacotando listas
+
+Já foi apresentado a vocês um dos métodos utilizados em listas, o append. Mas, existem outros métodos para listas, a seguir apresentaremos alguns deles.
+Vamos volta a nossa lista de compras. Você mudou de ideia quanto a sua sobremesa, não querendo mais o chocolate, mas sim um flan pronto de pote. Então precisamos remover o chocolate e inserir o flan. Vamos então remover o chocolate e adicionar o flan.
+
+#+begin_src python
+listadecompras[0].remove('Chocolate')
+listadecompras[0].append('Flan')
+print(listadecompras[0])
+#+end_src
+
+#+RESULTS:
+: ['Miojo', 'Queijo Ralado', 'Ovo', 'Pasta de Dentes', 'Flan']
+
+Agora sim, podemos ver que a alteração foi realizada como você queria.
+E caso você queira saber se já existe algo na lista, seria tedioso consultar toda a lista para conferir. No entanto, existe um método de listas do Python para fazer isto, chamada count. Vamos fazer um exemplo, para conferir se o miojo está na lista:
+
+#+begin_src python
+print(listadecompras[0].count('Miojo'))
+#+end_src
+
+#+RESULTS:
+: 1
+
+Note que o programa retorna "1", ou seja, ele está lhe dizendo que há o Miojo na lista uma vez. Agora teste escrever a palavra miojo somente em letras minúsculas, o que acontece?
+Além disso, o programa retornou um número, ou seja, você poderia ter mais que uma ocorrência para o item consultado. Isso signica que podem existir itens duplicados na lista, caso você tivesse adicionado miojo suas vezes, o count retornaria 2.
+
+Existem vários métodos de listas no Python, que serão muito úteis na sua vida de programação. Abaixo seguem alguns e suas explicações:
++ insert: Adiciona um elemento na posição especificada.\\
+	Exemplo: listadecompras[0].insert(0,'Banana'), adiciona Banana na primeira posição da lista.\\
+	Pergunta: O que acontece com os outros elementos?
++ extend: Adicionar vários elementos no final da sua lista.\\
+	Exemplo: listadecompras[0].extend(['Pão', 'Queijo', 'Presunto'])
+	Pergunta: Os elementos foram adicionados corretamente? Note que ao invés de adicionar os itens na sintaxe anterior, você poderia adicionar outra lista, definida anteriormente.
++ index: Retorna o índice do primeiro elemento com o valor requisitado.\\
+	Exemplo: listadecompras[0].index('Ovo')\\
+	Pergunta: O índice reportado é o que você esperava?
++ pop: Remove o elemento da posição requida.\\
+	Exemplo: listadecompras[0].pop(5)\\
+	Pergunta: Qual item foi removido? Foi o esperado?
++ sort: Ordena sua lista de maneira crescente, tanto com números como ordem alfabética. Note que você pode ordenar a lista, mas não a lista dentro da lista.\\
+	Desafio: Como você faria para ordenar suas duas listas de compras, tendo no final ainda as duas listas dentro de uma lista de listas?
+#+RESULTS:
+: mercado = listadecompras[0]
+: mercado.sort()
+: print(mercado)
+: papelaria = listadecompras[1]
+: papelaria.sort()
+: print(papelaria)
+: listadecompras = []
+: listadecompras.append(mercado)
+: listadecompras.append(papelaria)
++ reverse: Inverte a ordem de sua lista. Novamente tome cuidado pois este método ordena listas, não listas dentro de listas. Além disso, ele simplesmente reverte a ordem existente, ou seja, ele não coloca em ordem decrescente.\\
+	Desafio: Inverta a ordem da lista ordenada alfabeticamente com a função sort.\\
+	Pergunta: Existe uma maneira mais direta de se ordenar de maneira decrescente (ou alfabética ao contrário)?
+#+RESULTS:
+: mercado = listadecompras[0]
+: mercado.reverse()
+: print(mercado)
+: papelaria = listadecompras[1]
+: papelaria.reverse()
+: print(papelaria)
+: listadecompras = []
+: listadecompras.append(mercado)
+: listadecompras.append(papelaria)
+: print(listadecompras)
+
+*** Particionamento de listas.
+Já foi apresentado como acessar um item específico da lista anteriormente, com o argumento entre colchetes (listadecompras[0]). Porém, podemos particinar as listas, pegando vários elementos de interesse. Novamente utilizaremos índices entre colchetes, com a seguinte sintaxe: lista[Inicial:Final:Passo]. O 'Inicial' é o primeiro elemento da lista que desejamos, 'Final' é o elemento final desejado. Já 'Passo' é o de quantos em quantos elementos queremos, por exemplo, se o passo for 1, todos elementos na faixa específicada são impressos, se o passo for 2, só serão fornecidos elementos a cada dois. Vamos exemplificar para facilitar:
+
+#+begin_src python
+print(listadecompras[0][0:6:2])
+#+end_src
+
+Porque temos dois colchetes? Porque estamo particionando a primeira lista de nossa lista de listas. No primeiro colchetes [0], estamos específicando a primeira de nossas duas listas. No segundo colchetes estamos particionando a lista começando do elemento zero até o elemento 6, pulando de dois em dois.
+A saída do código anterior é ['Queijo Ralado', 'Pão', 'Ovo'], sendo que nossa lista completa é ['Queijo Ralado', 'Queijo', 'Pão', 'Pasta de Dentes', 'Ovo', 'Miojo', 'Flan', 'Banana']. Logo foram impressos os elementros 0, 2 e 4. Mas o elemento 6 também não deveria ser impresso? Parece lógico, mas, como o Python começa sua contagem de zero, ao invés de um, sempre que especificamos faixas de valores o elemento final do intervalo não é considerado. Portanto, caso queira o último elemento incluso sempre considere n+1. Façamos isso então:
+
+#+begin_src python
+print(listadecompras[0][0:7:2])
+#+end_src
+
+Com este comando o código imprimiu ['Queijo Ralado', 'Pão', 'Ovo', 'Flan'], incluindo o sexto elemento da lista. Então, tenha isso sempre em mente com o Python, a contagem começa em zero e o último elemento das faixas de valores não é incluído. Também podemos utilizar índices negativos no particionamento de listas, mas como assim? O que acontece quando usamos índices negativos? Basicamente a contagem é de traz para frente. Então, se pedirmos a seguinte faixa [-4,-1] para nossa lista de compras do supermercado, o código imprimirá ['Ovo', 'Miojo', 'Flan'], sendo esses os elementos -4, -3 e -2, já que o último elemento não vai ser incluído por ser o final do intervalo. Se quisermos também o último elemento e colocarmos o intervalo como [-4:0] teremos um erro de sintaxe, então, para obter os quatro últimos elementos a sintaxe correta será [-4:], que irá imprimir do elemento -4 até o último.
+
+** "Tuplas"
+Existe outro tipo de dados no Python que são chamadas tuplas. As tuplas são basicamente listas imutáveis. Como assim imutáveis? Isso significa que uma vez que ela foi definida, não podemos mais adicionar ou remover elementos, bem como não é possível modificar sua ordem. Então, voltando ao nosso exemplo do supermercado, se você quiser estabelecer alguns itens que serão comprados recorrentemente, podemos colocá-los em uma tupla. Vamos a um exemplo:
+
+#+begin_src python
+itensrecorrentes = ("Miojo", "Ovo", "Queijo Ralado")
+print(itensrecorrentes)
+#+end_src
+
+Então, agora esta tupla será composta sempre por estes itens, não podendo modificá-los ou alterar sua ordem. Por conta disso as tuplas só tem dois métodos possíveis, o count e o index, que tem a mesma função que nas listas, que é contar quantos itens existem na tupla e qual o índice do objeto requisitado.
+O interessante é que podemos utilizar o método extend das listas incluindo a tupla. Vamos criar uma nova lista então:
+
+#+begin_src python
+listadecompras = []
+listadecompras.extend(itensrecorrentes)
+print(listadecompras)
+#+end_src
+
+Na primeira linha inicializamos uma lista vazia, apenas para criá-la, para poder utilizar o método extend nela na segunda linha. Podemos ver que agora temos uma lista criada a partir da tupla, então podemos voltar a adicionar os itens de interesse.
+
+** "Cópia rasa e cópia profunda"
+
+Agora vamos tratar de cópias no Python. Para listas o Python tem uma maneira bastante peculiar para cópias, onde são criados links entre as listas e não simplesmente copiados os objetos. Vamos a um exemplo para deixar mais claro:
+
+#+begin_src python
+lista1 = ("Miojo", "Ovo", "Queijo Ralado") #Defição da lista1 com seus objetos
+lista2 = lista1                            #Criamos uma lista2 igual a lista1
+print("Lista 1 Original")                  #
+print(lista1)                              #Imprime a lista1
+print("Lista 2 Original")                  #
+print(lista2)                              #Imprime a lista2
+lista2[2] = "Orégano"                      #Altera o elemento 2 da lista2 para Orégano
+print("Lista 2 Alterada")                  #
+print(lista2)                              #Imprime a lista2 alterada
+print("Lista 1 depois de alterar lista 2") #
+print(lista1)                              #Imprime a lista1 após a alteração da lista2
+#+end_src
+
+Bom, nesse código definimos uma lista1, criamos uma lista2 igualando a lista1, por fim alteramos a lista2. Como a cópia é criada com links, ou vínculos, a lista1 e a lista2 dependem uma da outra. Então, quando a lista2 foi alterada, a lista1 também foi, como vocês podem notar na saída do código. Isso pode ser interessante para alguns casos, porém, na maioria das vezes o desejável é ter dados independentes uns dos outros. Para isso, precisamos utilizar o método deepcopy do Python, que é uma cópia profunda, sem vínculos com o objeto anterior. Para isso precisamos importar a função copy e utilizar o método deepcopy, como segue:
+
+#+begin_src python
+import copy
+lista1 = ("Miojo", "Ovo", "Queijo Ralado") #Defição da lista1 com seus objetos
+lista2 = copy.deepcopy(lista1)             #Criamos uma lista2 igual a lista1
+print("Lista 1 Original")                  #
+print(lista1)                              #Imprime a lista1
+print("Lista 2 Original")                  #
+print(lista2)                              #Imprime a lista2
+lista2[2] = "Orégano"                      #Altera o elemento 2 da lista2 para Orégano
+print("Lista 2 Alterada")                  #
+print(lista2)                              #Imprime a lista2 alterada
+print("Lista 1 depois de alterar lista 2") #
+print(lista1)                              #Imprime a lista1 após a alteração da lista2
+#+end_src
+
+** "Desempacotamento e Operador Asterisco"
+No Python podemos utilizar uma notação específica para definir várias variáveis ao mesmo tempo, como segue:
+
+#+begin_src python
+item0, item1, item2 = "Miojo", "Ovo", "Queijo"
+print(item0)
+print(item1)
+print(item2)
+#+end_src
+
+Notem que item0="Miojo", item1="Ovo" e item2="Queijo". Podemos utilizar isso para desempacotar uma lista, por exemplo:
+#+begin_src python
+lista = ["Miojo", "Ovo", "Queijo"]
+item0, item1, item2 = lista
+print(item0)
+print(item1)
+print(item2)
+#+end_src
+
+Os elementos a, b e c estão definidos de acordo com os elementos da lista. Porém, caso a lista não tenha a mesma dimensão do número de variáveis que estamos definindo, o que acontece? Para averiguar, utilize o código a seguir:
+
+#+begin_src python
+lista = ["Miojo", "Ovo", "Queijo", "Pão", "Orégano"]
+item0, item1, item2 = lista
+#+end_src
+
+Note que o código retornou com o erro "ValueError: too many values to unpack (expected 3)". Ou seja, ele esperava três valores mas recebeu mais que isso. Para lidar com este tipo de situação podemos utilizar o operador asterisco, que pegará os elementos restantes e atribuirá a variável indicada, por exemplo:
+
+#+begin_src python
+lista = ["Miojo", "Ovo", "Queijo", "Pão", "Orégano"]
+item0, item1, *resto = lista
+print(item0)
+print(item1)
+print(resto)
+#+end_src
+
+Agora nosso comando funciona! Tivemos então o item0="Miojo", item1="Ovo" e resto=['Queijo', 'Pão', 'Orégano']. A posição do operador asterisco não precisa ser necessáriamente na última variável, ela pode ficar na primeira, ou na do meio, por exemplo:
+
+#+begin_src python
+lista = ["Miojo", "Ovo", "Queijo", "Pão", "Orégano"]
+item0, *item1, item2 = lista
+print(item0)
+print(item1)
+print(item2)
+*item0, item1, item2 = lista
+print(item0)
+print(item1)
+print(item2)
+#+end_src
+
+Como se comportou o código de acordo com onde ficou o asterisco?
 
 ** "Conjuntos são listas sem elementos repetidos"
-+ métodos de união, subtração, e intersecção de conjuntos
+Ainda nos tipos de objetos do Python, ainda temos os conjuntos, que são basicamente listas sem elementos repetidos. Os conjuntos possuem seus métodos específicos também, que englobam métodos equivalentes aos das listas, como: remove(), pop(). Mas especificamente para conjuntos, temos operações matemáticas já conhecidas, como união e intersecção. Vamos definir dois conjuntos e operá-los, com nossa analogia de listas de compras, vamos pensar que você fez anotações para compras em dois lugares diferentes e agora você quer juntá-las.
 
-* JAMES Laço de repetição
+#+begin_src python
+conjunto1 = {"Miojo", "Ovo", "Queijo"}
+conjunto2 = {"Miojo", "Pão", "Queijo", "Orégano", "Pão"}
+print(conjunto1)
+print(conjunto2)
+#+end_src
+
+Note que para a definição de conjuntos colocamos os elementos entre chaves {}, diferente das listas que colocamos entre colchetes [] e das tuplas que colocamos entre parênteses (). Além disso, no conjunto2 o elemento pão foi adicionado duas vezes, o que aconteceu quando você imprimiu o conjunto2 em relação ao pão?
+Agora vamos realizar algumas operações com os conjuntos:
+
+#+begin_src python
+intersection = conjunto1.intersection(conjunto2)
+print(intersection)
+union = conjunto1.union(conjunto2)
+print(union)
+#+end_src
+
+Os resultados estão de acordo com o que você esperava?
+Além desses métodos temos outros exclusivos de conjuntos, como segue:
++ add: Adiciona um elemento ao conjunto. Sintaxe: conjunto.add("Presunto")
++ difference: Faz a subtração de dois conjuntos. Sintaxe: difference = conjunto1.difference(conjunto2)
++ discard: Remove o elemento especificado do conjunto. Parece igual ao remove, mas, neste caso você não terá uma mensagem de erro caso o elemento não exista no conjunto. Sintaxe: conjunto.discard("Banana")
++ update: Com este método você pode incluir um iterável no conjunto, que pode ser outro conjunto, lista, tupla, ...
+
+#+BEGIN_COMMENT
+Podemos pedir para os alunos pesquisarem os outros métodos, tem alguns conceitualmente complicados. Mas precisa ver se a aula já não está muito densa.
+#+END_COMMENT
+
+* Laço de repetição
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_laco
 :EXPORT_OPTIONS: toc:t
 :ID:       25e5272b-ad01-463a-815a-7b4345a4b35a
 :END:
 
+Laços de repetição, ou seu termo mais comum em inglês o loop, serve para iterar elementos de listas, tuplas, conjuntos ou mesmo números em uma faixa definida. Existem diferentes maneiras de implementar loops, sendo as principais do Python o =while= e o =for=, que mostraremos pra vocês a seguir.
+
 ** Laço de repetição usando =while=
-+ não esquecer de comentar do loop infinito =while True=
+Vamos iniciar com um =while loop=, ou laço de repetição com =while=. A tradução da palavra =while= do inglês é =enquanto=, então a ideia deste loop é fazer algo enquanto uma condição não for verdadeira. Vamos começar com um exemplo simples, onde o loop será executado enquanto a variável =i= for menor que 10, e vamos somando 1 a mesma variável a cada iteração. Para isso usamos um operador que não foi apresentado ainda, o =+==, que basicamente soma o valor ou variável indicado após ele, por exemplo, i += 1 é o mesmo que i = i + 1.
+
+#+begin_src python
+i = 0
+while i < 10:
+	print(i)
+	i += 1
+#+end_src
+
+Fique atento a identação! Assim como no caso dos condicionais (=if=) você precisa colocar a parte da execução identada, pois esta é a maneira do Python interpretar o loop. Note que estamos utilizando os operadores lógicos, que vocês já foram apresentados em uma aula anterior. Eles são fundamenteis para a implementação de loops while, pois quando a condição retornar =False=, o loop irá parar. Na execução do código vocês podem notar que os números de 0 à 9 foram impressos, quando =i= ficou igual a 10 o loop parou, pois a sentença =i < 10= passou a ser =False=. Você pode confirmar isso alterando seu código para o seguinte:
+
+#+begin_src python
+i = 0
+while i < 10:
+      print(i, i < 10)
+      i += 1
+print(i, i < 10)
+#+end_src
+
+Com isso, estamos imprimindo a variável =i= e o valor booleano da operação =i < 10=. Ao final do loop há mais uma operação de print, para mostrar que quando =i = 10= a operação =i < 10= retorna =False=.
+*IMPORTANTE*
+O uso de loops pode facilmente levar o seu código a loops infinitos! Sempre avalie com cuidado a condição a ser adotada em seu loop, vamos a um exemplo de loop infinito:
+
+#+begin_src python
+i = 0
+while i < 10:
+      print(i, i < 10)
+#+end_src
+
+Neste caso, foi esquecido o incrementador de =i= (+=), logo o valor de =i= nunca será alterado! Isso levará o código a rodar indefinidamente, sem nunca parar, teste para você conferir. Esse é um dos erros mais catastróficos em códigos, pois o programa simplesmente executa operações sem parar, muitas vezes utilizando todos os recursos computacionais disponíveis e inutilizando a máquina. Neste caso a única alternativa é terminar o programa forçosamente, ou em alguns casos só reiniciando o computador.
+
+Também temos outra maneira de sair ou continuar em loops, usando o comando =break= e =continue=. Basicamente ao se dar o comando =break=, o loop é interrompido, e se o comando =continue= for utilizado o loop continua sua execução. Isso pode ser útil para se utilizar em conjunto com operadores condicionais, como no exemplo abaixo, onde o código cálcula o máximo divisor de um número fornecido:
+
+#+begin_src python
+a = 8733				#Número que desejamos saber o divisor
+i = a-1					#Definimos i como a-1, pois se começarmos a testar o divisor como o próprio a, teríamos uma solução trivial
+while i > 0:                            #Vamos iterar de a-1 até 1
+    print(i)                            #
+    b = a/i				#
+    if (b - int(b)) == 0:		#Aqui checamos se o resultado da divisão tem componente decimal
+        print(a, 'é divisível por', i)  #Caso a parte decimal seja zero, isso significa que a é divisível por i
+        break				#Com este break o programa sai do loop
+    else:				#Caso a divisão não tenha a parte decimal igual a zero, seguimos por aqui
+        i -= 1				#Diminuímos 1 do i
+        continue			#Voltamos ao início do loop
+#+end_src
+
+O código apresentado está comentado, lembrem-se sempre de comentar seus códigos, pois caso você não comente, niguém além de você o entenderá e depois de algum tempo, nem você mesmo entenderá. Basicamente o código encontra o maior divisor para um número fornecido, testando todos os números menores que ele mesmo até que alguma das divisões tenha componente decimal zero.
+
+*Tarefa*
+Modifique o código acima para avisar quando números primos são encontrados.
+
+#+RESULTS:
+: a = 17
+: i = a-1
+: while i > 1:
+:     print(i)
+:     b = a/i
+:     print(b,b - int(b))
+:     if (b - int(b)) == 0:
+:         print(a, 'é divisível por', i)
+:         break
+:     else:
+:         i -= 1
+:         continue
+: if (i == 1):
+:     print(a,'é primo!')
+
+
+*Desafio*
+Como você faria um código para achar o máximo divisor comum?
+
+#+RESULTS:
+: a = 30
+: b = 20
+:
+: if a > b:
+:     i = b - 1
+: else:
+:     i = a - 1
+: while a > 1:
+:     print(i)
+:     div1 = a/i
+:     div2 = b/i
+:     if ((div1 - int(div1)) == 0) and ((div2 - int(div2)) == 0):
+:         print('O MDC entre', a, 'e', b, 'é', i)
+:         break
+:     else:
+:         i -= 1
+:         continue
 
 ** Laço de repetição usando =for=
-** Iterando sobre listas com o operador de filiação
-+ operador =in=
+A outra maneira de implementarmos loops no Python é utilizando o =for=. Mas antes de entrarmos em seus detalhes, é importante mostrar outra ferramenta do Python, o operador =in=. Com ele podemos checar se um elemento está em uma lista, ou qualquer outro objeto iterável. No exemplo abaixo mostramos sua sintaxe:
+
+#+begin_src python
+lista = ["Miojo", "Ovo", "Queijo"]
+print("Ovo" in lista)
+print("Pão" in lista)
+#+end_src
+
+Veja que para o objeto ovo o código retornou =True=, já para pão, o código retornou =False=. Ou seja, ele confirmou que há ovo na lista e que não há pão. Para implementarmos um loop com for, iremos utilizar a seguinte sintaxe: =for item in lista=, desta maneira a variável item assumirá os o valor dos objetos presentes na lista, um a um. Confira o exemplo abaixo:
+
+#+begin_src python
+lista = ["Miojo", "Ovo", "Queijo", "Orégano", "Pão"]
+for item in lista:
+	print(item)
+#+end_src
+
+Note que a cada iteração o código imprime a variável item, que assume os valores da lista do primeiro ao último. Podemos então usar condicionais ou manipular de várias maneiras os dados. Por exemplo, você quer que quando houver pão na sua lista de compras, seja automáticamente incluídos queijo, presunto e manteiga. Para isso vamos criar um operador condicional, que confere se um dos itens é pão, caso seja então adicionamos os itens desejados.
+
+#+begin_src python
+lista = ["Miojo", "Ovo", "Queijo", "Orégano", "Pão"]
+for item in lista:
+        print(item)
+        if item == "Pão":
+                lista.append["Queijo", "Presunto", "Manteiga"]
+print(lista)
+#+end_src
+
+Pronto, agora se você adicionar pão a lista serão adicionados os itens queijo, presundo e manteiga, assim você pode fazer seu misto quente! Agora, note que já havia queijo na lista e ele foi adicionado novamente. Como você faria um código que não adicionasse o queijo duplicadamente?
+
+#+RESULTS:
+: set1 = {"Miojo", "Ovo", "Queijo", "Orégano", "Pão"}
+: set2 = copy.deepcopy(set1)
+: for item in set1:
+:         print(item)
+:         if item == "Pão":
+:                 set2.update({"Queijo", "Presunto", "Manteiga"})
+: print(set2)
+:
+: lista = ["Miojo", "Ovo", "Queijo", "Orégano", "Pão"]
+: for item in lista:
+:         print(item)
+:         if item == "Pão":
+:             if lista.count("Queijo") == 0:
+:                 lista.append("Queijo")
+:             if lista.count("Presunto") == 0:
+:                 lista.append("Presunto")
+:             if lista.count("Manteiga") == 0:
+:                 lista.append("Manteiga")
+: print(lista)
+
+Além de iterar em listas, o =for loop= pode ser utilizado em faixas de números, para isso devemos utilizar o operador =range=. Por exemplo, se quisermos iterar os números de 0 à 10, podemos fazer o seguinte:
+
+#+begin_src python
+for number in range(0,11):
+        print(number)
+#+end_src
+
+A saída do código lhe dará os números de 0 à 10, um em cada linha. Mas note que a faixa que colocamos é de 0 à 11! Novamente o fato do Python começar a contar do zero leva ao intervalo aberto no final da faixa, como discutido anteriormente. Então, tenha sempre em mente isso para não perder o último número da sua faixa.
+
+Também podemos definir o passo a ser utilizado, o padrão é iterar de um em um, mas podemos mudar isso, veja o exemplo abaixo:
+
+#+begin_src python
+for number in range(0,11,2):
+	print(number)
+#+end_src
+
+O código imprime os números 0, 2, 4, 6, 8 e 10. Ou seja, o passo mudou para 2. Também podemos utilizar um passo negativo, colocando a faixa como (0,11,-1) será impressa a ordem decrescente. Isso é bastante útil em um caso bem simples, o cálculo de fatoriais. Vamos calcular o fatorial de 10 para exemplificar:
+
+#+begin_src python
+fatorial = 1			#Definimos um valor inicial para o fatorial
+for number in range(4,1,-1):	#Iteramos de 4 à 2, com passo de -1
+    print(number)		#Imprime o número da iteração
+    fatorial = fatorial*number  #Multiplicamos a variável fatorial pelo número sendo iterado
+print(fatorial)			#Imprime o resultado do fatorial
+#+end_src
+
+O código é simples mas tem alguns conceitos novos nele. Já na primeira linha definimos a variável =fatorial = 1=, porque isso, já que a utilizaremos no loop? Comente a primeira linha e confira o que acontece. Outro ponto é que iteramos de 4 a 2 e não de 4 a 1, o fatorial é definido por =4! = 4*3*2*1=, porém, qualquer número multiplicado por 1 é ele mesmo, logo não faz diferença multiplicarmos por 1, já que o resultado não é alterado. Assim, evitando uma multiplicação economizamos tempo computacional, pode parecer pouca coisa, mas, várias dessas otimizações em um código grande podem levar a ganhos significativos de performance.
+
+*Tarefa:* Refaça o código para encontrar números primos agora utilizando o =for loop=. /Dica: Utilize o operador =%=/.
+
+#+RESULTS:
+: a = 17
+: for i in range(a-1,0,-1):
+:     c = a % i
+:     if c == 0 and i != 1:
+:         print(a, 'é divisível por', i)
+:         break
+:     elif i == 1:
+:         print(a, 'é primo')
+:     else:
+:         print(a, 'não é divisível por', i)
+
+** Laços Aninhados
+Além de utilizarmos laços (loops) aliados a condicionais, também podemos ter loops dentro de loops. Vamos voltar a nossas listas de compras, agora precisamos checar o que temos na lista da padaria e do supermercado, para ver se não temos nada repetido, vamos ao exemplo:
+
+#+begin_src python
+listadecompras = [['Miojo', 'Queijo', 'Ovo', 'Pasta de Dentes', 'Chocolate'], ['Pão', 'Queijo', 'Presunto', 'Sonho']]   #Definindo uma lista de listas com itens de mercado e da padaria
+print('Lista do supermercado antes da conferência:', listadecompras[0])							#Imprime lista do supermercado
+print('Lista da padaria antes da conferência:', listadecompras[1])							#Imprime lista da padaria
+
+for item1 in listadecompras[0]:												#Loop nos itens do supermercado
+        for item2 in listadecompras[1]:											#Loop nos itens da padaria
+                if item1 == item2:											#Checa se os itens são iguais
+                        listadecompras[0].remove(item1)									#Se forem iguais, são removidos da lista do supermercado
+print('Lista do supermercado após a conferência:', listadecompras[0])							#Imprime a lista do supermercado
+print('Lista da padaria após a conferência:', listadecompras[1])							#Imprime a lista da padaria
+#+end_src
+
+Note que o =Queijo= foi removido da lista da padaria, que era o único item repetido neste caso.
+
+*Tarefa:* Escreva um código para encontrar todos números primos de uma faixa de números.
+#+RESULTS:
+: start = 1
+: end = 1000
+:
+: listadeprimos = set()
+: listadenaoprimos = set()
+: for i in range(start,end+1):
+:         notprime = 0
+:         for j in range(start+1,int(end/2)):
+:                 if i % j == 0 and i != j:
+:                         notprime = 1
+:                         listadenaoprimos.add(i)
+:                         print(i, 'é divisível por', j)
+:                         break
+:         if notprime == 0:
+:                 listadeprimos.add(i)
+:                 print(i, 'é primo')
+:
+: print(sorted(listadenaoprimos), 'não são primos')
+: print(sorted(listadeprimos), 'são primos')
+
 
 ** Compreensão de listas
-+ açúcar sintático
-+ pode ser tanto mais rápido quanto mais legível (mas nem sempre!)
+Esta ferramenta serve para criarmos novas listas a partir de uma lista existente. Isso pode ser feito com loops por exemplo, mas existe uma forma mais compacta. Vamos primeiro fazer da forma que vocês já foram apresentados então:
+
+#+begin_src python
+listadecompras = ["Miojo", "Ovo", "Queijo", "Presunto", "Pão", "Orégano", "Papel Higiênico"]
+listadapadaria = []
+for item in listadecompras:
+	if item == "Pão" or item == "Queijo" or item == "Presunto":
+		listadapadaria.append(item)
+print(listadapadaria)
+#+end_src
+
+No código acima definimos a =listadecompras=, mas separamos alguns itens em uma =listadapadaria=, com os itens do misto quente. Foi feito um loop nos itens =listadecompras= e um condicional para os itens do misto quente. Notem que é possível utilizar vários condicionais juntos, o que é bastante útil. No final a =listadapadaria= acaba está com os itens desejados. Outra maneira que pode reduzir o código significativamente é o uso da compreenção de listas. Veja o exemplo no código abaixo:
+
+#+begin_src python
+listadecompras = ["Miojo", "Ovo", "Queijo", "Presunto", "Pão", "Orégano", "Papel Higiênico"]
+listadapadaria = [item for item in listadecompras if "Pão" in item or "Queijo" in item or "Presunto" in item]
+print(listadapadaria)
+#+end_src
+
+Temos o mesmo resultado do loop for, com um código de três linhas, frente ao de seis linhas com o loop. A economia de linhas vem aliada a uma sintaxe um pouco complicada, que merece bastante atenção. Basicamente ela consiste no seguinte: novalista = [espressão =for= item =in= iterável =if= condição verdadeira], a =expressão= para ser qualquer coisa, no exemplo anterior utilizamos o próprio =item= na expressão, sem nenhum operador, mas entraremos em mais detalhes em breve. O =item= é o que será analizada a =condição= e aplicada a =expressão=, já o =iterável= pode ser uma lista, tupla, conjunto, entre outros. Vamos a um exemplo onde aplicamos uma expressão:
+
+#+begin_src python
+quadradosimpares = [numero**2 for numero in range(10) if numero % 2 != 0]
+print(quadradosimpares)
+#+end_src
+
+No exemplo acima a =expressão= é =numero**2=, ou seja tiramos o quadrado do =item= da compreensão. O iterável é a faixa de números de 0 a 9. Já a condição é que o resto da divisão entre o =item= (numero) e 2 seja diferente de zero, que será verdade para os números ímpares. Então a lista =quadradosimpares= terá o quadrado de todos os números ímpares na faixa escolhida. Agora faça o seguinte, delete a condição (if numero % 2 != 0) e execute o código, o que acontece?
+
+Mas porque utilizar esta sintaxe de compreenssão de listas e não continuar utilizando loops? Os programadores são tão preguiçosos que querem fazer tudo em uma linha? Na verdade a maior vantagem da compreensão de listas é a performance. Vamos fazer uma rápida comparação para dar uma ideia, com o código abaixo, que calcula quais são os divisores de um número arbitrário.
+
+#+begin_src python
+import time								#Importando a biblioteca que irá cronometrar nosso código.
+start = time.time()							#Setando o tempo inicial
+a = 1000001								#Definimos um número qualquer
+divisor = [i for i in range(1,a) if a % i == 0]				#Método de compreenssão de listas para calcular os divisores
+print(divisor)								#Imprime os divisores
+print("--- Comprehenssion %s seconds ---" % (time.time() - start))	#Imprime o tempo que o código levou para executar
+
+start = time.time()							#Setando novamente o tempo inicial
+divisor = []								#Inicializando a lista dos divisores
+for i in range(1,a):							#Início do loop
+    if a % i == 0:							#Testa o resto da divisão
+        divisor.append(i)						#Acrescenta como divisor se o resto é zero
+print(divisor)								#Imprime os divisores
+print("--- Loop %s seconds ---" % (time.time() - start))		#Imprime o tempo de execução
+#+end_src
+
+No código apresentado calculamos todos divisores do número =a=, execute este código, você verá que os tempos de execução são mais rápidos para o método de compreenssão de listas. Mas poxa, um executou em 0.04 segundos e o outro em 0.05 segundos, não é muita diferença. Pois bem, aumente três zeros no =a= e compare novamente, agora temos a compreenssão de listas executando em 45 segundos e o loop em 60 segundos. Quanto maior o seu número, mais importante será essa diferença. Isso pode ser crucial em muitos casos, pois imagine que você queira fazer uma previsão do tempo para amanhã, mas seu código demora 48 horas para rodar e sua previsão fica pronta depois do dia ter passado? Esse e muitos outros casos tem a performance como algo crítico, tornando a aplicação útil ou não.
+
+Maravilha, conseguimos ganhar um pouco de performance, mas, o código apresentado está fazendo várias operações inúteis. Como assim? Bom, vamos pensar nos divisores de um número, eles certamente não serão maiores que a metade do mesmo, mas estamos tentando dividir por esses números maiores que a metade. Ajuste seu código para dividir só até a metade de =a= e veja a diferença na performance. A diferença é grande não? Se compararmos o loop dividindo por todos os números com a compreenssão de listas dividindo até a metade de =a=, o código leva quase um terço do tempo para executar. Se fosse uma previsão do tempo que levava 48 horas, agora ela levaria pouco mais de 16 horas, ficando pronta antes do próximo dia começar, se tornando útil. Logo parar para pensar na matemática ou lógica do problema ajuda muito na otimização, ainda mais aliado as técnicas computacionais adequadas. Existe alguma outra otimização que lhe vem em mente?
+
+** Compreensão de listas aninhadas
+
+Assim como laços, também podemos aninhar compreensão de listas. Neste caso a sintaxe pode ficar bastante complicada, então é interessante ilustrarmos
+
+[[./img/nested-list-comprehension.png]]
+
+#+ açúcar sintático >> Ver com Daniel
 
 * DANIEL Funções
 :PROPERTIES:
@@ -789,6 +1353,23 @@ Observe que não é permitido declarar argumentos sem valor padrão após argume
 
 ** Variáveis globais e variáveis locais
 
+Variáveis criadas dentro de funções são locais e só existem dentro do escopo da função. Teste se isso é verdade executando o código abaixo. O que aconteceu?
+
+#+begin_src python -n
+  def refeicao():
+      opcao_1 = "SPAM"
+      opcao_2 = "SPAM"
+      opcao_3 = "ovos"
+      opcao_4 = "bacon"
+      return [opcao_1, opcao_2, opcao_3, opcao_4]
+
+  lanche_da_tarde = refeicao()
+  print(opcao_1)
+#+end_src
+
+#+RESULTS:
+
+No código acima a função ~refeicao~ declara internamente 4 variáveis, sendo elas ~opcao_1~, ~opcao_2~, ~opcao_3~ e ~opcao_4~. Executamos essa função na linha 8 e na linha 9 tentamos exibir o valor da variável ~opcao_1~. Entretanto, o compilador acusa um erro nos dizendo que a variável ~opcao_1~ não existe! Isso ocorre pois a variável ~opcao_1~ foi declarada dentro do escopo da função ~refeicao~ e ela só faz sentido dentro do escopo onde foi declarada. Além disso, após o término da execução da função todas as suas variáveis locais são destruídas para liberar memória.
 
 ** Documentando suas funções com docstring
 + comentar sobre =pep8=
@@ -796,7 +1377,7 @@ Observe que não é permitido declarar argumentos sem valor padrão após argume
 ** Funções lambda
 + falar de função recebendo função
 
-* TODO Depuração de programas
+* DANIEL Depuração de programas
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_debug
 :EXPORT_OPTIONS: toc:t
@@ -815,7 +1396,7 @@ Observe que não é permitido declarar argumentos sem valor padrão após argume
 ** Tratamento de exceções
 + bloco =try= / =except= / =finally=
 
-* TODO Dicionários
+* Dicionários
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_dicionarios
 :EXPORT_OPTIONS: toc:t
@@ -823,7 +1404,43 @@ Observe que não é permitido declarar argumentos sem valor padrão após argume
 :END:
 
 ** Associando objetos com dicionários
+Dicionários são mais uma maneira de guardarmos informações, que pode ser bastante interessante para organização. Vamos dar um exemplo que já foi tratado nesse curso, as listas de compras. Lembram do nosso miojo incrementado, os itens para comprar na papelaria e os da padaria para fazer o misto quente? Estavamos os guardando em listas de listas, mas, podemos os guardar em dicionários também e com uma melhor organização. Vamos para um exemplo onde mostramos a sintaxe e a estrutura dos dicionários:
+
+#+begin_src python
+dicionariodecompras = {						#Iniciamos a definição do dicionário
+  "mercado": ["Miojo", "Ovo", "Orégano", "Papel Higiênico"],	#Definimos a primeira chave do dicionário, com seu valro associado, que no caso é uma lista
+  "padaria": ["Pão", "Queijo", "Presunto"],			#Definimos a segunda chave e seu valor
+  "papelaria": ["Caderno", "Caneta", "Lápis"]			#Terceira chave e valor definidos
+}								#Término do dicionário
+print(dicionariodecompras)					#Imprimimos o dicionário todo
+print(dicionariodecompras['mercado'])				#Imprimimos apenas a chave mercado do dicionário
+print(dicionariodecompras['padaria'])                           #Imprimimos a chave padaria
+print(dicionariodecompras['papelaria'])                         #Por fim, a chava papelaria é impressa
+#+end_src
+
+Notem a sintaxe, os dicionários ficam entre chaves ={ }=, assim como os conjuntos, então cuidado, pois isso pode trazer ambiguidades no código, por exemplo para inicializar um conjunto vazio. Na definição interna do dicionário temos a seguinte sintaxe: ="chave": valor=, onde as chaves vão funcionar como se fossem índices do dicionário, e os valores são os itens associados a chave. No exemplo acima definimos cada chave como uma lista, convenientemente organizadas, sendo uma chave para cada lista de compras. Os valores dos dicionários não precisam ser listas, podem ser números, strings e misturadas. Vamos a mais um exemplo para ilustrar isto:
+
+#+begin_src python
+print(aluno)
+print(aluno["Nome"])
+print(aluno["Nota 1"])
+print(aluno["Nome"], 'teve as seguintes notas:', aluno["Nota 1"], aluno["Nota 2"], aluno["Nota 3"], 'com média final', ((aluno["Nota 1"]+aluno["Nota 2"]+aluno["Nota 3"])/3))
+#+end_src
+
+** Métodos de dicionários
+Assim como listas e conjuntos, os dicionários também possuem métodos associados. Como sempre os métodos facilitam a vida na programação, por fazer diretamente uma função que poderia ser extensa de implementar. Abaixo os principais métodos de dicionários são apresentados:
+
++ keys: Retorna uma lista contendo todas as chaves do dicionário. Sintaxe: dicionario.keys()
++ get: Retorna o valor da chave especificada. Sintaxe: dicionario.get("chave")
++ items: Retorna uma lista contendo uma tupla para cada par chave-valor. Sintaxe: dicionario.items()
++ values: Retorna uma lista com todos os valores no dicionário. Sintaxe: dicionario.values()
++ update: Insere um par chave-valor no dicionário. Sintaxe: dicionario.update({"chave": "valor"})
++ pop: Assim como já visto em listas e conjuntos,
+
+
 ** Modificando e desempacotando dicionários
+
+
 + método =pop=
 + adicionando nova chave
 + deletando uma chave

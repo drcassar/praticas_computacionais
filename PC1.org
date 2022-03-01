@@ -195,7 +195,7 @@ Além de ~strings~, variáveis podem armazenar objetos de outros tipos. Variáve
 2) Qual a diferença entre um número real e um número inteiro? Observando o exemplo acima, qual seria a regra para definir números inteiros e números reais?
 3) Qual a regra para declarar números complexos? O que é o ~j~ na declaração dos números complexos?
 4) Na sua opinião, existe diferença entre as variáveis ~numero_inteiro~ e ~numero_inteiro_positivo~? Explique brevemente seu raciocínio.
-5) Na sua opinião, existe diferença entre as variáveis ~numero_real~, e ~numero_real_positivo~, e ~numero_real_sem_digitos_depois_do_ponto~? Explique brevemente seu raciocínio. De que forma você faria para confirmar a sua resposta?
+5) Na sua opinião, existe diferença entre as variáveis ~numero_real~ e ~numero_real_positivo~ e ~numero_real_sem_digitos_depois_do_ponto~? Explique brevemente seu raciocínio. De que forma você faria para confirmar a sua resposta?
 
 *[E]* O código abaixo /supostamente/ cria novas variáveis. No entanto, algumas das declarações parecem um tanto... diferentes... quem sabe até estranhas! Seu objetivo é testar cada uma destas declarações e separar as que funcionam das que não funcionam (as que não funcionam acusam um erro quando executadas). Para as declarações que não funcionam, descreva o erro que ocorreu e proponha uma correção.
 
@@ -339,7 +339,7 @@ O que você faria se não soubesse o que função ~print~ faz? Digamos, por exem
 3) Usar a função ~help~ do próprio Python (tente rodar ~help(print)~ no seu caderno de notas e veja o que acontece);
 4) Usar a sintaxe própria do Jupyter para buscar ajuda. Para isso basta digitar a função que quer saber mais informações junto com um sinal de interrogação. Neste caso seria ~print?~.
 
-*[A]* Escolha uma das quatro sugestões acima para ler mais sobre a função ~print~ do Python. Observe que a função ~print~ aceita diferentes argumentos, sendo eles: ~value~, ~file~, ~flush~, ~end~, e ~sep~. Escreva como foi sua busca (incluindo fontes se for o caso) e descreva com suas palavras o que os argumentos ~end~ e ~sep~ fazem. Tente outras formas de busca caso julge necessário.
+*[A]* Escolha uma das quatro sugestões acima para ler mais sobre a função ~print~ do Python. Observe que a função ~print~ aceita diferentes argumentos, sendo eles: ~value~, ~file~, ~flush~, ~end~ e ~sep~. Escreva como foi sua busca (incluindo fontes se for o caso) e descreva com suas palavras o que os argumentos ~end~ e ~sep~ fazem. Tente outras formas de busca caso julge necessário.
 
 *[B]* Para cada função abaixo, faça uma busca online (buscas 1 ou 2) e uma busca offline (buscas 3 ou 4) para entender o que estas funções fazem. Escreva como foi sua busca (incluindo fontes) e descreva com suas palavras o que estas funções fazem.
 
@@ -592,7 +592,7 @@ _Cuidado_: é muito comum confundir o operador de atribuição (~=~) com o opera
 
 Em diversos momentos da vida nos adaptamos mediante às condições do ambiente. Por exemplo, ao sair de casa, /se/ estiver chovendo /então/ pegamos o guarda-chuva, /se não/ nós saímos de casa sem o guarda-chuva. Esta estrutura condicional também existe nas linguagens de programação. Em certos momentos, queremos que a execução de certos comandos só ocorram caso uma ou mais condições sejam atendidas.
 
-*[A]* Em que outros momentos da sua vida você faz escolhas seguindo uma estrutura condicional contendo /se/, /então/, e /se não/? Escreva sobre três destes momentos dizendo como você se comporta (tome como base o exemplo do guarda-chuva).
+*[A]* Em que outros momentos da sua vida você faz escolhas seguindo uma estrutura condicional contendo /se/, /então/ e /se não/? Escreva sobre três destes momentos dizendo como você se comporta (tome como base o exemplo do guarda-chuva).
 
 O exemplo do guarda-chuva pode ser escrito em Python. Vamos supor que a variável booleana ~esta_chovendo~ armazena o valor ~True~ caso esteja chovendo ou o valor ~False~ caso não esteja chovendo. Queremos armazenar na variável booleana ~pegar_guardachuva~ o valor de ~True~ para o caso onde vamos pegar o guarda-chuva e o valor de ~False~ para o caso onde não vamos pegar o guarda-chuva. O código abaixo ilustra uma forma possível de programar essa decisão em Python. Veja que a palavra "if" em inglês traduz para "se" em português e que a palavra "else" traduz para "se não".
 
@@ -771,7 +771,563 @@ Além da estrutura de decisão ~if~/~else~ existe o /operador condicional/. É i
 1) o número 1234 não é número palíndromo pois é diferente de 4321.
 2) o numero 3223 é um número palíndromo.
 
-* Listas, tuplas e conjuntos
+* Funções
+:PROPERTIES:
+:EXPORT_FILE_NAME: PC1/PC1_funcoes
+:EXPORT_OPTIONS: toc:t
+:ID:       b20f8635-108a-49d4-9903-6a397dc4fed2
+:END:
+
+** O que é uma função?
+
+Durante o exercício "Olá, Mundo!" nós utilizamos a função ~print~. Naquele momento, definimos funções como sendo "apelidos" para executar códigos que já foram escritos. De fato, esta é uma das grandes vantagens de funções: você escreve o código apenas uma vez e reaproveita ele quantas vezes forem necessárias! Além de economizar tempo, o uso apropriado de funções deixa o propósido do código mais fácil de ser entendido.
+
+De maneira geral, uma função tem quatro partes:
+
+1) um /nome/,
+2) zero ou mais objetos chamados de /argumento/,
+3) um bloco de código chamado de /corpo da função/,
+4) zero ou mais objetos chamados de /retorno/.
+
+Basicamente, ao executar uma função ela recebe zero ou mais objetos (argumento), executa seu bloco de código (usando ou não os argumentos recebidos) e retorna zero ou mais objetos (retorno). Veja que o conceito de função em programação não é o mesmo que o conceito de função em matemática. Certas funções em programação podem ser chamadas de funções matemáticas, porém não todas!
+
+** Funções embutidas
+
+Existem diversas funções embutidas em Python. Estas funções podem ser usadas _a qualquer momento_, sem a necessidade de executar nenhum comando prévio. Além das funções embutidas que já vimos (~print~ e ~help~, por exemplo) existem diversas outras! A lista completa pode ser conferida aqui https://docs.python.org/pt-br/3/library/functions.html
+
+*[A]* Existem diversas funções embutidas em Python. Para cada uma das funções abaixo, escreva em uma célula de texto o nome da função, descreva seus argumentos, explique em suas palavras o que a função faz e descreva seus valores de retorno. Na célula seguinte, escreva um código que use esta função. Comente seu código!
+
++ ~any~
++ ~all~
++ ~len~
++ ~abs~
+
+** Definindo novas funções
+
+Podemos definir nossas próprias funções utilizando a instrução ~def~. O código abaixo mostra diversos exemplos de definições de funções. Observe que todas as definições começam com ~def~, seguido do nome da função, seguido de parêntesis e por fim dois-pontos. É considerado bom estilo pular duas linhas antes e depois da definição de funções e nomear funções com a primeira letra minúscula. Ao fim do código abaixo, as funções definidas são executadas. Para executar funções basta escrever o nome delas seguido de parênteses.
+
+#+begin_src python -n
+  def funcao_1():
+      print("Esta é a função 1")
+
+
+  def funcao_2(argumento1):
+      print("Esta é a função 2")
+      print(argumento1)
+
+
+  def funcao_3(argumento1, argumento2):
+      print("Esta é a função 3")
+      print(argumento1)
+      print(argumento2)
+
+
+  def funcao_4(argumento1, argumento2):
+      print("Esta é a função 4")
+      soma = argumento1 + argumento2
+      return soma
+
+
+  def funcao_5(argumento1, argumento2):
+      print("Esta é a função 5")
+      return 10
+
+
+  def funcao_6(argumento1, argumento2, argumento3):
+      print("Esta é a função 6")
+      return argumento3, argumento2, argumento1
+
+
+  print('Testando a funcao_1')
+  retorno = funcao_1()
+  print(retorno)
+  print()
+
+  print('Testando a funcao_2')
+  retorno = funcao_2("Olá")
+  print(retorno)
+  print()
+
+  print('Testando a funcao_3')
+  retorno = funcao_3("Olá", "mundo")
+  print(retorno)
+  print()
+
+  print('Testando a funcao_4')
+  retorno = funcao_4(1, 2)
+  print(retorno)
+  print()
+
+  print('Testando a funcao_5')
+  retorno = funcao_5(1, 2)
+  print(retorno)
+  print()
+
+  print('Testando a funcao_6')
+  retorno = funcao_6("a", "b", "c")
+  print(retorno)
+  print()
+
+  print('Testando a funcao_6 novamente')
+  retorno1, retorno2, retorno3 = funcao_6("a", "b", "c")
+  print(retorno1, retorno2, retorno3)
+  print()
+#+end_src
+
+#+RESULTS:
+#+begin_example
+Testando a funcao_1
+Esta é a função 1
+None
+
+Testando a funcao_2
+Esta é a função 2
+Olá
+None
+
+Testando a funcao_3
+Esta é a função 3
+Olá
+mundo
+None
+
+Testando a funcao_4
+Esta é a função 4
+3
+
+Testando a funcao_5
+Esta é a função 5
+10
+
+Testando a funcao_6
+Esta é a função 6
+('c', 'b', 'a')
+
+Testando a funcao_6 novamente
+Esta é a função 6
+c b a
+
+#+end_example
+
+A ~funcao_1~ não recebe nenhum argumento. Sabemos que este é o caso pois não existe nenhuma informação dentro dos parênteses logo após o comando ~def funcao_1~. Quando executada, esta função exibe a mensagem "Esta é a função 1". Não existem valores de retorno pois em nenhum local do corpo da função existe a instrução ~return~. Funções que não possuem valor de retorno explícito sempre retornam ~None~ quando encerram sua execução. ~None~ é o chamado /objeto nulo/ e ele passa a mensagem que não existe valor associado ao objeto. Observe que ~None~ não significa o valor zero nem o valor ~False~.
+
+A ~funcao_2~ recebe um argumento chamado ~argumento1~. Todos os argumentos recebidos pelas funções podem ser utilizados no corpo da função. No caso desta função, o valor do ~argumento1~ é exibido ao usuário através da função ~print~. Novamente, não existem valores de retorno.
+
+A ~funcao_3~ recebe dois argumentos, ~argumento1~ e ~argumento2~. Note que os nomes dos argumentos são separados por vírgula. Funções podem ter quantos argumentos forem necessários, desde que todos eles sejam declarados no local apropriado (isto é, dentro dos parênteses). Novamente, não existem valores de retorno.
+
+A ~funcao_4~ recebe dois argumentos, calcula a soma deles e retorna este valor. O retorno do valor é feito pela instrução ~return~ no corpo do da função. Observe na linha 48 como podemos armazenar o valor retornado pela função em uma variável.
+
+A ~funcao_5~ recebe dois argumentos e retorna o valor 10. Observe que não é necessário utilizar os argumentos da função no corpo da mesma. No entanto, não é uma boa prática definir argumentos que não serão utilizados no corpo da função! Evite este tipo de comportamento.
+
+Finalmente, a ~funcao_6~ recebe três argumentos e retorna os mesmos argumentos em ordem inversa . Observe que a instrução ~return~ permite retornar mais que um valor. Se retornar mais que um valor, estes devem estar separados por vírgulas. Na linha 58 temos uma situação inusitada: a ~funcao_6~ retorna três valores, mas estamos atribuindo o retorno desta função a apenas uma variável chamada ~retorno~. Se você rodar este código perceberá que não ocorrem erros. Neste caso, os três valores de retorno são agrupados em um objeto chamado de /tupla/ e armazenados na variável ~retorno~ (veremos tuplas mais adiante). Observe a sintaxe da linha 63 para ver como separar os valores de retorno em variáveis independentes.
+
+*[B]* Crie e execute funções para realizar as tarefas abaixo:
+
++ Uma função que recebe um valor numérico e retorna o cubo deste valor.
++ Uma função que recebe cinco valores e retorna o valor médio e o desvio padrão destes valores.
++ Uma função que recebe três números e retorna os números recebidos em ordem decrescente.
+
+*[C]* Crie uma função que recebe um argumento e tente executar ela sem fornecer nenhum argumento. Após este teste, tente executar ela fornecendo dois argumentos quaisquer. Observe e relate o que aconteceu.
+
+*[D]* Execute o código abaixo e comente o que ocorre quando executamos a linha 5. Nesta linha a função ~ola~ foi executada sem os parênteses. Seu código rodou com erro ou se erro? De qualquer forma elabore o que aconteceu.
+
+#+begin_src python -n
+  def ola():
+      return "Olá!"
+
+  print(ola())
+  print(ola)
+#+end_src
+
+** Argumentos posicionais, argumentos nomeados e argumentos com valor padrão
+
+A ordem dos argumentos é muito importante durante a execução de funções com dois ou mais argumentos. O exemplo abaixo ilustra isso: a inversão da ordem dos argumentos altera o resultado do retorno da função. Cada argumento de uma função tem a sua _posição_, então é necessário se atentar a ordem dos argumentos para evitar erros.
+
+#+begin_src python
+  def exponenciacao(base, expoente):
+      return base ** expoente
+
+
+  print(exponenciacao(10, 2))  # resulta em 100
+  print(exponenciacao(2, 10))  # resulta em 1024
+#+end_src
+
+#+RESULTS:
+: 100
+: 1024
+
+Todo argumento tem um _nome_[fn:: Na verdade, veremos adiante que existem casos onde argumentos podem não ter nome, são os chamados argumentos estrela. Não se preocupe com isso agora.]. Na função ~exponenciacao~ acima temos dois argumentos, um chamado de ~base~ e outro de ~expoente~. Podemos executar essa função chamando os argumentos pelo nome! Veja no exemplo abaixo.
+
+#+begin_src python -n
+  def exponenciacao(base, expoente):
+      return base ** expoente
+
+
+  print(exponenciacao(base=10, expoente=2))  # resulta em 100
+  print(exponenciacao(expoente=2, base=10))  # resulta em 100
+  print(exponenciacao(10, expoente=2))       # resulta em 100
+  print(exponenciacao(expoente=2, 10))       # ERRO!
+  print(exponenciacao(expoente=2))           # ERRO!
+  print(exponenciacao(base=10))              # ERRO!
+#+end_src
+
+#+RESULTS:
+: 100
+: 100
+: 100
+
+Na linha 5 acima, a função ~exponenciacao~ é executada com seus argumentos chamados pelo nome.
+
+Na linha 6 vemos que não é necessário apresentar os argumentos nomeados seguindo a mesma ordem dos argumentos assim como definida na função. Isso funciona desde que todos os argumentos tenham um valor atribuido no momento de execução da função.
+
+Na linha 7 vemos que é possível misturar argumentos nomeados com argumentos posicionais. Neste caso, o valor "10" está na posição zero, logo ele será atribuído à variável ~base~ da função ~exponenciacao~. O valor do argumento ~expoente~ foi nomeado durante a execução e atribuído o valor de "2".
+
+A linha 8 parece similar a linha 7, porém ela acusa um erro quando executada!! Isso porque não é permitido argumentos posicionais /após/ argumetos nomeados. Se você for utilizar uma mistura de argumentos posicionais com nomeados, certifique-se que os argumentos nomeados estão todos após os argumentos posicionais.
+
+As linhas 9 e 10 mostram que precisamos garantir que todos os argumentos tenham valores atribuidos, do contrário a função não executa.
+
+Argumentos nomeados ajudam na leitura do código, principalmente quando as funções e argumentos receberam bons nomes. As linhas 5 e 6 do código acima deixam bem clara a intenção do código.
+
+Por fim, além de uma posição e um nome, argumentos opcionalmente podem ter um _valor padrão_. O valor padrão é atribuido com o operador de atribuição ~=~ logo após o nome do argumento. Veja o exemplo abaixo.
+
+#+begin_src python -n
+  def exponenciacao(base, expoente=5):
+      return base ** expoente
+
+
+  print(exponenciacao(base=10, expoente=2))  # resulta em 100
+  print(exponenciacao(base=10))              # resulta em 100000
+  print(exponenciacao(10))                   # resulta em 100000
+  print(exponenciacao(expoente=2))           # ERRO! Falta o valor da base
+#+end_src
+
+#+RESULTS:
+: 100
+: 100000
+: 100000
+
+A nova função ~exponenciacao~ tem um valor padrão para o argumento expoente (no caso, é o valor 5). Ela continua funcionando da mesma maneira que a função anterior. Execute a linha 5 e verá que isso é verdade. Com o valor padrão do argumento ~expoente~, podemos executar as linhas 6 e 7 sem problema. Em ambos os casos, nós informamos apenas o valor do argumento ~base~ quando executamos a função. Ao fazer isso, estamos dizendo à função que ela deve usar o valor padrão para o argumento ~expoente~. Finalmente, a linha 8 resulta em um erro pois o valor para o argumento ~base~ não foi informado para a execução da função ~exponenciacao~.
+
+Observe que não é permitido declarar argumentos sem valor padrão após argumentos com valor padrão. Por conta disso o código abaixo resulta em erro ao ser executado.
+
+#+begin_src python
+  def exponenciacao(base=10, expoente):
+      return base ** expoente
+#+end_src
+
+*[A]* Crie uma função que tira a n-ézima raiz de um número. Faça com que o índice da raiz tenha um valor padrão de 2.
+
+*[B]* Crie uma função que recebe o raio de um círculo e retorna seu perímetro e sua área.
+
+** Variáveis globais e variáveis locais
+
+Variáveis criadas dentro de funções são /locais/ e só existem dentro do escopo da função.
+
+*[A]* Teste se a afirmação acima é verdade executando o código abaixo. Relate o  que aconteceu.
+
+#+begin_src python -n
+  def refeicao():
+      opcao_1 = "SPAM"
+      opcao_2 = "SPAM"
+      opcao_3 = "ovos"
+      opcao_4 = "bacon"
+      return opcao_1, opcao_2, opcao_3, opcao_4
+
+  lanche_da_tarde = refeicao()
+  print(opcao_1)
+#+end_src
+
+#+RESULTS:
+
+No código acima a função ~refeicao~ declara internamente 4 variáveis, sendo elas ~opcao_1~, ~opcao_2~, ~opcao_3~ e ~opcao_4~. Executamos essa função na linha 8 e na linha 9 tentamos exibir o valor da variável ~opcao_1~. Entretanto, o compilador acusa um erro nos dizendo que a variável ~opcao_1~ não existe! Isso ocorre pois a variável ~opcao_1~ foi declarada /dentro do escopo/ da função ~refeicao~ e ela só existe dentro do escopo onde foi declarada. Após o término da execução da função todas as suas variáveis locais são _destruídas_ para liberar memória.
+
+Variáveis declaradas fora do escopo de funções são variáveis /globais/. Variáveis globais podem ser acessadas em _qualquer escopo_, inclusive dentro do escopo de funções!
+
+*[B]* Tendo em mente o que foi discutido, escreva e justifique o que você acha que irá acontecer se executarmos o código abaixo. Rode o código para checar se seu palpite estava certo.
+
+#+begin_src python
+  melhor_album = "The dark side of the moon"  # esta é uma variável global
+
+
+  def qual_o_melhor_album():
+      print("O melhor album de todos os tempos é :")
+      print(melhor_album)
+
+
+  qual_o_melhor_album()
+#+end_src
+
+#+RESULTS:
+: O melhor album de todos os tempos é :
+: The dark side of the moon
+
+Mesmo sabendo que variáveis globais podem ser utilizadas dentro de funções, este comportamento é _desencorajado_! Isso torna a leitura do código mais difícil, o uso da função menos geral e aumenta a chance de /bugs/ no seu código! Se necessário utilizar uma variável global em uma função, opte por adicionar um argumento com a variável global como valor padrão.
+
+*[C]* O que acontece quando um argumento de uma função tem o mesmo nome de uma variável global? Teste isso escrevendo seu próprio código e explique em suas palavras o que observou.
+
+*[D]* O que acontece quando uma variável global é alterada dentro de uma função? Teste isso com pelo menos uma variável numérica, uma lista e um dicionário. Explique em suas palavras o que observou.
+
+** Documentando suas funções com a docstring
+
+Funções podem ser tão simples ou tão complexas quanto quisermos. As versões mais recentes do Python permitem que as funções tenham quantos argumentos e retornos nós desejarmos. Também não há limites quanto a quantidade de linhas de código no corpo da função.
+
+Mas como dizia o tio Ben: com grandes poderes vem grandes responsabilidades! Você pode escrever hoje a função mais complexa do mundo e resolver todos os seus problemas. Tudo certo enquanto a função está fresca na sua mente. Daqui há três meses você precisa utilizar essa função novamente e já não se recorda mais o que cada argumento controla, não entende mais o valor de retorno e não tem tempo de interpretar as doze mil linhas de código que compõe o corpo da função... e agora?
+
+Uma solução para +evitar+ reduzir dor de cabeça no futuro é documentar sua função escrevendo a chamada /docstring/. Documentar a função nada mais é do que escrever o que ela faz, detalhando todas as partes importantes para que qualquer um que venha a usar a função entenda qual é o seu propósito e o que pode esperar quando executá-la. O guia de estilo de docstrings em Python é a PEP 257 e pode ser acessada em https://www.python.org/dev/peps/pep-0257/.
+
+A docstring mais simples de todas é a "docstring em uma linha". Trata-se de uma descrição breve do que a função faz e, como o nome sugere, não deve ultrapassar uma linha. Veja a docstring da função ~soma_pares~ na linha 2 abaixo. Note que docstrings devem ser a primeira linha do corpo da função (logo abaixo a definição da mesma) e são strings declaradas com três aspas. Na descrição em uma linha, use verbos no imperativo! Podemos acessar a docstring de qualquer função usando o comando ~help~ (veja a linha 20) ou acessando o atributo especial ~__doc__~ (veja a linha 22).
+
+#+begin_src python -n
+  def soma_pares(numero1, numero2, numero3):
+      """Recebe três números e soma apenas os pares."""
+      soma = 0
+
+      if numero1 % 2 == 0:
+          soma = soma + numero1
+
+      if numero2 % 2 == 0:
+          soma = soma + numero2
+
+      if numero3 % 2 == 0:
+          soma = soma + numero3
+
+      return soma
+
+
+  print(soma_pares(10, 5, 6))
+
+  print()
+  help(soma_pares)  # mostra informações sobre a função
+
+  print(soma_pares.__doc__)  # mostra a doscring da função
+#+end_src
+
+#+RESULTS:
+: 16
+:
+: Help on function soma_pares in module __main__:
+:
+: soma_pares(numero1, numero2, numero3)
+:     Recebe três números e soma apenas os pares.
+:
+: Recebe três números e soma apenas os pares.
+
+*[A]* Escreva uma função que recebe três números e retorna a multiplicação de todos os números ímpares. Escreva uma docstring em uma linha para sua função.
+
+Docstrings em uma linha são suficientes para funções mais simples com poucas linhas de código. Funções mais complexas se beneficiam de mais informações na docstring para deixar claro seu funcionamento, como por exemplo:
+
+1) Uma descrição mais aprofundada da função;
+2) Uma listagem de todos os argumentos da função, descrevendo o que eles controlam;
+3) Uma listagem de todos os retornos da função, descrevendo o que eles são;
+4) Uma listagem de todos os erros capturados e levantados pela função;
+5) Exemplos do uso da função;
+6) Notas e informações adicionais como links e referências.
+
+Para armazenar mais informações, precisamos fazer uso das "docstrings de múltiplas linhas". A PEP 257 não define como docstrings de múltiplas linhas devem ser escritas e, por conta disso, existem diversos guias de estilos diferentes. Nenhum estilo é objetivamente melhor ou pior que o outro, no entanto é considerado bom costume escolher um estilo para cada projeto e se ater a ele (misturar diferentes estilos pode confundir quem está lendo o código!). Esta apostila segue o Guia de Estilo de Python da Google que pode ser conferido em https://google.github.io/styleguide/pyguide.html?showone=Comments#s3.8.1-comments-in-doc-strings. Veja um exemplo abaixo.
+
+#+begin_src python -n
+  def soma_pares_ou_impares(numero1, numero2, numero3, tipo="pares",
+                            verbose=False):
+      """Recebe três números e retorna a soma dos pares ou ímpares.
+
+      O cálculo da soma depende do argumento `tipo`. Cuidado, se o valor do
+      argumento tipo não estiver correto o programa acusa um erro!
+
+      Args:
+        numero1:
+          Um número inteiro qualquer.
+        numero2:
+          Um número inteiro qualquer.
+        numero3:
+          Um número inteiro qualquer.
+        tipo:
+          String que pode ter o valor `pares` ou `impares`. Controla quais números
+          serão considerados para a soma. Valor padrão é `pares`.
+        verbose:
+          Booleano que controla se o resultado final será exibido ao usuário.
+          `True` exibe o resultado. Valor padrão é `False`.
+
+      Returns:
+        Soma dos números pares ou ímpares.
+
+      Raises:
+        ValueError: ocorre se a variável `tipo` recebe um valor inválido.
+      """
+
+      if tipo == "pares":
+          resto_divisao_por_dois = 0
+      elif tipo == "impares":
+          resto_divisao_por_dois = 1
+      else:
+          raise ValueError("Valor incorreto da variável `tipo`.")
+
+      soma = 0
+
+      if numero1 % 2 == resto_divisao_por_dois:
+          soma = soma + numero1
+
+      if numero2 % 2 == resto_divisao_por_dois:
+          soma = soma + numero2
+
+      if numero3 % 2 == resto_divisao_por_dois:
+          soma = soma + numero3
+
+      if verbose:
+          print(soma)
+
+      return soma
+
+
+  soma_pares = soma_pares_ou_impares(10, 5, 6, "pares", True)
+  soma_impares = soma_pares_ou_impares(10, 5, 6, "impares", True)
+
+  # da erro!
+  soma_complexos = soma_pares_ou_impares(10, 5, 6, "complexos", True)
+#+end_src
+
+#+RESULTS:
+: 16
+: 5
+
+Vamos analizar as diversas partes do exemplo assima:
+
+1) A primeira linha da docstring (linha 3) ainda é a descrição da função em uma linha. Ela sempre deve estar presente.
+
+2) Na linha 5 temos a descrição mais aprofundada da função. Use quantas linhas quiser para essa descrição. Esta descrição não é obrigatória.
+
+3) Na linha 8 damos início a descrição dos argumento com o cabeçalho ~Args:~. O nome de cada argumento é escrito com indentação de dois espaços seguido de dois-pontos. A descrição de cada argumento é feita com indentação de quatro espaços e pode conter quantas linhas quiser. Descreva o tipo de variáveis esperadas e o que o argumento controla. Conte para o leitor os valores esperados caso existam e deixe claro qual é o valor padrão quando for o caso. Esta seção é obrigatória caso a função receba um ou mais argumentos.
+
+4) Na linha 22 damos início a descrição dos valores de retorno com o cabeçalho ~Returns:~. Aqui nós contamos quais os valores de retorno e o tipo deles, podemos usar quantas linhas forem necessárias. Esta seção é obrigatória caso existam retornos.
+
+5) Na linha 25 damos início a descrição dos possíveis erros levantados pelo código. Estes são erros deliberadamente programados no corpo da função. Veremos mais sobre erros na seção de depuração de programas, mas por hora é relevante saber que se a variável ~tipo~ tiver um valor fora do esperado, a própria função acusa um erro e envia uma mensagem ao usuário para que ele possa corrigir seu código. Esta seção é obrigatória caso exista gerência de erros no corpo da função (instruções ~raise~ e ~assert~).
+
+** Funções também são objetos!
+
+Funções em Python são objetos assim como números e strings. Desta forma, podemos passar funções como argumentos de funções (linhas 16, 19, 32 e 35 do código abaixo) e podemos ter funções como valores de retorno de outras funções (veja a linha 29)! Podemos inclusive definir novas funções no corpo de funções (linha 26).
+
+#+begin_src python -n
+  def soma_dois(x):
+      """Soma dois a o valor recebido."""
+      return x + 2
+
+
+  def multiplica_dois(x):
+      """Multiplica o valor recebido por dois."""
+      return x * 2
+
+
+  def aplica_funcao_composta(f1, f2, x):
+      """Calcula a função composta de f1 e f2."""
+      return f1(f2(x))
+
+
+  retorno = aplica_funcao_composta(soma_dois, multiplica_dois, 10)
+  print(retorno)  # mostra o número 22
+
+  retorno = aplica_funcao_composta(multiplica_dois, soma_dois, 10)
+  print(retorno)  # mostra o número 24
+
+
+  def retorna_funcao_composta(f1, f2):
+      """Retorna a função composta de f1 e f2."""
+
+      def funcao_composta(x):
+          return f1(f2(x))
+
+      return funcao_composta
+
+
+  funcao_composta = retorna_funcao_composta(soma_dois, multiplica_dois)
+  print(funcao_composta(10))  # retorna 22
+
+  funcao_composta = retorna_funcao_composta(multiplica_dois, soma_dois)
+  print(funcao_composta(10))  # retorna 24
+#+end_src
+
+#+RESULTS:
+: 22
+: 24
+: 22
+: 24
+
+** Funções anônimas
+
+Existe uma outra forma de declarar funções em Python, utilizando a instrução ~lambda~. Funções declaradas desta forma são chamadas de /funções anônimas/, /funções em linha/ ou simplesmente /funções lambda/. A função ~ola~ abaixo pode ser escrita como uma função não-anônima (linha 1) ou anônima (linha 8). Ambas fazem a mesma tarefa.
+
+#+begin_src python -n
+  def ola():
+      """Retorna a string `Olá!`."""
+      return "Olá!"
+
+
+  print(ola())
+
+  ola = lambda: "Olá"
+
+  print(ola())
+#+end_src
+
+Perceba que uma função anônima ocupa apenas uma linha e não tem o valor de retorno explícito: a instrução que está após o "~lambda:~" é o retorno.
+
+Funções anônimas podem ter argumentos e estes são declarados após o ~lambda~ e antes do dois-pontos (veja a linha 8 do código abaixo). Se existir mais de um argumento, eles devem ser separados por vírgulas (linha 20 do código abaixo).
+
+#+begin_src python -n
+  def multiplica_por_100(x):
+      """Multiplica o valor recebido por 100."""
+      return x * 100
+
+
+  print(multplica_por_100(2))
+
+  multiplica_por_100 = lambda x: x * 100
+
+  print(multplica_por_100(2))
+
+
+  def divide_um_pelo_outro(x, y):
+      """Divide o primeiro valor recebido pelo segundo."""
+      return x / y
+
+
+  print(divide_um_pelo_outro(20, 5))
+
+  divide_um_pelo_outro = lambda x, y: x / y
+
+  print(divide_um_pelo_outro(20, 5))
+#+end_src
+
+Nos exemplos acima nós armazenamos as funções anônimas em variáveis. Mesmo esta sintaxe sendo perfeitamente válida, a PEP 8 recomenda que isso _não seja feito_. Sempre que precisar declarar uma função com nome utilize a instrução ~def~. Fica a pergunta: para que servem funções anônimas? Funções anônimas são excelentes em situações onde precisamos de funções simples de uso único. Exemplos incluem certos argumentos das funções ~sorted~, ~filter~ e ~map~.
+
+A função ~sorted~, por exemplo, é capaz de ordenar os números de uma lista. Quando ela é usada com seu argumento ~key~ padrão, a função ordena os elementos em ordem crescente. O argumento ~key~, se utilizado, deve ser uma função com apenas um argumento que será aplicado aos números da lista antes de ordená-los. Veja o exemplo abaixo. Na linha 3, a função ~sorted~ utiliza o argumento ~key~ padrão (pois não recebeu ele quando foi chamada) e retorna os valores da lista em ordem crescente. Na linha 5, a função ~sorted~ recebeu o argumento ~key~: neste caso é uma função anônima que retorna o valor absoluto do argumento recebido. Com isso, a função ~sorted~ primeiro aplica essa função anônima para cada elemento da lista, ordena a lista levando em conta estes novos elementos, e depois "converte" os elementos para seus valores originais. O resultado final é que os números foram ordenados levando em conta seu valor absoluto.
+
+#+begin_src python -n
+  lista = [0, 1, -2, 3, -4, 5, -6]
+
+  print(sorted(lista))  # resulta em [-6, -4, -2, 0, 1, 3, 5]
+
+  print(sorted(lista, key=lambda x: abs(x)))  # resulta em [0, 1, -2, 3, -4, 5, -6]
+#+end_src
+
+#+RESULTS:
+: [-6, -4, -2, 0, 1, 3, 5]
+: [0, 1, -2, 3, -4, 5, -6]
+
+Apenas para deixar claro, o exemplo anterior usou uma função anônima para o argumento ~key~ pois é uma função simples de uso único. Entretanto, poderíamos também usar uma função declarada com a instrução ~def~ como mostra o código abaixo. Nesse caso, o uso de uma função anônima é preferível por facilitar a leitura do código.
+
+#+begin_src python -n
+  lista = [0, 1, -2, 3, -4, 5, -6]
+
+  def absoluto(x):
+      """Retorna o valor absoluto."""
+      return abs(x)
+
+  print(sorted(lista, key=absoluto))  # resulta em [0, 1, -2, 3, -4, 5, -6]
+#+end_src
+
+#+RESULTS:
+: [0, 1, -2, 3, -4, 5, -6]
+
+* Listas
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_listas
 :EXPORT_OPTIONS: toc:t
@@ -864,7 +1420,7 @@ print(listadecompras[1])
 
 Pronto, as listas estão atualizadas com os itens que você incluiu.
 
-*** Modificando, particionando, e desempacotando listas
+*** Modificando, particionando e desempacotando listas
 
 Já foi apresentado a vocês um dos métodos utilizados em listas, o append. Mas, existem outros métodos para listas, a seguir apresentaremos alguns deles.
 Vamos volta a nossa lista de compras. Você mudou de ideia quanto a sua sobremesa, não querendo mais o chocolate, mas sim um flan pronto de pote. Então precisamos remover o chocolate e inserir o flan. Vamos então remover o chocolate e adicionar o flan.
@@ -946,25 +1502,6 @@ print(listadecompras[0][0:7:2])
 #+end_src
 
 Com este comando o código imprimiu ['Queijo Ralado', 'Pão', 'Ovo', 'Flan'], incluindo o sexto elemento da lista. Então, tenha isso sempre em mente com o Python, a contagem começa em zero e o último elemento das faixas de valores não é incluído. Também podemos utilizar índices negativos no particionamento de listas, mas como assim? O que acontece quando usamos índices negativos? Basicamente a contagem é de traz para frente. Então, se pedirmos a seguinte faixa [-4,-1] para nossa lista de compras do supermercado, o código imprimirá ['Ovo', 'Miojo', 'Flan'], sendo esses os elementos -4, -3 e -2, já que o último elemento não vai ser incluído por ser o final do intervalo. Se quisermos também o último elemento e colocarmos o intervalo como [-4:0] teremos um erro de sintaxe, então, para obter os quatro últimos elementos a sintaxe correta será [-4:], que irá imprimir do elemento -4 até o último.
-
-** "Tuplas"
-Existe outro tipo de dados no Python que são chamadas tuplas. As tuplas são basicamente listas imutáveis. Como assim imutáveis? Isso significa que uma vez que ela foi definida, não podemos mais adicionar ou remover elementos, bem como não é possível modificar sua ordem. Então, voltando ao nosso exemplo do supermercado, se você quiser estabelecer alguns itens que serão comprados recorrentemente, podemos colocá-los em uma tupla. Vamos a um exemplo:
-
-#+begin_src python
-itensrecorrentes = ("Miojo", "Ovo", "Queijo Ralado")
-print(itensrecorrentes)
-#+end_src
-
-Então, agora esta tupla será composta sempre por estes itens, não podendo modificá-los ou alterar sua ordem. Por conta disso as tuplas só tem dois métodos possíveis, o count e o index, que tem a mesma função que nas listas, que é contar quantos itens existem na tupla e qual o índice do objeto requisitado.
-O interessante é que podemos utilizar o método extend das listas incluindo a tupla. Vamos criar uma nova lista então:
-
-#+begin_src python
-listadecompras = []
-listadecompras.extend(itensrecorrentes)
-print(listadecompras)
-#+end_src
-
-Na primeira linha inicializamos uma lista vazia, apenas para criá-la, para poder utilizar o método extend nela na segunda linha. Podemos ver que agora temos uma lista criada a partir da tupla, então podemos voltar a adicionar os itens de interesse.
 
 ** "Cópia rasa e cópia profunda"
 
@@ -1053,6 +1590,32 @@ print(item2)
 
 Como se comportou o código de acordo com onde ficou o asterisco?
 
+* Tuplas e conjuntos
+:PROPERTIES:
+:EXPORT_FILE_NAME: PC1/PC1_tuplas
+:EXPORT_OPTIONS: toc:t
+:ID:       585f9d73-04ce-4e3f-8e4d-6bf5eda0a0f5
+:END:
+
+** "Tuplas"
+Existe outro tipo de dados no Python que são chamadas tuplas. As tuplas são basicamente listas imutáveis. Como assim imutáveis? Isso significa que uma vez que ela foi definida, não podemos mais adicionar ou remover elementos, bem como não é possível modificar sua ordem. Então, voltando ao nosso exemplo do supermercado, se você quiser estabelecer alguns itens que serão comprados recorrentemente, podemos colocá-los em uma tupla. Vamos a um exemplo:
+
+#+begin_src python
+itensrecorrentes = ("Miojo", "Ovo", "Queijo Ralado")
+print(itensrecorrentes)
+#+end_src
+
+Então, agora esta tupla será composta sempre por estes itens, não podendo modificá-los ou alterar sua ordem. Por conta disso as tuplas só tem dois métodos possíveis, o count e o index, que tem a mesma função que nas listas, que é contar quantos itens existem na tupla e qual o índice do objeto requisitado.
+O interessante é que podemos utilizar o método extend das listas incluindo a tupla. Vamos criar uma nova lista então:
+
+#+begin_src python
+listadecompras = []
+listadecompras.extend(itensrecorrentes)
+print(listadecompras)
+#+end_src
+
+Na primeira linha inicializamos uma lista vazia, apenas para criá-la, para poder utilizar o método extend nela na segunda linha. Podemos ver que agora temos uma lista criada a partir da tupla, então podemos voltar a adicionar os itens de interesse.
+
 ** "Conjuntos são listas sem elementos repetidos"
 Ainda nos tipos de objetos do Python, ainda temos os conjuntos, que são basicamente listas sem elementos repetidos. Os conjuntos possuem seus métodos específicos também, que englobam métodos equivalentes aos das listas, como: remove(), pop(). Mas especificamente para conjuntos, temos operações matemáticas já conhecidas, como união e intersecção. Vamos definir dois conjuntos e operá-los, com nossa analogia de listas de compras, vamos pensar que você fez anotações para compras em dois lugares diferentes e agora você quer juntá-las.
 
@@ -1083,7 +1646,6 @@ Além desses métodos temos outros exclusivos de conjuntos, como segue:
 #+BEGIN_COMMENT
 Podemos pedir para os alunos pesquisarem os outros métodos, tem alguns conceitualmente complicados. Mas precisa ver se a aula já não está muito densa.
 #+END_COMMENT
-
 * Laço de repetição
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_laco
@@ -1377,529 +1939,6 @@ Assim como laços, também podemos aninhar compreensão de listas. Neste caso a 
 [[./img/nested-list-comprehension.png]]
 
 #+ açúcar sintático >> Ver com Daniel
-
-* Funções
-:PROPERTIES:
-:EXPORT_FILE_NAME: PC1/PC1_funcoes
-:EXPORT_OPTIONS: toc:t
-:ID:       b20f8635-108a-49d4-9903-6a397dc4fed2
-:END:
-
-** O que é uma função?
-
-Durante o exercício "Olá, Mundo!" nós utilizamos a função ~print~. Naquele momento, definimos funções como sendo "apelidos" para executar códigos que já foram escritos. De fato, esta é uma das grandes vantagens de funções: você escreve o código apenas uma vez e reaproveita ele quantas vezes forem necessárias! Além de economizar tempo, o uso apropriado de funções deixa o propósido do código mais fácil de ser entendido.
-
-De maneira geral, uma função tem quatro partes:
-
-1) um /nome/,
-2) zero ou mais objetos chamados de /argumento/,
-3) um bloco de código chamado de /corpo da função/,
-4) zero ou mais objetos chamados de /retorno/.
-
-Basicamente, ao executar uma função ela recebe zero ou mais objetos (argumento), executa seu bloco de código (usando ou não os argumentos recebidos) e retorna zero ou mais objetos (retorno). Veja que o conceito de função em programação não é o mesmo que o conceito de função em matemática. Certas funções em programação podem ser chamadas de funções matemáticas, porém não todas!
-
-** Funções embutidas
-
-Existem diversas funções embutidas em Python. Estas funções podem ser usadas _a qualquer momento_, sem a necessidade de executar nenhum comando prévio. Além das funções embutidas que já vimos (~print~ e ~help~, por exemplo) existem diversas outras! A lista completa pode ser checada aqui https://docs.python.org/pt-br/3/library/functions.html
-
-*[A]* Existem diversas funções embutidas em Python. Para cada uma das funções abaixo, escreva em uma célula de texto o nome da função, descreva seus argumentos, explique em suas palavras o que a função faz e descreva seus valores de retorno. Na célula seguinte, escreva um código que use esta função. Comente seu código!
-
-+ ~any~
-+ ~all~
-+ ~len~
-+ ~abs~
-
-** Definindo novas funções
-
-Podemos definir nossas próprias funções utilizando a instrução ~def~. O código abaixo mostra diversos exemplos de definições de funções. Observe que todas as definições começam com ~def~, seguido do nome da função, seguido de parêntesis e por fim dois-pontos. É considerado bom estilo pular duas linhas antes e depois da definição de funções e nomear funções com a primeira letra minúscula. Ao fim do código as funções definidas são executadas. Para executar funções basta escrever o nome delas seguido de parênteses.
-
-#+begin_src python -n
-  def funcao_1():
-      print("Esta é a função 1")
-
-
-  def funcao_2(argumento1):
-      print("Esta é a função 2")
-      print(argumento1)
-
-
-  def funcao_3(argumento1, argumento2):
-      print("Esta é a função 3")
-      print(argumento1)
-      print(argumento2)
-
-
-  def funcao_4(argumento1, argumento2):
-      print("Esta é a função 4")
-      soma = argumento1 + argumento2
-      return soma
-
-
-  def funcao_5(argumento1, argumento2):
-      print("Esta é a função 5")
-      return 10
-
-
-  def funcao_6(argumento1, argumento2, argumento3):
-      print("Esta é a função 6")
-      return argumento3, argumento2, argumento1
-
-
-  print('Testando a funcao_1')
-  retorno = funcao_1()
-  print(retorno)
-  print()
-
-  print('Testando a funcao_2')
-  retorno = funcao_2("Olá")
-  print(retorno)
-  print()
-
-  print('Testando a funcao_3')
-  retorno = funcao_3("Olá", "mundo")
-  print(retorno)
-  print()
-
-  print('Testando a funcao_4')
-  retorno = funcao_4(1, 2)
-  print(retorno)
-  print()
-
-  print('Testando a funcao_5')
-  retorno = funcao_5(1, 2)
-  print(retorno)
-  print()
-
-  print('Testando a funcao_6')
-  retorno = funcao_6("a", "b", "c")
-  print(retorno)
-  print()
-
-  print('Testando a funcao_6 novamente')
-  retorno1, retorno2, retorno3 = funcao_6("a", "b", "c")
-  print(retorno1, retorno2, retorno3)
-  print()
-#+end_src
-
-#+RESULTS:
-#+begin_example
-Testando a funcao_1
-Esta é a função 1
-None
-
-Testando a funcao_2
-Esta é a função 2
-Olá
-None
-
-Testando a funcao_3
-Esta é a função 3
-Olá
-mundo
-None
-
-Testando a funcao_4
-Esta é a função 4
-3
-
-Testando a funcao_5
-Esta é a função 5
-10
-
-Testando a funcao_6
-Esta é a função 6
-('c', 'b', 'a')
-
-Testando a funcao_6 novamente
-Esta é a função 6
-c b a
-
-#+end_example
-
-A ~funcao_1~ não recebe nenhum argumento. Sabemos que este é o caso pois não existe nenhuma informação dentro dos parênteses logo após o comando ~def funcao_1~. Quando executada, esta função exibe a mensagem "Esta é a função 1". Não existem valores de retorno pois em nenhum local do corpo da função existe a instrução ~return~. Funções que não possuem valor de retorno explícito sempre retornam ~None~ quando encerram sua execução.
-
-A ~funcao_2~ recebe um argumento chamado ~argumento1~. Todos os argumentos recebidos pelas funções podem ser utilizados no corpo da função. No caso desta função, o valor do ~argumento1~ é exibido ao usuário através da função ~print~. Novamente, não existem valores de retorno.
-
-A ~funcao_3~ recebe dois argumentos, ~argumento1~ e ~argumento2~. Note que os nomes dos argumentos são separados por vírgula. Funções podem ter quantos argumentos forem necessários, desde que todos eles sejam declarados no local apropriado (isto é, dentro dos parênteses). Novamente, não existem valores de retorno.
-
-A ~funcao_4~ recebe dois argumentos, calcula a soma deles e retorna este valor. O retorno do valor é feito pela instrução ~return~ no corpo do da função. Observe na linha 48 como podemos armazenar o valor retornado pela função em uma variável.
-
-A ~funcao_5~ recebe dois argumentos e retorna o valor 10. Observe que não é necessário utilizar os argumentos da função no corpo da mesma. No entanto, não é uma boa prática definir argumentos que não serão utilizados no corpo da função.
-
-Finalmente, a ~funcao_6~ recebe três argumentos e retorna os mesmos argumentos em ordem inversa. Observe que a instrução ~return~ permite retornar mais que um valor. Se retornar mais que um valor, estes devem estar separados por vírgulas. Na linha 58 temos uma situação inusitada: a ~funcao_6~ retorna três valores, mas estamos atribuindo o retorno desta função a apenas uma variável chamada ~retorno~. Se você rodar este código perceberá que não ocorrem erros. Neste caso, os três valores de retorno são agrupados em uma tupla e armazenados na variável ~retorno~. Observe a sintaxe da linha 63 para ver como separar os valores de retorno em variáveis independentes.
-
-*[B]* Crie e execute funções para realizar as tarefas abaixo:
-
-+ Uma função que recebe um valor numérico e retorna o cubo deste valor.
-+ Uma função que recebe cinco valores e retorna o valor médio e o desvio padrão destes valores.
-+ Uma função que recebe uma lista contendo números e retorna uma lista com os números ordenados de forma crescente.
-
-*[C]* Crie uma função que recebe um argumento e tente executar ela sem fornecer nenhum argumento. Após este teste, tente executar ela fornecendo dois argumentos. Observe e relate o que aconteceu.
-
-*[D]* Execute o código abaixo e comente o que ocorre quando executamos a linha 5. Nesta linha a função ~ola~ foi executada sem os parênteses. Seu código rodou com erro ou se erro? De qualquer forma elabore o que aconteceu.
-
-#+begin_src python -n
-  def ola():
-      return "Olá!"
-
-  print(ola())
-  print(ola)
-#+end_src
-
-** Argumentos posicionais, argumentos nomeados e argumentos com valor padrão
-
-A ordem dos argumentos é muito importante durante a execução de funções com dois ou mais argumentos. O exemplo abaixo ilustra isso: a inversão da ordem dos argumentos altera o resultado do retorno da função. Cada argumento de uma função tem a sua _posição_, então é necessário se atentar a ordem dos argumentos para evitar erros.
-
-#+begin_src python
-  def exponenciacao(base, expoente):
-      return base ** expoente
-
-
-  print(exponenciacao(10, 2))  # resulta em 100
-  print(exponenciacao(2, 10))  # resulta em 1024
-#+end_src
-
-#+RESULTS:
-: 100
-: 1024
-
-Todo argumento tem um _nome_. Na função ~exponenciacao~ acima temos dois argumentos, um chamado de ~base~ e outro de ~expoente~. Podemos executar essa função chamando os argumentos pelo nome! Veja no exemplo abaixo.
-
-#+begin_src python -n
-  def exponenciacao(base, expoente):
-      return base ** expoente
-
-
-  print(exponenciacao(base=10, expoente=2))  # resulta em 100
-  print(exponenciacao(expoente=2, base=10))  # resulta em 100
-  print(exponenciacao(10, expoente=2))       # resulta em 100
-  print(exponenciacao(expoente=2, 10))       # ERRO!
-  print(exponenciacao(expoente=2))           # ERRO!
-  print(exponenciacao(base=10))              # ERRO!
-#+end_src
-
-#+RESULTS:
-: 100
-: 100
-: 100
-
-Na linha 5 acima, a função ~exponenciacao~ é executada com seus argumentos chamados pelo nome.
-
-Na linha 6 vemos que não é necessário seguir a mesma ordem dos argumentos da função, desde que todos os argumentos necessários sejam nomeados.
-
-Na linha 7 vemos que é possível misturar argumentos nomeados com argumentos posicionais. Neste caso, o valor "10" está na posição zero, logo ele será atribuído à variável ~base~ da função ~exponenciacao~. O valor do argumento ~expoente~ foi nomeado durante a execução e atribuído o valor de "2".
-
-A linha 8 parece similar a linha 7, porém ela não executa! O programa da erro! Isso porque não é permitido argumentos posicionais _após_ argumetos nomeados. Se você for utilizar uma mistura de argumentos posicionais com nomeados, certifique-se que os argumentos nomeados estão todos após os argumentos posicionais.
-
-As linhas 9 e 10 mostram que precisamos garantir que todos os argumentos tenham valores, do contrário a função não executa.
-
-Argumentos nomeados ajudam na leitura do código, principalmente quando as funções e argumentos receberam bons nomes. As linhas 5 e 6 do código acima deixam bem clara a intenção do código.
-
-Por fim, além de uma posição e um nome, argumentos opcionalmente podem ter um _valor padrão_. O valor padrão é atribuido com o operador de atribuição ~=~ logo após o nome do argumento. Veja o exemplo abaixo.
-
-#+begin_src python -n
-  def exponenciacao(base, expoente=5):
-      return base ** expoente
-
-
-  print(exponenciacao(base=10, expoente=2))  # resulta em 100
-  print(exponenciacao(base=10))              # resulta em 100000
-  print(exponenciacao(10))                   # resulta em 100000
-  print(exponenciacao(expoente=2))           # ERRO! Falta o valor da base
-#+end_src
-
-#+RESULTS:
-: 100
-: 100000
-: 100000
-
-A nova função ~exponenciacao~ tem um valor padrão para o argumento expoente (no caso, é o valor 5). Ela continua funcionando da mesma maneira que a função anterior. Execute a linha 5 e verá que isso é verdade. Com o valor padrão do argumento ~expoente~, podemos executar as linhas 6 e 7 sem problema. Em ambos os casos nós informamos apenas o valor do argumento ~base~ quando executamos a função. Ao fazer isso, informamos a função que ela deve usar o valor padrão para o argumento ~expoente~. Finalmente, a linha 8 resulta em um erro pois o valor para o argumento ~base~ não foi informado para a execução da função ~exponenciacao~.
-
-Observe que não é permitido declarar argumentos sem valor padrão após argumentos com valor padrão. Por conta disso o código abaixo resulta em erro ao ser executado.
-
-#+begin_src python
-  def exponenciacao(base=10, expoente):
-      return base ** expoente
-#+end_src
-
-** Variáveis globais e variáveis locais
-
-Variáveis criadas dentro de funções são locais e só existem dentro do escopo da função. Teste se isso é verdade executando o código abaixo. O que aconteceu?
-
-#+begin_src python -n
-  def refeicao():
-      opcao_1 = "SPAM"
-      opcao_2 = "SPAM"
-      opcao_3 = "ovos"
-      opcao_4 = "bacon"
-      return [opcao_1, opcao_2, opcao_3, opcao_4]
-
-  lanche_da_tarde = refeicao()
-  print(opcao_1)
-#+end_src
-
-#+RESULTS:
-
-No código acima a função ~refeicao~ declara internamente 4 variáveis, sendo elas ~opcao_1~, ~opcao_2~, ~opcao_3~ e ~opcao_4~. Executamos essa função na linha 8 e na linha 9 tentamos exibir o valor da variável ~opcao_1~. Entretanto, o compilador acusa um erro nos dizendo que a variável ~opcao_1~ não existe! Isso ocorre pois a variável ~opcao_1~ foi declarada /dentro do escopo/ da função ~refeicao~ e ela só existe dentro do escopo onde foi declarada. Após o término da execução da função todas as suas variáveis locais são destruídas para liberar memória.
-
-Variáveis declaradas fora do escopo de funções são variáveis globais. Variáveis globais podem ser acessadas em qualquer escopo, inclusive dentro do escopo de funções! Sabendo disso, o que você acha que acontece se executarmos o código abaixo? A função ~qual_o_melhor_album~ é capaz utilizar a variável ~melhor_album~ mesmo ela não sendo um argumento ou variável declarada localmente, isto pois esta variável é global.
-
-#+begin_src python
-  melhor_album = "The dark side of the moon"  # esta é uma variável global
-
-
-  def qual_o_melhor_album():
-      print("O melhor album de todos os tempos é :")
-      print(melhor_album)
-
-
-  qual_o_melhor_album()
-#+end_src
-
-#+RESULTS:
-: O melhor album de todos os tempos é :
-: The dark side of the moon
-
-Mesmo sabendo que variáveis globais podem ser utilizadas dentro de funções, este comportamento é _desencorajado_! Isso torna a leitura do código mais difícil, o uso da função menos geral e aumenta a chance de /bugs/ no seu código! Se necessário utilizar uma variável global em uma função, opte por adicionar um argumento com a variável global como valor padrão.
-
-*[exercício]* O que acontece quando um argumento de uma função tem o mesmo nome de uma variável global? Teste isso escrevendo seu próprio código e explique em suas palavras o que observou.
-
-*[exercício]* O que acontece quando uma variável global é alterada dentro de uma função? Teste isso com pelo menos uma variável numérica, uma lista e um dicionário. Explique em suas palavras o que observou.
-
-** Documentando suas funções com a docstring
-
-Funções podem ser tão simples ou tão complexas quanto quisermos. As versões mais recentes do Python permitem que as funções tenham quantos argumentos e retornos nós desejarmos. Também não há limites quanto a quantidade de linhas de código no corpo da função.
-
-Mas como dizia o tio Ben: com grandes poderes vem grandes responsabilidades! Você pode escrever hoje a função mais complexa do mundo e resolver todos os seus problemas. Tudo certo enquanto a função está fresca na sua mente. Daqui há três meses você precisa utilizar essa função novamente e já não se recorda mais o que cada argumento controla, não entende mais o valor de retorno e não tem tempo de interpretar as doze mil linhas de código que compõe o corpo da função... e agora?
-
-Uma solução para evitar dor de cabeça no futuro é documentar sua função escrevendo a chamada /docstring/. Documentar a função nada mais é do que escrever o que ela faz, detalhando todas as partes importantes para que qualquer um que venha a usar a função entenda qual é o seu propósito e o que pode esperar quando executá-la. O guia de estilo de docstrings em Python é a PEP 257 e pode ser acessada em https://www.python.org/dev/peps/pep-0257/.
-
-A docstring mais simples de todas é a "docstring em uma linha". Trata-se de uma descrição breve do que a função faz e, como o nome sugere, não deve ultrapassar uma linha. Veja a docstring da função ~remove_impares~ na linha 2 abaixo. Note que docstrings devem ser a primeira linha do corpo da função (logo abaixo a definição da mesma) e são textos entre três aspas. Na descrição em uma linha, use verbos no imperativo! Podemos acessar a docstring de qualquer função usando o comando ~help~ (veja a linha 11) ou acessando o atributo especial ~__doc__~ (veja a linha 13).
-
-#+begin_src python -n
-  def remove_impares(lista):
-      """Remove os números ímpares de uma lista."""
-      lista_nova = [n for n in lista if n % 2 == 0]
-      return lista_nova
-
-
-  lista = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-  print(remove_impares(lista))  # [0, 2, 4, 6, 8]
-
-  print()
-  help(remove_impares)  # mostra informações sobre a função
-
-  print(remove_impares.__doc__)  # mostra a doscring da função
-#+end_src
-
-#+RESULTS:
-: [0, 2, 4, 6, 8]
-:
-: Help on function remove_impares in module __main__:
-:
-: remove_impares(lista)
-:     Remove os números ímpares de uma lista.
-:
-: Remove os números ímpares de uma lista.
-
-
-Docstrings em uma linha são suficientes para funções mais simples com poucas linhas de código. Funções mais complexas se beneficiam de mais informações na docstring para deixar claro seu funcionamento, como por exemplo:
-
-1) Uma descrição mais aprofundada da função;
-2) Uma listagem de todos os argumentos da função, descrevendo o que eles controlam;
-3) Uma listagem de todos os retornos da função, descrevendo o que eles são;
-4) Uma listagem de todos os erros capturados e levantados pela função;
-5) Exemplos do uso da função;
-6) Notas e informações adicionais como links e referências.
-
-Para armazenar mais informações, precisamos fazer uso das "docstrings de múltiplas linhas". A PEP 257 não define como docstrings de múltiplas linhas devem ser escritas e, por conta disso, existem diversos guias de estilos diferentes. Nenhum estilo é objetivamente melhor ou pior que o outro, no entanto é considerado bom costume escolher um estilo para cada projeto e se ater a ele (misturar diferentes estilos pode confundir quem está lendo o código). Este texto segue o Guia de Estilo de Python da Google que pode ser conferido em https://google.github.io/styleguide/pyguide.html?showone=Comments#s3.8.1-comments-in-doc-strings. Veja um exemplo abaixo.
-
-#+begin_src python -n
-  def remove_numeros(lista, tipo="pares", verbose=False):
-      """Remove números pares ou ímpares de uma lista.
-
-      O número removido da lista depende do argumento `tipo`. Uma nova lista é
-      criada, logo a lista original não é alterada.
-
-      Args:
-        lista:
-          Lista contendo apenas números inteiros.
-        tipo:
-          String que pode ter os valores `pares` ou `impares`. Controla quais
-          números serão removidos. Valor padrão é `pares`.
-        verbose:
-          Booleano que controla se o resultado final será exibido ao usuário.
-          `True` exibe o resultado. Valor padrão é `False`.
-
-      Returns:
-        Lista com os números pares ou ímpares removidos (depende do valor do
-        argumento `tipo`).
-
-      Raises:
-        ValueError: ocorre se a variável `tipo` recebe um valor inválido.
-      """
-
-      if tipo == "pares":
-          lista_nova = [n for n in lista if n % 2 == 1]
-      elif tipo == "impares":
-          lista_nova = [n for n in lista if n % 2 == 0]
-      else:
-          raise ValueError("Valor incorreto da variável `tipo`.")
-
-      if verbose:
-          print(lista_nova)
-
-      return lista_nova
-
-
-  lista = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-  lista_so_com_impares = remove_numeros(lista, "pares", True)
-  lista_so_com_pares = remove_numeros(lista, "impares", True)
-
-  remove_numeros(lista, "complexos", True)  # da erro!
-#+end_src
-
-#+RESULTS:
-: [1, 3, 5, 7, 9]
-: [0, 2, 4, 6, 8]
-
-Vamos analizar as diversas partes do exemplo assima:
-
-1) A primeira linha da docstring (linha 2) ainda é a descrição da função em uma linha. Ela sempre deve estar presente.
-
-2) Na linha 4 temos a descrição mais aprofundada da função. Use quantas linhas quiser para essa descrição. Esta descrição não é obrigatória.
-
-3) Na linha 7 damos início a descrição dos argumento com o cabeçalho ~Args:~. O nome de cada argumento é escrito com indentação de dois espaços seguido de dois-pontos. A descrição de cada argumento é feita com indentação de quatro espaços e pode conter quantas linhas quiser. Descreva o tipo de variáveis esperadas e o que o argumento controla. Conte para o leitor os valores esperados caso existam e deixe claro qual é o valor padrão quando for o caso. Esta seção é obrigatória caso a função receba um ou mais argumentos.
-
-4) Na linha 17 damos início a descrição dos valores de retorno com o cabeçalho ~Returns:~. Aqui nós contamos quais os valores de retorno e o tipo deles, podemos usar quantas linhas forem necessárias. Esta seção é obrigatória caso existam retornos.
-
-5) Na linha 21 damos início a descrição dos possíveis erros levantados pelo código. Estes são erros deliberadamente programados no corpo da função. Veremos mais sobre erros na seção de depuração de programas, mas por hora é relevante saber que se a variável ~tipo~ tiver um valor fora do esperado, a própria função acusa um erro e envia uma mensagem ao usuário para que ele possa corrigir seu código. Esta seção é obrigatória caso exista gerência de erros no corpo da função (instruções ~raise~ e ~assert~).
-
-** Funções anônimas
-
-Existe uma outra forma de declarar funções em Python, utilizando a instrução ~lambda~. Funções declaradas desta forma são chamadas de funções anônimas, funções em linha ou simplesmente funções lambda. A função ~ola~ abaixo pode ser escrita como uma função anônima (linha 7) que neste caso faz a mesma tarefa da função não-anônima quando executada.
-
-#+begin_src python -n
-  def ola():
-      """Retorna a strig `Olá!`."""
-      return "Olá!"
-
-
-  print(ola())
-
-  ola = lambda: "Olá"
-
-  print(ola())
-#+end_src
-
-Perceba que uma função anônima ocupa apenas uma linha e não tem o valor de retorno explícito: a instrução que está após o "~lambda:~" é o retorno.
-
-Funções anônimas podem ter argumentos e estes são declarados após o ~lambda~ e antes do dois-pontos (veja a linha 8 do código abaixo). Se existir mais de um argumento, eles devem ser separados por vírgulas (linha 20 do código abaixo).
-
-#+begin_src python -n
-  def multiplica_por_100(x):
-      """Multiplica o valor recebido por 100."""
-      return x * 100
-
-
-  print(multplica_por_100(2))
-
-  multiplica_por_100 = lambda x: x * 100
-
-  print(multplica_por_100(2))
-
-
-  def divide_um_pelo_outro(x, y):
-      """Divide o primeiro valor recebido pelo segundo."""
-      return x / y
-
-
-  print(divide_um_pelo_outro(20, 5))
-
-  divide_um_pelo_outro = lambda x, y: x / y
-
-  print(divide_um_pelo_outro(20, 5))
-#+end_src
-
-Nos exemplos acima nós armazenamos as funções anônimas em variáveis. Mesmo esta sintaxe sendo perfeitamente válida, a PEP 8 recomenda que isso _não seja feito_. Sempre que precisar declarar uma função com nome utilize a instrução ~def~. Fica a pergunta: para que servem funções anônimas? Funções anônimas são excelentes em situações onde precisamos de funções simples de uso único. Exemplos incluem certos argumentos das funções ~sorted~, ~filter~ e ~map~.
-
-A função ~sorted~, por exemplo, é capaz de ordenar os números de uma lista. Quando ela é usada com seu argumento ~key~ padrão, a função ordena os elementos em ordem crescente. O argumento ~key~, se utilizado, deve ser uma função com apenas um argumento que será aplicado aos números da lista antes de ordená-los. Veja o exemplo abaixo. Na linha 3, a função ~sorted~ utiliza o argumento ~key~ padrão (pois não recebeu ele quando foi chamada) e retorna os valores da lista em ordem crescente. Na linha 5, a função ~sorted~ recebeu o argumento ~key~: neste caso é uma função anônima que retorna o valor absoluto do argumento recebido. Com isso, a função ~sorted~ primeiro aplica essa função anônima para cada elemento da lista, ordena a lista levando em conta estes novos elementos, e depois "converte" os elementos para seus valores originais. O resultado final é que os números foram ordenados levando em conta seu valor absoluto.
-
-#+begin_src python -n
-  lista = [0, 1, -2, 3, -4, 5, -6]
-
-  print(sorted(lista))  # resulta em [-6, -4, -2, 0, 1, 3, 5]
-
-  print(sorted(lista, key=lambda x: abs(x)))  # resulta em [0, 1, -2, 3, -4, 5, -6]
-#+end_src
-
-#+RESULTS:
-: [-6, -4, -2, 0, 1, 3, 5]
-: [0, 1, -2, 3, -4, 5, -6]
-
-Apenas para deixar claro, o exemplo anterior usou uma função anônima para o argumento ~key~ pois é uma função simples de uso único. Entretanto, poderíamos também usar uma função declarada com a instrução ~def~ como mostra o código abaixo. Nesse caso, o uso de uma função anônima é preferível por facilitar a leitura do código.
-
-#+begin_src python -n
-  lista = [0, 1, -2, 3, -4, 5, -6]
-
-  def absoluto(x):
-      """Retorna o valor absoluto."""
-      return abs(x)
-
-  print(sorted(lista, key=absoluto))  # resulta em [0, 1, -2, 3, -4, 5, -6]
-#+end_src
-
-#+RESULTS:
-: [0, 1, -2, 3, -4, 5, -6]
-
-** Funções também são objetos!
-
-No último exemplo apresentado, nós atribuimos uma função ao argumento ~key~ da função ~sorted~. Esse conceito não é trivial e vale a pena ser pontuado: funções em Python são objetos assim como números, listas, tuplas, conjuntos, strings e dicionários. Desta forma, podemos passar funções como argumentos de funções (linhas 16, 19, 32 e 35) e podemos ter funções como valores de retorno de funções (veja a linha 29)! Podemos inclusive definir funções no corpo de outras funções (linha 26).
-
-#+begin_src python -n
-  def soma_dois(x):
-      """Soma dois a o valor recebido."""
-      return x + 2
-
-
-  def multiplica_dois(x):
-      """Multiplica o valor recebido por dois."""
-      return x * 2
-
-
-  def aplica_funcao_composta(f1, f2, x):
-      """Calcula a função composta de f1 e f2."""
-      return f1(f2(x))
-
-
-  retorno = aplica_funcao_composta(soma_dois, multiplica_dois, 10)
-  print(retorno)  # mostra o número 22
-
-  retorno = aplica_funcao_composta(multiplica_dois, soma_dois, 10)
-  print(retorno)  # mostra o número 24
-
-
-  def retorna_funcao_composta(f1, f2):
-      """Retorna a função composta de f1 e f2."""
-
-      def funcao_composta(x):
-          return f1(f2(x))
-
-      return funcao_composta
-
-
-  funcao_composta = retorna_funcao_composta(soma_dois, multiplica_dois)
-  print(funcao_composta(10))  # retorna 22
-
-  funcao_composta = retorna_funcao_composta(multiplica_dois, soma_dois)
-  print(funcao_composta(10))  # retorna 24
-#+end_src
-
-#+RESULTS:
-: 22
-: 24
-: 22
-: 24
 
 * Depuração de programas
 :PROPERTIES:

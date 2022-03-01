@@ -282,7 +282,7 @@ Em geral, um código que funciona é /melhor/ que um código que não funciona. 
 
 *[A]* Escreva um código que executa uma tarefa simples, porém escreva-o da forma mais ilegível que você conseguir. Troque o seu código com um colega e tente entender o código que recebeu antes de executá-lo no Python.
 
-Veja que nem sempre conseguimos nos expressar em Python de forma que a leitura seja trivial. Isso acontece em qualquer linguagem! Existem certos conceitos e tarefas que simplesmente são complexos de serem representados. Isso é normal! Para facilinar nossas vidas, em programação existe o conceito de /comentários/. Comentários são linhas de texto ao longo do código que são ignoradas pelo compilador quando o código é executado. Comentários servem para ajudar quem está lendo o código a entender mais facilmente o que ele faz. É uma forma do criador do código de se comunicar com seu leitor sem que isso interfira na execução do código em sim. Veja o exemplo abaixo.
+Veja que nem sempre conseguimos nos expressar em Python de forma que a leitura seja trivial. Isso acontece em qualquer linguagem! Existem certos conceitos e tarefas que simplesmente são complexos de serem representados. Isso é normal! Para facilitar nossas vidas, em programação existe o conceito de /comentários/. Comentários são linhas de texto ao longo do código que são ignoradas pelo compilador quando o código é executado. Comentários servem para ajudar quem está lendo o código a entender mais facilmente o que ele faz. É uma forma do criador do código de se comunicar com seu leitor sem que isso interfira na execução do código em sim. Veja o exemplo abaixo.
 
 #+begin_src python
   # este é um comentário. Tudo que está após o `#` será ignorado pelo Python
@@ -299,7 +299,7 @@ Veja que nem sempre conseguimos nos expressar em Python de forma que a leitura s
 
 Para iniciantes é recomendado sempre comentar seu código. Isso não só irá te ajudar a organizar suas ideias mas também ajudar quem for ler seu código a entender o que ele faz. Em níveis intermediários, recomenda-se deixar comentários apenas em partes do código que não são triviais de se entender.
 
-*[B]* Escreva um código que calcula as raizes de uma equação de segundo grau $f(x) = ax^2 + bx + c$ usando a fórmula de Bhaskara. Comente todas as etapas do seu código. Siga o modelo abaixo.
+*[B]* Escreva um código que calcula as raízes de uma equação de segundo grau $f(x) = ax^2 + bx + c$ usando a fórmula de Bhaskara. Comente todas as etapas do seu código. Siga o modelo abaixo.
 
 #+begin_src python
   # valores dos coeficientes (pode alterar se quiser)
@@ -339,7 +339,7 @@ O que você faria se não soubesse o que função ~print~ faz? Digamos, por exem
 3) Usar a função ~help~ do próprio Python (tente rodar ~help(print)~ no seu caderno de notas e veja o que acontece);
 4) Usar a sintaxe própria do Jupyter para buscar ajuda. Para isso basta digitar a função que quer saber mais informações junto com um sinal de interrogação. Neste caso seria ~print?~.
 
-*[A]* Escolha uma das quatro sugestões acima para ler mais sobre a função ~print~ do Python. Observe que a função ~print~ aceita diferentes argumentos, sendo eles: ~value~, ~file~, ~flush~, ~end~ e ~sep~. Escreva como foi sua busca (incluindo fontes se for o caso) e descreva com suas palavras o que os argumentos ~end~ e ~sep~ fazem. Tente outras formas de busca caso julge necessário.
+*[A]* Escolha uma das quatro sugestões acima para ler mais sobre a função ~print~ do Python. Observe que a função ~print~ aceita diferentes argumentos, sendo eles: ~value~, ~file~, ~flush~, ~end~ e ~sep~. Escreva como foi sua busca (incluindo fontes se for o caso) e descreva com suas palavras o que os argumentos ~end~ e ~sep~ fazem. Tente outras formas de busca caso julgue necessário.
 
 *[B]* Para cada função abaixo, faça uma busca online (buscas 1 ou 2) e uma busca offline (buscas 3 ou 4) para entender o que estas funções fazem. Escreva como foi sua busca (incluindo fontes) e descreva com suas palavras o que estas funções fazem.
 
@@ -623,7 +623,7 @@ Independentemente do resultado do teste da condição, a primeira e a última li
 
 Observe que a sintaxe de estruturas de decisão requer que o bloco referente ao ~if~ e o bloco referente ao ~else~ estejam /indentados/. Indentação de código é quando utilizamos uma certa quantidade de espaços para agrupar visualmente linhas de código pertencentes a um mesmo bloco. Segundo o guia de estilo do Python (a PEP 8 que vimos lá na Introdução), é recomendado usar 4 espaços para indentar seu código.
 
-É bom saber que se seu código não estiver indentado corretamente, ele muito provavelmente não irá realizar a tarefa que você tinha em mente. Em certos casos, uma falha em indentar corretamente seu programa irá acusar um erro. Tente rodar o código abaixo e veja o que acontece (veja que ele é o mesmo código que vimos acima, porém sem indentação)[fn:: Aqui vale a pena comentar que o requisito de blocos de códigos estaram indentados é uma característica de algumas linguagens de programação, porém não todas! Códigos em ~C~, por exemplo, não têm esse requisito. Mesmo assim, é considerado bom estilo sempre indentar seu código para facilitar a leitura, independente da linguagem de programação que você está utilizando.].
+É bom saber que se seu código não estiver indentado corretamente, ele muito provavelmente não irá realizar a tarefa que você tinha em mente. Em certos casos, uma falha em indentar corretamente seu programa irá acusar um erro. Tente rodar o código abaixo e veja o que acontece (veja que ele é o mesmo código que vimos acima, porém sem indentação)[fn:: Aqui vale a pena comentar que o requisito de blocos de códigos estarem indentados é uma característica de algumas linguagens de programação, porém não todas! Códigos em ~C~, por exemplo, não têm esse requisito. Mesmo assim, é considerado bom estilo sempre indentar seu código para facilitar a leitura, independente da linguagem de programação que você está utilizando.].
 
 #+begin_src python -n
   esta_chovendo = True  # troque esse True for False para ver o que acontece
@@ -738,7 +738,7 @@ Uma estrutura muito comum em programação é quando queremos dizer "se a condi�
 #+RESULTS:
 : pH neutro
 
-O código acima checa se o pH é ácido. Caso seja ácido o programa exibe "pH ácido" para o usuáro e nada mais será executado. Caso não seja ácido, o programa checa então se é neutro. Caso seja neutro o programa exibe "pH neutro" para o usuário e nada mais será executado. Caso não seja neutro também, o programa faz uma última checagem para confirmar se é um pH básico. Assim sendo, o usuário verá o texto "pH básico" e o programa se encerra. Se o pH não for ácido, nem neutro, nem básico, então podemos afirmar com segurança que o programa recebeu um valor inválido de pH.
+O código acima checa se o pH é ácido. Caso seja ácido o programa exibe "pH ácido" para o usuário e nada mais será executado. Caso não seja ácido, o programa checa então se é neutro. Caso seja neutro o programa exibe "pH neutro" para o usuário e nada mais será executado. Caso não seja neutro também, o programa faz uma última checagem para confirmar se é um pH básico. Assim sendo, o usuário verá o texto "pH básico" e o programa se encerra. Se o pH não for ácido, nem neutro, nem básico, então podemos afirmar com segurança que o programa recebeu um valor inválido de pH.
 
 *[F]* Escreva um programa similar ao programa do pH que checa alguma grandeza escalar e exibe para o usuário uma informação sobre esta grandeza. Utilize pelo menos duas cláusulas ~elif~ no seu programa.
 
@@ -780,7 +780,7 @@ Além da estrutura de decisão ~if~/~else~ existe o /operador condicional/. É i
 
 ** O que é uma função?
 
-Durante o exercício "Olá, Mundo!" nós utilizamos a função ~print~. Naquele momento, definimos funções como sendo "apelidos" para executar códigos que já foram escritos. De fato, esta é uma das grandes vantagens de funções: você escreve o código apenas uma vez e reaproveita ele quantas vezes forem necessárias! Além de economizar tempo, o uso apropriado de funções deixa o propósido do código mais fácil de ser entendido.
+Durante o exercício "Olá, Mundo!" nós utilizamos a função ~print~. Naquele momento, definimos funções como sendo "apelidos" para executar códigos que já foram escritos. De fato, esta é uma das grandes vantagens de funções: você escreve o código apenas uma vez e reaproveita ele quantas vezes forem necessárias! Além de economizar tempo, o uso apropriado de funções deixa o propósito do código mais fácil de ser entendido.
 
 De maneira geral, uma função tem quatro partes:
 
@@ -978,17 +978,17 @@ Todo argumento tem um _nome_[fn:: Na verdade, veremos adiante que existem casos 
 
 Na linha 5 acima, a função ~exponenciacao~ é executada com seus argumentos chamados pelo nome.
 
-Na linha 6 vemos que não é necessário apresentar os argumentos nomeados seguindo a mesma ordem dos argumentos assim como definida na função. Isso funciona desde que todos os argumentos tenham um valor atribuido no momento de execução da função.
+Na linha 6 vemos que não é necessário apresentar os argumentos nomeados seguindo a mesma ordem dos argumentos assim como definida na função. Isso funciona desde que todos os argumentos tenham um valor atribuído no momento de execução da função.
 
 Na linha 7 vemos que é possível misturar argumentos nomeados com argumentos posicionais. Neste caso, o valor "10" está na posição zero, logo ele será atribuído à variável ~base~ da função ~exponenciacao~. O valor do argumento ~expoente~ foi nomeado durante a execução e atribuído o valor de "2".
 
-A linha 8 parece similar a linha 7, porém ela acusa um erro quando executada!! Isso porque não é permitido argumentos posicionais /após/ argumetos nomeados. Se você for utilizar uma mistura de argumentos posicionais com nomeados, certifique-se que os argumentos nomeados estão todos após os argumentos posicionais.
+A linha 8 parece similar a linha 7, porém ela acusa um erro quando executada!! Isso porque não é permitido argumentos posicionais /após/ argumentos nomeados. Se você for utilizar uma mistura de argumentos posicionais com nomeados, certifique-se que os argumentos nomeados estão todos após os argumentos posicionais.
 
-As linhas 9 e 10 mostram que precisamos garantir que todos os argumentos tenham valores atribuidos, do contrário a função não executa.
+As linhas 9 e 10 mostram que precisamos garantir que todos os argumentos tenham valores atribuídos, do contrário a função não executa.
 
 Argumentos nomeados ajudam na leitura do código, principalmente quando as funções e argumentos receberam bons nomes. As linhas 5 e 6 do código acima deixam bem clara a intenção do código.
 
-Por fim, além de uma posição e um nome, argumentos opcionalmente podem ter um _valor padrão_. O valor padrão é atribuido com o operador de atribuição ~=~ logo após o nome do argumento. Veja o exemplo abaixo.
+Por fim, além de uma posição e um nome, argumentos opcionalmente podem ter um _valor padrão_. O valor padrão é atribuído com o operador de atribuição ~=~ logo após o nome do argumento. Veja o exemplo abaixo.
 
 #+begin_src python -n
   def exponenciacao(base, expoente=5):
@@ -1189,7 +1189,7 @@ Para armazenar mais informações, precisamos fazer uso das "docstrings de múlt
 : 16
 : 5
 
-Vamos analizar as diversas partes do exemplo assima:
+Vamos analizar as diversas partes do exemplo acima:
 
 1) A primeira linha da docstring (linha 3) ainda é a descrição da função em uma linha. Ela sempre deve estar presente.
 
@@ -1250,7 +1250,7 @@ Funções em Python são objetos assim como números e strings. Desta forma, pod
 : 22
 : 24
 
-** Funções anônimas
+** Funções anônimas :noexport:
 
 Existe uma outra forma de declarar funções em Python, utilizando a instrução ~lambda~. Funções declaradas desta forma são chamadas de /funções anônimas/, /funções em linha/ ou simplesmente /funções lambda/. A função ~ola~ abaixo pode ser escrita como uma função não-anônima (linha 1) ou anônima (linha 8). Ambas fazem a mesma tarefa.
 
@@ -1336,7 +1336,7 @@ Apenas para deixar claro, o exemplo anterior usou uma função anônima para o a
 
 ** Agrupando objetos com listas
 
-Vamos começar pensando no seguinte cenário, você está em casa e não tem nada para comer, portanto, precisa ir até o supermercado comprar ingredientes para uma receita. A primeira coisa que vem a sua cabeça é comprar um pacote de miojo, afinal, é fácil de preparar. Mas, sua fome está grande, então poderia comprar dois pacotes de miojo, mas isso não parece tão atraente. Lhe ocorre a ideia de encrementar o miojo, posso adicionar queijo ralado, talvez cozinhar um ovo junto com o miojo. Além disso, você resolve comprar uma bebida para acompanhar, um refrigerante. Então, você lembra que a pasta de dentes está acabando, então decide comprar também, para aproveitar a ida ao mercado. O número de itens a se comprar já começa a ficar grande, então é melhor organizar suas compras em uma lista. Vamos escrever tal lista então:
+Vamos começar pensando no seguinte cenário, você está em casa e não tem nada para comer, portanto, precisa ir até o supermercado comprar ingredientes para uma receita. A primeira coisa que vem a sua cabeça é comprar um pacote de miojo, afinal, é fácil de preparar. Mas, sua fome está grande, então poderia comprar dois pacotes de miojo, mas isso não parece tão atraente. Lhe ocorre a ideia de incrementar o miojo, posso adicionar queijo ralado, talvez cozinhar um ovo junto com o miojo. Além disso, você resolve comprar uma bebida para acompanhar, um refrigerante. Então, você lembra que a pasta de dentes está acabando, então decide comprar também, para aproveitar a ida ao mercado. O número de itens a se comprar já começa a ficar grande, então é melhor organizar suas compras em uma lista. Vamos escrever tal lista então:
 + Miojo
 + Queijo Ralado
 + Ovo
@@ -2068,7 +2068,7 @@ Vimos na seção anterior que quando um erro é identificado durante a execuçã
 : FIM
 
 
-Neste exemplo, um bloco ~try~ é declarado na linha 6. "Try" vem do verbo tentar em inglês e pode ser traduzido como "tente" neste contexto. O Python irá tentar executar todos os comandos dentro do bloco ~try~ normalmente (note que os comandos do bloco ~try~ devem ser endentados!). Caso alguma instrução dentro do bloco ~try~ acuse um erro, a execução do bloco ~try~ é interrompida e o erro é "capturado", isto é, o tipo do erro é armazenado na memória. Este erro capturado é então comparado com todos os erros declarados nos blocos ~except~ seguintes do bloco ~try~ ("except" significa "exceto" em português). Neste caso temos apenas um bloco ~except~ na linha 12, e ele corresponde ao erro do tipo ~ZeroDivisionError~. Se existir um bloco ~except~ correspondente ao erro capturado, então as istruções deste bloco são executadas e a execução do programa não para! Se não existir um bloco ~except~ correspondente ao erro capturado, então a execução do programa para e o erro é exibido ao usuário da mesma forma que vimos na seção anterior. Execute o código acima e veja o que acontece.
+Neste exemplo, um bloco ~try~ é declarado na linha 6. "Try" vem do verbo tentar em inglês e pode ser traduzido como "tente" neste contexto. O Python irá tentar executar todos os comandos dentro do bloco ~try~ normalmente (note que os comandos do bloco ~try~ devem ser endentados!). Caso alguma instrução dentro do bloco ~try~ acuse um erro, a execução do bloco ~try~ é interrompida e o erro é "capturado", isto é, o tipo do erro é armazenado na memória. Este erro capturado é então comparado com todos os erros declarados nos blocos ~except~ seguintes do bloco ~try~ ("except" significa "exceto" em português). Neste caso temos apenas um bloco ~except~ na linha 12, e ele corresponde ao erro do tipo ~ZeroDivisionError~. Se existir um bloco ~except~ correspondente ao erro capturado, então as instruções deste bloco são executadas e a execução do programa não para! Se não existir um bloco ~except~ correspondente ao erro capturado, então a execução do programa para e o erro é exibido ao usuário da mesma forma que vimos na seção anterior. Execute o código acima e veja o que acontece.
 
 Podemos criar instruções ~try~/~except~ complexas considerando diversos tipos de erros diferentes. Quando um bloco ~except~ deve identificar mais de um tipo de erro, então é necessário agrupar todos os erros em parênteses (ver linha 7 no código abaixo). Podemos escrever quantos blocos ~except~ desejarmos para um mesmo bloco ~try~ (veja as linhas 10 e 13 abaixo).
 
@@ -2124,7 +2124,7 @@ Se nenhum tipo de erro é declarado no bloco ~except~ então este bloco passa a 
 
 Muitas pessoas ficam chateadas quando seu código exibe um erro ao ser executado... isso é normal. Mas veja pelo lado positivo: quando um erro é exibido você /sabe/ que tem algo de errado e tem a oportunidade de corrigir! Um problema que usualmente é /muito/ mais complicado é quando seu código roda sem erros, porém não faz o que você gostaria que ele fizesse...
 
-Se esse é seu problema, a técnica mais fundamental de todas é checar linha por linha do seu código em busca do problema. Será que você esqueceu um operador em algum lugar? Será o valor de uma variável foi alterado em uma função sem que você tenha percebido? Será que faltou atualizar uma variável Booleana? São tantas possibilidades do que pode dar errado que é impossível listar todas elas aqui. É necessário entender bem o propósito de seu código e entender bem todas linhas de instruções do mesmo para conseguir avaliar onde está o problema. Chamamos de _depuração_ ou _debug_ a busca por erros (também chamados de /bugs/) no código.
+Se esse é seu problema, a técnica mais fundamental de todas é checar linha por linha do seu código em busca do problema. Será que você esqueceu um operador em algum lugar? Será o valor de uma variável foi alterado em uma função sem que você tenha percebido? Será que faltou atualizar uma variável booleana? São tantas possibilidades do que pode dar errado que é impossível listar todas elas aqui. É necessário entender bem o propósito de seu código e entender bem todas linhas de instruções do mesmo para conseguir avaliar onde está o problema. Chamamos de _depuração_ ou _debug_ a busca por erros (também chamados de /bugs/) no código.
 
 A técnica de /depuração linha por linha/ pode ser utilizada sempre, porém a energia gasta nessa tarefa aumenta com o número de linhas de código que devem ser avaliadas. Além disso, esta técnica exige que você tenha todas as informações das variáveis na sua memória e literalmente "rode" o código na sua mente. Esta é uma habilidade bastante útil que se adquire ao longo do tempo. Uma forma mais "visual" de usar esta técnica é com a ferramenta online Python Tutor disponível em https://pythontutor.com/visualize.html#mode=edit.
 
@@ -2142,7 +2142,7 @@ Uma forma de encontrar erros em muitas linhas de código é a /depuração inter
 
 Pontos de parada em Python são declarados com a função ~breakpoint~ (lembre-se de incluir parênteses no final do nome da função para executá-la!).
 
-Outra forma de depuração é a /depuração com mensagens de registro/. Nesta modalidade, incluimos instruções no nosso código cujo objetivo é mostrar alguma informação ao usuário durante a sua execução (que ocorre sem pausas). A estratégia mais simples é incluir instruções ~print~ ao longo do código para exibir informações críticas ao usuário como, por exemplo, mostrar o valor de uma variável e seu tipo. Apesar de ser bastante utilizada, esta estratégia com a instrução ~print~ não é recomendada pois ao final da depuração devemos excluir todas as instruções ~print~ que usamos para depurar o código (afinal, esta informação não é pertinente ao usuário final). A forma recomendada para realizar a depuração com mensagens de registro é utilizando o módulo embutido ~logging~, que veremos na seção de Biblioteca padrão.
+Outra forma de depuração é a /depuração com mensagens de registro/. Nesta modalidade, incluímos instruções no nosso código cujo objetivo é mostrar alguma informação ao usuário durante a sua execução (que ocorre sem pausas). A estratégia mais simples é incluir instruções ~print~ ao longo do código para exibir informações críticas ao usuário como, por exemplo, mostrar o valor de uma variável e seu tipo. Apesar de ser bastante utilizada, esta estratégia com a instrução ~print~ não é recomendada pois ao final da depuração devemos excluir todas as instruções ~print~ que usamos para depurar o código (afinal, esta informação não é pertinente ao usuário final). A forma recomendada para realizar a depuração com mensagens de registro é utilizando o módulo embutido ~logging~, que veremos na seção de Biblioteca padrão.
 
 Não se esqueça que é sempre possível buscar ajuda quando nos deparamos com problemas no nosso código! Releia a seção /Buscando ajuda/ caso queira refrescar a memória.
 
@@ -2240,7 +2240,7 @@ Checar uma condição e acusar um erro caso esta condição seja falsa é uma es
 A sintaxe da instrução ~assert~ requer uma condição a ser checada logo após a instrução. Caso a condição retorne ~False~ o código é interrompido e acusa um ~AssertionError~. Caso queira exibir uma mensagem ao usuário para ajudá-lo a entender o que ocorre, escreva uma string e coloque ela após uma vírgula. A mensagem não é obrigatória mas altamente recomendada.
 
 Uma forma mais fácil de entender a instrução ~assert~ é lendo ela como "assegure-se que". Na linha 18 do código acima podemos ler como "assegure-se que o valor de ~x~ é maior que zero e menor ou igual a dois, do contrário, exiba uma mensagem de erro ao usuário alertando ele que esse é um requerimento necessário para executar a função".
-* Dicionários
+* JAMES Dicionários
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_dicionarios
 :EXPORT_OPTIONS: toc:t
@@ -2280,7 +2280,6 @@ Assim como listas e conjuntos, os dicionários também possuem métodos associad
 + values: Retorna uma lista com todos os valores no dicionário. Sintaxe: dicionario.values()
 + update: Insere um par chave-valor no dicionário. Sintaxe: dicionario.update({"chave": "valor"})
 + pop: Assim como já visto em listas e conjuntos,
-
 
 ** Modificando e desempacotando dicionários
 
@@ -2421,7 +2420,7 @@ Assim como listas e conjuntos, os dicionários também possuem métodos associad
 :EXPORT_OPTIONS: toc:t
 :ID:       fc29118f-e0b5-4816-9034-4a83e7b520b4
 :END:
-* TODO Algebra simbólica com =sympy=
+* TODO Álgebra simbólica com =sympy=
 * TODO Propagação de erros com =uncertainties=
 * TODO Exercícios :noexport:
 

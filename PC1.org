@@ -1902,6 +1902,10 @@ Assim como laços, também podemos aninhar compreensão de listas. Neste caso a 
 
 ** Meu programa não roda pois dá um erro, e agora?
 
+#+begin_quote
+"YOU DIED" --- Dark Souls
+#+end_quote
+
 Existem diversas formas em que algo pode dar errado, e isso /não/ é diferente em programação. Idealmente queremos que nosso código rode e nada dê errado, mas se algo estiver errado é sempre bom que sejamos avisados para poder pelo menos tentar consertar. É exatamente isso que acontece quando o Python exibe uma mensagem de erro! Ele está te avisando que algo estranho aconteceu e precisa ser resolvido antes de prosseguir. Veja o código abaixo.
 
 #+begin_src python -n
@@ -1993,6 +1997,10 @@ Saber ler as mensagens de erro é tão importante quanto saber programar em si. 
 
 ** Tratamento de exceções
 
+#+begin_quote
+"Fazer ou não fazer. Tentativa não há" --- Mestre Yoda
+#+end_quote
+
 Vimos na seção anterior que quando um erro é identificado durante a execução de um código, o erro é exibido ao usuário e o programa interrompe imediatamente a sua execução. Entretanto, em certos casos nós gostaríamos que o programa não interrompesse sua execução ao encontrar um erro. Esse comportamente é possível em Python com as instruções ~try~/~except~ e o nome dessa estratégia é /tratamento de exceções/. Veja um exemplo abaixo.
 
 
@@ -2074,6 +2082,10 @@ Como você pode perceber, o tratamento de exceções em Python é bastante poder
 Se nenhum tipo de erro é declarado no bloco ~except~ então este bloco passa a ser executado caso _qualquer erro ocorra_ durante a execução do bloco ~try~! Isso pode parecer conveniente, mas não se deixe enganar: é melhor declarar explicitamente todos os erros que devem ser tratados do que aceitar _qualquer_ erro. Isto pois existem muitos tipos de erros que podem ocorrer durante a execução do seu código, juntar todos os erros "num mesmo saco" aumenta muito a chance de seu código não se comportar da forma como você gostaria. Blocos ~except~ sem declaração do tipo do erro são altamente desencorajados.
 
 ** Meu programa não faz o que eu queria que ele fizesse, e agora?
+
+#+begin_quote
+"Em última análise, é o desejo, não o desejado, que nós amamos." --- Friedrich Nietzsche
+#+end_quote
 
 Muitas pessoas ficam chateadas quando seu código exibe um erro ao ser executado... isso é normal. Mas veja pelo lado positivo: quando um erro é exibido você /sabe/ que tem algo de errado e tem a oportunidade de corrigir! Um problema que usualmente é /muito/ mais complicado é quando seu código roda sem erros, porém não faz o que você gostaria que ele fizesse...
 

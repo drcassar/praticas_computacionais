@@ -19,63 +19,7 @@ id_numpy := fc29118f-e0b5-4816-9034-4a83e7b520b4
 
 pci_html:
 	emacsclient -e "(progn (find-file \"$(pci)\") \
-					(org-id-goto \"$(id_intro)\") \
-					(org-html-export-to-html nil t))"
+					(org-html-export-to-html nil nil))"
 
-	emacsclient -e "(progn (find-file \"$(pci)\") \
-					(org-id-goto \"$(id_jupyter)\") \
-					(org-html-export-to-html nil t))"
-
-	emacsclient -e "(progn (find-file \"$(pci)\") \
-					(org-id-goto \"$(id_operadores)\") \
-					(org-html-export-to-html nil t))"
-
-	emacsclient -e "(progn (find-file \"$(pci)\") \
-					(org-id-goto \"$(id_listas)\") \
-					(org-html-export-to-html nil t))"
-
-	emacsclient -e "(progn (find-file \"$(pci)\") \
-					(org-id-goto \"$(id_laco)\") \
-					(org-html-export-to-html nil t))"
-
-	emacsclient -e "(progn (find-file \"$(pci)\") \
-					(org-id-goto \"$(id_funcoes)\") \
-					(org-html-export-to-html nil t))"
-
-	emacsclient -e "(progn (find-file \"$(pci)\") \
-					(org-id-goto \"$(id_debug)\") \
-					(org-html-export-to-html nil t))"
-
-	emacsclient -e "(progn (find-file \"$(pci)\") \
-					(org-id-goto \"$(id_dicionarios)\") \
-					(org-html-export-to-html nil t))"
-
-	emacsclient -e "(progn (find-file \"$(pci)\") \
-					(org-id-goto \"$(id_strings)\") \
-					(org-html-export-to-html nil t))"
-
-	emacsclient -e "(progn (find-file \"$(pci)\") \
-					(org-id-goto \"$(id_classes)\") \
-					(org-html-export-to-html nil t))"
-
-	emacsclient -e "(progn (find-file \"$(pci)\") \
-					(org-id-goto \"$(id_bibpadrao)\") \
-					(org-html-export-to-html nil t))"
-
-	emacsclient -e "(progn (find-file \"$(pci)\") \
-					(org-id-goto \"$(id_pandas)\") \
-					(org-html-export-to-html nil t))"
-
-	emacsclient -e "(progn (find-file \"$(pci)\") \
-					(org-id-goto \"$(id_graficos)\") \
-					(org-html-export-to-html nil t))"
-
-	emacsclient -e "(progn (find-file \"$(pci)\") \
-					(org-id-goto \"$(id_git)\") \
-					(org-html-export-to-html nil t))"
-
-	emacsclient -e "(progn (find-file \"$(pci)\") \
-					(org-id-goto \"$(id_numpy)\") \
-					(org-html-export-to-html nil t))"
-
+	@cd $(pci_folder); find . -name '*.html' -exec sed -i 's/Footnotes/Notas de rodapé/' {} \;
 	@cd $(pci_folder); find . -name '*.html' -exec sed -i 's/Table of Contents/Índice/' {} \;

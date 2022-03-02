@@ -140,7 +140,7 @@ Para criar uma variável basta escolher um nome válido e usar o sinal de igual 
 
 *[A]* Crie uma célula de código contendo o código abaixo. Execute esta célula e observe o que acontece. Na primeira linha do código abaixo o operador de atribuição está sendo usado. Comente sobre isso e comente o que ocorreu na linha 2.
 
-#+begin_src python -n
+#+begin_src python
   frase = "Olá, mundo!"
   print(frase)
 #+end_src
@@ -167,7 +167,7 @@ Além de ~strings~, variáveis podem armazenar objetos de outros tipos. Variáve
 
 *[C]* Execute o código abaixo. Após a execução, utilize a função ~print~ junto com a função ~type~ para identificar os tipos das variáveis declaradas (veja um exemplo na linha 16). Quantos tipos diferentes você identificou? Quais foram eles? Na sua opinião, existe uma vantagem de termos diferentes formas de declarar números inteiros, reais e complexos?
 
-#+begin_src python - n
+#+begin_src python -n
   numero_inteiro = 10
   numero_inteiro_positivo = +10
   numero_inteiro_negativo = -10
@@ -223,6 +223,8 @@ Além de ~strings~, variáveis podem armazenar objetos de outros tipos. Variáve
 #+end_src
 
 #+RESULTS:
+
+*[F]* Explore e comente o que acontece quando criamos variaveis com o mesmo nome.
 
 Existem diversos outros tipos de variáveis que veremos ao longo desta apostila. Sempre que em dúvida, cheque o tipo da variável com a função ~type~.
 
@@ -330,7 +332,7 @@ Para iniciantes é recomendado sempre comentar seu código. Isso não só irá t
 
 Nas práticas anteriores usamos a função ~print~ para exibir informações na forma de texto no próprio caderno de notas do Jupyter. A função ~print~ é uma /função embutida/ do Python. Isto que dizer que qualquer usuário que tenha o Python instalado (idealmente na mesma versão que a sua) terá acesso a esta função sem a necessidade de executar nenhum passo adicional.
 
-Na prática, nós já sabemos que a função ~print~ recebe como argumento o texto ou variável que será exibido. Argumentos de funções são as informações que estão dentro dos parênteses quando executamos as funções. Por exemplo, o argumento da função ~print~ em ~print(1234)~ é o número 1234. Funções podem receber um ou mais argumentos, bem como podem receber zero argumentos (tente rodar ~print()~ e veja o que acontece!). Os argumentos das funções são definidos no momento quando a função é definida (veremos isso em mais detalhes mais adiante).
+Na prática, nós já sabemos que a função ~print~ recebe como argumento o texto ou variável que será exibido. Argumentos de funções são as informações que estão dentro dos parênteses quando executamos as funções. Por exemplo, o argumento da função ~print~ em ~print(1234)~ é o número 1234. Funções podem receber um ou mais argumentos, bem como podem receber zero argumentos (tente rodar ~print()~ e veja o que acontece! Tente também rodar ~print(1234, 4321)~). Os argumentos das funções são definidos no momento quando a função é definida (veremos isso em mais detalhes mais adiante).
 
 O que você faria se não soubesse o que função ~print~ faz? Digamos, por exemplo, que você viu essa função sendo usada em um código de Python na internet, mas não sabe sua funcionalidade. Como proceder? Algumas sugestões neste caso são:
 
@@ -780,6 +782,10 @@ Além da estrutura de decisão ~if~/~else~ existe o /operador condicional/. É i
 
 ** O que é uma função?
 
+#+begin_quote
+"/É função da ciência descobrir a existência de um regime geral de ordem na natureza e encontrar as causas que governam esta ordem./" --- Dmitri Mendeleev
+#+end_quote
+
 Durante o exercício "Olá, Mundo!" nós utilizamos a função ~print~. Naquele momento, definimos funções como sendo "apelidos" para executar códigos que já foram escritos. De fato, esta é uma das grandes vantagens de funções: você escreve o código apenas uma vez e reaproveita ele quantas vezes forem necessárias! Além de economizar tempo, o uso apropriado de funções deixa o propósito do código mais fácil de ser entendido.
 
 De maneira geral, uma função tem quatro partes:
@@ -793,9 +799,13 @@ Basicamente, ao executar uma função ela recebe zero ou mais objetos (argumento
 
 ** Funções embutidas
 
+#+begin_quote
+"/Vou querer Spam, Spam, Spam, Spam, Spam, Spam, feijão cozido, Spam, Spam, Spam e Spam!/" --- Sr. Bun, Monty Python's Flying Circus
+#+end_quote
+
 Existem diversas funções embutidas em Python. Estas funções podem ser usadas _a qualquer momento_, sem a necessidade de executar nenhum comando prévio. Além das funções embutidas que já vimos (~print~ e ~help~, por exemplo) existem diversas outras! A lista completa pode ser conferida aqui https://docs.python.org/pt-br/3/library/functions.html
 
-*[A]* Existem diversas funções embutidas em Python. Para cada uma das funções abaixo, escreva em uma célula de texto o nome da função, descreva seus argumentos, explique em suas palavras o que a função faz e descreva seus valores de retorno. Na célula seguinte, escreva um código que use esta função. Comente seu código!
+*[A]* Para cada uma das funções embutidas abaixo, escreva em uma célula de texto o nome da função, descreva seus argumentos, explique em suas palavras o que a função faz e descreva seus valores de retorno. Na célula seguinte, escreva um código que use esta função. Comente seu código!
 
 + ~any~
 + ~all~
@@ -803,6 +813,10 @@ Existem diversas funções embutidas em Python. Estas funções podem ser usadas
 + ~abs~
 
 ** Definindo novas funções
+
+#+begin_quote
+"/Definir é limitar./" --- Oscar Wilde, O Retrato de Dorian Gray
+#+end_quote
 
 Podemos definir nossas próprias funções utilizando a instrução ~def~. O código abaixo mostra diversos exemplos de definições de funções. Observe que todas as definições começam com ~def~, seguido do nome da função, seguido de parêntesis e por fim dois-pontos. É considerado bom estilo pular duas linhas antes e depois da definição de funções e nomear funções com a primeira letra minúscula. Ao fim do código abaixo, as funções definidas são executadas. Para executar funções basta escrever o nome delas seguido de parênteses.
 
@@ -941,6 +955,10 @@ Finalmente, a ~funcao_6~ recebe três argumentos e retorna os mesmos argumentos 
 
 ** Argumentos posicionais, argumentos nomeados e argumentos com valor padrão
 
+#+begin_quote
+"O raciocínio é um argumento em que, estabelecidas certas coisas, outras coisas diferentes se deduzem necessariamente das primeiras./" --- Aristóteles
+#+end_quote
+
 A ordem dos argumentos é muito importante durante a execução de funções com dois ou mais argumentos. O exemplo abaixo ilustra isso: a inversão da ordem dos argumentos altera o resultado do retorno da função. Cada argumento de uma função tem a sua _posição_, então é necessário se atentar a ordem dos argumentos para evitar erros.
 
 #+begin_src python
@@ -1021,6 +1039,10 @@ Observe que não é permitido declarar argumentos sem valor padrão após argume
 
 ** Variáveis globais e variáveis locais
 
+#+begin_quote
+"/Pense globalmente, aja localmente./" --- Paul McCartney
+#+end_quote
+
 Variáveis criadas dentro de funções são /locais/ e só existem dentro do escopo da função.
 
 *[A]* Teste se a afirmação acima é verdade executando o código abaixo. Relate o  que aconteceu.
@@ -1068,6 +1090,10 @@ Mesmo sabendo que variáveis globais podem ser utilizadas dentro de funções, e
 *[D]* O que acontece quando uma variável global é alterada dentro de uma função? Teste isso com pelo menos uma variável numérica, uma lista e um dicionário. Explique em suas palavras o que observou.
 
 ** Documentando suas funções com a docstring
+
+#+begin_quote
+"/Depois de tudo o que passamos. Tudo o que eu fiz. Isto não pode ser em vão./" --- Ellie, The Last of Us
+#+end_quote
 
 Funções podem ser tão simples ou tão complexas quanto quisermos. As versões mais recentes do Python permitem que as funções tenham quantos argumentos e retornos nós desejarmos. Também não há limites quanto a quantidade de linhas de código no corpo da função.
 
@@ -1203,6 +1229,10 @@ Vamos analizar as diversas partes do exemplo acima:
 
 ** Funções também são objetos!
 
+#+begin_quote
+/As vezes não é nada fácil encontrar uma citação minimamente relacionada ao tópico em questão./ --- Daniel Cassar
+#+end_quote
+
 Funções em Python são objetos assim como números e strings. Desta forma, podemos passar funções como argumentos de funções (linhas 16, 19, 32 e 35 do código abaixo) e podemos ter funções como valores de retorno de outras funções (veja a linha 29)! Podemos inclusive definir novas funções no corpo de funções (linha 26).
 
 #+begin_src python -n
@@ -1249,83 +1279,6 @@ Funções em Python são objetos assim como números e strings. Desta forma, pod
 : 24
 : 22
 : 24
-
-** Funções anônimas :noexport:
-
-Existe uma outra forma de declarar funções em Python, utilizando a instrução ~lambda~. Funções declaradas desta forma são chamadas de /funções anônimas/, /funções em linha/ ou simplesmente /funções lambda/. A função ~ola~ abaixo pode ser escrita como uma função não-anônima (linha 1) ou anônima (linha 8). Ambas fazem a mesma tarefa.
-
-#+begin_src python -n
-  def ola():
-      """Retorna a string `Olá!`."""
-      return "Olá!"
-
-
-  print(ola())
-
-  ola = lambda: "Olá"
-
-  print(ola())
-#+end_src
-
-Perceba que uma função anônima ocupa apenas uma linha e não tem o valor de retorno explícito: a instrução que está após o "~lambda:~" é o retorno.
-
-Funções anônimas podem ter argumentos e estes são declarados após o ~lambda~ e antes do dois-pontos (veja a linha 8 do código abaixo). Se existir mais de um argumento, eles devem ser separados por vírgulas (linha 20 do código abaixo).
-
-#+begin_src python -n
-  def multiplica_por_100(x):
-      """Multiplica o valor recebido por 100."""
-      return x * 100
-
-
-  print(multplica_por_100(2))
-
-  multiplica_por_100 = lambda x: x * 100
-
-  print(multplica_por_100(2))
-
-
-  def divide_um_pelo_outro(x, y):
-      """Divide o primeiro valor recebido pelo segundo."""
-      return x / y
-
-
-  print(divide_um_pelo_outro(20, 5))
-
-  divide_um_pelo_outro = lambda x, y: x / y
-
-  print(divide_um_pelo_outro(20, 5))
-#+end_src
-
-Nos exemplos acima nós armazenamos as funções anônimas em variáveis. Mesmo esta sintaxe sendo perfeitamente válida, a PEP 8 recomenda que isso _não seja feito_. Sempre que precisar declarar uma função com nome utilize a instrução ~def~. Fica a pergunta: para que servem funções anônimas? Funções anônimas são excelentes em situações onde precisamos de funções simples de uso único. Exemplos incluem certos argumentos das funções ~sorted~, ~filter~ e ~map~.
-
-A função ~sorted~, por exemplo, é capaz de ordenar os números de uma lista. Quando ela é usada com seu argumento ~key~ padrão, a função ordena os elementos em ordem crescente. O argumento ~key~, se utilizado, deve ser uma função com apenas um argumento que será aplicado aos números da lista antes de ordená-los. Veja o exemplo abaixo. Na linha 3, a função ~sorted~ utiliza o argumento ~key~ padrão (pois não recebeu ele quando foi chamada) e retorna os valores da lista em ordem crescente. Na linha 5, a função ~sorted~ recebeu o argumento ~key~: neste caso é uma função anônima que retorna o valor absoluto do argumento recebido. Com isso, a função ~sorted~ primeiro aplica essa função anônima para cada elemento da lista, ordena a lista levando em conta estes novos elementos, e depois "converte" os elementos para seus valores originais. O resultado final é que os números foram ordenados levando em conta seu valor absoluto.
-
-#+begin_src python -n
-  lista = [0, 1, -2, 3, -4, 5, -6]
-
-  print(sorted(lista))  # resulta em [-6, -4, -2, 0, 1, 3, 5]
-
-  print(sorted(lista, key=lambda x: abs(x)))  # resulta em [0, 1, -2, 3, -4, 5, -6]
-#+end_src
-
-#+RESULTS:
-: [-6, -4, -2, 0, 1, 3, 5]
-: [0, 1, -2, 3, -4, 5, -6]
-
-Apenas para deixar claro, o exemplo anterior usou uma função anônima para o argumento ~key~ pois é uma função simples de uso único. Entretanto, poderíamos também usar uma função declarada com a instrução ~def~ como mostra o código abaixo. Nesse caso, o uso de uma função anônima é preferível por facilitar a leitura do código.
-
-#+begin_src python -n
-  lista = [0, 1, -2, 3, -4, 5, -6]
-
-  def absoluto(x):
-      """Retorna o valor absoluto."""
-      return abs(x)
-
-  print(sorted(lista, key=absoluto))  # resulta em [0, 1, -2, 3, -4, 5, -6]
-#+end_src
-
-#+RESULTS:
-: [0, 1, -2, 3, -4, 5, -6]
 
 * Listas
 :PROPERTIES:
@@ -2422,11 +2375,99 @@ Assim como listas e conjuntos, os dicionários também possuem métodos associad
 :END:
 * TODO Álgebra simbólica com =sympy=
 * TODO Propagação de erros com =uncertainties=
+* TODO Tópicos avançados
+** Funções anônimas
+
+#+begin_quote
+/Não sei por que as pessoas estão tão interessadas em colocar os detalhes de sua vida privada em público; elas esquecem que a invisibilidade é um superpoder./ --- Banksy
+#+end_quote
+
+Existe uma outra forma de declarar funções em Python, utilizando a instrução ~lambda~. Funções declaradas desta forma são chamadas de /funções anônimas/, /funções em linha/ ou simplesmente /funções lambda/. A função ~ola~ abaixo pode ser escrita como uma função não-anônima (linha 1) ou anônima (linha 8). Ambas fazem a mesma tarefa.
+
+#+begin_src python -n
+  def ola():
+      """Retorna a string `Olá!`."""
+      return "Olá!"
+
+
+  print(ola())
+
+  ola = lambda: "Olá"
+
+  print(ola())
+#+end_src
+
+Perceba que uma função anônima ocupa apenas uma linha e não tem o valor de retorno explícito: a instrução que está após o "~lambda:~" é o retorno.
+
+Funções anônimas podem ter argumentos e estes são declarados após o ~lambda~ e antes do dois-pontos (veja a linha 8 do código abaixo). Se existir mais de um argumento, eles devem ser separados por vírgulas (linha 20 do código abaixo).
+
+#+begin_src python -n
+  def multiplica_por_100(x):
+      """Multiplica o valor recebido por 100."""
+      return x * 100
+
+
+  print(multplica_por_100(2))
+
+  multiplica_por_100 = lambda x: x * 100
+
+  print(multplica_por_100(2))
+
+
+  def divide_um_pelo_outro(x, y):
+      """Divide o primeiro valor recebido pelo segundo."""
+      return x / y
+
+
+  print(divide_um_pelo_outro(20, 5))
+
+  divide_um_pelo_outro = lambda x, y: x / y
+
+  print(divide_um_pelo_outro(20, 5))
+#+end_src
+
+Nos exemplos acima nós armazenamos as funções anônimas em variáveis. Mesmo esta sintaxe sendo perfeitamente válida, a PEP 8 recomenda que isso _não seja feito_. Sempre que precisar declarar uma função com nome utilize a instrução ~def~. Fica a pergunta: para que servem funções anônimas? Funções anônimas são excelentes em situações onde precisamos de funções simples de uso único. Exemplos incluem certos argumentos das funções ~sorted~, ~filter~ e ~map~.
+
+A função ~sorted~, por exemplo, é capaz de ordenar os números de uma lista. Quando ela é usada com seu argumento ~key~ padrão, a função ordena os elementos em ordem crescente. O argumento ~key~, se utilizado, deve ser uma função com apenas um argumento que será aplicado aos números da lista antes de ordená-los. Veja o exemplo abaixo. Na linha 3, a função ~sorted~ utiliza o argumento ~key~ padrão (pois não recebeu ele quando foi chamada) e retorna os valores da lista em ordem crescente. Na linha 5, a função ~sorted~ recebeu o argumento ~key~: neste caso é uma função anônima que retorna o valor absoluto do argumento recebido. Com isso, a função ~sorted~ primeiro aplica essa função anônima para cada elemento da lista, ordena a lista levando em conta estes novos elementos, e depois "converte" os elementos para seus valores originais. O resultado final é que os números foram ordenados levando em conta seu valor absoluto.
+
+#+begin_src python -n
+  lista = [0, 1, -2, 3, -4, 5, -6]
+
+  print(sorted(lista))  # resulta em [-6, -4, -2, 0, 1, 3, 5]
+
+  print(sorted(lista, key=lambda x: abs(x)))  # resulta em [0, 1, -2, 3, -4, 5, -6]
+#+end_src
+
+#+RESULTS:
+: [-6, -4, -2, 0, 1, 3, 5]
+: [0, 1, -2, 3, -4, 5, -6]
+
+Apenas para deixar claro, o exemplo anterior usou uma função anônima para o argumento ~key~ pois é uma função simples de uso único. Entretanto, poderíamos também usar uma função declarada com a instrução ~def~ como mostra o código abaixo. Nesse caso, o uso de uma função anônima é preferível por facilitar a leitura do código.
+
+#+begin_src python -n
+  lista = [0, 1, -2, 3, -4, 5, -6]
+
+  def absoluto(x):
+      """Retorna o valor absoluto."""
+      return abs(x)
+
+  print(sorted(lista, key=absoluto))  # resulta em [0, 1, -2, 3, -4, 5, -6]
+#+end_src
+
+#+RESULTS:
+: [0, 1, -2, 3, -4, 5, -6]
+** Decoradores
+
 * TODO Exercícios :noexport:
 
 https://github.com/azl397985856/leetcode/blob/9afe2386ce804beb263f1d6b27a86af2ee2e0546/README.en.md
 https://github.com/azl397985856/leetcode
 https://github.com/haoel/leetcode
+https://github.com/rougier/numpy-100/blob/master/100_Numpy_exercises.md
+https://github.com/zhiwehu/100_plus_Python_Projects_Challenge
+https://github.com/topics/python-exercises
+https://github.com/zhiwehu/Python-programming-exercises/blob/master/100%2B%20Python%20challenging%20programming%20exercises.txt
+https://github.com/jerry-git/learn-python3
 
 + Computar numericamente a soma de uma PA ou PG
 + Checar os números divisíveis por 5 em uma lista
@@ -2461,6 +2502,9 @@ intermediário:
   - yM emaN si asseJ
 + inverter chave e valores de um dicionário
 + mostrar todos os itens duplicados em uma lista
+* TODO Comprehensive guides
+https://bas.codes/posts/python-slicing
+
 * TODO Ideias de tópicos :noexport:
 
 + criando módulos de python

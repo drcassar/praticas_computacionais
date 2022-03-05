@@ -1,15 +1,76 @@
 #+TITLE: Práticas em Ciência de Dados
 #+AUTHOR: Daniel R. Cassar & James M. de Almeida
+:config:
 #+EXPORT_FILE_NAME: PC1/PC1
 #+STARTUP: overview
 #+PROPERTY: header-args:python :results output
 #+OPTIONS: TeX:t LaTeX:t toc:t html-style:t e:t
 #+LATEX_HEADER: \usepackage[brazilian]{babel}
 #+LATEX_HEADER: \addto\captionsenglish{\renewcommand\contentsname{Conteúdo}}
-#+HTML_HEAD:<style>
-#+HTML_HEAD:.linenr {color: #669999; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
-#+HTML_HEAD:</style>
 #+todo: TODO(t) DANIEL(d) JAMES(j) | DONE(x)
+:END:
+:style:
+#+BEGIN_EXPORT html
+<style>
+  .linenr {
+    color: #669999;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  <!-- blockquote { -->
+  <!--   margin-bottom: 10px; -->
+  <!--   padding: 10px; -->
+  <!--   background-color: #FFF8DC; -->
+  <!--   border-left: 2px solid #ffeb8e; -->
+  <!--   border-left-color: rgb(255, 228, 102); -->
+  <!--   display: block; -->
+  <!--   margin-block-start: 1em; -->
+  <!--   margin-block-end: 1em; -->
+  <!--   margin-inline-start: 40px; -->
+  <!--   margin-inline-end: 40px; -->
+  <!-- } -->
+
+  <!-- .verse { -->
+  <!--   margin-bottom: 10px; -->
+  <!--   padding: 10px; -->
+  <!--   background-color: #FFF8DC; -->
+  <!--   border-left: 2px solid #ffeb8e; -->
+  <!--   border-left-color: rgb(255, 228, 102); -->
+  <!--   display: block; -->
+  <!--   margin-block-start: 1em; -->
+  <!--   margin-block-end: 1em; -->
+  <!--   margin-inline-start: 40px; -->
+  <!--   margin-inline-end: 40px; -->
+  <!-- } -->
+</style>
+#+END_EXPORT
+:END:
+
+
+* TOC :noexport:
+1. Introdução
+2. Jupyter, variáveis e como buscar ajuda
+3. Operadores e estrutura de decisão
+4. Funções
+5. Listas
+6. Tuplas e conjuntos
+7. Laço de repetição
+8. Depuração de programas
+9. Dicionários
+10. Strings e processamento de texto
+11. Scripts de python, bash e HPC
+12. Programação orientada a objetos
+13. Biblioteca padrão
+14. Leitura e manipulação de dados com o módulo pandas
+15. Graficando dados
+16. Controle de versão usando git
+17. Computação científica com numpy e scipy
+18. Álgebra simbólica com sympy
+19. Propagação de erros com uncertainties
+20. Tópicos avançados
 
 
 * Introdução
@@ -27,7 +88,7 @@
 
 Bem-vinda(o) à apostila de Práticas em Ciência de Dados. Esta apostila foi escrita[fn:: Está sendo escrita na verdade, e provavelmente continuará sendo escrita por muito tempo pois a área de computação é muito dinâmica.] tendo em mente a disciplina de /Práticas em Ciência de Dados/ do Bacharelado em Ciência, Tecnologia e Inovação da Ilum Escola de Ciência. Assim, esta apostila leva em consideração que os problemas propostos serão realizados em sala de aula em um ambiente dinâmico com interações alunos-alunos e alunos-professores. Esta é uma abordagem diferente da maioria dos livros-texto disponíveis em língua portuguesa.
 
-A apostila está dividida em grandes tópicos e cada um deles divididos em subtópicos com diversas práticas. Todos os subtópicos contém um texto explicativo (com exemplos) e uma ou mais práticas. As práticas são marcadas com uma letra em negrito e entre chaves.
+A apostila está dividida em tópicos gerais e cada um deles divididos em subtópicos com diversas práticas. Todos os subtópicos contém um texto explicativo (com exemplos) e uma ou mais práticas. As práticas são marcadas com uma letra em negrito e entre chaves.
 
 *[A]* Aqui, por exemplo, seria o enunciado da prática *1.1.A* (prática A da Seção 1.1).
 
@@ -37,7 +98,7 @@ Realize as práticas seguindo as instruções discutidas em sala de aula. Lembre
 
 + Algumas práticas te convidam a executar algum código pronto para ver o que acontece. Mesmo sendo possível copiar e colar o código, é fortemente recomendado /escrever/ o código pois aprendemos mais quando escrevemos (ação ativa) do que quando copiamos e colamos (ação passiva);
 
-+ Praticamente todos os problemas computacionais que serão explorados nesta disciplina já foram resolvidos por alguém e a solução pode ser encontrada em livros ou na internet. Isso é inevitável para problemas /simples/. Mais adiante no curso (ou na vida) iremos nos deparar com problemas mais /difíceis/ e mais específicos, que não têm soluções prontas. Para resolver problemas difíceis precisamos ter uma base sólida que só adquirimos resolvendo problemas mais simples. Aproveite esse momento de aprendizado e evite buscar respostas prontas /antes/ de tentar resolver o problema! Depois que você tentou resolver, fique à vontade para procurar e _estudar_ outras soluções. Aprendemos muito quando estudamos diferentes soluções para o mesmo problema.
++ Praticamente todos os problemas computacionais que serão explorados nesta disciplina já foram resolvidos por alguém e a solução pode ser encontrada em livros ou na internet. Isso é inevitável para problemas /simples/. Mais adiante no curso (ou na vida) iremos nos deparar com problemas mais /difíceis/ e mais específicos, que não têm soluções prontas. Para resolver problemas difíceis precisamos ter uma base sólida que só adquirimos resolvendo problemas mais simples. Aproveite esse momento de aprendizado e evite buscar respostas prontas /antes/ de tentar resolver o problema! Depois que você tentou resolver, fique à vontade para procurar e estudar outras soluções. Aprendemos muito quando estudamos diferentes soluções para o mesmo problema.
 
 ** Python e o caderno de notas Jupyter
 
@@ -45,9 +106,9 @@ Realize as práticas seguindo as instruções discutidas em sala de aula. Lembre
 "/Além do saneamento, da medicina, da educação, do vinho, da ordem pública, da irrigação, das estradas, do sistema de água doce, da saúde pública... o que os romanos já fizeram por nós?/" --- Monty Python, A vida de Brian
 #+end_quote
 
-Esta apostila toda foi escrita considerando a linguagem de programação _Python_. Python é uma linguagem de programação criada por Guido van Rossun com grande ênfase em produzir códigos expressivos que sejam mais fáceis de serem lidos[fn:: O fato de que Python foi criado intencionalmente com a ideia de ser mais legível sugere que existem linguagens de programação que foram criadas sem essa preocupação. Existem ainda linguagens de programação chamadas de exotéricas que são deliberadamente criadas para serem o mais ilegível possível (muitas vezes para fins humorísticos). Provavelmente a mais conhecida é a Brainfuck https://esolangs.org/wiki/Brainfuck.]. Por este e outros motivos, Python chamou a atenção da comunidade científica e hoje é uma das linguagens de programação mais utilizada nesta área. Existem diversas bibliotecas científicas livres e de código aberto disponíveis para Python, muitas delas são o estado-da-arte em suas respectivas áreas.
+Esta apostila toda foi escrita considerando a linguagem de programação _Python_. Python é uma linguagem de programação criada por Guido van Rossun com grande ênfase em produzir códigos expressivos que sejam mais fáceis de serem lidos[fn:: O fato de que Python foi criado intencionalmente com a ideia de ser mais legível sugere que existem linguagens de programação que foram criadas sem essa preocupação. Existem ainda linguagens de programação chamadas de exotéricas que são deliberadamente criadas para serem o mais ilegível possível (muitas vezes para fins humorísticos). Provavelmente a mais conhecida é a Brainfuck https://esolangs.org/wiki/Brainfuck.]. Por este e outros motivos, Python chamou a atenção da comunidade científica e hoje é uma das linguagens de programação mais utilizada nesta área. Existem diversas bibliotecas científicas livres e de código aberto disponíveis para Python, muitas delas são o estado da arte em suas respectivas áreas.
 
-Uma ferramenta para execução de códigos em Python muito utilizada no meio científico são os cadernos de nota Jupyter. Jupyter é um programa que permite a execução interativa de códigos em Python separados em blocos de códigos chamados de células. A possibilidade de incluir células de texto, imagens e gráficos interativos são muito bem-vindas no contexto de análises científicas. Além disso, os cadernos de nota Jupyter armazenam os resultados obtidos e, se bem utilizados, nos ajudam com a reprodutibilidade do nosso trabalho.
+Uma ferramenta para execução de códigos em Python muito utilizada no meio científico são os cadernos de nota Jupyter (/Jupyter Notebooks/, em inglês). Jupyter é um programa que permite a execução interativa de códigos em Python separados em blocos de códigos chamados de células. A possibilidade de incluir células de texto, imagens e gráficos interativos são muito bem-vindas no contexto de análises científicas. Além disso, os cadernos de nota Jupyter armazenam os resultados obtidos e, se bem utilizados, nos ajudam com a reprodutibilidade do nosso trabalho. Reprodutibilidade significa que seu trabalho pode ser reproduzido por um par com conhecimento técnico suficiente, e isso é essencial para avançar o nosso conhecimento científico coletivo.
 
 Apesar de não ser estritamente necessário utilizar os cadernos de notas Jupyter para realizar as práticas desta apostila, o texto irá assumir que as práticas serão realizadas no ambiente Jupyter.
 
@@ -67,12 +128,14 @@ Python é uma linguagem de programação que constantemente recebe atualizaçõe
 
 Existe uma enorme quantidade de bibliotecas de Python prontas para uso. Algumas destas bibliotecas nós veremos nesta apostila, como a ~numpy~, ~matplotlib~ e ~pandas~. Muitas outras existem! Veja neste link uma lista curada de diversas bibliotecas: https://awesome-python.com. Note que Python pode ser utilizado para diversas tarefas, não apenas para computação científica!
 
-Você verá ao longo desta apostila que existem diversos detalhes para escrever código em Python (o que não é algo objetivamente bom ou ruim, apenas uma observação sobre a realidade como ela se apresenta). Com o tempo e treino muitos destes detalhes serão naturais para você. Mesmo assim, é normal esquecer certos detalhes quando ficamos um tempo sem usar. Por isso é sempre bom ter uma cola para refrescar a mente. Os links abaixo te levam para boas colas online gratuitas:
+# *[A]* Vá até a seção de bibliotecas científicas do site awesome-python (disponível em https://awesome-python.com/#science) e escolha a biblioteca que mais te chamar a atenção. Se informe brevemente sobre o que a sua biblioteca escolhida faz e escreva o que aprendeu em uma célula de texto.
 
-+ [[https://github.com/gto76/python-cheatsheet][Python cheatsheet no github]],
-+ [[https://www.pythoncheatsheet.org/][pythoncheatsheet.org]],
-+ [[https://programmingwithmosh.com/wp-content/uploads/2019/02/Python-Cheat-Sheet.pdf][Python Cheat Sheet escrito por Mosh Hamedani]],
-+ [[https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_all.pdf][Python Crash Course Cheat Sheet]].
+Você verá ao longo desta apostila que existem diversos detalhes para escrever código em Python (o que não é algo objetivamente bom ou ruim, apenas uma observação sobre a realidade como ela se apresenta). Com tempo e treino, muitos destes detalhes serão naturais para você. Mesmo assim, é normal esquecer certos detalhes quando ficamos um tempo sem usar. Por isso é sempre bom ter uma cola para refrescar a mente. Os links abaixo te levam para boas colas online gratuitas:
+
++ [[https://github.com/gto76/python-cheatsheet][Python cheatsheet no github]]
++ [[https://www.pythoncheatsheet.org/][pythoncheatsheet.org]]
++ [[https://programmingwithmosh.com/wp-content/uploads/2019/02/Python-Cheat-Sheet.pdf][Python Cheat Sheet escrito por Mosh Hamedani]]
++ [[https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_all.pdf][Python Crash Course Cheat Sheet]]
 
 Por fim, existem diversos materiais (tanto pagos quanto gratuitos) para aprendizado de Python disponíveis online. Abaixo estão alguns links de materiais gratuitos que podem te interessar:
 
@@ -106,7 +169,7 @@ Observe que no código acima temos três elementos: o comando ~print~, parêntes
 
 Para executar funções precisamos chamá-las usando os parênteses. Se tiver curiosidade, tente criar e executar uma célula no Jupyter apenas com a palavra ~print~ para ver o que acontece quando escrevemos o nome de uma função sem chamá-la com o parênteses.
 
-Por fim, dentro dos parênteses que usamos para chamar a função ~print~ nós escrevemos os argumentos da função. Neste caso, temos apenas um argumento e ele foi o texto "Olá, mundo!".
+Por fim, dentro dos parênteses que usamos para chamar a função ~print~ nós escrevemos os /argumentos/ da função. Neste caso, temos apenas um argumento e ele é o texto "Olá, mundo!".
 
 *[B]* Escreva o código abaixo em uma célula de código e rode ele. Descreva o que aconteceu e proponha uma solução para o problema.
 
@@ -140,7 +203,7 @@ Para criar uma variável basta escolher um nome válido e usar o sinal de igual 
 
 *[A]* Crie uma célula de código contendo o código abaixo. Execute esta célula e observe o que acontece. Na primeira linha do código abaixo o operador de atribuição está sendo usado. Comente sobre isso e comente o que ocorreu na linha 2.
 
-#+begin_src python
+#+begin_src python -n
   frase = "Olá, mundo!"
   print(frase)
 #+end_src
@@ -163,7 +226,7 @@ Quando criamos uma variável nova, precisamos indicar de alguma forma qual o /ti
 
 #+RESULTS:
 
-Além de ~strings~, variáveis podem armazenar objetos de outros tipos. Variáveis podem armazenar valores numéricos, por exemplo. Veja no código abaixo diversas formas de declarar variáveis contendo valores numéricos. Note que para o Python, o separador decimal é o _ponto_ (~.~) e não a _vírgula_ (~,~); muita atenção com essa distinção pois a vírgula tem outro significado em Python (veremos mais adiante) e não necessariamente vai acusar um erro no seu código!!
+Além de ~strings~, variáveis podem armazenar objetos de outros tipos. Variáveis podem armazenar valores numéricos, por exemplo. Veja no código abaixo diversas formas de declarar variáveis contendo valores numéricos. Note que para o Python, o separador decimal é o _ponto_ (~.~) e não a _vírgula_ (~,~). Muita atenção com essa distinção pois a vírgula tem outro significado em Python (veremos mais adiante) e não necessariamente vai acusar um erro no seu código!!
 
 *[C]* Execute o código abaixo. Após a execução, utilize a função ~print~ junto com a função ~type~ para identificar os tipos das variáveis declaradas (veja um exemplo na linha 16). Quantos tipos diferentes você identificou? Quais foram eles? Na sua opinião, existe uma vantagem de termos diferentes formas de declarar números inteiros, reais e complexos?
 
@@ -191,7 +254,7 @@ Além de ~strings~, variáveis podem armazenar objetos de outros tipos. Variáve
 
 *[D]* Em uma célula de texto responda as perguntas:
 
-1) Existe diferença de se criar uma string usando aspas simples, duplas ou triplas? Reflita sobre a resposta e busque informações na internet antes de escrever. Não se esqueça de colocar as fontes na sua resposta.
+1) Existe diferença de se criar uma string usando aspas simples ou duplas? Existe diferença de se criar uma string usando três aspas? Reflita sobre a resposta e busque informações na internet antes de escrever. Não se esqueça de colocar as fontes na sua resposta.
 2) Qual a diferença entre um número real e um número inteiro? Observando o exemplo acima, qual seria a regra para definir números inteiros e números reais?
 3) Qual a regra para declarar números complexos? O que é o ~j~ na declaração dos números complexos?
 4) Na sua opinião, existe diferença entre as variáveis ~numero_inteiro~ e ~numero_inteiro_positivo~? Explique brevemente seu raciocínio.
@@ -224,113 +287,21 @@ Além de ~strings~, variáveis podem armazenar objetos de outros tipos. Variáve
 
 #+RESULTS:
 
-*[F]* Explore e comente o que acontece quando criamos variaveis com o mesmo nome.
+*[F]* Explore e comente o que acontece quando declaramos variáveis com o mesmo nome.
 
 Existem diversos outros tipos de variáveis que veremos ao longo desta apostila. Sempre que em dúvida, cheque o tipo da variável com a função ~type~.
 
-** Uma breve introdução sobre estilo
-
-#+begin_quote
-"/Bonito é melhor que feio.
-Explícito é melhor que implícito.
-Simples é melhor que complexo.
-Complexo é melhor que complicado.
-Linear é melhor do que aninhado.
-Esparso é melhor que denso.
-Legibilidade conta./" --- [[https:www.python.org/dev/peps/pep-0020/][O Zen do Python]]
-#+end_quote
-
-#+begin_quote
-"/Devia ter complicado menos.../" --- Epitáfio, Titãs
-#+end_quote
-
-Em geral, programadores gastam muito mais tempo /lendo/ código do que /escrevendo/ código. Toda vez que recebemos um código escrito por outra pessoa, temos que ler para entender o que ele faz (exemplo: todos os códigos desta apostila). Toda vez que vamos corrigir um problema no código que nós escrevemos, devemos ler para identificar o local da correção. Toda vez que vamos adicionar uma nova funcionalidade para um código já escrito, devemos ler para entender a melhor forma de implementar essa adição.
-
-Quando estamos lendo um código, nossa cabeça está "compilando" o que lemos internamente enquanto montamos as peças do quebra-cabeça que é o que o código faz. Veja que isso não é diferente de ler algo em português! Esta frase que você está lendo agora é apenas um amontoado de letras para uma pessoa que não sabe português, mas para você ela faz sentido e comunica algo.
-
-Veja o código abaixo. Qual você acha que é o valor exibido pela função ~print~? Está bastante claro, não é? Trata-se de um código trivial para quem sabe o tanto de Python que você já sabe.
-
-#+begin_src python
-  x = 10
-  x = x + x
-  print(x)
-#+end_src
-
-#+RESULTS:
-: 20
-
-Agora veja o código abaixo. Novamente, qual valor você acha que é o valor exibido pela função ~print~? A verdade é que é exatamente o mesmo valor do código acima (teste no Jupyter!). No entanto, este código foi escrito de propósito para ser ilegível (nem parece que funciona, não é?). O objetivo dessa provocação é mostrar que existem diversas formas de realizar uma mesma tarefa em Python. Neste exemplo, uma delas é trivial de ler enquanto a outra demanda muito tempo para ser entendida!
-
-#+begin_src python
-  x = 2 ** \
-      6 \
-      / 6.4
-  x = (
-      [x +
-       [
-          x * \
-           x // \
-           x
-      ][0]
-       ][0]
-  )
-  print(x)
-#+end_src
-
-#+RESULTS:
-: 20.0
-
-Em geral, um código que funciona é /melhor/ que um código que não funciona. Porém, um código legível que funciona é /bem melhor/ que um código que apenas funciona. É muito tentador escrever códigos que funcionam sem se preocupar que eles sejam legíveis... cuidado para não cair no paradigma do POG ([[https://www.livropog.com.br/][Programação Orientada à Gambiarra]]).
-
-*[A]* Escreva um código que executa uma tarefa simples, porém escreva-o da forma mais ilegível que você conseguir. Troque o seu código com um colega e tente entender o código que recebeu antes de executá-lo no Python.
-
-Veja que nem sempre conseguimos nos expressar em Python de forma que a leitura seja trivial. Isso acontece em qualquer linguagem! Existem certos conceitos e tarefas que simplesmente são complexos de serem representados. Isso é normal! Para facilitar nossas vidas, em programação existe o conceito de /comentários/. Comentários são linhas de texto ao longo do código que são ignoradas pelo compilador quando o código é executado. Comentários servem para ajudar quem está lendo o código a entender mais facilmente o que ele faz. É uma forma do criador do código de se comunicar com seu leitor sem que isso interfira na execução do código em sim. Veja o exemplo abaixo.
-
-#+begin_src python
-  # este é um comentário. Tudo que está após o `#` será ignorado pelo Python
-  x = -10
-
-  x = abs(x)  # `x` recebe o valor absoluto de `x` (explicação na linha)
-
-  # exibe o valor de `x` (explicação antes do que será executado)
-  print(x)
-#+end_src
-
-#+RESULTS:
-: 10
-
-Para iniciantes é recomendado sempre comentar seu código. Isso não só irá te ajudar a organizar suas ideias mas também ajudar quem for ler seu código a entender o que ele faz. Em níveis intermediários, recomenda-se deixar comentários apenas em partes do código que não são triviais de se entender.
-
-*[B]* Escreva um código que calcula as raízes de uma equação de segundo grau $f(x) = ax^2 + bx + c$ usando a fórmula de Bhaskara. Comente todas as etapas do seu código. Siga o modelo abaixo.
-
-#+begin_src python
-  # valores dos coeficientes (pode alterar se quiser)
-  a = 10
-  b = 3
-  c = -5
-
-  # delete este comentário e escreva seu código aqui.
-
-  # mostra as raízes para o usuário
-  print(raiz_1)
-  print(raiz_2)
-#+end_src
-
-*[C]* Escreva um código que resolve um problema de física, matemática, química ou biologia a sua escolha. Escreva um comentário com seu nome, a data e o que seu código faz. Escreva um comentário em cada etapa que considere não-trivial do seu código.
-
-*[D]* Escreva em uma célula o código abaixo e execute. Nós ainda não vimos essa sintaxe, mas mesmo assim tente e veja o que acontece. A mensagem exibida é um poema chamado /O Zen do Python/. Veremos adiante que a sintaxe com a instrução ~import~ é usada para carregar (importar) módulos. Neste caso, o ~import this~ não faz nada mais do que exibir o poema, mas veremos adiante que a instrução ~import~ é absurdamente útil e importante!
-
-#+begin_src python
-  import this
-#+end_src
-
 ** Buscando ajuda
 
-#+begin_quote
-"/Socorro! Eu preciso de alguém. Socorro! Não uma pessoa qualquer. Socorro! Você sabe que eu preciso de alguém. Socorro!/" --- Help, The Beatles
-#+end_quote
+#+begin_verse
+"/Socorro! Eu preciso de alguém.
+Socorro! Não uma pessoa qualquer.
+Socorro! Você sabe que eu preciso de alguém.
+Socorro!/"
+     --- Help, The Beatles
+#+end_verse
 
-Nas práticas anteriores usamos a função ~print~ para exibir informações na forma de texto no próprio caderno de notas do Jupyter. A função ~print~ é uma /função embutida/ do Python. Isto que dizer que qualquer usuário que tenha o Python instalado (idealmente na mesma versão que a sua) terá acesso a esta função sem a necessidade de executar nenhum passo adicional.
+Nas práticas anteriores usamos a função ~print~ para exibir informações na forma de texto no próprio caderno de notas do Jupyter. A função ~print~ é uma /função embutida/ do Python. Isto quer dizer que qualquer usuário que tenha o Python instalado (idealmente na mesma versão que a sua) terá acesso a esta função sem a necessidade de executar nenhum passo adicional.
 
 Na prática, nós já sabemos que a função ~print~ recebe como argumento o texto ou variável que será exibido. Argumentos de funções são as informações que estão dentro dos parênteses quando executamos as funções. Por exemplo, o argumento da função ~print~ em ~print(1234)~ é o número 1234. Funções podem receber um ou mais argumentos, bem como podem receber zero argumentos (tente rodar ~print()~ e veja o que acontece! Tente também rodar ~print(1234, 4321)~). Os argumentos das funções são definidos no momento quando a função é definida (veremos isso em mais detalhes mais adiante).
 
@@ -339,9 +310,13 @@ O que você faria se não soubesse o que função ~print~ faz? Digamos, por exem
 1) Pesquisar na internet em busca de alguma página com explicações (Python é uma linguagem de programação muito usada, existe muito material didático disponível online);
 2) Pesquisar na documentação oficial do Python disponível em português no link https://docs.python.org/pt-br/3/. Todas as funções embutidas de Python, por exemplo, estão descritas aqui: https://docs.python.org/pt-br/3/library/functions.html;
 3) Usar a função ~help~ do próprio Python (tente rodar ~help(print)~ no seu caderno de notas e veja o que acontece);
-4) Usar a sintaxe própria do Jupyter para buscar ajuda. Para isso basta digitar a função que quer saber mais informações junto com um sinal de interrogação. Neste caso seria ~print?~.
+4) Usar a sintaxe própria do Jupyter para buscar ajuda. Para isso basta digitar a função que quer saber mais informações junto com um sinal de interrogação, assim como mostra o exemplo abaixo.
 
-*[A]* Escolha uma das quatro sugestões acima para ler mais sobre a função ~print~ do Python. Observe que a função ~print~ aceita diferentes argumentos, sendo eles: ~value~, ~file~, ~flush~, ~end~ e ~sep~. Escreva como foi sua busca (incluindo fontes se for o caso) e descreva com suas palavras o que os argumentos ~end~ e ~sep~ fazem. Tente outras formas de busca caso julgue necessário.
+#+begin_src python
+  print?
+#+end_src
+
+*[A]* Escolha uma das quatro sugestões acima para ler mais sobre a função ~print~ do Python. Observe que a função ~print~ aceita diferentes argumentos, sendo eles: ~value~, ~file~, ~flush~, ~end~ e ~sep~. Escreva como foi sua busca (incluindo fontes) e descreva com suas palavras o que os argumentos ~end~ e ~sep~ fazem. Tente outras formas de busca caso julgue necessário.
 
 *[B]* Para cada função abaixo, faça uma busca online (buscas 1 ou 2) e uma busca offline (buscas 3 ou 4) para entender o que estas funções fazem. Escreva como foi sua busca (incluindo fontes) e descreva com suas palavras o que estas funções fazem.
 
@@ -535,7 +510,7 @@ Operadores lógicos podem ser combinados na mesma declaração. Quando for fazer
 #+RESULTS:
 : True
 
-*[D]* É possível somar variáveis booleanas? Quanto vale ~True + True~? Quanto vale ~False + False~? Quanto vale ~True + False~? Descubra a resposta para estas questões criando uma célula de código no Jupyter e busque online ou em livros o motivo para o resultado obtido. Escreva sobre o que encontrou.
+*[D]* É possível somar variáveis booleanas? Quanto vale ~True + True~? Quanto vale ~False + False~? Quanto vale ~True + False~? Descubra a resposta para estas questões usando o Jupyter e busque online ou em livros o motivo para o resultado obtido. Escreva sobre o que encontrou.
 
 ** Operadores de comparação
 
@@ -592,14 +567,14 @@ _Cuidado_: é muito comum confundir o operador de atribuição (~=~) com o opera
 "/Se você ouvir com muita atenção, a música finalmente chegará até você./" --- Stairway to Heaven, Led Zeppelin
 #+end_quote
 
-Em diversos momentos da vida nos adaptamos mediante às condições do ambiente. Por exemplo, ao sair de casa, /se/ estiver chovendo /então/ pegamos o guarda-chuva, /se não/ nós saímos de casa sem o guarda-chuva. Esta estrutura condicional também existe nas linguagens de programação. Em certos momentos, queremos que a execução de certos comandos só ocorram caso uma ou mais condições sejam atendidas.
+Em diversos momentos da vida nos adaptamos mediante às condições do ambiente. Por exemplo, ao sair de casa, /se/ estiver chovendo /então/ pegamos o guarda-chuva, /se não/ nós saímos de casa sem o guarda-chuva. Esta estrutura condicional também existe nas linguagens de programação. Em diversos momentos, queremos que a execução de certos comandos só ocorram caso uma ou mais condições sejam atendidas.
 
 *[A]* Em que outros momentos da sua vida você faz escolhas seguindo uma estrutura condicional contendo /se/, /então/ e /se não/? Escreva sobre três destes momentos dizendo como você se comporta (tome como base o exemplo do guarda-chuva).
 
-O exemplo do guarda-chuva pode ser escrito em Python. Vamos supor que a variável booleana ~esta_chovendo~ armazena o valor ~True~ caso esteja chovendo ou o valor ~False~ caso não esteja chovendo. Queremos armazenar na variável booleana ~pegar_guardachuva~ o valor de ~True~ para o caso onde vamos pegar o guarda-chuva e o valor de ~False~ para o caso onde não vamos pegar o guarda-chuva. O código abaixo ilustra uma forma possível de programar essa decisão em Python. Veja que a palavra "if" em inglês traduz para "se" em português e que a palavra "else" traduz para "se não".
+O exemplo do guarda-chuva pode ser escrito em Python. Vamos supor que a variável booleana ~esta_chovendo~ armazena o valor ~True~ caso esteja chovendo ou o valor ~False~ caso não esteja chovendo. Queremos armazenar na variável booleana ~pegar_guardachuva~ o valor de ~True~ para o caso onde vamos pegar o guarda-chuva e o valor de ~False~ para o caso onde não vamos pegar o guarda-chuva. O código abaixo ilustra uma forma possível de programar essa decisão em Python. Veja que a palavra "if" em inglês traduz para "se" em português e que a palavra "else" traduz para "se não". Fique à vontade para trocar o valor da variável ~esta_chovendo~ para ~False~ para ver o que acontece.
 
 #+begin_src python -n
-  esta_chovendo = True  # troque esse True for False para ver o que acontece
+  esta_chovendo = True
 
   if esta_chovendo == True:
       pegar_guardachuva = True
@@ -623,12 +598,12 @@ No código acima, a instrução ~if~ checa se a condição "~esta_chovendo == Tr
 
 Independentemente do resultado do teste da condição, a primeira e a última linha do código serão executadas pois elas /não/ estão dentro da estrutura de decisão.
 
-Observe que a sintaxe de estruturas de decisão requer que o bloco referente ao ~if~ e o bloco referente ao ~else~ estejam /indentados/. Indentação de código é quando utilizamos uma certa quantidade de espaços para agrupar visualmente linhas de código pertencentes a um mesmo bloco. Segundo o guia de estilo do Python (a PEP 8 que vimos lá na Introdução), é recomendado usar 4 espaços para indentar seu código.
+Observe que a sintaxe de estruturas de decisão requer que o bloco referente ao ~if~ e o bloco referente ao ~else~ estejam /indentados/. Indentação de código é quando utilizamos uma certa quantidade de espaços para agrupar visualmente linhas de código pertencentes a um mesmo bloco. Segundo o guia de estilo do Python (a PEP 8 que vimos lá na Introdução), é recomendado usar 4 espaços para cada indentação do seu código.
 
 É bom saber que se seu código não estiver indentado corretamente, ele muito provavelmente não irá realizar a tarefa que você tinha em mente. Em certos casos, uma falha em indentar corretamente seu programa irá acusar um erro. Tente rodar o código abaixo e veja o que acontece (veja que ele é o mesmo código que vimos acima, porém sem indentação)[fn:: Aqui vale a pena comentar que o requisito de blocos de códigos estarem indentados é uma característica de algumas linguagens de programação, porém não todas! Códigos em ~C~, por exemplo, não têm esse requisito. Mesmo assim, é considerado bom estilo sempre indentar seu código para facilitar a leitura, independente da linguagem de programação que você está utilizando.].
 
 #+begin_src python -n
-  esta_chovendo = True  # troque esse True for False para ver o que acontece
+  esta_chovendo = True
 
   if esta_chovendo == True:
   pegar_guardachuva = True
@@ -642,9 +617,9 @@ Observe que a sintaxe de estruturas de decisão requer que o bloco referente ao 
 
 *[B]* Escreva um código de Python para cada um dos três momentos de decisão que você descreveu na questão *A*.
 
-É bastante comum nos depararmos com situações onde nossa decisão depende de mais de uma condição. Digamos, por exemplo, que só queremos pegar o guarda-chuva se estiver chovendo e se for um dia de semana (do contrário, decidimos que vamos ficar em casa e não precisamos do guarda-chuva). Uma solução para isso é adicionar um novo ~if~ ao código; veja o exemplo abaixo e note as diferentes indentações para indicar diferentes blocos de código.
+É bastante comum nos depararmos com situações onde nossa decisão depende de mais de uma condição. Digamos, por exemplo, que só queremos pegar o guarda-chuva se estiver chovendo e se for um dia de semana (do contrário, decidimos que vamos ficar em casa e não precisamos do guarda-chuva). Uma solução para isso é adicionar um novo ~if~ ao código; veja o exemplo abaixo e note as diferentes indentações para indicar diferentes blocos de código. Note também que cada par de instruções ~if~ e ~else~ devem estar na mesma indentação. Isso significa que o ~else~ da linha 11 faz par com o ~if~ da linha 4. Da mesma forma, o ~else~ da linha 8 faz par com o ~if~ da linha 5.
 
-#+begin_src python
+#+begin_src python -n
   esta_chovendo = True
   final_de_semana = False
 
@@ -652,10 +627,10 @@ Observe que a sintaxe de estruturas de decisão requer que o bloco referente ao 
       if final_de_semana == False:
           pegar_guardachuva = True
           print("Vou pegar o guarda-chuva")
-      else:  # este `else` está relacionado ao `if` da variavel final_de_semana
+      else:
           pegar_guardachuva = False
           print("Não vou pegar o guarda-chuva")
-  else:  # este `else` está relacionado ao `if` da variavel esta_chovendo
+  else:
       pegar_guardachuva = False
       print("Não vou pegar o guarda-chuva")
 
@@ -670,7 +645,7 @@ Observe que a sintaxe de estruturas de decisão requer que o bloco referente ao 
 
 A linguagem Python contém uma série de expressões que são o que chamamos de /açúcar sintático/. Um açúcar sintático é uma forma de comunicar uma informação de maneira mais fácil ou mais expressiva. O código acima pode ser reescrito da seguinte maneira:
 
-#+begin_src python
+#+begin_src python -n
   esta_chovendo = True
   final_de_semana = False
 
@@ -692,10 +667,9 @@ A linguagem Python contém uma série de expressões que são o que chamamos de 
 
 *[D]* Reescreva o código acima de forma que ele se comporte da mesma maneira, porém usando apenas uma instrução ~if~ e apenas uma instrução ~else~. Dica: pense em qual operador lógico poderia te ajudar aqui!
 
-O código abaixo checa em qual faixa está um certo valor de pH fornecido (https://pt.wikipedia.org/wiki/PH) e reporta para o usuário se sua solução é ácida, básica, neutra ou se houve algum equívoco e o valor de pH é inválido. Veja que a cláusula ~else~ é _opcional_ e não foi usada no código abaixo.
+O código abaixo checa em qual faixa está um certo valor de pH fornecido (relembre o que é o pH lendo o artigo da [[https://pt.wikipedia.org/wiki/PH][Wikipedia]] caso necessário) e reporta para o usuário se sua solução é ácida, básica, neutra ou se houve algum equívoco e o valor de pH é inválido. Observe que a cláusula ~else~ é _opcional_ e não foi usada no código abaixo. Fique à vontade para testar o código abaixo com diferentes valores para a variável ~ph~.
 
 #+begin_src python -n
-  # teste o código com diferentes valores para a variável ph
   ph = 7
 
   if (ph < 0) or (ph > 14):
@@ -714,14 +688,13 @@ O código abaixo checa em qual faixa está um certo valor de pH fornecido (https
 #+RESULTS:
 : PH neutro
 
-Imagine que você mediu o pH de um vinagre e obteve o valor de 2,5. Ao rodar o código acima, o programa irá te dizer "pH ácido" (teste e veja!). Veja que o programa poderia ter parado de rodar depois de resolver o ~if~ da linha 7 (afinal, não faz sentido checar se o pH é neutro ou básico após identificar que se trata de um pH ácido), porém ele *irá* rodar os ~if~ das linhas 10 e 13 pois é assim que o programa foi escrito.
+Imagine que você mediu o pH de um vinagre e obteve o valor de 2,5. Ao rodar o código acima, o programa irá te dizer "pH ácido" (teste e veja!). Veja que o programa poderia ter parado de rodar depois de resolver o ~if~ da linha 6 (afinal, não faz sentido checar se o pH é neutro ou básico após identificar que se trata de um pH ácido), porém ele _irá_ rodar os ~if~ das linhas 9 e 12 pois é assim que o programa foi escrito.
 
 *[E]* Reescreva o código acima usando cláusulas ~else~ de forma que o programa não rode nenhuma cláusula ~if~ desnecessária para entregar a resposta ao usuário (isto é: após ter encontrado a resposta, nenhum outro ~if~ deve ser executado!).
 
 Uma estrutura muito comum em programação é quando queremos dizer "se a condição testada não for verdadeira, então teste esta outra condição aqui". Para isso usamos a cláusula ~elif~ que seria um ~else~ com um ~if~ "grudados". O código abaixo é similar ao anterior, porém usando ~elif~
 
 #+begin_src python -n
-  # teste o código com diferentes valores para a variável ph
   ph = 7
 
   if 0 <= ph < 6.5:
@@ -744,20 +717,20 @@ O código acima checa se o pH é ácido. Caso seja ácido o programa exibe "pH �
 
 *[F]* Escreva um programa similar ao programa do pH que checa alguma grandeza escalar e exibe para o usuário uma informação sobre esta grandeza. Utilize pelo menos duas cláusulas ~elif~ no seu programa.
 
-Além da estrutura de decisão ~if~/~else~ existe o /operador condicional/. É importante saber que ele existe, porém na maioria dos casos é preferível que você use a estrutura de decisão mesmo por ser uma construção mais legível. O exemplo abaixo mostra uma estrutura condicional e o operador condicional, ambos realizam a mesma tarefa. Note que a cláusula ~else~ é opcional na estrutura condicional porém obrigatória no operador condicional.
+Além da estrutura de decisão ~if~ / ~else~ existe o /operador condicional/. É importante saber que ele existe, porém na maioria dos casos é preferível que você use a estrutura de decisão mesmo por ser uma construção mais legível. O exemplo abaixo mostra uma estrutura condicional (linhas 3 a 6) e o operador condicional (linha 8), ambos realizam a mesma tarefa. Note que a cláusula ~else~ é opcional na estrutura condicional porém obrigatória no operador condicional.
 
-#+begin_src python
+#+begin_src python -n
   condicao = True
 
-  # estrutura condicional
   if condicao:
       a = 100
   else:
       a = 5
 
-  # operador condicional (realiza a mesma tarefa da estrutura condicional acima)
   a = 100 if condicao else 5
 #+end_src
+
+#+RESULTS:
 
 *[G]* Escreva um programa que contém uma variável inteira positiva chamada ~ano~. O programa deve mostrar ao usuário se o ano em questão é um ano bissexto ou não. As regras para um ano ser bissexto são as seguintes:
 
@@ -772,6 +745,103 @@ Além da estrutura de decisão ~if~/~else~ existe o /operador condicional/. É i
 *[Desafio]* Escreva um programa que contém uma variável inteira chamada ~numero~. Esta variável armazena um número que deve estar entre 1000 e 9999. O programa deve checar se esse número é um número palíndromo e reportar essa informação ao usuário. Um número palíndromo é aquele que tem o mesmo valor quando a ordem dos seus dígitos é invertida, por exemplo:
 1) o número 1234 não é número palíndromo pois é diferente de 4321.
 2) o numero 3223 é um número palíndromo.
+
+** Uma breve introdução sobre estilo
+
+#+begin_verse
+"/Bonito é melhor que feio.
+Explícito é melhor que implícito.
+Simples é melhor que complexo.
+Complexo é melhor que complicado.
+Linear é melhor do que aninhado.
+Esparso é melhor que denso.
+Legibilidade conta./"
+     --- [[https:www.python.org/dev/peps/pep-0020/][O Zen do Python]]
+#+end_verse
+
+#+begin_quote
+"/Devia ter complicado menos.../" --- Epitáfio, Titãs
+#+end_quote
+
+Em geral, programadores gastam muito mais tempo /lendo/ código do que /escrevendo/ código. Toda vez que recebemos um código escrito por outra pessoa, temos que ler para entender o que ele faz (exemplo: todos os códigos desta apostila). Toda vez que vamos corrigir um problema no código que nós escrevemos, devemos ler para identificar o local da correção. Toda vez que vamos adicionar uma nova funcionalidade para um código já escrito, devemos ler para entender a melhor forma de implementar essa adição.
+
+Quando estamos lendo um código, nossa cabeça está "compilando" o que lemos internamente, isto é: estamos montando as peças do quebra-cabeça que é o que o código faz. Veja que isso não é diferente de ler algo em português! Esta frase que você está lendo agora é apenas um amontoado de letras para uma pessoa que não sabe português, mas para você ela faz sentido e comunica algo pois você sabe interpretar a linguagem.
+
+Veja o código abaixo. Qual você acha que é o valor exibido pela função ~print~? Está bastante claro, não é? Trata-se de um código trivial para quem sabe o tanto de Python que você já sabe.
+
+#+begin_src python
+  x = 10
+  y = x + x
+  print(y)
+#+end_src
+
+#+RESULTS:
+: 20
+
+Agora veja o código abaixo. Novamente, qual valor você acha que é o valor exibido pela função ~print~? A verdade é que é exatamente o mesmo valor do código acima (teste no Jupyter!). No entanto, este código foi escrito de propósito para ser ilegível (nem parece que funciona, não é?). O objetivo dessa provocação é mostrar que existem diversas formas de realizar uma mesma tarefa em Python. Neste exemplo, uma delas é trivial de ler enquanto a outra demanda muito tempo para ser entendida!
+
+#+begin_src python
+  x = 2 ** \
+      6 \
+      / 6.4
+  y = (
+      [x +
+       [
+          x * \
+           x // \
+           x
+      ][0]
+       ][0]
+  )
+  print(y)
+#+end_src
+
+#+RESULTS:
+: 20.0
+
+Em geral, um código que funciona é /melhor/ que um código que não funciona. Porém, um código legível que funciona é /bem melhor/ que um código que apenas funciona. É muito tentador escrever códigos que funcionam sem se preocupar que eles sejam legíveis... cuidado para não cair no paradigma do POG ([[https://www.livropog.com.br/][Programação Orientada à Gambiarra]]).
+
+*[A]* Escreva um código que executa uma tarefa simples, porém escreva-o da forma mais ilegível que você conseguir. Troque o seu código com um colega e tente entender o código que recebeu antes de executá-lo no Python.
+
+Veja que nem sempre conseguimos nos expressar em Python de forma que a leitura seja trivial. Isso acontece em qualquer linguagem! Existem certos conceitos e tarefas que simplesmente são complexos de serem representados. Isso é normal! Para facilitar nossas vidas, em programação existe o conceito de /comentários/. Comentários são linhas de texto ao longo do código que são ignoradas pelo compilador quando o código é executado. Comentários servem para ajudar quem está lendo o código a entender mais facilmente o que ele faz. É uma forma do criador do código de se comunicar com seu leitor sem que isso interfira na execução do código em si. Veja o exemplo abaixo.
+
+#+begin_src python
+  # este é um comentário. Tudo que está após o `#` será ignorado pelo Python
+  x = -10
+
+  y = abs(x)  # `y` recebe o valor absoluto de `x` (explicação na linha)
+
+  # exibe o valor de `y` (explicação antes do que será executado)
+  print(y)
+#+end_src
+
+#+RESULTS:
+: 10
+
+Para iniciantes é recomendado sempre comentar seu código. Isso não só irá te ajudar a organizar suas ideias mas também ajudar quem for ler seu código a entender o que ele faz. Em níveis intermediários, recomenda-se deixar comentários apenas em partes do código que não são triviais de se entender.
+
+*[B]* Escreva um código que calcula as raízes de uma equação de segundo grau $f(x) = ax^2 + bx + c$ usando a fórmula de Bhaskara. Comente todas as etapas do seu código. Siga o modelo abaixo.
+
+#+begin_src python
+  # valores dos coeficientes (pode alterar se quiser)
+  a = 10
+  b = 3
+  c = -5
+
+  # delete este comentário e escreva seu código aqui.
+
+  # mostra as raízes para o usuário
+  print(raiz_1)
+  print(raiz_2)
+#+end_src
+
+*[C]* Escreva um código que resolve um problema de física, matemática, química ou biologia a sua escolha. Escreva um comentário com seu nome, a data e o que seu código faz. Escreva um comentário em cada etapa que considere não-trivial do seu código.
+
+*[D]* Escreva em uma célula o código abaixo e execute. Nós ainda não vimos essa sintaxe, mas mesmo assim tente e veja o que acontece. A mensagem exibida é um poema chamado /O Zen do Python/. Veremos adiante que a sintaxe com a instrução ~import~ é usada para carregar (importar) módulos. Neste caso, o ~import this~ não faz nada mais do que exibir o poema, mas veremos adiante que a instrução ~import~ é absurdamente útil e importante!
+
+#+begin_src python
+  import this
+#+end_src
 
 * Funções
 :PROPERTIES:
@@ -803,7 +873,7 @@ Basicamente, ao executar uma função ela recebe zero ou mais objetos (argumento
 "/Vou querer Spam, Spam, Spam, Spam, Spam, Spam, feijão cozido, Spam, Spam, Spam e Spam!/" --- Sr. Bun, Monty Python's Flying Circus
 #+end_quote
 
-Existem diversas funções embutidas em Python. Estas funções podem ser usadas _a qualquer momento_, sem a necessidade de executar nenhum comando prévio. Além das funções embutidas que já vimos (~print~ e ~help~, por exemplo) existem diversas outras! A lista completa pode ser conferida aqui https://docs.python.org/pt-br/3/library/functions.html
+Existem diversas funções embutidas em Python. Estas funções podem ser usadas _a qualquer momento_, sem a necessidade de executar nenhum comando prévio. Além das funções embutidas que já vimos (~print~ e ~help~, por exemplo) existem diversas outras! A lista completa pode ser conferida na [[https://docs.python.org/pt-br/3/library/functions.html][documentação oficial]].
 
 *[A]* Para cada uma das funções embutidas abaixo, escreva em uma célula de texto o nome da função, descreva seus argumentos, explique em suas palavras o que a função faz e descreva seus valores de retorno. Na célula seguinte, escreva um código que use esta função. Comente seu código!
 
@@ -818,7 +888,7 @@ Existem diversas funções embutidas em Python. Estas funções podem ser usadas
 "/Definir é limitar./" --- Oscar Wilde, O Retrato de Dorian Gray
 #+end_quote
 
-Podemos definir nossas próprias funções utilizando a instrução ~def~. O código abaixo mostra diversos exemplos de definições de funções. Observe que todas as definições começam com ~def~, seguido do nome da função, seguido de parêntesis e por fim dois-pontos. É considerado bom estilo pular duas linhas antes e depois da definição de funções e nomear funções com a primeira letra minúscula. Ao fim do código abaixo, as funções definidas são executadas. Para executar funções basta escrever o nome delas seguido de parênteses.
+Podemos definir nossas próprias funções utilizando a instrução ~def~. O código abaixo mostra diversos exemplos de definições de funções. Observe que todas as definições começam com ~def~, seguido do nome da função, seguido de parêntesis e por fim dois-pontos. É considerado bom estilo pular duas linhas antes e depois da definição de funções e nomear funções com a primeira letra minúscula. Ao fim do código abaixo, as funções definidas são executadas. Para executar funções basta escrever o nome delas seguido de parênteses (os argumentos vão dentro destes parênteses).
 
 #+begin_src python -n
   def funcao_1():
@@ -943,11 +1013,12 @@ Finalmente, a ~funcao_6~ recebe três argumentos e retorna os mesmos argumentos 
 
 *[C]* Crie uma função que recebe um argumento e tente executar ela sem fornecer nenhum argumento. Após este teste, tente executar ela fornecendo dois argumentos quaisquer. Observe e relate o que aconteceu.
 
-*[D]* Execute o código abaixo e comente o que ocorre quando executamos a linha 5. Nesta linha a função ~ola~ foi executada sem os parênteses. Seu código rodou com erro ou se erro? De qualquer forma elabore o que aconteceu.
+*[D]* Execute o código abaixo e comente o que ocorre quando executamos a linha 6. Nesta linha a função ~ola~ foi executada sem os parênteses. Seu código rodou com erro ou se erro? De qualquer forma elabore o que aconteceu.
 
 #+begin_src python -n
   def ola():
       return "Olá!"
+
 
   print(ola())
   print(ola)
@@ -956,7 +1027,7 @@ Finalmente, a ~funcao_6~ recebe três argumentos e retorna os mesmos argumentos 
 ** Argumentos posicionais, argumentos nomeados e argumentos com valor padrão
 
 #+begin_quote
-"O raciocínio é um argumento em que, estabelecidas certas coisas, outras coisas diferentes se deduzem necessariamente das primeiras./" --- Aristóteles
+"/O raciocínio é um argumento em que, estabelecidas certas coisas, outras coisas diferentes se deduzem necessariamente das primeiras./" --- Aristóteles
 #+end_quote
 
 A ordem dos argumentos é muito importante durante a execução de funções com dois ou mais argumentos. O exemplo abaixo ilustra isso: a inversão da ordem dos argumentos altera o resultado do retorno da função. Cada argumento de uma função tem a sua _posição_, então é necessário se atentar a ordem dos argumentos para evitar erros.
@@ -1004,7 +1075,7 @@ A linha 8 parece similar a linha 7, porém ela acusa um erro quando executada!! 
 
 As linhas 9 e 10 mostram que precisamos garantir que todos os argumentos tenham valores atribuídos, do contrário a função não executa.
 
-Argumentos nomeados ajudam na leitura do código, principalmente quando as funções e argumentos receberam bons nomes. As linhas 5 e 6 do código acima deixam bem clara a intenção do código.
+Argumentos nomeados ajudam na leitura do código, principalmente quando as funções e argumentos receberam bons nomes. Por exemplo: as linhas 5 e 6 do código acima deixam bem clara a intenção do código.
 
 Por fim, além de uma posição e um nome, argumentos opcionalmente podem ter um _valor padrão_. O valor padrão é atribuído com o operador de atribuição ~=~ logo após o nome do argumento. Veja o exemplo abaixo.
 
@@ -1068,7 +1139,7 @@ Variáveis declaradas fora do escopo de funções são variáveis /globais/. Var
 *[B]* Tendo em mente o que foi discutido, escreva e justifique o que você acha que irá acontecer se executarmos o código abaixo. Rode o código para checar se seu palpite estava certo.
 
 #+begin_src python
-  melhor_album = "The dark side of the moon"  # esta é uma variável global
+  melhor_album = "The Dark Side of the Moon"  # esta é uma variável global
 
 
   def qual_o_melhor_album():
@@ -1087,7 +1158,7 @@ Mesmo sabendo que variáveis globais podem ser utilizadas dentro de funções, e
 
 *[C]* O que acontece quando um argumento de uma função tem o mesmo nome de uma variável global? Teste isso escrevendo seu próprio código e explique em suas palavras o que observou.
 
-*[D]* O que acontece quando uma variável global é alterada dentro de uma função? Teste isso com pelo menos uma variável numérica, uma lista e um dicionário. Explique em suas palavras o que observou.
+*[D]* O que acontece quando uma variável global é alterada dentro de uma função? Explique em suas palavras o que observou.
 
 ** Documentando suas funções com a docstring
 
@@ -1097,7 +1168,7 @@ Mesmo sabendo que variáveis globais podem ser utilizadas dentro de funções, e
 
 Funções podem ser tão simples ou tão complexas quanto quisermos. As versões mais recentes do Python permitem que as funções tenham quantos argumentos e retornos nós desejarmos. Também não há limites quanto a quantidade de linhas de código no corpo da função.
 
-Mas como dizia o tio Ben: com grandes poderes vem grandes responsabilidades! Você pode escrever hoje a função mais complexa do mundo e resolver todos os seus problemas. Tudo certo enquanto a função está fresca na sua mente. Daqui há três meses você precisa utilizar essa função novamente e já não se recorda mais o que cada argumento controla, não entende mais o valor de retorno e não tem tempo de interpretar as doze mil linhas de código que compõe o corpo da função... e agora?
+Mas como dizia o tio Ben: com grandes poderes vem grandes responsabilidades! Você pode escrever hoje a função mais complexa do mundo e resolver todos os seus problemas. Tudo certo enquanto a função está fresca na sua mente. Daqui a três meses você precisa utilizar essa função novamente e já não se recorda mais o que cada argumento controla, não entende mais o valor de retorno e não tem tempo de interpretar as doze mil linhas de código que compõe o corpo da função... e agora?
 
 Uma solução para +evitar+ reduzir dor de cabeça no futuro é documentar sua função escrevendo a chamada /docstring/. Documentar a função nada mais é do que escrever o que ela faz, detalhando todas as partes importantes para que qualquer um que venha a usar a função entenda qual é o seu propósito e o que pode esperar quando executá-la. O guia de estilo de docstrings em Python é a PEP 257 e pode ser acessada em https://www.python.org/dev/peps/pep-0257/.
 
@@ -1215,7 +1286,7 @@ Para armazenar mais informações, precisamos fazer uso das "docstrings de múlt
 : 16
 : 5
 
-Vamos analizar as diversas partes do exemplo acima:
+Vamos analisar as diversas partes do exemplo acima:
 
 1) A primeira linha da docstring (linha 3) ainda é a descrição da função em uma linha. Ela sempre deve estar presente.
 
@@ -1226,6 +1297,8 @@ Vamos analizar as diversas partes do exemplo acima:
 4) Na linha 22 damos início a descrição dos valores de retorno com o cabeçalho ~Returns:~. Aqui nós contamos quais os valores de retorno e o tipo deles, podemos usar quantas linhas forem necessárias. Esta seção é obrigatória caso existam retornos.
 
 5) Na linha 25 damos início a descrição dos possíveis erros levantados pelo código. Estes são erros deliberadamente programados no corpo da função. Veremos mais sobre erros na seção de depuração de programas, mas por hora é relevante saber que se a variável ~tipo~ tiver um valor fora do esperado, a própria função acusa um erro e envia uma mensagem ao usuário para que ele possa corrigir seu código. Esta seção é obrigatória caso exista gerência de erros no corpo da função (instruções ~raise~ e ~assert~).
+
+*[B]* Crie uma função com pelo menos três argumentos e escreva uma docstring em múltiplas linhas para ela.
 
 ** Funções também são objetos!
 
@@ -1280,7 +1353,7 @@ Funções em Python são objetos assim como números e strings. Desta forma, pod
 : 22
 : 24
 
-* Listas
+* Listas :noexport:
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_listas
 :EXPORT_OPTIONS: toc:t
@@ -1543,7 +1616,7 @@ print(item2)
 
 Como se comportou o código de acordo com onde ficou o asterisco?
 
-* Tuplas e conjuntos
+* Tuplas e conjuntos :noexport:
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_tuplas
 :EXPORT_OPTIONS: toc:t
@@ -1599,7 +1672,7 @@ Além desses métodos temos outros exclusivos de conjuntos, como segue:
 #+BEGIN_COMMENT
 Podemos pedir para os alunos pesquisarem os outros métodos, tem alguns conceitualmente complicados. Mas precisa ver se a aula já não está muito densa.
 #+END_COMMENT
-* Laço de repetição
+* Laço de repetição :noexport:
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_laco
 :EXPORT_OPTIONS: toc:t
@@ -1893,7 +1966,7 @@ Assim como laços, também podemos aninhar compreensão de listas. Neste caso a 
 
 #+ açúcar sintático >> Ver com Daniel
 
-* Depuração de programas
+* Depuração de programas :noexport:
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_debug
 :EXPORT_OPTIONS: toc:t
@@ -2205,7 +2278,7 @@ Checar uma condição e acusar um erro caso esta condição seja falsa é uma es
 A sintaxe da instrução ~assert~ requer uma condição a ser checada logo após a instrução. Caso a condição retorne ~False~ o código é interrompido e acusa um ~AssertionError~. Caso queira exibir uma mensagem ao usuário para ajudá-lo a entender o que ocorre, escreva uma string e coloque ela após uma vírgula. A mensagem não é obrigatória mas altamente recomendada.
 
 Uma forma mais fácil de entender a instrução ~assert~ é lendo ela como "assegure-se que". Na linha 18 do código acima podemos ler como "assegure-se que o valor de ~x~ é maior que zero e menor ou igual a dois, do contrário, exiba uma mensagem de erro ao usuário alertando ele que esse é um requerimento necessário para executar a função".
-* JAMES Dicionários
+* JAMES Dicionários :noexport:
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_dicionarios
 :EXPORT_OPTIONS: toc:t
@@ -2258,7 +2331,7 @@ Assim como listas e conjuntos, os dicionários também possuem métodos associad
 
 ** Funções com argumentos estrela \ast{}args e \ast\ast{}kwargs
 
-* TODO Strings e processamento de texto
+* TODO Strings e processamento de texto :noexport:
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_strings
 :EXPORT_OPTIONS: toc:t
@@ -2288,8 +2361,8 @@ Assim como listas e conjuntos, os dicionários também possuem métodos associad
 + =replace=
 
 ** Expressões regulares
-* JAMES Scripts de python, bash e HPC
-* TODO Programação orientada a objetos
+* JAMES Scripts de python, bash e HPC :noexport:
+* TODO Programação orientada a objetos :noexport:
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_classes
 :EXPORT_OPTIONS: toc:t
@@ -2314,7 +2387,7 @@ Assim como listas e conjuntos, os dicionários também possuem métodos associad
 
 ~isinstance~
 
-* TODO Biblioteca padrão
+* TODO Biblioteca padrão :noexport:
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_bibpadrao
 :EXPORT_OPTIONS: toc:t
@@ -2347,7 +2420,7 @@ Assim como listas e conjuntos, os dicionários também possuem métodos associad
   + datetime
   + logging
 
-* TODO Leitura e manipulação de dados com o módulo =pandas=
+* TODO Leitura e manipulação de dados com o módulo =pandas= :noexport:
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_pandas
 :EXPORT_OPTIONS: toc:t
@@ -2362,7 +2435,7 @@ Assim como listas e conjuntos, os dicionários também possuem métodos associad
 + Exportar para csv
 + Exportar para xlsx
 
-* TODO Graficando dados
+* TODO Graficando dados :noexport:
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_graficos
 :EXPORT_OPTIONS: toc:t
@@ -2372,22 +2445,22 @@ Assim como listas e conjuntos, os dicionários também possuem métodos associad
 ** Graficando dados de um DataFrame
 ** Graficando dados usando =matplotlib=
 
-* TODO Controle de versão usando =git=
+* TODO Controle de versão usando =git= :noexport:
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_git
 :EXPORT_OPTIONS: toc:t
 :ID:       7ec34a02-1c92-4a3f-940a-955daab7050f
 :END:
 
-* TODO Computação científica com =numpy= e =scipy=
+* TODO Computação científica com =numpy= e =scipy= :noexport:
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_numpy
 :EXPORT_OPTIONS: toc:t
 :ID:       fc29118f-e0b5-4816-9034-4a83e7b520b4
 :END:
-* TODO Álgebra simbólica com =sympy=
-* TODO Propagação de erros com =uncertainties=
-* TODO Tópicos avançados
+* TODO Álgebra simbólica com =sympy= :noexport:
+* TODO Propagação de erros com =uncertainties= :noexport:
+* TODO Tópicos avançados :noexport:
 ** Funções anônimas
 
 #+begin_quote
@@ -2514,7 +2587,7 @@ intermediário:
   - yM emaN si asseJ
 + inverter chave e valores de um dicionário
 + mostrar todos os itens duplicados em uma lista
-* TODO Comprehensive guides
+* TODO Comprehensive guides :noexport:
 https://bas.codes/posts/python-slicing
 
 * TODO Ideias de tópicos :noexport:

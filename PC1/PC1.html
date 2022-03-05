@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-03-02 Wed 13:19 -->
+<!-- 2022-03-05 Sat 14:25 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Práticas em Ciência de Dados</title>
@@ -193,9 +193,6 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { width: 90%; }
 </style>
-<style>
-.linenr {color: #669999; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
-</style>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         displayAlign: "center",
@@ -225,89 +222,87 @@
 <h2>Índice</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org79ae899">1. Introdução</a>
+<li><a href="#org24b3dd4">1. Introdução</a>
 <ul>
-<li><a href="#orga05dc97">1.1. Olá! Que bom que você veio, aprochegue-se!</a></li>
-<li><a href="#org2b7cb43">1.2. Python e o caderno de notas Jupyter</a></li>
-<li><a href="#orgb8277fa">1.3. Links interessantes</a></li>
+<li><a href="#orgc6bf090">1.1. Olá! Que bom que você veio, aprochegue-se!</a></li>
+<li><a href="#org90e871a">1.2. Python e o caderno de notas Jupyter</a></li>
+<li><a href="#orgf3c2b3d">1.3. Links interessantes</a></li>
 </ul>
 </li>
-<li><a href="#orgf136812">2. Jupyter, variáveis e como buscar ajuda</a>
+<li><a href="#org588d9fa">2. Jupyter, variáveis e como buscar ajuda</a>
 <ul>
-<li><a href="#orgf8d5a9c">2.1. Meu primeiro caderno de notas Jupyter</a></li>
-<li><a href="#org55bbf6e">2.2. Criando variáveis de diferentes tipos</a></li>
-<li><a href="#orgbc29696">2.3. Uma breve introdução sobre estilo</a></li>
-<li><a href="#org069fe7a">2.4. Buscando ajuda</a></li>
+<li><a href="#org87a4413">2.1. Meu primeiro caderno de notas Jupyter</a></li>
+<li><a href="#org1b94e41">2.2. Criando variáveis de diferentes tipos</a></li>
+<li><a href="#orgc80daf4">2.3. Buscando ajuda</a></li>
 </ul>
 </li>
-<li><a href="#orgf0137cf">3. Operadores e estrutura de decisão</a>
+<li><a href="#orgf69e347">3. Operadores e estrutura de decisão</a>
 <ul>
-<li><a href="#org3076781">3.1. Operadores aritméticos</a></li>
-<li><a href="#org0545161">3.2. Operadores lógicos</a></li>
-<li><a href="#org516590f">3.3. Operadores de comparação</a></li>
-<li><a href="#org74b7802">3.4. Estrutura de decisão e operador condicional</a></li>
+<li><a href="#org840f2ee">3.1. Operadores aritméticos</a></li>
+<li><a href="#orga0fbb10">3.2. Operadores lógicos</a></li>
+<li><a href="#org393d24c">3.3. Operadores de comparação</a></li>
+<li><a href="#orgf8ed063">3.4. Estrutura de decisão e operador condicional</a></li>
+<li><a href="#org8c3dd65">3.5. Uma breve introdução sobre estilo</a></li>
 </ul>
 </li>
-<li><a href="#org6e3d127">4. Funções</a>
+<li><a href="#orgce2d583">4. Funções</a>
 <ul>
-<li><a href="#org18e55df">4.1. O que é uma função?</a></li>
-<li><a href="#org53032d1">4.2. Funções embutidas</a></li>
-<li><a href="#org0c03b4c">4.3. Definindo novas funções</a></li>
-<li><a href="#org10a84b5">4.4. Argumentos posicionais, argumentos nomeados e argumentos com valor padrão</a></li>
-<li><a href="#orgf61415f">4.5. Variáveis globais e variáveis locais</a></li>
-<li><a href="#orgd6cf3f1">4.6. Documentando suas funções com a docstring</a></li>
-<li><a href="#orgee15aef">4.7. Funções também são objetos!</a></li>
-</ul>
-</li>
-<li><a href="#orge41a947">5. Listas</a>
-<ul>
-<li><a href="#org4f07280">5.1. Agrupando objetos com listas</a>
-<ul>
-<li><a href="#orgb724eb0">5.1.1. Listas Simples</a></li>
-<li><a href="#org63e4bbd">5.1.2. Listas dentro de listas.</a></li>
-<li><a href="#orgab679fb">5.1.3. Modificando, particionando e desempacotando listas</a></li>
-<li><a href="#org0517007">5.1.4. Particionamento de listas.</a></li>
-</ul>
-</li>
-<li><a href="#org651e882">5.2. &ldquo;Cópia rasa e cópia profunda&rdquo;</a></li>
-<li><a href="#org4b3c6f6">5.3. &ldquo;Desempacotamento e Operador Asterisco&rdquo;</a></li>
-</ul>
-</li>
-<li><a href="#orgcbe97e9">6. Tuplas e conjuntos</a>
-<ul>
-<li><a href="#orgc7bc549">6.1. &ldquo;Tuplas&rdquo;</a></li>
-<li><a href="#orgbd8530d">6.2. &ldquo;Conjuntos são listas sem elementos repetidos&rdquo;</a></li>
-</ul>
-</li>
-<li><a href="#orgd54c168">7. Laço de repetição</a>
-<ul>
-<li><a href="#org579a818">7.1. Laço de repetição usando <code>while</code></a></li>
-<li><a href="#orge90ca1e">7.2. Laço de repetição usando <code>for</code></a></li>
-<li><a href="#orgb23ad13">7.3. Laços Aninhados</a></li>
-<li><a href="#orga98c2de">7.4. Compreensão de listas</a></li>
-<li><a href="#orgd670381">7.5. Compreensão de listas aninhadas</a></li>
-</ul>
-</li>
-<li><a href="#orge9c4309">8. Depuração de programas</a>
-<ul>
-<li><a href="#org9561500">8.1. Meu programa não roda pois dá um erro, e agora?</a></li>
-<li><a href="#org63a3043">8.2. Tratamento de exceções</a></li>
-<li><a href="#orgf334565">8.3. Meu programa não faz o que eu queria que ele fizesse, e agora?</a></li>
-<li><a href="#orgdbece2c">8.4. Controle o erro para ele não controlar você</a></li>
+<li><a href="#org4599611">4.1. O que é uma função?</a></li>
+<li><a href="#org579c7eb">4.2. Funções embutidas</a></li>
+<li><a href="#orgeef2c53">4.3. Definindo novas funções</a></li>
+<li><a href="#org7ff9df0">4.4. Argumentos posicionais, argumentos nomeados e argumentos com valor padrão</a></li>
+<li><a href="#orga71d717">4.5. Variáveis globais e variáveis locais</a></li>
+<li><a href="#orgae5ee82">4.6. Documentando suas funções com a docstring</a></li>
+<li><a href="#orgf1c3e14">4.7. Funções também são objetos!</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
+<style>
+  .linenr {
+    color: #669999;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  <!-- blockquote { -->
+  <!--   margin-bottom: 10px; -->
+  <!--   padding: 10px; -->
+  <!--   background-color: #FFF8DC; -->
+  <!--   border-left: 2px solid #ffeb8e; -->
+  <!--   border-left-color: rgb(255, 228, 102); -->
+  <!--   display: block; -->
+  <!--   margin-block-start: 1em; -->
+  <!--   margin-block-end: 1em; -->
+  <!--   margin-inline-start: 40px; -->
+  <!--   margin-inline-end: 40px; -->
+  <!-- } -->
+
+  <!-- .verse { -->
+  <!--   margin-bottom: 10px; -->
+  <!--   padding: 10px; -->
+  <!--   background-color: #FFF8DC; -->
+  <!--   border-left: 2px solid #ffeb8e; -->
+  <!--   border-left-color: rgb(255, 228, 102); -->
+  <!--   display: block; -->
+  <!--   margin-block-start: 1em; -->
+  <!--   margin-block-end: 1em; -->
+  <!--   margin-inline-start: 40px; -->
+  <!--   margin-inline-end: 40px; -->
+  <!-- } -->
+</style>
 
 
-<div id="outline-container-org79ae899" class="outline-2">
-<h2 id="org79ae899"><span class="section-number-2">1.</span> Introdução</h2>
+<div id="outline-container-org24b3dd4" class="outline-2">
+<h2 id="org24b3dd4"><span class="section-number-2">1.</span> Introdução</h2>
 <div class="outline-text-2" id="text-1">
 </div>
 
-<div id="outline-container-orga05dc97" class="outline-3">
-<h3 id="orga05dc97"><span class="section-number-3">1.1.</span> Olá! Que bom que você veio, aprochegue-se!</h3>
+<div id="outline-container-orgc6bf090" class="outline-3">
+<h3 id="orgc6bf090"><span class="section-number-3">1.1.</span> Olá! Que bom que você veio, aprochegue-se!</h3>
 <div class="outline-text-3" id="text-1-1">
 <blockquote>
 <p>
@@ -320,7 +315,7 @@ Bem-vinda(o) à apostila de Práticas em Ciência de Dados. Esta apostila foi es
 </p>
 
 <p>
-A apostila está dividida em grandes tópicos e cada um deles divididos em subtópicos com diversas práticas. Todos os subtópicos contém um texto explicativo (com exemplos) e uma ou mais práticas. As práticas são marcadas com uma letra em negrito e entre chaves.
+A apostila está dividida em tópicos gerais e cada um deles divididos em subtópicos com diversas práticas. Todos os subtópicos contém um texto explicativo (com exemplos) e uma ou mais práticas. As práticas são marcadas com uma letra em negrito e entre chaves.
 </p>
 
 <p>
@@ -336,13 +331,13 @@ Realize as práticas seguindo as instruções discutidas em sala de aula. Lembre
 
 <li>Algumas práticas te convidam a executar algum código pronto para ver o que acontece. Mesmo sendo possível copiar e colar o código, é fortemente recomendado <i>escrever</i> o código pois aprendemos mais quando escrevemos (ação ativa) do que quando copiamos e colamos (ação passiva);</li>
 
-<li>Praticamente todos os problemas computacionais que serão explorados nesta disciplina já foram resolvidos por alguém e a solução pode ser encontrada em livros ou na internet. Isso é inevitável para problemas <i>simples</i>. Mais adiante no curso (ou na vida) iremos nos deparar com problemas mais <i>difíceis</i> e mais específicos, que não têm soluções prontas. Para resolver problemas difíceis precisamos ter uma base sólida que só adquirimos resolvendo problemas mais simples. Aproveite esse momento de aprendizado e evite buscar respostas prontas <i>antes</i> de tentar resolver o problema! Depois que você tentou resolver, fique à vontade para procurar e <span class="underline">estudar</span> outras soluções. Aprendemos muito quando estudamos diferentes soluções para o mesmo problema.</li>
+<li>Praticamente todos os problemas computacionais que serão explorados nesta disciplina já foram resolvidos por alguém e a solução pode ser encontrada em livros ou na internet. Isso é inevitável para problemas <i>simples</i>. Mais adiante no curso (ou na vida) iremos nos deparar com problemas mais <i>difíceis</i> e mais específicos, que não têm soluções prontas. Para resolver problemas difíceis precisamos ter uma base sólida que só adquirimos resolvendo problemas mais simples. Aproveite esse momento de aprendizado e evite buscar respostas prontas <i>antes</i> de tentar resolver o problema! Depois que você tentou resolver, fique à vontade para procurar e estudar outras soluções. Aprendemos muito quando estudamos diferentes soluções para o mesmo problema.</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org2b7cb43" class="outline-3">
-<h3 id="org2b7cb43"><span class="section-number-3">1.2.</span> Python e o caderno de notas Jupyter</h3>
+<div id="outline-container-org90e871a" class="outline-3">
+<h3 id="org90e871a"><span class="section-number-3">1.2.</span> Python e o caderno de notas Jupyter</h3>
 <div class="outline-text-3" id="text-1-2">
 <blockquote>
 <p>
@@ -351,11 +346,11 @@ Realize as práticas seguindo as instruções discutidas em sala de aula. Lembre
 </blockquote>
 
 <p>
-Esta apostila toda foi escrita considerando a linguagem de programação <span class="underline">Python</span>. Python é uma linguagem de programação criada por Guido van Rossun com grande ênfase em produzir códigos expressivos que sejam mais fáceis de serem lidos<sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup>. Por este e outros motivos, Python chamou a atenção da comunidade científica e hoje é uma das linguagens de programação mais utilizada nesta área. Existem diversas bibliotecas científicas livres e de código aberto disponíveis para Python, muitas delas são o estado-da-arte em suas respectivas áreas.
+Esta apostila toda foi escrita considerando a linguagem de programação <span class="underline">Python</span>. Python é uma linguagem de programação criada por Guido van Rossun com grande ênfase em produzir códigos expressivos que sejam mais fáceis de serem lidos<sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup>. Por este e outros motivos, Python chamou a atenção da comunidade científica e hoje é uma das linguagens de programação mais utilizada nesta área. Existem diversas bibliotecas científicas livres e de código aberto disponíveis para Python, muitas delas são o estado da arte em suas respectivas áreas.
 </p>
 
 <p>
-Uma ferramenta para execução de códigos em Python muito utilizada no meio científico são os cadernos de nota Jupyter. Jupyter é um programa que permite a execução interativa de códigos em Python separados em blocos de códigos chamados de células. A possibilidade de incluir células de texto, imagens e gráficos interativos são muito bem-vindas no contexto de análises científicas. Além disso, os cadernos de nota Jupyter armazenam os resultados obtidos e, se bem utilizados, nos ajudam com a reprodutibilidade do nosso trabalho.
+Uma ferramenta para execução de códigos em Python muito utilizada no meio científico são os cadernos de nota Jupyter (<i>Jupyter Notebooks</i>, em inglês). Jupyter é um programa que permite a execução interativa de códigos em Python separados em blocos de códigos chamados de células. A possibilidade de incluir células de texto, imagens e gráficos interativos são muito bem-vindas no contexto de análises científicas. Além disso, os cadernos de nota Jupyter armazenam os resultados obtidos e, se bem utilizados, nos ajudam com a reprodutibilidade do nosso trabalho. Reprodutibilidade significa que seu trabalho pode ser reproduzido por um par com conhecimento técnico suficiente, e isso é essencial para avançar o nosso conhecimento científico coletivo.
 </p>
 
 <p>
@@ -364,8 +359,8 @@ Apesar de não ser estritamente necessário utilizar os cadernos de notas Jupyte
 </div>
 </div>
 
-<div id="outline-container-orgb8277fa" class="outline-3">
-<h3 id="orgb8277fa"><span class="section-number-3">1.3.</span> Links interessantes</h3>
+<div id="outline-container-orgf3c2b3d" class="outline-3">
+<h3 id="orgf3c2b3d"><span class="section-number-3">1.3.</span> Links interessantes</h3>
 <div class="outline-text-3" id="text-1-3">
 <blockquote>
 <p>
@@ -392,14 +387,14 @@ Existe uma enorme quantidade de bibliotecas de Python prontas para uso. Algumas 
 </p>
 
 <p>
-Você verá ao longo desta apostila que existem diversos detalhes para escrever código em Python (o que não é algo objetivamente bom ou ruim, apenas uma observação sobre a realidade como ela se apresenta). Com o tempo e treino muitos destes detalhes serão naturais para você. Mesmo assim, é normal esquecer certos detalhes quando ficamos um tempo sem usar. Por isso é sempre bom ter uma cola para refrescar a mente. Os links abaixo te levam para boas colas online gratuitas:
+Você verá ao longo desta apostila que existem diversos detalhes para escrever código em Python (o que não é algo objetivamente bom ou ruim, apenas uma observação sobre a realidade como ela se apresenta). Com tempo e treino, muitos destes detalhes serão naturais para você. Mesmo assim, é normal esquecer certos detalhes quando ficamos um tempo sem usar. Por isso é sempre bom ter uma cola para refrescar a mente. Os links abaixo te levam para boas colas online gratuitas:
 </p>
 
 <ul class="org-ul">
-<li><a href="https://github.com/gto76/python-cheatsheet">Python cheatsheet no github</a>,</li>
-<li><a href="https://www.pythoncheatsheet.org/">pythoncheatsheet.org</a>,</li>
-<li><a href="https://programmingwithmosh.com/wp-content/uploads/2019/02/Python-Cheat-Sheet.pdf">Python Cheat Sheet escrito por Mosh Hamedani</a>,</li>
-<li><a href="https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_all.pdf">Python Crash Course Cheat Sheet</a>.</li>
+<li><a href="https://github.com/gto76/python-cheatsheet">Python cheatsheet no github</a></li>
+<li><a href="https://www.pythoncheatsheet.org/">pythoncheatsheet.org</a></li>
+<li><a href="https://programmingwithmosh.com/wp-content/uploads/2019/02/Python-Cheat-Sheet.pdf">Python Cheat Sheet escrito por Mosh Hamedani</a></li>
+<li><a href="https://github.com/ehmatthes/pcc/releases/download/v1.0.0/beginners_python_cheat_sheet_pcc_all.pdf">Python Crash Course Cheat Sheet</a></li>
 </ul>
 
 <p>
@@ -416,13 +411,13 @@ Por fim, existem diversos materiais (tanto pagos quanto gratuitos) para aprendiz
 </div>
 </div>
 
-<div id="outline-container-orgf136812" class="outline-2">
-<h2 id="orgf136812"><span class="section-number-2">2.</span> Jupyter, variáveis e como buscar ajuda</h2>
+<div id="outline-container-org588d9fa" class="outline-2">
+<h2 id="org588d9fa"><span class="section-number-2">2.</span> Jupyter, variáveis e como buscar ajuda</h2>
 <div class="outline-text-2" id="text-2">
 </div>
 
-<div id="outline-container-orgf8d5a9c" class="outline-3">
-<h3 id="orgf8d5a9c"><span class="section-number-3">2.1.</span> Meu primeiro caderno de notas Jupyter</h3>
+<div id="outline-container-org87a4413" class="outline-3">
+<h3 id="org87a4413"><span class="section-number-3">2.1.</span> Meu primeiro caderno de notas Jupyter</h3>
 <div class="outline-text-3" id="text-2-1">
 <blockquote>
 <p>
@@ -452,7 +447,7 @@ Para executar funções precisamos chamá-las usando os parênteses. Se tiver cu
 </p>
 
 <p>
-Por fim, dentro dos parênteses que usamos para chamar a função <code>print</code> nós escrevemos os argumentos da função. Neste caso, temos apenas um argumento e ele foi o texto &ldquo;Olá, mundo!&rdquo;.
+Por fim, dentro dos parênteses que usamos para chamar a função <code>print</code> nós escrevemos os <i>argumentos</i> da função. Neste caso, temos apenas um argumento e ele é o texto &ldquo;Olá, mundo!&rdquo;.
 </p>
 
 <p>
@@ -483,8 +478,8 @@ Aprender qualquer linguagem, seja ela de programação ou não, requer treino. N
 </div>
 </div>
 
-<div id="outline-container-org55bbf6e" class="outline-3">
-<h3 id="org55bbf6e"><span class="section-number-3">2.2.</span> Criando variáveis de diferentes tipos</h3>
+<div id="outline-container-org1b94e41" class="outline-3">
+<h3 id="org1b94e41"><span class="section-number-3">2.2.</span> Criando variáveis de diferentes tipos</h3>
 <div class="outline-text-3" id="text-2-2">
 <blockquote>
 <p>
@@ -505,8 +500,8 @@ Para criar uma variável basta escolher um nome válido e usar o sinal de igual 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2;">frase</span> = <span style="color: #2aa198;">"Ol&#225;, mundo!"</span>
-<span style="color: #859900; font-weight: bold;">print</span>(frase)
+<pre class="src src-python"><span class="linenr">1: </span><span style="color: #268bd2;">frase</span> = <span style="color: #2aa198;">"Ol&#225;, mundo!"</span>
+<span class="linenr">2: </span><span style="color: #859900; font-weight: bold;">print</span>(frase)
 </pre>
 </div>
 
@@ -531,7 +526,7 @@ Quando criamos uma variável nova, precisamos indicar de alguma forma qual o <i>
 </div>
 
 <p>
-Além de <code>strings</code>, variáveis podem armazenar objetos de outros tipos. Variáveis podem armazenar valores numéricos, por exemplo. Veja no código abaixo diversas formas de declarar variáveis contendo valores numéricos. Note que para o Python, o separador decimal é o <span class="underline">ponto</span> (<code>.</code>) e não a <span class="underline">vírgula</span> (<code>,</code>); muita atenção com essa distinção pois a vírgula tem outro significado em Python (veremos mais adiante) e não necessariamente vai acusar um erro no seu código!!
+Além de <code>strings</code>, variáveis podem armazenar objetos de outros tipos. Variáveis podem armazenar valores numéricos, por exemplo. Veja no código abaixo diversas formas de declarar variáveis contendo valores numéricos. Note que para o Python, o separador decimal é o <span class="underline">ponto</span> (<code>.</code>) e não a <span class="underline">vírgula</span> (<code>,</code>). Muita atenção com essa distinção pois a vírgula tem outro significado em Python (veremos mais adiante) e não necessariamente vai acusar um erro no seu código!!
 </p>
 
 <p>
@@ -563,7 +558,7 @@ Além de <code>strings</code>, variáveis podem armazenar objetos de outros tipo
 </p>
 
 <ol class="org-ol">
-<li>Existe diferença de se criar uma string usando aspas simples, duplas ou triplas? Reflita sobre a resposta e busque informações na internet antes de escrever. Não se esqueça de colocar as fontes na sua resposta.</li>
+<li>Existe diferença de se criar uma string usando aspas simples ou duplas? Existe diferença de se criar uma string usando três aspas? Reflita sobre a resposta e busque informações na internet antes de escrever. Não se esqueça de colocar as fontes na sua resposta.</li>
 <li>Qual a diferença entre um número real e um número inteiro? Observando o exemplo acima, qual seria a regra para definir números inteiros e números reais?</li>
 <li>Qual a regra para declarar números complexos? O que é o <code>j</code> na declaração dos números complexos?</li>
 <li>Na sua opinião, existe diferença entre as variáveis <code>numero_inteiro</code> e <code>numero_inteiro_positivo</code>? Explique brevemente seu raciocínio.</li>
@@ -599,7 +594,7 @@ nome da variavel com <span style="color: #268bd2;">espaco</span> = <span style="
 </div>
 
 <p>
-<b>[F]</b> Explore e comente o que acontece quando criamos variaveis com o mesmo nome.
+<b>[F]</b> Explore e comente o que acontece quando declaramos variáveis com o mesmo nome.
 </p>
 
 <p>
@@ -608,138 +603,19 @@ Existem diversos outros tipos de variáveis que veremos ao longo desta apostila.
 </div>
 </div>
 
-<div id="outline-container-orgbc29696" class="outline-3">
-<h3 id="orgbc29696"><span class="section-number-3">2.3.</span> Uma breve introdução sobre estilo</h3>
+<div id="outline-container-orgc80daf4" class="outline-3">
+<h3 id="orgc80daf4"><span class="section-number-3">2.3.</span> Buscando ajuda</h3>
 <div class="outline-text-3" id="text-2-3">
-<blockquote>
-<p>
-&ldquo;<i>Bonito é melhor que feio.
-Explícito é melhor que implícito.
-Simples é melhor que complexo.
-Complexo é melhor que complicado.
-Linear é melhor do que aninhado.
-Esparso é melhor que denso.
-Legibilidade conta.</i>&rdquo; &#x2014; <a href="https:www.python.org/dev/peps/pep-0020/">O Zen do Python</a>
-</p>
-</blockquote>
-
-<blockquote>
-<p>
-&ldquo;<i>Devia ter complicado menos&#x2026;</i>&rdquo; &#x2014; Epitáfio, Titãs
-</p>
-</blockquote>
-
-<p>
-Em geral, programadores gastam muito mais tempo <i>lendo</i> código do que <i>escrevendo</i> código. Toda vez que recebemos um código escrito por outra pessoa, temos que ler para entender o que ele faz (exemplo: todos os códigos desta apostila). Toda vez que vamos corrigir um problema no código que nós escrevemos, devemos ler para identificar o local da correção. Toda vez que vamos adicionar uma nova funcionalidade para um código já escrito, devemos ler para entender a melhor forma de implementar essa adição.
+<p class="verse">
+&ldquo;<i>Socorro! Eu preciso de alguém.<br />
+Socorro! Não uma pessoa qualquer.<br />
+Socorro! Você sabe que eu preciso de alguém.<br />
+Socorro!</i>&rdquo;<br />
+&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#x2014; Help, The Beatles<br />
 </p>
 
 <p>
-Quando estamos lendo um código, nossa cabeça está &ldquo;compilando&rdquo; o que lemos internamente enquanto montamos as peças do quebra-cabeça que é o que o código faz. Veja que isso não é diferente de ler algo em português! Esta frase que você está lendo agora é apenas um amontoado de letras para uma pessoa que não sabe português, mas para você ela faz sentido e comunica algo.
-</p>
-
-<p>
-Veja o código abaixo. Qual você acha que é o valor exibido pela função <code>print</code>? Está bastante claro, não é? Trata-se de um código trivial para quem sabe o tanto de Python que você já sabe.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2;">x</span> = <span style="color: #6c71c4; font-weight: bold;">10</span>
-<span style="color: #268bd2;">x</span> = x + x
-<span style="color: #859900; font-weight: bold;">print</span>(x)
-</pre>
-</div>
-
-<p>
-Agora veja o código abaixo. Novamente, qual valor você acha que é o valor exibido pela função <code>print</code>? A verdade é que é exatamente o mesmo valor do código acima (teste no Jupyter!). No entanto, este código foi escrito de propósito para ser ilegível (nem parece que funciona, não é?). O objetivo dessa provocação é mostrar que existem diversas formas de realizar uma mesma tarefa em Python. Neste exemplo, uma delas é trivial de ler enquanto a outra demanda muito tempo para ser entendida!
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2;">x</span> = <span style="color: #6c71c4; font-weight: bold;">2</span> ** \
-    <span style="color: #6c71c4; font-weight: bold;">6</span> \
-    / <span style="color: #6c71c4; font-weight: bold;">6.4</span>
-<span style="color: #268bd2;">x</span> = (
-    [x +
-     [
-        x * \
-         x // \
-         x
-    ][<span style="color: #6c71c4; font-weight: bold;">0</span>]
-     ][<span style="color: #6c71c4; font-weight: bold;">0</span>]
-)
-<span style="color: #859900; font-weight: bold;">print</span>(x)
-</pre>
-</div>
-
-<p>
-Em geral, um código que funciona é <i>melhor</i> que um código que não funciona. Porém, um código legível que funciona é <i>bem melhor</i> que um código que apenas funciona. É muito tentador escrever códigos que funcionam sem se preocupar que eles sejam legíveis&#x2026; cuidado para não cair no paradigma do POG (<a href="https://www.livropog.com.br/">Programação Orientada à Gambiarra</a>).
-</p>
-
-<p>
-<b>[A]</b> Escreva um código que executa uma tarefa simples, porém escreva-o da forma mais ilegível que você conseguir. Troque o seu código com um colega e tente entender o código que recebeu antes de executá-lo no Python.
-</p>
-
-<p>
-Veja que nem sempre conseguimos nos expressar em Python de forma que a leitura seja trivial. Isso acontece em qualquer linguagem! Existem certos conceitos e tarefas que simplesmente são complexos de serem representados. Isso é normal! Para facilitar nossas vidas, em programação existe o conceito de <i>comentários</i>. Comentários são linhas de texto ao longo do código que são ignoradas pelo compilador quando o código é executado. Comentários servem para ajudar quem está lendo o código a entender mais facilmente o que ele faz. É uma forma do criador do código de se comunicar com seu leitor sem que isso interfira na execução do código em sim. Veja o exemplo abaixo.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">este &#233; um coment&#225;rio. Tudo que est&#225; ap&#243;s o `#` ser&#225; ignorado pelo Python</span>
-<span style="color: #268bd2;">x</span> = -<span style="color: #6c71c4; font-weight: bold;">10</span>
-
-<span style="color: #268bd2;">x</span> = <span style="color: #d33682; font-style: italic;">abs</span>(x)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">`x` recebe o valor absoluto de `x` (explica&#231;&#227;o na linha)</span>
-
-<span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">exibe o valor de `x` (explica&#231;&#227;o antes do que ser&#225; executado)</span>
-<span style="color: #859900; font-weight: bold;">print</span>(x)
-</pre>
-</div>
-
-<p>
-Para iniciantes é recomendado sempre comentar seu código. Isso não só irá te ajudar a organizar suas ideias mas também ajudar quem for ler seu código a entender o que ele faz. Em níveis intermediários, recomenda-se deixar comentários apenas em partes do código que não são triviais de se entender.
-</p>
-
-<p>
-<b>[B]</b> Escreva um código que calcula as raízes de uma equação de segundo grau \(f(x) = ax^2 + bx + c\) usando a fórmula de Bhaskara. Comente todas as etapas do seu código. Siga o modelo abaixo.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">valores dos coeficientes (pode alterar se quiser)</span>
-<span style="color: #268bd2;">a</span> = <span style="color: #6c71c4; font-weight: bold;">10</span>
-<span style="color: #268bd2;">b</span> = <span style="color: #6c71c4; font-weight: bold;">3</span>
-<span style="color: #268bd2;">c</span> = -<span style="color: #6c71c4; font-weight: bold;">5</span>
-
-<span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">delete este coment&#225;rio e escreva seu c&#243;digo aqui.</span>
-
-<span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">mostra as ra&#237;zes para o usu&#225;rio</span>
-<span style="color: #859900; font-weight: bold;">print</span>(raiz_1)
-<span style="color: #859900; font-weight: bold;">print</span>(raiz_2)
-</pre>
-</div>
-
-<p>
-<b>[C]</b> Escreva um código que resolve um problema de física, matemática, química ou biologia a sua escolha. Escreva um comentário com seu nome, a data e o que seu código faz. Escreva um comentário em cada etapa que considere não-trivial do seu código.
-</p>
-
-<p>
-<b>[D]</b> Escreva em uma célula o código abaixo e execute. Nós ainda não vimos essa sintaxe, mas mesmo assim tente e veja o que acontece. A mensagem exibida é um poema chamado <i>O Zen do Python</i>. Veremos adiante que a sintaxe com a instrução <code>import</code> é usada para carregar (importar) módulos. Neste caso, o <code>import this</code> não faz nada mais do que exibir o poema, mas veremos adiante que a instrução <code>import</code> é absurdamente útil e importante!
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #859900; font-weight: bold;">import</span> this
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org069fe7a" class="outline-3">
-<h3 id="org069fe7a"><span class="section-number-3">2.4.</span> Buscando ajuda</h3>
-<div class="outline-text-3" id="text-2-4">
-<blockquote>
-<p>
-&ldquo;<i>Socorro! Eu preciso de alguém. Socorro! Não uma pessoa qualquer. Socorro! Você sabe que eu preciso de alguém. Socorro!</i>&rdquo; &#x2014; Help, The Beatles
-</p>
-</blockquote>
-
-<p>
-Nas práticas anteriores usamos a função <code>print</code> para exibir informações na forma de texto no próprio caderno de notas do Jupyter. A função <code>print</code> é uma <i>função embutida</i> do Python. Isto que dizer que qualquer usuário que tenha o Python instalado (idealmente na mesma versão que a sua) terá acesso a esta função sem a necessidade de executar nenhum passo adicional.
+Nas práticas anteriores usamos a função <code>print</code> para exibir informações na forma de texto no próprio caderno de notas do Jupyter. A função <code>print</code> é uma <i>função embutida</i> do Python. Isto quer dizer que qualquer usuário que tenha o Python instalado (idealmente na mesma versão que a sua) terá acesso a esta função sem a necessidade de executar nenhum passo adicional.
 </p>
 
 <p>
@@ -754,11 +630,16 @@ O que você faria se não soubesse o que função <code>print</code> faz? Digamo
 <li>Pesquisar na internet em busca de alguma página com explicações (Python é uma linguagem de programação muito usada, existe muito material didático disponível online);</li>
 <li>Pesquisar na documentação oficial do Python disponível em português no link <a href="https://docs.python.org/pt-br/3/">https://docs.python.org/pt-br/3/</a>. Todas as funções embutidas de Python, por exemplo, estão descritas aqui: <a href="https://docs.python.org/pt-br/3/library/functions.html">https://docs.python.org/pt-br/3/library/functions.html</a>;</li>
 <li>Usar a função <code>help</code> do próprio Python (tente rodar <code>help(print)</code> no seu caderno de notas e veja o que acontece);</li>
-<li>Usar a sintaxe própria do Jupyter para buscar ajuda. Para isso basta digitar a função que quer saber mais informações junto com um sinal de interrogação. Neste caso seria <code>print?</code>.</li>
+<li>Usar a sintaxe própria do Jupyter para buscar ajuda. Para isso basta digitar a função que quer saber mais informações junto com um sinal de interrogação, assim como mostra o exemplo abaixo.</li>
 </ol>
 
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">print</span>?
+</pre>
+</div>
+
 <p>
-<b>[A]</b> Escolha uma das quatro sugestões acima para ler mais sobre a função <code>print</code> do Python. Observe que a função <code>print</code> aceita diferentes argumentos, sendo eles: <code>value</code>, <code>file</code>, <code>flush</code>, <code>end</code> e <code>sep</code>. Escreva como foi sua busca (incluindo fontes se for o caso) e descreva com suas palavras o que os argumentos <code>end</code> e <code>sep</code> fazem. Tente outras formas de busca caso julgue necessário.
+<b>[A]</b> Escolha uma das quatro sugestões acima para ler mais sobre a função <code>print</code> do Python. Observe que a função <code>print</code> aceita diferentes argumentos, sendo eles: <code>value</code>, <code>file</code>, <code>flush</code>, <code>end</code> e <code>sep</code>. Escreva como foi sua busca (incluindo fontes) e descreva com suas palavras o que os argumentos <code>end</code> e <code>sep</code> fazem. Tente outras formas de busca caso julgue necessário.
 </p>
 
 <p>
@@ -775,13 +656,13 @@ O que você faria se não soubesse o que função <code>print</code> faz? Digamo
 </div>
 </div>
 
-<div id="outline-container-orgf0137cf" class="outline-2">
-<h2 id="orgf0137cf"><span class="section-number-2">3.</span> Operadores e estrutura de decisão</h2>
+<div id="outline-container-orgf69e347" class="outline-2">
+<h2 id="orgf69e347"><span class="section-number-2">3.</span> Operadores e estrutura de decisão</h2>
 <div class="outline-text-2" id="text-3">
 </div>
 
-<div id="outline-container-org3076781" class="outline-3">
-<h3 id="org3076781"><span class="section-number-3">3.1.</span> Operadores aritméticos</h3>
+<div id="outline-container-org840f2ee" class="outline-3">
+<h3 id="org840f2ee"><span class="section-number-3">3.1.</span> Operadores aritméticos</h3>
 <div class="outline-text-3" id="text-3-1">
 <blockquote>
 <p>
@@ -876,8 +757,8 @@ A ordem de precedência dos operadores aritméticos (isto é, a ordem de execuç
 </div>
 </div>
 
-<div id="outline-container-org0545161" class="outline-3">
-<h3 id="org0545161"><span class="section-number-3">3.2.</span> Operadores lógicos</h3>
+<div id="outline-container-orga0fbb10" class="outline-3">
+<h3 id="orga0fbb10"><span class="section-number-3">3.2.</span> Operadores lógicos</h3>
 <div class="outline-text-3" id="text-3-2">
 <blockquote>
 <p>
@@ -960,13 +841,13 @@ Operadores lógicos podem ser combinados na mesma declaração. Quando for fazer
 </div>
 
 <p>
-<b>[D]</b> É possível somar variáveis booleanas? Quanto vale <code>True + True</code>? Quanto vale <code>False + False</code>? Quanto vale <code>True + False</code>? Descubra a resposta para estas questões criando uma célula de código no Jupyter e busque online ou em livros o motivo para o resultado obtido. Escreva sobre o que encontrou.
+<b>[D]</b> É possível somar variáveis booleanas? Quanto vale <code>True + True</code>? Quanto vale <code>False + False</code>? Quanto vale <code>True + False</code>? Descubra a resposta para estas questões usando o Jupyter e busque online ou em livros o motivo para o resultado obtido. Escreva sobre o que encontrou.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org516590f" class="outline-3">
-<h3 id="org516590f"><span class="section-number-3">3.3.</span> Operadores de comparação</h3>
+<div id="outline-container-org393d24c" class="outline-3">
+<h3 id="org393d24c"><span class="section-number-3">3.3.</span> Operadores de comparação</h3>
 <div class="outline-text-3" id="text-3-3">
 <blockquote>
 <p>
@@ -1015,8 +896,8 @@ A != B &lt; C == E - D - C
 </div>
 </div>
 
-<div id="outline-container-org74b7802" class="outline-3">
-<h3 id="org74b7802"><span class="section-number-3">3.4.</span> Estrutura de decisão e operador condicional</h3>
+<div id="outline-container-orgf8ed063" class="outline-3">
+<h3 id="orgf8ed063"><span class="section-number-3">3.4.</span> Estrutura de decisão e operador condicional</h3>
 <div class="outline-text-3" id="text-3-4">
 <blockquote>
 <p>
@@ -1025,7 +906,7 @@ A != B &lt; C == E - D - C
 </blockquote>
 
 <p>
-Em diversos momentos da vida nos adaptamos mediante às condições do ambiente. Por exemplo, ao sair de casa, <i>se</i> estiver chovendo <i>então</i> pegamos o guarda-chuva, <i>se não</i> nós saímos de casa sem o guarda-chuva. Esta estrutura condicional também existe nas linguagens de programação. Em certos momentos, queremos que a execução de certos comandos só ocorram caso uma ou mais condições sejam atendidas.
+Em diversos momentos da vida nos adaptamos mediante às condições do ambiente. Por exemplo, ao sair de casa, <i>se</i> estiver chovendo <i>então</i> pegamos o guarda-chuva, <i>se não</i> nós saímos de casa sem o guarda-chuva. Esta estrutura condicional também existe nas linguagens de programação. Em diversos momentos, queremos que a execução de certos comandos só ocorram caso uma ou mais condições sejam atendidas.
 </p>
 
 <p>
@@ -1033,11 +914,11 @@ Em diversos momentos da vida nos adaptamos mediante às condições do ambiente.
 </p>
 
 <p>
-O exemplo do guarda-chuva pode ser escrito em Python. Vamos supor que a variável booleana <code>esta_chovendo</code> armazena o valor <code>True</code> caso esteja chovendo ou o valor <code>False</code> caso não esteja chovendo. Queremos armazenar na variável booleana <code>pegar_guardachuva</code> o valor de <code>True</code> para o caso onde vamos pegar o guarda-chuva e o valor de <code>False</code> para o caso onde não vamos pegar o guarda-chuva. O código abaixo ilustra uma forma possível de programar essa decisão em Python. Veja que a palavra &ldquo;if&rdquo; em inglês traduz para &ldquo;se&rdquo; em português e que a palavra &ldquo;else&rdquo; traduz para &ldquo;se não&rdquo;.
+O exemplo do guarda-chuva pode ser escrito em Python. Vamos supor que a variável booleana <code>esta_chovendo</code> armazena o valor <code>True</code> caso esteja chovendo ou o valor <code>False</code> caso não esteja chovendo. Queremos armazenar na variável booleana <code>pegar_guardachuva</code> o valor de <code>True</code> para o caso onde vamos pegar o guarda-chuva e o valor de <code>False</code> para o caso onde não vamos pegar o guarda-chuva. O código abaixo ilustra uma forma possível de programar essa decisão em Python. Veja que a palavra &ldquo;if&rdquo; em inglês traduz para &ldquo;se&rdquo; em português e que a palavra &ldquo;else&rdquo; traduz para &ldquo;se não&rdquo;. Fique à vontade para trocar o valor da variável <code>esta_chovendo</code> para <code>False</code> para ver o que acontece.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #268bd2;">esta_chovendo</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">troque esse True for False para ver o que acontece</span>
+<pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #268bd2;">esta_chovendo</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
 <span class="linenr"> 2: </span>
 <span class="linenr"> 3: </span><span style="color: #859900; font-weight: bold;">if</span> esta_chovendo == <span style="color: #6c71c4; font-weight: bold;">True</span>:
 <span class="linenr"> 4: </span>    <span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
@@ -1065,7 +946,7 @@ Independentemente do resultado do teste da condição, a primeira e a última li
 </p>
 
 <p>
-Observe que a sintaxe de estruturas de decisão requer que o bloco referente ao <code>if</code> e o bloco referente ao <code>else</code> estejam <i>indentados</i>. Indentação de código é quando utilizamos uma certa quantidade de espaços para agrupar visualmente linhas de código pertencentes a um mesmo bloco. Segundo o guia de estilo do Python (a PEP 8 que vimos lá na Introdução), é recomendado usar 4 espaços para indentar seu código.
+Observe que a sintaxe de estruturas de decisão requer que o bloco referente ao <code>if</code> e o bloco referente ao <code>else</code> estejam <i>indentados</i>. Indentação de código é quando utilizamos uma certa quantidade de espaços para agrupar visualmente linhas de código pertencentes a um mesmo bloco. Segundo o guia de estilo do Python (a PEP 8 que vimos lá na Introdução), é recomendado usar 4 espaços para cada indentação do seu código.
 </p>
 
 <p>
@@ -1073,7 +954,7 @@ Observe que a sintaxe de estruturas de decisão requer que o bloco referente ao 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #268bd2;">esta_chovendo</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">troque esse True for False para ver o que acontece</span>
+<pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #268bd2;">esta_chovendo</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
 <span class="linenr"> 2: </span>
 <span class="linenr"> 3: </span><span style="color: #859900; font-weight: bold;">if</span> esta_chovendo == <span style="color: #6c71c4; font-weight: bold;">True</span>:
 <span class="linenr"> 4: </span><span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
@@ -1091,25 +972,25 @@ Observe que a sintaxe de estruturas de decisão requer que o bloco referente ao 
 </p>
 
 <p>
-É bastante comum nos depararmos com situações onde nossa decisão depende de mais de uma condição. Digamos, por exemplo, que só queremos pegar o guarda-chuva se estiver chovendo e se for um dia de semana (do contrário, decidimos que vamos ficar em casa e não precisamos do guarda-chuva). Uma solução para isso é adicionar um novo <code>if</code> ao código; veja o exemplo abaixo e note as diferentes indentações para indicar diferentes blocos de código.
+É bastante comum nos depararmos com situações onde nossa decisão depende de mais de uma condição. Digamos, por exemplo, que só queremos pegar o guarda-chuva se estiver chovendo e se for um dia de semana (do contrário, decidimos que vamos ficar em casa e não precisamos do guarda-chuva). Uma solução para isso é adicionar um novo <code>if</code> ao código; veja o exemplo abaixo e note as diferentes indentações para indicar diferentes blocos de código. Note também que cada par de instruções <code>if</code> e <code>else</code> devem estar na mesma indentação. Isso significa que o <code>else</code> da linha 11 faz par com o <code>if</code> da linha 4. Da mesma forma, o <code>else</code> da linha 8 faz par com o <code>if</code> da linha 5.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2;">esta_chovendo</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
-<span style="color: #268bd2;">final_de_semana</span> = <span style="color: #6c71c4; font-weight: bold;">False</span>
-
-<span style="color: #859900; font-weight: bold;">if</span> esta_chovendo == <span style="color: #6c71c4; font-weight: bold;">True</span>:
-    <span style="color: #859900; font-weight: bold;">if</span> final_de_semana == <span style="color: #6c71c4; font-weight: bold;">False</span>:
-        <span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
-        <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Vou pegar o guarda-chuva"</span>)
-    <span style="color: #859900; font-weight: bold;">else</span>:  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">este `else` est&#225; relacionado ao `if` da variavel final_de_semana</span>
-        <span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">False</span>
-        <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"N&#227;o vou pegar o guarda-chuva"</span>)
-<span style="color: #859900; font-weight: bold;">else</span>:  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">este `else` est&#225; relacionado ao `if` da variavel esta_chovendo</span>
-    <span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">False</span>
-    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"N&#227;o vou pegar o guarda-chuva"</span>)
-
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Fim do programa"</span>)
+<pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #268bd2;">esta_chovendo</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
+<span class="linenr"> 2: </span><span style="color: #268bd2;">final_de_semana</span> = <span style="color: #6c71c4; font-weight: bold;">False</span>
+<span class="linenr"> 3: </span>
+<span class="linenr"> 4: </span><span style="color: #859900; font-weight: bold;">if</span> esta_chovendo == <span style="color: #6c71c4; font-weight: bold;">True</span>:
+<span class="linenr"> 5: </span>    <span style="color: #859900; font-weight: bold;">if</span> final_de_semana == <span style="color: #6c71c4; font-weight: bold;">False</span>:
+<span class="linenr"> 6: </span>        <span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
+<span class="linenr"> 7: </span>        <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Vou pegar o guarda-chuva"</span>)
+<span class="linenr"> 8: </span>    <span style="color: #859900; font-weight: bold;">else</span>:
+<span class="linenr"> 9: </span>        <span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">False</span>
+<span class="linenr">10: </span>        <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"N&#227;o vou pegar o guarda-chuva"</span>)
+<span class="linenr">11: </span><span style="color: #859900; font-weight: bold;">else</span>:
+<span class="linenr">12: </span>    <span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">False</span>
+<span class="linenr">13: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"N&#227;o vou pegar o guarda-chuva"</span>)
+<span class="linenr">14: </span>
+<span class="linenr">15: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Fim do programa"</span>)
 </pre>
 </div>
 
@@ -1122,21 +1003,21 @@ A linguagem Python contém uma série de expressões que são o que chamamos de 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2;">esta_chovendo</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
-<span style="color: #268bd2;">final_de_semana</span> = <span style="color: #6c71c4; font-weight: bold;">False</span>
-
-<span style="color: #859900; font-weight: bold;">if</span> esta_chovendo:
-    <span style="color: #859900; font-weight: bold;">if</span> <span style="color: #859900; font-weight: bold;">not</span> final_de_semana:
-        <span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
-        <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Vou pegar o guarda-chuva"</span>)
-    <span style="color: #859900; font-weight: bold;">else</span>:
-        <span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">False</span>
-        <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"N&#227;o vou pegar o guarda-chuva"</span>)
-<span style="color: #859900; font-weight: bold;">else</span>:
-    <span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">False</span>
-    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"N&#227;o vou pegar o guarda-chuva"</span>)
-
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Fim do programa"</span>)
+<pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #268bd2;">esta_chovendo</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
+<span class="linenr"> 2: </span><span style="color: #268bd2;">final_de_semana</span> = <span style="color: #6c71c4; font-weight: bold;">False</span>
+<span class="linenr"> 3: </span>
+<span class="linenr"> 4: </span><span style="color: #859900; font-weight: bold;">if</span> esta_chovendo:
+<span class="linenr"> 5: </span>    <span style="color: #859900; font-weight: bold;">if</span> <span style="color: #859900; font-weight: bold;">not</span> final_de_semana:
+<span class="linenr"> 6: </span>        <span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
+<span class="linenr"> 7: </span>        <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Vou pegar o guarda-chuva"</span>)
+<span class="linenr"> 8: </span>    <span style="color: #859900; font-weight: bold;">else</span>:
+<span class="linenr"> 9: </span>        <span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">False</span>
+<span class="linenr">10: </span>        <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"N&#227;o vou pegar o guarda-chuva"</span>)
+<span class="linenr">11: </span><span style="color: #859900; font-weight: bold;">else</span>:
+<span class="linenr">12: </span>    <span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">False</span>
+<span class="linenr">13: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"N&#227;o vou pegar o guarda-chuva"</span>)
+<span class="linenr">14: </span>
+<span class="linenr">15: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Fim do programa"</span>)
 </pre>
 </div>
 
@@ -1149,29 +1030,28 @@ A linguagem Python contém uma série de expressões que são o que chamamos de 
 </p>
 
 <p>
-O código abaixo checa em qual faixa está um certo valor de pH fornecido (<a href="https://pt.wikipedia.org/wiki/PH">https://pt.wikipedia.org/wiki/PH</a>) e reporta para o usuário se sua solução é ácida, básica, neutra ou se houve algum equívoco e o valor de pH é inválido. Veja que a cláusula <code>else</code> é <span class="underline">opcional</span> e não foi usada no código abaixo.
+O código abaixo checa em qual faixa está um certo valor de pH fornecido (relembre o que é o pH lendo o artigo da <a href="https://pt.wikipedia.org/wiki/PH">Wikipedia</a> caso necessário) e reporta para o usuário se sua solução é ácida, básica, neutra ou se houve algum equívoco e o valor de pH é inválido. Observe que a cláusula <code>else</code> é <span class="underline">opcional</span> e não foi usada no código abaixo. Fique à vontade para testar o código abaixo com diferentes valores para a variável <code>ph</code>.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">teste o c&#243;digo com diferentes valores para a vari&#225;vel ph</span>
-<span class="linenr"> 2: </span><span style="color: #268bd2;">ph</span> = <span style="color: #6c71c4; font-weight: bold;">7</span>
-<span class="linenr"> 3: </span>
-<span class="linenr"> 4: </span><span style="color: #859900; font-weight: bold;">if</span> (ph &lt; <span style="color: #6c71c4; font-weight: bold;">0</span>) <span style="color: #859900; font-weight: bold;">or</span> (ph &gt; <span style="color: #6c71c4; font-weight: bold;">14</span>):
-<span class="linenr"> 5: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"pH inv&#225;lido"</span>)
-<span class="linenr"> 6: </span>
-<span class="linenr"> 7: </span><span style="color: #859900; font-weight: bold;">if</span> <span style="color: #6c71c4; font-weight: bold;">0</span> &lt;= ph &lt; <span style="color: #6c71c4; font-weight: bold;">6.5</span>:
-<span class="linenr"> 8: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"pH &#225;cido"</span>)
-<span class="linenr"> 9: </span>
-<span class="linenr">10: </span><span style="color: #859900; font-weight: bold;">if</span> <span style="color: #6c71c4; font-weight: bold;">6.5</span> &lt;= ph &lt;= <span style="color: #6c71c4; font-weight: bold;">7.5</span>:
-<span class="linenr">11: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"pH neutro"</span>)
-<span class="linenr">12: </span>
-<span class="linenr">13: </span><span style="color: #859900; font-weight: bold;">if</span> <span style="color: #6c71c4; font-weight: bold;">7.5</span> &lt; ph &lt;= <span style="color: #6c71c4; font-weight: bold;">14</span>:
-<span class="linenr">14: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"pH b&#225;sico"</span>)
+<pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #268bd2;">ph</span> = <span style="color: #6c71c4; font-weight: bold;">7</span>
+<span class="linenr"> 2: </span>
+<span class="linenr"> 3: </span><span style="color: #859900; font-weight: bold;">if</span> (ph &lt; <span style="color: #6c71c4; font-weight: bold;">0</span>) <span style="color: #859900; font-weight: bold;">or</span> (ph &gt; <span style="color: #6c71c4; font-weight: bold;">14</span>):
+<span class="linenr"> 4: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"pH inv&#225;lido"</span>)
+<span class="linenr"> 5: </span>
+<span class="linenr"> 6: </span><span style="color: #859900; font-weight: bold;">if</span> <span style="color: #6c71c4; font-weight: bold;">0</span> &lt;= ph &lt; <span style="color: #6c71c4; font-weight: bold;">6.5</span>:
+<span class="linenr"> 7: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"pH &#225;cido"</span>)
+<span class="linenr"> 8: </span>
+<span class="linenr"> 9: </span><span style="color: #859900; font-weight: bold;">if</span> <span style="color: #6c71c4; font-weight: bold;">6.5</span> &lt;= ph &lt;= <span style="color: #6c71c4; font-weight: bold;">7.5</span>:
+<span class="linenr">10: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"pH neutro"</span>)
+<span class="linenr">11: </span>
+<span class="linenr">12: </span><span style="color: #859900; font-weight: bold;">if</span> <span style="color: #6c71c4; font-weight: bold;">7.5</span> &lt; ph &lt;= <span style="color: #6c71c4; font-weight: bold;">14</span>:
+<span class="linenr">13: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"pH b&#225;sico"</span>)
 </pre>
 </div>
 
 <p>
-Imagine que você mediu o pH de um vinagre e obteve o valor de 2,5. Ao rodar o código acima, o programa irá te dizer &ldquo;pH ácido&rdquo; (teste e veja!). Veja que o programa poderia ter parado de rodar depois de resolver o <code>if</code> da linha 7 (afinal, não faz sentido checar se o pH é neutro ou básico após identificar que se trata de um pH ácido), porém ele <b>irá</b> rodar os <code>if</code> das linhas 10 e 13 pois é assim que o programa foi escrito.
+Imagine que você mediu o pH de um vinagre e obteve o valor de 2,5. Ao rodar o código acima, o programa irá te dizer &ldquo;pH ácido&rdquo; (teste e veja!). Veja que o programa poderia ter parado de rodar depois de resolver o <code>if</code> da linha 6 (afinal, não faz sentido checar se o pH é neutro ou básico após identificar que se trata de um pH ácido), porém ele <span class="underline">irá</span> rodar os <code>if</code> das linhas 9 e 12 pois é assim que o programa foi escrito.
 </p>
 
 <p>
@@ -1183,20 +1063,19 @@ Uma estrutura muito comum em programação é quando queremos dizer &ldquo;se a 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">teste o c&#243;digo com diferentes valores para a vari&#225;vel ph</span>
-<span class="linenr"> 2: </span><span style="color: #268bd2;">ph</span> = <span style="color: #6c71c4; font-weight: bold;">7</span>
-<span class="linenr"> 3: </span>
-<span class="linenr"> 4: </span><span style="color: #859900; font-weight: bold;">if</span> <span style="color: #6c71c4; font-weight: bold;">0</span> &lt;= ph &lt; <span style="color: #6c71c4; font-weight: bold;">6.5</span>:
-<span class="linenr"> 5: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"pH &#225;cido"</span>)
-<span class="linenr"> 6: </span>
-<span class="linenr"> 7: </span><span style="color: #859900; font-weight: bold;">elif</span> <span style="color: #6c71c4; font-weight: bold;">6.5</span> &lt;= ph &lt;= <span style="color: #6c71c4; font-weight: bold;">7.5</span>:
-<span class="linenr"> 8: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"pH neutro"</span>)
-<span class="linenr"> 9: </span>
-<span class="linenr">10: </span><span style="color: #859900; font-weight: bold;">elif</span> <span style="color: #6c71c4; font-weight: bold;">7.5</span> &lt; ph &lt;= <span style="color: #6c71c4; font-weight: bold;">14</span>:
-<span class="linenr">11: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"pH b&#225;sico"</span>)
-<span class="linenr">12: </span>
-<span class="linenr">13: </span><span style="color: #859900; font-weight: bold;">else</span>:
-<span class="linenr">14: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"pH inv&#225;lido"</span>)
+<pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #268bd2;">ph</span> = <span style="color: #6c71c4; font-weight: bold;">7</span>
+<span class="linenr"> 2: </span>
+<span class="linenr"> 3: </span><span style="color: #859900; font-weight: bold;">if</span> <span style="color: #6c71c4; font-weight: bold;">0</span> &lt;= ph &lt; <span style="color: #6c71c4; font-weight: bold;">6.5</span>:
+<span class="linenr"> 4: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"pH &#225;cido"</span>)
+<span class="linenr"> 5: </span>
+<span class="linenr"> 6: </span><span style="color: #859900; font-weight: bold;">elif</span> <span style="color: #6c71c4; font-weight: bold;">6.5</span> &lt;= ph &lt;= <span style="color: #6c71c4; font-weight: bold;">7.5</span>:
+<span class="linenr"> 7: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"pH neutro"</span>)
+<span class="linenr"> 8: </span>
+<span class="linenr"> 9: </span><span style="color: #859900; font-weight: bold;">elif</span> <span style="color: #6c71c4; font-weight: bold;">7.5</span> &lt; ph &lt;= <span style="color: #6c71c4; font-weight: bold;">14</span>:
+<span class="linenr">10: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"pH b&#225;sico"</span>)
+<span class="linenr">11: </span>
+<span class="linenr">12: </span><span style="color: #859900; font-weight: bold;">else</span>:
+<span class="linenr">13: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"pH inv&#225;lido"</span>)
 </pre>
 </div>
 
@@ -1209,20 +1088,18 @@ O código acima checa se o pH é ácido. Caso seja ácido o programa exibe &ldqu
 </p>
 
 <p>
-Além da estrutura de decisão <code>if~/~else</code> existe o <i>operador condicional</i>. É importante saber que ele existe, porém na maioria dos casos é preferível que você use a estrutura de decisão mesmo por ser uma construção mais legível. O exemplo abaixo mostra uma estrutura condicional e o operador condicional, ambos realizam a mesma tarefa. Note que a cláusula <code>else</code> é opcional na estrutura condicional porém obrigatória no operador condicional.
+Além da estrutura de decisão <code>if</code> / <code>else</code> existe o <i>operador condicional</i>. É importante saber que ele existe, porém na maioria dos casos é preferível que você use a estrutura de decisão mesmo por ser uma construção mais legível. O exemplo abaixo mostra uma estrutura condicional (linhas 3 a 6) e o operador condicional (linha 8), ambos realizam a mesma tarefa. Note que a cláusula <code>else</code> é opcional na estrutura condicional porém obrigatória no operador condicional.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2;">condicao</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
-
-<span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">estrutura condicional</span>
-<span style="color: #859900; font-weight: bold;">if</span> condicao:
-    <span style="color: #268bd2;">a</span> = <span style="color: #6c71c4; font-weight: bold;">100</span>
-<span style="color: #859900; font-weight: bold;">else</span>:
-    <span style="color: #268bd2;">a</span> = <span style="color: #6c71c4; font-weight: bold;">5</span>
-
-<span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">operador condicional (realiza a mesma tarefa da estrutura condicional acima)</span>
-<span style="color: #268bd2;">a</span> = <span style="color: #6c71c4; font-weight: bold;">100</span> <span style="color: #859900; font-weight: bold;">if</span> condicao <span style="color: #859900; font-weight: bold;">else</span> <span style="color: #6c71c4; font-weight: bold;">5</span>
+<pre class="src src-python"><span class="linenr">1: </span><span style="color: #268bd2;">condicao</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
+<span class="linenr">2: </span>
+<span class="linenr">3: </span><span style="color: #859900; font-weight: bold;">if</span> condicao:
+<span class="linenr">4: </span>    <span style="color: #268bd2;">a</span> = <span style="color: #6c71c4; font-weight: bold;">100</span>
+<span class="linenr">5: </span><span style="color: #859900; font-weight: bold;">else</span>:
+<span class="linenr">6: </span>    <span style="color: #268bd2;">a</span> = <span style="color: #6c71c4; font-weight: bold;">5</span>
+<span class="linenr">7: </span>
+<span class="linenr">8: </span><span style="color: #268bd2;">a</span> = <span style="color: #6c71c4; font-weight: bold;">100</span> <span style="color: #859900; font-weight: bold;">if</span> condicao <span style="color: #859900; font-weight: bold;">else</span> <span style="color: #6c71c4; font-weight: bold;">5</span>
 </pre>
 </div>
 
@@ -1251,15 +1128,135 @@ Além da estrutura de decisão <code>if~/~else</code> existe o <i>operador condi
 </ol>
 </div>
 </div>
+
+<div id="outline-container-org8c3dd65" class="outline-3">
+<h3 id="org8c3dd65"><span class="section-number-3">3.5.</span> Uma breve introdução sobre estilo</h3>
+<div class="outline-text-3" id="text-3-5">
+<p class="verse">
+&ldquo;<i>Bonito é melhor que feio.<br />
+Explícito é melhor que implícito.<br />
+Simples é melhor que complexo.<br />
+Complexo é melhor que complicado.<br />
+Linear é melhor do que aninhado.<br />
+Esparso é melhor que denso.<br />
+Legibilidade conta.</i>&rdquo;<br />
+&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#x2014; <a href="https:www.python.org/dev/peps/pep-0020/">O Zen do Python</a><br />
+</p>
+
+<blockquote>
+<p>
+&ldquo;<i>Devia ter complicado menos&#x2026;</i>&rdquo; &#x2014; Epitáfio, Titãs
+</p>
+</blockquote>
+
+<p>
+Em geral, programadores gastam muito mais tempo <i>lendo</i> código do que <i>escrevendo</i> código. Toda vez que recebemos um código escrito por outra pessoa, temos que ler para entender o que ele faz (exemplo: todos os códigos desta apostila). Toda vez que vamos corrigir um problema no código que nós escrevemos, devemos ler para identificar o local da correção. Toda vez que vamos adicionar uma nova funcionalidade para um código já escrito, devemos ler para entender a melhor forma de implementar essa adição.
+</p>
+
+<p>
+Quando estamos lendo um código, nossa cabeça está &ldquo;compilando&rdquo; o que lemos internamente, isto é: estamos montando as peças do quebra-cabeça que é o que o código faz. Veja que isso não é diferente de ler algo em português! Esta frase que você está lendo agora é apenas um amontoado de letras para uma pessoa que não sabe português, mas para você ela faz sentido e comunica algo pois você sabe interpretar a linguagem.
+</p>
+
+<p>
+Veja o código abaixo. Qual você acha que é o valor exibido pela função <code>print</code>? Está bastante claro, não é? Trata-se de um código trivial para quem sabe o tanto de Python que você já sabe.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">x</span> = <span style="color: #6c71c4; font-weight: bold;">10</span>
+<span style="color: #268bd2;">y</span> = x + x
+<span style="color: #859900; font-weight: bold;">print</span>(y)
+</pre>
 </div>
 
-<div id="outline-container-org6e3d127" class="outline-2">
-<h2 id="org6e3d127"><span class="section-number-2">4.</span> Funções</h2>
+<p>
+Agora veja o código abaixo. Novamente, qual valor você acha que é o valor exibido pela função <code>print</code>? A verdade é que é exatamente o mesmo valor do código acima (teste no Jupyter!). No entanto, este código foi escrito de propósito para ser ilegível (nem parece que funciona, não é?). O objetivo dessa provocação é mostrar que existem diversas formas de realizar uma mesma tarefa em Python. Neste exemplo, uma delas é trivial de ler enquanto a outra demanda muito tempo para ser entendida!
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">x</span> = <span style="color: #6c71c4; font-weight: bold;">2</span> ** \
+    <span style="color: #6c71c4; font-weight: bold;">6</span> \
+    / <span style="color: #6c71c4; font-weight: bold;">6.4</span>
+<span style="color: #268bd2;">y</span> = (
+    [x +
+     [
+        x * \
+         x // \
+         x
+    ][<span style="color: #6c71c4; font-weight: bold;">0</span>]
+     ][<span style="color: #6c71c4; font-weight: bold;">0</span>]
+)
+<span style="color: #859900; font-weight: bold;">print</span>(y)
+</pre>
+</div>
+
+<p>
+Em geral, um código que funciona é <i>melhor</i> que um código que não funciona. Porém, um código legível que funciona é <i>bem melhor</i> que um código que apenas funciona. É muito tentador escrever códigos que funcionam sem se preocupar que eles sejam legíveis&#x2026; cuidado para não cair no paradigma do POG (<a href="https://www.livropog.com.br/">Programação Orientada à Gambiarra</a>).
+</p>
+
+<p>
+<b>[A]</b> Escreva um código que executa uma tarefa simples, porém escreva-o da forma mais ilegível que você conseguir. Troque o seu código com um colega e tente entender o código que recebeu antes de executá-lo no Python.
+</p>
+
+<p>
+Veja que nem sempre conseguimos nos expressar em Python de forma que a leitura seja trivial. Isso acontece em qualquer linguagem! Existem certos conceitos e tarefas que simplesmente são complexos de serem representados. Isso é normal! Para facilitar nossas vidas, em programação existe o conceito de <i>comentários</i>. Comentários são linhas de texto ao longo do código que são ignoradas pelo compilador quando o código é executado. Comentários servem para ajudar quem está lendo o código a entender mais facilmente o que ele faz. É uma forma do criador do código de se comunicar com seu leitor sem que isso interfira na execução do código em si. Veja o exemplo abaixo.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">este &#233; um coment&#225;rio. Tudo que est&#225; ap&#243;s o `#` ser&#225; ignorado pelo Python</span>
+<span style="color: #268bd2;">x</span> = -<span style="color: #6c71c4; font-weight: bold;">10</span>
+
+<span style="color: #268bd2;">y</span> = <span style="color: #d33682; font-style: italic;">abs</span>(x)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">`y` recebe o valor absoluto de `x` (explica&#231;&#227;o na linha)</span>
+
+<span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">exibe o valor de `y` (explica&#231;&#227;o antes do que ser&#225; executado)</span>
+<span style="color: #859900; font-weight: bold;">print</span>(y)
+</pre>
+</div>
+
+<p>
+Para iniciantes é recomendado sempre comentar seu código. Isso não só irá te ajudar a organizar suas ideias mas também ajudar quem for ler seu código a entender o que ele faz. Em níveis intermediários, recomenda-se deixar comentários apenas em partes do código que não são triviais de se entender.
+</p>
+
+<p>
+<b>[B]</b> Escreva um código que calcula as raízes de uma equação de segundo grau \(f(x) = ax^2 + bx + c\) usando a fórmula de Bhaskara. Comente todas as etapas do seu código. Siga o modelo abaixo.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">valores dos coeficientes (pode alterar se quiser)</span>
+<span style="color: #268bd2;">a</span> = <span style="color: #6c71c4; font-weight: bold;">10</span>
+<span style="color: #268bd2;">b</span> = <span style="color: #6c71c4; font-weight: bold;">3</span>
+<span style="color: #268bd2;">c</span> = -<span style="color: #6c71c4; font-weight: bold;">5</span>
+
+<span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">delete este coment&#225;rio e escreva seu c&#243;digo aqui.</span>
+
+<span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">mostra as ra&#237;zes para o usu&#225;rio</span>
+<span style="color: #859900; font-weight: bold;">print</span>(raiz_1)
+<span style="color: #859900; font-weight: bold;">print</span>(raiz_2)
+</pre>
+</div>
+
+<p>
+<b>[C]</b> Escreva um código que resolve um problema de física, matemática, química ou biologia a sua escolha. Escreva um comentário com seu nome, a data e o que seu código faz. Escreva um comentário em cada etapa que considere não-trivial do seu código.
+</p>
+
+<p>
+<b>[D]</b> Escreva em uma célula o código abaixo e execute. Nós ainda não vimos essa sintaxe, mas mesmo assim tente e veja o que acontece. A mensagem exibida é um poema chamado <i>O Zen do Python</i>. Veremos adiante que a sintaxe com a instrução <code>import</code> é usada para carregar (importar) módulos. Neste caso, o <code>import this</code> não faz nada mais do que exibir o poema, mas veremos adiante que a instrução <code>import</code> é absurdamente útil e importante!
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">import</span> this
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgce2d583" class="outline-2">
+<h2 id="orgce2d583"><span class="section-number-2">4.</span> Funções</h2>
 <div class="outline-text-2" id="text-4">
 </div>
 
-<div id="outline-container-org18e55df" class="outline-3">
-<h3 id="org18e55df"><span class="section-number-3">4.1.</span> O que é uma função?</h3>
+<div id="outline-container-org4599611" class="outline-3">
+<h3 id="org4599611"><span class="section-number-3">4.1.</span> O que é uma função?</h3>
 <div class="outline-text-3" id="text-4-1">
 <blockquote>
 <p>
@@ -1288,8 +1285,8 @@ Basicamente, ao executar uma função ela recebe zero ou mais objetos (argumento
 </div>
 </div>
 
-<div id="outline-container-org53032d1" class="outline-3">
-<h3 id="org53032d1"><span class="section-number-3">4.2.</span> Funções embutidas</h3>
+<div id="outline-container-org579c7eb" class="outline-3">
+<h3 id="org579c7eb"><span class="section-number-3">4.2.</span> Funções embutidas</h3>
 <div class="outline-text-3" id="text-4-2">
 <blockquote>
 <p>
@@ -1298,7 +1295,7 @@ Basicamente, ao executar uma função ela recebe zero ou mais objetos (argumento
 </blockquote>
 
 <p>
-Existem diversas funções embutidas em Python. Estas funções podem ser usadas <span class="underline">a qualquer momento</span>, sem a necessidade de executar nenhum comando prévio. Além das funções embutidas que já vimos (<code>print</code> e <code>help</code>, por exemplo) existem diversas outras! A lista completa pode ser conferida aqui <a href="https://docs.python.org/pt-br/3/library/functions.html">https://docs.python.org/pt-br/3/library/functions.html</a>
+Existem diversas funções embutidas em Python. Estas funções podem ser usadas <span class="underline">a qualquer momento</span>, sem a necessidade de executar nenhum comando prévio. Além das funções embutidas que já vimos (<code>print</code> e <code>help</code>, por exemplo) existem diversas outras! A lista completa pode ser conferida na <a href="https://docs.python.org/pt-br/3/library/functions.html">documentação oficial</a>.
 </p>
 
 <p>
@@ -1314,8 +1311,8 @@ Existem diversas funções embutidas em Python. Estas funções podem ser usadas
 </div>
 </div>
 
-<div id="outline-container-org0c03b4c" class="outline-3">
-<h3 id="org0c03b4c"><span class="section-number-3">4.3.</span> Definindo novas funções</h3>
+<div id="outline-container-orgeef2c53" class="outline-3">
+<h3 id="orgeef2c53"><span class="section-number-3">4.3.</span> Definindo novas funções</h3>
 <div class="outline-text-3" id="text-4-3">
 <blockquote>
 <p>
@@ -1324,7 +1321,7 @@ Existem diversas funções embutidas em Python. Estas funções podem ser usadas
 </blockquote>
 
 <p>
-Podemos definir nossas próprias funções utilizando a instrução <code>def</code>. O código abaixo mostra diversos exemplos de definições de funções. Observe que todas as definições começam com <code>def</code>, seguido do nome da função, seguido de parêntesis e por fim dois-pontos. É considerado bom estilo pular duas linhas antes e depois da definição de funções e nomear funções com a primeira letra minúscula. Ao fim do código abaixo, as funções definidas são executadas. Para executar funções basta escrever o nome delas seguido de parênteses.
+Podemos definir nossas próprias funções utilizando a instrução <code>def</code>. O código abaixo mostra diversos exemplos de definições de funções. Observe que todas as definições começam com <code>def</code>, seguido do nome da função, seguido de parêntesis e por fim dois-pontos. É considerado bom estilo pular duas linhas antes e depois da definição de funções e nomear funções com a primeira letra minúscula. Ao fim do código abaixo, as funções definidas são executadas. Para executar funções basta escrever o nome delas seguido de parênteses (os argumentos vão dentro destes parênteses).
 </p>
 
 <div class="org-src-container">
@@ -1435,26 +1432,27 @@ Finalmente, a <code>funcao_6</code> recebe três argumentos e retorna os mesmos 
 </p>
 
 <p>
-<b>[D]</b> Execute o código abaixo e comente o que ocorre quando executamos a linha 5. Nesta linha a função <code>ola</code> foi executada sem os parênteses. Seu código rodou com erro ou se erro? De qualquer forma elabore o que aconteceu.
+<b>[D]</b> Execute o código abaixo e comente o que ocorre quando executamos a linha 6. Nesta linha a função <code>ola</code> foi executada sem os parênteses. Seu código rodou com erro ou se erro? De qualquer forma elabore o que aconteceu.
 </p>
 
 <div class="org-src-container">
 <pre class="src src-python"><span class="linenr">1: </span><span style="color: #859900; font-weight: bold;">def</span> <span style="color: #b58900;">ola</span>():
 <span class="linenr">2: </span>    <span style="color: #859900; font-weight: bold;">return</span> <span style="color: #2aa198;">"Ol&#225;!"</span>
 <span class="linenr">3: </span>
-<span class="linenr">4: </span><span style="color: #859900; font-weight: bold;">print</span>(ola())
-<span class="linenr">5: </span><span style="color: #859900; font-weight: bold;">print</span>(ola)
+<span class="linenr">4: </span>
+<span class="linenr">5: </span><span style="color: #859900; font-weight: bold;">print</span>(ola())
+<span class="linenr">6: </span><span style="color: #859900; font-weight: bold;">print</span>(ola)
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org10a84b5" class="outline-3">
-<h3 id="org10a84b5"><span class="section-number-3">4.4.</span> Argumentos posicionais, argumentos nomeados e argumentos com valor padrão</h3>
+<div id="outline-container-org7ff9df0" class="outline-3">
+<h3 id="org7ff9df0"><span class="section-number-3">4.4.</span> Argumentos posicionais, argumentos nomeados e argumentos com valor padrão</h3>
 <div class="outline-text-3" id="text-4-4">
 <blockquote>
 <p>
-&ldquo;O raciocínio é um argumento em que, estabelecidas certas coisas, outras coisas diferentes se deduzem necessariamente das primeiras./&rdquo; &#x2014; Aristóteles
+&ldquo;<i>O raciocínio é um argumento em que, estabelecidas certas coisas, outras coisas diferentes se deduzem necessariamente das primeiras.</i>&rdquo; &#x2014; Aristóteles
 </p>
 </blockquote>
 
@@ -1511,7 +1509,7 @@ As linhas 9 e 10 mostram que precisamos garantir que todos os argumentos tenham 
 </p>
 
 <p>
-Argumentos nomeados ajudam na leitura do código, principalmente quando as funções e argumentos receberam bons nomes. As linhas 5 e 6 do código acima deixam bem clara a intenção do código.
+Argumentos nomeados ajudam na leitura do código, principalmente quando as funções e argumentos receberam bons nomes. Por exemplo: as linhas 5 e 6 do código acima deixam bem clara a intenção do código.
 </p>
 
 <p>
@@ -1554,8 +1552,8 @@ Observe que não é permitido declarar argumentos sem valor padrão após argume
 </div>
 </div>
 
-<div id="outline-container-orgf61415f" class="outline-3">
-<h3 id="orgf61415f"><span class="section-number-3">4.5.</span> Variáveis globais e variáveis locais</h3>
+<div id="outline-container-orga71d717" class="outline-3">
+<h3 id="orga71d717"><span class="section-number-3">4.5.</span> Variáveis globais e variáveis locais</h3>
 <div class="outline-text-3" id="text-4-5">
 <blockquote>
 <p>
@@ -1597,7 +1595,7 @@ Variáveis declaradas fora do escopo de funções são variáveis <i>globais</i>
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2;">melhor_album</span> = <span style="color: #2aa198;">"The dark side of the moon"</span>  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">esta &#233; uma vari&#225;vel global</span>
+<pre class="src src-python"><span style="color: #268bd2;">melhor_album</span> = <span style="color: #2aa198;">"The Dark Side of the Moon"</span>  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">esta &#233; uma vari&#225;vel global</span>
 
 
 <span style="color: #859900; font-weight: bold;">def</span> <span style="color: #b58900;">qual_o_melhor_album</span>():
@@ -1618,13 +1616,13 @@ Mesmo sabendo que variáveis globais podem ser utilizadas dentro de funções, e
 </p>
 
 <p>
-<b>[D]</b> O que acontece quando uma variável global é alterada dentro de uma função? Teste isso com pelo menos uma variável numérica, uma lista e um dicionário. Explique em suas palavras o que observou.
+<b>[D]</b> O que acontece quando uma variável global é alterada dentro de uma função? Explique em suas palavras o que observou.
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgd6cf3f1" class="outline-3">
-<h3 id="orgd6cf3f1"><span class="section-number-3">4.6.</span> Documentando suas funções com a docstring</h3>
+<div id="outline-container-orgae5ee82" class="outline-3">
+<h3 id="orgae5ee82"><span class="section-number-3">4.6.</span> Documentando suas funções com a docstring</h3>
 <div class="outline-text-3" id="text-4-6">
 <blockquote>
 <p>
@@ -1637,7 +1635,7 @@ Funções podem ser tão simples ou tão complexas quanto quisermos. As versões
 </p>
 
 <p>
-Mas como dizia o tio Ben: com grandes poderes vem grandes responsabilidades! Você pode escrever hoje a função mais complexa do mundo e resolver todos os seus problemas. Tudo certo enquanto a função está fresca na sua mente. Daqui há três meses você precisa utilizar essa função novamente e já não se recorda mais o que cada argumento controla, não entende mais o valor de retorno e não tem tempo de interpretar as doze mil linhas de código que compõe o corpo da função&#x2026; e agora?
+Mas como dizia o tio Ben: com grandes poderes vem grandes responsabilidades! Você pode escrever hoje a função mais complexa do mundo e resolver todos os seus problemas. Tudo certo enquanto a função está fresca na sua mente. Daqui a três meses você precisa utilizar essa função novamente e já não se recorda mais o que cada argumento controla, não entende mais o valor de retorno e não tem tempo de interpretar as doze mil linhas de código que compõe o corpo da função&#x2026; e agora?
 </p>
 
 <p>
@@ -1757,7 +1755,7 @@ Para armazenar mais informações, precisamos fazer uso das &ldquo;docstrings de
 </div>
 
 <p>
-Vamos analizar as diversas partes do exemplo acima:
+Vamos analisar as diversas partes do exemplo acima:
 </p>
 
 <ol class="org-ol">
@@ -1771,11 +1769,15 @@ Vamos analizar as diversas partes do exemplo acima:
 
 <li>Na linha 25 damos início a descrição dos possíveis erros levantados pelo código. Estes são erros deliberadamente programados no corpo da função. Veremos mais sobre erros na seção de depuração de programas, mas por hora é relevante saber que se a variável <code>tipo</code> tiver um valor fora do esperado, a própria função acusa um erro e envia uma mensagem ao usuário para que ele possa corrigir seu código. Esta seção é obrigatória caso exista gerência de erros no corpo da função (instruções <code>raise</code> e <code>assert</code>).</li>
 </ol>
+
+<p>
+<b>[B]</b> Crie uma função com pelo menos três argumentos e escreva uma docstring em múltiplas linhas para ela.
+</p>
 </div>
 </div>
 
-<div id="outline-container-orgee15aef" class="outline-3">
-<h3 id="orgee15aef"><span class="section-number-3">4.7.</span> Funções também são objetos!</h3>
+<div id="outline-container-orgf1c3e14" class="outline-3">
+<h3 id="orgf1c3e14"><span class="section-number-3">4.7.</span> Funções também são objetos!</h3>
 <div class="outline-text-3" id="text-4-7">
 <blockquote>
 <p>
@@ -1829,1193 +1831,6 @@ Funções em Python são objetos assim como números e strings. Desta forma, pod
 </div>
 </div>
 </div>
-
-<div id="outline-container-orge41a947" class="outline-2">
-<h2 id="orge41a947"><span class="section-number-2">5.</span> Listas</h2>
-<div class="outline-text-2" id="text-5">
-</div>
-
-<div id="outline-container-org4f07280" class="outline-3">
-<h3 id="org4f07280"><span class="section-number-3">5.1.</span> Agrupando objetos com listas</h3>
-<div class="outline-text-3" id="text-5-1">
-<p>
-Vamos começar pensando no seguinte cenário, você está em casa e não tem nada para comer, portanto, precisa ir até o supermercado comprar ingredientes para uma receita. A primeira coisa que vem a sua cabeça é comprar um pacote de miojo, afinal, é fácil de preparar. Mas, sua fome está grande, então poderia comprar dois pacotes de miojo, mas isso não parece tão atraente. Lhe ocorre a ideia de incrementar o miojo, posso adicionar queijo ralado, talvez cozinhar um ovo junto com o miojo. Além disso, você resolve comprar uma bebida para acompanhar, um refrigerante. Então, você lembra que a pasta de dentes está acabando, então decide comprar também, para aproveitar a ida ao mercado. O número de itens a se comprar já começa a ficar grande, então é melhor organizar suas compras em uma lista. Vamos escrever tal lista então:
-</p>
-<ul class="org-ul">
-<li>Miojo</li>
-<li>Queijo Ralado</li>
-<li>Ovo</li>
-<li>Pasta de Dentes</li>
-</ul>
-
-<p>
-Maravilha! Agora você pode ir ao mercado fazer minhas compras. Então você passa no banheiro antes de sair e nota que falta papel higiênico. Hora, então você adiciona mais este item em sua lista, agora ela passa a ser assim:
-</p>
-<ul class="org-ul">
-<li>Miojo</li>
-<li>Queijo Ralado</li>
-<li>Ovo</li>
-<li>Pasta de Dentes</li>
-<li>Papel Higiênico</li>
-</ul>
-
-<p>
-Ótimo, agora está tudo pronto e você vai ao mercado fazer suas compras!
-</p>
-</div>
-
-<div id="outline-container-orgb724eb0" class="outline-4">
-<h4 id="orgb724eb0"><span class="section-number-4">5.1.1.</span> Listas Simples</h4>
-<div class="outline-text-4" id="text-5-1-1">
-<p>
-Este tipo de organização de itens ou objetos em listas é muito prático, podemos então aplicar o mesmo conceito a programação. Vamos criar uma lista de compras em um código Python, a sintaxe será a seguinte:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2;">listadecompras</span> = [<span style="color: #2aa198;">'Miojo'</span>, <span style="color: #2aa198;">'Queijo Ralado'</span>, <span style="color: #2aa198;">'Ovo'</span>, <span style="color: #2aa198;">'Pasta de Dentes'</span>]
-<span style="color: #859900; font-weight: bold;">print</span>(listadecompras)
-</pre>
-</div>
-
-<p>
-Poxa, mas esqueci de incluir o Papel Higiênico na lista! Tudo bem, podemos adicionar itens a nossa lista com o método <code>append</code> do Python. Façamos o seguinte:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python">listadecompras.append(<span style="color: #2aa198;">'Papel Higi&#234;nico'</span>)
-<span style="color: #859900; font-weight: bold;">print</span>(listadecompras)
-</pre>
-</div>
-
-<p>
-Perfeito, veja que o item foi adicionado a sua lista.
-</p>
-</div>
-</div>
-
-<div id="outline-container-org63e4bbd" class="outline-4">
-<h4 id="org63e4bbd"><span class="section-number-4">5.1.2.</span> Listas dentro de listas.</h4>
-<div class="outline-text-4" id="text-5-1-2">
-<p>
-Agora voltando a sua saída ao supermercado, antes de sair você lembra que precisa comprar um caderno, papel e caneta. Mas, infelizmente o mercado que você irá não tem esses itens, você precisará ir a papelaria ao lado para comprar esses itens. Então você naturalmente faz uma nova lista de compras para a papelaria, incluindo os itens necessários.
-</p>
-<ul class="org-ul">
-<li>Caderno</li>
-<li>Papel</li>
-<li>Caneta</li>
-</ul>
-
-<p>
-No Python, podemos fazer listas dentro de listas, então vamos fazer uma lista de listas com os objetos do mercado e da papelaria:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2;">listadecompras</span> = [[<span style="color: #2aa198;">'Miojo'</span>, <span style="color: #2aa198;">'Queijo Ralado'</span>, <span style="color: #2aa198;">'Ovo'</span>, <span style="color: #2aa198;">'Pasta de Dentes'</span>], [<span style="color: #2aa198;">'Caderno'</span>, <span style="color: #2aa198;">'Papel'</span>, <span style="color: #2aa198;">'Caneta'</span>]]
-<span style="color: #859900; font-weight: bold;">print</span>(listadecompras)
-</pre>
-</div>
-
-<p>
-Agora você pode notar que temos duas listas na listadecompras, uma com os itens do mercado e uma com os itens da papelaria.
-Podemos imprimir as listas individualmente, para isso façamos o seguinte:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #859900; font-weight: bold;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>])
-<span style="color: #859900; font-weight: bold;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">1</span>])
-</pre>
-</div>
-
-<p>
-Note que primeiro é impresso a primeira lista, de índice 0 e depois a segunda lista, de índice 1. Lembrando que no Python a contagem começa sempre de zero.
-Perfeito, mas agora deu vontade de comer uma sobremesa após o seu miojo incrementado, então você quer adicionar este item a lista do supermercado. Além disso, você achou que convém comprar um pacote de post-it, para colocar na geladeira, para não esquecer tanto dos itens que você tem que comprar. Portanto, é necessário adicionarmos estes itens nas listas. Podemos fazer isso com a seguinte sintaxe no Python:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python">listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>].append(<span style="color: #2aa198;">'Chocolate'</span>)
-listadecompras[<span style="color: #6c71c4; font-weight: bold;">1</span>].append(<span style="color: #2aa198;">'Post-it'</span>)
-<span style="color: #859900; font-weight: bold;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>])
-<span style="color: #859900; font-weight: bold;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">1</span>])
-</pre>
-</div>
-
-<p>
-Pronto, as listas estão atualizadas com os itens que você incluiu.
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgab679fb" class="outline-4">
-<h4 id="orgab679fb"><span class="section-number-4">5.1.3.</span> Modificando, particionando e desempacotando listas</h4>
-<div class="outline-text-4" id="text-5-1-3">
-<p>
-Já foi apresentado a vocês um dos métodos utilizados em listas, o append. Mas, existem outros métodos para listas, a seguir apresentaremos alguns deles.
-Vamos volta a nossa lista de compras. Você mudou de ideia quanto a sua sobremesa, não querendo mais o chocolate, mas sim um flan pronto de pote. Então precisamos remover o chocolate e inserir o flan. Vamos então remover o chocolate e adicionar o flan.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python">listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>].remove(<span style="color: #2aa198;">'Chocolate'</span>)
-listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>].append(<span style="color: #2aa198;">'Flan'</span>)
-<span style="color: #859900; font-weight: bold;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>])
-</pre>
-</div>
-
-<p>
-Agora sim, podemos ver que a alteração foi realizada como você queria.
-E caso você queira saber se já existe algo na lista, seria tedioso consultar toda a lista para conferir. No entanto, existe um método de listas do Python para fazer isto, chamada count. Vamos fazer um exemplo, para conferir se o miojo está na lista:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #859900; font-weight: bold;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>].count(<span style="color: #2aa198;">'Miojo'</span>))
-</pre>
-</div>
-
-<p>
-Note que o programa retorna &ldquo;1&rdquo;, ou seja, ele está lhe dizendo que há o Miojo na lista uma vez. Agora teste escrever a palavra miojo somente em letras minúsculas, o que acontece?
-Além disso, o programa retornou um número, ou seja, você poderia ter mais que uma ocorrência para o item consultado. Isso signica que podem existir itens duplicados na lista, caso você tivesse adicionado miojo suas vezes, o count retornaria 2.
-</p>
-
-<p>
-Existem vários métodos de listas no Python, que serão muito úteis na sua vida de programação. Abaixo seguem alguns e suas explicações:
-</p>
-<ul class="org-ul">
-<li>insert: Adiciona um elemento na posição especificada.<br />
-Exemplo: listadecompras[0].insert(0,&rsquo;Banana&rsquo;), adiciona Banana na primeira posição da lista.<br />
-Pergunta: O que acontece com os outros elementos?</li>
-<li>extend: Adicionar vários elementos no final da sua lista.<br />
-Exemplo: listadecompras[0].extend([&rsquo;Pão&rsquo;, &rsquo;Queijo&rsquo;, &rsquo;Presunto&rsquo;])
-Pergunta: Os elementos foram adicionados corretamente? Note que ao invés de adicionar os itens na sintaxe anterior, você poderia adicionar outra lista, definida anteriormente.</li>
-<li>index: Retorna o índice do primeiro elemento com o valor requisitado.<br />
-Exemplo: listadecompras[0].index(&rsquo;Ovo&rsquo;)<br />
-Pergunta: O índice reportado é o que você esperava?</li>
-<li>pop: Remove o elemento da posição requida.<br />
-Exemplo: listadecompras[0].pop(5)<br />
-Pergunta: Qual item foi removido? Foi o esperado?</li>
-<li>sort: Ordena sua lista de maneira crescente, tanto com números como ordem alfabética. Note que você pode ordenar a lista, mas não a lista dentro da lista.<br />
-Desafio: Como você faria para ordenar suas duas listas de compras, tendo no final ainda as duas listas dentro de uma lista de listas?</li>
-</ul>
-<pre class="example">
-mercado = listadecompras[0]
-mercado.sort()
-print(mercado)
-papelaria = listadecompras[1]
-papelaria.sort()
-print(papelaria)
-listadecompras = []
-listadecompras.append(mercado)
-listadecompras.append(papelaria)
-</pre>
-
-<ul class="org-ul">
-<li>reverse: Inverte a ordem de sua lista. Novamente tome cuidado pois este método ordena listas, não listas dentro de listas. Além disso, ele simplesmente reverte a ordem existente, ou seja, ele não coloca em ordem decrescente.<br />
-Desafio: Inverta a ordem da lista ordenada alfabeticamente com a função sort.<br />
-Pergunta: Existe uma maneira mais direta de se ordenar de maneira decrescente (ou alfabética ao contrário)?</li>
-</ul>
-<pre class="example">
-mercado = listadecompras[0]
-mercado.reverse()
-print(mercado)
-papelaria = listadecompras[1]
-papelaria.reverse()
-print(papelaria)
-listadecompras = []
-listadecompras.append(mercado)
-listadecompras.append(papelaria)
-print(listadecompras)
-</pre>
-</div>
-</div>
-
-<div id="outline-container-org0517007" class="outline-4">
-<h4 id="org0517007"><span class="section-number-4">5.1.4.</span> Particionamento de listas.</h4>
-<div class="outline-text-4" id="text-5-1-4">
-<p>
-Já foi apresentado como acessar um item específico da lista anteriormente, com o argumento entre colchetes (listadecompras[0]). Porém, podemos particinar as listas, pegando vários elementos de interesse. Novamente utilizaremos índices entre colchetes, com a seguinte sintaxe: lista[Inicial:Final:Passo]. O &rsquo;Inicial&rsquo; é o primeiro elemento da lista que desejamos, &rsquo;Final&rsquo; é o elemento final desejado. Já &rsquo;Passo&rsquo; é o de quantos em quantos elementos queremos, por exemplo, se o passo for 1, todos elementos na faixa específicada são impressos, se o passo for 2, só serão fornecidos elementos a cada dois. Vamos exemplificar para facilitar:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #859900; font-weight: bold;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>][<span style="color: #6c71c4; font-weight: bold;">0</span>:<span style="color: #6c71c4; font-weight: bold;">6</span>:<span style="color: #6c71c4; font-weight: bold;">2</span>])
-</pre>
-</div>
-
-<p>
-Porque temos dois colchetes? Porque estamo particionando a primeira lista de nossa lista de listas. No primeiro colchetes [0], estamos específicando a primeira de nossas duas listas. No segundo colchetes estamos particionando a lista começando do elemento zero até o elemento 6, pulando de dois em dois.
-A saída do código anterior é [&rsquo;Queijo Ralado&rsquo;, &rsquo;Pão&rsquo;, &rsquo;Ovo&rsquo;], sendo que nossa lista completa é [&rsquo;Queijo Ralado&rsquo;, &rsquo;Queijo&rsquo;, &rsquo;Pão&rsquo;, &rsquo;Pasta de Dentes&rsquo;, &rsquo;Ovo&rsquo;, &rsquo;Miojo&rsquo;, &rsquo;Flan&rsquo;, &rsquo;Banana&rsquo;]. Logo foram impressos os elementros 0, 2 e 4. Mas o elemento 6 também não deveria ser impresso? Parece lógico, mas, como o Python começa sua contagem de zero, ao invés de um, sempre que especificamos faixas de valores o elemento final do intervalo não é considerado. Portanto, caso queira o último elemento incluso sempre considere n+1. Façamos isso então:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #859900; font-weight: bold;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>][<span style="color: #6c71c4; font-weight: bold;">0</span>:<span style="color: #6c71c4; font-weight: bold;">7</span>:<span style="color: #6c71c4; font-weight: bold;">2</span>])
-</pre>
-</div>
-
-<p>
-Com este comando o código imprimiu [&rsquo;Queijo Ralado&rsquo;, &rsquo;Pão&rsquo;, &rsquo;Ovo&rsquo;, &rsquo;Flan&rsquo;], incluindo o sexto elemento da lista. Então, tenha isso sempre em mente com o Python, a contagem começa em zero e o último elemento das faixas de valores não é incluído. Também podemos utilizar índices negativos no particionamento de listas, mas como assim? O que acontece quando usamos índices negativos? Basicamente a contagem é de traz para frente. Então, se pedirmos a seguinte faixa [-4,-1] para nossa lista de compras do supermercado, o código imprimirá [&rsquo;Ovo&rsquo;, &rsquo;Miojo&rsquo;, &rsquo;Flan&rsquo;], sendo esses os elementos -4, -3 e -2, já que o último elemento não vai ser incluído por ser o final do intervalo. Se quisermos também o último elemento e colocarmos o intervalo como [-4:0] teremos um erro de sintaxe, então, para obter os quatro últimos elementos a sintaxe correta será [-4:], que irá imprimir do elemento -4 até o último.
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org651e882" class="outline-3">
-<h3 id="org651e882"><span class="section-number-3">5.2.</span> &ldquo;Cópia rasa e cópia profunda&rdquo;</h3>
-<div class="outline-text-3" id="text-5-2">
-<p>
-Agora vamos tratar de cópias no Python. Para listas o Python tem uma maneira bastante peculiar para cópias, onde são criados links entre as listas e não simplesmente copiados os objetos. Vamos a um exemplo para deixar mais claro:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2;">lista1</span> = (<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo Ralado"</span>) <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Defi&#231;&#227;o da lista1 com seus objetos</span>
-<span style="color: #268bd2;">lista2</span> = lista1                            <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Criamos uma lista2 igual a lista1</span>
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Lista 1 Original"</span>)                  <span style="color: #96A7A9; font-style: italic;">#</span>
-<span style="color: #859900; font-weight: bold;">print</span>(lista1)                              <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Imprime a lista1</span>
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Lista 2 Original"</span>)                  <span style="color: #96A7A9; font-style: italic;">#</span>
-<span style="color: #859900; font-weight: bold;">print</span>(lista2)                              <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Imprime a lista2</span>
-<span style="color: #268bd2;">lista2</span>[<span style="color: #6c71c4; font-weight: bold;">2</span>] = <span style="color: #2aa198;">"Or&#233;gano"</span>                      <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Altera o elemento 2 da lista2 para Or&#233;gano</span>
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Lista 2 Alterada"</span>)                  <span style="color: #96A7A9; font-style: italic;">#</span>
-<span style="color: #859900; font-weight: bold;">print</span>(lista2)                              <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Imprime a lista2 alterada</span>
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Lista 1 depois de alterar lista 2"</span>) <span style="color: #96A7A9; font-style: italic;">#</span>
-<span style="color: #859900; font-weight: bold;">print</span>(lista1)                              <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Imprime a lista1 ap&#243;s a altera&#231;&#227;o da lista2</span>
-</pre>
-</div>
-
-<p>
-Bom, nesse código definimos uma lista1, criamos uma lista2 igualando a lista1, por fim alteramos a lista2. Como a cópia é criada com links, ou vínculos, a lista1 e a lista2 dependem uma da outra. Então, quando a lista2 foi alterada, a lista1 também foi, como vocês podem notar na saída do código. Isso pode ser interessante para alguns casos, porém, na maioria das vezes o desejável é ter dados independentes uns dos outros. Para isso, precisamos utilizar o método deepcopy do Python, que é uma cópia profunda, sem vínculos com o objeto anterior. Para isso precisamos importar a função copy e utilizar o método deepcopy, como segue:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #859900; font-weight: bold;">import</span> copy
-<span style="color: #268bd2;">lista1</span> = (<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo Ralado"</span>) <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Defi&#231;&#227;o da lista1 com seus objetos</span>
-<span style="color: #268bd2;">lista2</span> = copy.deepcopy(lista1)             <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Criamos uma lista2 igual a lista1</span>
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Lista 1 Original"</span>)                  <span style="color: #96A7A9; font-style: italic;">#</span>
-<span style="color: #859900; font-weight: bold;">print</span>(lista1)                              <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Imprime a lista1</span>
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Lista 2 Original"</span>)                  <span style="color: #96A7A9; font-style: italic;">#</span>
-<span style="color: #859900; font-weight: bold;">print</span>(lista2)                              <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Imprime a lista2</span>
-<span style="color: #268bd2;">lista2</span>[<span style="color: #6c71c4; font-weight: bold;">2</span>] = <span style="color: #2aa198;">"Or&#233;gano"</span>                      <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Altera o elemento 2 da lista2 para Or&#233;gano</span>
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Lista 2 Alterada"</span>)                  <span style="color: #96A7A9; font-style: italic;">#</span>
-<span style="color: #859900; font-weight: bold;">print</span>(lista2)                              <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Imprime a lista2 alterada</span>
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Lista 1 depois de alterar lista 2"</span>) <span style="color: #96A7A9; font-style: italic;">#</span>
-<span style="color: #859900; font-weight: bold;">print</span>(lista1)                              <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Imprime a lista1 ap&#243;s a altera&#231;&#227;o da lista2</span>
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org4b3c6f6" class="outline-3">
-<h3 id="org4b3c6f6"><span class="section-number-3">5.3.</span> &ldquo;Desempacotamento e Operador Asterisco&rdquo;</h3>
-<div class="outline-text-3" id="text-5-3">
-<p>
-No Python podemos utilizar uma notação específica para definir várias variáveis ao mesmo tempo, como segue:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2;">item0</span>, <span style="color: #268bd2;">item1</span>, <span style="color: #268bd2;">item2</span> = <span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo"</span>
-<span style="color: #859900; font-weight: bold;">print</span>(item0)
-<span style="color: #859900; font-weight: bold;">print</span>(item1)
-<span style="color: #859900; font-weight: bold;">print</span>(item2)
-</pre>
-</div>
-
-<p>
-Notem que item0=&ldquo;Miojo&rdquo;, item1=&ldquo;Ovo&rdquo; e item2=&ldquo;Queijo&rdquo;. Podemos utilizar isso para desempacotar uma lista, por exemplo:
-</p>
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2;">lista</span> = [<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo"</span>]
-<span style="color: #268bd2;">item0</span>, <span style="color: #268bd2;">item1</span>, <span style="color: #268bd2;">item2</span> = lista
-<span style="color: #859900; font-weight: bold;">print</span>(item0)
-<span style="color: #859900; font-weight: bold;">print</span>(item1)
-<span style="color: #859900; font-weight: bold;">print</span>(item2)
-</pre>
-</div>
-
-<p>
-Os elementos a, b e c estão definidos de acordo com os elementos da lista. Porém, caso a lista não tenha a mesma dimensão do número de variáveis que estamos definindo, o que acontece? Para averiguar, utilize o código a seguir:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2;">lista</span> = [<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo"</span>, <span style="color: #2aa198;">"P&#227;o"</span>, <span style="color: #2aa198;">"Or&#233;gano"</span>]
-<span style="color: #268bd2;">item0</span>, <span style="color: #268bd2;">item1</span>, <span style="color: #268bd2;">item2</span> = lista
-</pre>
-</div>
-
-<p>
-Note que o código retornou com o erro &ldquo;ValueError: too many values to unpack (expected 3)&rdquo;. Ou seja, ele esperava três valores mas recebeu mais que isso. Para lidar com este tipo de situação podemos utilizar o operador asterisco, que pegará os elementos restantes e atribuirá a variável indicada, por exemplo:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2;">lista</span> = [<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo"</span>, <span style="color: #2aa198;">"P&#227;o"</span>, <span style="color: #2aa198;">"Or&#233;gano"</span>]
-item0, item1, *<span style="color: #268bd2;">resto</span> = lista
-<span style="color: #859900; font-weight: bold;">print</span>(item0)
-<span style="color: #859900; font-weight: bold;">print</span>(item1)
-<span style="color: #859900; font-weight: bold;">print</span>(resto)
-</pre>
-</div>
-
-<p>
-Agora nosso comando funciona! Tivemos então o item0=&ldquo;Miojo&rdquo;, item1=&ldquo;Ovo&rdquo; e resto=[&rsquo;Queijo&rsquo;, &rsquo;Pão&rsquo;, &rsquo;Orégano&rsquo;]. A posição do operador asterisco não precisa ser necessáriamente na última variável, ela pode ficar na primeira, ou na do meio, por exemplo:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2;">lista</span> = [<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo"</span>, <span style="color: #2aa198;">"P&#227;o"</span>, <span style="color: #2aa198;">"Or&#233;gano"</span>]
-item0, *<span style="color: #268bd2;">item1</span>, <span style="color: #268bd2;">item2</span> = lista
-<span style="color: #859900; font-weight: bold;">print</span>(item0)
-<span style="color: #859900; font-weight: bold;">print</span>(item1)
-<span style="color: #859900; font-weight: bold;">print</span>(item2)
-*<span style="color: #268bd2;">item0</span>, <span style="color: #268bd2;">item1</span>, <span style="color: #268bd2;">item2</span> = lista
-<span style="color: #859900; font-weight: bold;">print</span>(item0)
-<span style="color: #859900; font-weight: bold;">print</span>(item1)
-<span style="color: #859900; font-weight: bold;">print</span>(item2)
-</pre>
-</div>
-
-<p>
-Como se comportou o código de acordo com onde ficou o asterisco?
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgcbe97e9" class="outline-2">
-<h2 id="orgcbe97e9"><span class="section-number-2">6.</span> Tuplas e conjuntos</h2>
-<div class="outline-text-2" id="text-6">
-</div>
-
-<div id="outline-container-orgc7bc549" class="outline-3">
-<h3 id="orgc7bc549"><span class="section-number-3">6.1.</span> &ldquo;Tuplas&rdquo;</h3>
-<div class="outline-text-3" id="text-6-1">
-<p>
-Existe outro tipo de dados no Python que são chamadas tuplas. As tuplas são basicamente listas imutáveis. Como assim imutáveis? Isso significa que uma vez que ela foi definida, não podemos mais adicionar ou remover elementos, bem como não é possível modificar sua ordem. Então, voltando ao nosso exemplo do supermercado, se você quiser estabelecer alguns itens que serão comprados recorrentemente, podemos colocá-los em uma tupla. Vamos a um exemplo:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2;">itensrecorrentes</span> = (<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo Ralado"</span>)
-<span style="color: #859900; font-weight: bold;">print</span>(itensrecorrentes)
-</pre>
-</div>
-
-<p>
-Então, agora esta tupla será composta sempre por estes itens, não podendo modificá-los ou alterar sua ordem. Por conta disso as tuplas só tem dois métodos possíveis, o count e o index, que tem a mesma função que nas listas, que é contar quantos itens existem na tupla e qual o índice do objeto requisitado.
-O interessante é que podemos utilizar o método extend das listas incluindo a tupla. Vamos criar uma nova lista então:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2;">listadecompras</span> = []
-listadecompras.extend(itensrecorrentes)
-<span style="color: #859900; font-weight: bold;">print</span>(listadecompras)
-</pre>
-</div>
-
-<p>
-Na primeira linha inicializamos uma lista vazia, apenas para criá-la, para poder utilizar o método extend nela na segunda linha. Podemos ver que agora temos uma lista criada a partir da tupla, então podemos voltar a adicionar os itens de interesse.
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgbd8530d" class="outline-3">
-<h3 id="orgbd8530d"><span class="section-number-3">6.2.</span> &ldquo;Conjuntos são listas sem elementos repetidos&rdquo;</h3>
-<div class="outline-text-3" id="text-6-2">
-<p>
-Ainda nos tipos de objetos do Python, ainda temos os conjuntos, que são basicamente listas sem elementos repetidos. Os conjuntos possuem seus métodos específicos também, que englobam métodos equivalentes aos das listas, como: remove(), pop(). Mas especificamente para conjuntos, temos operações matemáticas já conhecidas, como união e intersecção. Vamos definir dois conjuntos e operá-los, com nossa analogia de listas de compras, vamos pensar que você fez anotações para compras em dois lugares diferentes e agora você quer juntá-las.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2;">conjunto1</span> = {<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo"</span>}
-<span style="color: #268bd2;">conjunto2</span> = {<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"P&#227;o"</span>, <span style="color: #2aa198;">"Queijo"</span>, <span style="color: #2aa198;">"Or&#233;gano"</span>, <span style="color: #2aa198;">"P&#227;o"</span>}
-<span style="color: #859900; font-weight: bold;">print</span>(conjunto1)
-<span style="color: #859900; font-weight: bold;">print</span>(conjunto2)
-</pre>
-</div>
-
-<p>
-Note que para a definição de conjuntos colocamos os elementos entre chaves {}, diferente das listas que colocamos entre colchetes [] e das tuplas que colocamos entre parênteses (). Além disso, no conjunto2 o elemento pão foi adicionado duas vezes, o que aconteceu quando você imprimiu o conjunto2 em relação ao pão?
-Agora vamos realizar algumas operações com os conjuntos:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2;">intersection</span> = conjunto1.intersection(conjunto2)
-<span style="color: #859900; font-weight: bold;">print</span>(intersection)
-<span style="color: #268bd2;">union</span> = conjunto1.union(conjunto2)
-<span style="color: #859900; font-weight: bold;">print</span>(union)
-</pre>
-</div>
-
-<p>
-Os resultados estão de acordo com o que você esperava?
-Além desses métodos temos outros exclusivos de conjuntos, como segue:
-</p>
-<ul class="org-ul">
-<li>add: Adiciona um elemento ao conjunto. Sintaxe: conjunto.add(&ldquo;Presunto&rdquo;)</li>
-<li>difference: Faz a subtração de dois conjuntos. Sintaxe: difference = conjunto1.difference(conjunto2)</li>
-<li>discard: Remove o elemento especificado do conjunto. Parece igual ao remove, mas, neste caso você não terá uma mensagem de erro caso o elemento não exista no conjunto. Sintaxe: conjunto.discard(&ldquo;Banana&rdquo;)</li>
-<li>update: Com este método você pode incluir um iterável no conjunto, que pode ser outro conjunto, lista, tupla, &#x2026;</li>
-</ul>
-</div>
-</div>
-</div>
-<div id="outline-container-orgd54c168" class="outline-2">
-<h2 id="orgd54c168"><span class="section-number-2">7.</span> Laço de repetição</h2>
-<div class="outline-text-2" id="text-7">
-<p>
-Laços de repetição, ou seu termo mais comum em inglês o loop, serve para iterar elementos de listas, tuplas, conjuntos ou mesmo números em uma faixa definida. Existem diferentes maneiras de implementar loops, sendo as principais do Python o <code>while</code> e o <code>for</code>, que mostraremos pra vocês a seguir.
-</p>
-</div>
-
-<div id="outline-container-org579a818" class="outline-3">
-<h3 id="org579a818"><span class="section-number-3">7.1.</span> Laço de repetição usando <code>while</code></h3>
-<div class="outline-text-3" id="text-7-1">
-<p>
-Vamos iniciar com um <code>while loop</code>, ou laço de repetição com <code>while</code>. A tradução da palavra <code>while</code> do inglês é <code>enquanto</code>, então a ideia deste loop é fazer algo enquanto uma condição não for verdadeira. Vamos começar com um exemplo simples, onde o loop será executado enquanto a variável <code>i</code> for menor que 10, e vamos somando 1 a mesma variável a cada iteração. Para isso usamos um operador que não foi apresentado ainda, o <code>+=</code>, que basicamente soma o valor ou variável indicado após ele, por exemplo, i += 1 é o mesmo que i = i + 1.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2;">i</span> = <span style="color: #6c71c4; font-weight: bold;">0</span>
-<span style="color: #859900; font-weight: bold;">while</span> i &lt; <span style="color: #6c71c4; font-weight: bold;">10</span>:
-    <span style="color: #859900; font-weight: bold;">print</span>(i)
-    <span style="color: #268bd2;">i</span> += <span style="color: #6c71c4; font-weight: bold;">1</span>
-</pre>
-</div>
-
-<p>
-Fique atento a identação! Assim como no caso dos condicionais (<code>if</code>) você precisa colocar a parte da execução identada, pois esta é a maneira do Python interpretar o loop. Note que estamos utilizando os operadores lógicos, que vocês já foram apresentados em uma aula anterior. Eles são fundamenteis para a implementação de loops while, pois quando a condição retornar <code>False</code>, o loop irá parar. Na execução do código vocês podem notar que os números de 0 à 9 foram impressos, quando <code>i</code> ficou igual a 10 o loop parou, pois a sentença <code>i &lt; 10</code> passou a ser <code>False</code>. Você pode confirmar isso alterando seu código para o seguinte:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2;">i</span> = <span style="color: #6c71c4; font-weight: bold;">0</span>
-<span style="color: #859900; font-weight: bold;">while</span> i &lt; <span style="color: #6c71c4; font-weight: bold;">10</span>:
-      <span style="color: #859900; font-weight: bold;">print</span>(i, i &lt; <span style="color: #6c71c4; font-weight: bold;">10</span>)
-      <span style="color: #268bd2;">i</span> += <span style="color: #6c71c4; font-weight: bold;">1</span>
-<span style="color: #859900; font-weight: bold;">print</span>(i, i &lt; <span style="color: #6c71c4; font-weight: bold;">10</span>)
-</pre>
-</div>
-
-<p>
-Com isso, estamos imprimindo a variável <code>i</code> e o valor booleano da operação <code>i &lt; 10</code>. Ao final do loop há mais uma operação de print, para mostrar que quando <code>i = 10</code> a operação <code>i &lt; 10</code> retorna <code>False</code>.
-<b>IMPORTANTE</b>
-O uso de loops pode facilmente levar o seu código a loops infinitos! Sempre avalie com cuidado a condição a ser adotada em seu loop, vamos a um exemplo de loop infinito:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2;">i</span> = <span style="color: #6c71c4; font-weight: bold;">0</span>
-<span style="color: #859900; font-weight: bold;">while</span> i &lt; <span style="color: #6c71c4; font-weight: bold;">10</span>:
-      <span style="color: #859900; font-weight: bold;">print</span>(i, i &lt; <span style="color: #6c71c4; font-weight: bold;">10</span>)
-</pre>
-</div>
-
-<p>
-Neste caso, foi esquecido o incrementador de <code>i</code> (+=), logo o valor de <code>i</code> nunca será alterado! Isso levará o código a rodar indefinidamente, sem nunca parar, teste para você conferir. Esse é um dos erros mais catastróficos em códigos, pois o programa simplesmente executa operações sem parar, muitas vezes utilizando todos os recursos computacionais disponíveis e inutilizando a máquina. Neste caso a única alternativa é terminar o programa forçosamente, ou em alguns casos só reiniciando o computador.
-</p>
-
-<p>
-Também temos outra maneira de sair ou continuar em loops, usando o comando <code>break</code> e <code>continue</code>. Basicamente ao se dar o comando <code>break</code>, o loop é interrompido, e se o comando <code>continue</code> for utilizado o loop continua sua execução. Isso pode ser útil para se utilizar em conjunto com operadores condicionais, como no exemplo abaixo, onde o código cálcula o máximo divisor de um número fornecido:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2;">a</span> = <span style="color: #6c71c4; font-weight: bold;">8733</span>                <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">N&#250;mero que desejamos saber o divisor</span>
-<span style="color: #268bd2;">i</span> = a-<span style="color: #6c71c4; font-weight: bold;">1</span>                 <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Definimos i como a-1, pois se come&#231;armos a testar o divisor como o pr&#243;prio a, ter&#237;amos uma solu&#231;&#227;o trivial</span>
-<span style="color: #859900; font-weight: bold;">while</span> i &gt; <span style="color: #6c71c4; font-weight: bold;">0</span>:                            <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Vamos iterar de a-1 at&#233; 1</span>
-    <span style="color: #859900; font-weight: bold;">print</span>(i)                            <span style="color: #96A7A9; font-style: italic;">#</span>
-    <span style="color: #268bd2;">b</span> = a/i             <span style="color: #96A7A9; font-style: italic;">#</span>
-    <span style="color: #859900; font-weight: bold;">if</span> (b - <span style="color: #d33682; font-style: italic;">int</span>(b)) == <span style="color: #6c71c4; font-weight: bold;">0</span>:       <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Aqui checamos se o resultado da divis&#227;o tem componente decimal</span>
-        <span style="color: #859900; font-weight: bold;">print</span>(a, <span style="color: #2aa198;">'&#233; divis&#237;vel por'</span>, i)  <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Caso a parte decimal seja zero, isso significa que a &#233; divis&#237;vel por i</span>
-        <span style="color: #859900; font-weight: bold;">break</span>               <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Com este break o programa sai do loop</span>
-    <span style="color: #859900; font-weight: bold;">else</span>:               <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Caso a divis&#227;o n&#227;o tenha a parte decimal igual a zero, seguimos por aqui</span>
-        <span style="color: #268bd2;">i</span> -= <span style="color: #6c71c4; font-weight: bold;">1</span>              <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Diminu&#237;mos 1 do i</span>
-        <span style="color: #859900; font-weight: bold;">continue</span>            <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Voltamos ao in&#237;cio do loop</span>
-</pre>
-</div>
-
-<p>
-O código apresentado está comentado, lembrem-se sempre de comentar seus códigos, pois caso você não comente, niguém além de você o entenderá e depois de algum tempo, nem você mesmo entenderá. Basicamente o código encontra o maior divisor para um número fornecido, testando todos os números menores que ele mesmo até que alguma das divisões tenha componente decimal zero.
-</p>
-
-<p>
-<b>Tarefa</b>
-Modifique o código acima para avisar quando números primos são encontrados.
-</p>
-
-<pre class="example">
-a = 17
-i = a-1
-while i &gt; 1:
-    print(i)
-    b = a/i
-    print(b,b - int(b))
-    if (b - int(b)) == 0:
-        print(a, 'é divisível por', i)
-        break
-    else:
-        i -= 1
-        continue
-if (i == 1):
-    print(a,'é primo!')
-</pre>
-
-
-
-<p>
-<b>Desafio</b>
-Como você faria um código para achar o máximo divisor comum?
-</p>
-
-<pre class="example">
-a = 30
-b = 20
-
-if a &gt; b:
-    i = b - 1
-else:
-    i = a - 1
-while a &gt; 1:
-    print(i)
-    div1 = a/i
-    div2 = b/i
-    if ((div1 - int(div1)) == 0) and ((div2 - int(div2)) == 0):
-        print('O MDC entre', a, 'e', b, 'é', i)
-        break
-    else:
-        i -= 1
-        continue
-</pre>
-</div>
-</div>
-
-<div id="outline-container-orge90ca1e" class="outline-3">
-<h3 id="orge90ca1e"><span class="section-number-3">7.2.</span> Laço de repetição usando <code>for</code></h3>
-<div class="outline-text-3" id="text-7-2">
-<p>
-A outra maneira de implementarmos loops no Python é utilizando o <code>for</code>. Mas antes de entrarmos em seus detalhes, é importante mostrar outra ferramenta do Python, o operador <code>in</code>. Com ele podemos checar se um elemento está em uma lista, ou qualquer outro objeto iterável. No exemplo abaixo mostramos sua sintaxe:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2;">lista</span> = [<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo"</span>]
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Ovo"</span> <span style="color: #859900; font-weight: bold;">in</span> lista)
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"P&#227;o"</span> <span style="color: #859900; font-weight: bold;">in</span> lista)
-</pre>
-</div>
-
-<p>
-Veja que para o objeto ovo o código retornou <code>True</code>, já para pão, o código retornou <code>False</code>. Ou seja, ele confirmou que há ovo na lista e que não há pão. Para implementarmos um loop com for, iremos utilizar a seguinte sintaxe: <code>for item in lista</code>, desta maneira a variável item assumirá os o valor dos objetos presentes na lista, um a um. Confira o exemplo abaixo:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2;">lista</span> = [<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo"</span>, <span style="color: #2aa198;">"Or&#233;gano"</span>, <span style="color: #2aa198;">"P&#227;o"</span>]
-<span style="color: #859900; font-weight: bold;">for</span> item <span style="color: #859900; font-weight: bold;">in</span> lista:
-    <span style="color: #859900; font-weight: bold;">print</span>(item)
-</pre>
-</div>
-
-<p>
-Note que a cada iteração o código imprime a variável item, que assume os valores da lista do primeiro ao último. Podemos então usar condicionais ou manipular de várias maneiras os dados. Por exemplo, você quer que quando houver pão na sua lista de compras, seja automáticamente incluídos queijo, presunto e manteiga. Para isso vamos criar um operador condicional, que confere se um dos itens é pão, caso seja então adicionamos os itens desejados.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2;">lista</span> = [<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo"</span>, <span style="color: #2aa198;">"Or&#233;gano"</span>, <span style="color: #2aa198;">"P&#227;o"</span>]
-<span style="color: #859900; font-weight: bold;">for</span> item <span style="color: #859900; font-weight: bold;">in</span> lista:
-        <span style="color: #859900; font-weight: bold;">print</span>(item)
-        <span style="color: #859900; font-weight: bold;">if</span> item == <span style="color: #2aa198;">"P&#227;o"</span>:
-                lista.append[<span style="color: #2aa198;">"Queijo"</span>, <span style="color: #2aa198;">"Presunto"</span>, <span style="color: #2aa198;">"Manteiga"</span>]
-<span style="color: #859900; font-weight: bold;">print</span>(lista)
-</pre>
-</div>
-
-<p>
-Pronto, agora se você adicionar pão a lista serão adicionados os itens queijo, presundo e manteiga, assim você pode fazer seu misto quente! Agora, note que já havia queijo na lista e ele foi adicionado novamente. Como você faria um código que não adicionasse o queijo duplicadamente?
-</p>
-
-<pre class="example">
-set1 = {"Miojo", "Ovo", "Queijo", "Orégano", "Pão"}
-set2 = copy.deepcopy(set1)
-for item in set1:
-        print(item)
-        if item == "Pão":
-                set2.update({"Queijo", "Presunto", "Manteiga"})
-print(set2)
-
-lista = ["Miojo", "Ovo", "Queijo", "Orégano", "Pão"]
-for item in lista:
-        print(item)
-        if item == "Pão":
-            if lista.count("Queijo") == 0:
-                lista.append("Queijo")
-            if lista.count("Presunto") == 0:
-                lista.append("Presunto")
-            if lista.count("Manteiga") == 0:
-                lista.append("Manteiga")
-print(lista)
-</pre>
-
-
-<p>
-Além de iterar em listas, o <code>for loop</code> pode ser utilizado em faixas de números, para isso devemos utilizar o operador <code>range</code>. Por exemplo, se quisermos iterar os números de 0 à 10, podemos fazer o seguinte:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #859900; font-weight: bold;">for</span> number <span style="color: #859900; font-weight: bold;">in</span> <span style="color: #d33682; font-style: italic;">range</span>(<span style="color: #6c71c4; font-weight: bold;">0</span>,<span style="color: #6c71c4; font-weight: bold;">11</span>):
-        <span style="color: #859900; font-weight: bold;">print</span>(number)
-</pre>
-</div>
-
-<p>
-A saída do código lhe dará os números de 0 à 10, um em cada linha. Mas note que a faixa que colocamos é de 0 à 11! Novamente o fato do Python começar a contar do zero leva ao intervalo aberto no final da faixa, como discutido anteriormente. Então, tenha sempre em mente isso para não perder o último número da sua faixa.
-</p>
-
-<p>
-Também podemos definir o passo a ser utilizado, o padrão é iterar de um em um, mas podemos mudar isso, veja o exemplo abaixo:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #859900; font-weight: bold;">for</span> number <span style="color: #859900; font-weight: bold;">in</span> <span style="color: #d33682; font-style: italic;">range</span>(<span style="color: #6c71c4; font-weight: bold;">0</span>,<span style="color: #6c71c4; font-weight: bold;">11</span>,<span style="color: #6c71c4; font-weight: bold;">2</span>):
-    <span style="color: #859900; font-weight: bold;">print</span>(number)
-</pre>
-</div>
-
-<p>
-O código imprime os números 0, 2, 4, 6, 8 e 10. Ou seja, o passo mudou para 2. Também podemos utilizar um passo negativo, colocando a faixa como (0,11,-1) será impressa a ordem decrescente. Isso é bastante útil em um caso bem simples, o cálculo de fatoriais. Vamos calcular o fatorial de 10 para exemplificar:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2;">fatorial</span> = <span style="color: #6c71c4; font-weight: bold;">1</span>            <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Definimos um valor inicial para o fatorial</span>
-<span style="color: #859900; font-weight: bold;">for</span> number <span style="color: #859900; font-weight: bold;">in</span> <span style="color: #d33682; font-style: italic;">range</span>(<span style="color: #6c71c4; font-weight: bold;">4</span>,<span style="color: #6c71c4; font-weight: bold;">1</span>,-<span style="color: #6c71c4; font-weight: bold;">1</span>):    <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Iteramos de 4 &#224; 2, com passo de -1</span>
-    <span style="color: #859900; font-weight: bold;">print</span>(number)       <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Imprime o n&#250;mero da itera&#231;&#227;o</span>
-    <span style="color: #268bd2;">fatorial</span> = fatorial*number  <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Multiplicamos a vari&#225;vel fatorial pelo n&#250;mero sendo iterado</span>
-<span style="color: #859900; font-weight: bold;">print</span>(fatorial)         <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Imprime o resultado do fatorial</span>
-</pre>
-</div>
-
-<p>
-O código é simples mas tem alguns conceitos novos nele. Já na primeira linha definimos a variável <code>fatorial = 1</code>, porque isso, já que a utilizaremos no loop? Comente a primeira linha e confira o que acontece. Outro ponto é que iteramos de 4 a 2 e não de 4 a 1, o fatorial é definido por <code>4! = 4*3*2*1</code>, porém, qualquer número multiplicado por 1 é ele mesmo, logo não faz diferença multiplicarmos por 1, já que o resultado não é alterado. Assim, evitando uma multiplicação economizamos tempo computacional, pode parecer pouca coisa, mas, várias dessas otimizações em um código grande podem levar a ganhos significativos de performance.
-</p>
-
-<p>
-<b>Tarefa:</b> Refaça o código para encontrar números primos agora utilizando o <code>for loop</code>. <i>Dica: Utilize o operador <code>%</code></i>.
-</p>
-
-<pre class="example">
-a = 17
-for i in range(a-1,0,-1):
-    c = a % i
-    if c == 0 and i != 1:
-        print(a, 'é divisível por', i)
-        break
-    elif i == 1:
-        print(a, 'é primo')
-    else:
-        print(a, 'não é divisível por', i)
-</pre>
-</div>
-</div>
-
-<div id="outline-container-orgb23ad13" class="outline-3">
-<h3 id="orgb23ad13"><span class="section-number-3">7.3.</span> Laços Aninhados</h3>
-<div class="outline-text-3" id="text-7-3">
-<p>
-Além de utilizarmos laços (loops) aliados a condicionais, também podemos ter loops dentro de loops. Vamos voltar a nossas listas de compras, agora precisamos checar o que temos na lista da padaria e do supermercado, para ver se não temos nada repetido, vamos ao exemplo:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2;">listadecompras</span> = [[<span style="color: #2aa198;">'Miojo'</span>, <span style="color: #2aa198;">'Queijo'</span>, <span style="color: #2aa198;">'Ovo'</span>, <span style="color: #2aa198;">'Pasta de Dentes'</span>, <span style="color: #2aa198;">'Chocolate'</span>], [<span style="color: #2aa198;">'P&#227;o'</span>, <span style="color: #2aa198;">'Queijo'</span>, <span style="color: #2aa198;">'Presunto'</span>, <span style="color: #2aa198;">'Sonho'</span>]]   <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Definindo uma lista de listas com itens de mercado e da padaria</span>
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">'Lista do supermercado antes da confer&#234;ncia:'</span>, listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>])                         <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Imprime lista do supermercado</span>
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">'Lista da padaria antes da confer&#234;ncia:'</span>, listadecompras[<span style="color: #6c71c4; font-weight: bold;">1</span>])                          <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Imprime lista da padaria</span>
-
-<span style="color: #859900; font-weight: bold;">for</span> item1 <span style="color: #859900; font-weight: bold;">in</span> listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>]:                                             <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Loop nos itens do supermercado</span>
-        <span style="color: #859900; font-weight: bold;">for</span> item2 <span style="color: #859900; font-weight: bold;">in</span> listadecompras[<span style="color: #6c71c4; font-weight: bold;">1</span>]:                                         <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Loop nos itens da padaria</span>
-                <span style="color: #859900; font-weight: bold;">if</span> item1 == item2:                                          <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Checa se os itens s&#227;o iguais</span>
-                        listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>].remove(item1)                                 <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Se forem iguais, s&#227;o removidos da lista do supermercado</span>
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">'Lista do supermercado ap&#243;s a confer&#234;ncia:'</span>, listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>])                           <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Imprime a lista do supermercado</span>
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">'Lista da padaria ap&#243;s a confer&#234;ncia:'</span>, listadecompras[<span style="color: #6c71c4; font-weight: bold;">1</span>])                            <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Imprime a lista da padaria</span>
-</pre>
-</div>
-
-<p>
-Note que o <code>Queijo</code> foi removido da lista da padaria, que era o único item repetido neste caso.
-</p>
-
-<p>
-<b>Tarefa:</b> Escreva um código para encontrar todos números primos de uma faixa de números.
-</p>
-<pre class="example">
-start = 1
-end = 1000
-
-listadeprimos = set()
-listadenaoprimos = set()
-for i in range(start,end+1):
-        notprime = 0
-        for j in range(start+1,int(end/2)):
-                if i % j == 0 and i != j:
-                        notprime = 1
-                        listadenaoprimos.add(i)
-                        print(i, 'é divisível por', j)
-                        break
-        if notprime == 0:
-                listadeprimos.add(i)
-                print(i, 'é primo')
-
-print(sorted(listadenaoprimos), 'não são primos')
-print(sorted(listadeprimos), 'são primos')
-</pre>
-</div>
-</div>
-
-<div id="outline-container-orga98c2de" class="outline-3">
-<h3 id="orga98c2de"><span class="section-number-3">7.4.</span> Compreensão de listas</h3>
-<div class="outline-text-3" id="text-7-4">
-<p>
-Esta ferramenta serve para criarmos novas listas a partir de uma lista existente. Isso pode ser feito com loops por exemplo, mas existe uma forma mais compacta. Vamos primeiro fazer da forma que vocês já foram apresentados então:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2;">listadecompras</span> = [<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo"</span>, <span style="color: #2aa198;">"Presunto"</span>, <span style="color: #2aa198;">"P&#227;o"</span>, <span style="color: #2aa198;">"Or&#233;gano"</span>, <span style="color: #2aa198;">"Papel Higi&#234;nico"</span>]
-<span style="color: #268bd2;">listadapadaria</span> = []
-<span style="color: #859900; font-weight: bold;">for</span> item <span style="color: #859900; font-weight: bold;">in</span> listadecompras:
-    <span style="color: #859900; font-weight: bold;">if</span> item == <span style="color: #2aa198;">"P&#227;o"</span> <span style="color: #859900; font-weight: bold;">or</span> item == <span style="color: #2aa198;">"Queijo"</span> <span style="color: #859900; font-weight: bold;">or</span> item == <span style="color: #2aa198;">"Presunto"</span>:
-        listadapadaria.append(item)
-<span style="color: #859900; font-weight: bold;">print</span>(listadapadaria)
-</pre>
-</div>
-
-<p>
-No código acima definimos a <code>listadecompras</code>, mas separamos alguns itens em uma <code>listadapadaria</code>, com os itens do misto quente. Foi feito um loop nos itens <code>listadecompras</code> e um condicional para os itens do misto quente. Notem que é possível utilizar vários condicionais juntos, o que é bastante útil. No final a <code>listadapadaria</code> acaba está com os itens desejados. Outra maneira que pode reduzir o código significativamente é o uso da compreenção de listas. Veja o exemplo no código abaixo:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2;">listadecompras</span> = [<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo"</span>, <span style="color: #2aa198;">"Presunto"</span>, <span style="color: #2aa198;">"P&#227;o"</span>, <span style="color: #2aa198;">"Or&#233;gano"</span>, <span style="color: #2aa198;">"Papel Higi&#234;nico"</span>]
-<span style="color: #268bd2;">listadapadaria</span> = [item <span style="color: #859900; font-weight: bold;">for</span> item <span style="color: #859900; font-weight: bold;">in</span> listadecompras <span style="color: #859900; font-weight: bold;">if</span> <span style="color: #2aa198;">"P&#227;o"</span> <span style="color: #859900; font-weight: bold;">in</span> item <span style="color: #859900; font-weight: bold;">or</span> <span style="color: #2aa198;">"Queijo"</span> <span style="color: #859900; font-weight: bold;">in</span> item <span style="color: #859900; font-weight: bold;">or</span> <span style="color: #2aa198;">"Presunto"</span> <span style="color: #859900; font-weight: bold;">in</span> item]
-<span style="color: #859900; font-weight: bold;">print</span>(listadapadaria)
-</pre>
-</div>
-
-<p>
-Temos o mesmo resultado do loop for, com um código de três linhas, frente ao de seis linhas com o loop. A economia de linhas vem aliada a uma sintaxe um pouco complicada, que merece bastante atenção. Basicamente ela consiste no seguinte: novalista = [espressão <code>for</code> item <code>in</code> iterável <code>if</code> condição verdadeira], a <code>expressão</code> para ser qualquer coisa, no exemplo anterior utilizamos o próprio <code>item</code> na expressão, sem nenhum operador, mas entraremos em mais detalhes em breve. O <code>item</code> é o que será analizada a <code>condição</code> e aplicada a <code>expressão</code>, já o <code>iterável</code> pode ser uma lista, tupla, conjunto, entre outros. Vamos a um exemplo onde aplicamos uma expressão:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2;">quadradosimpares</span> = [numero**<span style="color: #6c71c4; font-weight: bold;">2</span> <span style="color: #859900; font-weight: bold;">for</span> numero <span style="color: #859900; font-weight: bold;">in</span> <span style="color: #d33682; font-style: italic;">range</span>(<span style="color: #6c71c4; font-weight: bold;">10</span>) <span style="color: #859900; font-weight: bold;">if</span> numero % <span style="color: #6c71c4; font-weight: bold;">2</span> != <span style="color: #6c71c4; font-weight: bold;">0</span>]
-<span style="color: #859900; font-weight: bold;">print</span>(quadradosimpares)
-</pre>
-</div>
-
-<p>
-No exemplo acima a <code>expressão</code> é <code>numero**2</code>, ou seja tiramos o quadrado do <code>item</code> da compreensão. O iterável é a faixa de números de 0 a 9. Já a condição é que o resto da divisão entre o <code>item</code> (numero) e 2 seja diferente de zero, que será verdade para os números ímpares. Então a lista <code>quadradosimpares</code> terá o quadrado de todos os números ímpares na faixa escolhida. Agora faça o seguinte, delete a condição (if numero % 2 != 0) e execute o código, o que acontece?
-</p>
-
-<p>
-Mas porque utilizar esta sintaxe de compreenssão de listas e não continuar utilizando loops? Os programadores são tão preguiçosos que querem fazer tudo em uma linha? Na verdade a maior vantagem da compreensão de listas é a performance. Vamos fazer uma rápida comparação para dar uma ideia, com o código abaixo, que calcula quais são os divisores de um número arbitrário.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #859900; font-weight: bold;">import</span> time                             <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Importando a biblioteca que ir&#225; cronometrar nosso c&#243;digo.</span>
-<span style="color: #268bd2;">start</span> = time.time()                         <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Setando o tempo inicial</span>
-<span style="color: #268bd2;">a</span> = <span style="color: #6c71c4; font-weight: bold;">1000001</span>                             <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Definimos um n&#250;mero qualquer</span>
-<span style="color: #268bd2;">divisor</span> = [i <span style="color: #859900; font-weight: bold;">for</span> i <span style="color: #859900; font-weight: bold;">in</span> <span style="color: #d33682; font-style: italic;">range</span>(<span style="color: #6c71c4; font-weight: bold;">1</span>,a) <span style="color: #859900; font-weight: bold;">if</span> a % i == <span style="color: #6c71c4; font-weight: bold;">0</span>]             <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">M&#233;todo de compreenss&#227;o de listas para calcular os divisores</span>
-<span style="color: #859900; font-weight: bold;">print</span>(divisor)                              <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Imprime os divisores</span>
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"--- Comprehenssion %s seconds ---"</span> % (time.time() - start))  <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Imprime o tempo que o c&#243;digo levou para executar</span>
-
-<span style="color: #268bd2;">start</span> = time.time()                         <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Setando novamente o tempo inicial</span>
-<span style="color: #268bd2;">divisor</span> = []                                <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Inicializando a lista dos divisores</span>
-<span style="color: #859900; font-weight: bold;">for</span> i <span style="color: #859900; font-weight: bold;">in</span> <span style="color: #d33682; font-style: italic;">range</span>(<span style="color: #6c71c4; font-weight: bold;">1</span>,a):                            <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">In&#237;cio do loop</span>
-    <span style="color: #859900; font-weight: bold;">if</span> a % i == <span style="color: #6c71c4; font-weight: bold;">0</span>:                          <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Testa o resto da divis&#227;o</span>
-        divisor.append(i)                       <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Acrescenta como divisor se o resto &#233; zero</span>
-<span style="color: #859900; font-weight: bold;">print</span>(divisor)                              <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Imprime os divisores</span>
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"--- Loop %s seconds ---"</span> % (time.time() - start))        <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Imprime o tempo de execu&#231;&#227;o</span>
-</pre>
-</div>
-
-<p>
-No código apresentado calculamos todos divisores do número <code>a</code>, execute este código, você verá que os tempos de execução são mais rápidos para o método de compreenssão de listas. Mas poxa, um executou em 0.04 segundos e o outro em 0.05 segundos, não é muita diferença. Pois bem, aumente três zeros no <code>a</code> e compare novamente, agora temos a compreenssão de listas executando em 45 segundos e o loop em 60 segundos. Quanto maior o seu número, mais importante será essa diferença. Isso pode ser crucial em muitos casos, pois imagine que você queira fazer uma previsão do tempo para amanhã, mas seu código demora 48 horas para rodar e sua previsão fica pronta depois do dia ter passado? Esse e muitos outros casos tem a performance como algo crítico, tornando a aplicação útil ou não.
-</p>
-
-<p>
-Maravilha, conseguimos ganhar um pouco de performance, mas, o código apresentado está fazendo várias operações inúteis. Como assim? Bom, vamos pensar nos divisores de um número, eles certamente não serão maiores que a metade do mesmo, mas estamos tentando dividir por esses números maiores que a metade. Ajuste seu código para dividir só até a metade de <code>a</code> e veja a diferença na performance. A diferença é grande não? Se compararmos o loop dividindo por todos os números com a compreenssão de listas dividindo até a metade de <code>a</code>, o código leva quase um terço do tempo para executar. Se fosse uma previsão do tempo que levava 48 horas, agora ela levaria pouco mais de 16 horas, ficando pronta antes do próximo dia começar, se tornando útil. Logo parar para pensar na matemática ou lógica do problema ajuda muito na otimização, ainda mais aliado as técnicas computacionais adequadas. Existe alguma outra otimização que lhe vem em mente?
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgd670381" class="outline-3">
-<h3 id="orgd670381"><span class="section-number-3">7.5.</span> Compreensão de listas aninhadas</h3>
-<div class="outline-text-3" id="text-7-5">
-<p>
-Assim como laços, também podemos aninhar compreensão de listas. Neste caso a sintaxe pode ficar bastante complicada, então é interessante ilustrarmos
-</p>
-
-
-<div id="org144b6f7" class="figure">
-<p><img src="./img/nested-list-comprehension.png" alt="nested-list-comprehension.png" />
-</p>
-</div>
-
-<p>
-#+ açúcar sintático &gt;&gt; Ver com Daniel
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orge9c4309" class="outline-2">
-<h2 id="orge9c4309"><span class="section-number-2">8.</span> Depuração de programas</h2>
-<div class="outline-text-2" id="text-8">
-</div>
-
-<div id="outline-container-org9561500" class="outline-3">
-<h3 id="org9561500"><span class="section-number-3">8.1.</span> Meu programa não roda pois dá um erro, e agora?</h3>
-<div class="outline-text-3" id="text-8-1">
-<blockquote>
-<p>
-&ldquo;YOU DIED&rdquo; &#x2014; Dark Souls
-</p>
-</blockquote>
-
-<p>
-Existem diversas formas em que algo pode dar errado, e isso <i>não</i> é diferente em programação. Idealmente queremos que nosso código rode e nada dê errado, mas se algo estiver errado é sempre bom que sejamos avisados para poder pelo menos tentar consertar. É exatamente isso que acontece quando o Python exibe uma mensagem de erro! Ele está te avisando que algo estranho aconteceu e precisa ser resolvido antes de prosseguir. Veja o código abaixo.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span class="linenr">1: </span><span style="color: #859900; font-weight: bold;">def</span> <span style="color: #b58900;">divisao</span>(x, y):
-<span class="linenr">2: </span>    <span style="color: #35a69c; font-style: italic;">"""Divide o primeiro valor pelo segundo."""</span>
-<span class="linenr">3: </span>    <span style="color: #859900; font-weight: bold;">return</span> x / y
-<span class="linenr">4: </span>
-<span class="linenr">5: </span>
-<span class="linenr">6: </span><span style="color: #859900; font-weight: bold;">print</span>(divisao(<span style="color: #6c71c4; font-weight: bold;">100</span>, <span style="color: #6c71c4; font-weight: bold;">0</span>))
-</pre>
-</div>
-
-<p>
-Se tentar rodar esse código no JupyterLab, você verá uma mensagem similar a mensagem abaixo:
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span class="linenr"> 1: </span>---------------------------------------------------------------------------
-<span class="linenr"> 2: </span><span style="color: #b58900; font-style: italic;">ZeroDivisionError</span>                         Traceback (most recent call last)
-<span class="linenr"> 3: </span>/tmp/ipykernel_8712/<span style="color: #6c71c4; font-weight: bold;">570243516</span>.py <span style="color: #859900; font-weight: bold;">in</span> &lt;module&gt;
-<span class="linenr"> 4: </span>      <span style="color: #6c71c4; font-weight: bold;">4</span>
-<span class="linenr"> 5: </span>      <span style="color: #6c71c4; font-weight: bold;">5</span>
-<span class="linenr"> 6: </span>----&gt; <span style="color: #6c71c4; font-weight: bold;">6</span> <span style="color: #859900; font-weight: bold;">print</span>(divisao(<span style="color: #6c71c4; font-weight: bold;">100</span>, <span style="color: #6c71c4; font-weight: bold;">0</span>))
-<span class="linenr"> 7: </span>
-<span class="linenr"> 8: </span>/tmp/ipykernel_8712/<span style="color: #6c71c4; font-weight: bold;">570243516</span>.py <span style="color: #859900; font-weight: bold;">in</span> divisao(x, y)
-<span class="linenr"> 9: </span>      <span style="color: #6c71c4; font-weight: bold;">1</span> <span style="color: #859900; font-weight: bold;">def</span> <span style="color: #b58900;">divisao</span>(x, y):
-<span class="linenr">10: </span>      <span style="color: #6c71c4; font-weight: bold;">2</span>     <span style="color: #2aa198;">"""Divide o primeiro valor pelo segundo."""</span>
-<span class="linenr">11: </span>----&gt; <span style="color: #6c71c4; font-weight: bold;">3</span>     <span style="color: #859900; font-weight: bold;">return</span> x / y
-<span class="linenr">12: </span>      <span style="color: #6c71c4; font-weight: bold;">4</span>
-<span class="linenr">13: </span>      <span style="color: #6c71c4; font-weight: bold;">5</span>
-<span class="linenr">14: </span>
-<span class="linenr">15: </span><span style="color: #b58900; font-style: italic;">ZeroDivisionError</span>: division by zero
-</pre>
-</div>
-
-<p>
-Se você nunca tinha visto uma mensagem dessas, meus parabéns! Esta é uma mensagem de erro e seu objetivo é informar quem executou o código que algo de errado aconteceu. Veja que logo no início da mensagem de erro conseguimos identificar o tipo do erro: <code>ZeroDivisionError</code> que significa que uma divisão por zero aconteceu em algum lugar. Mas onde isso aconteceu? Logo abaixo do nome do erro temos um <code>----&gt;</code> na linha 6, indicando qual instrução estava rodando quando o problema foi encontrado. Essa instrução tem duas funções: <code>print</code> e <code>divisao</code>. O erro em si poderia ter ocorrido em qualquer uma delas, mas na linha 8 fica claro que o erro ocorreu na função <code>divisao</code>. Mais abaixo encontramos um segundo <code>----&gt;</code> que finalmente mostra onde que o erro efetivamente aconteceu! Foi na divisão de <code>x</code> por <code>y</code>! Nós passamos o valor <code>y=0</code> quando executamos a função <code>divisao</code> e isso resultou em uma divisão por zero!
-</p>
-
-<p>
-Saber ler as mensagens de erro é tão importante quanto saber programar em si. É muito fácil cometer pequenos erros durante a escrita de qualquer código. Quanto mais código você escrever mais chances tem de errar! Como vemos corriqueiramente nas notícias, mesmo programadores experientes de grandes empresas cometem erros! Afinal, erra é humano! Entender o erro e conseguir consertá-lo é uma habilidade que se ganha com prática, então aproveite cada mensagem de erro para afinar suas habilidades!
-</p>
-
-<p>
-<b>[A]</b> Todos os blocos de código abaixo resultam em um erro quando executados. Execute-os, identifique o erro, escreva uma breve explicação sobre o que o erro significa (busque na documentação do Python) e reescreva o bloco de código para que ele execute sem erros.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span class="linenr">1: </span><span style="color: #268bd2;">piratas</span> = {
-<span class="linenr">2: </span>    <span style="color: #2aa198;">"Ruffy"</span>: <span style="color: #2aa198;">"Homem borracha"</span>,
-<span class="linenr">3: </span>    <span style="color: #2aa198;">"Zoro"</span>: <span style="color: #2aa198;">"Espadachim"</span>,
-<span class="linenr">4: </span>    <span style="color: #2aa198;">"Nami"</span>: <span style="color: #2aa198;">"Navegadora"</span>,
-<span class="linenr">5: </span>    <span style="color: #2aa198;">"Sanji"</span>: <span style="color: #2aa198;">"Cozinheiro"</span>,
-<span class="linenr">6: </span>}
-<span class="linenr">7: </span>
-<span class="linenr">8: </span><span style="color: #859900; font-weight: bold;">print</span>(piratas[<span style="color: #2aa198;">"Ussop"</span>])
-</pre>
-</div>
-
-<div class="org-src-container">
-<pre class="src src-python"><span class="linenr">1: </span><span style="color: #268bd2;">filmes</span> = [
-<span class="linenr">2: </span>    <span style="color: #2aa198;">"Meu vizinho Totoro"</span>,
-<span class="linenr">3: </span>    <span style="color: #2aa198;">"Nausica&#228; no pa&#237;s dos ventos"</span>,
-<span class="linenr">4: </span>    <span style="color: #2aa198;">"Princesa Mononoke"</span>,
-<span class="linenr">5: </span>]
-<span class="linenr">6: </span>
-<span class="linenr">7: </span><span style="color: #859900; font-weight: bold;">print</span>(filmes[<span style="color: #6c71c4; font-weight: bold;">4</span>])
-</pre>
-</div>
-
-<div class="org-src-container">
-<pre class="src src-python"><span class="linenr">1: </span><span style="color: #268bd2;">soma</span> = <span style="color: #2aa198;">"4"</span> + <span style="color: #6c71c4; font-weight: bold;">2</span>
-</pre>
-</div>
-
-<div class="org-src-container">
-<pre class="src src-python"><span class="linenr">1: </span><span style="color: #268bd2;">valor</span> = <span style="color: #d33682; font-style: italic;">int</span>(<span style="color: #2aa198;">'abc'</span>)
-</pre>
-</div>
-
-<div class="org-src-container">
-<pre class="src src-python"><span class="linenr">1: </span><span style="color: #859900; font-weight: bold;">print</span>(abcdefghij)
-</pre>
-</div>
-
-<div class="org-src-container">
-<pre class="src src-python"><span class="linenr">1: </span><span style="color: #859900; font-weight: bold;">for</span> n <span style="color: #859900; font-weight: bold;">in</span> [<span style="color: #6c71c4; font-weight: bold;">1</span>, <span style="color: #6c71c4; font-weight: bold;">2</span>, <span style="color: #6c71c4; font-weight: bold;">3</span>]:
-<span class="linenr">2: </span><span style="color: #859900; font-weight: bold;">print</span>(n)
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org63a3043" class="outline-3">
-<h3 id="org63a3043"><span class="section-number-3">8.2.</span> Tratamento de exceções</h3>
-<div class="outline-text-3" id="text-8-2">
-<blockquote>
-<p>
-&ldquo;Fazer ou não fazer. Tentativa não há&rdquo; &#x2014; Mestre Yoda
-</p>
-</blockquote>
-
-<p>
-Vimos na seção anterior que quando um erro é identificado durante a execução de um código, o erro é exibido ao usuário e o programa interrompe imediatamente a sua execução. Entretanto, em certos casos nós gostaríamos que o programa não interrompesse sua execução ao encontrar um erro. Esse comportamente é possível em Python com as instruções <code>try~/~except</code> e o nome dessa estratégia é <i>tratamento de exceções</i>. Veja um exemplo abaixo.
-</p>
-
-
-<div class="org-src-container">
-<pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #859900; font-weight: bold;">def</span> <span style="color: #b58900;">divisao</span>(x, y):
-<span class="linenr"> 2: </span>    <span style="color: #35a69c; font-style: italic;">"""Divide o primeiro valor pelo segundo."""</span>
-<span class="linenr"> 3: </span>    <span style="color: #859900; font-weight: bold;">return</span> x / y
-<span class="linenr"> 4: </span>
-<span class="linenr"> 5: </span>
-<span class="linenr"> 6: </span><span style="color: #859900; font-weight: bold;">try</span>:
-<span class="linenr"> 7: </span>    <span style="color: #859900; font-weight: bold;">print</span>(divisao(<span style="color: #6c71c4; font-weight: bold;">100</span>, <span style="color: #6c71c4; font-weight: bold;">10</span>))
-<span class="linenr"> 8: </span>    <span style="color: #859900; font-weight: bold;">print</span>(divisao(<span style="color: #6c71c4; font-weight: bold;">100</span>, <span style="color: #6c71c4; font-weight: bold;">2</span>))
-<span class="linenr"> 9: </span>    <span style="color: #859900; font-weight: bold;">print</span>(divisao(<span style="color: #6c71c4; font-weight: bold;">100</span>, <span style="color: #6c71c4; font-weight: bold;">0</span>))
-<span class="linenr">10: </span>    <span style="color: #859900; font-weight: bold;">print</span>(divisao(<span style="color: #6c71c4; font-weight: bold;">100</span>, -<span style="color: #6c71c4; font-weight: bold;">1</span>))
-<span class="linenr">11: </span>
-<span class="linenr">12: </span><span style="color: #859900; font-weight: bold;">except</span> <span style="color: #b58900; font-style: italic;">ZeroDivisionError</span>:
-<span class="linenr">13: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Ocorreu uma divis&#227;o por zero durante a execu&#231;&#227;o do c&#243;digo!"</span>)
-<span class="linenr">14: </span>
-<span class="linenr">15: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"FIM"</span>)
-</pre>
-</div>
-
-
-<p>
-Neste exemplo, um bloco <code>try</code> é declarado na linha 6. &ldquo;Try&rdquo; vem do verbo tentar em inglês e pode ser traduzido como &ldquo;tente&rdquo; neste contexto. O Python irá tentar executar todos os comandos dentro do bloco <code>try</code> normalmente (note que os comandos do bloco <code>try</code> devem ser endentados!). Caso alguma instrução dentro do bloco <code>try</code> acuse um erro, a execução do bloco <code>try</code> é interrompida e o erro é &ldquo;capturado&rdquo;, isto é, o tipo do erro é armazenado na memória. Este erro capturado é então comparado com todos os erros declarados nos blocos <code>except</code> seguintes do bloco <code>try</code> (&ldquo;except&rdquo; significa &ldquo;exceto&rdquo; em português). Neste caso temos apenas um bloco <code>except</code> na linha 12, e ele corresponde ao erro do tipo <code>ZeroDivisionError</code>. Se existir um bloco <code>except</code> correspondente ao erro capturado, então as instruções deste bloco são executadas e a execução do programa não para! Se não existir um bloco <code>except</code> correspondente ao erro capturado, então a execução do programa para e o erro é exibido ao usuário da mesma forma que vimos na seção anterior. Execute o código acima e veja o que acontece.
-</p>
-
-<p>
-Podemos criar instruções <code>try~/~except</code> complexas considerando diversos tipos de erros diferentes. Quando um bloco <code>except</code> deve identificar mais de um tipo de erro, então é necessário agrupar todos os erros em parênteses (ver linha 7 no código abaixo). Podemos escrever quantos blocos <code>except</code> desejarmos para um mesmo bloco <code>try</code> (veja as linhas 10 e 13 abaixo).
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #859900; font-weight: bold;">try</span>:
-<span class="linenr"> 2: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"4"</span> + <span style="color: #6c71c4; font-weight: bold;">2</span>)
-<span class="linenr"> 3: </span>    <span style="color: #859900; font-weight: bold;">print</span>(abcdefghij)
-<span class="linenr"> 4: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #6c71c4; font-weight: bold;">1</span> / <span style="color: #6c71c4; font-weight: bold;">0</span>)
-<span class="linenr"> 5: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #d33682; font-style: italic;">int</span>(<span style="color: #2aa198;">"abc"</span>))
-<span class="linenr"> 6: </span>
-<span class="linenr"> 7: </span><span style="color: #859900; font-weight: bold;">except</span> (<span style="color: #b58900; font-style: italic;">ZeroDivisionError</span>, <span style="color: #b58900; font-style: italic;">TypeError</span>):
-<span class="linenr"> 8: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Tente n&#227;o dividir por zero e se atente aos tipos das vari&#225;veis!"</span>)
-<span class="linenr"> 9: </span>
-<span class="linenr">10: </span><span style="color: #859900; font-weight: bold;">except</span> <span style="color: #b58900; font-style: italic;">ValueError</span>:
-<span class="linenr">11: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Tem algum valor inv&#225;lido a&#237;! Tome cuidado!"</span>)
-<span class="linenr">12: </span>
-<span class="linenr">13: </span><span style="color: #859900; font-weight: bold;">except</span> <span style="color: #b58900; font-style: italic;">NameError</span>:
-<span class="linenr">14: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Voc&#234; tem certeza que definiu todas as suas vari&#225;veis?"</span>)
-<span class="linenr">15: </span>
-<span class="linenr">16: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"FIM"</span>)
-</pre>
-</div>
-
-
-<p>
-O bloco <code>try</code> também admite duas outras instruções: <code>else</code> e <code>finally</code>. A instrução <code>else</code> é apenas executada se o bloco <code>try</code> é executado até o fim, sem que haja nenhum erro! A instrução <code>finally</code> é sempre executada ao final do bloco <code>try</code>, independente do que aconteceu (ela é executada mesmo caso um erro não contemplado pelas instruções <code>except</code> ocorra!). Veja um exemplo abaixo.
-</p>
-
-<p>
-exemplo
-</p>
-
-<p>
-Como você pode perceber, o tratamento de exceções em Python é bastante poderoso e nos permite um enorme controle sobre a execução do código. Além disso, este não é um processo computacionalmente custoso<sup><a id="fnr.5" class="footref" href="#fn.5" role="doc-backlink">5</a></sup>. Desta forma, diversos programadores avançados de Python recomendam fortemente o uso do tratamento de exceções com a estratégia &ldquo;faça primeiro e peça desculpas depois&rdquo;. Um exemplo desta estratégia é ilustrado no código abaixo. Neste código, digamos que não sabemos se a variável <code>pode_ser_uma_lista</code> é uma lista. No bloco <code>try</code> nós <i>assumimos</i> que esta variável é uma lista e seguimos em frente. Caso ela não seja, nós &ldquo;pedimos desculpas&rdquo; no bloco <code>except</code> e realizamos uma conversão da variável em lista (linha 7).
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #268bd2;">pode_ser_uma_lista</span> = <span style="color: #6c71c4; font-weight: bold;">10</span>
-<span class="linenr"> 2: </span>
-<span class="linenr"> 3: </span><span style="color: #859900; font-weight: bold;">try</span>:
-<span class="linenr"> 4: </span>    pode_ser_uma_lista.append(<span style="color: #6c71c4; font-weight: bold;">20</span>)
-<span class="linenr"> 5: </span>
-<span class="linenr"> 6: </span><span style="color: #859900; font-weight: bold;">except</span> <span style="color: #b58900; font-style: italic;">AttributeError</span>:
-<span class="linenr"> 7: </span>    <span style="color: #268bd2;">pode_ser_uma_lista</span> = [pode_ser_uma_lista]
-<span class="linenr"> 8: </span>    pode_ser_uma_lista.append(<span style="color: #6c71c4; font-weight: bold;">20</span>)
-<span class="linenr"> 9: </span>
-<span class="linenr">10: </span><span style="color: #859900; font-weight: bold;">print</span>(pode_ser_uma_lista)
-</pre>
-</div>
-
-<p>
-Se nenhum tipo de erro é declarado no bloco <code>except</code> então este bloco passa a ser executado caso <span class="underline">qualquer erro ocorra</span> durante a execução do bloco <code>try</code>! Isso pode parecer conveniente, mas não se deixe enganar: é melhor declarar explicitamente todos os erros que devem ser tratados do que aceitar <span class="underline">qualquer</span> erro. Isto pois existem muitos tipos de erros que podem ocorrer durante a execução do seu código, juntar todos os erros &ldquo;num mesmo saco&rdquo; aumenta muito a chance de seu código não se comportar da forma como você gostaria. Blocos <code>except</code> sem declaração do tipo do erro são altamente desencorajados.
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgf334565" class="outline-3">
-<h3 id="orgf334565"><span class="section-number-3">8.3.</span> Meu programa não faz o que eu queria que ele fizesse, e agora?</h3>
-<div class="outline-text-3" id="text-8-3">
-<blockquote>
-<p>
-&ldquo;Em última análise, é o desejo, não o desejado, que nós amamos.&rdquo; &#x2014; Friedrich Nietzsche
-</p>
-</blockquote>
-
-<p>
-Muitas pessoas ficam chateadas quando seu código exibe um erro ao ser executado&#x2026; isso é normal. Mas veja pelo lado positivo: quando um erro é exibido você <i>sabe</i> que tem algo de errado e tem a oportunidade de corrigir! Um problema que usualmente é <i>muito</i> mais complicado é quando seu código roda sem erros, porém não faz o que você gostaria que ele fizesse&#x2026;
-</p>
-
-<p>
-Se esse é seu problema, a técnica mais fundamental de todas é checar linha por linha do seu código em busca do problema. Será que você esqueceu um operador em algum lugar? Será o valor de uma variável foi alterado em uma função sem que você tenha percebido? Será que faltou atualizar uma variável booleana? São tantas possibilidades do que pode dar errado que é impossível listar todas elas aqui. É necessário entender bem o propósito de seu código e entender bem todas linhas de instruções do mesmo para conseguir avaliar onde está o problema. Chamamos de <span class="underline">depuração</span> ou <span class="underline">debug</span> a busca por erros (também chamados de <i>bugs</i>) no código.
-</p>
-
-<p>
-A técnica de <i>depuração linha por linha</i> pode ser utilizada sempre, porém a energia gasta nessa tarefa aumenta com o número de linhas de código que devem ser avaliadas. Além disso, esta técnica exige que você tenha todas as informações das variáveis na sua memória e literalmente &ldquo;rode&rdquo; o código na sua mente. Esta é uma habilidade bastante útil que se adquire ao longo do tempo. Uma forma mais &ldquo;visual&rdquo; de usar esta técnica é com a ferramenta online Python Tutor disponível em <a href="https://pythontutor.com/visualize.html#mode=edit">https://pythontutor.com/visualize.html#mode=edit</a>.
-</p>
-
-<p>
-Uma forma mais eficiente de depurar seu programa é restringir o local de busca. Vamos supor que seu código tenha três funções diferentes. Uma estratégia possível é testar cada uma destas funções isoladamente em busca de comportamentos fora do esperado (isso pode ser feito em uma nova célula de código no Jupyter). Se um comportamento fora do esperado for detectado, então restringimos a busca do erro, neste caso será restrito para o corpo da função que teve comportamento fora do esperado. Se a nova área de busca é razoávelmente pequena, a técnica de avaliação linha por linha pode ser utilizada, do contrário é interessante utilizar outras ferramentas.
-</p>
-
-<p>
-Uma forma de encontrar erros em muitas linhas de código é a <i>depuração interativa</i>. Este tipo de depuração consiste em avaliar o comportamento do seu código durante a sua execução.
-</p>
-
-<ol class="org-ol">
-<li>O código roda normalmente até atingir um <i>ponto de parada</i> definido pelo usuário;</li>
-<li>Ao atingir um ponto de parada, a execução do código cessa e o controle volta ao usuário;
-<ol class="org-ol">
-<li>Nesta etapa, o usuário pode executar qualquer comando válido de Python (por isso que chamamos de <i>depuração interativa</i>);</li>
-<li>É usual executar comandos para checar valores e tipos de variáveis, bem como testar o comportamento de funções;</li>
-</ol></li>
-<li>Após o término de todas as checagens desejadas, é necessário escolher o próximo passo:
-<ol class="org-ol">
-<li>Se um erro foi identificado, podemos sair do modo de depuração com a instrução <code>exit</code> e corrigir o erro;</li>
-<li>Se o erro não foi identificado, podemos seguir em frente com a depuração. A instrução <code>continue</code> faz com que o código continue sua execução a partir do ponto que parou e só ira parar novamente se encontrar algum ponto de parada. A instrução <code>step</code> executa a próxima linha de código a partir do ponto de parada e para logo em seguida, devolvendo o controle ao usuário.</li>
-</ol></li>
-</ol>
-
-<p>
-Pontos de parada em Python são declarados com a função <code>breakpoint</code> (lembre-se de incluir parênteses no final do nome da função para executá-la!).
-</p>
-
-<p>
-Outra forma de depuração é a <i>depuração com mensagens de registro</i>. Nesta modalidade, incluímos instruções no nosso código cujo objetivo é mostrar alguma informação ao usuário durante a sua execução (que ocorre sem pausas). A estratégia mais simples é incluir instruções <code>print</code> ao longo do código para exibir informações críticas ao usuário como, por exemplo, mostrar o valor de uma variável e seu tipo. Apesar de ser bastante utilizada, esta estratégia com a instrução <code>print</code> não é recomendada pois ao final da depuração devemos excluir todas as instruções <code>print</code> que usamos para depurar o código (afinal, esta informação não é pertinente ao usuário final). A forma recomendada para realizar a depuração com mensagens de registro é utilizando o módulo embutido <code>logging</code>, que veremos na seção de Biblioteca padrão.
-</p>
-
-<p>
-Não se esqueça que é sempre possível buscar ajuda quando nos deparamos com problemas no nosso código! Releia a seção <i>Buscando ajuda</i> caso queira refrescar a memória.
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgdbece2c" class="outline-3">
-<h3 id="orgdbece2c"><span class="section-number-3">8.4.</span> Controle o erro para ele não controlar você</h3>
-<div class="outline-text-3" id="text-8-4">
-<blockquote>
-<p>
-&ldquo;<i>E o meu erro foi crer que estar ao seu lado, bastaria.</i>&rdquo; &#x2014; Meu Erro, Paralamas do Sucesso
-</p>
-</blockquote>
-
-<p>
-É possível comandar o Python a acusar um erro com a instrução <code>raise</code>. A vantagem de <i>você</i> programar quando um erro é acusado é que, quando bem usado, isso aumenta seu controle sobre o código que é executado e evita comportamentos que não são desejados. Por exemplo, digamos que você vá escrever uma função que calcula o logarítmo natural de um número real usando uma série de Taylor. A série de Taylor abaixo funciona para valores de \(x\) que satisfaçam \(0 < x \leq 2\). Neste caso não podemos permitir que o usuário use valores que não satisfaçam essa inequação. Veja como podemos implementar isso no exemplo abaixo.
-</p>
-
-<p>
-\[ \ln(x) = \sum_{k=1}^{\infty} (-1)^{k+1} \frac{(x-1)^k}{k} \]
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #859900; font-weight: bold;">def</span> <span style="color: #b58900;">log_natural</span>(x, num_elementos=<span style="color: #6c71c4; font-weight: bold;">10000</span>):
-<span class="linenr"> 2: </span>    <span style="color: #35a69c; font-style: italic;">"""Calcula o logaritmo natural do valor recebido.</span>
-<span class="linenr"> 3: </span>
-<span class="linenr"> 4: </span><span style="color: #35a69c; font-style: italic;">    Args:</span>
-<span class="linenr"> 5: </span><span style="color: #35a69c; font-style: italic;">      x:</span>
-<span class="linenr"> 6: </span><span style="color: #35a69c; font-style: italic;">        Valor real maior que zero e menor ou igual a dois.</span>
-<span class="linenr"> 7: </span><span style="color: #35a69c; font-style: italic;">      num_elementos:</span>
-<span class="linenr"> 8: </span><span style="color: #35a69c; font-style: italic;">        N&#250;mero de elementos a serem considerados na soma infinita da s&#233;rie de</span>
-<span class="linenr"> 9: </span><span style="color: #35a69c; font-style: italic;">        Taylor.</span>
-<span class="linenr">10: </span>
-<span class="linenr">11: </span><span style="color: #35a69c; font-style: italic;">    Returns:</span>
-<span class="linenr">12: </span><span style="color: #35a69c; font-style: italic;">      Logar&#237;tmo natural de `x`.</span>
-<span class="linenr">13: </span>
-<span class="linenr">14: </span><span style="color: #35a69c; font-style: italic;">    Raises:</span>
-<span class="linenr">15: </span><span style="color: #35a69c; font-style: italic;">      ValueError: ocorre caso o valor de x n&#227;o satisfa&#231;a a inequa&#231;&#227;o 0 &lt; x &lt;= 2.</span>
-<span class="linenr">16: </span><span style="color: #35a69c; font-style: italic;">    """</span>
-<span class="linenr">17: </span>
-<span class="linenr">18: </span>    <span style="color: #859900; font-weight: bold;">if</span> <span style="color: #859900; font-weight: bold;">not</span> (<span style="color: #6c71c4; font-weight: bold;">0</span> &lt; x &lt;= <span style="color: #6c71c4; font-weight: bold;">2</span>):
-<span class="linenr">19: </span>        <span style="color: #859900; font-weight: bold;">raise</span> <span style="color: #b58900; font-style: italic;">ValueError</span>(<span style="color: #2aa198;">"O valor de x deve ser maior que 0 e menor ou igual a 2!"</span>)
-<span class="linenr">20: </span>
-<span class="linenr">21: </span>    <span style="color: #268bd2;">soma</span> = <span style="color: #6c71c4; font-weight: bold;">0</span>
-<span class="linenr">22: </span>    <span style="color: #859900; font-weight: bold;">for</span> k <span style="color: #859900; font-weight: bold;">in</span> <span style="color: #d33682; font-style: italic;">range</span>(<span style="color: #6c71c4; font-weight: bold;">1</span>, num_elementos + <span style="color: #6c71c4; font-weight: bold;">1</span>):
-<span class="linenr">23: </span>        <span style="color: #268bd2;">soma</span> = soma + (-<span style="color: #6c71c4; font-weight: bold;">1</span>) ** (k + <span style="color: #6c71c4; font-weight: bold;">1</span>) * (x - <span style="color: #6c71c4; font-weight: bold;">1</span>) ** k / k
-<span class="linenr">24: </span>
-<span class="linenr">25: </span>    <span style="color: #859900; font-weight: bold;">return</span> soma
-<span class="linenr">26: </span>
-<span class="linenr">27: </span>
-<span class="linenr">28: </span><span style="color: #859900; font-weight: bold;">print</span>(log_natural(<span style="color: #6c71c4; font-weight: bold;">1</span>))
-<span class="linenr">29: </span><span style="color: #859900; font-weight: bold;">print</span>(log_natural(<span style="color: #6c71c4; font-weight: bold;">2</span>))
-<span class="linenr">30: </span><span style="color: #859900; font-weight: bold;">print</span>(log_natural(<span style="color: #6c71c4; font-weight: bold;">10</span>))
-<span class="linenr">31: </span><span style="color: #859900; font-weight: bold;">print</span>(log_natural(-<span style="color: #6c71c4; font-weight: bold;">3</span>))
-</pre>
-</div>
-
-
-<p>
-Na linha 19 do código acima temos a instrução <code>raise</code> responsável por acusar o erro. Ela só é executada caso o valor de \(x\) esteja fora do intervalo esperado (checado pelo <code>if</code> da linha 18). Como o erro neste caso tem a ver com o <i>valor</i> de uma variável, o erro que deve ser acusado pelo <code>raise</code> é o <code>ValueError</code>. Observe que podemos escrever uma mensagem personalizada para ajudar o usuário a corrigir o problema caso encontre esse erro durante seu uso do código.
-</p>
-
-<p>
-Checar uma condição e acusar um erro caso esta condição seja falsa é uma estrutura bastante comum no início do corpo de funções. Afinal, assim que o corpo da função inicia sua execução nós temos acesso a todos os argumentos e já podemos checar se eles têm valores dentro do esperado. A instrução <code>assert</code> facilita esse tipo de checagem. Veja no exemplo abaixo o uso da instrução <code>assert</code> para realizar a mesma tarefa do exemplo anterior.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #859900; font-weight: bold;">def</span> <span style="color: #b58900;">log_natural</span>(x, num_elementos=<span style="color: #6c71c4; font-weight: bold;">10000</span>):
-<span class="linenr"> 2: </span>    <span style="color: #35a69c; font-style: italic;">"""Calcula o logaritmo natural do valor recebido.</span>
-<span class="linenr"> 3: </span>
-<span class="linenr"> 4: </span><span style="color: #35a69c; font-style: italic;">    Args:</span>
-<span class="linenr"> 5: </span><span style="color: #35a69c; font-style: italic;">      x:</span>
-<span class="linenr"> 6: </span><span style="color: #35a69c; font-style: italic;">        Valor real maior que zero e menor ou igual a dois.</span>
-<span class="linenr"> 7: </span><span style="color: #35a69c; font-style: italic;">      num_elementos:</span>
-<span class="linenr"> 8: </span><span style="color: #35a69c; font-style: italic;">        N&#250;mero de elementos a serem considerados na soma infinita da s&#233;rie de</span>
-<span class="linenr"> 9: </span><span style="color: #35a69c; font-style: italic;">        Taylor.</span>
-<span class="linenr">10: </span>
-<span class="linenr">11: </span><span style="color: #35a69c; font-style: italic;">    Returns:</span>
-<span class="linenr">12: </span><span style="color: #35a69c; font-style: italic;">      Logar&#237;tmo natural de `x`.</span>
-<span class="linenr">13: </span>
-<span class="linenr">14: </span><span style="color: #35a69c; font-style: italic;">    Raises:</span>
-<span class="linenr">15: </span><span style="color: #35a69c; font-style: italic;">      ValueError: ocorre caso o valor de x n&#227;o satisfa&#231;a a inequa&#231;&#227;o 0 &lt; x &lt;= 2.</span>
-<span class="linenr">16: </span><span style="color: #35a69c; font-style: italic;">    """</span>
-<span class="linenr">17: </span>
-<span class="linenr">18: </span>    <span style="color: #859900; font-weight: bold;">assert</span> <span style="color: #6c71c4; font-weight: bold;">0</span> &lt; x &lt;= <span style="color: #6c71c4; font-weight: bold;">2</span>, <span style="color: #2aa198;">"O valor de x deve ser maior que 0 e menor ou igual a 2."</span>
-<span class="linenr">19: </span>
-<span class="linenr">20: </span>    <span style="color: #268bd2;">soma</span> = <span style="color: #6c71c4; font-weight: bold;">0</span>
-<span class="linenr">21: </span>    <span style="color: #859900; font-weight: bold;">for</span> k <span style="color: #859900; font-weight: bold;">in</span> <span style="color: #d33682; font-style: italic;">range</span>(<span style="color: #6c71c4; font-weight: bold;">1</span>, num_elementos + <span style="color: #6c71c4; font-weight: bold;">1</span>):
-<span class="linenr">22: </span>        <span style="color: #268bd2;">soma</span> = soma + (-<span style="color: #6c71c4; font-weight: bold;">1</span>) ** (k + <span style="color: #6c71c4; font-weight: bold;">1</span>) * (x - <span style="color: #6c71c4; font-weight: bold;">1</span>) ** k / k
-<span class="linenr">23: </span>
-<span class="linenr">24: </span>    <span style="color: #859900; font-weight: bold;">return</span> soma
-<span class="linenr">25: </span>
-<span class="linenr">26: </span>
-<span class="linenr">27: </span><span style="color: #859900; font-weight: bold;">print</span>(log_natural(<span style="color: #6c71c4; font-weight: bold;">1</span>))
-<span class="linenr">28: </span><span style="color: #859900; font-weight: bold;">print</span>(log_natural(<span style="color: #6c71c4; font-weight: bold;">2</span>))
-<span class="linenr">29: </span><span style="color: #859900; font-weight: bold;">print</span>(log_natural(<span style="color: #6c71c4; font-weight: bold;">10</span>))
-<span class="linenr">30: </span><span style="color: #859900; font-weight: bold;">print</span>(log_natural(-<span style="color: #6c71c4; font-weight: bold;">3</span>))
-</pre>
-</div>
-
-
-<p>
-A sintaxe da instrução <code>assert</code> requer uma condição a ser checada logo após a instrução. Caso a condição retorne <code>False</code> o código é interrompido e acusa um <code>AssertionError</code>. Caso queira exibir uma mensagem ao usuário para ajudá-lo a entender o que ocorre, escreva uma string e coloque ela após uma vírgula. A mensagem não é obrigatória mas altamente recomendada.
-</p>
-
-<p>
-Uma forma mais fácil de entender a instrução <code>assert</code> é lendo ela como &ldquo;assegure-se que&rdquo;. Na linha 18 do código acima podemos ler como &ldquo;assegure-se que o valor de <code>x</code> é maior que zero e menor ou igual a dois, do contrário, exiba uma mensagem de erro ao usuário alertando ele que esse é um requerimento necessário para executar a função&rdquo;.
-</p>
-</div>
-</div>
-</div>
 <div id="footnotes">
 <h2 class="footnotes">Notas de rodapé: </h2>
 <div id="text-footnotes">
@@ -3028,14 +1843,12 @@ Uma forma mais fácil de entender a instrução <code>assert</code> é lendo ela
 
 <div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4" role="doc-backlink">4</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">Na verdade, veremos adiante que existem casos onde argumentos podem não ter nome, são os chamados argumentos estrela. Não se preocupe com isso agora.</p></div></div>
 
-<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5" role="doc-backlink">5</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">Mas cuidado! Tratamento de exceções pode ser computacionalmente custoso em outras linguagens de programação. É sempre bom se informar antes!</p></div></div>
-
 
 </div>
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Daniel R. Cassar &amp; James M. de Almeida</p>
-<p class="date">Created: 2022-03-02 Wed 13:19</p>
+<p class="date">Created: 2022-03-05 Sat 14:25</p>
 </div>
 </body>
 </html>

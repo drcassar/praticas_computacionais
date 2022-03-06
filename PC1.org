@@ -50,7 +50,12 @@
 :END:
 
 
-* TOC :noexport:
+* Conteúdo da disciplina :noexport:
+:PROPERTIES:
+:EXPORT_FILE_NAME: PC1/toc
+:EXPORT_OPTIONS: toc:nil
+:END:
+
 1. Introdução
 2. Jupyter, variáveis e como buscar ajuda
 3. Operadores e estrutura de decisão

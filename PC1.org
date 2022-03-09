@@ -761,7 +761,7 @@ Complexo é melhor que complicado.
 Linear é melhor do que aninhado.
 Esparso é melhor que denso.
 Legibilidade conta./"
-     --- [[https:www.python.org/dev/peps/pep-0020/][O Zen do Python]]
+     --- [[https://www.python.org/dev/peps/pep-0020/][O Zen do Python]]
 #+end_verse
 
 #+begin_quote

@@ -77,7 +77,6 @@
 19. Propagação de erros com uncertainties
 20. Tópicos avançados
 
-
 * Introdução
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_intro
@@ -148,6 +147,8 @@ Por fim, existem diversos materiais (tanto pagos quanto gratuitos) para aprendiz
 + [[https://books.goalkicker.com/PythonBook/][Notas de Python para profissionais]]: material bastante extenso cobrindo praticamente tudo sobre Python. Não é necessariamente o melhor material para aprender a linguagem, mas é um excelente material para uma consulta rápida;
 + [[https://automatetheboringstuff.com/#toc][Automatize tarefas maçantes com Python]]: livro online gratuito com uma didática muito interessante e focada em aprendizado "mão-na-massa". Sua última versão é de 2015. A recomendação é usar este livro para aprender o funcionamento básico do Python, mas não utilizá-lo para aprender as bibliotecas que ele sugere (algumas delas estão desatualizadas).
 + [[https://greenteapress.com/thinkpython2/html/index.html][Think Python 2]] [[https://penseallen.github.io/PensePython2e/][(versão em português)]]: livro online gratuito. Última versão é de 2015, então não aborda certas características mais recentes da linguagem;
+** TODO Quando tudo mais falhar :noexport:
++ Técnica da NASA
 
 * Jupyter, variáveis e como buscar ajuda
 :PROPERTIES:
@@ -668,9 +669,9 @@ A linguagem Python contém uma série de expressões que são o que chamamos de 
   print("Fim do programa")
 #+end_src
 
-*[E]* Teste o código acima e reporte se ele funciona da forma esperada. O que mudou em comparação com o original? Explique como funciona o açúcar sintático exemplificado acima. Na sua opinião, este tipo de açúcar sintático facilitou a sua leitura do código?
+*[D]* Teste o código acima e reporte se ele funciona da forma esperada. O que mudou em comparação com o original? Explique como funciona o açúcar sintático exemplificado acima. Na sua opinião, este tipo de açúcar sintático facilitou a sua leitura do código?
 
-*[D]* Reescreva o código acima de forma que ele se comporte da mesma maneira, porém usando apenas uma instrução ~if~ e apenas uma instrução ~else~. Dica: pense em qual operador lógico poderia te ajudar aqui!
+*[E]* Reescreva o código acima de forma que ele se comporte da mesma maneira, porém usando apenas uma instrução ~if~ e apenas uma instrução ~else~. Dica: pense em qual operador lógico poderia te ajudar aqui!
 
 O código abaixo checa em qual faixa está um certo valor de pH fornecido (relembre o que é o pH lendo o artigo da [[https://pt.wikipedia.org/wiki/PH][Wikipedia]] caso necessário) e reporta para o usuário se sua solução é ácida, básica, neutra ou se houve algum equívoco e o valor de pH é inválido. Observe que a cláusula ~else~ é _opcional_ e não foi usada no código abaixo. Fique à vontade para testar o código abaixo com diferentes valores para a variável ~ph~.
 
@@ -695,7 +696,7 @@ O código abaixo checa em qual faixa está um certo valor de pH fornecido (relem
 
 Imagine que você mediu o pH de um vinagre e obteve o valor de 2,5. Ao rodar o código acima, o programa irá te dizer "pH ácido" (teste e veja!). Veja que o programa poderia ter parado de rodar depois de resolver o ~if~ da linha 6 (afinal, não faz sentido checar se o pH é neutro ou básico após identificar que se trata de um pH ácido), porém ele _irá_ rodar os ~if~ das linhas 9 e 12 pois é assim que o programa foi escrito.
 
-*[E]* Reescreva o código acima usando cláusulas ~else~ de forma que o programa não rode nenhuma cláusula ~if~ desnecessária para entregar a resposta ao usuário (isto é: após ter encontrado a resposta, nenhum outro ~if~ deve ser executado!).
+*[F]* Reescreva o código acima usando cláusulas ~else~ de forma que o programa não rode nenhuma cláusula ~if~ desnecessária para entregar a resposta ao usuário (isto é: após ter encontrado a resposta, nenhum outro ~if~ deve ser executado!).
 
 Uma estrutura muito comum em programação é quando queremos dizer "se a condição testada não for verdadeira, então teste esta outra condição aqui". Para isso usamos a cláusula ~elif~ que seria um ~else~ com um ~if~ "grudados". O código abaixo é similar ao anterior, porém usando ~elif~
 
@@ -720,7 +721,7 @@ Uma estrutura muito comum em programação é quando queremos dizer "se a condi�
 
 O código acima checa se o pH é ácido. Caso seja ácido o programa exibe "pH ácido" para o usuário e nada mais será executado. Caso não seja ácido, o programa checa então se é neutro. Caso seja neutro o programa exibe "pH neutro" para o usuário e nada mais será executado. Caso não seja neutro também, o programa faz uma última checagem para confirmar se é um pH básico. Assim sendo, o usuário verá o texto "pH básico" e o programa se encerra. Se o pH não for ácido, nem neutro, nem básico, então podemos afirmar com segurança que o programa recebeu um valor inválido de pH.
 
-*[F]* Escreva um programa similar ao programa do pH que checa alguma grandeza escalar e exibe para o usuário uma informação sobre esta grandeza. Utilize pelo menos duas cláusulas ~elif~ no seu programa.
+*[G]* Escreva um programa similar ao programa do pH que checa alguma grandeza escalar e exibe para o usuário uma informação sobre esta grandeza. Utilize pelo menos duas cláusulas ~elif~ no seu programa.
 
 Além da estrutura de decisão ~if~ / ~else~ existe o /operador condicional/. É importante saber que ele existe, porém na maioria dos casos é preferível que você use a estrutura de decisão mesmo por ser uma construção mais legível. O exemplo abaixo mostra uma estrutura condicional (linhas 3 a 6) e o operador condicional (linha 8), ambos realizam a mesma tarefa. Note que a cláusula ~else~ é opcional na estrutura condicional porém obrigatória no operador condicional.
 
@@ -737,7 +738,7 @@ Além da estrutura de decisão ~if~ / ~else~ existe o /operador condicional/. É
 
 #+RESULTS:
 
-*[G]* Escreva um programa que contém uma variável inteira positiva chamada ~ano~. O programa deve mostrar ao usuário se o ano em questão é um ano bissexto ou não. As regras para um ano ser bissexto são as seguintes:
+*[H]* Escreva um programa que contém uma variável inteira positiva chamada ~ano~. O programa deve mostrar ao usuário se o ano em questão é um ano bissexto ou não. As regras para um ano ser bissexto são as seguintes:
 
 1) Se o ano é divisível por 4, execute o passo 2. Do contrário, vá ao passo 5.
 2) Se o ano é divisível por 100, execute o passo 3. Do contrário, vá ao passo 4.
@@ -745,7 +746,7 @@ Além da estrutura de decisão ~if~ / ~else~ existe o /operador condicional/. É
 4) Conclusão: o ano é bissexto!
 5) Conclusão: o ano não é bissexto!
 
-*[H]* Escreva um programa que tem três variáveis numéricas ~a~, ~b~ e ~c~. O programa deve exibir ao usuário os valores contidos em ~a~, ~b~ e ~c~ em ordem crescente.
+*[I]* Escreva um programa que tem três variáveis numéricas ~a~, ~b~ e ~c~. O programa deve exibir ao usuário os valores contidos em ~a~, ~b~ e ~c~ em ordem crescente.
 
 *[Desafio]* Escreva um programa que contém uma variável inteira chamada ~numero~. Esta variável armazena um número que deve estar entre 1000 e 9999. O programa deve checar se esse número é um número palíndromo e reportar essa informação ao usuário. Um número palíndromo é aquele que tem o mesmo valor quando a ordem dos seus dígitos é invertida, por exemplo:
 1) o número 1234 não é número palíndromo pois é diferente de 4321.
@@ -1308,7 +1309,7 @@ Vamos analisar as diversas partes do exemplo acima:
 ** Funções também são objetos!
 
 #+begin_quote
-/As vezes não é nada fácil encontrar uma citação minimamente relacionada ao tópico em questão./ --- Daniel Cassar
+"/As vezes não é nada fácil encontrar uma citação minimamente relacionada ao tópico em questão."/ --- Daniel Cassar
 #+end_quote
 
 Funções em Python são objetos assim como números e strings. Desta forma, podemos passar funções como argumentos de funções (linhas 16, 19, 32 e 35 do código abaixo) e podemos ter funções como valores de retorno de outras funções (veja a linha 29)! Podemos inclusive definir novas funções no corpo de funções (linha 26).

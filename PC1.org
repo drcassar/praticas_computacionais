@@ -346,40 +346,40 @@ O que você faria se não soubesse o que função ~print~ faz? Digamos, por exem
 
 A linguagem Python contém diversos operadores aritméticos como adição (~+~), subtração (~-~), multiplicação (~*~), divisão (~/~) e exponencial (~**~). Estes operadores permitem realizar cálculos aritméticos com números inteiros, reais e complexos. _Cuidado_: em Python, a exponenciação é representada por dois asteriscos (~**~); não confundir com o acento circunflexo (~^~) que é o operador de exponenciação usado no Excel!
 
-*[A*]* Reescreva o código abaixo em uma célula do Jupyter e veja o que acontece. Comente porque o resultado da terceira linha foi ~90~ e não ~0~.
+# *[A*]* Reescreva o código abaixo em uma célula do Jupyter e veja o que acontece. Comente porque o resultado da terceira linha foi ~90~ e não ~0~.
 
-#+begin_src python -n
-  print(1 + 1)
-  print(1 - 1 + 1 - 1)
-  print(-10 + 10 * 10)
-  print(10 / 2 * 5)
-  print(10 ** 10)
-  print(2 ** 1 / 2)
-  print(2 ** (1 / 2))
-  print((1 + 1j) / (1 - 1j))
-#+end_src
+# #+begin_src python -n
+#   print(1 + 1)
+#   print(1 - 1 + 1 - 1)
+#   print(-10 + 10 * 10)
+#   print(10 / 2 * 5)
+#   print(10 ** 10)
+#   print(2 ** 1 / 2)
+#   print(2 ** (1 / 2))
+#   print((1 + 1j) / (1 - 1j))
+# #+end_src
 
-#+RESULTS:
-: 2
-: 0
-: 90
-: 25.0
-: 10000000000
-: 1.0
-: 1.4142135623730951
-: 1j
+# #+RESULTS:
+# : 2
+# : 0
+# : 90
+# : 25.0
+# : 10000000000
+# : 1.0
+# : 1.4142135623730951
+# : 1j
 
 A ordem de precedência dos operadores aritméticos (isto é, a ordem de execução dos operadores) segue a regra do PEMDAS: parênteses, exponencial, multiplicação, divisão, adição e subtração. Assim como na notação matemática, usamos parênteses para dar preferência para certas operações.
 
-*[B*]* Escreva 5 formas diferentes de se obter o número 12 usando os operadores aritméticos que aprendeu (por exemplo ~print(7 + 5)~). Certifique-se que usou todos os operadores aritméticos que você conhece neste exercício.
+# *[B*]* Escreva 5 formas diferentes de se obter o número 12 usando os operadores aritméticos que aprendeu (por exemplo ~print(7 + 5)~). Certifique-se que usou todos os operadores aritméticos que você conhece neste exercício.
 
-*[C]* Utilizando o Python como calculadora, compute:
+*[A]* Utilizando o Python como calculadora, compute:
 1) Quantos segundos existem em 16 horas e 42 minutos?
 2) Quantos centímetros existem em 72,8 milhas?
 3) Se você percorrer 72,8 milhas em 16 horas e 42 minutos, qual a sua velocidade média em centímetros por segundo?
 4) Quanto tempo você demoraria para percorrer a circunferência da Terra na linha do equador se permanecer na velocidade média obtida no item acima?
 
-*[D]* Além dos operadores discutidos acima, existem diversos outros em Python. Dois operadores bastante úteis são a divisão inteira (~//~) e o módulo (~%~, também conhecido como resto da divisão inteira). Veja abaixo um exemplo de como usá-los. Teste estes operadores e descreva como eles funcionam (em caso de dúvida, busque ajuda assim como apresentado na seção Buscando Ajuda). Discorra brevemente sobre possíveis situações onde estes operadores podem ser úteis.
+*[B]* Além dos operadores discutidos acima, existem diversos outros em Python. Dois operadores bastante úteis são a divisão inteira (~//~) e o módulo (~%~, também conhecido como resto da divisão inteira). Veja abaixo um exemplo de como usá-los. Teste estes operadores e descreva como eles funcionam (em caso de dúvida, busque ajuda assim como apresentado na seção Buscando Ajuda). Discorra brevemente sobre possíveis situações onde estes operadores podem ser úteis.
 
 #+begin_src python
   print(10 // 3)
@@ -392,7 +392,7 @@ A ordem de precedência dos operadores aritméticos (isto é, a ordem de execuç
 
 _Atenção_: operadores aritméticos usualmente funcionam com qualquer combinação de números inteiros, reais ou complexos. No entanto, preste atenção no tipo do resultado final! Use a função ~type~ para checar os tipos das variáveis em caso de dúvida.
 
-*[E]* Escreva e execute o código abaixo e comente sobre o resultado obtido quando somamos variáveis de tipos iguais e tipos diferentes.
+*[C]* Escreva e execute o código abaixo e comente sobre o resultado obtido quando somamos variáveis de tipos iguais e tipos diferentes.
 
 #+begin_src python
   inteiro_mais_inteiro = 1 + 1
@@ -418,7 +418,7 @@ _Atenção_: operadores aritméticos usualmente funcionam com qualquer combinaç
 : <class 'complex'>
 : <class 'complex'>
 
-*[F]* Escreva um código similar ao código acima, porém alterando o operador de adição pelo operador de divisão. Você obteve algum resultado inusitado? Comente.
+*[D]* Escreva um código similar ao código acima, porém alterando o operador de adição pelo operador de divisão. Você obteve algum resultado inusitado? Comente.
 
 # #+begin_src python
 #   inteiro_mais_inteiro = 1 / 1
@@ -444,7 +444,9 @@ _Atenção_: operadores aritméticos usualmente funcionam com qualquer combinaç
 # : <class 'complex'>
 # : <class 'complex'>
 
-*[Desafio]* Durante um exercício de geometria, você decidiu realizar suas contas utilizando Python. Você escreveu o código abaixo em uma célula no seu caderno de notas Jupyter e o resultado que obteve foi inusitado! Por que o resultado é inusitado? Qual era o resultado esperado? Qual é a explicação para isso? Na sua opinião, este tipo de "problema" compromete o uso de Python como uma calculadora aritmética? _Dica_: quantos números reais existem entre zero e um?
+*[Desafio]* Crie uma a variável chamada ~numero~ que armazena um número inteiro entre 1000 e 9999. _Usando apenas operadores aritméticos_, separe todos os dígitos da variável ~numero~ em 4 outras variáveis. Seu código deve funcionar para qualquer valor da variável ~numero~ dentro do domínio definido. Exemplo: o número 1234 deve ser separado em uma variável contendo o número 1, uma contendo o número 2, outra contendo o número 3 e a última contendo o número 4.
+
+*[Desafio 2]* Durante um exercício de geometria, você decidiu realizar suas contas utilizando Python. Você escreveu o código abaixo em uma célula no seu caderno de notas Jupyter e o resultado que obteve foi inusitado! Por que o resultado é inusitado? Qual era o resultado esperado? Qual é a explicação para isso? Na sua opinião, este tipo de "problema" compromete o uso de Python como uma calculadora aritmética? _Dica_: quantos números reais existem entre zero e um?
 
 #+begin_src python
   pi = 3.14
@@ -454,8 +456,6 @@ _Atenção_: operadores aritméticos usualmente funcionam com qualquer combinaç
 
 #+RESULTS:
 : 5.140000000000001
-
-*[Desafio 2]* Crie uma a variável ~numero~ que armazena um número inteiro entre 1000 e 9999. _Usando apenas operadores aritméticos_, separe todos os dígitos da variável ~numero~ em 4 outras variáveis. Seu código deve funcionar para qualquer valor da variável ~numero~ dentro do domínio definido. Exemplo: o número 1234 deve ser separado em uma variável contendo o número 1, uma contendo o número 2, outra contendo o número 3 e uma contendo o número 4.
 
 ** Operadores lógicos
 
@@ -467,7 +467,7 @@ Variáveis lógicas (também conhecidas como variáveis booleanas) são objetos 
 
 Uma expressão booleana é uma expressão que, quando resolvida, resulta em um valor verdadeiro (~True~) ou em um valor falso (~False~). Expressões booleanas podem ser escritas com os operadores lógicos E (~and~), OU (~or~) e NÃO (~not~). Os operadores ~and~ e ~or~ são chamados de operadores binários pois requerem sempre dois argumentos para serem resolvidos. A sintaxe para usar estes operadores com os argumentos ~A~ e ~B~, por exemplo, é a seguinte: ~A and B~ e ~A or B~.
 
-*[A*]* Execute o código abaixo; comente sobre qual ou quais situações o operador ~and~ retorna o valor ~True~.
+*[A]* Execute o código abaixo; comente sobre qual ou quais situações o operador ~and~ retorna o valor ~True~.
 
 #+begin_src python
   print(True and True)
@@ -518,11 +518,11 @@ Se quisermos, podemos rescrever o código acima usando variáveis para facilitar
 : False
 : True
 
-*[B*]* Escreva e execute um código similar ao código acima, substituindo ~and~ por ~or~; comente sobre qual ou quais situações o operador ~or~ retorna o valor ~True~.
+*[B]* Escreva e execute um código similar ao código acima, substituindo ~and~ por ~or~; comente sobre qual ou quais situações o operador ~or~ retorna o valor ~True~.
 
 O operador ~not~ é um operador unário; ele requer apenas um argumento para ser computado. A sintaxe para usar este operador com o argumento ~A~, por exemplo, é a seguinte: ~not A~.
 
-*[C*]* Escreva e execute o código abaixo e comente sobre como o operador ~not~ funciona.
+*[C]* Escreva e execute o código abaixo e comente sobre como o operador ~not~ funciona.
 
 #+begin_src python
   print(not True)
@@ -544,7 +544,7 @@ Operadores lógicos podem ser combinados na mesma declaração. Quando for fazer
 #+RESULTS:
 : True
 
-*[D]* É possível somar variáveis booleanas? Quanto vale ~True + True~? Quanto vale ~False + False~? Quanto vale ~True + False~? Descubra a resposta para estas questões usando o Jupyter e busque online ou em livros o motivo para o resultado obtido. Escreva sobre o que encontrou. _Observação_: note que essa possibilidade de somar variáveis booleanas é apenas uma faceta de como o Python armazena as variáveis booleanas. Isso não existe em lógica formal!
+*[D]* É possível somar variáveis booleanas? Quanto vale ~True + True~? Quanto vale ~False + False~? Quanto vale ~True + False~? Descubra a resposta para estas questões usando o Jupyter e busque online ou em livros o motivo para o resultado obtido. Escreva sobre o que encontrou. _Observação_: note que essa possibilidade de somar variáveis booleanas é apenas uma característica de como o Python armazena as variáveis booleanas. Isso não funciona dessa forma em lógica matemática.
 
 *[Desafio]* Faça um programa que calcula a tabela verdade de uma expressão lógica. O programa deve exibir todas as variáveis e seus valores verdade, bem como o valor verdade da expressão lógica arbitrária fornecida pelo usuário. Fica a seu critério como a expressão lógica é inserida pelo usuário (pode ser no formato de string, função, lista, etc). Este é um desafio recomendado para que já souber laço de repetição.
 
@@ -605,8 +605,6 @@ _Cuidado_: é muito comum confundir o operador de atribuição (~=~) com o opera
 
 Em diversos momentos da vida nos adaptamos mediante às condições do ambiente. Por exemplo, ao sair de casa, /se/ estiver chovendo /então/ pegamos o guarda-chuva, /se não/ nós saímos de casa sem o guarda-chuva. Esta estrutura condicional também existe nas linguagens de programação. Em diversos momentos, queremos que a execução de certos comandos só ocorram caso uma ou mais condições sejam atendidas.
 
-*[A*]* Em que outros momentos da sua vida você faz escolhas seguindo uma estrutura condicional contendo /se/, /então/ e /se não/? Escreva (em português mesmo) sobre um destes momentos dizendo como você se comporta (tome como base o exemplo do guarda-chuva).
-
 O exemplo do guarda-chuva pode ser escrito em Python. Vamos supor que a variável booleana ~esta_chovendo~ armazena o valor ~True~ caso esteja chovendo ou o valor ~False~ caso não esteja chovendo. Queremos armazenar na variável booleana ~pegar_guardachuva~ o valor de ~True~ para o caso onde vamos pegar o guarda-chuva e o valor de ~False~ para o caso onde não vamos pegar o guarda-chuva. O código abaixo ilustra uma forma possível de programar essa decisão em Python. Veja que a palavra "if" em inglês traduz para "se" em português e que a palavra "else" traduz para "se não". Fique à vontade para trocar o valor da variável ~esta_chovendo~ para ~False~ para ver o que acontece.
 
 #+begin_src python -n
@@ -651,7 +649,7 @@ Observe que a sintaxe de estruturas de decisão requer que o bloco referente ao 
   print("Fim do programa")
 #+end_src
 
-*[B*]* Escreva um código de Python para a decisão que você descreveu na questão *A*.
+*[A]* Em que outros momentos da sua vida você faz escolhas seguindo uma estrutura condicional contendo /se/, /então/ e /se não/? Escreva (em português mesmo) sobre um destes momentos dizendo como você se comporta (tome como base o exemplo do guarda-chuva). Escreva um código de Python para a decisão que você descreveu.
 
 É bastante comum nos depararmos com situações onde nossa decisão depende de mais de uma condição. Digamos, por exemplo, que só queremos pegar o guarda-chuva se estiver chovendo e se for um dia de semana (do contrário, decidimos que vamos ficar em casa e não precisamos do guarda-chuva). Uma solução para isso é adicionar um novo ~if~ ao código; veja o exemplo abaixo e note as diferentes indentações para indicar diferentes blocos de código. Note também que cada par de instruções ~if~ e ~else~ devem estar na mesma indentação. Isso significa que o ~else~ da linha 11 faz par com o ~if~ da linha 4. Da mesma forma, o ~else~ da linha 8 faz par com o ~if~ da linha 5.
 
@@ -677,7 +675,7 @@ Observe que a sintaxe de estruturas de decisão requer que o bloco referente ao 
 : Vou pegar o guarda-chuva
 : Fim do programa
 
-*[C*]* Descreva uma situação onde você precisa considerar duas condições para tomar uma decisão e escreva ela em um código de Python.
+*[B]* Descreva uma situação onde você precisa considerar duas condições para tomar uma decisão e escreva ela em um código de Python.
 
 # A linguagem Python contém uma série de expressões que são o que chamamos de /açúcar sintático/. Um açúcar sintático é uma forma de comunicar uma informação de maneira mais fácil ou mais expressiva. O código acima pode ser reescrito da seguinte maneira:
 
@@ -701,7 +699,7 @@ Observe que a sintaxe de estruturas de decisão requer que o bloco referente ao 
 
 # *[D]* Teste o código acima e reporte se ele funciona da forma esperada. O que mudou em comparação com o original? Explique como funciona o açúcar sintático exemplificado acima. Na sua opinião, este tipo de açúcar sintático facilitou a sua leitura do código?
 
-*[D]* Reescreva o código acima de forma que ele se comporte da mesma maneira, porém usando apenas uma instrução ~if~ e apenas uma instrução ~else~. _Dica_: pense em qual operador lógico poderia te ajudar aqui!
+*[C]* Reescreva o código acima de forma que ele se comporte da mesma maneira, porém usando apenas uma instrução ~if~ e apenas uma instrução ~else~. _Dica_: pense em qual operador lógico poderia te ajudar aqui!
 
 O código abaixo checa em qual faixa está um certo valor de pH fornecido (relembre o que é o pH lendo o artigo da [[https://pt.wikipedia.org/wiki/PH][Wikipedia]] caso necessário) e reporta para o usuário se sua solução é ácida, básica, neutra ou se houve algum equívoco e o valor de pH é inválido. Observe que a cláusula ~else~ é _opcional_ e não foi usada no código abaixo. Fique à vontade para testar o código abaixo com diferentes valores para a variável ~ph~.
 
@@ -726,7 +724,7 @@ O código abaixo checa em qual faixa está um certo valor de pH fornecido (relem
 
 Imagine que você mediu o pH de um vinagre e obteve o valor de 2,5. Ao rodar o código acima, o programa irá te dizer "pH ácido" (teste e veja!). Veja que o programa poderia ter parado de rodar depois de resolver o ~if~ da linha 6 (afinal, não faz sentido checar se o pH é neutro ou básico após identificar que se trata de um pH ácido), porém ele _irá_ rodar os ~if~ das linhas 9 e 12 pois é assim que o programa foi escrito.
 
-*[F*]* Reescreva o código acima usando cláusulas ~else~ de forma que o programa não rode nenhuma cláusula ~if~ desnecessária para entregar a resposta ao usuário (isto é: após ter encontrado a resposta, nenhum outro ~if~ deve ser executado!).
+*[D]* Reescreva o código acima usando cláusulas ~else~ de forma que o programa não rode nenhuma cláusula ~if~ desnecessária para entregar a resposta ao usuário (isto é: após ter encontrado a resposta, nenhum outro ~if~ deve ser executado!).
 
 Uma estrutura muito comum em programação é quando queremos dizer "se a condição testada não for verdadeira, então teste esta outra condição aqui". Para isso usamos a cláusula ~elif~ que seria um ~else~ com um ~if~ "grudados". O código abaixo é similar ao anterior, porém usando ~elif~
 
@@ -751,7 +749,7 @@ Uma estrutura muito comum em programação é quando queremos dizer "se a condi�
 
 O código acima checa se o pH é ácido. Caso seja ácido o programa exibe "pH ácido" para o usuário e nada mais será executado. Caso não seja ácido, o programa checa então se é neutro. Caso seja neutro o programa exibe "pH neutro" para o usuário e nada mais será executado. Caso não seja neutro também, o programa faz uma última checagem para confirmar se é um pH básico. Assim sendo, o usuário verá o texto "pH básico" e o programa se encerra. Se o pH não for ácido, nem neutro, nem básico, então podemos afirmar com segurança que o programa recebeu um valor inválido de pH.
 
-*[G]* Escreva um programa similar ao programa do pH que checa alguma grandeza escalar e exibe para o usuário uma informação sobre esta grandeza. Utilize pelo menos duas cláusulas ~elif~ no seu programa.
+*[E]* Escreva um programa similar ao programa do pH que checa alguma grandeza escalar e exibe para o usuário uma informação sobre esta grandeza. Utilize pelo menos duas cláusulas ~elif~ no seu programa.
 
 # Além da estrutura de decisão ~if~ / ~else~ existe o /operador condicional/. É importante saber que ele existe, porém na maioria dos casos é preferível que você use a estrutura de decisão mesmo por ser uma construção mais legível. O exemplo abaixo mostra uma estrutura condicional (linhas 3 a 6) e o operador condicional (linha 8), ambos realizam a mesma tarefa. Note que a cláusula ~else~ é opcional na estrutura condicional porém obrigatória no operador condicional.
 
@@ -768,9 +766,11 @@ O código acima checa se o pH é ácido. Caso seja ácido o programa exibe "pH �
 #
 # #+RESULTS:
 
-*[H]* Escreva um código que tem uma variável inteira chamada ~numero~. Este código deve reportar ao usuário se este número é par ou ímpar.
+*[F]* Escreva um código que tem uma variável inteira chamada ~numero~. Este código deve reportar ao usuário se este número é par ou ímpar.
 
-*[I]* Escreva um programa que contém uma variável inteira positiva chamada ~ano~. O programa deve mostrar ao usuário se o ano em questão é um ano bissexto ou não. As regras para um ano ser bissexto são as seguintes:
+*[G]* Escreva um programa que tem três variáveis numéricas ~a~, ~b~ e ~c~. O programa deve exibir ao usuário os valores contidos em ~a~, ~b~ e ~c~ em ordem crescente. Ele deve funcionar para qualquer valor numérico de ~a~, ~b~ e ~c~.
+
+*[Desafio]* Escreva um programa que contém uma variável inteira positiva chamada ~ano~. O programa deve mostrar ao usuário se o ano em questão é um ano bissexto ou não. As regras para um ano ser bissexto são as seguintes:
 
 1) Se o ano é divisível por 4, execute o passo 2. Do contrário, vá ao passo 5.
 2) Se o ano é divisível por 100, execute o passo 3. Do contrário, vá ao passo 4.
@@ -778,9 +778,7 @@ O código acima checa se o pH é ácido. Caso seja ácido o programa exibe "pH �
 4) Conclusão: o ano é bissexto!
 5) Conclusão: o ano não é bissexto!
 
-*[J]* Escreva um programa que tem três variáveis numéricas ~a~, ~b~ e ~c~. O programa deve exibir ao usuário os valores contidos em ~a~, ~b~ e ~c~ em ordem crescente. Ele deve funcionar para qualquer valor numérico de ~a~, ~b~ e ~c~.
-
-*[Desafio]* Escreva um programa que contém uma variável inteira chamada ~numero~. Esta variável armazena um número que deve estar entre 1000 e 9999. O programa deve checar se esse número é um número palíndromo e reportar essa informação ao usuário. Um número palíndromo é aquele que tem o mesmo valor quando a ordem dos seus dígitos é invertida, por exemplo:
+*[Desafio 2]* Escreva um programa que contém uma variável inteira chamada ~numero~. Esta variável armazena um número que deve estar entre 1000 e 9999. O programa deve checar se esse número é um número palíndromo e reportar essa informação ao usuário. Um número palíndromo é aquele que tem o mesmo valor quando a ordem dos seus dígitos é invertida, por exemplo:
 1) o número 1234 não é número palíndromo pois é diferente de 4321.
 2) o numero 3223 é um número palíndromo.
 
@@ -839,7 +837,7 @@ Agora veja o código abaixo. Novamente, qual valor você acha que é o valor exi
 
 Em geral, um código que funciona é /melhor/ que um código que não funciona. Porém, um código legível que funciona é /bem melhor/ que um código que apenas funciona. É muito tentador escrever códigos que funcionam sem se preocupar que eles sejam legíveis... cuidado para não cair no paradigma do POG ([[https://www.livropog.com.br/][Programação Orientada à Gambiarra]]).
 
-*[A]* Escreva um código que executa uma tarefa simples, porém escreva-o da forma mais ilegível que você conseguir. Troque o seu código com um colega e tente entender o código que recebeu antes de executá-lo no Python.
+# *[A]* Escreva um código que executa uma tarefa simples, porém escreva-o da forma mais ilegível que você conseguir. Troque o seu código com um colega e tente entender o código que recebeu antes de executá-lo no Python.
 
 Veja que nem sempre conseguimos nos expressar em Python de forma que a leitura seja trivial. Isso acontece em qualquer linguagem! Existem certos conceitos e tarefas que simplesmente são complexos de serem representados. Isso é normal! Para facilitar nossas vidas, em programação existe o conceito de /comentários/. Comentários são linhas de texto ao longo do código que são ignoradas pelo compilador quando o código é executado. Comentários servem para ajudar quem está lendo o código a entender mais facilmente o que ele faz. É uma forma do criador do código de se comunicar com seu leitor sem que isso interfira na execução do código em si. Veja o exemplo abaixo.
 
@@ -858,7 +856,7 @@ Veja que nem sempre conseguimos nos expressar em Python de forma que a leitura s
 
 Para iniciantes é recomendado sempre comentar seu código. Isso não só irá te ajudar a organizar suas ideias mas também ajudar quem for ler seu código a entender o que ele faz. Em níveis intermediários, recomenda-se deixar comentários apenas em partes do código que não são triviais de se entender.
 
-*[B]* Escreva um código que calcula as raízes de uma equação de segundo grau $f(x) = ax^2 + bx + c$ usando a fórmula de Bhaskara. Comente todas as etapas do seu código. Siga o modelo abaixo.
+*[A]* Escreva um código que calcula as raízes de uma equação de segundo grau $f(x) = ax^2 + bx + c$ usando a fórmula de Bhaskara. Comente todas as etapas do seu código. Siga o modelo abaixo.
 
 #+begin_src python
   # valores dos coeficientes (pode alterar se quiser)
@@ -873,13 +871,13 @@ Para iniciantes é recomendado sempre comentar seu código. Isso não só irá t
   print(raiz_2)
 #+end_src
 
-*[C]* Escreva um código que resolve um problema de física, matemática, química ou biologia a sua escolha. Escreva um comentário com seu nome, a data e o que seu código faz. Escreva um comentário em cada etapa que considere não-trivial do seu código.
+*[Desafio]* Escreva um código que resolve um problema de física, matemática, química ou biologia a sua escolha. Escreva um comentário com seu nome, a data e o que seu código faz. Escreva um comentário em cada etapa que considere não-trivial do seu código.
 
-*[D*]* Escreva em uma célula o código abaixo e execute. Nós ainda não vimos essa sintaxe, mas mesmo assim tente e veja o que acontece. A mensagem exibida é um poema chamado /O Zen do Python/. Veremos adiante que a sintaxe com a instrução ~import~ é usada para carregar (importar) módulos. Neste caso, o ~import this~ não faz nada mais do que exibir o poema, mas veremos adiante que a instrução ~import~ é absurdamente útil e importante!
+# *[D*]* Escreva em uma célula o código abaixo e execute. Nós ainda não vimos essa sintaxe, mas mesmo assim tente e veja o que acontece. A mensagem exibida é um poema chamado /O Zen do Python/. Veremos adiante que a sintaxe com a instrução ~import~ é usada para carregar (importar) módulos. Neste caso, o ~import this~ não faz nada mais do que exibir o poema, mas veremos adiante que a instrução ~import~ é absurdamente útil e importante!
 
-#+begin_src python
-  import this
-#+end_src
+# #+begin_src python
+#   import this
+# #+end_src
 
 * Funções
 :PROPERTIES:
@@ -1043,15 +1041,15 @@ A ~funcao_5~ recebe dois argumentos e retorna o valor 10. Observe que não é ne
 
 Finalmente, a ~funcao_6~ recebe três argumentos e retorna os mesmos argumentos em ordem inversa . Observe que a instrução ~return~ permite retornar mais que um valor. Se retornar mais que um valor, estes devem estar separados por vírgulas. Na linha 58 temos uma situação inusitada: a ~funcao_6~ retorna três valores, mas estamos atribuindo o retorno desta função a apenas uma variável chamada ~retorno~. Se você rodar este código perceberá que não ocorrem erros. Neste caso, os três valores de retorno são agrupados em um objeto chamado de /tupla/ e armazenados na variável ~retorno~ (veremos tuplas mais adiante). Observe a sintaxe da linha 63 para ver como separar os valores de retorno em variáveis independentes.
 
-*[B*]* Crie e execute funções para realizar as tarefas abaixo:
+*[A]* Crie e execute funções para realizar as tarefas abaixo:
 
 + Uma função que recebe um valor numérico e retorna o cubo deste valor.
 + Uma função que recebe cinco valores e retorna o valor médio e o desvio padrão destes valores.
 + Uma função que recebe três números e retorna os números recebidos em ordem decrescente.
 
-*[C*]* Crie uma função que recebe um argumento e tente executar ela sem fornecer nenhum argumento. Após este teste, tente executar ela fornecendo dois argumentos quaisquer. Observe e relate o que aconteceu.
+*[B]* Crie uma função que recebe um argumento e tente executar ela sem fornecer nenhum argumento. Após este teste, tente executar ela fornecendo dois argumentos quaisquer. Observe e relate o que aconteceu.
 
-*[D]* Execute o código abaixo e comente o que ocorre quando executamos a linha 6. Nesta linha a função ~ola~ foi executada sem os parênteses. Seu código rodou com erro ou se erro? De qualquer forma elabore o que aconteceu.
+*[C]* Execute o código abaixo e comente o que ocorre quando executamos a linha 6. Nesta linha a função ~ola~ foi executada sem os parênteses. Seu código rodou com erro ou se erro? De qualquer forma elabore o que aconteceu.
 
 #+begin_src python -n
   def ola():
@@ -1065,6 +1063,10 @@ Finalmente, a ~funcao_6~ recebe três argumentos e retorna os mesmos argumentos 
 #+RESULTS:
 : Olá!
 : <function ola at 0x7f69502dfd90>
+
+*[Desafio]* Escreva uma função que recebe 5 argumentos numéricos e retorna o valor do segundo maior número recebido.
+
+*[Desafio 2]* Escreva uma função que recebe 5 argumentos numéricos e exibe todos os valores únicos que recebeu (isto é, não exibe valores repetidos).
 
 ** Argumentos posicionais, argumentos nomeados e argumentos com valor padrão
 
@@ -1158,7 +1160,7 @@ Observe que não é permitido declarar argumentos sem valor padrão após argume
 
 Variáveis criadas dentro de funções são /locais/ e só existem dentro do escopo da função.
 
-*[A]* Teste se a afirmação acima é verdade executando o código abaixo. Relate o  que aconteceu.
+*[A]* Teste se a afirmação acima é verdade executando o código abaixo. Relate o que aconteceu.
 
 #+begin_src python -n
   def refeicao():

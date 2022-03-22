@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-03-18 Fri 16:51 -->
+<!-- 2022-03-22 ter 11:15 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Práticas em Ciência de Dados</title>
@@ -222,38 +222,38 @@
 <h2>Índice</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org813c066">1. Introdução</a>
+<li><a href="#org4114a39">1. Introdução</a>
 <ul>
-<li><a href="#orgee614fe">1.1. Olá! Que bom que você veio, aprochegue-se!</a></li>
-<li><a href="#orgd9ff501">1.2. Python e o caderno de notas Jupyter</a></li>
-<li><a href="#org905f510">1.3. Links interessantes</a></li>
+<li><a href="#orge71a8f7">1.1. Olá! Que bom que você veio, aprochegue-se!</a></li>
+<li><a href="#orge1b8979">1.2. Python e o caderno de notas Jupyter</a></li>
+<li><a href="#org14aba8b">1.3. Links interessantes</a></li>
 </ul>
 </li>
-<li><a href="#orgb2620d2">2. Jupyter, variáveis e como buscar ajuda</a>
+<li><a href="#org25cc643">2. Jupyter, variáveis e como buscar ajuda</a>
 <ul>
-<li><a href="#orga25f323">2.1. Meu primeiro caderno de notas Jupyter</a></li>
-<li><a href="#orge6cd35d">2.2. Criando variáveis de diferentes tipos</a></li>
-<li><a href="#org8ecdb12">2.3. Buscando ajuda</a></li>
+<li><a href="#orgaa9530c">2.1. Meu primeiro caderno de notas Jupyter</a></li>
+<li><a href="#orgb8ba0cd">2.2. Criando variáveis de diferentes tipos</a></li>
+<li><a href="#org5bbaa8d">2.3. Buscando ajuda</a></li>
 </ul>
 </li>
-<li><a href="#org7cd5df5">3. Operadores e estrutura de decisão</a>
+<li><a href="#orgc55cdce">3. Operadores e estrutura de decisão</a>
 <ul>
-<li><a href="#org31bc351">3.1. Operadores aritméticos</a></li>
-<li><a href="#orgeb2cb2f">3.2. Operadores lógicos</a></li>
-<li><a href="#org722d910">3.3. Operadores de comparação</a></li>
-<li><a href="#orgf917575">3.4. Estrutura de decisão e operador condicional</a></li>
-<li><a href="#org53a04b1">3.5. Uma breve introdução sobre estilo</a></li>
+<li><a href="#orgb454e14">3.1. Operadores aritméticos</a></li>
+<li><a href="#org3d7af72">3.2. Operadores lógicos</a></li>
+<li><a href="#org9fbc58f">3.3. Operadores de comparação</a></li>
+<li><a href="#orga36af6d">3.4. Estrutura de decisão e operador condicional</a></li>
+<li><a href="#orgd1c47cb">3.5. Uma breve introdução sobre estilo</a></li>
 </ul>
 </li>
-<li><a href="#org136f52a">4. Funções</a>
+<li><a href="#orgaa7e8e4">4. Funções</a>
 <ul>
-<li><a href="#orgb280287">4.1. O que é uma função?</a></li>
-<li><a href="#orge7a9210">4.2. Funções embutidas</a></li>
-<li><a href="#org129d503">4.3. Definindo novas funções</a></li>
-<li><a href="#org04387b5">4.4. Argumentos posicionais, argumentos nomeados e argumentos com valor padrão</a></li>
-<li><a href="#org1644e70">4.5. Variáveis globais e variáveis locais</a></li>
-<li><a href="#org8dfba0d">4.6. Documentando suas funções com a docstring</a></li>
-<li><a href="#org5e7a9bc">4.7. Funções também são objetos!</a></li>
+<li><a href="#org938f672">4.1. O que é uma função?</a></li>
+<li><a href="#org8abc4b1">4.2. Funções embutidas</a></li>
+<li><a href="#org64022ca">4.3. Definindo novas funções</a></li>
+<li><a href="#orga18e500">4.4. Argumentos posicionais, argumentos nomeados e argumentos com valor padrão</a></li>
+<li><a href="#org7721e6f">4.5. Variáveis globais e variáveis locais</a></li>
+<li><a href="#org333f595">4.6. Documentando suas funções com a docstring</a></li>
+<li><a href="#orgde3f8de">4.7. Funções também são objetos!</a></li>
 </ul>
 </li>
 </ul>
@@ -296,13 +296,13 @@
 </style>
 
 
-<div id="outline-container-org813c066" class="outline-2">
-<h2 id="org813c066"><span class="section-number-2">1.</span> Introdução</h2>
+<div id="outline-container-org4114a39" class="outline-2">
+<h2 id="org4114a39"><span class="section-number-2">1.</span> Introdução</h2>
 <div class="outline-text-2" id="text-1">
 </div>
 
-<div id="outline-container-orgee614fe" class="outline-3">
-<h3 id="orgee614fe"><span class="section-number-3">1.1.</span> Olá! Que bom que você veio, aprochegue-se!</h3>
+<div id="outline-container-orge71a8f7" class="outline-3">
+<h3 id="orge71a8f7"><span class="section-number-3">1.1.</span> Olá! Que bom que você veio, aprochegue-se!</h3>
 <div class="outline-text-3" id="text-1-1">
 <blockquote>
 <p>
@@ -336,8 +336,8 @@ Realize as práticas seguindo as instruções discutidas em sala de aula. Lembre
 </div>
 </div>
 
-<div id="outline-container-orgd9ff501" class="outline-3">
-<h3 id="orgd9ff501"><span class="section-number-3">1.2.</span> Python e o caderno de notas Jupyter</h3>
+<div id="outline-container-orge1b8979" class="outline-3">
+<h3 id="orge1b8979"><span class="section-number-3">1.2.</span> Python e o caderno de notas Jupyter</h3>
 <div class="outline-text-3" id="text-1-2">
 <blockquote>
 <p>
@@ -359,8 +359,8 @@ Apesar de não ser estritamente necessário utilizar os cadernos de notas Jupyte
 </div>
 </div>
 
-<div id="outline-container-org905f510" class="outline-3">
-<h3 id="org905f510"><span class="section-number-3">1.3.</span> Links interessantes</h3>
+<div id="outline-container-org14aba8b" class="outline-3">
+<h3 id="org14aba8b"><span class="section-number-3">1.3.</span> Links interessantes</h3>
 <div class="outline-text-3" id="text-1-3">
 <blockquote>
 <p>
@@ -411,13 +411,13 @@ Por fim, existem diversos materiais (tanto pagos quanto gratuitos) para aprendiz
 </div>
 </div>
 
-<div id="outline-container-orgb2620d2" class="outline-2">
-<h2 id="orgb2620d2"><span class="section-number-2">2.</span> Jupyter, variáveis e como buscar ajuda</h2>
+<div id="outline-container-org25cc643" class="outline-2">
+<h2 id="org25cc643"><span class="section-number-2">2.</span> Jupyter, variáveis e como buscar ajuda</h2>
 <div class="outline-text-2" id="text-2">
 </div>
 
-<div id="outline-container-orga25f323" class="outline-3">
-<h3 id="orga25f323"><span class="section-number-3">2.1.</span> Meu primeiro caderno de notas Jupyter</h3>
+<div id="outline-container-orgaa9530c" class="outline-3">
+<h3 id="orgaa9530c"><span class="section-number-3">2.1.</span> Meu primeiro caderno de notas Jupyter</h3>
 <div class="outline-text-3" id="text-2-1">
 <blockquote>
 <p>
@@ -478,8 +478,8 @@ Aprender qualquer linguagem, seja ela de programação ou não, requer treino. N
 </div>
 </div>
 
-<div id="outline-container-orge6cd35d" class="outline-3">
-<h3 id="orge6cd35d"><span class="section-number-3">2.2.</span> Criando variáveis de diferentes tipos</h3>
+<div id="outline-container-orgb8ba0cd" class="outline-3">
+<h3 id="orgb8ba0cd"><span class="section-number-3">2.2.</span> Criando variáveis de diferentes tipos</h3>
 <div class="outline-text-3" id="text-2-2">
 <blockquote>
 <p>
@@ -603,8 +603,8 @@ Existem diversos outros tipos de variáveis que veremos ao longo desta apostila.
 </div>
 </div>
 
-<div id="outline-container-org8ecdb12" class="outline-3">
-<h3 id="org8ecdb12"><span class="section-number-3">2.3.</span> Buscando ajuda</h3>
+<div id="outline-container-org5bbaa8d" class="outline-3">
+<h3 id="org5bbaa8d"><span class="section-number-3">2.3.</span> Buscando ajuda</h3>
 <div class="outline-text-3" id="text-2-3">
 <p class="verse">
 &ldquo;<i>Socorro! Eu preciso de alguém.<br />
@@ -656,13 +656,13 @@ O que você faria se não soubesse o que função <code>print</code> faz? Digamo
 </div>
 </div>
 
-<div id="outline-container-org7cd5df5" class="outline-2">
-<h2 id="org7cd5df5"><span class="section-number-2">3.</span> Operadores e estrutura de decisão</h2>
+<div id="outline-container-orgc55cdce" class="outline-2">
+<h2 id="orgc55cdce"><span class="section-number-2">3.</span> Operadores e estrutura de decisão</h2>
 <div class="outline-text-2" id="text-3">
 </div>
 
-<div id="outline-container-org31bc351" class="outline-3">
-<h3 id="org31bc351"><span class="section-number-3">3.1.</span> Operadores aritméticos</h3>
+<div id="outline-container-orgb454e14" class="outline-3">
+<h3 id="orgb454e14"><span class="section-number-3">3.1.</span> Operadores aritméticos</h3>
 <div class="outline-text-3" id="text-3-1">
 <blockquote>
 <p>
@@ -675,31 +675,11 @@ A linguagem Python contém diversos operadores aritméticos como adição (<code
 </p>
 
 <p>
-<b>[A*]</b> Reescreva o código abaixo em uma célula do Jupyter e veja o que acontece. Comente porque o resultado da terceira linha foi <code>90</code> e não <code>0</code>.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span class="linenr">1: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #6c71c4; font-weight: bold;">1</span> + <span style="color: #6c71c4; font-weight: bold;">1</span>)
-<span class="linenr">2: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #6c71c4; font-weight: bold;">1</span> - <span style="color: #6c71c4; font-weight: bold;">1</span> + <span style="color: #6c71c4; font-weight: bold;">1</span> - <span style="color: #6c71c4; font-weight: bold;">1</span>)
-<span class="linenr">3: </span><span style="color: #859900; font-weight: bold;">print</span>(-<span style="color: #6c71c4; font-weight: bold;">10</span> + <span style="color: #6c71c4; font-weight: bold;">10</span> * <span style="color: #6c71c4; font-weight: bold;">10</span>)
-<span class="linenr">4: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #6c71c4; font-weight: bold;">10</span> / <span style="color: #6c71c4; font-weight: bold;">2</span> * <span style="color: #6c71c4; font-weight: bold;">5</span>)
-<span class="linenr">5: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #6c71c4; font-weight: bold;">10</span> ** <span style="color: #6c71c4; font-weight: bold;">10</span>)
-<span class="linenr">6: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #6c71c4; font-weight: bold;">2</span> ** <span style="color: #6c71c4; font-weight: bold;">1</span> / <span style="color: #6c71c4; font-weight: bold;">2</span>)
-<span class="linenr">7: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #6c71c4; font-weight: bold;">2</span> ** (<span style="color: #6c71c4; font-weight: bold;">1</span> / <span style="color: #6c71c4; font-weight: bold;">2</span>))
-<span class="linenr">8: </span><span style="color: #859900; font-weight: bold;">print</span>((<span style="color: #6c71c4; font-weight: bold;">1</span> + 1j) / (<span style="color: #6c71c4; font-weight: bold;">1</span> - 1j))
-</pre>
-</div>
-
-<p>
 A ordem de precedência dos operadores aritméticos (isto é, a ordem de execução dos operadores) segue a regra do PEMDAS: parênteses, exponencial, multiplicação, divisão, adição e subtração. Assim como na notação matemática, usamos parênteses para dar preferência para certas operações.
 </p>
 
 <p>
-<b>[B*]</b> Escreva 5 formas diferentes de se obter o número 12 usando os operadores aritméticos que aprendeu (por exemplo <code>print(7 + 5)</code>). Certifique-se que usou todos os operadores aritméticos que você conhece neste exercício.
-</p>
-
-<p>
-<b>[C]</b> Utilizando o Python como calculadora, compute:
+<b>[A]</b> Utilizando o Python como calculadora, compute:
 </p>
 <ol class="org-ol">
 <li>Quantos segundos existem em 16 horas e 42 minutos?</li>
@@ -709,7 +689,7 @@ A ordem de precedência dos operadores aritméticos (isto é, a ordem de execuç
 </ol>
 
 <p>
-<b>[D]</b> Além dos operadores discutidos acima, existem diversos outros em Python. Dois operadores bastante úteis são a divisão inteira (<code>//</code>) e o módulo (<code>%</code>, também conhecido como resto da divisão inteira). Veja abaixo um exemplo de como usá-los. Teste estes operadores e descreva como eles funcionam (em caso de dúvida, busque ajuda assim como apresentado na seção Buscando Ajuda). Discorra brevemente sobre possíveis situações onde estes operadores podem ser úteis.
+<b>[B]</b> Além dos operadores discutidos acima, existem diversos outros em Python. Dois operadores bastante úteis são a divisão inteira (<code>//</code>) e o módulo (<code>%</code>, também conhecido como resto da divisão inteira). Veja abaixo um exemplo de como usá-los. Teste estes operadores e descreva como eles funcionam (em caso de dúvida, busque ajuda assim como apresentado na seção Buscando Ajuda). Discorra brevemente sobre possíveis situações onde estes operadores podem ser úteis.
 </p>
 
 <div class="org-src-container">
@@ -723,7 +703,7 @@ A ordem de precedência dos operadores aritméticos (isto é, a ordem de execuç
 </p>
 
 <p>
-<b>[E]</b> Escreva e execute o código abaixo e comente sobre o resultado obtido quando somamos variáveis de tipos iguais e tipos diferentes.
+<b>[C]</b> Escreva e execute o código abaixo e comente sobre o resultado obtido quando somamos variáveis de tipos iguais e tipos diferentes.
 </p>
 
 <div class="org-src-container">
@@ -745,11 +725,15 @@ A ordem de precedência dos operadores aritméticos (isto é, a ordem de execuç
 </div>
 
 <p>
-<b>[F]</b> Escreva um código similar ao código acima, porém alterando o operador de adição pelo operador de divisão. Você obteve algum resultado inusitado? Comente.
+<b>[D]</b> Escreva um código similar ao código acima, porém alterando o operador de adição pelo operador de divisão. Você obteve algum resultado inusitado? Comente.
 </p>
 
 <p>
-<b>[Desafio]</b> Durante um exercício de geometria, você decidiu realizar suas contas utilizando Python. Você escreveu o código abaixo em uma célula no seu caderno de notas Jupyter e o resultado que obteve foi inusitado! Por que o resultado é inusitado? Qual era o resultado esperado? Qual é a explicação para isso? Na sua opinião, este tipo de &ldquo;problema&rdquo; compromete o uso de Python como uma calculadora aritmética? <span class="underline">Dica</span>: quantos números reais existem entre zero e um?
+<b>[Desafio]</b> Crie uma a variável chamada <code>numero</code> que armazena um número inteiro entre 1000 e 9999. <span class="underline">Usando apenas operadores aritméticos</span>, separe todos os dígitos da variável <code>numero</code> em 4 outras variáveis. Seu código deve funcionar para qualquer valor da variável <code>numero</code> dentro do domínio definido. Exemplo: o número 1234 deve ser separado em uma variável contendo o número 1, uma contendo o número 2, outra contendo o número 3 e a última contendo o número 4.
+</p>
+
+<p>
+<b>[Desafio 2]</b> Durante um exercício de geometria, você decidiu realizar suas contas utilizando Python. Você escreveu o código abaixo em uma célula no seu caderno de notas Jupyter e o resultado que obteve foi inusitado! Por que o resultado é inusitado? Qual era o resultado esperado? Qual é a explicação para isso? Na sua opinião, este tipo de &ldquo;problema&rdquo; compromete o uso de Python como uma calculadora aritmética? <span class="underline">Dica</span>: quantos números reais existem entre zero e um?
 </p>
 
 <div class="org-src-container">
@@ -758,15 +742,11 @@ A ordem de precedência dos operadores aritméticos (isto é, a ordem de execuç
 <span style="color: #859900; font-weight: bold;">print</span>(valor)
 </pre>
 </div>
-
-<p>
-<b>[Desafio 2]</b> Crie uma a variável <code>numero</code> que armazena um número inteiro entre 1000 e 9999. <span class="underline">Usando apenas operadores aritméticos</span>, separe todos os dígitos da variável <code>numero</code> em 4 outras variáveis. Seu código deve funcionar para qualquer valor da variável <code>numero</code> dentro do domínio definido. Exemplo: o número 1234 deve ser separado em uma variável contendo o número 1, uma contendo o número 2, outra contendo o número 3 e uma contendo o número 4.
-</p>
 </div>
 </div>
 
-<div id="outline-container-orgeb2cb2f" class="outline-3">
-<h3 id="orgeb2cb2f"><span class="section-number-3">3.2.</span> Operadores lógicos</h3>
+<div id="outline-container-org3d7af72" class="outline-3">
+<h3 id="org3d7af72"><span class="section-number-3">3.2.</span> Operadores lógicos</h3>
 <div class="outline-text-3" id="text-3-2">
 <blockquote>
 <p>
@@ -783,7 +763,7 @@ Uma expressão booleana é uma expressão que, quando resolvida, resulta em um v
 </p>
 
 <p>
-<b>[A*]</b> Execute o código abaixo; comente sobre qual ou quais situações o operador <code>and</code> retorna o valor <code>True</code>.
+<b>[A]</b> Execute o código abaixo; comente sobre qual ou quais situações o operador <code>and</code> retorna o valor <code>True</code>.
 </p>
 
 <div class="org-src-container">
@@ -820,7 +800,7 @@ Se quisermos, podemos rescrever o código acima usando variáveis para facilitar
 </div>
 
 <p>
-<b>[B*]</b> Escreva e execute um código similar ao código acima, substituindo <code>and</code> por <code>or</code>; comente sobre qual ou quais situações o operador <code>or</code> retorna o valor <code>True</code>.
+<b>[B]</b> Escreva e execute um código similar ao código acima, substituindo <code>and</code> por <code>or</code>; comente sobre qual ou quais situações o operador <code>or</code> retorna o valor <code>True</code>.
 </p>
 
 <p>
@@ -828,7 +808,7 @@ O operador <code>not</code> é um operador unário; ele requer apenas um argumen
 </p>
 
 <p>
-<b>[C*]</b> Escreva e execute o código abaixo e comente sobre como o operador <code>not</code> funciona.
+<b>[C]</b> Escreva e execute o código abaixo e comente sobre como o operador <code>not</code> funciona.
 </p>
 
 <div class="org-src-container">
@@ -849,7 +829,7 @@ Operadores lógicos podem ser combinados na mesma declaração. Quando for fazer
 </div>
 
 <p>
-<b>[D]</b> É possível somar variáveis booleanas? Quanto vale <code>True + True</code>? Quanto vale <code>False + False</code>? Quanto vale <code>True + False</code>? Descubra a resposta para estas questões usando o Jupyter e busque online ou em livros o motivo para o resultado obtido. Escreva sobre o que encontrou. <span class="underline">Observação</span>: note que essa possibilidade de somar variáveis booleanas é apenas uma faceta de como o Python armazena as variáveis booleanas. Isso não existe em lógica formal!
+<b>[D]</b> É possível somar variáveis booleanas? Quanto vale <code>True + True</code>? Quanto vale <code>False + False</code>? Quanto vale <code>True + False</code>? Descubra a resposta para estas questões usando o Jupyter e busque online ou em livros o motivo para o resultado obtido. Escreva sobre o que encontrou. <span class="underline">Observação</span>: note que essa possibilidade de somar variáveis booleanas é apenas uma característica de como o Python armazena as variáveis booleanas. Isso não funciona dessa forma em lógica matemática.
 </p>
 
 <p>
@@ -858,8 +838,8 @@ Operadores lógicos podem ser combinados na mesma declaração. Quando for fazer
 </div>
 </div>
 
-<div id="outline-container-org722d910" class="outline-3">
-<h3 id="org722d910"><span class="section-number-3">3.3.</span> Operadores de comparação</h3>
+<div id="outline-container-org9fbc58f" class="outline-3">
+<h3 id="org9fbc58f"><span class="section-number-3">3.3.</span> Operadores de comparação</h3>
 <div class="outline-text-3" id="text-3-3">
 <blockquote>
 <p>
@@ -908,8 +888,8 @@ A != B &lt; C == E - D - C
 </div>
 </div>
 
-<div id="outline-container-orgf917575" class="outline-3">
-<h3 id="orgf917575"><span class="section-number-3">3.4.</span> Estrutura de decisão e operador condicional</h3>
+<div id="outline-container-orga36af6d" class="outline-3">
+<h3 id="orga36af6d"><span class="section-number-3">3.4.</span> Estrutura de decisão e operador condicional</h3>
 <div class="outline-text-3" id="text-3-4">
 <blockquote>
 <p>
@@ -919,10 +899,6 @@ A != B &lt; C == E - D - C
 
 <p>
 Em diversos momentos da vida nos adaptamos mediante às condições do ambiente. Por exemplo, ao sair de casa, <i>se</i> estiver chovendo <i>então</i> pegamos o guarda-chuva, <i>se não</i> nós saímos de casa sem o guarda-chuva. Esta estrutura condicional também existe nas linguagens de programação. Em diversos momentos, queremos que a execução de certos comandos só ocorram caso uma ou mais condições sejam atendidas.
-</p>
-
-<p>
-<b>[A*]</b> Em que outros momentos da sua vida você faz escolhas seguindo uma estrutura condicional contendo <i>se</i>, <i>então</i> e <i>se não</i>? Escreva (em português mesmo) sobre um destes momentos dizendo como você se comporta (tome como base o exemplo do guarda-chuva).
 </p>
 
 <p>
@@ -980,7 +956,7 @@ Observe que a sintaxe de estruturas de decisão requer que o bloco referente ao 
 </div>
 
 <p>
-<b>[B*]</b> Escreva um código de Python para a decisão que você descreveu na questão <b>A</b>.
+<b>[A]</b> Em que outros momentos da sua vida você faz escolhas seguindo uma estrutura condicional contendo <i>se</i>, <i>então</i> e <i>se não</i>? Escreva (em português mesmo) sobre um destes momentos dizendo como você se comporta (tome como base o exemplo do guarda-chuva). Escreva um código de Python para a decisão que você descreveu.
 </p>
 
 <p>
@@ -1007,11 +983,11 @@ Observe que a sintaxe de estruturas de decisão requer que o bloco referente ao 
 </div>
 
 <p>
-<b>[C*]</b> Descreva uma situação onde você precisa considerar duas condições para tomar uma decisão e escreva ela em um código de Python.
+<b>[B]</b> Descreva uma situação onde você precisa considerar duas condições para tomar uma decisão e escreva ela em um código de Python.
 </p>
 
 <p>
-<b>[D]</b> Reescreva o código acima de forma que ele se comporte da mesma maneira, porém usando apenas uma instrução <code>if</code> e apenas uma instrução <code>else</code>. <span class="underline">Dica</span>: pense em qual operador lógico poderia te ajudar aqui!
+<b>[C]</b> Reescreva o código acima de forma que ele se comporte da mesma maneira, porém usando apenas uma instrução <code>if</code> e apenas uma instrução <code>else</code>. <span class="underline">Dica</span>: pense em qual operador lógico poderia te ajudar aqui!
 </p>
 
 <p>
@@ -1040,7 +1016,7 @@ Imagine que você mediu o pH de um vinagre e obteve o valor de 2,5. Ao rodar o c
 </p>
 
 <p>
-<b>[F*]</b> Reescreva o código acima usando cláusulas <code>else</code> de forma que o programa não rode nenhuma cláusula <code>if</code> desnecessária para entregar a resposta ao usuário (isto é: após ter encontrado a resposta, nenhum outro <code>if</code> deve ser executado!).
+<b>[D]</b> Reescreva o código acima usando cláusulas <code>else</code> de forma que o programa não rode nenhuma cláusula <code>if</code> desnecessária para entregar a resposta ao usuário (isto é: após ter encontrado a resposta, nenhum outro <code>if</code> deve ser executado!).
 </p>
 
 <p>
@@ -1069,15 +1045,19 @@ O código acima checa se o pH é ácido. Caso seja ácido o programa exibe &ldqu
 </p>
 
 <p>
-<b>[G]</b> Escreva um programa similar ao programa do pH que checa alguma grandeza escalar e exibe para o usuário uma informação sobre esta grandeza. Utilize pelo menos duas cláusulas <code>elif</code> no seu programa.
+<b>[E]</b> Escreva um programa similar ao programa do pH que checa alguma grandeza escalar e exibe para o usuário uma informação sobre esta grandeza. Utilize pelo menos duas cláusulas <code>elif</code> no seu programa.
 </p>
 
 <p>
-<b>[H]</b> Escreva um código que tem uma variável inteira chamada <code>numero</code>. Este código deve reportar ao usuário se este número é par ou ímpar.
+<b>[F]</b> Escreva um código que tem uma variável inteira chamada <code>numero</code>. Este código deve reportar ao usuário se este número é par ou ímpar.
 </p>
 
 <p>
-<b>[I]</b> Escreva um programa que contém uma variável inteira positiva chamada <code>ano</code>. O programa deve mostrar ao usuário se o ano em questão é um ano bissexto ou não. As regras para um ano ser bissexto são as seguintes:
+<b>[G]</b> Escreva um programa que tem três variáveis numéricas <code>a</code>, <code>b</code> e <code>c</code>. O programa deve exibir ao usuário os valores contidos em <code>a</code>, <code>b</code> e <code>c</code> em ordem crescente. Ele deve funcionar para qualquer valor numérico de <code>a</code>, <code>b</code> e <code>c</code>.
+</p>
+
+<p>
+<b>[Desafio]</b> Escreva um programa que contém uma variável inteira positiva chamada <code>ano</code>. O programa deve mostrar ao usuário se o ano em questão é um ano bissexto ou não. As regras para um ano ser bissexto são as seguintes:
 </p>
 
 <ol class="org-ol">
@@ -1089,11 +1069,7 @@ O código acima checa se o pH é ácido. Caso seja ácido o programa exibe &ldqu
 </ol>
 
 <p>
-<b>[J]</b> Escreva um programa que tem três variáveis numéricas <code>a</code>, <code>b</code> e <code>c</code>. O programa deve exibir ao usuário os valores contidos em <code>a</code>, <code>b</code> e <code>c</code> em ordem crescente. Ele deve funcionar para qualquer valor numérico de <code>a</code>, <code>b</code> e <code>c</code>.
-</p>
-
-<p>
-<b>[Desafio]</b> Escreva um programa que contém uma variável inteira chamada <code>numero</code>. Esta variável armazena um número que deve estar entre 1000 e 9999. O programa deve checar se esse número é um número palíndromo e reportar essa informação ao usuário. Um número palíndromo é aquele que tem o mesmo valor quando a ordem dos seus dígitos é invertida, por exemplo:
+<b>[Desafio 2]</b> Escreva um programa que contém uma variável inteira chamada <code>numero</code>. Esta variável armazena um número que deve estar entre 1000 e 9999. O programa deve checar se esse número é um número palíndromo e reportar essa informação ao usuário. Um número palíndromo é aquele que tem o mesmo valor quando a ordem dos seus dígitos é invertida, por exemplo:
 </p>
 <ol class="org-ol">
 <li>o número 1234 não é número palíndromo pois é diferente de 4321.</li>
@@ -1102,8 +1078,8 @@ O código acima checa se o pH é ácido. Caso seja ácido o programa exibe &ldqu
 </div>
 </div>
 
-<div id="outline-container-org53a04b1" class="outline-3">
-<h3 id="org53a04b1"><span class="section-number-3">3.5.</span> Uma breve introdução sobre estilo</h3>
+<div id="outline-container-orgd1c47cb" class="outline-3">
+<h3 id="orgd1c47cb"><span class="section-number-3">3.5.</span> Uma breve introdução sobre estilo</h3>
 <div class="outline-text-3" id="text-3-5">
 <p class="verse">
 &ldquo;<i>Bonito é melhor que feio.<br />
@@ -1167,10 +1143,6 @@ Em geral, um código que funciona é <i>melhor</i> que um código que não funci
 </p>
 
 <p>
-<b>[A]</b> Escreva um código que executa uma tarefa simples, porém escreva-o da forma mais ilegível que você conseguir. Troque o seu código com um colega e tente entender o código que recebeu antes de executá-lo no Python.
-</p>
-
-<p>
 Veja que nem sempre conseguimos nos expressar em Python de forma que a leitura seja trivial. Isso acontece em qualquer linguagem! Existem certos conceitos e tarefas que simplesmente são complexos de serem representados. Isso é normal! Para facilitar nossas vidas, em programação existe o conceito de <i>comentários</i>. Comentários são linhas de texto ao longo do código que são ignoradas pelo compilador quando o código é executado. Comentários servem para ajudar quem está lendo o código a entender mais facilmente o que ele faz. É uma forma do criador do código de se comunicar com seu leitor sem que isso interfira na execução do código em si. Veja o exemplo abaixo.
 </p>
 
@@ -1190,7 +1162,7 @@ Para iniciantes é recomendado sempre comentar seu código. Isso não só irá t
 </p>
 
 <p>
-<b>[B]</b> Escreva um código que calcula as raízes de uma equação de segundo grau \(f(x) = ax^2 + bx + c\) usando a fórmula de Bhaskara. Comente todas as etapas do seu código. Siga o modelo abaixo.
+<b>[A]</b> Escreva um código que calcula as raízes de uma equação de segundo grau \(f(x) = ax^2 + bx + c\) usando a fórmula de Bhaskara. Comente todas as etapas do seu código. Siga o modelo abaixo.
 </p>
 
 <div class="org-src-container">
@@ -1208,28 +1180,19 @@ Para iniciantes é recomendado sempre comentar seu código. Isso não só irá t
 </div>
 
 <p>
-<b>[C]</b> Escreva um código que resolve um problema de física, matemática, química ou biologia a sua escolha. Escreva um comentário com seu nome, a data e o que seu código faz. Escreva um comentário em cada etapa que considere não-trivial do seu código.
+<b>[Desafio]</b> Escreva um código que resolve um problema de física, matemática, química ou biologia a sua escolha. Escreva um comentário com seu nome, a data e o que seu código faz. Escreva um comentário em cada etapa que considere não-trivial do seu código.
 </p>
-
-<p>
-<b>[D*]</b> Escreva em uma célula o código abaixo e execute. Nós ainda não vimos essa sintaxe, mas mesmo assim tente e veja o que acontece. A mensagem exibida é um poema chamado <i>O Zen do Python</i>. Veremos adiante que a sintaxe com a instrução <code>import</code> é usada para carregar (importar) módulos. Neste caso, o <code>import this</code> não faz nada mais do que exibir o poema, mas veremos adiante que a instrução <code>import</code> é absurdamente útil e importante!
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #859900; font-weight: bold;">import</span> this
-</pre>
-</div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org136f52a" class="outline-2">
-<h2 id="org136f52a"><span class="section-number-2">4.</span> Funções</h2>
+<div id="outline-container-orgaa7e8e4" class="outline-2">
+<h2 id="orgaa7e8e4"><span class="section-number-2">4.</span> Funções</h2>
 <div class="outline-text-2" id="text-4">
 </div>
 
-<div id="outline-container-orgb280287" class="outline-3">
-<h3 id="orgb280287"><span class="section-number-3">4.1.</span> O que é uma função?</h3>
+<div id="outline-container-org938f672" class="outline-3">
+<h3 id="org938f672"><span class="section-number-3">4.1.</span> O que é uma função?</h3>
 <div class="outline-text-3" id="text-4-1">
 <blockquote>
 <p>
@@ -1258,8 +1221,8 @@ Basicamente, ao executar uma função ela recebe zero ou mais objetos (argumento
 </div>
 </div>
 
-<div id="outline-container-orge7a9210" class="outline-3">
-<h3 id="orge7a9210"><span class="section-number-3">4.2.</span> Funções embutidas</h3>
+<div id="outline-container-org8abc4b1" class="outline-3">
+<h3 id="org8abc4b1"><span class="section-number-3">4.2.</span> Funções embutidas</h3>
 <div class="outline-text-3" id="text-4-2">
 <blockquote>
 <p>
@@ -1273,8 +1236,8 @@ Existem diversas funções embutidas em Python. Estas funções podem ser usadas
 </div>
 </div>
 
-<div id="outline-container-org129d503" class="outline-3">
-<h3 id="org129d503"><span class="section-number-3">4.3.</span> Definindo novas funções</h3>
+<div id="outline-container-org64022ca" class="outline-3">
+<h3 id="org64022ca"><span class="section-number-3">4.3.</span> Definindo novas funções</h3>
 <div class="outline-text-3" id="text-4-3">
 <blockquote>
 <p>
@@ -1380,7 +1343,7 @@ Finalmente, a <code>funcao_6</code> recebe três argumentos e retorna os mesmos 
 </p>
 
 <p>
-<b>[B*]</b> Crie e execute funções para realizar as tarefas abaixo:
+<b>[A]</b> Crie e execute funções para realizar as tarefas abaixo:
 </p>
 
 <ul class="org-ul">
@@ -1390,11 +1353,11 @@ Finalmente, a <code>funcao_6</code> recebe três argumentos e retorna os mesmos 
 </ul>
 
 <p>
-<b>[C*]</b> Crie uma função que recebe um argumento e tente executar ela sem fornecer nenhum argumento. Após este teste, tente executar ela fornecendo dois argumentos quaisquer. Observe e relate o que aconteceu.
+<b>[B]</b> Crie uma função que recebe um argumento e tente executar ela sem fornecer nenhum argumento. Após este teste, tente executar ela fornecendo dois argumentos quaisquer. Observe e relate o que aconteceu.
 </p>
 
 <p>
-<b>[D]</b> Execute o código abaixo e comente o que ocorre quando executamos a linha 6. Nesta linha a função <code>ola</code> foi executada sem os parênteses. Seu código rodou com erro ou se erro? De qualquer forma elabore o que aconteceu.
+<b>[C]</b> Execute o código abaixo e comente o que ocorre quando executamos a linha 6. Nesta linha a função <code>ola</code> foi executada sem os parênteses. Seu código rodou com erro ou se erro? De qualquer forma elabore o que aconteceu.
 </p>
 
 <div class="org-src-container">
@@ -1406,11 +1369,19 @@ Finalmente, a <code>funcao_6</code> recebe três argumentos e retorna os mesmos 
 <span class="linenr">6: </span><span style="color: #859900; font-weight: bold;">print</span>(ola)
 </pre>
 </div>
+
+<p>
+<b>[Desafio]</b> Escreva uma função que recebe 5 argumentos numéricos e retorna o valor do segundo maior número recebido.
+</p>
+
+<p>
+<b>[Desafio 2]</b> Escreva uma função que recebe 5 argumentos numéricos e exibe todos os valores únicos que recebeu (isto é, não exibe valores repetidos).
+</p>
 </div>
 </div>
 
-<div id="outline-container-org04387b5" class="outline-3">
-<h3 id="org04387b5"><span class="section-number-3">4.4.</span> Argumentos posicionais, argumentos nomeados e argumentos com valor padrão</h3>
+<div id="outline-container-orga18e500" class="outline-3">
+<h3 id="orga18e500"><span class="section-number-3">4.4.</span> Argumentos posicionais, argumentos nomeados e argumentos com valor padrão</h3>
 <div class="outline-text-3" id="text-4-4">
 <blockquote>
 <p>
@@ -1514,8 +1485,8 @@ Observe que não é permitido declarar argumentos sem valor padrão após argume
 </div>
 </div>
 
-<div id="outline-container-org1644e70" class="outline-3">
-<h3 id="org1644e70"><span class="section-number-3">4.5.</span> Variáveis globais e variáveis locais</h3>
+<div id="outline-container-org7721e6f" class="outline-3">
+<h3 id="org7721e6f"><span class="section-number-3">4.5.</span> Variáveis globais e variáveis locais</h3>
 <div class="outline-text-3" id="text-4-5">
 <blockquote>
 <p>
@@ -1528,7 +1499,7 @@ Variáveis criadas dentro de funções são <i>locais</i> e só existem dentro d
 </p>
 
 <p>
-<b>[A]</b> Teste se a afirmação acima é verdade executando o código abaixo. Relate o  que aconteceu.
+<b>[A]</b> Teste se a afirmação acima é verdade executando o código abaixo. Relate o que aconteceu.
 </p>
 
 <div class="org-src-container">
@@ -1583,8 +1554,8 @@ Mesmo sabendo que variáveis globais podem ser utilizadas dentro de funções, e
 </div>
 </div>
 
-<div id="outline-container-org8dfba0d" class="outline-3">
-<h3 id="org8dfba0d"><span class="section-number-3">4.6.</span> Documentando suas funções com a docstring</h3>
+<div id="outline-container-org333f595" class="outline-3">
+<h3 id="org333f595"><span class="section-number-3">4.6.</span> Documentando suas funções com a docstring</h3>
 <div class="outline-text-3" id="text-4-6">
 <blockquote>
 <p>
@@ -1738,8 +1709,8 @@ Vamos analisar as diversas partes do exemplo acima:
 </div>
 </div>
 
-<div id="outline-container-org5e7a9bc" class="outline-3">
-<h3 id="org5e7a9bc"><span class="section-number-3">4.7.</span> Funções também são objetos!</h3>
+<div id="outline-container-orgde3f8de" class="outline-3">
+<h3 id="orgde3f8de"><span class="section-number-3">4.7.</span> Funções também são objetos!</h3>
 <div class="outline-text-3" id="text-4-7">
 <blockquote>
 <p>
@@ -1810,7 +1781,7 @@ Funções em Python são objetos assim como números e strings. Desta forma, pod
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Daniel R. Cassar &amp; James M. de Almeida</p>
-<p class="date">Created: 2022-03-18 Fri 16:51</p>
+<p class="date">Created: 2022-03-22 ter 11:15</p>
 </div>
 </body>
 </html>

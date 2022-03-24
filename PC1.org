@@ -1406,48 +1406,55 @@ Funções em Python são objetos assim como números e strings. Desta forma, pod
 
 ** Agrupando objetos com listas
 
-Vamos começar pensando no seguinte cenário, você está em casa e não tem nada para comer, portanto, precisa ir até o supermercado comprar ingredientes para uma receita. A primeira coisa que vem a sua cabeça é comprar um pacote de miojo, afinal, é fácil de preparar. Mas, sua fome está grande, então poderia comprar dois pacotes de miojo, mas isso não parece tão atraente. Lhe ocorre a ideia de incrementar o miojo, posso adicionar queijo ralado, talvez cozinhar um ovo junto com o miojo. Além disso, você resolve comprar uma bebida para acompanhar, um refrigerante. Então, você lembra que a pasta de dentes está acabando, então decide comprar também, para aproveitar a ida ao mercado. O número de itens a se comprar já começa a ficar grande, então é melhor organizar suas compras em uma lista. Vamos escrever tal lista então:
-+ Miojo
-+ Queijo Ralado
-+ Ovo
-+ Pasta de Dentes
+Vamos começar pensando no seguinte cenário, você está em casa e não tem nada para comer, portanto, precisa ir até o supermercado comprar ingredientes para uma receita. A primeira coisa que vem a sua cabeça é comprar um pacote de miojo pois, afinal, é fácil de preparar. Mas, sua fome está grande, então poderia comprar dois pacotes de miojo, mas isso não parece tão atraente. Lhe ocorre a ideia de incrementar o miojo, posso adicionar queijo ralado, talvez cozinhar um ovo junto com o miojo. Além disso, você resolve comprar uma bebida para acompanhar, um refrigerante. Então, você lembra que a pasta de dentes está acabando, então decide comprar também, para aproveitar a ida ao mercado. O número de itens a se comprar já começa a ficar grande, então é melhor organizar suas compras em uma lista. Vamos escrever tal lista então:
 
-Maravilha! Agora você pode ir ao mercado fazer minhas compras. Então você passa no banheiro antes de sair e nota que falta papel higiênico. Hora, então você adiciona mais este item em sua lista, agora ela passa a ser assim:
 + Miojo
-+ Queijo Ralado
++ Queijo ralado
 + Ovo
-+ Pasta de Dentes
-+ Papel Higiênico
++ Pasta de dentes
+
+Maravilha! Agora você pode ir ao mercado fazer minhas compras. Então você passa no banheiro antes de sair e nota que falta papel higiênico. Hora, então você adiciona mais este item em sua lista e ela passa a ser assim:
+
++ Miojo
++ Queijo ralado
++ Ovo
++ Pasta de dentes
++ Papel higiênico
 
 Ótimo, agora está tudo pronto e você vai ao mercado fazer suas compras!
-
-*** Listas Simples
 
 Este tipo de organização de itens ou objetos em listas é muito prático, podemos então aplicar o mesmo conceito a programação. Vamos criar uma lista de compras em um código Python, a sintaxe será a seguinte:
 
 #+begin_src python
-  listadecompras = ['Miojo', 'Queijo Ralado', 'Ovo', 'Pasta de Dentes']
+  listadecompras = ["Miojo", "Queijo ralado", "Ovo", "Pasta de dentes"]
   print(listadecompras)
 #+end_src
 
 #+RESULTS:
-: ['Miojo', 'Queijo Ralado', 'Ovo', 'Pasta de Dentes']
+: ['Miojo', 'Queijo ralado', 'Ovo', 'Pasta de dentes']
 
-Poxa, mas esqueci de incluir o Papel Higiênico na lista! Tudo bem, podemos adicionar itens a nossa lista com o método ~append~ do Python. Façamos o seguinte:
+Poxa, mas esqueci de incluir o papel higiênico na lista! Tudo bem, podemos adicionar itens a nossa lista com o método ~append~. Façamos o seguinte:
 
 #+begin_src python
-  listadecompras.append('Papel Higiênico')
+  listadecompras = ["Miojo", "Queijo ralado", "Ovo", "Pasta de dentes"]
+  print(listadecompras)
+
+  listadecompras.append("Papel higiênico")
   print(listadecompras)
 #+end_src
 
 #+RESULTS:
-: ['Miojo', 'Queijo Ralado', 'Ovo', 'Pasta de Dentes', 'Papel Higiênico']
+: ['Miojo', 'Queijo ralado', 'Ovo', 'Pasta de dentes']
+: ['Miojo', 'Queijo ralado', 'Ovo', 'Pasta de dentes', 'Papel higiênico']
 
-Perfeito, veja que o item foi adicionado a sua lista.
+Perfeito, veja que o item foi adicionado a sua lista! Mas... de onde veio esse ~append~? E por que chamamos ele de método e não de função?
 
-*** Listas dentro de listas.
+A resposta da primeira pergunta está intimamente relacionada ao fato de Python ser uma linguagem de programação orientada a objetos. Tudo em Python é um objeto[fn:: OK, /praticamente/ tudo em Python é um objeto. Certas coisas como os operadores e instruções como ~if~ e ~while~ não são objetos. Tudo que você declara é um objeto!]! Um objeto em Python é simplesmente um agrupamento de informações e funções; ao criar um objeto, você automaticamente "ganha de brinde" essas informações e funções sem a necessidade de fazer nada extra. É aqui que entra o ~append~ que vimos acima. Ele é uma "função" de todo objeto do tipo lista que serve para acrescentar um novo item no final da lista. Essas "funções de objeto" são chamadas de _métodos_ para diferenciar das funções que não estão associadas a objetos em particular. Métodos se comportam de maneira similar às funções que nós já vimos: devem ser chamados com parênteses, podem ter zero ou mais argumentos e podem ter zero ou mais valores de retorno.
+
+** Listas dentro de listas.
 
 Agora voltando a sua saída ao supermercado, antes de sair você lembra que precisa comprar um caderno, papel e caneta. Mas, infelizmente o mercado que você irá não tem esses itens, você precisará ir a papelaria ao lado para comprar esses itens. Então você naturalmente faz uma nova lista de compras para a papelaria, incluindo os itens necessários.
+
 + Caderno
 + Papel
 + Caneta
@@ -1455,33 +1462,49 @@ Agora voltando a sua saída ao supermercado, antes de sair você lembra que prec
 No Python, podemos fazer listas dentro de listas, então vamos fazer uma lista de listas com os objetos do mercado e da papelaria:
 
 #+begin_src python
-listadecompras = [['Miojo', 'Queijo Ralado', 'Ovo', 'Pasta de Dentes'], ['Caderno', 'Papel', 'Caneta']]
-print(listadecompras)
+  listadecompras = [
+      ["Miojo", "Queijo Ralado", "Ovo", "Pasta de Dentes"],
+      ["Caderno", "Papel", "Caneta"],
+  ]
+
+  print(listadecompras)
 #+end_src
 
 #+RESULTS:
 : [['Miojo', 'Queijo Ralado', 'Ovo', 'Pasta de Dentes'], ['Caderno', 'Papel', 'Caneta']]
 
-Agora você pode notar que temos duas listas na listadecompras, uma com os itens do mercado e uma com os itens da papelaria.
-Podemos imprimir as listas individualmente, para isso façamos o seguinte:
+Agora você pode notar que temos duas listas na variável ~listadecompras~, uma com os itens do mercado e uma com os itens da papelaria.
+Podemos exibir as listas individualmente, para isso façamos o seguinte:
 
 #+begin_src python
-print(listadecompras[0])
-print(listadecompras[1])
+  listadecompras = [
+      ["Miojo", "Queijo Ralado", "Ovo", "Pasta de Dentes"],
+      ["Caderno", "Papel", "Caneta"],
+  ]
+
+  print(listadecompras[0])
+  print(listadecompras[1])
 #+end_src
 
 #+RESULTS:
 : ['Miojo', 'Queijo Ralado', 'Ovo', 'Pasta de Dentes']
 : ['Caderno', 'Papel', 'Caneta']
 
-Note que primeiro é impresso a primeira lista, de índice 0 e depois a segunda lista, de índice 1. Lembrando que no Python a contagem começa sempre de zero.
+Note que o primeiro ~print~ exibe a primeira lista, de índice 0 e o segundo ~print~ exibe a segunda lista, de índice 1. Em Python a contagem começa sempre de zero e usamos os colchetes para resgatar os itens de listas.
+
 Perfeito, mas agora deu vontade de comer uma sobremesa após o seu miojo incrementado, então você quer adicionar este item a lista do supermercado. Além disso, você achou que convém comprar um pacote de post-it, para colocar na geladeira, para não esquecer tanto dos itens que você tem que comprar. Portanto, é necessário adicionarmos estes itens nas listas. Podemos fazer isso com a seguinte sintaxe no Python:
 
 #+begin_src python
-listadecompras[0].append('Chocolate')
-listadecompras[1].append('Post-it')
-print(listadecompras[0])
-print(listadecompras[1])
+  listadecompras = [
+      ["Miojo", "Queijo Ralado", "Ovo", "Pasta de Dentes"],
+      ["Caderno", "Papel", "Caneta"],
+  ]
+
+  listadecompras[0].append("Chocolate")
+  listadecompras[1].append("Post-it")
+
+  print(listadecompras[0])
+  print(listadecompras[1])
 #+end_src
 
 #+RESULTS:
@@ -1490,18 +1513,30 @@ print(listadecompras[1])
 
 Pronto, as listas estão atualizadas com os itens que você incluiu.
 
-*** Modificando, particionando e desempacotando listas
+** Modificando, particionando e desempacotando listas
 
 Já foi apresentado a vocês um dos métodos utilizados em listas, o append. Mas, existem outros métodos para listas, a seguir apresentaremos alguns deles.
+
 Vamos volta a nossa lista de compras. Você mudou de ideia quanto a sua sobremesa, não querendo mais o chocolate, mas sim um flan pronto de pote. Então precisamos remover o chocolate e inserir o flan. Vamos então remover o chocolate e adicionar o flan.
 
 #+begin_src python
-listadecompras[0].remove('Chocolate')
-listadecompras[0].append('Flan')
-print(listadecompras[0])
+  listadecompras = [
+      ["Miojo", "Queijo Ralado", "Ovo", "Pasta de Dentes"],
+      ["Caderno", "Papel", "Caneta"],
+  ]
+
+  listadecompras[0].append("Chocolate")
+
+  print(listadecompras[0])
+
+  listadecompras[0].remove("Chocolate")
+  listadecompras[0].append("Flan")
+
+  print(listadecompras[0])
 #+end_src
 
 #+RESULTS:
+: ['Miojo', 'Queijo Ralado', 'Ovo', 'Pasta de Dentes', 'Chocolate']
 : ['Miojo', 'Queijo Ralado', 'Ovo', 'Pasta de Dentes', 'Flan']
 
 Agora sim, podemos ver que a alteração foi realizada como você queria.
@@ -1557,7 +1592,8 @@ Existem vários métodos de listas no Python, que serão muito úteis na sua vid
 : listadecompras.append(papelaria)
 : print(listadecompras)
 
-*** Particionamento de listas.
+** Particionamento de listas.
+
 Já foi apresentado como acessar um item específico da lista anteriormente, com o argumento entre colchetes (listadecompras[0]). Porém, podemos particinar as listas, pegando vários elementos de interesse. Novamente utilizaremos índices entre colchetes, com a seguinte sintaxe: lista[Inicial:Final:Passo]. O 'Inicial' é o primeiro elemento da lista que desejamos, 'Final' é o elemento final desejado. Já 'Passo' é o de quantos em quantos elementos queremos, por exemplo, se o passo for 1, todos elementos na faixa específicada são impressos, se o passo for 2, só serão fornecidos elementos a cada dois. Vamos exemplificar para facilitar:
 
 #+begin_src python

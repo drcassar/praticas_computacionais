@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-03-22 ter 11:15 -->
+<!-- 2022-03-29 ter 10:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Práticas em Ciência de Dados</title>
@@ -222,38 +222,50 @@
 <h2>Índice</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org4114a39">1. Introdução</a>
+<li><a href="#orge69aa06">1. Introdução</a>
 <ul>
-<li><a href="#orge71a8f7">1.1. Olá! Que bom que você veio, aprochegue-se!</a></li>
-<li><a href="#orge1b8979">1.2. Python e o caderno de notas Jupyter</a></li>
-<li><a href="#org14aba8b">1.3. Links interessantes</a></li>
+<li><a href="#orgf0e4cad">1.1. Olá! Que bom que você veio, aprochegue-se!</a></li>
+<li><a href="#orga6de7db">1.2. Python e o caderno de notas Jupyter</a></li>
+<li><a href="#org9f65bec">1.3. Links interessantes</a></li>
 </ul>
 </li>
-<li><a href="#org25cc643">2. Jupyter, variáveis e como buscar ajuda</a>
+<li><a href="#orgd7f30eb">2. Jupyter, variáveis e como buscar ajuda</a>
 <ul>
-<li><a href="#orgaa9530c">2.1. Meu primeiro caderno de notas Jupyter</a></li>
-<li><a href="#orgb8ba0cd">2.2. Criando variáveis de diferentes tipos</a></li>
-<li><a href="#org5bbaa8d">2.3. Buscando ajuda</a></li>
+<li><a href="#org31fae3a">2.1. Meu primeiro caderno de notas Jupyter</a></li>
+<li><a href="#org4f03c3f">2.2. Criando variáveis de diferentes tipos</a></li>
+<li><a href="#org81b02e1">2.3. Buscando ajuda</a></li>
 </ul>
 </li>
-<li><a href="#orgc55cdce">3. Operadores e estrutura de decisão</a>
+<li><a href="#org01b3597">3. Operadores e estrutura de decisão</a>
 <ul>
-<li><a href="#orgb454e14">3.1. Operadores aritméticos</a></li>
-<li><a href="#org3d7af72">3.2. Operadores lógicos</a></li>
-<li><a href="#org9fbc58f">3.3. Operadores de comparação</a></li>
-<li><a href="#orga36af6d">3.4. Estrutura de decisão e operador condicional</a></li>
-<li><a href="#orgd1c47cb">3.5. Uma breve introdução sobre estilo</a></li>
+<li><a href="#org0dfd307">3.1. Operadores aritméticos</a></li>
+<li><a href="#org7e457f6">3.2. Operadores lógicos</a></li>
+<li><a href="#org341745f">3.3. Operadores de comparação</a></li>
+<li><a href="#org205b99b">3.4. Estrutura de decisão e operador condicional</a></li>
+<li><a href="#orge3562ee">3.5. Uma breve introdução sobre estilo</a></li>
 </ul>
 </li>
-<li><a href="#orgaa7e8e4">4. Funções</a>
+<li><a href="#orgfa5b836">4. Funções</a>
 <ul>
-<li><a href="#org938f672">4.1. O que é uma função?</a></li>
-<li><a href="#org8abc4b1">4.2. Funções embutidas</a></li>
-<li><a href="#org64022ca">4.3. Definindo novas funções</a></li>
-<li><a href="#orga18e500">4.4. Argumentos posicionais, argumentos nomeados e argumentos com valor padrão</a></li>
-<li><a href="#org7721e6f">4.5. Variáveis globais e variáveis locais</a></li>
-<li><a href="#org333f595">4.6. Documentando suas funções com a docstring</a></li>
-<li><a href="#orgde3f8de">4.7. Funções também são objetos!</a></li>
+<li><a href="#org9a06ce7">4.1. O que é uma função?</a></li>
+<li><a href="#org928bfa7">4.2. Funções embutidas</a></li>
+<li><a href="#org5366e26">4.3. Definindo novas funções</a></li>
+<li><a href="#org376686b">4.4. Argumentos posicionais, argumentos nomeados e argumentos com valor padrão</a></li>
+<li><a href="#org888772f">4.5. Variáveis globais e variáveis locais</a></li>
+<li><a href="#org8b23926">4.6. Documentando suas funções com a docstring</a></li>
+<li><a href="#orgaa837de">4.7. Funções também são objetos!</a></li>
+</ul>
+</li>
+<li><a href="#org8ca3f52">5. Listas</a>
+<ul>
+<li><a href="#orgbc52e62">5.1. Agrupando objetos com listas</a></li>
+<li><a href="#org6bb1963">5.2. Listas dentro de listas.</a></li>
+<li><a href="#org8a05e28">5.3. Modificando, particionando e desempacotando listas</a></li>
+<li><a href="#org921ee6d">5.4. Particionamento de listas.</a></li>
+<li><a href="#org093c6d7">5.5. &ldquo;Cópia rasa e cópia profunda&rdquo;</a></li>
+<li><a href="#org2d5ef98">5.6. &ldquo;Desempacotamento e Operador Asterisco&rdquo;</a></li>
+<li><a href="#orgeb7c30b">5.7. &ldquo;Tuplas&rdquo;</a></li>
+<li><a href="#org88884bf">5.8. &ldquo;Conjuntos são listas sem elementos repetidos&rdquo;</a></li>
 </ul>
 </li>
 </ul>
@@ -296,13 +308,13 @@
 </style>
 
 
-<div id="outline-container-org4114a39" class="outline-2">
-<h2 id="org4114a39"><span class="section-number-2">1.</span> Introdução</h2>
+<div id="outline-container-orge69aa06" class="outline-2">
+<h2 id="orge69aa06"><span class="section-number-2">1.</span> Introdução</h2>
 <div class="outline-text-2" id="text-1">
 </div>
 
-<div id="outline-container-orge71a8f7" class="outline-3">
-<h3 id="orge71a8f7"><span class="section-number-3">1.1.</span> Olá! Que bom que você veio, aprochegue-se!</h3>
+<div id="outline-container-orgf0e4cad" class="outline-3">
+<h3 id="orgf0e4cad"><span class="section-number-3">1.1.</span> Olá! Que bom que você veio, aprochegue-se!</h3>
 <div class="outline-text-3" id="text-1-1">
 <blockquote>
 <p>
@@ -336,8 +348,8 @@ Realize as práticas seguindo as instruções discutidas em sala de aula. Lembre
 </div>
 </div>
 
-<div id="outline-container-orge1b8979" class="outline-3">
-<h3 id="orge1b8979"><span class="section-number-3">1.2.</span> Python e o caderno de notas Jupyter</h3>
+<div id="outline-container-orga6de7db" class="outline-3">
+<h3 id="orga6de7db"><span class="section-number-3">1.2.</span> Python e o caderno de notas Jupyter</h3>
 <div class="outline-text-3" id="text-1-2">
 <blockquote>
 <p>
@@ -359,8 +371,8 @@ Apesar de não ser estritamente necessário utilizar os cadernos de notas Jupyte
 </div>
 </div>
 
-<div id="outline-container-org14aba8b" class="outline-3">
-<h3 id="org14aba8b"><span class="section-number-3">1.3.</span> Links interessantes</h3>
+<div id="outline-container-org9f65bec" class="outline-3">
+<h3 id="org9f65bec"><span class="section-number-3">1.3.</span> Links interessantes</h3>
 <div class="outline-text-3" id="text-1-3">
 <blockquote>
 <p>
@@ -411,13 +423,13 @@ Por fim, existem diversos materiais (tanto pagos quanto gratuitos) para aprendiz
 </div>
 </div>
 
-<div id="outline-container-org25cc643" class="outline-2">
-<h2 id="org25cc643"><span class="section-number-2">2.</span> Jupyter, variáveis e como buscar ajuda</h2>
+<div id="outline-container-orgd7f30eb" class="outline-2">
+<h2 id="orgd7f30eb"><span class="section-number-2">2.</span> Jupyter, variáveis e como buscar ajuda</h2>
 <div class="outline-text-2" id="text-2">
 </div>
 
-<div id="outline-container-orgaa9530c" class="outline-3">
-<h3 id="orgaa9530c"><span class="section-number-3">2.1.</span> Meu primeiro caderno de notas Jupyter</h3>
+<div id="outline-container-org31fae3a" class="outline-3">
+<h3 id="org31fae3a"><span class="section-number-3">2.1.</span> Meu primeiro caderno de notas Jupyter</h3>
 <div class="outline-text-3" id="text-2-1">
 <blockquote>
 <p>
@@ -478,8 +490,8 @@ Aprender qualquer linguagem, seja ela de programação ou não, requer treino. N
 </div>
 </div>
 
-<div id="outline-container-orgb8ba0cd" class="outline-3">
-<h3 id="orgb8ba0cd"><span class="section-number-3">2.2.</span> Criando variáveis de diferentes tipos</h3>
+<div id="outline-container-org4f03c3f" class="outline-3">
+<h3 id="org4f03c3f"><span class="section-number-3">2.2.</span> Criando variáveis de diferentes tipos</h3>
 <div class="outline-text-3" id="text-2-2">
 <blockquote>
 <p>
@@ -603,8 +615,8 @@ Existem diversos outros tipos de variáveis que veremos ao longo desta apostila.
 </div>
 </div>
 
-<div id="outline-container-org5bbaa8d" class="outline-3">
-<h3 id="org5bbaa8d"><span class="section-number-3">2.3.</span> Buscando ajuda</h3>
+<div id="outline-container-org81b02e1" class="outline-3">
+<h3 id="org81b02e1"><span class="section-number-3">2.3.</span> Buscando ajuda</h3>
 <div class="outline-text-3" id="text-2-3">
 <p class="verse">
 &ldquo;<i>Socorro! Eu preciso de alguém.<br />
@@ -656,13 +668,13 @@ O que você faria se não soubesse o que função <code>print</code> faz? Digamo
 </div>
 </div>
 
-<div id="outline-container-orgc55cdce" class="outline-2">
-<h2 id="orgc55cdce"><span class="section-number-2">3.</span> Operadores e estrutura de decisão</h2>
+<div id="outline-container-org01b3597" class="outline-2">
+<h2 id="org01b3597"><span class="section-number-2">3.</span> Operadores e estrutura de decisão</h2>
 <div class="outline-text-2" id="text-3">
 </div>
 
-<div id="outline-container-orgb454e14" class="outline-3">
-<h3 id="orgb454e14"><span class="section-number-3">3.1.</span> Operadores aritméticos</h3>
+<div id="outline-container-org0dfd307" class="outline-3">
+<h3 id="org0dfd307"><span class="section-number-3">3.1.</span> Operadores aritméticos</h3>
 <div class="outline-text-3" id="text-3-1">
 <blockquote>
 <p>
@@ -745,8 +757,8 @@ A ordem de precedência dos operadores aritméticos (isto é, a ordem de execuç
 </div>
 </div>
 
-<div id="outline-container-org3d7af72" class="outline-3">
-<h3 id="org3d7af72"><span class="section-number-3">3.2.</span> Operadores lógicos</h3>
+<div id="outline-container-org7e457f6" class="outline-3">
+<h3 id="org7e457f6"><span class="section-number-3">3.2.</span> Operadores lógicos</h3>
 <div class="outline-text-3" id="text-3-2">
 <blockquote>
 <p>
@@ -838,8 +850,8 @@ Operadores lógicos podem ser combinados na mesma declaração. Quando for fazer
 </div>
 </div>
 
-<div id="outline-container-org9fbc58f" class="outline-3">
-<h3 id="org9fbc58f"><span class="section-number-3">3.3.</span> Operadores de comparação</h3>
+<div id="outline-container-org341745f" class="outline-3">
+<h3 id="org341745f"><span class="section-number-3">3.3.</span> Operadores de comparação</h3>
 <div class="outline-text-3" id="text-3-3">
 <blockquote>
 <p>
@@ -888,8 +900,8 @@ A != B &lt; C == E - D - C
 </div>
 </div>
 
-<div id="outline-container-orga36af6d" class="outline-3">
-<h3 id="orga36af6d"><span class="section-number-3">3.4.</span> Estrutura de decisão e operador condicional</h3>
+<div id="outline-container-org205b99b" class="outline-3">
+<h3 id="org205b99b"><span class="section-number-3">3.4.</span> Estrutura de decisão e operador condicional</h3>
 <div class="outline-text-3" id="text-3-4">
 <blockquote>
 <p>
@@ -1078,8 +1090,8 @@ O código acima checa se o pH é ácido. Caso seja ácido o programa exibe &ldqu
 </div>
 </div>
 
-<div id="outline-container-orgd1c47cb" class="outline-3">
-<h3 id="orgd1c47cb"><span class="section-number-3">3.5.</span> Uma breve introdução sobre estilo</h3>
+<div id="outline-container-orge3562ee" class="outline-3">
+<h3 id="orge3562ee"><span class="section-number-3">3.5.</span> Uma breve introdução sobre estilo</h3>
 <div class="outline-text-3" id="text-3-5">
 <p class="verse">
 &ldquo;<i>Bonito é melhor que feio.<br />
@@ -1186,13 +1198,13 @@ Para iniciantes é recomendado sempre comentar seu código. Isso não só irá t
 </div>
 </div>
 
-<div id="outline-container-orgaa7e8e4" class="outline-2">
-<h2 id="orgaa7e8e4"><span class="section-number-2">4.</span> Funções</h2>
+<div id="outline-container-orgfa5b836" class="outline-2">
+<h2 id="orgfa5b836"><span class="section-number-2">4.</span> Funções</h2>
 <div class="outline-text-2" id="text-4">
 </div>
 
-<div id="outline-container-org938f672" class="outline-3">
-<h3 id="org938f672"><span class="section-number-3">4.1.</span> O que é uma função?</h3>
+<div id="outline-container-org9a06ce7" class="outline-3">
+<h3 id="org9a06ce7"><span class="section-number-3">4.1.</span> O que é uma função?</h3>
 <div class="outline-text-3" id="text-4-1">
 <blockquote>
 <p>
@@ -1221,8 +1233,8 @@ Basicamente, ao executar uma função ela recebe zero ou mais objetos (argumento
 </div>
 </div>
 
-<div id="outline-container-org8abc4b1" class="outline-3">
-<h3 id="org8abc4b1"><span class="section-number-3">4.2.</span> Funções embutidas</h3>
+<div id="outline-container-org928bfa7" class="outline-3">
+<h3 id="org928bfa7"><span class="section-number-3">4.2.</span> Funções embutidas</h3>
 <div class="outline-text-3" id="text-4-2">
 <blockquote>
 <p>
@@ -1236,8 +1248,8 @@ Existem diversas funções embutidas em Python. Estas funções podem ser usadas
 </div>
 </div>
 
-<div id="outline-container-org64022ca" class="outline-3">
-<h3 id="org64022ca"><span class="section-number-3">4.3.</span> Definindo novas funções</h3>
+<div id="outline-container-org5366e26" class="outline-3">
+<h3 id="org5366e26"><span class="section-number-3">4.3.</span> Definindo novas funções</h3>
 <div class="outline-text-3" id="text-4-3">
 <blockquote>
 <p>
@@ -1380,8 +1392,8 @@ Finalmente, a <code>funcao_6</code> recebe três argumentos e retorna os mesmos 
 </div>
 </div>
 
-<div id="outline-container-orga18e500" class="outline-3">
-<h3 id="orga18e500"><span class="section-number-3">4.4.</span> Argumentos posicionais, argumentos nomeados e argumentos com valor padrão</h3>
+<div id="outline-container-org376686b" class="outline-3">
+<h3 id="org376686b"><span class="section-number-3">4.4.</span> Argumentos posicionais, argumentos nomeados e argumentos com valor padrão</h3>
 <div class="outline-text-3" id="text-4-4">
 <blockquote>
 <p>
@@ -1485,8 +1497,8 @@ Observe que não é permitido declarar argumentos sem valor padrão após argume
 </div>
 </div>
 
-<div id="outline-container-org7721e6f" class="outline-3">
-<h3 id="org7721e6f"><span class="section-number-3">4.5.</span> Variáveis globais e variáveis locais</h3>
+<div id="outline-container-org888772f" class="outline-3">
+<h3 id="org888772f"><span class="section-number-3">4.5.</span> Variáveis globais e variáveis locais</h3>
 <div class="outline-text-3" id="text-4-5">
 <blockquote>
 <p>
@@ -1554,8 +1566,8 @@ Mesmo sabendo que variáveis globais podem ser utilizadas dentro de funções, e
 </div>
 </div>
 
-<div id="outline-container-org333f595" class="outline-3">
-<h3 id="org333f595"><span class="section-number-3">4.6.</span> Documentando suas funções com a docstring</h3>
+<div id="outline-container-org8b23926" class="outline-3">
+<h3 id="org8b23926"><span class="section-number-3">4.6.</span> Documentando suas funções com a docstring</h3>
 <div class="outline-text-3" id="text-4-6">
 <blockquote>
 <p>
@@ -1709,8 +1721,8 @@ Vamos analisar as diversas partes do exemplo acima:
 </div>
 </div>
 
-<div id="outline-container-orgde3f8de" class="outline-3">
-<h3 id="orgde3f8de"><span class="section-number-3">4.7.</span> Funções também são objetos!</h3>
+<div id="outline-container-orgaa837de" class="outline-3">
+<h3 id="orgaa837de"><span class="section-number-3">4.7.</span> Funções também são objetos!</h3>
 <div class="outline-text-3" id="text-4-7">
 <blockquote>
 <p>
@@ -1761,6 +1773,545 @@ Funções em Python são objetos assim como números e strings. Desta forma, pod
 <span class="linenr">36: </span><span style="color: #859900; font-weight: bold;">print</span>(funcao_composta(<span style="color: #6c71c4; font-weight: bold;">10</span>))  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">retorna 24</span>
 </pre>
 </div>
+
+<p>
+<b>[Desafio]</b> Escreva uma função chamada <code>poli</code> que recebe um argumento chamado <code>x</code> e mais \(n\) argumentos (\(n > 2\)) chamados de <code>c_0</code>, <code>c_1</code>, &#x2026; Estes argumentos que começam com a letra <code>c</code> serão os coeficientes de um polinômio de grau \(n\). A função <code>poli</code> recebe todos estes argumentos e calcula o valor do polinômio no ponto <code>x</code>. Agora crie uma função chamada <code>integral</code> que recebe 3 argumentos: <code>a</code>, <code>b</code> e <code>fun</code>. A função <code>integral</code> deve computar numericamente a integral entre <code>a</code> e <code>b</code> da função <code>fun</code>. Teste sua função <code>integral</code> usando a função <code>poli</code>. Não se esqueça de documentar suas funções com docstrings!
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8ca3f52" class="outline-2">
+<h2 id="org8ca3f52"><span class="section-number-2">5.</span> Listas</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+
+<div id="outline-container-orgbc52e62" class="outline-3">
+<h3 id="orgbc52e62"><span class="section-number-3">5.1.</span> Agrupando objetos com listas</h3>
+<div class="outline-text-3" id="text-5-1">
+<blockquote>
+<p>
+&ldquo;<i>Lists are how I parse and manage the world.</i>&rdquo; &#x2014; Adam Savage
+</p>
+</blockquote>
+
+<p>
+Vamos começar pensando no seguinte cenário, você está em casa e não tem nada para comer, portanto, precisa ir até o supermercado comprar ingredientes para uma receita. A primeira coisa que vem a sua cabeça é comprar um pacote de miojo pois, afinal, é fácil de preparar. Mas, sua fome está grande, então poderia comprar dois pacotes de miojo, mas isso não parece tão atraente. Lhe ocorre a ideia de incrementar o miojo, posso adicionar queijo ralado, talvez cozinhar um ovo junto com o miojo. Além disso, você resolve comprar uma bebida para acompanhar, um refrigerante. Então, você lembra que a pasta de dentes está acabando, então decide comprar também, para aproveitar a ida ao mercado. O número de itens a se comprar já começa a ficar grande, então é melhor organizar suas compras em uma lista.
+</p>
+
+<p>
+<b>[A]</b> Escreva a sua lista de compras em uma célula de markdown:
+</p>
+
+<ul class="org-ul">
+<li>Miojo</li>
+<li>Queijo ralado</li>
+<li>Ovo</li>
+<li>Pasta de dentes</li>
+</ul>
+
+<p>
+Maravilha! Agora você pode ir ao mercado fazer minhas compras. Então você passa no banheiro antes de sair e nota que falta papel higiênico. Hora, então você adiciona mais este item em sua lista.
+</p>
+
+<p>
+<b>[B]</b> Atualize sua lista em uma nova célula de markdown:
+</p>
+
+<ul class="org-ul">
+<li>Miojo</li>
+<li>Queijo ralado</li>
+<li>Ovo</li>
+<li>Pasta de dentes</li>
+<li>Papel higiênico</li>
+</ul>
+
+<p>
+Ótimo, agora está tudo pronto e você vai ao mercado fazer suas compras!
+</p>
+
+<p>
+Este tipo de organização de itens ou objetos em listas é muito prático, podemos então aplicar o mesmo conceito a programação. Vamos criar uma lista de compras em um código Python, a sintaxe será a seguinte:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">listadecompras</span> = [<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Queijo ralado"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Pasta de dentes"</span>]
+<span style="color: #859900; font-weight: bold;">print</span>(listadecompras)
+</pre>
+</div>
+
+<p>
+Poxa, mas esqueci de incluir o papel higiênico na lista! Tudo bem, podemos adicionar itens a nossa lista com o método <code>append</code>. Façamos o seguinte:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">listadecompras</span> = [<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Queijo ralado"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Pasta de dentes"</span>]
+<span style="color: #859900; font-weight: bold;">print</span>(listadecompras)
+
+listadecompras.append(<span style="color: #2aa198;">"Papel higi&#234;nico"</span>)
+<span style="color: #859900; font-weight: bold;">print</span>(listadecompras)
+</pre>
+</div>
+
+<p>
+Perfeito, veja que o item foi adicionado a sua lista! Mas&#x2026; de onde veio esse <code>append</code>? E por que chamamos ele de método e não de função?
+</p>
+
+<p>
+A resposta da primeira pergunta está intimamente relacionada ao fato de Python ser uma linguagem de programação orientada a objetos. Tudo em Python é um objeto<sup><a id="fnr.5" class="footref" href="#fn.5" role="doc-backlink">5</a></sup>! Um objeto em Python é simplesmente um agrupamento de informações e funções; ao criar um objeto, você automaticamente &ldquo;ganha de brinde&rdquo; essas informações e funções sem a necessidade de fazer nada extra. É aqui que entra o <code>append</code> que vimos acima. Ele é uma &ldquo;função&rdquo; de todo objeto do tipo lista que serve para acrescentar um novo item no final da lista. Essas &ldquo;funções de objeto&rdquo; são chamadas de <span class="underline">métodos</span> para diferenciar das funções que não estão associadas a objetos em particular. Métodos se comportam de maneira similar às funções que nós já vimos: devem ser chamados com parênteses, podem ter zero ou mais argumentos e podem ter zero ou mais valores de retorno.
+</p>
+
+<p>
+<b>[C]</b> Escreva você uma lista de supermercado, ou de outra coisa que lhe interessar. Desta vez escreva como uma lista de python mesmo. Após atribuir os objetos da lista, use o <code>print</code> para mostrar sua lista na tela e então use o método <code>append</code> para inserir mais itens e então imprima na tela novamente.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6bb1963" class="outline-3">
+<h3 id="org6bb1963"><span class="section-number-3">5.2.</span> Listas dentro de listas.</h3>
+<div class="outline-text-3" id="text-5-2">
+<blockquote>
+<p>
+&ldquo;<i>This category contains pages which catalog other lists.</i>&rdquo; &#x2014; Wikipedia
+</p>
+</blockquote>
+
+<p>
+Agora voltando a sua saída ao supermercado, antes de sair você lembra que precisa comprar um caderno, papel e caneta. Mas, infelizmente o mercado que você irá não tem esses itens, você precisará ir a papelaria ao lado para comprar esses itens. Então você naturalmente faz uma nova lista de compras para a papelaria, incluindo os itens necessários.
+</p>
+
+<ul class="org-ul">
+<li>Caderno</li>
+<li>Papel</li>
+<li>Caneta</li>
+</ul>
+
+<p>
+No Python, podemos fazer listas dentro de listas, então vamos fazer uma lista de listas com os objetos do mercado e da papelaria:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">listadecompras</span> = [
+    [<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Queijo Ralado"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Pasta de Dentes"</span>],
+    [<span style="color: #2aa198;">"Caderno"</span>, <span style="color: #2aa198;">"Papel"</span>, <span style="color: #2aa198;">"Caneta"</span>],
+]
+
+<span style="color: #859900; font-weight: bold;">print</span>(listadecompras)
+</pre>
+</div>
+
+<p>
+Agora você pode notar que temos duas listas na variável <code>listadecompras</code>, uma com os itens do mercado e uma com os itens da papelaria.
+Podemos exibir as listas individualmente, para isso façamos o seguinte:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">listadecompras</span> = [
+    [<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Queijo Ralado"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Pasta de Dentes"</span>],
+    [<span style="color: #2aa198;">"Caderno"</span>, <span style="color: #2aa198;">"Papel"</span>, <span style="color: #2aa198;">"Caneta"</span>],
+]
+
+<span style="color: #859900; font-weight: bold;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>])
+<span style="color: #859900; font-weight: bold;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">1</span>])
+</pre>
+</div>
+
+<p>
+Note que o primeiro <code>print</code> exibe a primeira lista, de índice 0 e o segundo <code>print</code> exibe a segunda lista, de índice 1. Em Python a contagem começa sempre de zero e usamos os colchetes para resgatar os itens de listas.
+</p>
+
+<p>
+Perfeito, mas agora deu vontade de comer uma sobremesa após o seu miojo incrementado, então você quer adicionar este item a lista do supermercado. Além disso, você achou que convém comprar um pacote de post-it, para colocar na geladeira, para não esquecer tanto dos itens que você tem que comprar. Portanto, é necessário adicionarmos estes itens nas listas. Podemos fazer isso com a seguinte sintaxe no Python:
+</p>
+
+<p>
+<b>[A]</b> Utilize a lista que você já declarou antes mas agora crie uma lista de listas, com uma segunda lista com outros itens, como foi mostrado no caso da lista do supermercado e da papelaria. Lembre-se de utilizar sua lista, não repetir as que demos de exemplo aqui.
+</p>
+
+<p>
+<b>[B]</b> Imprima cada uma das listas separadamente.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">listadecompras</span> = [
+    [<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Queijo Ralado"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Pasta de Dentes"</span>],
+    [<span style="color: #2aa198;">"Caderno"</span>, <span style="color: #2aa198;">"Papel"</span>, <span style="color: #2aa198;">"Caneta"</span>],
+]
+
+listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>].append(<span style="color: #2aa198;">"Chocolate"</span>)
+listadecompras[<span style="color: #6c71c4; font-weight: bold;">1</span>].append(<span style="color: #2aa198;">"Post-it"</span>)
+
+<span style="color: #859900; font-weight: bold;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>])
+<span style="color: #859900; font-weight: bold;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">1</span>])
+</pre>
+</div>
+
+<p>
+Pronto, as listas estão atualizadas com os itens que você incluiu.
+</p>
+
+<p>
+<b>[C]</b> Agora, nas listas da atividade <b>[B]</b>, use o método <code>append</code> para adicionar itens a cada uma das suas listas na lista de listas. Lembre-se de imprimir cada uma delas com a função <code>print</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8a05e28" class="outline-3">
+<h3 id="org8a05e28"><span class="section-number-3">5.3.</span> Modificando, particionando e desempacotando listas</h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+Já foi apresentado a vocês um dos métodos utilizados em listas, o append. Mas, existem outros métodos para listas, a seguir apresentaremos alguns deles.
+</p>
+
+<p>
+Vamos voltar a nossa lista de compras. Você mudou de ideia quanto a sua sobremesa, não querendo mais o chocolate, mas sim um flan pronto de pote, sobrou VA no final do mês, então dá pra se dar esse luxo :). Então precisamos remover o chocolate e inserir o flan. Vamos então remover o chocolate e adicionar o flan.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">listadecompras</span> = [
+    [<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Queijo Ralado"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Pasta de Dentes"</span>],
+    [<span style="color: #2aa198;">"Caderno"</span>, <span style="color: #2aa198;">"Papel"</span>, <span style="color: #2aa198;">"Caneta"</span>],
+]
+
+listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>].append(<span style="color: #2aa198;">"Chocolate"</span>)
+
+<span style="color: #859900; font-weight: bold;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>])
+
+listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>].remove(<span style="color: #2aa198;">"Chocolate"</span>)
+listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>].append(<span style="color: #2aa198;">"Flan"</span>)
+
+<span style="color: #859900; font-weight: bold;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>])
+</pre>
+</div>
+
+<p>
+Agora sim, podemos ver que a alteração foi realizada como você queria.
+</p>
+
+<p>
+<b>[A]</b> Novamente na sua lista anterior, remova um item e adicione outro utilizando os métodos <code>remove</code> e <code>append</code>.
+</p>
+
+<p>
+E caso você queira saber se já existe algo na lista, seria tedioso consultar toda a lista para conferir. No entanto, existe um método de listas do Python para fazer isto, chamada count. Vamos fazer um exemplo, para conferir se o miojo está na lista:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>].count(<span style="color: #2aa198;">'Miojo'</span>))
+</pre>
+</div>
+
+<p>
+Note que o programa retorna &ldquo;1&rdquo;, ou seja, ele está lhe dizendo que há o Miojo na lista uma vez. Agora teste escrever a palavra miojo somente em letras minúsculas, o que acontece?
+Além disso, o programa retornou um número, ou seja, você poderia ter mais que uma ocorrência para o item consultado. Isso signica que podem existir itens duplicados na lista, caso você tivesse adicionado miojo suas vezes, o count retornaria 2.
+</p>
+
+<p>
+<b>[B]</b> Existem vários métodos de listas no Python, que serão muito úteis na sua vida de programação. Abaixo seguem alguns e suas explicações e algumas perguntas:
+</p>
+<ul class="org-ul">
+<li>insert: Adiciona um elemento na posição especificada.<br />
+Exemplo: listadecompras[0].insert(0,&rsquo;Banana&rsquo;), adiciona Banana na primeira posição da lista.<br />
+<b>Pergunta 1:</b> O que acontece com os outros elementos?</li>
+<li>extend: Adicionar vários elementos no final da sua lista.<br />
+Exemplo: listadecompras[0].extend([&rsquo;Pão&rsquo;, &rsquo;Queijo&rsquo;, &rsquo;Presunto&rsquo;])<br />
+<b>Pergunta 2:</b> Os elementos foram adicionados corretamente? Note que ao invés de adicionar os itens na sintaxe anterior, você poderia adicionar outra lista, definida anteriormente.</li>
+<li>index: Retorna o índice do primeiro elemento com o valor requisitado.<br />
+Exemplo: listadecompras[0].index(&rsquo;Ovo&rsquo;)<br />
+<b>Pergunta 3:</b> O índice reportado é o que você esperava?</li>
+<li>pop: Remove o elemento da posição requida.<br />
+Exemplo: listadecompras[0].pop(5)<br />
+<b>Pergunta 4:</b> Qual item foi removido? Foi o esperado?</li>
+<li>sort: Ordena sua lista de maneira crescente, tanto com números como ordem alfabética. Note que você pode ordenar a lista, mas não a lista dentro da lista.<br /></li>
+</ul>
+
+<p>
+<b>[Desafio 1]</b> Como você faria para ordenar suas duas listas de compras, tendo no final ainda as duas listas dentro de uma lista de listas?
+</p>
+
+<ul class="org-ul">
+<li>reverse: Inverte a ordem de sua lista. Novamente tome cuidado pois este método ordena listas, não listas dentro de listas. Além disso, ele simplesmente reverte a ordem existente, ou seja, ele não coloca em ordem decrescente.<br /></li>
+</ul>
+
+<p>
+<b>[Desafio 2]</b> Coloque cada lista de sua lista de listas na ordem contrária a alfabética.
+</p>
+
+<p>
+<b>[C]</b> Com a sua lista de listas, escolha 2 métodos e os aplique a sua lista (fora o <code>append</code> e <code>remove</code> que já foram utilizados). Algum método lhe pareceu particularmente útil?
+</p>
+</div>
+</div>
+
+<div id="outline-container-org921ee6d" class="outline-3">
+<h3 id="org921ee6d"><span class="section-number-3">5.4.</span> Particionamento de listas.</h3>
+<div class="outline-text-3" id="text-5-4">
+<p>
+Já foi apresentado como acessar um item específico da lista anteriormente, com o argumento entre colchetes (listadecompras[0]). Porém, podemos particinar as listas, pegando vários elementos de interesse. Novamente utilizaremos índices entre colchetes, com a seguinte sintaxe: lista[Inicial:Final:Passo]. O &rsquo;Inicial&rsquo; é o primeiro elemento da lista que desejamos, &rsquo;Final&rsquo; é o elemento final desejado. Já &rsquo;Passo&rsquo; é o de quantos em quantos elementos queremos, por exemplo, se o passo for 1, todos elementos na faixa específicada são impressos, se o passo for 2, só serão fornecidos elementos a cada dois. Vamos exemplificar para facilitar:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">listadecompras</span> = [
+    [<span style="color: #2aa198;">"Queijo Ralado"</span>, <span style="color: #2aa198;">"Queijo"</span>, <span style="color: #2aa198;">"P&#227;o"</span>, <span style="color: #2aa198;">"Pasta de Dentes"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Flan"</span>, <span style="color: #2aa198;">"Banana"</span>],
+    [<span style="color: #2aa198;">"Caderno"</span>, <span style="color: #2aa198;">"Papel"</span>, <span style="color: #2aa198;">"Caneta"</span>, <span style="color: #2aa198;">"Post-it"</span>],
+]
+
+<span style="color: #859900; font-weight: bold;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>][<span style="color: #6c71c4; font-weight: bold;">0</span>:<span style="color: #6c71c4; font-weight: bold;">6</span>:<span style="color: #6c71c4; font-weight: bold;">2</span>])
+</pre>
+</div>
+
+<p>
+Porque temos dois colchetes? Porque estamo particionando a primeira lista de nossa lista de listas. No primeiro colchetes [0], estamos específicando a primeira de nossas duas listas. No segundo colchetes estamos particionando a lista começando do elemento zero até o elemento 6, pulando de dois em dois.
+A saída do código anterior é [&rsquo;Queijo Ralado&rsquo;, &rsquo;Pão&rsquo;, &rsquo;Ovo&rsquo;], sendo que nossa lista completa é [&rsquo;Queijo Ralado&rsquo;, &rsquo;Queijo&rsquo;, &rsquo;Pão&rsquo;, &rsquo;Pasta de Dentes&rsquo;, &rsquo;Ovo&rsquo;, &rsquo;Miojo&rsquo;, &rsquo;Flan&rsquo;, &rsquo;Banana&rsquo;]. Logo foram impressos os elementros 0, 2 e 4. Mas o elemento 6 também não deveria ser impresso? Parece lógico, mas, como o Python começa sua contagem de zero, ao invés de um, sempre que especificamos faixas de valores o elemento final do intervalo não é considerado. Portanto, caso queira o último elemento incluso sempre considere n+1. Façamos isso então:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>][<span style="color: #6c71c4; font-weight: bold;">0</span>:<span style="color: #6c71c4; font-weight: bold;">7</span>:<span style="color: #6c71c4; font-weight: bold;">2</span>])
+</pre>
+</div>
+
+<p>
+Com este comando o código imprimiu [&rsquo;Queijo Ralado&rsquo;, &rsquo;Pão&rsquo;, &rsquo;Ovo&rsquo;, &rsquo;Flan&rsquo;], incluindo o sexto elemento da lista. Então, tenha isso sempre em mente com o Python, a contagem começa em zero e o último elemento das faixas de valores não é incluído. Também podemos utilizar índices negativos no particionamento de listas, mas como assim? O que acontece quando usamos índices negativos? Basicamente a contagem é de traz para frente. Então, se pedirmos a seguinte faixa [-4,-1] para nossa lista de compras do supermercado, o código imprimirá [&rsquo;Ovo&rsquo;, &rsquo;Miojo&rsquo;, &rsquo;Flan&rsquo;], sendo esses os elementos -4, -3 e -2, já que o último elemento não vai ser incluído por ser o final do intervalo. Se quisermos também o último elemento e colocarmos o intervalo como [-4:0] teremos um erro de sintaxe, então, para obter os quatro últimos elementos a sintaxe correta será [-4:], que irá imprimir do elemento -4 até o último.
+</p>
+
+<p>
+<b>[A]</b> Utilize o particionamento de lista em uma lista que você criou. Faça para dois passos e duas faixas de valores.
+</p>
+
+<p>
+<b>[B]</b> Imprima os três últimos elementos de uma lista criada por você.
+</p>
+
+<p>
+<b>[Desafio 1]</b> Crie uma lista de quatro números e some todos os números da lista, também encontre a média dos quatro números da lista.
+</p>
+
+<p>
+<b>[Desafio 2]</b> Encontre os valores máximo e mínimo de uma lista de quatro números.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org093c6d7" class="outline-3">
+<h3 id="org093c6d7"><span class="section-number-3">5.5.</span> &ldquo;Cópia rasa e cópia profunda&rdquo;</h3>
+<div class="outline-text-3" id="text-5-5">
+<p>
+Agora vamos tratar de cópias no Python. Para listas o Python tem uma maneira bastante peculiar para cópias, onde são criados links entre as listas e não simplesmente copiados os objetos. Vamos a um exemplo para deixar mais claro:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">lista1</span> = (<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo Ralado"</span>) <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Defi&#231;&#227;o da lista1 com seus objetos</span>
+<span style="color: #268bd2;">lista2</span> = lista1                            <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Criamos uma lista2 igual a lista1</span>
+<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Lista 1 Original"</span>)                  <span style="color: #96A7A9; font-style: italic;">#</span>
+<span style="color: #859900; font-weight: bold;">print</span>(lista1)                              <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Imprime a lista1</span>
+<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Lista 2 Original"</span>)                  <span style="color: #96A7A9; font-style: italic;">#</span>
+<span style="color: #859900; font-weight: bold;">print</span>(lista2)                              <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Imprime a lista2</span>
+<span style="color: #268bd2;">lista2</span>[<span style="color: #6c71c4; font-weight: bold;">2</span>] = <span style="color: #2aa198;">"Or&#233;gano"</span>                      <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Altera o elemento 2 da lista2 para Or&#233;gano</span>
+<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Lista 2 Alterada"</span>)                  <span style="color: #96A7A9; font-style: italic;">#</span>
+<span style="color: #859900; font-weight: bold;">print</span>(lista2)                              <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Imprime a lista2 alterada</span>
+<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Lista 1 depois de alterar lista 2"</span>) <span style="color: #96A7A9; font-style: italic;">#</span>
+<span style="color: #859900; font-weight: bold;">print</span>(lista1)                              <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Imprime a lista1 ap&#243;s a altera&#231;&#227;o da lista2</span>
+</pre>
+</div>
+
+<p>
+Bom, nesse código definimos uma lista1, criamos uma lista2 igualando a lista1, por fim alteramos a lista2. Como a cópia é criada com links, ou vínculos, a lista1 e a lista2 dependem uma da outra. Então, quando a lista2 foi alterada, a lista1 também foi, como vocês podem notar na saída do código. Isso pode ser interessante para alguns casos, porém, na maioria das vezes o desejável é ter dados independentes uns dos outros. Para isso, precisamos utilizar o método deepcopy do Python, que é uma cópia profunda, sem vínculos com o objeto anterior. Para isso precisamos importar a função copy e utilizar o método deepcopy, como segue:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">import</span> copy
+<span style="color: #268bd2;">lista1</span> = (<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo Ralado"</span>) <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Defi&#231;&#227;o da lista1 com seus objetos</span>
+<span style="color: #268bd2;">lista2</span> = copy.deepcopy(lista1)             <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Criamos uma lista2 igual a lista1</span>
+<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Lista 1 Original"</span>)                  <span style="color: #96A7A9; font-style: italic;">#</span>
+<span style="color: #859900; font-weight: bold;">print</span>(lista1)                              <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Imprime a lista1</span>
+<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Lista 2 Original"</span>)                  <span style="color: #96A7A9; font-style: italic;">#</span>
+<span style="color: #859900; font-weight: bold;">print</span>(lista2)                              <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Imprime a lista2</span>
+<span style="color: #268bd2;">lista2</span>[<span style="color: #6c71c4; font-weight: bold;">2</span>] = <span style="color: #2aa198;">"Or&#233;gano"</span>                      <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Altera o elemento 2 da lista2 para Or&#233;gano</span>
+<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Lista 2 Alterada"</span>)                  <span style="color: #96A7A9; font-style: italic;">#</span>
+<span style="color: #859900; font-weight: bold;">print</span>(lista2)                              <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Imprime a lista2 alterada</span>
+<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Lista 1 depois de alterar lista 2"</span>) <span style="color: #96A7A9; font-style: italic;">#</span>
+<span style="color: #859900; font-weight: bold;">print</span>(lista1)                              <span style="color: #96A7A9; font-style: italic;">#</span><span style="color: #96A7A9; font-style: italic;">Imprime a lista1 ap&#243;s a altera&#231;&#227;o da lista2</span>
+</pre>
+</div>
+
+<p>
+<b>[A]</b> Para uma lista criada por você, mostre os dois casos de cópia simples e cópia profunda, lembre de mostrar a diferença quando alteramos uma das listas após a cópia.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2d5ef98" class="outline-3">
+<h3 id="org2d5ef98"><span class="section-number-3">5.6.</span> &ldquo;Desempacotamento e Operador Asterisco&rdquo;</h3>
+<div class="outline-text-3" id="text-5-6">
+<p>
+No Python podemos utilizar uma notação específica para definir várias variáveis ao mesmo tempo, como segue:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">item0</span>, <span style="color: #268bd2;">item1</span>, <span style="color: #268bd2;">item2</span> = <span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo"</span>
+<span style="color: #859900; font-weight: bold;">print</span>(item0)
+<span style="color: #859900; font-weight: bold;">print</span>(item1)
+<span style="color: #859900; font-weight: bold;">print</span>(item2)
+</pre>
+</div>
+
+<p>
+Notem que item0=&ldquo;Miojo&rdquo;, item1=&ldquo;Ovo&rdquo; e item2=&ldquo;Queijo&rdquo;. Podemos utilizar isso para desempacotar uma lista, por exemplo:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">lista</span> = [<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo"</span>]
+<span style="color: #268bd2;">item0</span>, <span style="color: #268bd2;">item1</span>, <span style="color: #268bd2;">item2</span> = lista
+<span style="color: #859900; font-weight: bold;">print</span>(item0)
+<span style="color: #859900; font-weight: bold;">print</span>(item1)
+<span style="color: #859900; font-weight: bold;">print</span>(item2)
+</pre>
+</div>
+
+<p>
+<b>[A]</b> Desempacote uma lista criada por você. Lembre-se de imprimir todos os itens com a função <code>print</code>.
+</p>
+
+<p>
+Os itens0, 1 e 2 foram definidos de acordo com os elementos da lista, no código mostrado anteriormente. Caso a lista não tenha a mesma dimensão do número de variáveis que estamos definindo, o que acontece?
+</p>
+
+<p>
+<b>[B]</b> Para averiguar, utilize o código a seguir, comente sobre o que aconteceu.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">lista</span> = [<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo"</span>, <span style="color: #2aa198;">"P&#227;o"</span>, <span style="color: #2aa198;">"Or&#233;gano"</span>]
+<span style="color: #268bd2;">item0</span>, <span style="color: #268bd2;">item1</span>, <span style="color: #268bd2;">item2</span> = lista
+</pre>
+</div>
+
+<p>
+Para lidar com este tipo de situação podemos utilizar o operador asterisco, que pegará os elementos restantes e atribuirá a variável indicada, por exemplo:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">lista</span> = [<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo"</span>, <span style="color: #2aa198;">"P&#227;o"</span>, <span style="color: #2aa198;">"Or&#233;gano"</span>]
+item0, item1, *<span style="color: #268bd2;">resto</span> = lista
+<span style="color: #859900; font-weight: bold;">print</span>(item0)
+<span style="color: #859900; font-weight: bold;">print</span>(item1)
+<span style="color: #859900; font-weight: bold;">print</span>(resto)
+</pre>
+</div>
+
+<p>
+Agora nosso comando funciona! Tivemos então o item0=&ldquo;Miojo&rdquo;, item1=&ldquo;Ovo&rdquo; e resto=[&rsquo;Queijo&rsquo;, &rsquo;Pão&rsquo;, &rsquo;Orégano&rsquo;]. A posição do operador asterisco não precisa ser necessáriamente na última variável, ela pode ficar na primeira, ou na do meio, por exemplo:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">lista</span> = [<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo"</span>, <span style="color: #2aa198;">"P&#227;o"</span>, <span style="color: #2aa198;">"Or&#233;gano"</span>]
+item0, *<span style="color: #268bd2;">item1</span>, <span style="color: #268bd2;">item2</span> = lista
+<span style="color: #859900; font-weight: bold;">print</span>(item0)
+<span style="color: #859900; font-weight: bold;">print</span>(item1)
+<span style="color: #859900; font-weight: bold;">print</span>(item2)
+*<span style="color: #268bd2;">item0</span>, <span style="color: #268bd2;">item1</span>, <span style="color: #268bd2;">item2</span> = lista
+<span style="color: #859900; font-weight: bold;">print</span>(item0)
+<span style="color: #859900; font-weight: bold;">print</span>(item1)
+<span style="color: #859900; font-weight: bold;">print</span>(item2)
+</pre>
+</div>
+
+<p>
+<b>[C]</b> Como se comportou o código de acordo com onde ficou o asterisco?
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgeb7c30b" class="outline-3">
+<h3 id="orgeb7c30b"><span class="section-number-3">5.7.</span> &ldquo;Tuplas&rdquo;</h3>
+<div class="outline-text-3" id="text-5-7">
+<p>
+Existe outro tipo de dados no Python que são chamadas tuplas. As tuplas são basicamente listas imutáveis. Como assim imutáveis? Isso significa que uma vez que ela foi definida, não podemos mais adicionar ou remover elementos, bem como não é possível modificar sua ordem. Então, voltando ao nosso exemplo do supermercado, se você quiser estabelecer alguns itens que serão comprados recorrentemente, podemos colocá-los em uma tupla. Vamos a um exemplo:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">itensrecorrentes</span> = (<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo Ralado"</span>)
+<span style="color: #859900; font-weight: bold;">print</span>(itensrecorrentes)
+</pre>
+</div>
+
+<p>
+<b>[A]</b> Qual a diferença na sintaxe para a declaração de tuplas, comparando com a de listas? Seja atento, pois pequenos detalhes fazem muita diferença do Python.
+</p>
+
+<p>
+Então, agora esta tupla será composta sempre por estes itens, não podendo modificá-los ou alterar sua ordem. Por conta disso as tuplas só tem dois métodos possíveis, o count e o index, que tem a mesma função que nas listas, que é contar quantos itens existem na tupla e qual o índice do objeto requisitado.
+O interessante é que podemos utilizar o método extend das listas incluindo a tupla. Vamos criar uma nova lista então:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">listadecompras</span> = []
+listadecompras.extend(itensrecorrentes)
+<span style="color: #859900; font-weight: bold;">print</span>(listadecompras)
+</pre>
+</div>
+
+<p>
+Na primeira linha inicializamos uma lista vazia, apenas para criá-la, para poder utilizar o método extend nela na segunda linha. Podemos ver que agora temos uma lista criada a partir da tupla, então podemos voltar a adicionar os itens de interesse.
+</p>
+
+<p>
+<b>[B]</b> Crie uma tupla com itens de seu interesse. Após isso, construa uma lista a partir dessa tupla.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org88884bf" class="outline-3">
+<h3 id="org88884bf"><span class="section-number-3">5.8.</span> &ldquo;Conjuntos são listas sem elementos repetidos&rdquo;</h3>
+<div class="outline-text-3" id="text-5-8">
+<p>
+Ainda nos tipos de objetos do Python, ainda temos os conjuntos, que são basicamente listas sem elementos repetidos. Os conjuntos possuem seus métodos específicos também, que englobam métodos equivalentes aos das listas, como: remove(), pop(). Mas especificamente para conjuntos, temos operações matemáticas já conhecidas, como união e intersecção. Vamos definir dois conjuntos e operá-los, com nossa analogia de listas de compras, vamos pensar que você fez anotações para compras em dois lugares diferentes e agora você quer juntá-las.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">conjunto1</span> = {<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo"</span>}
+<span style="color: #268bd2;">conjunto2</span> = {<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"P&#227;o"</span>, <span style="color: #2aa198;">"Queijo"</span>, <span style="color: #2aa198;">"Or&#233;gano"</span>, <span style="color: #2aa198;">"P&#227;o"</span>}
+<span style="color: #859900; font-weight: bold;">print</span>(conjunto1)
+<span style="color: #859900; font-weight: bold;">print</span>(conjunto2)
+</pre>
+</div>
+
+<p>
+<b>[A]</b> Qual a diferença na sintaxe para a declaração de conjuntos, tuplas e listas?
+</p>
+
+<p>
+<b>[B]</b> Quando você imprimiu o conjunto2, quantas vezes apareceu &ldquo;Pão&rdquo;? Quantas vezes ele estava na declaração? Porque desta diferença? Pode usar a internet para descobrir, mas lembre-se de citar suas fontes!
+</p>
+
+<p>
+Agora vamos realizar algumas operações com os conjuntos:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">intersection</span> = conjunto1.intersection(conjunto2)
+<span style="color: #859900; font-weight: bold;">print</span>(intersection)
+<span style="color: #268bd2;">union</span> = conjunto1.union(conjunto2)
+<span style="color: #859900; font-weight: bold;">print</span>(union)
+</pre>
+</div>
+
+<p>
+<b>[C]</b> Os resultados estão de acordo com o que você esperava?
+</p>
+
+<p>
+Além desses métodos temos outros exclusivos de conjuntos, como segue:
+</p>
+<ul class="org-ul">
+<li>add: Adiciona um elemento ao conjunto. Sintaxe: conjunto.add(&ldquo;Presunto&rdquo;)</li>
+<li>difference: Faz a subtração de dois conjuntos. Sintaxe: difference = conjunto1.difference(conjunto2)</li>
+<li>discard: Remove o elemento especificado do conjunto. Parece igual ao remove, mas, neste caso você não terá uma mensagem de erro caso o elemento não exista no conjunto. Sintaxe: conjunto.discard(&ldquo;Banana&rdquo;)</li>
+<li>update: Com este método você pode incluir um iterável no conjunto, que pode ser outro conjunto, lista, tupla, &#x2026;</li>
+</ul>
+
+<p>
+<b>[D]</b> Crie três conjuntos com itens de seu interesse. Realize operações de adição, diferença, interseção e união com eles.
+</p>
 </div>
 </div>
 </div>
@@ -1776,12 +2327,14 @@ Funções em Python são objetos assim como números e strings. Desta forma, pod
 
 <div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4" role="doc-backlink">4</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">Na verdade, veremos adiante que existem casos onde argumentos podem não ter nome, são os chamados argumentos estrela. Não se preocupe com isso agora.</p></div></div>
 
+<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5" role="doc-backlink">5</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">OK, <i>praticamente</i> tudo em Python é um objeto. Certas coisas como os operadores e instruções como <code>if</code> e <code>while</code> não são objetos. Tudo que você declara é um objeto!</p></div></div>
+
 
 </div>
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Daniel R. Cassar &amp; James M. de Almeida</p>
-<p class="date">Created: 2022-03-22 ter 11:15</p>
+<p class="date">Created: 2022-03-29 ter 10:48</p>
 </div>
 </body>
 </html>

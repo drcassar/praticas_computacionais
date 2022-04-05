@@ -56,26 +56,21 @@
 :EXPORT_OPTIONS: toc:nil
 :END:
 
-1. Introdução
-2. Jupyter, variáveis e como buscar ajuda
-3. Operadores e estrutura de decisão
-4. Funções
-5. Listas
-6. Tuplas e conjuntos
-7. Laço de repetição
-8. Depuração de programas
-9. Dicionários
-10. Strings e processamento de texto
-11. Scripts de python, bash e HPC
-12. Programação orientada a objetos
-13. Biblioteca padrão
-14. Leitura e manipulação de dados com o módulo pandas
-15. Graficando dados
-16. Controle de versão usando git
-17. Computação científica com numpy e scipy
-18. Álgebra simbólica com sympy
-19. Propagação de erros com uncertainties
-20. Tópicos avançados
+1. Jupyter, variáveis e como buscar ajuda
+2. Operadores e estrutura de decisão
+3. Funções
+4. Listas, tuplas e conjuntos
+5. Laço de repetição
+6. Dicionários e depuração de programas
+7. Strings e processamento de texto
+8. Scripts de python, bash e HPC
+9. Biblioteca padrão e bibliotecas externas
+10. Computação científica com numpy e scipy
+11. Leitura e manipulação de dados com o módulo pandas
+12. Graficando dados
+13. Controle de versão usando git
+14. Tópicos avançados
+15. Apresentação dos trabalhos de conclusão do semestre
 
 * Introdução
 :PROPERTIES:
@@ -2934,7 +2929,6 @@ https://github.com/jerry-git/learn-python3
 + separar valores e chaves de dicionários em duas listas
 + concatenar duas listas de string element-wise
 + Create a program that asks the user to enter their name and their age. Print out a message addressed to them that tells them the year that they will turn 100 years old.
-+ Ask the user for a number. Depending on whether the number is even or odd, print out an appropriate message to the user.
 + use compreensão de lista para identificar números impares em uma lista
 + criar um jogo de jokenpo a ser jogado por duas pessoas
 + exercicio onde o computador escolhe um numero aleatorio e o usuario deve adivinhar com dicas de maior ou menor
@@ -2955,4 +2949,3 @@ https://bas.codes/posts/python-slicing
 + criando módulos de python
 + geradores
 + decoradores
-

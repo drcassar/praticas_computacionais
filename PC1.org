@@ -1399,7 +1399,7 @@ Funções em Python são objetos assim como números e strings. Desta forma, pod
 
 *[Desafio]* Escreva uma função chamada ~poli~ que recebe um argumento chamado ~x~ e mais $n$ argumentos ($n > 2$) chamados de ~c_0~, ~c_1~, ... Estes argumentos que começam com a letra ~c~ serão os coeficientes de um polinômio de grau $n$. A função ~poli~ recebe todos estes argumentos e calcula o valor do polinômio no ponto ~x~. Agora crie uma função chamada ~integral~ que recebe 3 argumentos: ~a~, ~b~ e ~fun~. A função ~integral~ deve computar numericamente a integral entre ~a~ e ~b~ da função ~fun~. Teste sua função ~integral~ usando a função ~poli~. Não se esqueça de documentar suas funções com docstrings!
 
-* Listas
+* Listas, tuplas e conjuntos
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_listas
 :EXPORT_OPTIONS: toc:t
@@ -1407,28 +1407,18 @@ Funções em Python são objetos assim como números e strings. Desta forma, pod
 :END:
 
 ** Agrupando objetos com listas
+
 #+begin_quote
 "/Lists are how I parse and manage the world./" --- Adam Savage
 #+end_quote
 
-Vamos começar pensando no seguinte cenário, você está em casa e não tem nada para comer, portanto, precisa ir até o supermercado comprar ingredientes para uma receita. A primeira coisa que vem a sua cabeça é comprar um pacote de miojo pois, afinal, é fácil de preparar. Mas, sua fome está grande, então poderia comprar dois pacotes de miojo, mas isso não parece tão atraente. Lhe ocorre a ideia de incrementar o miojo, posso adicionar queijo ralado, talvez cozinhar um ovo junto com o miojo. Além disso, você resolve comprar uma bebida para acompanhar, um refrigerante. Então, você lembra que a pasta de dentes está acabando, então decide comprar também, para aproveitar a ida ao mercado. O número de itens a se comprar já começa a ficar grande, então é melhor organizar suas compras em uma lista.
+Vamos começar pensando no seguinte cenário, você está em casa e não tem nada para comer... logo, você precisa ir até o supermercado comprar ingredientes para uma receita. A primeira coisa que vem a sua cabeça é comprar um pacote de miojo pois, afinal, é fácil de preparar. Mas, sua fome está grande, então poderia comprar dois pacotes de miojo, mas isso não parece tão atraente. Lhe ocorre a ideia de incrementar o miojo. Você pode adicionar queijo ralado, talvez cozinhar um ovo junto com o miojo. Além disso, você resolve comprar uma bebida para acompanhar, um refrigerante. Então, você lembra que a pasta de dentes está acabando, então decide comprar também, para aproveitar a ida ao mercado. O número de itens a se comprar já começa a ficar grande, então é melhor organizar suas compras em uma lista.
 
-*[A]* Escreva a sua lista de compras em uma célula de markdown:
-
-+ Miojo
-+ Queijo ralado
-+ Ovo
-+ Pasta de dentes
+*[A]* Escreva a /sua/ lista de compras de supermercado desta semana em uma célula de texto no jupyter.
 
 Maravilha! Agora você pode ir ao mercado fazer minhas compras. Então você passa no banheiro antes de sair e nota que falta papel higiênico. Hora, então você adiciona mais este item em sua lista.
 
-*[B]* Atualize sua lista em uma nova célula de markdown:
-
-+ Miojo
-+ Queijo ralado
-+ Ovo
-+ Pasta de dentes
-+ Papel higiênico
+*[B]* Atualize sua lista com um item que você esqueceu em uma nova célula de markdown.
 
 Ótimo, agora está tudo pronto e você vai ao mercado fazer suas compras!
 
@@ -1460,9 +1450,10 @@ Perfeito, veja que o item foi adicionado a sua lista! Mas... de onde veio esse ~
 
 A resposta da primeira pergunta está intimamente relacionada ao fato de Python ser uma linguagem de programação orientada a objetos. Tudo em Python é um objeto[fn:: OK, /praticamente/ tudo em Python é um objeto. Certas coisas como os operadores e instruções como ~if~ e ~while~ não são objetos. Tudo que você declara é um objeto!]! Um objeto em Python é simplesmente um agrupamento de informações e funções; ao criar um objeto, você automaticamente "ganha de brinde" essas informações e funções sem a necessidade de fazer nada extra. É aqui que entra o ~append~ que vimos acima. Ele é uma "função" de todo objeto do tipo lista que serve para acrescentar um novo item no final da lista. Essas "funções de objeto" são chamadas de _métodos_ para diferenciar das funções que não estão associadas a objetos em particular. Métodos se comportam de maneira similar às funções que nós já vimos: devem ser chamados com parênteses, podem ter zero ou mais argumentos e podem ter zero ou mais valores de retorno.
 
-*[C]* Escreva você uma lista de supermercado, ou de outra coisa que lhe interessar. Desta vez escreva como uma lista de python mesmo. Após atribuir os objetos da lista, use o ~print~ para mostrar sua lista na tela e então use o método ~append~ para inserir mais itens e então imprima na tela novamente.
+*[C]* Escreva a lista da prática [A] acima como uma lista de Python. Após atribuir os objetos da lista, use o ~print~ para mostrar sua lista na tela. Use o método ~append~ para inserir o item da prática [B] acima e então exiba todos os itens da lista com ~print~ novamente.
 
 ** Listas dentro de listas.
+
 #+begin_quote
 "/This category contains pages which catalog other lists./" --- Wikipedia
 #+end_quote
@@ -1487,8 +1478,7 @@ No Python, podemos fazer listas dentro de listas, então vamos fazer uma lista d
 #+RESULTS:
 : [['Miojo', 'Queijo Ralado', 'Ovo', 'Pasta de Dentes'], ['Caderno', 'Papel', 'Caneta']]
 
-Agora você pode notar que temos duas listas na variável ~listadecompras~, uma com os itens do mercado e uma com os itens da papelaria.
-Podemos exibir as listas individualmente, para isso façamos o seguinte:
+Agora você pode notar que temos duas listas na variável ~listadecompras~, uma com os itens do mercado e uma com os itens da papelaria. Podemos exibir as listas individualmente, para isso façamos o seguinte:
 
 #+begin_src python
   listadecompras = [
@@ -1506,11 +1496,7 @@ Podemos exibir as listas individualmente, para isso façamos o seguinte:
 
 Note que o primeiro ~print~ exibe a primeira lista, de índice 0 e o segundo ~print~ exibe a segunda lista, de índice 1. Em Python a contagem começa sempre de zero e usamos os colchetes para resgatar os itens de listas.
 
-Perfeito, mas agora deu vontade de comer uma sobremesa após o seu miojo incrementado, então você quer adicionar este item a lista do supermercado. Além disso, você achou que convém comprar um pacote de post-it, para colocar na geladeira, para não esquecer tanto dos itens que você tem que comprar. Portanto, é necessário adicionarmos estes itens nas listas. Podemos fazer isso com a seguinte sintaxe no Python:
-
-*[A]* Utilize a lista que você já declarou antes mas agora crie uma lista de listas, com uma segunda lista com outros itens, como foi mostrado no caso da lista do supermercado e da papelaria. Lembre-se de utilizar sua lista, não repetir as que demos de exemplo aqui.
-
-*[B]* Imprima cada uma das listas separadamente.
+Perfeito, mas agora deu vontade de comer uma sobremesa após o miojo incrementado, então você quer adicionar este item a lista do supermercado. Além disso, você achou que convém comprar um pacote de post-it, para colocar na geladeira, para não esquecer tanto dos itens que você tem que comprar. Portanto, é necessário adicionarmos estes itens nas listas. Podemos fazer isso com a seguinte sintaxe no Python:
 
 #+begin_src python
   listadecompras = [
@@ -1529,15 +1515,19 @@ Perfeito, mas agora deu vontade de comer uma sobremesa após o seu miojo increme
 : ['Miojo', 'Queijo Ralado', 'Ovo', 'Pasta de Dentes', 'Chocolate']
 : ['Caderno', 'Papel', 'Caneta', 'Post-it']
 
+*[A]* Crie uma lista de listas. Faça isso de tal forma que todas as listas que você criou sejam diferentes, assim como no exemplo da lista do supermercado e da papelaria. Lembre-se de utilizar a sua lista, não repetir as que demos de exemplo aqui.
+
+*[B]* Exiba cada uma das listas da prática acima separadamente com o comando ~print~.
+
 Pronto, as listas estão atualizadas com os itens que você incluiu.
 
-*[C]* Agora, nas listas da atividade *[B]*, use o método ~append~ para adicionar itens a cada uma das suas listas na lista de listas. Lembre-se de imprimir cada uma delas com a função ~print~.
+*[C]* Agora, nas listas da atividade *[B]*, use o método ~append~ para adicionar itens a cada uma das suas listas na lista de listas. Lembre-se de exibir cada uma delas com a função ~print~.
 
 ** Modificando, particionando e desempacotando listas
 
-Já foi apresentado a vocês um dos métodos utilizados em listas, o append. Mas, existem outros métodos para listas, a seguir apresentaremos alguns deles.
+Já foi apresentado um dos métodos utilizados em listas, o ~append~. Mas, existem outros métodos para listas, a seguir veremos alguns deles.
 
-Vamos voltar a nossa lista de compras. Você mudou de ideia quanto a sua sobremesa, não querendo mais o chocolate, mas sim um flan pronto de pote, sobrou VA no final do mês, então dá pra se dar esse luxo :). Então precisamos remover o chocolate e inserir o flan. Vamos então remover o chocolate e adicionar o flan.
+Vamos voltar a nossa lista de compras. Você mudou de ideia quanto a sua sobremesa, não querendo mais o chocolate, mas sim um flan pronto de pote, sobrou VA no final do mês, então dá pra se dar esse luxo :). Então precisamos remover o chocolate e inserir o flan.
 
 #+begin_src python
   listadecompras = [
@@ -1561,36 +1551,46 @@ Vamos voltar a nossa lista de compras. Você mudou de ideia quanto a sua sobreme
 
 Agora sim, podemos ver que a alteração foi realizada como você queria.
 
-*[A]* Novamente na sua lista anterior, remova um item e adicione outro utilizando os métodos ~remove~ e ~append~.
+*[A]* Na sua lista da prática anterior, remova um item e adicione outro utilizando os métodos ~remove~ e ~append~.
 
 E caso você queira saber se já existe algo na lista, seria tedioso consultar toda a lista para conferir. No entanto, existe um método de listas do Python para fazer isto, chamada count. Vamos fazer um exemplo, para conferir se o miojo está na lista:
 
 #+begin_src python
-print(listadecompras[0].count('Miojo'))
+  print(listadecompras[0].count("Miojo"))
 #+end_src
 
 #+RESULTS:
 : 1
 
-Note que o programa retorna "1", ou seja, ele está lhe dizendo que há o Miojo na lista uma vez. Agora teste escrever a palavra miojo somente em letras minúsculas, o que acontece?
+Note que o programa retorna "1", ou seja, ele está lhe dizendo que há o Miojo na lista uma vez. Agora teste buscar por "miojo" utilizando somente letras minúsculas, o que acontece?
+
 Além disso, o programa retornou um número, ou seja, você poderia ter mais que uma ocorrência para o item consultado. Isso signica que podem existir itens duplicados na lista, caso você tivesse adicionado miojo suas vezes, o count retornaria 2.
 
 *[B]* Existem vários métodos de listas no Python, que serão muito úteis na sua vida de programação. Abaixo seguem alguns e suas explicações e algumas perguntas:
-+ insert: Adiciona um elemento na posição especificada.\\
-	Exemplo: listadecompras[0].insert(0,'Banana'), adiciona Banana na primeira posição da lista.\\
-	*Pergunta 1:* O que acontece com os outros elementos?
-+ extend: Adicionar vários elementos no final da sua lista.\\
-	Exemplo: listadecompras[0].extend(['Pão', 'Queijo', 'Presunto'])\\
-	*Pergunta 2:* Os elementos foram adicionados corretamente? Note que ao invés de adicionar os itens na sintaxe anterior, você poderia adicionar outra lista, definida anteriormente.
-+ index: Retorna o índice do primeiro elemento com o valor requisitado.\\
-	Exemplo: listadecompras[0].index('Ovo')\\
-	*Pergunta 3:* O índice reportado é o que você esperava?
-+ pop: Remove o elemento da posição requida.\\
-	Exemplo: listadecompras[0].pop(5)\\
-	*Pergunta 4:* Qual item foi removido? Foi o esperado?
-+ sort: Ordena sua lista de maneira crescente, tanto com números como ordem alfabética. Note que você pode ordenar a lista, mas não a lista dentro da lista.\\
 
-*[Desafio 1]* Como você faria para ordenar suas duas listas de compras, tendo no final ainda as duas listas dentro de uma lista de listas?
++ ~insert~: Adiciona um elemento na posição especificada.\\
+	Exemplo: ~listadecompras[0].insert(0, "Banana")~, adiciona Banana na posição zero da lista.\\
+	*Pergunta 1:* O que acontece com os outros elementos?
+
++ ~extend~: Adicionar vários elementos de uma lista no final da sua lista.\\
+	Exemplo: ~listadecompras[0].extend(['Pão', 'Queijo', 'Presunto'])~\\
+	*Pergunta 2:* Os elementos foram adicionados corretamente? Note que ao invés de adicionar os itens na sintaxe anterior, você poderia adicionar outra lista, definida anteriormente.
+
++ ~index~: Retorna o índice do primeiro elemento com o valor requisitado.\\
+	Exemplo: ~listadecompras[0].index('Ovo')~\\
+	*Pergunta 3:* O índice reportado é o que você esperava?
+
++ ~pop~: Remove o elemento da posição requida.\\
+	Exemplo: ~listadecompras[0].pop(5)~\\
+	*Pergunta 4:* Qual item foi removido? Foi o esperado?
+
++ ~sort~: Ordena sua lista de maneira crescente, tanto com números como ordem alfabética. Note que você pode ordenar a lista, mas não a lista dentro da lista.\\
+
++ ~reverse~: Inverte a ordem de sua lista. Novamente tome cuidado pois este método ordena listas, não listas dentro de listas. Além disso, ele simplesmente reverte a ordem existente, ou seja, ele não coloca em ordem decrescente.\\
+
+*[C]* Com a sua lista de listas, escolha 2 métodos e os aplique a sua lista (fora o ~append~ e ~remove~ que já foram utilizados). Algum método lhe pareceu particularmente útil?
+
+*[Desafio 1]* Como você faria para ordenar alfabeticamente suas duas listas de compras, tendo no final ainda as duas listas dentro de uma lista de listas?
 
 # #+RESULTS:
 # : mercado = listadecompras[0]
@@ -1602,8 +1602,6 @@ Além disso, o programa retornou um número, ou seja, você poderia ter mais que
 # : listadecompras = []
 # : listadecompras.append(mercado)
 # : listadecompras.append(papelaria)
-
-+ reverse: Inverte a ordem de sua lista. Novamente tome cuidado pois este método ordena listas, não listas dentro de listas. Além disso, ele simplesmente reverte a ordem existente, ou seja, ele não coloca em ordem decrescente.\\
 
 *[Desafio 2]* Coloque cada lista de sua lista de listas na ordem contrária a alfabética.
 
@@ -1619,93 +1617,160 @@ Além disso, o programa retornou um número, ou seja, você poderia ter mais que
 # : listadecompras.append(papelaria)
 # : print(listadecompras)
 
-*[C]* Com a sua lista de listas, escolha 2 métodos e os aplique a sua lista (fora o ~append~ e ~remove~ que já foram utilizados). Algum método lhe pareceu particularmente útil?
+** Particionamento de listas
 
-** Particionamento de listas.
-
-Já foi apresentado como acessar um item específico da lista anteriormente, com o argumento entre colchetes (listadecompras[0]). Porém, podemos particinar as listas, pegando vários elementos de interesse. Novamente utilizaremos índices entre colchetes, com a seguinte sintaxe: lista[Inicial:Final:Passo]. O 'Inicial' é o primeiro elemento da lista que desejamos, 'Final' é o elemento final desejado. Já 'Passo' é o de quantos em quantos elementos queremos, por exemplo, se o passo for 1, todos elementos na faixa específicada são impressos, se o passo for 2, só serão fornecidos elementos a cada dois. Vamos exemplificar para facilitar:
+Já foi apresentado como acessar um item específico da lista anteriormente, com o argumento entre colchetes (~listadecompras[0]~). Porém, podemos particinar as listas, pegando vários elementos de interesse. Novamente utilizaremos índices entre colchetes, com a seguinte sintaxe: lista[Inicial:Final:Passo]. O 'Inicial' é o primeiro elemento da lista que desejamos, 'Final' é o elemento final desejado. Já 'Passo' é o de quantos em quantos elementos queremos, por exemplo, se o passo for 1, todos elementos na faixa específicada são impressos, se o passo for 2, só serão fornecidos elementos a cada dois. Vamos exemplificar para facilitar:
 
 #+begin_src python
   listadecompras = [
-      ["Queijo Ralado", "Queijo", "Pão", "Pasta de Dentes", "Ovo", "Miojo", "Flan", "Banana"],
-      ["Caderno", "Papel", "Caneta", "Post-it"],
+      [
+          "Queijo Ralado",
+          "Queijo",
+          "Pão",
+          "Pasta de Dentes",
+          "Ovo",
+          "Miojo",
+          "Flan",
+          "Banana",
+      ],
+      [
+          "Caderno",
+          "Papel",
+          "Caneta",
+          "Post-it",
+      ],
   ]
 
   print(listadecompras[0][0:6:2])
 #+end_src
 
-Porque temos dois colchetes? Porque estamo particionando a primeira lista de nossa lista de listas. No primeiro colchetes [0], estamos específicando a primeira de nossas duas listas. No segundo colchetes estamos particionando a lista começando do elemento zero até o elemento 6, pulando de dois em dois.
-A saída do código anterior é ['Queijo Ralado', 'Pão', 'Ovo'], sendo que nossa lista completa é ['Queijo Ralado', 'Queijo', 'Pão', 'Pasta de Dentes', 'Ovo', 'Miojo', 'Flan', 'Banana']. Logo foram impressos os elementros 0, 2 e 4. Mas o elemento 6 também não deveria ser impresso? Parece lógico, mas, como o Python começa sua contagem de zero, ao invés de um, sempre que especificamos faixas de valores o elemento final do intervalo não é considerado. Portanto, caso queira o último elemento incluso sempre considere n+1. Façamos isso então:
+Porque temos dois colchetes? Porque estamo particionando a primeira lista de nossa lista de listas. No primeiro colchetes ~[0]~, estamos específicando a primeira de nossas duas listas. No segundo colchetes estamos particionando a lista começando do elemento zero até o elemento 6, pulando de dois em dois.
+
+A saída do código anterior é ~['Queijo Ralado', 'Pão', 'Ovo']~, sendo que nossa lista completa é ~['Queijo Ralado', 'Queijo', 'Pão', 'Pasta de Dentes', 'Ovo', 'Miojo', 'Flan', 'Banana']~. Logo foram impressos os elementros 0, 2 e 4. Mas o elemento 6 também não deveria ser exibido? Parece lógico, mas, como o Python começa sua contagem de zero, ao invés de um, sempre que especificamos faixas de valores o elemento final do intervalo não é considerado. Portanto, caso queira o último elemento incluso sempre considere n+1. Façamos isso então:
 
 #+begin_src python
-print(listadecompras[0][0:7:2])
+  print(listadecompras[0][0:7:2])
 #+end_src
 
-Com este comando o código imprimiu ['Queijo Ralado', 'Pão', 'Ovo', 'Flan'], incluindo o sexto elemento da lista. Então, tenha isso sempre em mente com o Python, a contagem começa em zero e o último elemento das faixas de valores não é incluído. Também podemos utilizar índices negativos no particionamento de listas, mas como assim? O que acontece quando usamos índices negativos? Basicamente a contagem é de traz para frente. Então, se pedirmos a seguinte faixa [-4,-1] para nossa lista de compras do supermercado, o código imprimirá ['Ovo', 'Miojo', 'Flan'], sendo esses os elementos -4, -3 e -2, já que o último elemento não vai ser incluído por ser o final do intervalo. Se quisermos também o último elemento e colocarmos o intervalo como [-4:0] teremos um erro de sintaxe, então, para obter os quatro últimos elementos a sintaxe correta será [-4:], que irá imprimir do elemento -4 até o último.
+Com este comando o código exibiu ~['Queijo Ralado', 'Pão', 'Ovo', 'Flan']~, incluindo o sexto elemento da lista. Então, tenha isso sempre em mente com o Python, a contagem começa em zero e o último elemento das faixas de valores não é incluído.
+
+Também podemos utilizar índices negativos no particionamento de listas, mas como assim? O que acontece quando usamos índices negativos? Basicamente a contagem é de traz para frente. Então, se pedirmos a seguinte faixa ~[-4,-1]~ para nossa lista de compras do supermercado, o código imprimirá ~['Ovo', 'Miojo', 'Flan']~, sendo esses os elementos -4, -3 e -2, já que o último elemento não vai ser incluído por ser o final do intervalo. Se quisermos também o último elemento e colocarmos o intervalo como ~[-4:0]~ teremos um erro de sintaxe, então, para obter os quatro últimos elementos a sintaxe correta será ~[-4:]~, que irá imprimir do elemento -4 até o último.
 
 *[A]* Utilize o particionamento de lista em uma lista que você criou. Faça para dois passos e duas faixas de valores.
 
-*[B]* Imprima os três últimos elementos de uma lista criada por você.
+*[B]* Exiba os três últimos elementos de uma lista criada por você (esta deve ter pelo menos 4 elementos).
 
 *[Desafio 1]* Crie uma lista de quatro números e some todos os números da lista, também encontre a média dos quatro números da lista.
 
 *[Desafio 2]* Encontre os valores máximo e mínimo de uma lista de quatro números.
 
-** "Cópia rasa e cópia profunda"
+*[Desafio 3]* Crie uma função que recebe duas listas de mesmo tamanho (estas listas devem conter apenas valores numéricos). O programa deve retornar uma lista que é a multiplicação por elementos das listas (isto é, o elemento na posição zero da lista final é a multiplicação dos elementos da posição zero das listas de entrada; o mesmo vale para os elementos das demais posições). Sua função deve conter uma docstring e para esse desafio não é permitido usar funções importadas de outras bibliotecas.
+
+*[Desafio 4]* Crie uma função que recebe um número posinivo $n$ e retorna uma lista com os $n$ primeiros valores da sequência de Fibonacci. Sua função deve conter uma docstring e para esse desafio não é permitido usar funções importadas de outras bibliotecas.
+
+*[Desafio 5]* Crie uma função que recebe uma lista contendo números inteiros. Esta função retorna duas listas: a primeira lista (~lista_retorno_1~) deve conter todos os números da lista original em ordem crescente e sem repetição; a segunda lista deve conter a contagem em que cada número da ~lista_retorno_1~ aparece na lista original recebida pela função. Sua função deve conter uma docstring e para esse desafio não é permitido usar funções importadas de outras bibliotecas.
+
+** Copiando listas
 
 Agora vamos tratar de cópias no Python. Para listas o Python tem uma maneira bastante peculiar para cópias, onde são criados links entre as listas e não simplesmente copiados os objetos. Vamos a um exemplo para deixar mais claro:
 
-#+begin_src python
-lista1 = ("Miojo", "Ovo", "Queijo Ralado") #Defição da lista1 com seus objetos
-lista2 = lista1                            #Criamos uma lista2 igual a lista1
-print("Lista 1 Original")                  #
-print(lista1)                              #Imprime a lista1
-print("Lista 2 Original")                  #
-print(lista2)                              #Imprime a lista2
-lista2[2] = "Orégano"                      #Altera o elemento 2 da lista2 para Orégano
-print("Lista 2 Alterada")                  #
-print(lista2)                              #Imprime a lista2 alterada
-print("Lista 1 depois de alterar lista 2") #
-print(lista1)                              #Imprime a lista1 após a alteração da lista2
+#+begin_src python -n
+  lista1 = ["Miojo", "Ovo", "Queijo Ralado"]
+  lista2 = lista1  # Criamos uma lista2 igual a lista1
+
+  print("Lista 1 Original")
+  print(lista1)
+  print("Lista 2 Original")
+  print(lista2)
+
+  print()
+
+  lista2[2] = "Orégano"  # Altera o elemento 2 da lista2 para Orégano
+
+  print("Lista 2 Alterada")
+  print(lista2)  # Exibe a lista2 alterada
+  print("Lista 1 depois de alterar lista 2")
+  print(lista1)  # Exibe a lista1 após a alteração da lista2
 #+end_src
 
-Bom, nesse código definimos uma lista1, criamos uma lista2 igualando a lista1, por fim alteramos a lista2. Como a cópia é criada com links, ou vínculos, a lista1 e a lista2 dependem uma da outra. Então, quando a lista2 foi alterada, a lista1 também foi, como vocês podem notar na saída do código. Isso pode ser interessante para alguns casos, porém, na maioria das vezes o desejável é ter dados independentes uns dos outros. Para isso, precisamos utilizar o método deepcopy do Python, que é uma cópia profunda, sem vínculos com o objeto anterior. Para isso precisamos importar a função copy e utilizar o método deepcopy, como segue:
+#+RESULTS:
+: Lista 1 Original
+: ['Miojo', 'Ovo', 'Queijo Ralado']
+: Lista 2 Original
+: ['Miojo', 'Ovo', 'Queijo Ralado']
+:
+: Lista 2 Alterada
+: ['Miojo', 'Ovo', 'Orégano']
+: Lista 1 depois de alterar lista 2
+: ['Miojo', 'Ovo', 'Orégano']
 
-#+begin_src python
-import copy
-lista1 = ("Miojo", "Ovo", "Queijo Ralado") #Defição da lista1 com seus objetos
-lista2 = copy.deepcopy(lista1)             #Criamos uma lista2 igual a lista1
-print("Lista 1 Original")                  #
-print(lista1)                              #Imprime a lista1
-print("Lista 2 Original")                  #
-print(lista2)                              #Imprime a lista2
-lista2[2] = "Orégano"                      #Altera o elemento 2 da lista2 para Orégano
-print("Lista 2 Alterada")                  #
-print(lista2)                              #Imprime a lista2 alterada
-print("Lista 1 depois de alterar lista 2") #
-print(lista1)                              #Imprime a lista1 após a alteração da lista2
+Bom, nesse código definimos uma ~lista1~, criamos uma ~lista2~ igualando a ~lista1~, por fim alteramos a ~lista2~. Como a cópia é criada com links, ou vínculos, a ~lista1~ e a ~lista2~ dependem uma da outra. Em outras palavras: elas estão conectadas! Então, quando a ~lista2~ foi alterada, a ~lista1~ também foi, como vocês podem notar na saída do código. Isso pode ser interessante para alguns casos, porém, na maioria das vezes o desejável é ter dados independentes uns dos outros. Para isso, precisamos utilizar o método ~copy~ de listas. Veja o exemplo abaixo.
+
+#+begin_src python -n
+  lista1 = ["Miojo", "Ovo", "Queijo Ralado"]
+  lista2 = lista1.copy()  # Usando o método `copy`
+
+  print("Lista 1 Original")
+  print(lista1)
+  print("Lista 2 Original")
+  print(lista2)
+
+  print()
+
+  lista2[2] = "Orégano"  # Altera o elemento 2 da lista2 para Orégano
+
+  print("Lista 2 Alterada")
+  print(lista2)  # Exibe a lista2 alterada
+  print("Lista 1 depois de alterar lista 2")
+  print(lista1)  # Exibe a lista1 após a alteração da lista2
 #+end_src
 
-*[A]* Para uma lista criada por você, mostre os dois casos de cópia simples e cópia profunda, lembre de mostrar a diferença quando alteramos uma das listas após a cópia.
+#+RESULTS:
+: Lista 1 Original
+: ['Miojo', 'Ovo', 'Queijo Ralado']
+: Lista 2 Original
+: ['Miojo', 'Ovo', 'Queijo Ralado']
+:
+: Lista 2 Alterada
+: ['Miojo', 'Ovo', 'Orégano']
+: Lista 1 depois de alterar lista 2
+: ['Miojo', 'Ovo', 'Queijo Ralado']
 
-** "Desempacotamento e Operador Asterisco"
+*[A]* Para uma lista criada por você, mostre os dois casos de cópia, um usando o operador de atribuição (~=~) e outro usando o método ~copy~, lembre de mostrar a diferença quando alteramos uma das listas após a cópia.
+
+** Desempacotamento e Operador Asterisco
+
 No Python podemos utilizar uma notação específica para definir várias variáveis ao mesmo tempo, como segue:
 
 #+begin_src python
-item0, item1, item2 = "Miojo", "Ovo", "Queijo"
-print(item0)
-print(item1)
-print(item2)
+  item0, item1, item2 = "Miojo", "Ovo", "Queijo"
+
+  print(item0)
+  print(item1)
+  print(item2)
 #+end_src
 
+#+RESULTS:
+: Miojo
+: Ovo
+: Queijo
+
 Notem que item0="Miojo", item1="Ovo" e item2="Queijo". Podemos utilizar isso para desempacotar uma lista, por exemplo:
+
 #+begin_src python
-lista = ["Miojo", "Ovo", "Queijo"]
-item0, item1, item2 = lista
-print(item0)
-print(item1)
-print(item2)
+  lista = ["Miojo", "Ovo", "Queijo"]
+
+  item0, item1, item2 = lista
+
+  print(item0)
+  print(item1)
+  print(item2)
 #+end_src
+
+#+RESULTS:
+: Miojo
+: Ovo
+: Queijo
 
 *[A]* Desempacote uma lista criada por você. Lembre-se de imprimir todos os itens com a função ~print~.
 
@@ -1714,89 +1779,146 @@ Os itens0, 1 e 2 foram definidos de acordo com os elementos da lista, no código
 *[B]* Para averiguar, utilize o código a seguir, comente sobre o que aconteceu.
 
 #+begin_src python
-lista = ["Miojo", "Ovo", "Queijo", "Pão", "Orégano"]
-item0, item1, item2 = lista
+  lista = ["Miojo", "Ovo", "Queijo", "Pão", "Orégano"]
+
+  item0, item1, item2 = lista
+
+  print(item0)
+  print(item1)
+  print(item2)
 #+end_src
 
-Para lidar com este tipo de situação podemos utilizar o operador asterisco, que pegará os elementos restantes e atribuirá a variável indicada, por exemplo:
+#+RESULTS:
+
+Para lidar com este tipo de situação podemos utilizar o operador asterisco (também conhecido como operador estrela), que pegará os elementos restantes e atribuirá a variável indicada, por exemplo:
 
 #+begin_src python
-lista = ["Miojo", "Ovo", "Queijo", "Pão", "Orégano"]
-item0, item1, *resto = lista
-print(item0)
-print(item1)
-print(resto)
+  lista = ["Miojo", "Ovo", "Queijo", "Pão", "Orégano"]
+
+  item0, item1, *resto = lista
+
+  print(item0)
+  print(item1)
+  print(resto)
 #+end_src
 
-Agora nosso comando funciona! Tivemos então o item0="Miojo", item1="Ovo" e resto=['Queijo', 'Pão', 'Orégano']. A posição do operador asterisco não precisa ser necessáriamente na última variável, ela pode ficar na primeira, ou na do meio, por exemplo:
+#+RESULTS:
+: Miojo
+: Ovo
+: ['Queijo', 'Pão', 'Orégano']
+
+Agora nosso comando funciona! Tivemos então o item0="Miojo", item1="Ovo" e resto=['Queijo', 'Pão', 'Orégano'].
+
+A posição do operador asterisco não precisa ser necessáriamente na última variável, ela pode ficar na primeira, ou na do meio, por exemplo:
 
 #+begin_src python
-lista = ["Miojo", "Ovo", "Queijo", "Pão", "Orégano"]
-item0, *item1, item2 = lista
-print(item0)
-print(item1)
-print(item2)
-*item0, item1, item2 = lista
-print(item0)
-print(item1)
-print(item2)
+  lista = ["Miojo", "Ovo", "Queijo", "Pão", "Orégano"]
+
+  item0, *item1, item2 = lista
+
+  print(item0)
+  print(item1)
+  print(item2)
+
+  print()
+
+  *item0, item1, item2 = lista
+
+  print(item0)
+  print(item1)
+  print(item2)
 #+end_src
 
-*[C]* Como se comportou o código de acordo com onde ficou o asterisco?
+#+RESULTS:
+: Miojo
+: ['Ovo', 'Queijo', 'Pão']
+: Orégano
+:
+: ['Miojo', 'Ovo', 'Queijo']
+: Pão
+: Orégano
 
-** "Tuplas"
-Existe outro tipo de dados no Python que são chamadas tuplas. As tuplas são basicamente listas imutáveis. Como assim imutáveis? Isso significa que uma vez que ela foi definida, não podemos mais adicionar ou remover elementos, bem como não é possível modificar sua ordem. Então, voltando ao nosso exemplo do supermercado, se você quiser estabelecer alguns itens que serão comprados recorrentemente, podemos colocá-los em uma tupla. Vamos a um exemplo:
+*[C]* Como se comportou o código acima de acordo com onde ficou o asterisco?
+
+** Tuplas
+
+Existe outro tipo de dados no Python que são chamadas tuplas. As tuplas são basicamente listas imutáveis. Como assim imutáveis? Isso significa que uma vez que ela foi definida, não podemos mais adicionar ou remover elementos, bem como não é possível modificar sua ordem. Então, voltando ao nosso exemplo do supermercado, se você quiser estabelecer uma lista perpétua de itens a serem comprados (que jamais serão alterados), você pode colocá-los em uma tupla. Vamos a um exemplo:
 
 #+begin_src python
-itensrecorrentes = ("Miojo", "Ovo", "Queijo Ralado")
-print(itensrecorrentes)
+  itensrecorrentes = ("Miojo", "Ovo", "Queijo Ralado")
+  print(itensrecorrentes)
 #+end_src
+
+#+RESULTS:
+: ('Miojo', 'Ovo', 'Queijo Ralado')
+
+Então, agora esta tupla será composta sempre por estes itens, não podendo modificá-los ou alterar sua ordem. Por conta disso as tuplas só tem dois métodos possíveis, o ~count~ e o ~index~, que tem a mesma função que nas listas, que é contar quantos itens existem na tupla e qual o índice do objeto requisitado.
 
 *[A]* Qual a diferença na sintaxe para a declaração de tuplas, comparando com a de listas? Seja atento, pois pequenos detalhes fazem muita diferença do Python.
 
-Então, agora esta tupla será composta sempre por estes itens, não podendo modificá-los ou alterar sua ordem. Por conta disso as tuplas só tem dois métodos possíveis, o count e o index, que tem a mesma função que nas listas, que é contar quantos itens existem na tupla e qual o índice do objeto requisitado.
-O interessante é que podemos utilizar o método extend das listas incluindo a tupla. Vamos criar uma nova lista então:
+O interessante é que podemos utilizar o método ~extend~ com uma tupla como argumento. Veja que, neste caso, quem está sendo alterado é a lista, não a tupla. A tupla seria apenas a fonte de informação com a qual vamos atualizar a lista. Vamos ver um exemplo:
 
-#+begin_src python
-listadecompras = []
-listadecompras.extend(itensrecorrentes)
-print(listadecompras)
+#+begin_src python -n
+  itensrecorrentes = ("Miojo", "Ovo", "Queijo Ralado")
+
+  listadecompras = []
+  listadecompras.extend(itensrecorrentes)
+
+  print(listadecompras)
 #+end_src
 
-Na primeira linha inicializamos uma lista vazia, apenas para criá-la, para poder utilizar o método extend nela na segunda linha. Podemos ver que agora temos uma lista criada a partir da tupla, então podemos voltar a adicionar os itens de interesse.
+#+RESULTS:
+: ['Miojo', 'Ovo', 'Queijo Ralado']
+
+Na linha 3 inicializamos uma lista vazia, apenas para criá-la, para poder utilizar o método ~extend~ nela na linha 4. Podemos ver que agora temos uma lista criada a partir da tupla, então podemos voltar a adicionar os itens de interesse.
 
 *[B]* Crie uma tupla com itens de seu interesse. Após isso, construa uma lista a partir dessa tupla.
 
-** "Conjuntos são listas sem elementos repetidos"
-Ainda nos tipos de objetos do Python, ainda temos os conjuntos, que são basicamente listas sem elementos repetidos. Os conjuntos possuem seus métodos específicos também, que englobam métodos equivalentes aos das listas, como: remove(), pop(). Mas especificamente para conjuntos, temos operações matemáticas já conhecidas, como união e intersecção. Vamos definir dois conjuntos e operá-los, com nossa analogia de listas de compras, vamos pensar que você fez anotações para compras em dois lugares diferentes e agora você quer juntá-las.
+** Conjuntos
+
+Outro objeto de Python são os conjuntos, que são basicamente listas sem elementos repetidos. Os conjuntos possuem seus métodos específicos também, que englobam métodos equivalentes aos das listas, como: ~remove~ e ~pop~. Mas especificamente para conjuntos, temos operações matemáticas já conhecidas, como união e intersecção. Vamos definir dois conjuntos e operá-los, com nossa analogia de listas de compras, vamos pensar que você fez anotações para compras em dois lugares diferentes e agora você quer juntá-las.
 
 #+begin_src python
-conjunto1 = {"Miojo", "Ovo", "Queijo"}
-conjunto2 = {"Miojo", "Pão", "Queijo", "Orégano", "Pão"}
-print(conjunto1)
-print(conjunto2)
+  conjunto1 = {"Miojo", "Ovo", "Queijo"}
+  conjunto2 = {"Miojo", "Pão", "Queijo", "Orégano", "Pão"}
+
+  print(conjunto1)
+  print(conjunto2)
 #+end_src
+
+#+RESULTS:
+: {'Ovo', 'Miojo', 'Queijo'}
+: {'Miojo', 'Pão', 'Queijo', 'Orégano'}
 
 *[A]* Qual a diferença na sintaxe para a declaração de conjuntos, tuplas e listas?
 
-*[B]* Quando você imprimiu o conjunto2, quantas vezes apareceu "Pão"? Quantas vezes ele estava na declaração? Porque desta diferença? Pode usar a internet para descobrir, mas lembre-se de citar suas fontes!
+*[B]* Quando você imprimiu o ~conjunto2~, quantas vezes apareceu "Pão"? Quantas vezes ele estava na declaração? Porque desta diferença? Pode usar a internet para descobrir, mas lembre-se de citar suas fontes!
 
 Agora vamos realizar algumas operações com os conjuntos:
 
 #+begin_src python
-intersection = conjunto1.intersection(conjunto2)
-print(intersection)
-union = conjunto1.union(conjunto2)
-print(union)
+  conjunto1 = {"Miojo", "Ovo", "Queijo"}
+  conjunto2 = {"Miojo", "Pão", "Queijo", "Orégano", "Pão"}
+
+  intersection = conjunto1.intersection(conjunto2)
+  print(intersection)
+
+  union = conjunto1.union(conjunto2)
+  print(union)
 #+end_src
+
+#+RESULTS:
+: {'Miojo', 'Queijo'}
+: {'Orégano', 'Miojo', 'Ovo', 'Queijo', 'Pão'}
 
 *[C]* Os resultados estão de acordo com o que você esperava?
 
 Além desses métodos temos outros exclusivos de conjuntos, como segue:
-+ add: Adiciona um elemento ao conjunto. Sintaxe: conjunto.add("Presunto")
-+ difference: Faz a subtração de dois conjuntos. Sintaxe: difference = conjunto1.difference(conjunto2)
-+ discard: Remove o elemento especificado do conjunto. Parece igual ao remove, mas, neste caso você não terá uma mensagem de erro caso o elemento não exista no conjunto. Sintaxe: conjunto.discard("Banana")
-+ update: Com este método você pode incluir um iterável no conjunto, que pode ser outro conjunto, lista, tupla, ...
+
++ ~add~: Adiciona um elemento ao conjunto. Sintaxe: conjunto.add("Presunto")
++ ~difference~: Faz a subtração de dois conjuntos. Sintaxe: ~difference = conjunto1.difference(conjunto2)~
++ ~discard~: Remove o elemento especificado do conjunto. Parece igual ao remove, mas, neste caso você não terá uma mensagem de erro caso o elemento não exista no conjunto. Sintaxe: ~conjunto.discard("Banana")~
++ ~update~: Com este método você pode incluir um iterável no conjunto, que pode ser outro conjunto, lista, tupla, ...
 
 *[D]* Crie três conjuntos com itens de seu interesse. Realize operações de adição, diferença, interseção e união com eles.
 
@@ -2140,11 +2262,11 @@ Se tentar rodar esse código no JupyterLab, você verá uma mensagem similar a m
   ZeroDivisionError: division by zero
 #+end_src
 
-Se você nunca tinha visto uma mensagem dessas, meus parabéns! Esta é uma mensagem de erro e seu objetivo é informar quem executou o código que algo de errado aconteceu. Veja que logo no início da mensagem de erro conseguimos identificar o tipo do erro: ~ZeroDivisionError~ que significa que uma divisão por zero aconteceu em algum lugar. Mas onde isso aconteceu? Logo abaixo do nome do erro temos um ~---->~ na linha 6, indicando qual instrução estava rodando quando o problema foi encontrado. Essa instrução tem duas funções: ~print~ e ~divisao~. O erro em si poderia ter ocorrido em qualquer uma delas, mas na linha 8 fica claro que o erro ocorreu na função ~divisao~. Mais abaixo encontramos um segundo ~---->~ que finalmente mostra onde que o erro efetivamente aconteceu! Foi na divisão de ~x~ por ~y~! Nós passamos o valor ~y=0~ quando executamos a função ~divisao~ e isso resultou em uma divisão por zero!
+Se você nunca tinha visto uma mensagem dessas, meus parabéns! Esta é uma mensagem de erro e seu objetivo é informar quem executou o código que algo errado aconteceu. Veja que logo no início da mensagem de erro conseguimos identificar o tipo do erro: ~ZeroDivisionError~ que significa que uma divisão por zero aconteceu em algum lugar. Mas onde isso aconteceu? Logo abaixo do nome do erro temos um ~---->~ na linha 6, indicando qual instrução estava rodando quando o problema foi encontrado. Essa instrução tem duas funções: ~print~ e ~divisao~. O erro em si poderia ter ocorrido em qualquer uma delas, mas na linha 8 fica claro que o erro ocorreu na função ~divisao~. Mais abaixo encontramos um segundo ~---->~ que finalmente mostra onde que o erro efetivamente aconteceu! Foi na divisão de ~x~ por ~y~! Nós passamos o valor ~y=0~ quando executamos a função ~divisao~ e isso resultou em uma divisão por zero!
 
-Saber ler as mensagens de erro é tão importante quanto saber programar em si. É muito fácil cometer pequenos erros durante a escrita de qualquer código. Quanto mais código você escrever mais chances tem de errar! Como vemos corriqueiramente nas notícias, mesmo programadores experientes de grandes empresas cometem erros! Afinal, erra é humano! Entender o erro e conseguir consertá-lo é uma habilidade que se ganha com prática, então aproveite cada mensagem de erro para afinar suas habilidades!
+Saber ler as mensagens de erro é tão importante quanto saber programar em si. É muito fácil cometer pequenos erros durante a escrita de qualquer código. Quanto mais código você escrever mais chances tem de errar! Como vemos corriqueiramente nas notícias, mesmo programadores experientes de grandes empresas cometem erros! Afinal, errar é humano! Entender o erro e conseguir consertá-lo é uma habilidade que se ganha com prática, então aproveite cada mensagem de erro para afinar suas habilidades!
 
-*[A]* Todos os blocos de código abaixo resultam em um erro quando executados. Execute-os, identifique o erro, escreva uma breve explicação sobre o que o erro significa (busque na documentação do Python) e reescreva o bloco de código para que ele execute sem erros.
+*[A]* Todos os blocos de código abaixo resultam em um erro quando executados. Execute-os, identifique o erro, escreva uma breve explicação sobre o que o erro significa (busque na documentação do Python) e reescreva cada bloco de código para que ele execute sem erros.
 
 #+begin_src python -n
   piratas = {
@@ -2199,11 +2321,10 @@ Saber ler as mensagens de erro é tão importante quanto saber programar em si. 
 ** Tratamento de exceções
 
 #+begin_quote
-"Fazer ou não fazer. Tentativa não há" --- Mestre Yoda
+"/Fazer ou não fazer. Tentativa não há./" --- Mestre Yoda
 #+end_quote
 
 Vimos na seção anterior que quando um erro é identificado durante a execução de um código, o erro é exibido ao usuário e o programa interrompe imediatamente a sua execução. Entretanto, em certos casos nós gostaríamos que o programa não interrompesse sua execução ao encontrar um erro. Esse comportamente é possível em Python com as instruções ~try~/~except~ e o nome dessa estratégia é /tratamento de exceções/. Veja um exemplo abaixo.
-
 
 #+begin_src python -n
   def divisao(x, y):
@@ -2229,8 +2350,7 @@ Vimos na seção anterior que quando um erro é identificado durante a execuçã
 : Ocorreu uma divisão por zero durante a execução do código!
 : FIM
 
-
-Neste exemplo, um bloco ~try~ é declarado na linha 6. "Try" vem do verbo tentar em inglês e pode ser traduzido como "tente" neste contexto. O Python irá tentar executar todos os comandos dentro do bloco ~try~ normalmente (note que os comandos do bloco ~try~ devem ser endentados!). Caso alguma instrução dentro do bloco ~try~ acuse um erro, a execução do bloco ~try~ é interrompida e o erro é "capturado", isto é, o tipo do erro é armazenado na memória. Este erro capturado é então comparado com todos os erros declarados nos blocos ~except~ seguintes do bloco ~try~ ("except" significa "exceto" em português). Neste caso temos apenas um bloco ~except~ na linha 12, e ele corresponde ao erro do tipo ~ZeroDivisionError~. Se existir um bloco ~except~ correspondente ao erro capturado, então as instruções deste bloco são executadas e a execução do programa não para! Se não existir um bloco ~except~ correspondente ao erro capturado, então a execução do programa para e o erro é exibido ao usuário da mesma forma que vimos na seção anterior. Execute o código acima e veja o que acontece.
+Neste exemplo, um bloco ~try~ é declarado na linha 6. "Try" vem do verbo tentar em inglês e pode ser traduzido como "tente" neste contexto. O Python irá tentar executar todos os comandos dentro do bloco ~try~ normalmente (note que os comandos do bloco ~try~ devem ser indentados!). Caso alguma instrução dentro do bloco ~try~ acuse um erro, a execução do bloco ~try~ é interrompida e o erro é "capturado", isto é, o tipo do erro é armazenado na memória. Este erro capturado é então comparado com todos os erros declarados nos blocos ~except~ seguintes do bloco ~try~ ("except" significa "exceto" em português). Neste caso temos apenas um bloco ~except~ na linha 12, e ele corresponde ao erro do tipo ~ZeroDivisionError~. Se existir um bloco ~except~ correspondente ao erro capturado, então as instruções deste bloco são executadas e a execução do programa não para! Se não existir um bloco ~except~ correspondente ao erro capturado, então a execução do programa para e o erro é exibido ao usuário da mesma forma que vimos na seção anterior. Execute o código acima e veja o que acontece.
 
 Podemos criar instruções ~try~/~except~ complexas considerando diversos tipos de erros diferentes. Quando um bloco ~except~ deve identificar mais de um tipo de erro, então é necessário agrupar todos os erros em parênteses (ver linha 7 no código abaixo). Podemos escrever quantos blocos ~except~ desejarmos para um mesmo bloco ~try~ (veja as linhas 10 e 13 abaixo).
 
@@ -2256,7 +2376,6 @@ Podemos criar instruções ~try~/~except~ complexas considerando diversos tipos 
 #+RESULTS:
 : Tente não dividir por zero e se atente aos tipos das variáveis!
 : FIM
-
 
 O bloco ~try~ também admite duas outras instruções: ~else~ e ~finally~. A instrução ~else~ é apenas executada se o bloco ~try~ é executado até o fim, sem que haja nenhum erro! A instrução ~finally~ é sempre executada ao final do bloco ~try~, independente do que aconteceu (ela é executada mesmo caso um erro não contemplado pelas instruções ~except~ ocorra!). Veja um exemplo abaixo.
 
@@ -2406,6 +2525,7 @@ Checar uma condição e acusar um erro caso esta condição seja falsa é uma es
 A sintaxe da instrução ~assert~ requer uma condição a ser checada logo após a instrução. Caso a condição retorne ~False~ o código é interrompido e acusa um ~AssertionError~. Caso queira exibir uma mensagem ao usuário para ajudá-lo a entender o que ocorre, escreva uma string e coloque ela após uma vírgula. A mensagem não é obrigatória mas altamente recomendada.
 
 Uma forma mais fácil de entender a instrução ~assert~ é lendo ela como "assegure-se que". Na linha 18 do código acima podemos ler como "assegure-se que o valor de ~x~ é maior que zero e menor ou igual a dois, do contrário, exiba uma mensagem de erro ao usuário alertando ele que esse é um requerimento necessário para executar a função".
+
 * JAMES Dicionários :noexport:
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_dicionarios
@@ -2459,7 +2579,7 @@ Assim como listas e conjuntos, os dicionários também possuem métodos associad
 
 ** Funções com argumentos estrela \ast{}args e \ast\ast{}kwargs
 
-* TODO Strings e processamento de texto :noexport:
+* DANIEL Strings e processamento de texto :noexport:
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_strings
 :EXPORT_OPTIONS: toc:t
@@ -2467,10 +2587,122 @@ Assim como listas e conjuntos, os dicionários também possuem métodos associad
 :END:
 
 ** Agrupando caracteres com strings
-+ strings são imutáveis
-+ convertendo objetos para strings com =str=
-+ convertendo strings para inteiros e reais com =int= e =float=
-+ iterando em strings com =for=
+
+Já vimos que strings são objetos que armazenam texto e que para declarar strings usamos aspas simples ou aspas duplas. Texto nada mais é do que uma lista de zero ou mais letras. Assim como listas, podemos segmentar strings usando a notação dos índices dentro de colchetes. Veja no exemplo abaixo.
+
+#+begin_src python -n
+  string_com_zero_letras = ""
+  string_com_uma_letra = "a"
+  string_com_varias_letras = "abcdefghijklmnopqrstuvwxyz"
+
+  print(string_com_varias_letras[0])
+  print(string_com_varias_letras[1])
+  print(string_com_varias_letras[2])
+
+  print(string_com_varias_letras[3:8])
+  print(string_com_varias_letras[8:])
+
+  print(string_com_varias_letras[::2])
+#+end_src
+
+#+RESULTS:
+: a
+: b
+: c
+: defgh
+: ijklmnopqrstuvwxyz
+: acegikmoqsuwy
+
+Como strings são listas de letras, também podemos usar o ~for~ da mesma maneira que usamos em listas! Veja no exemplo abaixo.
+
+#+begin_src python -n
+  texto = "Bravo, Vince!"
+
+  for letra in texto:
+      print(letra)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+B
+r
+a
+v
+o
+,
+
+V
+i
+n
+c
+e
+!
+#+end_example
+
+É possível converter objetos que não são texto para texto usando a função ~str~.
+
+#+begin_src python -n
+  numero = 1234
+  texto_a_partir_do_numero = str(1234)
+
+  print(numero)
+  print(texto_a_partir_do_numero)
+
+  try:
+      # agora que temos um texto, é fácil separar os digitos do número
+      print(texto_a_partir_do_numero[0])  # este é o digito 1 do número 1234
+
+      # note que essa sintaxe não funciona para variáveis numéricas
+      print(numero[0])
+
+  except TypeError:
+      print('Variáveis numéricas não permitem usar a notação de índices '
+            'com chaves.')
+#+end_src
+
+#+RESULTS:
+: 1234
+: 1234
+: 1
+: Variáveis numéricas não permitem usar a notação de índices com chaves
+: 1234
+: 1234
+
+Também podemos converter texto numérico em variáveis numéricas usando as funções ~int~ e ~float~. Veja o exemplo abaixo:
+
+#+begin_src python -n
+  texto = "1234"
+  numero_a_partir_do_texto = int(texto)
+
+  print(texto)
+  print(numero_a_partir_do_texto)
+
+  try:
+      # agora que temos um nlumero, podemos fazer contas
+      print(numero_a_partir_do_texto + 4321)
+
+      # note que não podemos fazer contas com variáveis que são texto
+      print(texto + 4321)
+
+  except TypeError:
+      print('Não podemos fazer contas com variáveis tipo string, mesmo'
+            'que elas tenham um número armazenado nelas.')
+
+#+end_src
+
+#+RESULTS:
+: 1234
+: 1234
+: 5555
+: Não podemos fazer contas com variáveis tipo string, mesmoque elas tenham um número armazenado nelas.
+
+Uma diferença muito importante entre strings e listas é que strings são variáveis imutáveis (assim como tuplas) e listas são variáveis mutáveis. Isso significa que após uma string ser criada não é possível altera-la.
+
+** Métodos condicionais de strings
+
+Existem diversos métodos de strings. Você pode checar todos eles [[https://docs.python.org/3/library/stdtypes.html?highlight=startswith#text-sequence-type-str][na documentação oficial]]. Existem dois métodos para checar strings que são particularmente muito utilizados: o ~startswith~ e o ~endswith~
+
+
 + checando prefixos e sufixos com =startswith= e =endswith=
 + checando caracteres com =isnumeric=, =isupper=, =islower=
 
@@ -2693,7 +2925,6 @@ https://github.com/jerry-git/learn-python3
 + inverter a ordem de uma lista
 + programa que calcula o fatorial de um inteiro positivo
 + programa que cria uma lista apenas com os itens nas posições impares de uma lista original
-+ encontre o segundo maior número em uma lista
 + função que conta quantas letras, dígitos e caracteres especiais tem em uma string
 + histograma de contagem de caracteres em uma string
 + encontrar números em uma string e armazena-los em uma lista

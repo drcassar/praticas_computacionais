@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-05 ter 09:37 -->
+<!-- 2022-04-11 seg 11:02 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Práticas em Ciência de Dados</title>
@@ -219,53 +219,61 @@
 <div id="content" class="content">
 <h1 class="title">Práticas em Ciência de Dados</h1>
 <div id="table-of-contents" role="doc-toc">
-<h2>Índice</h2>
+<h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org7de4077">1. Introdução</a>
+<li><a href="#org3b7bcfb">1. Introdução</a>
 <ul>
-<li><a href="#orgfc1408b">1.1. Olá! Que bom que você veio, aprochegue-se!</a></li>
-<li><a href="#org93b3794">1.2. Python e o caderno de notas Jupyter</a></li>
-<li><a href="#org1a22a27">1.3. Links interessantes</a></li>
+<li><a href="#org8959fc8">1.1. Olá! Que bom que você veio, aprochegue-se!</a></li>
+<li><a href="#orgbf27a99">1.2. Python e o caderno de notas Jupyter</a></li>
+<li><a href="#org6615425">1.3. Links interessantes</a></li>
 </ul>
 </li>
-<li><a href="#org80fb54b">2. Jupyter, variáveis e como buscar ajuda</a>
+<li><a href="#org1be928f">2. Jupyter, variáveis e como buscar ajuda</a>
 <ul>
-<li><a href="#orge8cb415">2.1. Meu primeiro caderno de notas Jupyter</a></li>
-<li><a href="#orgb67d7da">2.2. Criando variáveis de diferentes tipos</a></li>
-<li><a href="#org3900cf6">2.3. Buscando ajuda</a></li>
+<li><a href="#orgd009de8">2.1. Meu primeiro caderno de notas Jupyter</a></li>
+<li><a href="#org521c8cf">2.2. Criando variáveis de diferentes tipos</a></li>
+<li><a href="#org7f13c9b">2.3. Buscando ajuda</a></li>
 </ul>
 </li>
-<li><a href="#org165abc3">3. Operadores e estrutura de decisão</a>
+<li><a href="#org9024735">3. Operadores e estrutura de decisão</a>
 <ul>
-<li><a href="#orgef9d7c4">3.1. Operadores aritméticos</a></li>
-<li><a href="#orgf440890">3.2. Operadores lógicos</a></li>
-<li><a href="#orgedb07eb">3.3. Operadores de comparação</a></li>
-<li><a href="#org7127c4e">3.4. Estrutura de decisão e operador condicional</a></li>
-<li><a href="#orgcdec92e">3.5. Uma breve introdução sobre estilo</a></li>
+<li><a href="#org12eaede">3.1. Operadores aritméticos</a></li>
+<li><a href="#org7a53fb9">3.2. Operadores lógicos</a></li>
+<li><a href="#orgb16acbb">3.3. Operadores de comparação</a></li>
+<li><a href="#org7152b44">3.4. Estrutura de decisão e operador condicional</a></li>
+<li><a href="#org5fa8ee1">3.5. Uma breve introdução sobre estilo</a></li>
 </ul>
 </li>
-<li><a href="#orgcfbc641">4. Funções</a>
+<li><a href="#org18773e0">4. Funções</a>
 <ul>
-<li><a href="#org0a3cc93">4.1. O que é uma função?</a></li>
-<li><a href="#org94869f6">4.2. Funções embutidas</a></li>
-<li><a href="#orgbcc9dbb">4.3. Definindo novas funções</a></li>
-<li><a href="#org918c9ac">4.4. Argumentos posicionais, argumentos nomeados e argumentos com valor padrão</a></li>
-<li><a href="#org43f7ec3">4.5. Variáveis globais e variáveis locais</a></li>
-<li><a href="#org0b3051a">4.6. Documentando suas funções com a docstring</a></li>
-<li><a href="#org602745b">4.7. Funções também são objetos!</a></li>
+<li><a href="#orga1d6f93">4.1. O que é uma função?</a></li>
+<li><a href="#orgb7388e6">4.2. Funções embutidas</a></li>
+<li><a href="#orge9719a9">4.3. Definindo novas funções</a></li>
+<li><a href="#org0f4291f">4.4. Argumentos posicionais, argumentos nomeados e argumentos com valor padrão</a></li>
+<li><a href="#orgef6d186">4.5. Variáveis globais e variáveis locais</a></li>
+<li><a href="#org3689ec5">4.6. Documentando suas funções com a docstring</a></li>
+<li><a href="#orgf3d6b41">4.7. Funções também são objetos!</a></li>
 </ul>
 </li>
-<li><a href="#org492a111">5. Listas, tuplas e conjuntos</a>
+<li><a href="#org464f1c8">5. Listas, tuplas e conjuntos</a>
 <ul>
-<li><a href="#org2ab2ef5">5.1. Agrupando objetos com listas</a></li>
-<li><a href="#org225b1d6">5.2. Listas dentro de listas.</a></li>
-<li><a href="#org7f6b37a">5.3. Modificando, particionando e desempacotando listas</a></li>
-<li><a href="#orgcfc971d">5.4. Particionamento de listas</a></li>
-<li><a href="#org2a7654e">5.5. Copiando listas</a></li>
-<li><a href="#org07e5c5e">5.6. Desempacotamento e Operador Asterisco</a></li>
-<li><a href="#orge31ef99">5.7. Tuplas</a></li>
-<li><a href="#org0b72dad">5.8. Conjuntos</a></li>
+<li><a href="#orgc8b26b8">5.1. Agrupando objetos com listas</a></li>
+<li><a href="#orgb6f8de5">5.2. Listas dentro de listas.</a></li>
+<li><a href="#org68d842e">5.3. Modificando, particionando e desempacotando listas</a></li>
+<li><a href="#org1fbbe03">5.4. Particionamento de listas</a></li>
+<li><a href="#orgf5d315f">5.5. Copiando listas</a></li>
+<li><a href="#org36df2a5">5.6. Desempacotamento e Operador Asterisco</a></li>
+<li><a href="#org0eedbf9">5.7. Tuplas</a></li>
+<li><a href="#org9222bee">5.8. Conjuntos</a></li>
+</ul>
+</li>
+<li><a href="#orga2c51eb">6. Laço de repetição</a>
+<ul>
+<li><a href="#org5b08821">6.1. Laço de repetição usando <code>while</code></a></li>
+<li><a href="#org0b09b51">6.2. Laço de repetição usando <code>for</code></a></li>
+<li><a href="#org000ed9f">6.3. Laços Aninhados</a></li>
+<li><a href="#orge32f838">6.4. Compreensão de listas</a></li>
 </ul>
 </li>
 </ul>
@@ -308,13 +316,13 @@
 </style>
 
 
-<div id="outline-container-org7de4077" class="outline-2">
-<h2 id="org7de4077"><span class="section-number-2">1.</span> Introdução</h2>
+<div id="outline-container-org3b7bcfb" class="outline-2">
+<h2 id="org3b7bcfb"><span class="section-number-2">1.</span> Introdução</h2>
 <div class="outline-text-2" id="text-1">
 </div>
 
-<div id="outline-container-orgfc1408b" class="outline-3">
-<h3 id="orgfc1408b"><span class="section-number-3">1.1.</span> Olá! Que bom que você veio, aprochegue-se!</h3>
+<div id="outline-container-org8959fc8" class="outline-3">
+<h3 id="org8959fc8"><span class="section-number-3">1.1.</span> Olá! Que bom que você veio, aprochegue-se!</h3>
 <div class="outline-text-3" id="text-1-1">
 <blockquote>
 <p>
@@ -348,8 +356,8 @@ Realize as práticas seguindo as instruções discutidas em sala de aula. Lembre
 </div>
 </div>
 
-<div id="outline-container-org93b3794" class="outline-3">
-<h3 id="org93b3794"><span class="section-number-3">1.2.</span> Python e o caderno de notas Jupyter</h3>
+<div id="outline-container-orgbf27a99" class="outline-3">
+<h3 id="orgbf27a99"><span class="section-number-3">1.2.</span> Python e o caderno de notas Jupyter</h3>
 <div class="outline-text-3" id="text-1-2">
 <blockquote>
 <p>
@@ -371,8 +379,8 @@ Apesar de não ser estritamente necessário utilizar os cadernos de notas Jupyte
 </div>
 </div>
 
-<div id="outline-container-org1a22a27" class="outline-3">
-<h3 id="org1a22a27"><span class="section-number-3">1.3.</span> Links interessantes</h3>
+<div id="outline-container-org6615425" class="outline-3">
+<h3 id="org6615425"><span class="section-number-3">1.3.</span> Links interessantes</h3>
 <div class="outline-text-3" id="text-1-3">
 <blockquote>
 <p>
@@ -423,13 +431,13 @@ Por fim, existem diversos materiais (tanto pagos quanto gratuitos) para aprendiz
 </div>
 </div>
 
-<div id="outline-container-org80fb54b" class="outline-2">
-<h2 id="org80fb54b"><span class="section-number-2">2.</span> Jupyter, variáveis e como buscar ajuda</h2>
+<div id="outline-container-org1be928f" class="outline-2">
+<h2 id="org1be928f"><span class="section-number-2">2.</span> Jupyter, variáveis e como buscar ajuda</h2>
 <div class="outline-text-2" id="text-2">
 </div>
 
-<div id="outline-container-orge8cb415" class="outline-3">
-<h3 id="orge8cb415"><span class="section-number-3">2.1.</span> Meu primeiro caderno de notas Jupyter</h3>
+<div id="outline-container-orgd009de8" class="outline-3">
+<h3 id="orgd009de8"><span class="section-number-3">2.1.</span> Meu primeiro caderno de notas Jupyter</h3>
 <div class="outline-text-3" id="text-2-1">
 <blockquote>
 <p>
@@ -490,8 +498,8 @@ Aprender qualquer linguagem, seja ela de programação ou não, requer treino. N
 </div>
 </div>
 
-<div id="outline-container-orgb67d7da" class="outline-3">
-<h3 id="orgb67d7da"><span class="section-number-3">2.2.</span> Criando variáveis de diferentes tipos</h3>
+<div id="outline-container-org521c8cf" class="outline-3">
+<h3 id="org521c8cf"><span class="section-number-3">2.2.</span> Criando variáveis de diferentes tipos</h3>
 <div class="outline-text-3" id="text-2-2">
 <blockquote>
 <p>
@@ -615,8 +623,8 @@ Existem diversos outros tipos de variáveis que veremos ao longo desta apostila.
 </div>
 </div>
 
-<div id="outline-container-org3900cf6" class="outline-3">
-<h3 id="org3900cf6"><span class="section-number-3">2.3.</span> Buscando ajuda</h3>
+<div id="outline-container-org7f13c9b" class="outline-3">
+<h3 id="org7f13c9b"><span class="section-number-3">2.3.</span> Buscando ajuda</h3>
 <div class="outline-text-3" id="text-2-3">
 <p class="verse">
 &ldquo;<i>Socorro! Eu preciso de alguém.<br />
@@ -668,13 +676,13 @@ O que você faria se não soubesse o que função <code>print</code> faz? Digamo
 </div>
 </div>
 
-<div id="outline-container-org165abc3" class="outline-2">
-<h2 id="org165abc3"><span class="section-number-2">3.</span> Operadores e estrutura de decisão</h2>
+<div id="outline-container-org9024735" class="outline-2">
+<h2 id="org9024735"><span class="section-number-2">3.</span> Operadores e estrutura de decisão</h2>
 <div class="outline-text-2" id="text-3">
 </div>
 
-<div id="outline-container-orgef9d7c4" class="outline-3">
-<h3 id="orgef9d7c4"><span class="section-number-3">3.1.</span> Operadores aritméticos</h3>
+<div id="outline-container-org12eaede" class="outline-3">
+<h3 id="org12eaede"><span class="section-number-3">3.1.</span> Operadores aritméticos</h3>
 <div class="outline-text-3" id="text-3-1">
 <blockquote>
 <p>
@@ -757,8 +765,8 @@ A ordem de precedência dos operadores aritméticos (isto é, a ordem de execuç
 </div>
 </div>
 
-<div id="outline-container-orgf440890" class="outline-3">
-<h3 id="orgf440890"><span class="section-number-3">3.2.</span> Operadores lógicos</h3>
+<div id="outline-container-org7a53fb9" class="outline-3">
+<h3 id="org7a53fb9"><span class="section-number-3">3.2.</span> Operadores lógicos</h3>
 <div class="outline-text-3" id="text-3-2">
 <blockquote>
 <p>
@@ -850,8 +858,8 @@ Operadores lógicos podem ser combinados na mesma declaração. Quando for fazer
 </div>
 </div>
 
-<div id="outline-container-orgedb07eb" class="outline-3">
-<h3 id="orgedb07eb"><span class="section-number-3">3.3.</span> Operadores de comparação</h3>
+<div id="outline-container-orgb16acbb" class="outline-3">
+<h3 id="orgb16acbb"><span class="section-number-3">3.3.</span> Operadores de comparação</h3>
 <div class="outline-text-3" id="text-3-3">
 <blockquote>
 <p>
@@ -900,8 +908,8 @@ A != B &lt; C == E - D - C
 </div>
 </div>
 
-<div id="outline-container-org7127c4e" class="outline-3">
-<h3 id="org7127c4e"><span class="section-number-3">3.4.</span> Estrutura de decisão e operador condicional</h3>
+<div id="outline-container-org7152b44" class="outline-3">
+<h3 id="org7152b44"><span class="section-number-3">3.4.</span> Estrutura de decisão e operador condicional</h3>
 <div class="outline-text-3" id="text-3-4">
 <blockquote>
 <p>
@@ -1090,8 +1098,8 @@ O código acima checa se o pH é ácido. Caso seja ácido o programa exibe &ldqu
 </div>
 </div>
 
-<div id="outline-container-orgcdec92e" class="outline-3">
-<h3 id="orgcdec92e"><span class="section-number-3">3.5.</span> Uma breve introdução sobre estilo</h3>
+<div id="outline-container-org5fa8ee1" class="outline-3">
+<h3 id="org5fa8ee1"><span class="section-number-3">3.5.</span> Uma breve introdução sobre estilo</h3>
 <div class="outline-text-3" id="text-3-5">
 <p class="verse">
 &ldquo;<i>Bonito é melhor que feio.<br />
@@ -1198,13 +1206,13 @@ Para iniciantes é recomendado sempre comentar seu código. Isso não só irá t
 </div>
 </div>
 
-<div id="outline-container-orgcfbc641" class="outline-2">
-<h2 id="orgcfbc641"><span class="section-number-2">4.</span> Funções</h2>
+<div id="outline-container-org18773e0" class="outline-2">
+<h2 id="org18773e0"><span class="section-number-2">4.</span> Funções</h2>
 <div class="outline-text-2" id="text-4">
 </div>
 
-<div id="outline-container-org0a3cc93" class="outline-3">
-<h3 id="org0a3cc93"><span class="section-number-3">4.1.</span> O que é uma função?</h3>
+<div id="outline-container-orga1d6f93" class="outline-3">
+<h3 id="orga1d6f93"><span class="section-number-3">4.1.</span> O que é uma função?</h3>
 <div class="outline-text-3" id="text-4-1">
 <blockquote>
 <p>
@@ -1233,8 +1241,8 @@ Basicamente, ao executar uma função ela recebe zero ou mais objetos (argumento
 </div>
 </div>
 
-<div id="outline-container-org94869f6" class="outline-3">
-<h3 id="org94869f6"><span class="section-number-3">4.2.</span> Funções embutidas</h3>
+<div id="outline-container-orgb7388e6" class="outline-3">
+<h3 id="orgb7388e6"><span class="section-number-3">4.2.</span> Funções embutidas</h3>
 <div class="outline-text-3" id="text-4-2">
 <blockquote>
 <p>
@@ -1248,8 +1256,8 @@ Existem diversas funções embutidas em Python. Estas funções podem ser usadas
 </div>
 </div>
 
-<div id="outline-container-orgbcc9dbb" class="outline-3">
-<h3 id="orgbcc9dbb"><span class="section-number-3">4.3.</span> Definindo novas funções</h3>
+<div id="outline-container-orge9719a9" class="outline-3">
+<h3 id="orge9719a9"><span class="section-number-3">4.3.</span> Definindo novas funções</h3>
 <div class="outline-text-3" id="text-4-3">
 <blockquote>
 <p>
@@ -1392,8 +1400,8 @@ Finalmente, a <code>funcao_6</code> recebe três argumentos e retorna os mesmos 
 </div>
 </div>
 
-<div id="outline-container-org918c9ac" class="outline-3">
-<h3 id="org918c9ac"><span class="section-number-3">4.4.</span> Argumentos posicionais, argumentos nomeados e argumentos com valor padrão</h3>
+<div id="outline-container-org0f4291f" class="outline-3">
+<h3 id="org0f4291f"><span class="section-number-3">4.4.</span> Argumentos posicionais, argumentos nomeados e argumentos com valor padrão</h3>
 <div class="outline-text-3" id="text-4-4">
 <blockquote>
 <p>
@@ -1497,8 +1505,8 @@ Observe que não é permitido declarar argumentos sem valor padrão após argume
 </div>
 </div>
 
-<div id="outline-container-org43f7ec3" class="outline-3">
-<h3 id="org43f7ec3"><span class="section-number-3">4.5.</span> Variáveis globais e variáveis locais</h3>
+<div id="outline-container-orgef6d186" class="outline-3">
+<h3 id="orgef6d186"><span class="section-number-3">4.5.</span> Variáveis globais e variáveis locais</h3>
 <div class="outline-text-3" id="text-4-5">
 <blockquote>
 <p>
@@ -1566,8 +1574,8 @@ Mesmo sabendo que variáveis globais podem ser utilizadas dentro de funções, e
 </div>
 </div>
 
-<div id="outline-container-org0b3051a" class="outline-3">
-<h3 id="org0b3051a"><span class="section-number-3">4.6.</span> Documentando suas funções com a docstring</h3>
+<div id="outline-container-org3689ec5" class="outline-3">
+<h3 id="org3689ec5"><span class="section-number-3">4.6.</span> Documentando suas funções com a docstring</h3>
 <div class="outline-text-3" id="text-4-6">
 <blockquote>
 <p>
@@ -1721,8 +1729,8 @@ Vamos analisar as diversas partes do exemplo acima:
 </div>
 </div>
 
-<div id="outline-container-org602745b" class="outline-3">
-<h3 id="org602745b"><span class="section-number-3">4.7.</span> Funções também são objetos!</h3>
+<div id="outline-container-orgf3d6b41" class="outline-3">
+<h3 id="orgf3d6b41"><span class="section-number-3">4.7.</span> Funções também são objetos!</h3>
 <div class="outline-text-3" id="text-4-7">
 <blockquote>
 <p>
@@ -1781,13 +1789,13 @@ Funções em Python são objetos assim como números e strings. Desta forma, pod
 </div>
 </div>
 
-<div id="outline-container-org492a111" class="outline-2">
-<h2 id="org492a111"><span class="section-number-2">5.</span> Listas, tuplas e conjuntos</h2>
+<div id="outline-container-org464f1c8" class="outline-2">
+<h2 id="org464f1c8"><span class="section-number-2">5.</span> Listas, tuplas e conjuntos</h2>
 <div class="outline-text-2" id="text-5">
 </div>
 
-<div id="outline-container-org2ab2ef5" class="outline-3">
-<h3 id="org2ab2ef5"><span class="section-number-3">5.1.</span> Agrupando objetos com listas</h3>
+<div id="outline-container-orgc8b26b8" class="outline-3">
+<h3 id="orgc8b26b8"><span class="section-number-3">5.1.</span> Agrupando objetos com listas</h3>
 <div class="outline-text-3" id="text-5-1">
 <blockquote>
 <p>
@@ -1852,8 +1860,8 @@ A resposta da primeira pergunta está intimamente relacionada ao fato de Python 
 </div>
 </div>
 
-<div id="outline-container-org225b1d6" class="outline-3">
-<h3 id="org225b1d6"><span class="section-number-3">5.2.</span> Listas dentro de listas.</h3>
+<div id="outline-container-orgb6f8de5" class="outline-3">
+<h3 id="orgb6f8de5"><span class="section-number-3">5.2.</span> Listas dentro de listas.</h3>
 <div class="outline-text-3" id="text-5-2">
 <blockquote>
 <p>
@@ -1940,8 +1948,8 @@ Pronto, as listas estão atualizadas com os itens que você incluiu.
 </div>
 </div>
 
-<div id="outline-container-org7f6b37a" class="outline-3">
-<h3 id="org7f6b37a"><span class="section-number-3">5.3.</span> Modificando, particionando e desempacotando listas</h3>
+<div id="outline-container-org68d842e" class="outline-3">
+<h3 id="org68d842e"><span class="section-number-3">5.3.</span> Modificando, particionando e desempacotando listas</h3>
 <div class="outline-text-3" id="text-5-3">
 <p>
 Já foi apresentado um dos métodos utilizados em listas, o <code>append</code>. Mas, existem outros métodos para listas, a seguir veremos alguns deles.
@@ -2033,8 +2041,8 @@ Exemplo: <code>listadecompras[0].pop(5)</code><br />
 </div>
 </div>
 
-<div id="outline-container-orgcfc971d" class="outline-3">
-<h3 id="orgcfc971d"><span class="section-number-3">5.4.</span> Particionamento de listas</h3>
+<div id="outline-container-org1fbbe03" class="outline-3">
+<h3 id="org1fbbe03"><span class="section-number-3">5.4.</span> Particionamento de listas</h3>
 <div class="outline-text-3" id="text-5-4">
 <p>
 Já foi apresentado como acessar um item específico da lista anteriormente, com o argumento entre colchetes (<code>listadecompras[0]</code>). Porém, podemos particinar as listas, pegando vários elementos de interesse. Novamente utilizaremos índices entre colchetes, com a seguinte sintaxe: lista[Inicial:Final:Passo]. O &rsquo;Inicial&rsquo; é o primeiro elemento da lista que desejamos, &rsquo;Final&rsquo; é o elemento final desejado. Já &rsquo;Passo&rsquo; é o de quantos em quantos elementos queremos, por exemplo, se o passo for 1, todos elementos na faixa específicada são impressos, se o passo for 2, só serão fornecidos elementos a cada dois. Vamos exemplificar para facilitar:
@@ -2115,8 +2123,8 @@ Também podemos utilizar índices negativos no particionamento de listas, mas co
 </div>
 </div>
 
-<div id="outline-container-org2a7654e" class="outline-3">
-<h3 id="org2a7654e"><span class="section-number-3">5.5.</span> Copiando listas</h3>
+<div id="outline-container-orgf5d315f" class="outline-3">
+<h3 id="orgf5d315f"><span class="section-number-3">5.5.</span> Copiando listas</h3>
 <div class="outline-text-3" id="text-5-5">
 <p>
 Agora vamos tratar de cópias no Python. Para listas o Python tem uma maneira bastante peculiar para cópias, onde são criados links entre as listas e não simplesmente copiados os objetos. Vamos a um exemplo para deixar mais claro:
@@ -2172,8 +2180,8 @@ Bom, nesse código definimos uma <code>lista1</code>, criamos uma <code>lista2</
 </div>
 </div>
 
-<div id="outline-container-org07e5c5e" class="outline-3">
-<h3 id="org07e5c5e"><span class="section-number-3">5.6.</span> Desempacotamento e Operador Asterisco</h3>
+<div id="outline-container-org36df2a5" class="outline-3">
+<h3 id="org36df2a5"><span class="section-number-3">5.6.</span> Desempacotamento e Operador Asterisco</h3>
 <div class="outline-text-3" id="text-5-6">
 <p>
 No Python podemos utilizar uma notação específica para definir várias variáveis ao mesmo tempo, como segue:
@@ -2274,8 +2282,8 @@ item0, *<span style="color: #268bd2;">item1</span>, <span style="color: #268bd2;
 </div>
 </div>
 
-<div id="outline-container-orge31ef99" class="outline-3">
-<h3 id="orge31ef99"><span class="section-number-3">5.7.</span> Tuplas</h3>
+<div id="outline-container-org0eedbf9" class="outline-3">
+<h3 id="org0eedbf9"><span class="section-number-3">5.7.</span> Tuplas</h3>
 <div class="outline-text-3" id="text-5-7">
 <p>
 Existe outro tipo de dados no Python que são chamadas tuplas. As tuplas são basicamente listas imutáveis. Como assim imutáveis? Isso significa que uma vez que ela foi definida, não podemos mais adicionar ou remover elementos, bem como não é possível modificar sua ordem. Então, voltando ao nosso exemplo do supermercado, se você quiser estabelecer uma lista perpétua de itens a serem comprados (que jamais serão alterados), você pode colocá-los em uma tupla. Vamos a um exemplo:
@@ -2319,8 +2327,8 @@ Na linha 3 inicializamos uma lista vazia, apenas para criá-la, para poder utili
 </div>
 </div>
 
-<div id="outline-container-org0b72dad" class="outline-3">
-<h3 id="org0b72dad"><span class="section-number-3">5.8.</span> Conjuntos</h3>
+<div id="outline-container-org9222bee" class="outline-3">
+<h3 id="org9222bee"><span class="section-number-3">5.8.</span> Conjuntos</h3>
 <div class="outline-text-3" id="text-5-8">
 <p>
 Outro objeto de Python são os conjuntos, que são basicamente listas sem elementos repetidos. Os conjuntos possuem seus métodos específicos também, que englobam métodos equivalentes aos das listas, como: <code>remove</code> e <code>pop</code>. Mas especificamente para conjuntos, temos operações matemáticas já conhecidas, como união e intersecção. Vamos definir dois conjuntos e operá-los, com nossa analogia de listas de compras, vamos pensar que você fez anotações para compras em dois lugares diferentes e agora você quer juntá-las.
@@ -2380,8 +2388,445 @@ Além desses métodos temos outros exclusivos de conjuntos, como segue:
 </div>
 </div>
 </div>
+
+<div id="outline-container-orga2c51eb" class="outline-2">
+<h2 id="orga2c51eb"><span class="section-number-2">6.</span> Laço de repetição</h2>
+<div class="outline-text-2" id="text-6">
+<blockquote>
+<p>
+&ldquo;<i>Once you free your mind about a concept of
+Harmony and of music being correct
+You can do whatever you want
+So nobody told me what to do
+And there was no preconception of what to do</i>&rdquo; &#x2014; Giovanni Giorgio
+</p>
+</blockquote>
+
+<p>
+Laços de repetição, ou seu termo mais comum em inglês o <i>loop</i>, serve para iterar elementos de listas, tuplas, conjuntos ou geradores. Existem diferentes maneiras de implementar loops, sendo as principais do Python o <code>while</code> e o <code>for</code>, que mostraremos pra vocês a seguir.
+</p>
+</div>
+
+<div id="outline-container-org5b08821" class="outline-3">
+<h3 id="org5b08821"><span class="section-number-3">6.1.</span> Laço de repetição usando <code>while</code></h3>
+<div class="outline-text-3" id="text-6-1">
+<blockquote>
+<p>
+&ldquo;<i>Do it while yo can</i>&rdquo; &#x2014; Billy Preston
+</p>
+</blockquote>
+
+<p>
+Vamos iniciar com um <code>while</code> loop, ou laço de repetição com <code>while</code>. A tradução da palavra <code>while</code> do inglês é enquanto, então a ideia deste loop é fazer algo enquanto uma condição for verdadeira. Vamos começar com um exemplo simples, onde o loop será executado enquanto a variável <code>i</code> for menor que 10, e vamos somando 1 a mesma variável a cada iteração. Para isso usamos um operador que não foi apresentado ainda, o <code>+=</code>, que basicamente soma o valor ou variável indicado após ele, por exemplo, i += 1 é o mesmo que i = i + 1.
+</p>
+
+<p>
+<b>[A]</b> Execute o código abaixo no seu Jupyter Notebook, descreva o que ocorreu com o código.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">i</span> = <span style="color: #6c71c4; font-weight: bold;">0</span>
+<span style="color: #859900; font-weight: bold;">while</span> i &lt; <span style="color: #6c71c4; font-weight: bold;">10</span>:  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Leia como "Enquanto o valor de i for menor que 10, fa&#231;a:"</span>
+    <span style="color: #859900; font-weight: bold;">print</span>(i)
+    <span style="color: #268bd2;">i</span> += <span style="color: #6c71c4; font-weight: bold;">1</span>  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">mesma coisa que escrever `i = i + 1`</span>
+</pre>
+</div>
+
+<p>
+Fique atento a identação! Assim como no caso dos condicionais (<code>if</code>) você precisa colocar o bloco executado pelo <code>while</code> em um código indentado, pois esta é a maneira do Python entender o que pertence e o que não pertence ao bloco do <code>while</code>. Note que estamos utilizando os operadores de comparação, que vocês já foram apresentados em uma aula anterior. Eles são fundamenteis para a implementação de loops while, pois quando a condição retornar <code>False</code>, o loop irá parar. Na execução do código vocês podem notar que os números de 0 à 9 foram impressos, quando <code>i</code> ficou igual a 10 o loop parou, pois a sentença <code>i &lt; 10</code> passou a ser <code>False</code>. Você pode confirmar isso alterando seu código para o seguinte:
+</p>
+
+<p>
+<b>[B]</b> Execute o código abaixo no seu Jupyter Notebook. O que aconteceu agora? Quais são o significado dos dois print executados?
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">i</span> = <span style="color: #6c71c4; font-weight: bold;">0</span>
+<span style="color: #859900; font-weight: bold;">while</span> i &lt; <span style="color: #6c71c4; font-weight: bold;">10</span>:
+    <span style="color: #859900; font-weight: bold;">print</span>(i, i &lt; <span style="color: #6c71c4; font-weight: bold;">10</span>)
+    <span style="color: #268bd2;">i</span> += <span style="color: #6c71c4; font-weight: bold;">1</span>
+<span style="color: #859900; font-weight: bold;">print</span>(i, i &lt; <span style="color: #6c71c4; font-weight: bold;">10</span>)
+</pre>
+</div>
+
+<p>
+<b>IMPORTANTE</b>
+</p>
+
+<p>
+O uso de loops pode facilmente levar o seu código a loops infinitos! Sempre avalie com cuidado a condição a ser adotada em seu loop, vamos a um exemplo de loop infinito:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">i</span> = <span style="color: #6c71c4; font-weight: bold;">0</span>
+<span style="color: #859900; font-weight: bold;">while</span> i &lt; <span style="color: #6c71c4; font-weight: bold;">10</span>:
+    <span style="color: #859900; font-weight: bold;">print</span>(i, i &lt; <span style="color: #6c71c4; font-weight: bold;">10</span>)
+</pre>
+</div>
+
+<p>
+<b>Caso tenha executado, precisará desligar (shut down) seu kernel, pois o código não irá parar nunca!</b>
+</p>
+
+<p>
+Neste caso, foi esquecido o incrementador de <code>i</code> (+=), logo o valor de <code>i</code> nunca será alterado! Isso levará o código a rodar indefinidamente, sem nunca parar, teste para você conferir. Esse é um dos erros mais catastróficos em códigos, pois o programa simplesmente executa operações sem parar, muitas vezes utilizando todos os recursos computacionais disponíveis e inutilizando a máquina. Neste caso a única alternativa é terminar o programa forçosamente, ou em alguns casos só reiniciando o computador.
+</p>
+
+<p>
+Também temos outra maneira de sair ou continuar em loops, usando os comandos <code>break</code> ou <code>continue</code>. Basicamente, ao se dar o comando <code>break</code>, a execução do loop é interrompida e nós saímos do bloco de execução do loop. Use o <code>break</code> sempre que quiser &ldquo;pular fora&rdquo; do loop. O comando <code>continue</code> é diferente, ele interrompe a execução natural do loop e retorna para o início do loop onde a condição é checada (a linha do <code>while</code>). Ambas estruturas de controle são bastante úteis. Veja um exemplo onde usamos <code>break</code> abaixo.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #859900; font-weight: bold;">def</span> <span style="color: #b58900;">maximo_divisor_comum</span>(a):
+<span class="linenr"> 2: </span>    <span style="color: #35a69c; font-style: italic;">"""Calcula o m&#225;ximo divisor comum e, caso exista, exibe ao usu&#225;rio.</span>
+<span class="linenr"> 3: </span>
+<span class="linenr"> 4: </span><span style="color: #35a69c; font-style: italic;">    Args:</span>
+<span class="linenr"> 5: </span><span style="color: #35a69c; font-style: italic;">      a:</span>
+<span class="linenr"> 6: </span><span style="color: #35a69c; font-style: italic;">        N&#250;mero que desejamos saber o divisor.</span>
+<span class="linenr"> 7: </span><span style="color: #35a69c; font-style: italic;">    """</span>
+<span class="linenr"> 8: </span>
+<span class="linenr"> 9: </span>    <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Definimos i como a-1, pois se come&#231;armos a testar o divisor como o</span>
+<span class="linenr">10: </span>    <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">pr&#243;prio a, ter&#237;amos uma solu&#231;&#227;o trivial</span>
+<span class="linenr">11: </span>    <span style="color: #268bd2;">i</span> = a - <span style="color: #6c71c4; font-weight: bold;">1</span>
+<span class="linenr">12: </span>
+<span class="linenr">13: </span>    <span style="color: #859900; font-weight: bold;">while</span> i &gt; <span style="color: #6c71c4; font-weight: bold;">0</span>:  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Vamos iterar de a-1 at&#233; 1</span>
+<span class="linenr">14: </span>        <span style="color: #268bd2;">b</span> = a / i
+<span class="linenr">15: </span>
+<span class="linenr">16: </span>        <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Caso a divis&#227;o tenha a parte decimal igual a zero</span>
+<span class="linenr">17: </span>        <span style="color: #859900; font-weight: bold;">if</span> b - <span style="color: #d33682; font-style: italic;">int</span>(b) == <span style="color: #6c71c4; font-weight: bold;">0</span>:
+<span class="linenr">18: </span>            <span style="color: #859900; font-weight: bold;">print</span>(a, <span style="color: #2aa198;">"&#233; divis&#237;vel por"</span>, i)
+<span class="linenr">19: </span>            <span style="color: #859900; font-weight: bold;">break</span>  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Com este break o programa sai do loop</span>
+<span class="linenr">20: </span>
+<span class="linenr">21: </span>        <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Caso a divis&#227;o n&#227;o tenha a parte decimal igual a zero</span>
+<span class="linenr">22: </span>        <span style="color: #859900; font-weight: bold;">else</span>:
+<span class="linenr">23: </span>            <span style="color: #268bd2;">i</span> -= <span style="color: #6c71c4; font-weight: bold;">1</span>  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Diminu&#237;mos 1 do i</span>
+<span class="linenr">24: </span>
+<span class="linenr">25: </span>
+<span class="linenr">26: </span>maximo_divisor_comum(<span style="color: #6c71c4; font-weight: bold;">8733</span>)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">teste</span>
+</pre>
+</div>
+
+<p>
+<b>[C]</b> Modifique o código acima, para utilizar o operador resto <code>%</code>, isso simplificará o código.
+</p>
+
+<p>
+O código apresentado está comentado e a função tem uma docstring, lembrem-se sempre de comentar seus códigos e adicionar docstrings às suas funções! Do contrário, niguém além de você o entenderá e depois de algum tempo, nem você mesmo entenderá. Basicamente o código encontra o maior divisor para um número fornecido, testando todos os números menores que ele mesmo até que alguma das divisões tenha componente decimal zero.
+</p>
+
+<p>
+<b>[D]</b> Modifique o código acima para avisar quando números primos são encontrados.
+</p>
+
+<p>
+<b>[Desafio]</b> Como você faria um código para achar o máximo divisor comum de dois números?
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0b09b51" class="outline-3">
+<h3 id="org0b09b51"><span class="section-number-3">6.2.</span> Laço de repetição usando <code>for</code></h3>
+<div class="outline-text-3" id="text-6-2">
+<blockquote>
+<p>
+&ldquo;<i>Loop de loop flip flop Santa&rsquo;s got an airplane</i>&rdquo; &#x2014; Santa&rsquo;s Got an Airplane - The Beach Boys
+</p>
+</blockquote>
+
+<p>
+A outra maneira de implementarmos loops no Python é utilizando o <code>for</code>. Mas antes de entrarmos em seus detalhes, é importante mostrar outra ferramenta do Python, o operador <code>in</code>. Com ele podemos checar se um elemento está em uma lista, ou qualquer outro objeto iterável. No exemplo abaixo mostramos sua sintaxe:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">lista</span> = [<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo"</span>]
+<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Ovo"</span> <span style="color: #859900; font-weight: bold;">in</span> lista)
+<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"P&#227;o"</span> <span style="color: #859900; font-weight: bold;">in</span> lista)
+</pre>
+</div>
+
+<p>
+Veja que para o objeto <code>"Ovo"</code> o código retornou <code>True</code>, já para <code>"Pão"</code>​, o código retornou <code>False</code>. Ou seja, ele confirmou que há <code>"Ovo"</code> na lista e que não há pão.
+</p>
+
+<p>
+Para implementarmos um loop com <code>for</code>, iremos utilizar a seguinte sintaxe: <code>for item in lista</code>, desta maneira a variável item assumirá os valores dos objetos presentes na lista, um a um, em ordem.
+</p>
+
+<p>
+<b>[A]</b> Execute o código abaixo e descreva o que observou.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">lista</span> = [<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo"</span>, <span style="color: #2aa198;">"Or&#233;gano"</span>, <span style="color: #2aa198;">"P&#227;o"</span>]
+<span style="color: #859900; font-weight: bold;">for</span> item <span style="color: #859900; font-weight: bold;">in</span> lista:
+    <span style="color: #859900; font-weight: bold;">print</span>(item)
+</pre>
+</div>
+
+<p>
+Dentro do bloco do <code>for</code> podemos usar condicionais ou manipular de várias maneiras as variáveis. Por exemplo, você quer que quando houver pão na sua lista de compras, seja automáticamente incluídos queijo, presunto e manteiga.
+</p>
+
+<p>
+<b>[B]</b> Crie um operador condicional no seu loop <code>for</code>, que confere se um dos itens da lista é pão, caso seja então avise o usuário que ele deve comprar os ingredientes necessários para fazer um lanche.
+</p>
+
+<p>
+Existe uma regra de ouro sempre que usar um loop com <code>for</code>: <b>nunca altere o objeto que você está iterando</b>! Isto é, caso você esteja iterando no objeto <code>lista</code>, não deve usar métodos que adicionem, removam ou ordenem os itens o objeto <code>lista</code> dentro do bloco do <code>for</code>. Caso precise, crie uma lista nova ou uma cópia da lista sendo iterada para realizar suas alterações. Veja o exemplo abaixo.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #268bd2;">lista</span> = [<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo"</span>, <span style="color: #2aa198;">"Or&#233;gano"</span>, <span style="color: #2aa198;">"P&#227;o"</span>]
+<span class="linenr"> 2: </span><span style="color: #268bd2;">lista_copia</span> = lista.copy()  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">criando uma c&#243;pia de `lista`</span>
+<span class="linenr"> 3: </span>
+<span class="linenr"> 4: </span><span style="color: #859900; font-weight: bold;">for</span> item <span style="color: #859900; font-weight: bold;">in</span> lista:  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">`lista` &#233; o objeto sendo iterado</span>
+<span class="linenr"> 5: </span>    <span style="color: #859900; font-weight: bold;">print</span>(item)
+<span class="linenr"> 6: </span>    <span style="color: #859900; font-weight: bold;">if</span> item == <span style="color: #2aa198;">"Ovo"</span>:
+<span class="linenr"> 7: </span>        lista_copia.append(<span style="color: #2aa198;">"Bacon"</span>)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">alterando a `lista_copia`, n&#227;o `lista`</span>
+<span class="linenr"> 8: </span>
+<span class="linenr"> 9: </span><span style="color: #859900; font-weight: bold;">print</span>(lista)
+<span class="linenr">10: </span><span style="color: #859900; font-weight: bold;">print</span>()
+<span class="linenr">11: </span><span style="color: #859900; font-weight: bold;">print</span>(lista_copia)
+</pre>
+</div>
+
+<p>
+<b>[C]</b> Faça um código que adicione o queijo, presunto e manteiga à uma lista caso ela tenha pão. Certifique-se que sua lista final nunca terá itens duplicados (isto é, se já tinha queijo na lista original, então não teremos dois itens queijo na lista final).
+</p>
+
+<p>
+Além de iterar em listas, o <code>for</code> loop pode ser utilizado em faixas de números, para isso devemos utilizar o operador <code>range</code>. Por exemplo, se quisermos iterar os números de 0 à 10, podemos fazer o seguinte:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">for</span> number <span style="color: #859900; font-weight: bold;">in</span> <span style="color: #d33682; font-style: italic;">range</span>(<span style="color: #6c71c4; font-weight: bold;">0</span>, <span style="color: #6c71c4; font-weight: bold;">11</span>):
+    <span style="color: #859900; font-weight: bold;">print</span>(number)
+</pre>
+</div>
+
+<p>
+A saída do código lhe dará os números de 0 a 10, um em cada linha. Mas note que a faixa que colocamos é de 0 a 11. Novamente o fato do Python começar a contar do zero leva ao intervalo aberto no final da faixa, como discutido anteriormente. Então, tenha sempre em mente isso para não perder o último número da sua faixa.
+</p>
+
+<p>
+Também podemos definir o passo a ser utilizado, como fizemos no particionamento de listas. O padrão é iterar de um em um, mas podemos mudar isso, veja o exemplo abaixo:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">for</span> number <span style="color: #859900; font-weight: bold;">in</span> <span style="color: #d33682; font-style: italic;">range</span>(<span style="color: #6c71c4; font-weight: bold;">0</span>, <span style="color: #6c71c4; font-weight: bold;">11</span>, <span style="color: #6c71c4; font-weight: bold;">2</span>):
+    <span style="color: #859900; font-weight: bold;">print</span>(number)
+</pre>
+</div>
+
+<p>
+O código acima exibe os números 0, 2, 4, 6, 8 e 10. Ou seja, o passo mudou para 2. Também podemos utilizar um passo negativo, colocando a faixa como (0,11,-1) será impressa a ordem decrescente. Isso é bastante útil em um caso bem simples, o cálculo de fatoriais.
+</p>
+
+<p>
+<b>[D]</b> Com a dica do passo negativo, escreva um código para calcular o fatorial de um número inteiro qualquer. Dica: utilize no máximo números de dois dígitos, se não o resultado ficará monstruosamente grande!
+</p>
+
+<p>
+<b>[E]</b> Refaça o código para encontrar números primos, agora utilizando o <code>for</code> loop.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org000ed9f" class="outline-3">
+<h3 id="org000ed9f"><span class="section-number-3">6.3.</span> Laços Aninhados</h3>
+<div class="outline-text-3" id="text-6-3">
+<blockquote>
+<p>
+&ldquo;<i>That Many Dreams Within Dreams Is Too Unstable</i>&rdquo; &#x2014; Yusuf - Inception
+</p>
+</blockquote>
+
+<p>
+Além de utilizarmos laços (loops) aliados a condicionais, também podemos ter loops dentro de loops. Vamos voltar a nossas listas de compras, agora precisamos checar o que temos na lista da padaria e do supermercado, para ver se não temos nada repetido, vamos ao exemplo:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">listadecompras</span> = [
+    [<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Queijo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Pasta de Dentes"</span>, <span style="color: #2aa198;">"Chocolate"</span>],
+    [<span style="color: #2aa198;">"P&#227;o"</span>, <span style="color: #2aa198;">"Queijo"</span>, <span style="color: #2aa198;">"Presunto"</span>, <span style="color: #2aa198;">"Sonho"</span>],
+]
+
+<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Lista do supermercado antes da confer&#234;ncia:"</span>, listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>])
+<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Lista da padaria antes da confer&#234;ncia:"</span>, listadecompras[<span style="color: #6c71c4; font-weight: bold;">1</span>])
+
+<span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">c&#243;pia para n&#227;o alterar o original dentro do loop (regra de ouro!)</span>
+<span style="color: #268bd2;">lista_copia</span> = listadecompras.copy()
+
+<span style="color: #859900; font-weight: bold;">for</span> item1 <span style="color: #859900; font-weight: bold;">in</span> listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>]:  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Loop nos itens do supermercado</span>
+    <span style="color: #859900; font-weight: bold;">for</span> item2 <span style="color: #859900; font-weight: bold;">in</span> listadecompras[<span style="color: #6c71c4; font-weight: bold;">1</span>]:  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Loop nos itens da padaria</span>
+        <span style="color: #859900; font-weight: bold;">if</span> item1 == item2:  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Checa se os itens s&#227;o iguais</span>
+
+            <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Se forem iguais, s&#227;o removidos da lista do supermercado</span>
+            lista_copia[<span style="color: #6c71c4; font-weight: bold;">0</span>].remove(item1)
+
+<span style="color: #268bd2;">listadecompras</span> = lista_copia  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">atualizando a lista original</span>
+
+<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Lista do supermercado ap&#243;s a confer&#234;ncia:"</span>, listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>])
+<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Lista da padaria ap&#243;s a confer&#234;ncia:"</span>, listadecompras[<span style="color: #6c71c4; font-weight: bold;">1</span>])
+</pre>
+</div>
+
+<p>
+Note que o <code>"Queijo"</code> foi removido da lista do supermercado, que era o único item repetido neste caso.
+</p>
+
+<p>
+<b>[A]</b> Agora crie mais uma lista, que corresponderia a itens que você já tem no armário de casa. Escreva um código para averiguar se há itens repetidos na lista do supermercado e da padaria, como antes, mas que também confira se há itens repetidos na lista de itens do armário.
+</p>
+
+<p>
+<b>[Desafio]</b> Escreva uma função para encontrar todos números primos dentro de um intervalo de números inteiros.
+</p>
+
+<p>
+<b>BONUS</b> Testaremos esses códigos, o mais rápido ganhará um bonus na nota! Os códigos elegíveis são os que estiverem devidamente comentados e a função deve ter uma docstring completa em múltiplas linhas.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge32f838" class="outline-3">
+<h3 id="orge32f838"><span class="section-number-3">6.4.</span> Compreensão de listas</h3>
+<div class="outline-text-3" id="text-6-4">
+<blockquote>
+<p>
+&ldquo;<i>Wise it is to comprehend the whole. - Edward Young</i>&rdquo; &#x2014; Yusuf - Inception
+</p>
+</blockquote>
+
+<p>
+Esta ferramenta serve para criarmos novas listas a partir de uma lista existente. Isso pode ser feito com loops por exemplo, mas existe uma forma mais compacta. Vamos primeiro fazer da forma que vocês já foram apresentados:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #268bd2;">listadecompras</span> = [
+<span class="linenr"> 2: </span>    <span style="color: #2aa198;">"Miojo"</span>,
+<span class="linenr"> 3: </span>    <span style="color: #2aa198;">"Ovo"</span>,
+<span class="linenr"> 4: </span>    <span style="color: #2aa198;">"Queijo"</span>,
+<span class="linenr"> 5: </span>    <span style="color: #2aa198;">"Presunto"</span>,
+<span class="linenr"> 6: </span>    <span style="color: #2aa198;">"P&#227;o"</span>,
+<span class="linenr"> 7: </span>    <span style="color: #2aa198;">"Or&#233;gano"</span>,
+<span class="linenr"> 8: </span>    <span style="color: #2aa198;">"Papel Higi&#234;nico"</span>,
+<span class="linenr"> 9: </span>]
+<span class="linenr">10: </span>
+<span class="linenr">11: </span><span style="color: #268bd2;">listadapadaria</span> = []
+<span class="linenr">12: </span>
+<span class="linenr">13: </span><span style="color: #859900; font-weight: bold;">for</span> item <span style="color: #859900; font-weight: bold;">in</span> listadecompras:
+<span class="linenr">14: </span>    <span style="color: #859900; font-weight: bold;">if</span> item == <span style="color: #2aa198;">"P&#227;o"</span> <span style="color: #859900; font-weight: bold;">or</span> item == <span style="color: #2aa198;">"Queijo"</span> <span style="color: #859900; font-weight: bold;">or</span> item == <span style="color: #2aa198;">"Presunto"</span>:
+<span class="linenr">15: </span>        listadapadaria.append(item)
+<span class="linenr">16: </span>
+<span class="linenr">17: </span><span style="color: #859900; font-weight: bold;">print</span>(listadapadaria)
+</pre>
+</div>
+
+<p>
+No código acima definimos a <code>listadecompras</code>, mas separamos alguns itens em uma <code>listadapadaria</code>, com os itens do misto quente. Foi feito um loop nos itens <code>listadecompras</code> e um condicional para os itens do misto quente. Notem que é possível utilizar vários condicionais juntos, o que é bastante útil. No final a <code>listadapadaria</code> está com os itens desejados. Outra maneira que pode reduzir o código significativamente é o uso da compreensão de listas. Veja o exemplo no código abaixo:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">listadecompras</span> = [
+    <span style="color: #2aa198;">"Miojo"</span>,
+    <span style="color: #2aa198;">"Ovo"</span>,
+    <span style="color: #2aa198;">"Queijo"</span>,
+    <span style="color: #2aa198;">"Presunto"</span>,
+    <span style="color: #2aa198;">"P&#227;o"</span>,
+    <span style="color: #2aa198;">"Or&#233;gano"</span>,
+    <span style="color: #2aa198;">"Papel Higi&#234;nico"</span>,
+]
+
+<span style="color: #268bd2;">listadapadaria</span> = [
+    item
+    <span style="color: #859900; font-weight: bold;">for</span> item <span style="color: #859900; font-weight: bold;">in</span> listadecompras
+    <span style="color: #859900; font-weight: bold;">if</span> <span style="color: #2aa198;">"P&#227;o"</span> <span style="color: #859900; font-weight: bold;">in</span> item <span style="color: #859900; font-weight: bold;">or</span> <span style="color: #2aa198;">"Queijo"</span> <span style="color: #859900; font-weight: bold;">in</span> item <span style="color: #859900; font-weight: bold;">or</span> <span style="color: #2aa198;">"Presunto"</span> <span style="color: #859900; font-weight: bold;">in</span> item
+]
+
+<span style="color: #859900; font-weight: bold;">print</span>(listadapadaria)
+</pre>
+</div>
+
+<p>
+Temos o mesmo resultado do loop <code>for</code>, com um código de três linhas, frente ao de seis linhas com o loop. A economia de linhas vem aliada a uma sintaxe um pouco complicada, que merece bastante atenção. Basicamente ela consiste no seguinte: novalista = [espressão <code>for</code> item <code>in</code> iterável <code>if</code> condição verdadeira], a <code>expressão</code> para ser qualquer coisa, no exemplo anterior utilizamos o próprio <code>item</code> na expressão, sem nenhum operador, mas entraremos em mais detalhes em breve. O <code>item</code> é o que será analizada a <code>condição</code> e aplicada a <code>expressão</code>, já o <code>iterável</code> pode ser uma lista, tupla, conjunto, entre outros. Vamos a um exemplo onde aplicamos uma expressão:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span class="linenr">1: </span><span style="color: #268bd2;">quadradosimpares</span> = [
+<span class="linenr">2: </span>    numero ** <span style="color: #6c71c4; font-weight: bold;">2</span>
+<span class="linenr">3: </span>    <span style="color: #859900; font-weight: bold;">for</span> numero <span style="color: #859900; font-weight: bold;">in</span> <span style="color: #d33682; font-style: italic;">range</span>(<span style="color: #6c71c4; font-weight: bold;">10</span>)
+<span class="linenr">4: </span>    <span style="color: #859900; font-weight: bold;">if</span> numero % <span style="color: #6c71c4; font-weight: bold;">2</span> != <span style="color: #6c71c4; font-weight: bold;">0</span>
+<span class="linenr">5: </span>]
+<span class="linenr">6: </span>
+<span class="linenr">7: </span><span style="color: #859900; font-weight: bold;">print</span>(quadradosimpares)
+</pre>
+</div>
+
+<p>
+No exemplo acima a <code>expressão</code> é <code>numero**2</code>, ou seja tiramos o quadrado do <code>item</code> da compreensão. O iterável é a faixa de números de 0 a 9. Já a condição é que o resto da divisão entre o <code>item</code> (numero) e 2 seja diferente de zero, que será verdade para os números ímpares. Então a lista <code>quadradosimpares</code> terá o quadrado de todos os números ímpares na faixa escolhida.
+</p>
+
+<p>
+Veja que não é necessário pular linhas dentro da sua compreensão de listas, o código abaixo funciona de forma idêntica ao anterior. Aqui nós pulamos as linhas apenas para deixar claro as diferentes partes da sintaxe.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">quadradosimpares</span> = [numero ** <span style="color: #6c71c4; font-weight: bold;">2</span> <span style="color: #859900; font-weight: bold;">for</span> numero <span style="color: #859900; font-weight: bold;">in</span> <span style="color: #d33682; font-style: italic;">range</span>(<span style="color: #6c71c4; font-weight: bold;">10</span>) <span style="color: #859900; font-weight: bold;">if</span> numero % <span style="color: #6c71c4; font-weight: bold;">2</span> != <span style="color: #6c71c4; font-weight: bold;">0</span>]
+<span style="color: #859900; font-weight: bold;">print</span>(quadradosimpares)
+</pre>
+</div>
+
+<p>
+<b>[A]</b> Agora faça o seguinte, delete a condição (if numero % 2 != 0) e execute o código, o que acontece?
+</p>
+
+<p>
+Mas porque utilizar esta sintaxe de compreensão de listas e não continuar utilizando loops? Os programadores são tão preguiçosos que querem fazer tudo em uma linha? Na verdade a maior vantagem da compreensão de listas é a performance. Vamos fazer uma rápida comparação para dar uma ideia, com o código abaixo, que calcula quais são os divisores de um número arbitrário.
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #859900; font-weight: bold;">import</span> time  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Importando a biblioteca que ir&#225; cronometrar nosso c&#243;digo.</span>
+<span style="color: #268bd2;">a</span> = <span style="color: #6c71c4; font-weight: bold;">1000001</span>  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Definimos um n&#250;mero qualquer</span>
+
+
+<span style="color: #268bd2;">start</span> = time.time()  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Setando o tempo inicial</span>
+<span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">M&#233;todo de compreenss&#227;o de listas para calcular os divisores</span>
+<span style="color: #268bd2;">divisor</span> = [i <span style="color: #859900; font-weight: bold;">for</span> i <span style="color: #859900; font-weight: bold;">in</span> <span style="color: #d33682; font-style: italic;">range</span>(<span style="color: #6c71c4; font-weight: bold;">1</span>, a) <span style="color: #859900; font-weight: bold;">if</span> a % i == <span style="color: #6c71c4; font-weight: bold;">0</span>]
+<span style="color: #859900; font-weight: bold;">print</span>(divisor)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Imprime os divisores</span>
+<span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Imprime o tempo que o c&#243;digo levou para executar</span>
+<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"--- Comprehenssion %s seconds ---"</span> % (time.time() - start))
+
+
+<span style="color: #268bd2;">start</span> = time.time()  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Setando novamente o tempo inicial</span>
+<span style="color: #268bd2;">divisor</span> = []  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Inicializando a lista dos divisores</span>
+<span style="color: #859900; font-weight: bold;">for</span> i <span style="color: #859900; font-weight: bold;">in</span> <span style="color: #d33682; font-style: italic;">range</span>(<span style="color: #6c71c4; font-weight: bold;">1</span>, a):  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">In&#237;cio do loop</span>
+    <span style="color: #859900; font-weight: bold;">if</span> a % i == <span style="color: #6c71c4; font-weight: bold;">0</span>:  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Testa o resto da divis&#227;o</span>
+        divisor.append(i)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Acrescenta como divisor se o resto &#233; zero</span>
+
+<span style="color: #859900; font-weight: bold;">print</span>(divisor)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Imprime os divisores</span>
+<span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Imprime o tempo de execu&#231;&#227;o</span>
+<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"--- Loop %s seconds ---"</span> % (time.time() - start))
+</pre>
+</div>
+
+<p>
+No código apresentado calculamos todos divisores do número <code>a</code>, execute este código, você verá que os tempos de execução são mais rápidos para o método de compreenssão de listas. Mas poxa, um executou em 0.04 segundos e o outro em 0.05 segundos, não é muita diferença. Pois bem, aumente três zeros no <code>a</code> e compare novamente, agora temos a compreenssão de listas executando em 45 segundos e o loop em 60 segundos. Quanto maior o seu número, mais importante será essa diferença. Isso pode ser crucial em muitos casos, pois imagine que você queira fazer uma previsão do tempo para amanhã, mas seu código demora 48 horas para rodar e sua previsão fica pronta depois do dia ter passado? Esse e muitos outros casos tem a performance como algo crítico, tornando a aplicação útil ou não.
+</p>
+
+<p>
+Maravilha, conseguimos ganhar um pouco de performance, mas, o código apresentado está fazendo várias operações inúteis. Como assim? Bom, vamos pensar nos divisores de um número, eles certamente não serão maiores que a metade do mesmo, mas estamos tentando dividir por esses números maiores que a metade. Ajuste seu código para dividir só até a metade de <code>a</code> e veja a diferença na performance. A diferença é grande não? Se compararmos o loop dividindo por todos os números com a compreenssão de listas dividindo até a metade de <code>a</code>, o código leva quase um terço do tempo para executar. Se fosse uma previsão do tempo que levava 48 horas, agora ela levaria pouco mais de 16 horas, ficando pronta antes do próximo dia começar, se tornando útil. Logo parar para pensar na matemática ou lógica do problema ajuda muito na otimização, ainda mais aliado as técnicas computacionais adequadas.
+</p>
+
+<p>
+<b>[Desafio]</b> Tente otimizar mais a performance do código anterior!
+</p>
+</div>
+</div>
+</div>
 <div id="footnotes">
-<h2 class="footnotes">Notas de rodapé: </h2>
+<h2 class="footnotes">Footnotes: </h2>
 <div id="text-footnotes">
 
 <div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">Está sendo escrita na verdade, e provavelmente continuará sendo escrita por muito tempo pois a área de computação é muito dinâmica.</p></div></div>
@@ -2399,7 +2844,7 @@ Além desses métodos temos outros exclusivos de conjuntos, como segue:
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Daniel R. Cassar &amp; James M. de Almeida</p>
-<p class="date">Created: 2022-04-05 ter 09:37</p>
+<p class="date">Created: 2022-04-11 seg 11:02</p>
 </div>
 </body>
 </html>

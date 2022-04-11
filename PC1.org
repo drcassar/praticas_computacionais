@@ -1924,11 +1924,24 @@ Além desses métodos temos outros exclusivos de conjuntos, como segue:
 :ID:       25e5272b-ad01-463a-815a-7b4345a4b35a
 :END:
 
+#+begin_quote
+"/Once you free your mind about a concept of
+Harmony and of music being correct
+You can do whatever you want
+So nobody told me what to do
+And there was no preconception of what to do/" --- Giovanni Giorgio
+#+end_quote
+
 Laços de repetição, ou seu termo mais comum em inglês o loop, serve para iterar elementos de listas, tuplas, conjuntos ou mesmo números em uma faixa definida. Existem diferentes maneiras de implementar loops, sendo as principais do Python o =while= e o =for=, que mostraremos pra vocês a seguir.
 
 ** Laço de repetição usando =while=
+#+begin_quote
+"/Do it while yo can/" --- Billy Preston
+#+end_quote
+
 Vamos iniciar com um =while loop=, ou laço de repetição com =while=. A tradução da palavra =while= do inglês é =enquanto=, então a ideia deste loop é fazer algo enquanto uma condição não for verdadeira. Vamos começar com um exemplo simples, onde o loop será executado enquanto a variável =i= for menor que 10, e vamos somando 1 a mesma variável a cada iteração. Para isso usamos um operador que não foi apresentado ainda, o =+==, que basicamente soma o valor ou variável indicado após ele, por exemplo, i += 1 é o mesmo que i = i + 1.
 
+*[A]* Execute o código abaixo no seu Jupyter Notebook, descreva o que ocorreu com o código.
 #+begin_src python
 i = 0
 while i < 10:
@@ -1938,6 +1951,7 @@ while i < 10:
 
 Fique atento a identação! Assim como no caso dos condicionais (=if=) você precisa colocar a parte da execução identada, pois esta é a maneira do Python interpretar o loop. Note que estamos utilizando os operadores lógicos, que vocês já foram apresentados em uma aula anterior. Eles são fundamenteis para a implementação de loops while, pois quando a condição retornar =False=, o loop irá parar. Na execução do código vocês podem notar que os números de 0 à 9 foram impressos, quando =i= ficou igual a 10 o loop parou, pois a sentença =i < 10= passou a ser =False=. Você pode confirmar isso alterando seu código para o seguinte:
 
+*[B]* Execute o código abaixo no seu Jupyter Notebook. O que aconteceu agora? Quais são o significado dos dois print executados?
 #+begin_src python
 i = 0
 while i < 10:
@@ -1946,7 +1960,10 @@ while i < 10:
 print(i, i < 10)
 #+end_src
 
-Com isso, estamos imprimindo a variável =i= e o valor booleano da operação =i < 10=. Ao final do loop há mais uma operação de print, para mostrar que quando =i = 10= a operação =i < 10= retorna =False=.
+#+BEGIN_COMMENT
+#Com isso, estamos imprimindo a variável =i= e o valor booleano da operação =i < 10=. Ao final do loop há mais uma operação de print, para mostrar que quando =i = 10= a operação =i < 10= retorna =False=.
+#+END_COMMENT
+
 *IMPORTANTE*
 O uso de loops pode facilmente levar o seu código a loops infinitos! Sempre avalie com cuidado a condição a ser adotada em seu loop, vamos a um exemplo de loop infinito:
 
@@ -1956,9 +1973,11 @@ while i < 10:
       print(i, i < 10)
 #+end_src
 
+*Caso tenha executado, precisará desligar (shut down) seu kernel, pois o código não irá parar nunca!*
+
 Neste caso, foi esquecido o incrementador de =i= (+=), logo o valor de =i= nunca será alterado! Isso levará o código a rodar indefinidamente, sem nunca parar, teste para você conferir. Esse é um dos erros mais catastróficos em códigos, pois o programa simplesmente executa operações sem parar, muitas vezes utilizando todos os recursos computacionais disponíveis e inutilizando a máquina. Neste caso a única alternativa é terminar o programa forçosamente, ou em alguns casos só reiniciando o computador.
 
-Também temos outra maneira de sair ou continuar em loops, usando o comando =break= e =continue=. Basicamente ao se dar o comando =break=, o loop é interrompido, e se o comando =continue= for utilizado o loop continua sua execução. Isso pode ser útil para se utilizar em conjunto com operadores condicionais, como no exemplo abaixo, onde o código cálcula o máximo divisor de um número fornecido:
+Também temos outra maneira de sair ou continuar em loops, usando o comando =break= e =continue=. Basicamente ao se dar o comando =break=, o loop é interrompido, e se o comando =continue= for utilizado o loop continua sua execução. Isso pode ser útil para se utilizar em conjunto com operadores condicionais, como no exemplo abaixo, onde o código cálcula o máximo divisor de um número fornecido.
 
 #+begin_src python
 a = 8733				#Número que desejamos saber o divisor
@@ -1974,51 +1993,58 @@ while i > 0:                            #Vamos iterar de a-1 até 1
         continue			#Voltamos ao início do loop
 #+end_src
 
+*[C]* Modifique o código acima, para utilizar o operador resto ~%~, isso simplificará o código.
+
 O código apresentado está comentado, lembrem-se sempre de comentar seus códigos, pois caso você não comente, niguém além de você o entenderá e depois de algum tempo, nem você mesmo entenderá. Basicamente o código encontra o maior divisor para um número fornecido, testando todos os números menores que ele mesmo até que alguma das divisões tenha componente decimal zero.
 
-*Tarefa*
-Modifique o código acima para avisar quando números primos são encontrados.
+*[D]* Modifique o código acima para avisar quando números primos são encontrados.
 
+#+BEGIN_COMMENT
 #+RESULTS:
-: a = 17
-: i = a-1
-: while i > 1:
-:     print(i)
-:     b = a/i
-:     print(b,b - int(b))
-:     if (b - int(b)) == 0:
-:         print(a, 'é divisível por', i)
-:         break
-:     else:
-:         i -= 1
-:         continue
-: if (i == 1):
-:     print(a,'é primo!')
+#: a = 17
+#: i = a-1
+#: while i > 1:
+#:     print(i)
+#:     b = a/i
+#:     print(b,b - int(b))
+#:     if (b - int(b)) == 0:
+#:         print(a, 'é divisível por', i)
+#:         break
+#:     else:
+#:         i -= 1
+#:         continue
+#: if (i == 1):
+#:     print(a,'é primo!')
+#+END_COMMENT
 
+*Desafio* Como você faria um código para achar o máximo divisor comum de dois números?
 
-*Desafio*
-Como você faria um código para achar o máximo divisor comum?
-
+#+BEGIN_COMMENT
 #+RESULTS:
-: a = 30
-: b = 20
-:
-: if a > b:
-:     i = b - 1
-: else:
-:     i = a - 1
-: while a > 1:
-:     print(i)
-:     div1 = a/i
-:     div2 = b/i
-:     if ((div1 - int(div1)) == 0) and ((div2 - int(div2)) == 0):
-:         print('O MDC entre', a, 'e', b, 'é', i)
-:         break
-:     else:
-:         i -= 1
-:         continue
+#: a = 30
+#: b = 20
+#:
+#: if a > b:
+#:     i = b - 1
+#: else:
+#:     i = a - 1
+#: while a > 1:
+#:     print(i)
+#:     div1 = a/i
+#:     div2 = b/i
+#:     if ((div1 - int(div1)) == 0) and ((div2 - int(div2)) == 0):
+#:         print('O MDC entre', a, 'e', b, 'é', i)
+#:         break
+#:     else:
+#:         i -= 1
+#:         continue
+#+END_COMMENT
 
 ** Laço de repetição usando =for=
+#+begin_quote
+"/Loop de loop flip flop Santa's got an airplane/" --- Santa's Got an Airplane - The Beach Boys
+#+end_quote
+
 A outra maneira de implementarmos loops no Python é utilizando o =for=. Mas antes de entrarmos em seus detalhes, é importante mostrar outra ferramenta do Python, o operador =in=. Com ele podemos checar se um elemento está em uma lista, ou qualquer outro objeto iterável. No exemplo abaixo mostramos sua sintaxe:
 
 #+begin_src python
@@ -2027,47 +2053,60 @@ print("Ovo" in lista)
 print("Pão" in lista)
 #+end_src
 
-Veja que para o objeto ovo o código retornou =True=, já para pão, o código retornou =False=. Ou seja, ele confirmou que há ovo na lista e que não há pão. Para implementarmos um loop com for, iremos utilizar a seguinte sintaxe: =for item in lista=, desta maneira a variável item assumirá os o valor dos objetos presentes na lista, um a um. Confira o exemplo abaixo:
+Veja que para o objeto ovo o código retornou =True=, já para pão, o código retornou =False=. Ou seja, ele confirmou que há ovo na lista e que não há pão. Para implementarmos um loop com for, iremos utilizar a seguinte sintaxe: =for item in lista=, desta maneira a variável item assumirá os o valor dos objetos presentes na lista, um a um.
 
+*[A]* Execute o código abaixo e descreva o que observou.
 #+begin_src python
 lista = ["Miojo", "Ovo", "Queijo", "Orégano", "Pão"]
 for item in lista:
 	print(item)
 #+end_src
 
-Note que a cada iteração o código imprime a variável item, que assume os valores da lista do primeiro ao último. Podemos então usar condicionais ou manipular de várias maneiras os dados. Por exemplo, você quer que quando houver pão na sua lista de compras, seja automáticamente incluídos queijo, presunto e manteiga. Para isso vamos criar um operador condicional, que confere se um dos itens é pão, caso seja então adicionamos os itens desejados.
+#+BEGIN_COMMENT
+#Note que a cada iteração o código imprime a variável item, que assume os valores da lista do primeiro ao último.
+#+END_COMMENT
 
+Podemos usar condicionais ou manipular de várias maneiras os dados. Por exemplo, você quer que quando houver pão na sua lista de compras, seja automáticamente incluídos queijo, presunto e manteiga.
+
+*[B]* Crie um operador condicional no seu loop, que confere se um dos itens é pão, caso seja então adicionamos os itens desejados.
+
+#+BEGIN_COMMENT
 #+begin_src python
-lista = ["Miojo", "Ovo", "Queijo", "Orégano", "Pão"]
-for item in lista:
-        print(item)
-        if item == "Pão":
-                lista.append["Queijo", "Presunto", "Manteiga"]
-print(lista)
+#lista = ["Miojo", "Ovo", "Queijo", "Orégano", "Pão"]
+#for item in lista:
+#        print(item)
+#        if item == "Pão":
+#                lista.append["Queijo", "Presunto", "Manteiga"]
+#print(lista)
 #+end_src
+#+END_COMMENT
 
-Pronto, agora se você adicionar pão a lista serão adicionados os itens queijo, presundo e manteiga, assim você pode fazer seu misto quente! Agora, note que já havia queijo na lista e ele foi adicionado novamente. Como você faria um código que não adicionasse o queijo duplicadamente?
+Pronto, agora se você adicionar pão a lista serão adicionados os itens queijo, presundo e manteiga, assim você pode fazer seu misto quente! Agora, note que já havia queijo na lista e ele foi adicionado novamente.
 
+*[C]* Faça um código que não adicione o queijo, presunto e manteiga duplicadamente.
+
+#+BEGIN_COMMENT
 #+RESULTS:
-: set1 = {"Miojo", "Ovo", "Queijo", "Orégano", "Pão"}
-: set2 = copy.deepcopy(set1)
-: for item in set1:
-:         print(item)
-:         if item == "Pão":
-:                 set2.update({"Queijo", "Presunto", "Manteiga"})
-: print(set2)
-:
-: lista = ["Miojo", "Ovo", "Queijo", "Orégano", "Pão"]
-: for item in lista:
-:         print(item)
-:         if item == "Pão":
-:             if lista.count("Queijo") == 0:
-:                 lista.append("Queijo")
-:             if lista.count("Presunto") == 0:
-:                 lista.append("Presunto")
-:             if lista.count("Manteiga") == 0:
-:                 lista.append("Manteiga")
-: print(lista)
+#: set1 = {"Miojo", "Ovo", "Queijo", "Orégano", "Pão"}
+#: set2 = copy.deepcopy(set1)
+#: for item in set1:
+#:         print(item)
+#:         if item == "Pão":
+#:                 set2.update({"Queijo", "Presunto", "Manteiga"})
+#: print(set2)
+#:
+#: lista = ["Miojo", "Ovo", "Queijo", "Orégano", "Pão"]
+#: for item in lista:
+#:         print(item)
+#:         if item == "Pão":
+#:             if lista.count("Queijo") == 0:
+#:                 lista.append("Queijo")
+#:             if lista.count("Presunto") == 0:
+#:                 lista.append("Presunto")
+#:             if lista.count("Manteiga") == 0:
+#:                 lista.append("Manteiga")
+#: print(lista)
+#+END_COMMENT
 
 Além de iterar em listas, o =for loop= pode ser utilizado em faixas de números, para isso devemos utilizar o operador =range=. Por exemplo, se quisermos iterar os números de 0 à 10, podemos fazer o seguinte:
 
@@ -2078,40 +2117,50 @@ for number in range(0,11):
 
 A saída do código lhe dará os números de 0 à 10, um em cada linha. Mas note que a faixa que colocamos é de 0 à 11! Novamente o fato do Python começar a contar do zero leva ao intervalo aberto no final da faixa, como discutido anteriormente. Então, tenha sempre em mente isso para não perder o último número da sua faixa.
 
-Também podemos definir o passo a ser utilizado, o padrão é iterar de um em um, mas podemos mudar isso, veja o exemplo abaixo:
+Também podemos definir o passo a ser utilizado, como fizemos no fatiamento de listas. O padrão é iterar de um em um, mas podemos mudar isso, veja o exemplo abaixo:
 
 #+begin_src python
 for number in range(0,11,2):
 	print(number)
 #+end_src
 
-O código imprime os números 0, 2, 4, 6, 8 e 10. Ou seja, o passo mudou para 2. Também podemos utilizar um passo negativo, colocando a faixa como (0,11,-1) será impressa a ordem decrescente. Isso é bastante útil em um caso bem simples, o cálculo de fatoriais. Vamos calcular o fatorial de 10 para exemplificar:
+O código imprime os números 0, 2, 4, 6, 8 e 10. Ou seja, o passo mudou para 2. Também podemos utilizar um passo negativo, colocando a faixa como (0,11,-1) será impressa a ordem decrescente. Isso é bastante útil em um caso bem simples, o cálculo de fatoriais.
 
+*[D]* Com a dica do passo negativo, escreva um código para calcular o fatorial de um número inteiro qualquer. Dica: Utilize números de dois dígitos, se não o resultado ficará monstruosamente grande!
+
+#+BEGIN_COMMENT
 #+begin_src python
-fatorial = 1			#Definimos um valor inicial para o fatorial
-for number in range(4,1,-1):	#Iteramos de 4 à 2, com passo de -1
-    print(number)		#Imprime o número da iteração
-    fatorial = fatorial*number  #Multiplicamos a variável fatorial pelo número sendo iterado
-print(fatorial)			#Imprime o resultado do fatorial
+#fatorial = 1			#Definimos um valor inicial para o fatorial
+#for number in range(4,1,-1):	#Iteramos de 4 à 2, com passo de -1
+#    print(number)		#Imprime o número da iteração
+#    fatorial = fatorial*number  #Multiplicamos a variável fatorial pelo número sendo iterado
+#print(fatorial)			#Imprime o resultado do fatorial
 #+end_src
 
-O código é simples mas tem alguns conceitos novos nele. Já na primeira linha definimos a variável =fatorial = 1=, porque isso, já que a utilizaremos no loop? Comente a primeira linha e confira o que acontece. Outro ponto é que iteramos de 4 a 2 e não de 4 a 1, o fatorial é definido por =4! = 4*3*2*1=, porém, qualquer número multiplicado por 1 é ele mesmo, logo não faz diferença multiplicarmos por 1, já que o resultado não é alterado. Assim, evitando uma multiplicação economizamos tempo computacional, pode parecer pouca coisa, mas, várias dessas otimizações em um código grande podem levar a ganhos significativos de performance.
+#O código é simples mas tem alguns conceitos novos nele. Já na primeira linha definimos a variável =fatorial = 1=, porque isso, já que a utilizaremos no loop? Comente a primeira linha e confira o que acontece. Outro ponto é que iteramos de 4 a 2 e não de 4 a 1, o fatorial é definido por =4! = 4*3*2*1=, porém, qualquer número multiplicado por 1 é ele mesmo, logo não faz diferença multiplicarmos por 1, já que o resultado não é alterado. Assim, evitando uma multiplicação economizamos tempo computacional, pode parecer pouca coisa, mas, várias dessas otimizações em um código grande podem levar a ganhos significativos de performance.
+#+END_COMMENT
 
-*Tarefa:* Refaça o código para encontrar números primos agora utilizando o =for loop=. /Dica: Utilize o operador =%=/.
+*[E]* Refaça o código para encontrar números primos, agora utilizando o =for loop=.
 
+#+BEGIN_COMMENT
 #+RESULTS:
-: a = 17
-: for i in range(a-1,0,-1):
-:     c = a % i
-:     if c == 0 and i != 1:
-:         print(a, 'é divisível por', i)
-:         break
-:     elif i == 1:
-:         print(a, 'é primo')
-:     else:
-:         print(a, 'não é divisível por', i)
+#: a = 17
+#: for i in range(a-1,0,-1):
+#:     c = a % i
+#:     if c == 0 and i != 1:
+#:         print(a, 'é divisível por', i)
+#:         break
+#:     elif i == 1:
+#:         print(a, 'é primo')
+#:     else:
+#:         print(a, 'não é divisível por', i)
+#+END_COMMENT
 
 ** Laços Aninhados
+#+begin_quote
+"/That Many Dreams Within Dreams Is Too Unstable/" --- Yusuf - Inception
+#+end_quote
+
 Além de utilizarmos laços (loops) aliados a condicionais, também podemos ter loops dentro de loops. Vamos voltar a nossas listas de compras, agora precisamos checar o que temos na lista da padaria e do supermercado, para ver se não temos nada repetido, vamos ao exemplo:
 
 #+begin_src python
@@ -2129,30 +2178,40 @@ print('Lista da padaria após a conferência:', listadecompras[1])							#Imprim
 
 Note que o =Queijo= foi removido da lista da padaria, que era o único item repetido neste caso.
 
-*Tarefa:* Escreva um código para encontrar todos números primos de uma faixa de números.
+*[A]* Agora crie mais uma lista, que corresponderia a itens que você já tem no armário de casa. Escreva um código para averiguar se há itens repetidos na lista do supermercado e da padaria, como antes, mas que também confira se há itens repetidos na lista de itens do armário.
+
+*[Desafio]* Escreva um código para encontrar todos números primos de uma faixa de números.
+*BONUS* Testaremos esses códigos, o mais rápido ganhará um bonus na nota!
+
+#+BEGIN_COMMENT
 #+RESULTS:
-: start = 1
-: end = 1000
-:
-: listadeprimos = set()
-: listadenaoprimos = set()
-: for i in range(start,end+1):
-:         notprime = 0
-:         for j in range(start+1,int(end/2)):
-:                 if i % j == 0 and i != j:
-:                         notprime = 1
-:                         listadenaoprimos.add(i)
-:                         print(i, 'é divisível por', j)
-:                         break
-:         if notprime == 0:
-:                 listadeprimos.add(i)
-:                 print(i, 'é primo')
-:
-: print(sorted(listadenaoprimos), 'não são primos')
-: print(sorted(listadeprimos), 'são primos')
+#: start = 1
+#: end = 1000
+#:
+#: listadeprimos = set()
+#: listadenaoprimos = set()
+#: for i in range(start,end+1):
+#:         notprime = 0
+#:         for j in range(start+1,int(end/2)):
+#:                 if i % j == 0 and i != j:
+#:                         notprime = 1
+#:                         listadenaoprimos.add(i)
+#:                         print(i, 'é divisível por', j)
+#:                         break
+#:         if notprime == 0:
+#:                 listadeprimos.add(i)
+#:                 print(i, 'é primo')
+#:
+#: print(sorted(listadenaoprimos), 'não são primos')
+#: print(sorted(listadeprimos), 'são primos')
+#+END_COMMENT
 
 ** Compreensão de listas
-Esta ferramenta serve para criarmos novas listas a partir de uma lista existente. Isso pode ser feito com loops por exemplo, mas existe uma forma mais compacta. Vamos primeiro fazer da forma que vocês já foram apresentados então:
+#+begin_quote
+"/Wise it is to comprehend the whole. - Edward Young/" --- Yusuf - Inception
+#+end_quote
+
+Esta ferramenta serve para criarmos novas listas a partir de uma lista existente. Isso pode ser feito com loops por exemplo, mas existe uma forma mais compacta. Vamos primeiro fazer da forma que vocês já foram apresentados:
 
 #+begin_src python
 listadecompras = ["Miojo", "Ovo", "Queijo", "Presunto", "Pão", "Orégano", "Papel Higiênico"]
@@ -2163,7 +2222,7 @@ for item in listadecompras:
 print(listadapadaria)
 #+end_src
 
-No código acima definimos a =listadecompras=, mas separamos alguns itens em uma =listadapadaria=, com os itens do misto quente. Foi feito um loop nos itens =listadecompras= e um condicional para os itens do misto quente. Notem que é possível utilizar vários condicionais juntos, o que é bastante útil. No final a =listadapadaria= acaba está com os itens desejados. Outra maneira que pode reduzir o código significativamente é o uso da compreenção de listas. Veja o exemplo no código abaixo:
+No código acima definimos a =listadecompras=, mas separamos alguns itens em uma =listadapadaria=, com os itens do misto quente. Foi feito um loop nos itens =listadecompras= e um condicional para os itens do misto quente. Notem que é possível utilizar vários condicionais juntos, o que é bastante útil. No final a =listadapadaria= está com os itens desejados. Outra maneira que pode reduzir o código significativamente é o uso da compreenção de listas. Veja o exemplo no código abaixo:
 
 #+begin_src python
 listadecompras = ["Miojo", "Ovo", "Queijo", "Presunto", "Pão", "Orégano", "Papel Higiênico"]
@@ -2178,7 +2237,9 @@ quadradosimpares = [numero**2 for numero in range(10) if numero % 2 != 0]
 print(quadradosimpares)
 #+end_src
 
-No exemplo acima a =expressão= é =numero**2=, ou seja tiramos o quadrado do =item= da compreensão. O iterável é a faixa de números de 0 a 9. Já a condição é que o resto da divisão entre o =item= (numero) e 2 seja diferente de zero, que será verdade para os números ímpares. Então a lista =quadradosimpares= terá o quadrado de todos os números ímpares na faixa escolhida. Agora faça o seguinte, delete a condição (if numero % 2 != 0) e execute o código, o que acontece?
+No exemplo acima a =expressão= é =numero**2=, ou seja tiramos o quadrado do =item= da compreensão. O iterável é a faixa de números de 0 a 9. Já a condição é que o resto da divisão entre o =item= (numero) e 2 seja diferente de zero, que será verdade para os números ímpares. Então a lista =quadradosimpares= terá o quadrado de todos os números ímpares na faixa escolhida.
+
+*[A]* Agora faça o seguinte, delete a condição (if numero % 2 != 0) e execute o código, o que acontece?
 
 Mas porque utilizar esta sintaxe de compreenssão de listas e não continuar utilizando loops? Os programadores são tão preguiçosos que querem fazer tudo em uma linha? Na verdade a maior vantagem da compreensão de listas é a performance. Vamos fazer uma rápida comparação para dar uma ideia, com o código abaixo, que calcula quais são os divisores de um número arbitrário.
 
@@ -2201,15 +2262,19 @@ print("--- Loop %s seconds ---" % (time.time() - start))		#Imprime o tempo de ex
 
 No código apresentado calculamos todos divisores do número =a=, execute este código, você verá que os tempos de execução são mais rápidos para o método de compreenssão de listas. Mas poxa, um executou em 0.04 segundos e o outro em 0.05 segundos, não é muita diferença. Pois bem, aumente três zeros no =a= e compare novamente, agora temos a compreenssão de listas executando em 45 segundos e o loop em 60 segundos. Quanto maior o seu número, mais importante será essa diferença. Isso pode ser crucial em muitos casos, pois imagine que você queira fazer uma previsão do tempo para amanhã, mas seu código demora 48 horas para rodar e sua previsão fica pronta depois do dia ter passado? Esse e muitos outros casos tem a performance como algo crítico, tornando a aplicação útil ou não.
 
-Maravilha, conseguimos ganhar um pouco de performance, mas, o código apresentado está fazendo várias operações inúteis. Como assim? Bom, vamos pensar nos divisores de um número, eles certamente não serão maiores que a metade do mesmo, mas estamos tentando dividir por esses números maiores que a metade. Ajuste seu código para dividir só até a metade de =a= e veja a diferença na performance. A diferença é grande não? Se compararmos o loop dividindo por todos os números com a compreenssão de listas dividindo até a metade de =a=, o código leva quase um terço do tempo para executar. Se fosse uma previsão do tempo que levava 48 horas, agora ela levaria pouco mais de 16 horas, ficando pronta antes do próximo dia começar, se tornando útil. Logo parar para pensar na matemática ou lógica do problema ajuda muito na otimização, ainda mais aliado as técnicas computacionais adequadas. Existe alguma outra otimização que lhe vem em mente?
+Maravilha, conseguimos ganhar um pouco de performance, mas, o código apresentado está fazendo várias operações inúteis. Como assim? Bom, vamos pensar nos divisores de um número, eles certamente não serão maiores que a metade do mesmo, mas estamos tentando dividir por esses números maiores que a metade. Ajuste seu código para dividir só até a metade de =a= e veja a diferença na performance. A diferença é grande não? Se compararmos o loop dividindo por todos os números com a compreenssão de listas dividindo até a metade de =a=, o código leva quase um terço do tempo para executar. Se fosse uma previsão do tempo que levava 48 horas, agora ela levaria pouco mais de 16 horas, ficando pronta antes do próximo dia começar, se tornando útil. Logo parar para pensar na matemática ou lógica do problema ajuda muito na otimização, ainda mais aliado as técnicas computacionais adequadas.
 
+*Desafio* Tente otimizar mais a performance do código anterior!
+
+
+#+BEGIN_COMMENT
 ** Compreensão de listas aninhadas
 
 Assim como laços, também podemos aninhar compreensão de listas. Neste caso a sintaxe pode ficar bastante complicada, então é interessante ilustrarmos
 
 [[./img/nested-list-comprehension.png]]
 
-#+ açúcar sintático >> Ver com Daniel
+
 
 * Depuração de programas :noexport:
 :PROPERTIES:

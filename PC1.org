@@ -49,6 +49,11 @@
 #+END_EXPORT
 :END:
 
+#+BEGIN_SRC elisp :session pyvenv :results none :exports none
+  (venv-workon "drcpy")
+#+END_SRC
+
+#+RESULTS:
 
 * Conteúdo da disciplina :noexport:
 :PROPERTIES:
@@ -2479,6 +2484,457 @@ Maravilha, conseguimos ganhar um pouco de performance, mas, o código apresentad
 Assim como laços, também podemos aninhar compreensão de listas. Neste caso a sintaxe pode ficar bastante complicada, então é interessante ilustrarmos
 
 [[./img/nested-list-comprehension.png]]
+* Importando bibliotecas
+** Bibliotecas nos ajudam a não ter que reinventar a roda
+
+#+begin_quote
+"/Se eu vi mais longe é pois estava sobre os ombros de gigantes./" --- Isaac Newton
+#+end_quote
+
+Diversas grandezas científicas variam ordens de magnitude, como por exemplo a viscosidade e a condutividade eletrônica. Uma forma de nos ajudar a tratar essas grandezas é pensar em escala logarítmica e não na escala linear.
+
+Calcular o logaritmo de um valor é uma tarefa corriqueira no meio científico. Era de se imaginar que o Python teria uma função para computar o log de um número, não é? Dê uma olhada na [[https://docs.python.org/pt-br/3/library/functions.html][documentação oficial]] e verá que não existe nenhuma função embutida de Python que computa o log de um número...
+
+E agora? Teremos que programar nossa própria função que calcula o log toda vez que precisarmos tirar o logaritmo de um valor? Para esse caso específico, a resposta é /não/. Mesmo não sendo uma função embutida em Python, podemos obter uma função que calcula o log usando bibliotecas! Veja o exemplo abaixo.
+
+#+begin_src python -n
+  import math
+
+  valor = 100000000000000000
+  print(math.log10(valor))
+
+  print()
+  help(math.log10)
+#+end_src
+
+#+RESULTS:
+: 17.0
+:
+: Help on built-in function log10 in module math:
+:
+: log10(x, /)
+:     Return the base 10 logarithm of x.
+:
+
+No código acima temos a importantíssima instrução ~import~ na primeira linha. Essa instrução é usada para importar os módulos das bibliotecas que temos instaladas no nosso computador. O módulo importado foi o módulo ~math~ que, como o próprio nome sugere, contém objetos relacionados com matemática. O módulo ~math~ faz parte do que chamamos de /biblioteca padrão/ do Python, que é um conjunto de diversos módulos que já vem instalados quando se instala o Python.
+
+Na linha 4 do código acima usamos a função ~math.log10~ para calcular o logaritmo na base 10 da variável ~valor~. Todos os objetos fornecidos pelo módulo ~math~ devem ser acessados usando essa notação "[nome do módulo].[nome do objeto]". Imagina o tempo que você iria gastar se tivesse que escrever uma função que calcula o logaritmo de um número toda vez que precisasse... seríamos muito improdutivos se esse fosse o caso!
+
+Finalmente, na linha 7 do código nós usamos a função ~help~ para checar como a função ~math.log10~ funciona (o que é sempre uma boa prática caso você não saiba como uma função específica funciona).
+
+*[A]* Vamos investigar o que o módulo ~math~ tem! Rode o código abaixo e verá todos os objetos contidos no módulo ~math~ (veja que é a função ~dir~ que está listando esses objetos para nós). Leia o nome de todos os objetos e escolha 3 que achar interessante para saber mais (ignore os objetos que começam e terminam com dois sublinhados "__"). Antes de mais nada, identifique o tipo do objeto que escolheu com a função ~type~. Se seu objeto for uma função, rode o comando ~help~ para saber mais da função. Se seu objeto for uma variável, dê um ~print~ nela para saber seu valor. Comente brevemente sobre possíveis aplicações científicas dos objetos que escolheu.
+
+#+begin_src python -n
+  import math
+
+  print(dir(math))
+#+end_src
+
+#+RESULTS:
+: ['__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'acos', 'acosh', 'asin', 'asinh', 'atan', 'atan2', 'atanh', 'ceil', 'comb', 'copysign', 'cos', 'cosh', 'degrees', 'dist', 'e', 'erf', 'erfc', 'exp', 'expm1', 'fabs', 'factorial', 'floor', 'fmod', 'frexp', 'fsum', 'gamma', 'gcd', 'hypot', 'inf', 'isclose', 'isfinite', 'isinf', 'isnan', 'isqrt', 'lcm', 'ldexp', 'lgamma', 'log', 'log10', 'log1p', 'log2', 'modf', 'nan', 'nextafter', 'perm', 'pi', 'pow', 'prod', 'radians', 'remainder', 'sin', 'sinh', 'sqrt', 'tan', 'tanh', 'tau', 'trunc', 'ulp']
+
+*[B]* Usando a biblioteca ~math~, faça o Python checar se $\sen{}^2(x) + \cos{}^2(x) = 1$ para 5 valores diferentes de $x$ a sua escolha. Comente caso encontre algo estranho.
+
+# #+begin_src python
+#   import math
+
+#   for a in range(5):
+#       print(math.sin(a)**2 + math.cos(a)**2)
+# #+end_src
+
+*[Desafio]* Você já se perguntou o que seria o fatorial de um número não-inteiro? Se sim, então você está se sentindo como Daniel Bernoulli se sentiu há quase 300 anos. A função Gama ($\Gamma$) é o que chamamos de extensão da função fatorial e ela funciona para números não-inteiros! Sabendo que $\Gamma(n+1) = n!$, qual seria o fatorial de $\pi$? Use o módulo ~math~ para este cálculo. _Dica_: a letra Gama em inglês se escreve Gamma, com dois "m".
+
+# #+begin_src python
+#   import math
+#   print(math.gamma(math.pi+1))
+# #+end_src
+
+# #+RESULTS:
+# : 7.188082728976031
+
+** Espaço de nome
+
+#+begin_quote
+"/Se você esquecer completamente seu nome, você nunca encontrará seu caminho para casa./" --- Haku, A Viagem de Chihiro
+#+end_quote
+
+Quando importamos módulos nós criamos o que chamamos de ~namespace~, ou "espaço de nome" em português. Foi isso que aconteceu com o módulo ~math~: importamos ele e para usar seus objetos precisamos escrever "~math.nome_do_objeto~". Neste caso, ~math~ é o ~namespace~ que guarda todas as informações do nosso módulo.
+
+Vamos fazer uma importação diferente agora, veja no exemplo abaixo.
+
+#+begin_src python -n
+  import random as rd
+
+  print(dir(rd))
+#+end_src
+
+#+RESULTS:
+: ['BPF', 'LOG4', 'NV_MAGICCONST', 'RECIP_BPF', 'Random', 'SG_MAGICCONST', 'SystemRandom', 'TWOPI', '_ONE', '_Sequence', '_Set', '__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', '_accumulate', '_acos', '_bisect', '_ceil', '_cos', '_e', '_exp', '_floor', '_index', '_inst', '_isfinite', '_log', '_os', '_pi', '_random', '_repeat', '_sha512', '_sin', '_sqrt', '_test', '_test_generator', '_urandom', '_warn', 'betavariate', 'choice', 'choices', 'expovariate', 'gammavariate', 'gauss', 'getrandbits', 'getstate', 'lognormvariate', 'normalvariate', 'paretovariate', 'randbytes', 'randint', 'random', 'randrange', 'sample', 'seed', 'setstate', 'shuffle', 'triangular', 'uniform', 'vonmisesvariate', 'weibullvariate']
+
+Na linha 1 temos novamente a instrução ~import~. Estamos importando o módulo ~random~ que é outro módulo da biblioteca padrão do Python e serve para gerar números aleatórios[fn:: Na verdade, são números pseudoaleatórios. Não é possível gerar números perfeitamente aleatórios utilizando apenas instruções determinísticas dos processadores atuais que temos.]. Veja que tem algo a mais nessa linha! Nós demos um apelido para o ~namespace~ do módulo ~random~. Apelidamos ele carinhosamente de ~rd~. A instrução para dar apelido para módulos é o ~as~, assim como mostra o exemplo.
+
+*[A]* Aproveitando que comentamos sobre o módulo ~random~, importe ele dando o apelido que quiser e cheque com a função ~help~ o que as funções ~choice~ e ~randint~ fazem. Teste a função ~choice~ fornecendo uma lista com 5 itens como argumento para ver o que acontece. Teste a função ~randint~ fornecendo dois valores inteiros como argumento.
+
+# #+begin_src python
+#   import random as rd
+
+#   print(help(rd.choice))
+#   print()
+#   print(help(rd.randint))
+
+#   print(rd.choice([1,2,3,4]))
+#   print(rd.randint(0,10))
+# #+end_src
+
+# #+RESULTS:
+# #+begin_example
+# Help on method choice in module random:
+
+# choice(seq) method of random.Random instance
+#     Choose a random element from a non-empty sequence.
+
+# None
+
+# Help on method randint in module random:
+
+# randint(a, b) method of random.Random instance
+#     Return random integer in range [a, b], including both end points.
+
+# None
+# 4
+# 5
+# #+end_example
+** Importando apenas o necessário
+
+#+begin_verse
+Eu uso o necessário
+Somente o necessário
+O extraordinário é demais
+Eu digo necessário
+Somente o necessário
+Por isso é que essa vida eu vivo em paz
+     --- Balu, Mogli - O Menino Lobo
+#+end_verse
+
+Digamos que você queira calcular o logaritmo natural de um número e não precisa usar mais nenhum outro objeto do módulo ~math~. Para fazer isso você pode usar a estrutura "~from ... import ...~" como mostra o exemplo abaixo.
+
+#+begin_src python -n
+  from math import log  # leia-se "do módulo `math`, importe o objeto `log`"
+
+  valor = 10000
+  print(log(valor))
+#+end_src
+
+#+RESULTS:
+: 9.210340371976184
+
+Perceba que ao importar a função ~log~ dessa forma, ela agora funciona sem a necessidade de invocar o ~namespace~ do módulo ~math~ na linha 4. Inclusive, neste caso se escrevermos "~math.log(valor)~" irá dar um erro pois o módulo ~math~ não foi importado (tente e verá)!! O que aconteceu na linha 1 foi que importamos apenas uma função específica desse módulo _e nada mais_.
+
+*[A]* Sua tarefa é calcular o seno de um número aleatório. Para isso, importe apenas as funções necessárias dos módulos ~math~ e ~random~ usando a estrutura de importação que acabamos de ver. _Dica_: a instrução ~import~ deve ser escrita para cada biblioteca que você quer importar.
+
+Para importar mais de um objeto de um módulo, use vírgulas. Veja no exemplo abaixo.
+
+#+begin_src python -n
+  from math import factorial, pi, e
+
+  print(pi)
+  print(e)
+  print(factorial(5))
+#+end_src
+
+#+RESULTS:
+: 3.141592653589793
+: 2.718281828459045
+: 120
+
+Existe uma sintaxe que nos permite importar /todos/ os objetos de um módulo fora do seu ~namespace~, basta usar o asterisco como mostrado no código abaixo. Entretanto, esse tipo de estrutura *não é recomendada* e não será aceita nas respostas das práticas desta apostila. Ela está apresentada aqui apenas para fins informativos.
+
+#+begin_src python -n
+  from math import *
+
+  # veja que as funções abaixo foram importadas e podem ser usadas sem
+  # chamar o namespace `math`. Porém, com a importação com  asterísco,
+  # não fica claro de onde elas vieram (imagina isso num códico com milhares
+  # de linhas...)
+  print(exp(10))
+  print(cos(pi))
+  print(factorial(5))
+#+end_src
+
+#+RESULTS:
+: 22026.465794806718
+: -1.0
+: 120
+
+** Documentação da biblioteca padrão
+
+#+begin_quote
+"/Quando tudo o mais falhar, leia o manual de instruções./" --- Autor desconhecido
+#+end_quote
+
+A biblioteca padrão do Python é bastante extensa. Uma forma de checar o que já existe é lendo a [[https://docs.python.org/3.9/py-modindex.html][documentação oficial]]. Lá você vai encontrar a seção do módulo [[https://docs.python.org/3.9/library/math.html#module-math][math]] e a seção do módulo [[https://docs.python.org/3.9/library/random.html#module-random][random]], entre tantas outras. Fora estes dois módulos, alguns outros que vale a pena dar uma olhada são:
+
++ ~statistics~
++ ~pprint~
++ ~datetime~
++ ~itertools~
++ ~functools~
++ ~pathlib~
++ ~pickle~
++ ~os~
++ ~sys~
++ ~re~
+
+*[Desafio]* Descreva o que as funções ~product~, ~permutations~ e ~combinations~ do módulo ~itertools~ fazem. Elabore possíveis usos dessa funções.
+
+*[Desafio 2]* Escolha 3 funções do módulo ~statistics~, descreva seu uso e use em um código seu.
+
+*[Desafio 3]* Faça o Python exibir a data de hoje usando o módulo ~datetime~.
+
+* Lendo, manipulando e graficando dados
+** Lendo dados externos ao Python
+
+Abra um gerenciador de planilhas (Microsoft Excel, LibreOffice Calc ou similar). Crie uma tabela com três colunas, similar ao exemplo abaixo. Salve sua tabela com o nome "populacao.xlsx" _na mesma pasta onde está seu caderno de notas do Jupyter que você está usando agora_.
+
+| País     | Continente |  População |
+|----------+------------+------------|
+| Brasil   | América    |  212688125 |
+| Alemanha | Europa     |   83190556 |
+| China    | Ásia       | 1412600000 |
+| Japão    | Ásia       |  125300000 |
+| México   | América    |  126014024 |
+| Equador  | América    |   17715822 |
+
+Agora rode o código abaixo (certifique-se que seu kernel do Jupyter tem a biblioteca ~pandas~ instalada[fn:: A biblioteca ~pandas~ tem esse nome pois vem de "*pan*​el *da*​ta" que é um termo comum para dados multidimensionais. Infelizmente, ela não tem nada a ver com um dos animais mais fofos que existem...]. Se estiver usando os computadores da Ilum, use o kernel ~ilumpy~).
+
+#+begin_src python -n :session pyvenv
+  import pandas as pd
+
+  dados = pd.read_excel("populacao.xlsx")
+  print(dados)
+#+end_src
+
+#+RESULTS:
+:        País Continente   População
+: 0    Brasil    América   212688125
+: 1  Alemanha     Europa    83190556
+: 2     China       Ásia  1412600000
+: 3     Japão       Ásia   125300000
+: 4    México    América   126014024
+: 5   Equador    América    17715822
+
+Se seu código executou sem erros, meus parabéns! Você acabou de ler dados externos ao Python e armazená-los na variável ~dados~! 🎉
+
+Vamos ver como isso aconteceu. Primeiramente nós importamos a biblioteca ~pandas~ na linha 1; aqui nós demos o apelido carinhoso de ~pd~ para ela. Na linha 3 nós usamos a função ~read_excel~ da biblioteca ~pandas~. Esta função, como o próprio nome sugere, é capaz de ler arquivos com a extensão ~.xlsx~, que é a extensão padrão do Microsoft Excel. A função ~read_excel~ recebeu como argumento único o nome da planilha que criamos, e armazenamos o retorno dessa função na variável ~dados~. A última linha simplesmente exibiu a variável ~dados~ para nós com o comando ~print~.
+
+_Nota_: veja que o ~pandas~ só foi capaz de encontrar o nosso arquivo "população.xlsx" pois ele estava _na mesma pasta que o caderno de notas_! Podemos ler arquivos de qualquer lugar do nosso computador, porém, para ler arquivos que não estão na mesma pasta precisamos indicar o caminho para este arquivo. Veremos isso com o tempo.
+
+*[A]* Crie o arquivo "população.xlsx" e carregue ele no Python usando a biblioteca ~pandas~ assim como mostrado acima.
+
+*[B]* Vamos brincar com nosso objeto ~dados~ recém criado! Execute o código abaixo e comente sobre o que cada linha fez. Dos seus testes, como você diria que é a sintaxe para acessar os valores das colunas do objeto ~dados~?
+
+#+begin_src python -n :session pyvenv
+  print(dados['País'])
+  print(dados['Continente'])
+  print(dados['População'])
+#+end_src
+
+#+RESULTS:
+#+begin_example
+5     Equador
+1    Alemanha
+3       Japão
+4      México
+0      Brasil
+2       China
+Name: País, dtype: object
+5    América
+1     Europa
+3       Ásia
+4    América
+0    América
+2       Ásia
+Name: Continente, dtype: object
+5      17715822
+1      83190556
+3     125300000
+4     126014024
+0     212688125
+2    1412600000
+Name: População, dtype: int64
+#+end_example
+
+Antes de seguir em frente, vamos ver uma nomenclatura. O objeto ~dados~ que criamos usando a função ~read_excel~ do ~pandas~ é chamado de ~DataFrame~, que literalmente em português traduzido como um "quadro de dados", mas podemos chamar simplesmente de "tabela". Cheque se isso é verdade rodando o código abaixo.
+
+#+begin_src python :session pyvenv
+  print(type(dados))
+#+end_src
+
+#+RESULTS:
+: <class 'pandas.core.frame.DataFrame'>
+
+** Manipulando dados armazenados em ~DataFrames~
+
+Os objetos do tipo ~DataFrame~ são absurdamente poderosos! Eles nos permitem tratar dados de diversas maneiras. Veremos algumas a seguir. Como sempre, vale lembrar que nada melhor que a [[https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html][documentação oficial]] para checar tudo que os ~DataFrames~​ são capazes de fazer.
+
+*[A]* Execute o código abaixo e descreva o que aconteceu.
+
+#+begin_src python -n :session pyvenv
+  print(dados.sort_values("População"))
+  print()
+  print(dados.sort_values("População", ascending=False))
+#+end_src
+
+#+RESULTS:
+#+begin_example
+       País Continente   População
+5   Equador    América    17715822
+1  Alemanha     Europa    83190556
+3     Japão       Ásia   125300000
+4    México    América   126014024
+0    Brasil    América   212688125
+2     China       Ásia  1412600000
+
+       País Continente   População
+2     China       Ásia  1412600000
+0    Brasil    América   212688125
+4    México    América   126014024
+3     Japão       Ásia   125300000
+1  Alemanha     Europa    83190556
+5   Equador    América    17715822
+#+end_example
+
+*[B]* Após executar o código acima, o que você acha que aconteceu com a sua variável ~dados~? Você acha que ela permanece inalterada ou que o método ~sort_values~ alterou ela? Teste sua hipótese com o comando ~print~. Comente o que observou.
+
+Os dois exercícios anteriores são apenas exemplos para mostrar que _nem sempre_ os métodos de ~DataFrames~ alteram a sua variável original. No exemplo que vimos, o método ~sort_values~ apenas fez sua ação de ordenar as colunas e você exibiu o resultado com o comando ~print~, mas não efetivamente alterou o objeto ~dados~ em si! Dizemos que o método ~sort_values~ retornou uma "visão" do seu objeto ~dados~. Podemos guardar essa "visão" usando o operador de atribuição! Veja no exemplo abaixo:
+
+#+begin_src python -n :session pyvenv
+  dados_modificados = dados.sort_values("População")
+
+  print(dados_modificados)
+  print()
+  print(dados)  # esse é o original!
+#+end_src
+
+#+RESULTS:
+#+begin_example
+       País Continente   População
+5   Equador    América    17715822
+1  Alemanha     Europa    83190556
+3     Japão       Ásia   125300000
+4    México    América   126014024
+0    Brasil    América   212688125
+2     China       Ásia  1412600000
+
+       País Continente   População
+0    Brasil    América   212688125
+1  Alemanha     Europa    83190556
+2     China       Ásia  1412600000
+3     Japão       Ásia   125300000
+4    México    América   126014024
+5   Equador    América    17715822
+#+end_example
+
+Nada nos impede de guardar essa "visão" na própria variável original também, se assim desejarmos:
+
+#+begin_src python -n :session pyvenv
+  dados = dados.sort_values("População")
+
+  print(dados)  # agora a variável orinal foi subsitituida
+#+end_src
+
+#+RESULTS:
+:        País Continente   População
+: 5   Equador    América    17715822
+: 1  Alemanha     Europa    83190556
+: 3     Japão       Ásia   125300000
+: 4    México    América   126014024
+: 0    Brasil    América   212688125
+: 2     China       Ásia  1412600000
+
+Digamos que você queira saber quantos Equadores "cabem" em cada um dos países da nossa tabela. Para isso vamos dividir a coluna ~População~ pela população do Equador (que é de 17.715.822 habitantes). Veja o código abaixo.
+
+#+begin_src python -n :session pyvenv
+  dados_modificados = dados.copy()
+  dados_modificados['População'] = dados_modificados['População'] / 17715822
+  print(dados_modificados)
+  print()
+  print(dados)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+       País Continente  População
+5   Equador    América   1.000000
+1  Alemanha     Europa   4.695834
+3     Japão       Ásia   7.072774
+4    México    América   7.113078
+0    Brasil    América  12.005547
+2     China       Ásia  79.736633
+
+       País Continente   População
+5   Equador    América    17715822
+1  Alemanha     Europa    83190556
+3     Japão       Ásia   125300000
+4    México    América   126014024
+0    Brasil    América   212688125
+2     China       Ásia  1412600000
+#+end_example
+
+Primeiramente, na linha 1, nós criamos uma cópia dos nossos dados para não alterar o original (usamos o método ~copy~, similar ao que fizemos com listas). Na linha 2 alteramos o valor da coluna ~População~ usando a sintaxe do ~pandas~. Observe que precisamos usar o operador de atribuição aqui! Por fim, na linha 3 demos um ~print~ nos dados modificados (que respondeu nossa pergunta original) e na linha 5 nós vemos que nossa variável original ~dados~ permanece inalterada pois trabalhamos em uma cópia dela.
+
+*[C]* Usando a sintaxe que acabamos de ver, crie uma cópia da variável ~dados~ e nesta cópia faça com que a coluna ~População~ armezene a população em unidade de milhão de pessoas.
+
+** Plotando gráficos com ~pandas~
+
+No jargão científico, quando nós produzimos um gráfico é comum dizer que "plotamos um gráfico". "Plotar" vem do verbo /plot/ do inglês.
+
+Existem diversas ferramentas para plotar gráficos em Python. O ~pandas~ não é uma biblioteca especializada em gráficos, porém ele nos fornece uma interface muito amigável para uma biblioteca chamada ~matplotib~ que é muito poderosa para gerar gráficos.
+
+*[A]* Rode o código abaixo e escreva brevemente sobre o que você entendeu da sintaxe para criar um plot usando um ~DataFrame~.
+
+#+begin_src python -n :session pyvenv
+  import pandas as pd
+
+  dados = pd.read_excel("populacao.xlsx")
+  ax = dados.plot("País", "População")
+#+end_src
+
+#+RESULTS:
+: <class 'matplotlib.axes._subplots.AxesSubplot'>
+
+O código acima é bastante intuitivo: nós rodamos o método ~plot~ da nossa variável ~dados~ e fornecemos para ele o que deve ser plotado no eixo $x$ (foi a coluna "País") e o que deve ser plotado no eixo $y$ (foi a coluna "População"). O retorno do método ~plot~ é um objeto do tipo ~AxesSubplot~ que nós armazenamos na variável ~ax~. Este objeto é um objeto da biblioteca ~matplotlib~ que armazena as informações dos eixos do seu plot. Veremos mais detalhes sobre isso adiante, não se preocupe com isso neste momento.
+
+*[B]* Vamos fazer um plot de barras! Rode o código abaixo e compare com o anterior.
+
+#+begin_src python :session pyvenv
+  ax = dados.plot.bar("País", "População")
+#+end_src
+
+*[C]* Faça um plot de barras assim como no exercício anterior, porém faça com que barras fiquem em ordem decrescente de tamanho. _Dica_: para isso você precisa ordenar seu ~DataFrame~ antes! Lembre-se do método ~sort_values~ que já vimos anteriormente.
+
+# #+begin_src python -n :session pyvenv
+#   dados_sort = dados.sort_values("População", ascending=False)
+#   ax = dados_sort.plot.bar("País", "População")
+# #+end_src
+
+Para encerrar esta parte, vamos ver como salvar nosso gráfico:
+
+#+begin_src python -n :session pyvenv
+  ax = dados.plot.bar("País", "População")
+
+  # precisamos obter o objeto `fig` antes de salvar
+  fig = ax.get_figure()
+
+  # sugestão: sempre use o argumento `bbox_inches="tight"` quando for salvar
+  fig.savefig("grafico.png", bbox_inches="tight")
+#+end_src
+
+#+RESULTS:
+
+Veja que para salvar o gráfico primeiro precisamos obter o objeto ~fig~ a partir do nosso objeto ~ax~. Isso é feito pelo método ~get_figure~ mostrado na linha 4. Este tipo de separação em um objeto de figura (~fig~) e um objeto de eixo (~ax~) é uma peculiaridade do ~matplotlib~. Não temos muito o que fazer a respeito, apenas aceitar a realidade como ela se apresenta. É na linha 7 que efetivamente salvamos a imagem com o método ~savefig~. O primeiro argumento deve ser o nome do seu gráfico com a extensão que você quer (pode ser ".png", ".jpg", ".pdf" entre outras). O argumento ~bbox_inches~ controla qual parte do gráfico você quer salvar. _Dica_: sempre use ~bbox_inches="tight"~ e não terá problemas.
+
+*[D]* Teste seus conhecimentos novos! Crie uma nova planilha de dados com os dados que você quiser (pode buscar uma tabela pronta ou inventar a sua). Use o ~pandas~ para criar um objeto do tipo ~DataFrame~ com essa tabela. De um ~print~ na sua tabela e faça um plot com ela. Salve seu plot em um arquivo.
 
 * Depuração de programas :noexport:
 :PROPERTIES:
@@ -3011,39 +3467,6 @@ Existem diversos métodos de strings. Você pode checar todos eles [[https://doc
 
 ~isinstance~
 
-* TODO Biblioteca padrão :noexport:
-:PROPERTIES:
-:EXPORT_FILE_NAME: PC1/PC1_bibpadrao
-:EXPORT_OPTIONS: toc:t
-:ID:       a5a1dec7-4ac1-4c97-a064-75b93b837a5c
-:END:
-
-** O que são e como importar módulos de Python
-+ sintaxe para importar um módulo (com ou sem apelido)
-+ sintaxe para importar objetos de um módulo
-+ conceito de namespace ("espaço de nome")
-+ reforçar que cada módulo tem sua documentação (ou deveria ter...)
-+ Módulos para usar como exemplo: =math= e =random=
-
-** Módulos embutidos
-+ os que eu acho mais interessantes são:
-  + os
-  + sys
-  + functools
-  + itertools
-  + math
-  + pathlib
-  + pdb
-  + pprint
-  + random
-  + re
-  + statistics
-  + pickle
-  + abc?
-  + collections
-  + datetime
-  + logging
-
 * TODO Leitura e manipulação de dados com o módulo =pandas= :noexport:
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_pandas
@@ -3051,7 +3474,6 @@ Existem diversos métodos de strings. Você pode checar todos eles [[https://doc
 :ID:       94937cb1-718d-4eee-a3be-611c4badeb4b
 :END:
 
-** Criando e manipulando DataFrames a partir de arquivos
 ** Análise dos dados
 + Estatística descritiva
 ** Criando e exportando um DataFrame a partir de listas

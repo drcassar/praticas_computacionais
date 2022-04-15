@@ -2694,6 +2694,10 @@ A biblioteca padrão do Python é bastante extensa. Uma forma de checar o que j�
 * Lendo, manipulando e graficando dados
 ** Lendo dados externos ao Python
 
+#+begin_quote
+"/Um leitor vive mil vidas antes de morrer. O homem que nunca lê, vive apenas uma./" --- Jojen, A Dança dos Dragões
+#+end_quote
+
 Abra um gerenciador de planilhas (Microsoft Excel, LibreOffice Calc ou similar). Crie uma tabela com três colunas, similar ao exemplo abaixo. Salve sua tabela com o nome "populacao.xlsx" _na mesma pasta onde está seu caderno de notas do Jupyter que você está usando agora_.
 
 | País     | Continente |  População |
@@ -2774,6 +2778,10 @@ Antes de seguir em frente, vamos ver uma nomenclatura. O objeto ~dados~ que cria
 : <class 'pandas.core.frame.DataFrame'>
 
 ** Manipulando dados armazenados em ~DataFrames~
+
+#+begin_quote
+"/Você poderia fazer isso, por gentileza?/" --- Andrew Ryan, Bioshock
+#+end_quote
 
 Os objetos do tipo ~DataFrame~ são absurdamente poderosos! Eles nos permitem tratar dados de diversas maneiras. Veremos algumas a seguir. Como sempre, vale lembrar que nada melhor que a [[https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html][documentação oficial]] para checar tudo que os ~DataFrames~​ são capazes de fazer.
 
@@ -2886,6 +2894,10 @@ Primeiramente, na linha 1, nós criamos uma cópia dos nossos dados para não al
 *[C]* Usando a sintaxe que acabamos de ver, crie uma cópia da variável ~dados~ e nesta cópia faça com que a coluna ~População~ armezene a população em unidade de milhão de pessoas.
 
 ** Plotando gráficos com ~pandas~
+
+#+begin_quote
+"/De todas as nossas invenções para a comunicação de massa, as imagens ainda falam a língua mais compreendida universalmente./" --- Walt Disney
+#+end_quote
 
 No jargão científico, quando nós produzimos um gráfico é comum dizer que "plotamos um gráfico". "Plotar" vem do verbo /plot/ do inglês.
 

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-15 Fri 15:04 -->
+<!-- 2022-04-19 Tue 10:00 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Práticas em Ciência de Dados</title>
@@ -222,73 +222,69 @@
 <h2>Índice</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgbd76575">1. Introdução</a>
+<li><a href="#org6db36b9">1. Introdução</a>
 <ul>
-<li><a href="#org0e5c0ca">1.1. Olá! Que bom que você veio, aprochegue-se!</a></li>
-<li><a href="#org4be3b15">1.2. Python e o caderno de notas Jupyter</a></li>
-<li><a href="#orgef0c1e9">1.3. Links interessantes</a></li>
+<li><a href="#orgf08fef2">1.1. Olá! Que bom que você veio, aprochegue-se!</a></li>
+<li><a href="#orge754f0d">1.2. Python e o caderno de notas Jupyter</a></li>
+<li><a href="#org39a72d1">1.3. Links interessantes</a></li>
 </ul>
 </li>
-<li><a href="#org4b1830f">2. Jupyter, variáveis e como buscar ajuda</a>
+<li><a href="#org60a53ec">2. Jupyter, variáveis e como buscar ajuda</a>
 <ul>
-<li><a href="#org4d0630c">2.1. Meu primeiro caderno de notas Jupyter</a></li>
-<li><a href="#org08a6faa">2.2. Criando variáveis de diferentes tipos</a></li>
-<li><a href="#orgae4aec2">2.3. Buscando ajuda</a></li>
+<li><a href="#org03a7cf9">2.1. Meu primeiro caderno de notas Jupyter</a></li>
+<li><a href="#org290322c">2.2. Criando variáveis de diferentes tipos</a></li>
+<li><a href="#orgdc096c6">2.3. Buscando ajuda</a></li>
 </ul>
 </li>
-<li><a href="#orgce3d04e">3. Operadores e estrutura de decisão</a>
+<li><a href="#org7ef920f">3. Operadores e estrutura de decisão</a>
 <ul>
-<li><a href="#orgffcfc01">3.1. Operadores aritméticos</a></li>
-<li><a href="#orgb8447f0">3.2. Operadores lógicos</a></li>
-<li><a href="#org918fce3">3.3. Operadores de comparação</a></li>
-<li><a href="#orgdc5ccc9">3.4. Estrutura de decisão e operador condicional</a></li>
-<li><a href="#org95ee0de">3.5. Uma breve introdução sobre estilo</a></li>
+<li><a href="#org97e8b56">3.1. Operadores aritméticos</a></li>
+<li><a href="#orgd970b74">3.2. Operadores lógicos</a></li>
+<li><a href="#org6ff45d3">3.3. Operadores de comparação</a></li>
+<li><a href="#orgd176878">3.4. Estrutura de decisão e operador condicional</a></li>
+<li><a href="#orgdddaeb0">3.5. Uma breve introdução sobre estilo</a></li>
 </ul>
 </li>
-<li><a href="#orgde2e638">4. Funções</a>
+<li><a href="#org6f61d1a">4. Funções</a>
 <ul>
-<li><a href="#orgf6a1c9e">4.1. O que é uma função?</a></li>
-<li><a href="#orgd6a79db">4.2. Funções embutidas</a></li>
-<li><a href="#orgb04d239">4.3. Definindo novas funções</a></li>
-<li><a href="#org684cdae">4.4. Argumentos posicionais, argumentos nomeados e argumentos com valor padrão</a></li>
-<li><a href="#orgdddfdcf">4.5. Variáveis globais e variáveis locais</a></li>
-<li><a href="#org93468d4">4.6. Documentando suas funções com a docstring</a></li>
-<li><a href="#orgba653c8">4.7. Funções também são objetos!</a></li>
+<li><a href="#orga5c97bf">4.1. O que é uma função?</a></li>
+<li><a href="#orgb439036">4.2. Funções embutidas</a></li>
+<li><a href="#orge206f41">4.3. Definindo novas funções</a></li>
+<li><a href="#orgc8d9f84">4.4. Argumentos posicionais, argumentos nomeados e argumentos com valor padrão</a></li>
+<li><a href="#orgba5545f">4.5. Variáveis globais e variáveis locais</a></li>
+<li><a href="#org938ed63">4.6. Documentando suas funções com a docstring</a></li>
+<li><a href="#org1ccefdc">4.7. Funções também são objetos!</a></li>
 </ul>
 </li>
-<li><a href="#org8a95535">5. Listas, tuplas e conjuntos</a>
+<li><a href="#orge52dcbb">5. Listas, tuplas e conjuntos</a>
 <ul>
-<li><a href="#org5cc597b">5.1. Agrupando objetos com listas</a></li>
-<li><a href="#org415d62d">5.2. Listas dentro de listas.</a></li>
-<li><a href="#org527cfb0">5.3. Modificando, particionando e desempacotando listas</a></li>
-<li><a href="#org75b60fc">5.4. Particionamento de listas</a></li>
-<li><a href="#org09ff23b">5.5. Copiando listas</a></li>
-<li><a href="#orgbf82c4a">5.6. Desempacotamento e Operador Asterisco</a></li>
-<li><a href="#org801d259">5.7. Tuplas</a></li>
-<li><a href="#orga513c50">5.8. Conjuntos</a></li>
+<li><a href="#orge9a9e17">5.1. Agrupando objetos com listas</a></li>
+<li><a href="#org1f48f1f">5.2. Listas dentro de listas.</a></li>
+<li><a href="#orgf2655b0">5.3. Modificando, particionando e desempacotando listas</a></li>
+<li><a href="#org0bfeb57">5.4. Particionamento de listas</a></li>
+<li><a href="#orgcf6c679">5.5. Copiando listas</a></li>
+<li><a href="#org6d00e0e">5.6. Desempacotamento e Operador Asterisco</a></li>
+<li><a href="#org62b96a4">5.7. Tuplas</a></li>
+<li><a href="#org184d9a9">5.8. Conjuntos</a></li>
 </ul>
 </li>
-<li><a href="#org46ba2c3">6. Laço de repetição</a>
+<li><a href="#org58f4802">6. Laço de repetição</a>
 <ul>
-<li><a href="#orgcf26847">6.1. Laço de repetição usando <code>while</code></a></li>
-<li><a href="#org077bdee">6.2. Laço de repetição usando <code>for</code></a></li>
-<li><a href="#org7ff0fff">6.3. Laços Aninhados</a></li>
-<li><a href="#orge0e760c">6.4. Compreensão de listas</a></li>
+<li><a href="#org20cba46">6.1. Laço de repetição usando <code>while</code></a></li>
+<li><a href="#org294eaa2">6.2. Laço de repetição usando <code>for</code></a></li>
+<li><a href="#org3d2bcef">6.3. Laços Aninhados</a></li>
+<li><a href="#org509f342">6.4. Compreensão de listas</a></li>
 </ul>
 </li>
-<li><a href="#orgfce403d">7. Importando bibliotecas</a>
+<li><a href="#org11d5163">7. Importando bibliotecas e lendo dados</a>
 <ul>
-<li><a href="#orgda306e8">7.1. Bibliotecas nos ajudam a não ter que reinventar a roda</a></li>
-<li><a href="#org1327e1e">7.2. Espaço de nome</a></li>
-<li><a href="#org3593c47">7.3. Importando apenas o necessário</a></li>
-<li><a href="#orgada196a">7.4. Documentação da biblioteca padrão</a></li>
-</ul>
-</li>
-<li><a href="#org75b83aa">8. Lendo, manipulando e graficando dados</a>
-<ul>
-<li><a href="#org42c215f">8.1. Lendo dados externos ao Python</a></li>
-<li><a href="#org4106ba5">8.2. Manipulando dados armazenados em <code>DataFrames</code></a></li>
-<li><a href="#orgf371fcb">8.3. Plotando gráficos com <code>pandas</code></a></li>
+<li><a href="#org8dbd332">7.1. Bibliotecas nos ajudam a não ter que reinventar a roda</a></li>
+<li><a href="#org8ce5f8f">7.2. Espaço de nome</a></li>
+<li><a href="#org6e95e2a">7.3. Importando apenas o necessário</a></li>
+<li><a href="#org847a873">7.4. Documentação da biblioteca padrão</a></li>
+<li><a href="#org7cad522">7.5. Lendo dados externos ao Python</a></li>
+<li><a href="#org90f3bd0">7.6. Manipulando dados armazenados em <code>DataFrames</code></a></li>
+<li><a href="#org17d8794">7.7. Plotando gráficos com <code>pandas</code></a></li>
 </ul>
 </li>
 </ul>
@@ -330,13 +326,13 @@
   <!-- } -->
 </style>
 
-<div id="outline-container-orgbd76575" class="outline-2">
-<h2 id="orgbd76575"><span class="section-number-2">1.</span> Introdução</h2>
+<div id="outline-container-org6db36b9" class="outline-2">
+<h2 id="org6db36b9"><span class="section-number-2">1.</span> Introdução</h2>
 <div class="outline-text-2" id="text-1">
 </div>
 
-<div id="outline-container-org0e5c0ca" class="outline-3">
-<h3 id="org0e5c0ca"><span class="section-number-3">1.1.</span> Olá! Que bom que você veio, aprochegue-se!</h3>
+<div id="outline-container-orgf08fef2" class="outline-3">
+<h3 id="orgf08fef2"><span class="section-number-3">1.1.</span> Olá! Que bom que você veio, aprochegue-se!</h3>
 <div class="outline-text-3" id="text-1-1">
 <blockquote>
 <p>
@@ -370,8 +366,8 @@ Realize as práticas seguindo as instruções discutidas em sala de aula. Lembre
 </div>
 </div>
 
-<div id="outline-container-org4be3b15" class="outline-3">
-<h3 id="org4be3b15"><span class="section-number-3">1.2.</span> Python e o caderno de notas Jupyter</h3>
+<div id="outline-container-orge754f0d" class="outline-3">
+<h3 id="orge754f0d"><span class="section-number-3">1.2.</span> Python e o caderno de notas Jupyter</h3>
 <div class="outline-text-3" id="text-1-2">
 <blockquote>
 <p>
@@ -393,8 +389,8 @@ Apesar de não ser estritamente necessário utilizar os cadernos de notas Jupyte
 </div>
 </div>
 
-<div id="outline-container-orgef0c1e9" class="outline-3">
-<h3 id="orgef0c1e9"><span class="section-number-3">1.3.</span> Links interessantes</h3>
+<div id="outline-container-org39a72d1" class="outline-3">
+<h3 id="org39a72d1"><span class="section-number-3">1.3.</span> Links interessantes</h3>
 <div class="outline-text-3" id="text-1-3">
 <blockquote>
 <p>
@@ -445,13 +441,13 @@ Por fim, existem diversos materiais (tanto pagos quanto gratuitos) para aprendiz
 </div>
 </div>
 
-<div id="outline-container-org4b1830f" class="outline-2">
-<h2 id="org4b1830f"><span class="section-number-2">2.</span> Jupyter, variáveis e como buscar ajuda</h2>
+<div id="outline-container-org60a53ec" class="outline-2">
+<h2 id="org60a53ec"><span class="section-number-2">2.</span> Jupyter, variáveis e como buscar ajuda</h2>
 <div class="outline-text-2" id="text-2">
 </div>
 
-<div id="outline-container-org4d0630c" class="outline-3">
-<h3 id="org4d0630c"><span class="section-number-3">2.1.</span> Meu primeiro caderno de notas Jupyter</h3>
+<div id="outline-container-org03a7cf9" class="outline-3">
+<h3 id="org03a7cf9"><span class="section-number-3">2.1.</span> Meu primeiro caderno de notas Jupyter</h3>
 <div class="outline-text-3" id="text-2-1">
 <blockquote>
 <p>
@@ -512,8 +508,8 @@ Aprender qualquer linguagem, seja ela de programação ou não, requer treino. N
 </div>
 </div>
 
-<div id="outline-container-org08a6faa" class="outline-3">
-<h3 id="org08a6faa"><span class="section-number-3">2.2.</span> Criando variáveis de diferentes tipos</h3>
+<div id="outline-container-org290322c" class="outline-3">
+<h3 id="org290322c"><span class="section-number-3">2.2.</span> Criando variáveis de diferentes tipos</h3>
 <div class="outline-text-3" id="text-2-2">
 <blockquote>
 <p>
@@ -637,8 +633,8 @@ Existem diversos outros tipos de variáveis que veremos ao longo desta apostila.
 </div>
 </div>
 
-<div id="outline-container-orgae4aec2" class="outline-3">
-<h3 id="orgae4aec2"><span class="section-number-3">2.3.</span> Buscando ajuda</h3>
+<div id="outline-container-orgdc096c6" class="outline-3">
+<h3 id="orgdc096c6"><span class="section-number-3">2.3.</span> Buscando ajuda</h3>
 <div class="outline-text-3" id="text-2-3">
 <p class="verse">
 &ldquo;<i>Socorro! Eu preciso de alguém.<br />
@@ -690,13 +686,13 @@ O que você faria se não soubesse o que função <code>print</code> faz? Digamo
 </div>
 </div>
 
-<div id="outline-container-orgce3d04e" class="outline-2">
-<h2 id="orgce3d04e"><span class="section-number-2">3.</span> Operadores e estrutura de decisão</h2>
+<div id="outline-container-org7ef920f" class="outline-2">
+<h2 id="org7ef920f"><span class="section-number-2">3.</span> Operadores e estrutura de decisão</h2>
 <div class="outline-text-2" id="text-3">
 </div>
 
-<div id="outline-container-orgffcfc01" class="outline-3">
-<h3 id="orgffcfc01"><span class="section-number-3">3.1.</span> Operadores aritméticos</h3>
+<div id="outline-container-org97e8b56" class="outline-3">
+<h3 id="org97e8b56"><span class="section-number-3">3.1.</span> Operadores aritméticos</h3>
 <div class="outline-text-3" id="text-3-1">
 <blockquote>
 <p>
@@ -779,8 +775,8 @@ A ordem de precedência dos operadores aritméticos (isto é, a ordem de execuç
 </div>
 </div>
 
-<div id="outline-container-orgb8447f0" class="outline-3">
-<h3 id="orgb8447f0"><span class="section-number-3">3.2.</span> Operadores lógicos</h3>
+<div id="outline-container-orgd970b74" class="outline-3">
+<h3 id="orgd970b74"><span class="section-number-3">3.2.</span> Operadores lógicos</h3>
 <div class="outline-text-3" id="text-3-2">
 <blockquote>
 <p>
@@ -872,8 +868,8 @@ Operadores lógicos podem ser combinados na mesma declaração. Quando for fazer
 </div>
 </div>
 
-<div id="outline-container-org918fce3" class="outline-3">
-<h3 id="org918fce3"><span class="section-number-3">3.3.</span> Operadores de comparação</h3>
+<div id="outline-container-org6ff45d3" class="outline-3">
+<h3 id="org6ff45d3"><span class="section-number-3">3.3.</span> Operadores de comparação</h3>
 <div class="outline-text-3" id="text-3-3">
 <blockquote>
 <p>
@@ -922,8 +918,8 @@ A != B &lt; C == E - D - C
 </div>
 </div>
 
-<div id="outline-container-orgdc5ccc9" class="outline-3">
-<h3 id="orgdc5ccc9"><span class="section-number-3">3.4.</span> Estrutura de decisão e operador condicional</h3>
+<div id="outline-container-orgd176878" class="outline-3">
+<h3 id="orgd176878"><span class="section-number-3">3.4.</span> Estrutura de decisão e operador condicional</h3>
 <div class="outline-text-3" id="text-3-4">
 <blockquote>
 <p>
@@ -1112,8 +1108,8 @@ O código acima checa se o pH é ácido. Caso seja ácido o programa exibe &ldqu
 </div>
 </div>
 
-<div id="outline-container-org95ee0de" class="outline-3">
-<h3 id="org95ee0de"><span class="section-number-3">3.5.</span> Uma breve introdução sobre estilo</h3>
+<div id="outline-container-orgdddaeb0" class="outline-3">
+<h3 id="orgdddaeb0"><span class="section-number-3">3.5.</span> Uma breve introdução sobre estilo</h3>
 <div class="outline-text-3" id="text-3-5">
 <p class="verse">
 &ldquo;<i>Bonito é melhor que feio.<br />
@@ -1220,13 +1216,13 @@ Para iniciantes é recomendado sempre comentar seu código. Isso não só irá t
 </div>
 </div>
 
-<div id="outline-container-orgde2e638" class="outline-2">
-<h2 id="orgde2e638"><span class="section-number-2">4.</span> Funções</h2>
+<div id="outline-container-org6f61d1a" class="outline-2">
+<h2 id="org6f61d1a"><span class="section-number-2">4.</span> Funções</h2>
 <div class="outline-text-2" id="text-4">
 </div>
 
-<div id="outline-container-orgf6a1c9e" class="outline-3">
-<h3 id="orgf6a1c9e"><span class="section-number-3">4.1.</span> O que é uma função?</h3>
+<div id="outline-container-orga5c97bf" class="outline-3">
+<h3 id="orga5c97bf"><span class="section-number-3">4.1.</span> O que é uma função?</h3>
 <div class="outline-text-3" id="text-4-1">
 <blockquote>
 <p>
@@ -1255,8 +1251,8 @@ Basicamente, ao executar uma função ela recebe zero ou mais objetos (argumento
 </div>
 </div>
 
-<div id="outline-container-orgd6a79db" class="outline-3">
-<h3 id="orgd6a79db"><span class="section-number-3">4.2.</span> Funções embutidas</h3>
+<div id="outline-container-orgb439036" class="outline-3">
+<h3 id="orgb439036"><span class="section-number-3">4.2.</span> Funções embutidas</h3>
 <div class="outline-text-3" id="text-4-2">
 <blockquote>
 <p>
@@ -1270,8 +1266,8 @@ Existem diversas funções embutidas em Python. Estas funções podem ser usadas
 </div>
 </div>
 
-<div id="outline-container-orgb04d239" class="outline-3">
-<h3 id="orgb04d239"><span class="section-number-3">4.3.</span> Definindo novas funções</h3>
+<div id="outline-container-orge206f41" class="outline-3">
+<h3 id="orge206f41"><span class="section-number-3">4.3.</span> Definindo novas funções</h3>
 <div class="outline-text-3" id="text-4-3">
 <blockquote>
 <p>
@@ -1414,8 +1410,8 @@ Finalmente, a <code>funcao_6</code> recebe três argumentos e retorna os mesmos 
 </div>
 </div>
 
-<div id="outline-container-org684cdae" class="outline-3">
-<h3 id="org684cdae"><span class="section-number-3">4.4.</span> Argumentos posicionais, argumentos nomeados e argumentos com valor padrão</h3>
+<div id="outline-container-orgc8d9f84" class="outline-3">
+<h3 id="orgc8d9f84"><span class="section-number-3">4.4.</span> Argumentos posicionais, argumentos nomeados e argumentos com valor padrão</h3>
 <div class="outline-text-3" id="text-4-4">
 <blockquote>
 <p>
@@ -1519,8 +1515,8 @@ Observe que não é permitido declarar argumentos sem valor padrão após argume
 </div>
 </div>
 
-<div id="outline-container-orgdddfdcf" class="outline-3">
-<h3 id="orgdddfdcf"><span class="section-number-3">4.5.</span> Variáveis globais e variáveis locais</h3>
+<div id="outline-container-orgba5545f" class="outline-3">
+<h3 id="orgba5545f"><span class="section-number-3">4.5.</span> Variáveis globais e variáveis locais</h3>
 <div class="outline-text-3" id="text-4-5">
 <blockquote>
 <p>
@@ -1588,8 +1584,8 @@ Mesmo sabendo que variáveis globais podem ser utilizadas dentro de funções, e
 </div>
 </div>
 
-<div id="outline-container-org93468d4" class="outline-3">
-<h3 id="org93468d4"><span class="section-number-3">4.6.</span> Documentando suas funções com a docstring</h3>
+<div id="outline-container-org938ed63" class="outline-3">
+<h3 id="org938ed63"><span class="section-number-3">4.6.</span> Documentando suas funções com a docstring</h3>
 <div class="outline-text-3" id="text-4-6">
 <blockquote>
 <p>
@@ -1743,8 +1739,8 @@ Vamos analisar as diversas partes do exemplo acima:
 </div>
 </div>
 
-<div id="outline-container-orgba653c8" class="outline-3">
-<h3 id="orgba653c8"><span class="section-number-3">4.7.</span> Funções também são objetos!</h3>
+<div id="outline-container-org1ccefdc" class="outline-3">
+<h3 id="org1ccefdc"><span class="section-number-3">4.7.</span> Funções também são objetos!</h3>
 <div class="outline-text-3" id="text-4-7">
 <blockquote>
 <p>
@@ -1803,13 +1799,13 @@ Funções em Python são objetos assim como números e strings. Desta forma, pod
 </div>
 </div>
 
-<div id="outline-container-org8a95535" class="outline-2">
-<h2 id="org8a95535"><span class="section-number-2">5.</span> Listas, tuplas e conjuntos</h2>
+<div id="outline-container-orge52dcbb" class="outline-2">
+<h2 id="orge52dcbb"><span class="section-number-2">5.</span> Listas, tuplas e conjuntos</h2>
 <div class="outline-text-2" id="text-5">
 </div>
 
-<div id="outline-container-org5cc597b" class="outline-3">
-<h3 id="org5cc597b"><span class="section-number-3">5.1.</span> Agrupando objetos com listas</h3>
+<div id="outline-container-orge9a9e17" class="outline-3">
+<h3 id="orge9a9e17"><span class="section-number-3">5.1.</span> Agrupando objetos com listas</h3>
 <div class="outline-text-3" id="text-5-1">
 <blockquote>
 <p>
@@ -1874,8 +1870,8 @@ A resposta da primeira pergunta está intimamente relacionada ao fato de Python 
 </div>
 </div>
 
-<div id="outline-container-org415d62d" class="outline-3">
-<h3 id="org415d62d"><span class="section-number-3">5.2.</span> Listas dentro de listas.</h3>
+<div id="outline-container-org1f48f1f" class="outline-3">
+<h3 id="org1f48f1f"><span class="section-number-3">5.2.</span> Listas dentro de listas.</h3>
 <div class="outline-text-3" id="text-5-2">
 <blockquote>
 <p>
@@ -1962,8 +1958,8 @@ Pronto, as listas estão atualizadas com os itens que você incluiu.
 </div>
 </div>
 
-<div id="outline-container-org527cfb0" class="outline-3">
-<h3 id="org527cfb0"><span class="section-number-3">5.3.</span> Modificando, particionando e desempacotando listas</h3>
+<div id="outline-container-orgf2655b0" class="outline-3">
+<h3 id="orgf2655b0"><span class="section-number-3">5.3.</span> Modificando, particionando e desempacotando listas</h3>
 <div class="outline-text-3" id="text-5-3">
 <p>
 Já foi apresentado um dos métodos utilizados em listas, o <code>append</code>. Mas, existem outros métodos para listas, a seguir veremos alguns deles.
@@ -2055,8 +2051,8 @@ Exemplo: <code>listadecompras[0].pop(5)</code><br />
 </div>
 </div>
 
-<div id="outline-container-org75b60fc" class="outline-3">
-<h3 id="org75b60fc"><span class="section-number-3">5.4.</span> Particionamento de listas</h3>
+<div id="outline-container-org0bfeb57" class="outline-3">
+<h3 id="org0bfeb57"><span class="section-number-3">5.4.</span> Particionamento de listas</h3>
 <div class="outline-text-3" id="text-5-4">
 <p>
 Já foi apresentado como acessar um item específico da lista anteriormente, com o argumento entre colchetes (<code>listadecompras[0]</code>). Porém, podemos particinar as listas, pegando vários elementos de interesse. Novamente utilizaremos índices entre colchetes, com a seguinte sintaxe: lista[Inicial:Final:Passo]. O &rsquo;Inicial&rsquo; é o primeiro elemento da lista que desejamos, &rsquo;Final&rsquo; é o elemento final desejado. Já &rsquo;Passo&rsquo; é o de quantos em quantos elementos queremos, por exemplo, se o passo for 1, todos elementos na faixa específicada são impressos, se o passo for 2, só serão fornecidos elementos a cada dois. Vamos exemplificar para facilitar:
@@ -2137,8 +2133,8 @@ Também podemos utilizar índices negativos no particionamento de listas, mas co
 </div>
 </div>
 
-<div id="outline-container-org09ff23b" class="outline-3">
-<h3 id="org09ff23b"><span class="section-number-3">5.5.</span> Copiando listas</h3>
+<div id="outline-container-orgcf6c679" class="outline-3">
+<h3 id="orgcf6c679"><span class="section-number-3">5.5.</span> Copiando listas</h3>
 <div class="outline-text-3" id="text-5-5">
 <p>
 Agora vamos tratar de cópias no Python. Para listas o Python tem uma maneira bastante peculiar para cópias, onde são criados links entre as listas e não simplesmente copiados os objetos. Vamos a um exemplo para deixar mais claro:
@@ -2194,8 +2190,8 @@ Bom, nesse código definimos uma <code>lista1</code>, criamos uma <code>lista2</
 </div>
 </div>
 
-<div id="outline-container-orgbf82c4a" class="outline-3">
-<h3 id="orgbf82c4a"><span class="section-number-3">5.6.</span> Desempacotamento e Operador Asterisco</h3>
+<div id="outline-container-org6d00e0e" class="outline-3">
+<h3 id="org6d00e0e"><span class="section-number-3">5.6.</span> Desempacotamento e Operador Asterisco</h3>
 <div class="outline-text-3" id="text-5-6">
 <p>
 No Python podemos utilizar uma notação específica para definir várias variáveis ao mesmo tempo, como segue:
@@ -2296,8 +2292,8 @@ A posição do operador asterisco não precisa ser necessáriamente na última v
 </div>
 </div>
 
-<div id="outline-container-org801d259" class="outline-3">
-<h3 id="org801d259"><span class="section-number-3">5.7.</span> Tuplas</h3>
+<div id="outline-container-org62b96a4" class="outline-3">
+<h3 id="org62b96a4"><span class="section-number-3">5.7.</span> Tuplas</h3>
 <div class="outline-text-3" id="text-5-7">
 <p>
 Existe outro tipo de dados no Python que são chamadas tuplas. As tuplas são basicamente listas imutáveis. Como assim imutáveis? Isso significa que uma vez que ela foi definida, não podemos mais adicionar ou remover elementos, bem como não é possível modificar sua ordem. Então, voltando ao nosso exemplo do supermercado, se você quiser estabelecer uma lista perpétua de itens a serem comprados (que jamais serão alterados), você pode colocá-los em uma tupla. Vamos a um exemplo:
@@ -2341,8 +2337,8 @@ Na linha 3 inicializamos uma lista vazia, apenas para criá-la, para poder utili
 </div>
 </div>
 
-<div id="outline-container-orga513c50" class="outline-3">
-<h3 id="orga513c50"><span class="section-number-3">5.8.</span> Conjuntos</h3>
+<div id="outline-container-org184d9a9" class="outline-3">
+<h3 id="org184d9a9"><span class="section-number-3">5.8.</span> Conjuntos</h3>
 <div class="outline-text-3" id="text-5-8">
 <p>
 Outro objeto de Python são os conjuntos, que são basicamente listas sem elementos repetidos. Os conjuntos possuem seus métodos específicos também, que englobam métodos equivalentes aos das listas, como: <code>remove</code> e <code>pop</code>. Mas especificamente para conjuntos, temos operações matemáticas já conhecidas, como união e intersecção. Vamos definir dois conjuntos e operá-los, com nossa analogia de listas de compras, vamos pensar que você fez anotações para compras em dois lugares diferentes e agora você quer juntá-las.
@@ -2403,8 +2399,8 @@ Além desses métodos temos outros exclusivos de conjuntos, como segue:
 </div>
 </div>
 
-<div id="outline-container-org46ba2c3" class="outline-2">
-<h2 id="org46ba2c3"><span class="section-number-2">6.</span> Laço de repetição</h2>
+<div id="outline-container-org58f4802" class="outline-2">
+<h2 id="org58f4802"><span class="section-number-2">6.</span> Laço de repetição</h2>
 <div class="outline-text-2" id="text-6">
 <blockquote>
 <p>
@@ -2421,8 +2417,8 @@ Laços de repetição, ou seu termo mais comum em inglês o <i>loop</i>, serve p
 </p>
 </div>
 
-<div id="outline-container-orgcf26847" class="outline-3">
-<h3 id="orgcf26847"><span class="section-number-3">6.1.</span> Laço de repetição usando <code>while</code></h3>
+<div id="outline-container-org20cba46" class="outline-3">
+<h3 id="org20cba46"><span class="section-number-3">6.1.</span> Laço de repetição usando <code>while</code></h3>
 <div class="outline-text-3" id="text-6-1">
 <blockquote>
 <p>
@@ -2538,8 +2534,8 @@ O código apresentado está comentado e a função tem uma docstring, lembrem-se
 </div>
 </div>
 
-<div id="outline-container-org077bdee" class="outline-3">
-<h3 id="org077bdee"><span class="section-number-3">6.2.</span> Laço de repetição usando <code>for</code></h3>
+<div id="outline-container-org294eaa2" class="outline-3">
+<h3 id="org294eaa2"><span class="section-number-3">6.2.</span> Laço de repetição usando <code>for</code></h3>
 <div class="outline-text-3" id="text-6-2">
 <blockquote>
 <p>
@@ -2646,8 +2642,8 @@ O código acima exibe os números 0, 2, 4, 6, 8 e 10. Ou seja, o passo mudou par
 </div>
 </div>
 
-<div id="outline-container-org7ff0fff" class="outline-3">
-<h3 id="org7ff0fff"><span class="section-number-3">6.3.</span> Laços Aninhados</h3>
+<div id="outline-container-org3d2bcef" class="outline-3">
+<h3 id="org3d2bcef"><span class="section-number-3">6.3.</span> Laços Aninhados</h3>
 <div class="outline-text-3" id="text-6-3">
 <blockquote>
 <p>
@@ -2703,8 +2699,8 @@ Note que o <code>"Queijo"</code> foi removido da lista do supermercado, que era 
 </div>
 </div>
 
-<div id="outline-container-orge0e760c" class="outline-3">
-<h3 id="orge0e760c"><span class="section-number-3">6.4.</span> Compreensão de listas</h3>
+<div id="outline-container-org509f342" class="outline-3">
+<h3 id="org509f342"><span class="section-number-3">6.4.</span> Compreensão de listas</h3>
 <div class="outline-text-3" id="text-6-4">
 <blockquote>
 <p>
@@ -2839,12 +2835,12 @@ Maravilha, conseguimos ganhar um pouco de performance, mas, o código apresentad
 </div>
 </div>
 </div>
-<div id="outline-container-orgfce403d" class="outline-2">
-<h2 id="orgfce403d"><span class="section-number-2">7.</span> Importando bibliotecas</h2>
+<div id="outline-container-org11d5163" class="outline-2">
+<h2 id="org11d5163"><span class="section-number-2">7.</span> Importando bibliotecas e lendo dados</h2>
 <div class="outline-text-2" id="text-7">
 </div>
-<div id="outline-container-orgda306e8" class="outline-3">
-<h3 id="orgda306e8"><span class="section-number-3">7.1.</span> Bibliotecas nos ajudam a não ter que reinventar a roda</h3>
+<div id="outline-container-org8dbd332" class="outline-3">
+<h3 id="org8dbd332"><span class="section-number-3">7.1.</span> Bibliotecas nos ajudam a não ter que reinventar a roda</h3>
 <div class="outline-text-3" id="text-7-1">
 <blockquote>
 <p>
@@ -2861,7 +2857,7 @@ Calcular o logaritmo de um valor é uma tarefa corriqueira no meio científico. 
 </p>
 
 <p>
-E agora? Teremos que programar nossa própria função que calcula o log toda vez que precisarmos tirar o logaritmo de um valor? Para esse caso específico, a resposta é <i>não</i>. Mesmo não sendo uma função embutida em Python, podemos obter uma função que calcula o log usando bibliotecas! Veja o exemplo abaixo.
+E agora? Teremos que programar nossa própria função que calcula o log toda vez que precisarmos tirar o logaritmo de um valor? Para esse caso específico (e diversos outros), a resposta é <i>não</i>. Mesmo não sendo uma função embutida em Python, podemos obter uma função que calcula o log usando bibliotecas! Veja o exemplo abaixo.
 </p>
 
 <div class="org-src-container">
@@ -2880,7 +2876,7 @@ No código acima temos a importantíssima instrução <code>import</code> na pri
 </p>
 
 <p>
-Na linha 4 do código acima usamos a função <code>math.log10</code> para calcular o logaritmo na base 10 da variável <code>valor</code>. Todos os objetos fornecidos pelo módulo <code>math</code> devem ser acessados usando essa notação &ldquo;[nome do módulo].[nome do objeto]&rdquo;. Imagina o tempo que você iria gastar se tivesse que escrever uma função que calcula o logaritmo de um número toda vez que precisasse&#x2026; seríamos muito improdutivos se esse fosse o caso!
+Na linha 4 do código acima usamos a função <code>math.log10</code> para calcular o logaritmo na base 10 da variável <code>valor</code>. Quando um módulo é importando, seus objetos podem ser acessados usando essa notação &ldquo;[nome do módulo].[nome do objeto]&rdquo;. Imagina o tempo que você iria gastar se tivesse que escrever uma função que calcula o logaritmo de um número toda vez que precisasse&#x2026; seríamos muito improdutivos se esse fosse o caso!
 </p>
 
 <p>
@@ -2888,7 +2884,7 @@ Finalmente, na linha 7 do código nós usamos a função <code>help</code> para 
 </p>
 
 <p>
-<b>[A]</b> Vamos investigar o que o módulo <code>math</code> tem! Rode o código abaixo e verá todos os objetos contidos no módulo <code>math</code> (veja que é a função <code>dir</code> que está listando esses objetos para nós). Leia o nome de todos os objetos e escolha 3 que achar interessante para saber mais (ignore os objetos que começam e terminam com dois sublinhados &ldquo;__&rdquo;). Antes de mais nada, identifique o tipo do objeto que escolheu com a função <code>type</code>. Se seu objeto for uma função, rode o comando <code>help</code> para saber mais da função. Se seu objeto for uma variável, dê um <code>print</code> nela para saber seu valor. Comente brevemente sobre possíveis aplicações científicas dos objetos que escolheu.
+<b>[A]</b> Vamos investigar o que o módulo <code>math</code> tem! Rode o código abaixo e verá todos os objetos contidos no módulo <code>math</code> (veja que é a função <code>dir</code> que está listando esses objetos para nós). Leia o nome de todos os objetos e escolha 3 que achar interessante para saber mais (ignore os objetos que começam com sublinhado &ldquo;_&rdquo;). Antes de mais nada, identifique o tipo do objeto que escolheu com a função <code>type</code>. Se seu objeto for uma função, rode o comando <code>help</code> para saber mais da função. Se seu objeto for uma variável, dê um <code>print</code> nela para saber seu valor. Comente brevemente sobre possíveis aplicações científicas dos objetos que escolheu.
 </p>
 
 <div class="org-src-container">
@@ -2899,17 +2895,17 @@ Finalmente, na linha 7 do código nós usamos a função <code>help</code> para 
 </div>
 
 <p>
-<b>[B]</b> Usando a biblioteca <code>math</code>, faça o Python checar se \(\sen{}^2(x) + \cos{}^2(x) = 1\) para 5 valores diferentes de \(x\) a sua escolha. Comente caso encontre algo estranho.
+<b>[B]</b> Usando a biblioteca <code>math</code>, faça o Python checar se \(\mathrm{sen}^2(x) + \cos{}^2(x) = 1\) para 5 valores diferentes de \(x\) a sua escolha. Comente caso encontre algo estranho.
 </p>
 
 <p>
-<b>[Desafio]</b> Você já se perguntou o que seria o fatorial de um número não-inteiro? Se sim, então você está se sentindo como Daniel Bernoulli se sentiu há quase 300 anos. A função Gama (\(\Gamma\)) é o que chamamos de extensão da função fatorial e ela funciona para números não-inteiros! Sabendo que \(\Gamma(n+1) = n!\), qual seria o fatorial de \(\pi\)? Use o módulo <code>math</code> para este cálculo. <span class="underline">Dica</span>: a letra Gama em inglês se escreve Gamma, com dois &ldquo;m&rdquo;.
+<b>[Desafio]</b> Você já se perguntou o que seria o fatorial de um número não-inteiro? Se sim, então você está se sentindo como Daniel Bernoulli se sentiu há quase 300 anos. A função Gama (\(\Gamma\)) é o que chamamos de extensão da função fatorial e ela funciona para números não-inteiros! Sabendo que \(\Gamma(n+1) = n!\), qual seria o fatorial de \(\pi\)? Use o módulo <code>math</code> para este cálculo. <span class="underline">Dica</span>: a letra grega gama em inglês se escreve <i>gamma</i>, com dois &ldquo;m&rdquo;.
 </p>
 </div>
 </div>
 
-<div id="outline-container-org1327e1e" class="outline-3">
-<h3 id="org1327e1e"><span class="section-number-3">7.2.</span> Espaço de nome</h3>
+<div id="outline-container-org8ce5f8f" class="outline-3">
+<h3 id="org8ce5f8f"><span class="section-number-3">7.2.</span> Espaço de nome</h3>
 <div class="outline-text-3" id="text-7-2">
 <blockquote>
 <p>
@@ -2939,10 +2935,25 @@ Na linha 1 temos novamente a instrução <code>import</code>. Estamos importando
 <p>
 <b>[A]</b> Aproveitando que comentamos sobre o módulo <code>random</code>, importe ele dando o apelido que quiser e cheque com a função <code>help</code> o que as funções <code>choice</code> e <code>randint</code> fazem. Teste a função <code>choice</code> fornecendo uma lista com 5 itens como argumento para ver o que acontece. Teste a função <code>randint</code> fornecendo dois valores inteiros como argumento.
 </p>
+
+<p>
+<b>[Desafio]</b> Faça um programa que sorteia um valor aleatório entre 0 e 100. O programa pede que o usuário tente adivinhar o número (use o comando <code>input</code> para receber uma informação do usuário). Para cada palpite do usuário existem três possibilidades:
+</p>
+
+<ol class="org-ol">
+<li>O palpite estava certo! O programa diz isso ao usuário, conta quantas tentativas ele usou e encerra sua operação.</li>
+<li>O palpite é menor que o valor sorteado. O programa diz &ldquo;Seu palpite é menor que o valor que eu sorteei, tente novamente!&rdquo; e pede outro palpite.</li>
+<li>O palpite é maior que o valor sorteado. O programa diz &ldquo;Seu palpite é maior que o valor que eu sorteei, tente novamente!&rdquo; e pede outro palpite.</li>
+</ol>
+
+<p>
+<b>[Desafio matemático]</b> Qual estratégia você deve seguir para ganhar no jogo anterior usando a menor quantidade de palpites?
+</p>
 </div>
 </div>
-<div id="outline-container-org3593c47" class="outline-3">
-<h3 id="org3593c47"><span class="section-number-3">7.3.</span> Importando apenas o necessário</h3>
+
+<div id="outline-container-org6e95e2a" class="outline-3">
+<h3 id="org6e95e2a"><span class="section-number-3">7.3.</span> Importando apenas o necessário</h3>
 <div class="outline-text-3" id="text-7-3">
 <p class="verse">
 Eu uso o necessário<br />
@@ -2967,11 +2978,11 @@ Digamos que você queira calcular o logaritmo natural de um número e não preci
 </div>
 
 <p>
-Perceba que ao importar a função <code>log</code> dessa forma, ela agora funciona sem a necessidade de invocar o <code>namespace</code> do módulo <code>math</code> na linha 4. Inclusive, neste caso se escrevermos &ldquo;<code>math.log(valor)</code>&rdquo; irá dar um erro pois o módulo <code>math</code> não foi importado (tente e verá)!! O que aconteceu na linha 1 foi que importamos apenas uma função específica desse módulo <span class="underline">e nada mais</span>.
+Perceba que ao importar a função <code>log</code> dessa forma, ela agora funciona sem a necessidade de invocar o <code>namespace</code> do módulo <code>math</code> na linha 4. Inclusive, neste caso se escrevermos &ldquo;<code>math.log(valor)</code>&rdquo; irá dar um erro pois o módulo <code>math</code> em si não foi importado, apenas sua função <code>log</code> (tente e verá)!! O que aconteceu na linha 1 foi que importamos apenas uma função específica desse módulo <span class="underline">e nada mais</span>.
 </p>
 
 <p>
-<b>[A]</b> Sua tarefa é calcular o seno de um número aleatório. Para isso, importe apenas as funções necessárias dos módulos <code>math</code> e <code>random</code> usando a estrutura de importação que acabamos de ver. <span class="underline">Dica</span>: a instrução <code>import</code> deve ser escrita para cada biblioteca que você quer importar.
+<b>[A]</b> Sua tarefa é calcular o seno de um número aleatório. Para isso, importe apenas as funções necessárias dos módulos <code>math</code> e <code>random</code> usando a estrutura de importação que acabamos de ver. <span class="underline">Dica</span>: a instrução <code>import</code> deve ser escrita para cada biblioteca que você quer importar. Você pode ter quantas instruções <code>import</code> forem necessárias no seu código.
 </p>
 
 <p>
@@ -2999,15 +3010,15 @@ Existe uma sintaxe que nos permite importar <i>todos</i> os objetos de um módul
 <span class="linenr">5: </span><span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">n&#227;o fica claro de onde elas vieram (imagina isso num c&#243;dico com milhares</span>
 <span class="linenr">6: </span><span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">de linhas...)</span>
 <span class="linenr">7: </span><span style="color: #d33682; font-style: italic;">print</span>(exp(<span style="color: #6c71c4; font-weight: bold;">10</span>))
-<span class="linenr">8: </span><span style="color: #d33682; font-style: italic;">print</span>(cos(pi))
-<span class="linenr">9: </span><span style="color: #d33682; font-style: italic;">print</span>(factorial(<span style="color: #6c71c4; font-weight: bold;">5</span>))
+<span class="linenr">8: </span><span style="color: #d33682; font-style: italic;">print</span>(log2(<span style="color: #6c71c4; font-weight: bold;">100</span>))
+<span class="linenr">9: </span><span style="color: #d33682; font-style: italic;">print</span>(tan(<span style="color: #6c71c4; font-weight: bold;">5</span>))
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgada196a" class="outline-3">
-<h3 id="orgada196a"><span class="section-number-3">7.4.</span> Documentação da biblioteca padrão</h3>
+<div id="outline-container-org847a873" class="outline-3">
+<h3 id="org847a873"><span class="section-number-3">7.4.</span> Documentação da biblioteca padrão</h3>
 <div class="outline-text-3" id="text-7-4">
 <blockquote>
 <p>
@@ -3016,20 +3027,20 @@ Existe uma sintaxe que nos permite importar <i>todos</i> os objetos de um módul
 </blockquote>
 
 <p>
-A biblioteca padrão do Python é bastante extensa. Uma forma de checar o que já existe é lendo a <a href="https://docs.python.org/3.9/py-modindex.html">documentação oficial</a>. Lá você vai encontrar a seção do módulo <a href="https://docs.python.org/3.9/library/math.html#module-math">math</a> e a seção do módulo <a href="https://docs.python.org/3.9/library/random.html#module-random">random</a>, entre tantas outras. Fora estes dois módulos, alguns outros que vale a pena dar uma olhada são:
+A biblioteca padrão do Python é bastante extensa. Uma forma de checar o que já existe é lendo a <a href="https://docs.python.org/pt-br/3.9/py-modindex.html">documentação oficial</a>. Lá você vai encontrar a seção do módulo <a href="https://docs.python.org/pt-br/3.9/library/math.html#module-math">math</a> e a seção do módulo <a href="https://docs.python.org/pt-br/3.9/library/random.html#module-random">random</a>, entre tantas outras. Fora estes dois módulos, alguns outros que valem a pena dar uma olhada são:
 </p>
 
 <ul class="org-ul">
-<li><code>statistics</code></li>
-<li><code>pprint</code></li>
-<li><code>datetime</code></li>
-<li><code>itertools</code></li>
-<li><code>functools</code></li>
-<li><code>pathlib</code></li>
-<li><code>pickle</code></li>
-<li><code>os</code></li>
-<li><code>sys</code></li>
-<li><code>re</code></li>
+<li><code>statistics</code> - cálculos estatísticos</li>
+<li><code>pprint</code> - comando <code>print</code> que exibe certas informações de forma &ldquo;mais bonita&rdquo;</li>
+<li><code>datetime</code> - operações com datas</li>
+<li><code>itertools</code> - operações iterativas</li>
+<li><code>functools</code> - operações funcionais</li>
+<li><code>pathlib</code> - operações com arquivos em diferentes pastas no sistema</li>
+<li><code>pickle</code> - possibilita salvar variáveis de Python em arquivos</li>
+<li><code>os</code> - ferramentas para controlar seu sistema operacional</li>
+<li><code>sys</code> - acessar parâmetros do sistema</li>
+<li><code>re</code> - expressões regulares</li>
 </ul>
 
 <p>
@@ -3045,15 +3056,10 @@ A biblioteca padrão do Python é bastante extensa. Uma forma de checar o que j�
 </p>
 </div>
 </div>
-</div>
 
-<div id="outline-container-org75b83aa" class="outline-2">
-<h2 id="org75b83aa"><span class="section-number-2">8.</span> Lendo, manipulando e graficando dados</h2>
-<div class="outline-text-2" id="text-8">
-</div>
-<div id="outline-container-org42c215f" class="outline-3">
-<h3 id="org42c215f"><span class="section-number-3">8.1.</span> Lendo dados externos ao Python</h3>
-<div class="outline-text-3" id="text-8-1">
+<div id="outline-container-org7cad522" class="outline-3">
+<h3 id="org7cad522"><span class="section-number-3">7.5.</span> Lendo dados externos ao Python</h3>
+<div class="outline-text-3" id="text-7-5">
 <blockquote>
 <p>
 &ldquo;<i>Um leitor vive mil vidas antes de morrer. O homem que nunca lê, vive apenas uma.</i>&rdquo; &#x2014; Jojen, A Dança dos Dragões
@@ -3160,7 +3166,7 @@ Vamos ver como isso aconteceu. Primeiramente nós importamos a biblioteca <code>
 </div>
 
 <p>
-Antes de seguir em frente, vamos ver uma nomenclatura. O objeto <code>dados</code> que criamos usando a função <code>read_excel</code> do <code>pandas</code> é chamado de <code>DataFrame</code>, que literalmente em português traduzido como um &ldquo;quadro de dados&rdquo;, mas podemos chamar simplesmente de &ldquo;tabela&rdquo;. Cheque se isso é verdade rodando o código abaixo.
+Antes de seguir em frente, vamos ver uma nomenclatura. O objeto <code>dados</code> que criamos usando a função <code>read_excel</code> do <code>pandas</code> é chamado de <code>DataFrame</code>, que em português seria literalmente traduzido como um &ldquo;quadro de dados&rdquo;, mas podemos chamar simplesmente de &ldquo;tabela&rdquo;. Cheque se isso é verdade rodando o código abaixo.
 </p>
 
 <div class="org-src-container">
@@ -3170,9 +3176,9 @@ Antes de seguir em frente, vamos ver uma nomenclatura. O objeto <code>dados</cod
 </div>
 </div>
 
-<div id="outline-container-org4106ba5" class="outline-3">
-<h3 id="org4106ba5"><span class="section-number-3">8.2.</span> Manipulando dados armazenados em <code>DataFrames</code></h3>
-<div class="outline-text-3" id="text-8-2">
+<div id="outline-container-org90f3bd0" class="outline-3">
+<h3 id="org90f3bd0"><span class="section-number-3">7.6.</span> Manipulando dados armazenados em <code>DataFrames</code></h3>
+<div class="outline-text-3" id="text-7-6">
 <blockquote>
 <p>
 &ldquo;<i>Você poderia fazer isso, por gentileza?</i>&rdquo; &#x2014; Andrew Ryan, Bioshock
@@ -3240,14 +3246,14 @@ Primeiramente, na linha 1, nós criamos uma cópia dos nossos dados para não al
 </p>
 
 <p>
-<b>[C]</b> Usando a sintaxe que acabamos de ver, crie uma cópia da variável <code>dados</code> e nesta cópia faça com que a coluna <code>População</code> armezene a população em unidade de milhão de pessoas.
+<b>[C]</b> Usando a sintaxe que acabamos de ver, crie uma cópia da variável <code>dados</code> e nesta cópia faça com que a coluna <code>População</code> armezene a população em unidade de milhão de pessoas. Exiba seus cálculos com o comando <code>print</code>.
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgf371fcb" class="outline-3">
-<h3 id="orgf371fcb"><span class="section-number-3">8.3.</span> Plotando gráficos com <code>pandas</code></h3>
-<div class="outline-text-3" id="text-8-3">
+<div id="outline-container-org17d8794" class="outline-3">
+<h3 id="org17d8794"><span class="section-number-3">7.7.</span> Plotando gráficos com <code>pandas</code></h3>
+<div class="outline-text-3" id="text-7-7">
 <blockquote>
 <p>
 &ldquo;<i>De todas as nossas invenções para a comunicação de massa, as imagens ainda falam a língua mais compreendida universalmente.</i>&rdquo; &#x2014; Walt Disney
@@ -3311,7 +3317,7 @@ Veja que para salvar o gráfico primeiro precisamos obter o objeto <code>fig</co
 </p>
 
 <p>
-<b>[D]</b> Teste seus conhecimentos novos! Crie uma nova planilha de dados com os dados que você quiser (pode buscar uma tabela pronta ou inventar a sua). Use o <code>pandas</code> para criar um objeto do tipo <code>DataFrame</code> com essa tabela. De um <code>print</code> na sua tabela e faça um plot com ela. Salve seu plot em um arquivo.
+<b>[D]</b> Teste seus conhecimentos novos! Crie uma nova planilha de dados com os dados que você quiser (pode buscar uma tabela pronta ou inventar a sua). Use o <code>pandas</code> para criar um objeto do tipo <code>DataFrame</code> com essa tabela. De um <code>print</code> na sua tabela e faça dois plots diferentes com ela. Salve seus plots em dois arquivos diferentes.
 </p>
 </div>
 </div>
@@ -3339,7 +3345,7 @@ Veja que para salvar o gráfico primeiro precisamos obter o objeto <code>fig</co
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Daniel R. Cassar &amp; James M. de Almeida</p>
-<p class="date">Created: 2022-04-15 Fri 15:04</p>
+<p class="date">Created: 2022-04-19 Tue 10:00</p>
 </div>
 </body>
 </html>

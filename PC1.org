@@ -2484,7 +2484,7 @@ Maravilha, conseguimos ganhar um pouco de performance, mas, o código apresentad
 Assim como laços, também podemos aninhar compreensão de listas. Neste caso a sintaxe pode ficar bastante complicada, então é interessante ilustrarmos
 
 [[./img/nested-list-comprehension.png]]
-* Importando bibliotecas
+* Importando bibliotecas e lendo dados
 ** Bibliotecas nos ajudam a não ter que reinventar a roda
 
 #+begin_quote
@@ -2495,7 +2495,7 @@ Diversas grandezas científicas variam ordens de magnitude, como por exemplo a v
 
 Calcular o logaritmo de um valor é uma tarefa corriqueira no meio científico. Era de se imaginar que o Python teria uma função para computar o log de um número, não é? Dê uma olhada na [[https://docs.python.org/pt-br/3/library/functions.html][documentação oficial]] e verá que não existe nenhuma função embutida de Python que computa o log de um número...
 
-E agora? Teremos que programar nossa própria função que calcula o log toda vez que precisarmos tirar o logaritmo de um valor? Para esse caso específico, a resposta é /não/. Mesmo não sendo uma função embutida em Python, podemos obter uma função que calcula o log usando bibliotecas! Veja o exemplo abaixo.
+E agora? Teremos que programar nossa própria função que calcula o log toda vez que precisarmos tirar o logaritmo de um valor? Para esse caso específico (e diversos outros), a resposta é /não/. Mesmo não sendo uma função embutida em Python, podemos obter uma função que calcula o log usando bibliotecas! Veja o exemplo abaixo.
 
 #+begin_src python -n
   import math
@@ -2518,11 +2518,11 @@ E agora? Teremos que programar nossa própria função que calcula o log toda ve
 
 No código acima temos a importantíssima instrução ~import~ na primeira linha. Essa instrução é usada para importar os módulos das bibliotecas que temos instaladas no nosso computador. O módulo importado foi o módulo ~math~ que, como o próprio nome sugere, contém objetos relacionados com matemática. O módulo ~math~ faz parte do que chamamos de /biblioteca padrão/ do Python, que é um conjunto de diversos módulos que já vem instalados quando se instala o Python.
 
-Na linha 4 do código acima usamos a função ~math.log10~ para calcular o logaritmo na base 10 da variável ~valor~. Todos os objetos fornecidos pelo módulo ~math~ devem ser acessados usando essa notação "[nome do módulo].[nome do objeto]". Imagina o tempo que você iria gastar se tivesse que escrever uma função que calcula o logaritmo de um número toda vez que precisasse... seríamos muito improdutivos se esse fosse o caso!
+Na linha 4 do código acima usamos a função ~math.log10~ para calcular o logaritmo na base 10 da variável ~valor~. Quando um módulo é importando, seus objetos podem ser acessados usando essa notação "[nome do módulo].[nome do objeto]". Imagina o tempo que você iria gastar se tivesse que escrever uma função que calcula o logaritmo de um número toda vez que precisasse... seríamos muito improdutivos se esse fosse o caso!
 
 Finalmente, na linha 7 do código nós usamos a função ~help~ para checar como a função ~math.log10~ funciona (o que é sempre uma boa prática caso você não saiba como uma função específica funciona).
 
-*[A]* Vamos investigar o que o módulo ~math~ tem! Rode o código abaixo e verá todos os objetos contidos no módulo ~math~ (veja que é a função ~dir~ que está listando esses objetos para nós). Leia o nome de todos os objetos e escolha 3 que achar interessante para saber mais (ignore os objetos que começam e terminam com dois sublinhados "__"). Antes de mais nada, identifique o tipo do objeto que escolheu com a função ~type~. Se seu objeto for uma função, rode o comando ~help~ para saber mais da função. Se seu objeto for uma variável, dê um ~print~ nela para saber seu valor. Comente brevemente sobre possíveis aplicações científicas dos objetos que escolheu.
+*[A]* Vamos investigar o que o módulo ~math~ tem! Rode o código abaixo e verá todos os objetos contidos no módulo ~math~ (veja que é a função ~dir~ que está listando esses objetos para nós). Leia o nome de todos os objetos e escolha 3 que achar interessante para saber mais (ignore os objetos que começam com sublinhado "_"). Antes de mais nada, identifique o tipo do objeto que escolheu com a função ~type~. Se seu objeto for uma função, rode o comando ~help~ para saber mais da função. Se seu objeto for uma variável, dê um ~print~ nela para saber seu valor. Comente brevemente sobre possíveis aplicações científicas dos objetos que escolheu.
 
 #+begin_src python -n
   import math
@@ -2533,7 +2533,7 @@ Finalmente, na linha 7 do código nós usamos a função ~help~ para checar como
 #+RESULTS:
 : ['__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'acos', 'acosh', 'asin', 'asinh', 'atan', 'atan2', 'atanh', 'ceil', 'comb', 'copysign', 'cos', 'cosh', 'degrees', 'dist', 'e', 'erf', 'erfc', 'exp', 'expm1', 'fabs', 'factorial', 'floor', 'fmod', 'frexp', 'fsum', 'gamma', 'gcd', 'hypot', 'inf', 'isclose', 'isfinite', 'isinf', 'isnan', 'isqrt', 'lcm', 'ldexp', 'lgamma', 'log', 'log10', 'log1p', 'log2', 'modf', 'nan', 'nextafter', 'perm', 'pi', 'pow', 'prod', 'radians', 'remainder', 'sin', 'sinh', 'sqrt', 'tan', 'tanh', 'tau', 'trunc', 'ulp']
 
-*[B]* Usando a biblioteca ~math~, faça o Python checar se $\sen{}^2(x) + \cos{}^2(x) = 1$ para 5 valores diferentes de $x$ a sua escolha. Comente caso encontre algo estranho.
+*[B]* Usando a biblioteca ~math~, faça o Python checar se $\mathrm{sen}^2(x) + \cos{}^2(x) = 1$ para 5 valores diferentes de $x$ a sua escolha. Comente caso encontre algo estranho.
 
 # #+begin_src python
 #   import math
@@ -2542,7 +2542,7 @@ Finalmente, na linha 7 do código nós usamos a função ~help~ para checar como
 #       print(math.sin(a)**2 + math.cos(a)**2)
 # #+end_src
 
-*[Desafio]* Você já se perguntou o que seria o fatorial de um número não-inteiro? Se sim, então você está se sentindo como Daniel Bernoulli se sentiu há quase 300 anos. A função Gama ($\Gamma$) é o que chamamos de extensão da função fatorial e ela funciona para números não-inteiros! Sabendo que $\Gamma(n+1) = n!$, qual seria o fatorial de $\pi$? Use o módulo ~math~ para este cálculo. _Dica_: a letra Gama em inglês se escreve Gamma, com dois "m".
+*[Desafio]* Você já se perguntou o que seria o fatorial de um número não-inteiro? Se sim, então você está se sentindo como Daniel Bernoulli se sentiu há quase 300 anos. A função Gama ($\Gamma$) é o que chamamos de extensão da função fatorial e ela funciona para números não-inteiros! Sabendo que $\Gamma(n+1) = n!$, qual seria o fatorial de $\pi$? Use o módulo ~math~ para este cálculo. _Dica_: a letra grega gama em inglês se escreve /gamma/, com dois "m".
 
 # #+begin_src python
 #   import math
@@ -2604,6 +2604,15 @@ Na linha 1 temos novamente a instrução ~import~. Estamos importando o módulo 
 # 4
 # 5
 # #+end_example
+
+*[Desafio]* Faça um programa que sorteia um valor aleatório entre 0 e 100. O programa pede que o usuário tente adivinhar o número (use o comando ~input~ para receber uma informação do usuário). Para cada palpite do usuário existem três possibilidades:
+
+1) O palpite estava certo! O programa diz isso ao usuário, conta quantas tentativas ele usou e encerra sua operação.
+2) O palpite é menor que o valor sorteado. O programa diz "Seu palpite é menor que o valor que eu sorteei, tente novamente!" e pede outro palpite.
+3) O palpite é maior que o valor sorteado. O programa diz "Seu palpite é maior que o valor que eu sorteei, tente novamente!" e pede outro palpite.
+
+*[Desafio matemático]* Qual estratégia você deve seguir para ganhar no jogo anterior usando a menor quantidade de palpites?
+
 ** Importando apenas o necessário
 
 #+begin_verse
@@ -2628,9 +2637,9 @@ Digamos que você queira calcular o logaritmo natural de um número e não preci
 #+RESULTS:
 : 9.210340371976184
 
-Perceba que ao importar a função ~log~ dessa forma, ela agora funciona sem a necessidade de invocar o ~namespace~ do módulo ~math~ na linha 4. Inclusive, neste caso se escrevermos "~math.log(valor)~" irá dar um erro pois o módulo ~math~ não foi importado (tente e verá)!! O que aconteceu na linha 1 foi que importamos apenas uma função específica desse módulo _e nada mais_.
+Perceba que ao importar a função ~log~ dessa forma, ela agora funciona sem a necessidade de invocar o ~namespace~ do módulo ~math~ na linha 4. Inclusive, neste caso se escrevermos "~math.log(valor)~" irá dar um erro pois o módulo ~math~ em si não foi importado, apenas sua função ~log~ (tente e verá)!! O que aconteceu na linha 1 foi que importamos apenas uma função específica desse módulo _e nada mais_.
 
-*[A]* Sua tarefa é calcular o seno de um número aleatório. Para isso, importe apenas as funções necessárias dos módulos ~math~ e ~random~ usando a estrutura de importação que acabamos de ver. _Dica_: a instrução ~import~ deve ser escrita para cada biblioteca que você quer importar.
+*[A]* Sua tarefa é calcular o seno de um número aleatório. Para isso, importe apenas as funções necessárias dos módulos ~math~ e ~random~ usando a estrutura de importação que acabamos de ver. _Dica_: a instrução ~import~ deve ser escrita para cada biblioteca que você quer importar. Você pode ter quantas instruções ~import~ forem necessárias no seu código.
 
 Para importar mais de um objeto de um módulo, use vírgulas. Veja no exemplo abaixo.
 
@@ -2657,14 +2666,14 @@ Existe uma sintaxe que nos permite importar /todos/ os objetos de um módulo for
   # não fica claro de onde elas vieram (imagina isso num códico com milhares
   # de linhas...)
   print(exp(10))
-  print(cos(pi))
-  print(factorial(5))
+  print(log2(100))
+  print(tan(5))
 #+end_src
 
 #+RESULTS:
 : 22026.465794806718
-: -1.0
-: 120
+: 6.643856189774724
+: -3.380515006246586
 
 ** Documentação da biblioteca padrão
 
@@ -2672,18 +2681,18 @@ Existe uma sintaxe que nos permite importar /todos/ os objetos de um módulo for
 "/Quando tudo o mais falhar, leia o manual de instruções./" --- Autor desconhecido
 #+end_quote
 
-A biblioteca padrão do Python é bastante extensa. Uma forma de checar o que já existe é lendo a [[https://docs.python.org/3.9/py-modindex.html][documentação oficial]]. Lá você vai encontrar a seção do módulo [[https://docs.python.org/3.9/library/math.html#module-math][math]] e a seção do módulo [[https://docs.python.org/3.9/library/random.html#module-random][random]], entre tantas outras. Fora estes dois módulos, alguns outros que vale a pena dar uma olhada são:
+A biblioteca padrão do Python é bastante extensa. Uma forma de checar o que já existe é lendo a [[https://docs.python.org/pt-br/3.9/py-modindex.html][documentação oficial]]. Lá você vai encontrar a seção do módulo [[https://docs.python.org/pt-br/3.9/library/math.html#module-math][math]] e a seção do módulo [[https://docs.python.org/pt-br/3.9/library/random.html#module-random][random]], entre tantas outras. Fora estes dois módulos, alguns outros que valem a pena dar uma olhada são:
 
-+ ~statistics~
-+ ~pprint~
-+ ~datetime~
-+ ~itertools~
-+ ~functools~
-+ ~pathlib~
-+ ~pickle~
-+ ~os~
-+ ~sys~
-+ ~re~
++ ~statistics~ - cálculos estatísticos
++ ~pprint~ - comando ~print~ que exibe certas informações de forma "mais bonita"
++ ~datetime~ - operações com datas
++ ~itertools~ - operações iterativas
++ ~functools~ - operações funcionais
++ ~pathlib~ - operações com arquivos em diferentes pastas no sistema
++ ~pickle~ - possibilita salvar variáveis de Python em arquivos
++ ~os~ - ferramentas para controlar seu sistema operacional
++ ~sys~ - acessar parâmetros do sistema
++ ~re~ - expressões regulares
 
 *[Desafio]* Descreva o que as funções ~product~, ~permutations~ e ~combinations~ do módulo ~itertools~ fazem. Elabore possíveis usos dessa funções.
 
@@ -2691,7 +2700,6 @@ A biblioteca padrão do Python é bastante extensa. Uma forma de checar o que j�
 
 *[Desafio 3]* Faça o Python exibir a data de hoje usando o módulo ~datetime~.
 
-* Lendo, manipulando e graficando dados
 ** Lendo dados externos ao Python
 
 #+begin_quote
@@ -2768,7 +2776,7 @@ Name: Continente, dtype: object
 Name: População, dtype: int64
 #+end_example
 
-Antes de seguir em frente, vamos ver uma nomenclatura. O objeto ~dados~ que criamos usando a função ~read_excel~ do ~pandas~ é chamado de ~DataFrame~, que literalmente em português traduzido como um "quadro de dados", mas podemos chamar simplesmente de "tabela". Cheque se isso é verdade rodando o código abaixo.
+Antes de seguir em frente, vamos ver uma nomenclatura. O objeto ~dados~ que criamos usando a função ~read_excel~ do ~pandas~ é chamado de ~DataFrame~, que em português seria literalmente traduzido como um "quadro de dados", mas podemos chamar simplesmente de "tabela". Cheque se isso é verdade rodando o código abaixo.
 
 #+begin_src python :session pyvenv
   print(type(dados))
@@ -2891,7 +2899,7 @@ Digamos que você queira saber quantos Equadores "cabem" em cada um dos países 
 
 Primeiramente, na linha 1, nós criamos uma cópia dos nossos dados para não alterar o original (usamos o método ~copy~, similar ao que fizemos com listas). Na linha 2 alteramos o valor da coluna ~População~ usando a sintaxe do ~pandas~. Observe que precisamos usar o operador de atribuição aqui! Por fim, na linha 3 demos um ~print~ nos dados modificados (que respondeu nossa pergunta original) e na linha 5 nós vemos que nossa variável original ~dados~ permanece inalterada pois trabalhamos em uma cópia dela.
 
-*[C]* Usando a sintaxe que acabamos de ver, crie uma cópia da variável ~dados~ e nesta cópia faça com que a coluna ~População~ armezene a população em unidade de milhão de pessoas.
+*[C]* Usando a sintaxe que acabamos de ver, crie uma cópia da variável ~dados~ e nesta cópia faça com que a coluna ~População~ armezene a população em unidade de milhão de pessoas. Exiba seus cálculos com o comando ~print~.
 
 ** Plotando gráficos com ~pandas~
 
@@ -2946,7 +2954,7 @@ Para encerrar esta parte, vamos ver como salvar nosso gráfico:
 
 Veja que para salvar o gráfico primeiro precisamos obter o objeto ~fig~ a partir do nosso objeto ~ax~. Isso é feito pelo método ~get_figure~ mostrado na linha 4. Este tipo de separação em um objeto de figura (~fig~) e um objeto de eixo (~ax~) é uma peculiaridade do ~matplotlib~. Não temos muito o que fazer a respeito, apenas aceitar a realidade como ela se apresenta. É na linha 7 que efetivamente salvamos a imagem com o método ~savefig~. O primeiro argumento deve ser o nome do seu gráfico com a extensão que você quer (pode ser ".png", ".jpg", ".pdf" entre outras). O argumento ~bbox_inches~ controla qual parte do gráfico você quer salvar. _Dica_: sempre use ~bbox_inches="tight"~ e não terá problemas.
 
-*[D]* Teste seus conhecimentos novos! Crie uma nova planilha de dados com os dados que você quiser (pode buscar uma tabela pronta ou inventar a sua). Use o ~pandas~ para criar um objeto do tipo ~DataFrame~ com essa tabela. De um ~print~ na sua tabela e faça um plot com ela. Salve seu plot em um arquivo.
+*[D]* Teste seus conhecimentos novos! Crie uma nova planilha de dados com os dados que você quiser (pode buscar uma tabela pronta ou inventar a sua). Use o ~pandas~ para criar um objeto do tipo ~DataFrame~ com essa tabela. De um ~print~ na sua tabela e faça dois plots diferentes com ela. Salve seus plots em dois arquivos diferentes.
 
 * Depuração de programas :noexport:
 :PROPERTIES:

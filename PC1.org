@@ -2955,6 +2955,635 @@ Para encerrar esta parte, vamos ver como salvar nosso gráfico:
 Veja que para salvar o gráfico primeiro precisamos obter o objeto ~fig~ a partir do nosso objeto ~ax~. Isso é feito pelo método ~get_figure~ mostrado na linha 4. Este tipo de separação em um objeto de figura (~fig~) e um objeto de eixo (~ax~) é uma peculiaridade do ~matplotlib~. Não temos muito o que fazer a respeito, apenas aceitar a realidade como ela se apresenta. É na linha 7 que efetivamente salvamos a imagem com o método ~savefig~. O primeiro argumento deve ser o nome do seu gráfico com a extensão que você quer (pode ser ".png", ".jpg", ".pdf" entre outras). O argumento ~bbox_inches~ controla qual parte do gráfico você quer salvar. _Dica_: sempre use ~bbox_inches="tight"~ e não terá problemas.
 
 *[D]* Teste seus conhecimentos novos! Crie uma nova planilha de dados com os dados que você quiser (pode buscar uma tabela pronta ou inventar a sua). Use o ~pandas~ para criar um objeto do tipo ~DataFrame~ com essa tabela. De um ~print~ na sua tabela e faça dois plots diferentes com ela. Salve seus plots em dois arquivos diferentes.
+* Vetores e matrizes
+** Listas não foram feitas para cálculos de álgebra linear
+
+Listas de Python são objetos muito úteis para diversas tarefas, porém não para cálculos de álgebra linear. Isto pois listas não são vetores e listas não são matrizes; listas são apenas um conjunto de objetos agrupados em uma certa ordem, nada mais nada menos.
+
+Para cálculos de álgebra linear nós temos a disposição a excelente biblioteca ~numpy~. O objeto principal que esta biblioteca nos fornece é o ~ndarray~ (array de $n$ dimensões) que costuma ser carinhosamente chamado apenas de ~array~ ou ~numpy array~. Vamos ver um exemplo de como criamos esses arrays.
+
+#+begin_src python -n :session pyvenv
+  import numpy as np
+
+
+  array_1d = np.array([1, 2, 3])  # array de 1 dimensão
+
+  print(array_1d)
+  print(type(array_1d))
+
+  lista_de_listas = [
+      [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9],
+  ]
+
+  array_2d = np.array(lista_de_listas)  # array de 2 dimensões
+
+  print(array_2d)
+  print(type(array_2d))
+#+end_src
+
+#+RESULTS:
+: [1 2 3]
+: <class 'numpy.ndarray'>
+: [[1 2 3]
+:  [4 5 6]
+:  [7 8 9]]
+: <class 'numpy.ndarray'>
+
+Simples, não? Basta fornecer uma lista para a função ~np.array~ e pronto, criamos um array de ~numpy~. _Nota_: a biblioteca ~numpy~ é muito usada. Como convenção, nós sempre importamos ela com o apelido de ~np~. Vamos seguir essa convenção!
+
+*[A]* Crie uma lista contendo 6 elementos que devem ser os dígitos do seu RM. Após isso, multiplique essa lista por um inteiro maior que 2, multiplique essa lista por ela mesma, some 10 a essa lista e some essa lista com ela mesma. Reporte o que aconteceu em cada um dos passos. Agora crie um array usando sua lista e repita todas as etapas. Reporte o que aconteceu em cada um dos passos e compare as diferenças entre arrays e listas.
+
+# #+begin_src python -n :session pyvenv
+#   lista = [1,2,3,4,5,6]
+
+#   print(lista * 3)
+#   # print(lista * lista)
+#   print(lista + lista)
+
+#   array = np.array(lista)
+
+#   print(array * 3)
+#   print(array * array)
+#   print(array + array)
+# #+end_src
+
+# #+RESULTS:
+# : [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6]
+# : [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6]
+# : [ 3  6  9 12 15 18]
+# : [ 1  4  9 16 25 36]
+# : [ 2  4  6  8 10 12]
+
+Como você deve ter percebido na prática, arrays não se comportam como listas e listas não se comportam como arrays. Os dois objetos são úteis, mas geralmente arrays facilitam muito nossos cálculos científicos e por conta disso costumam ser mais usados.
+
+*[B]* Crie uma função que recebe um array numérico de 1 dimensão de tamanho arbitrário. Considere que todos os números deste array são medidas de temperatura em Celsius. Retorne para o usuário um array de mesmo tamanho com as temperaturas convertidas para [[https://pt.wikipedia.org/wiki/Rankine][Rankine]]. Não use laço de repetição aqui, se aproveite das propriedades dos arrays!!
+
+** Criando arrays sem usar listas
+
+Podemos criar arrays sem a necessidade de fornecer uma lista como dado de entrada, o que costuma ser muito útil!
+
+*[A]* As funções ~zeros~ e ~ones~ criam arrays de qualquer tamanho contendo apenas zeros e uns, respectivamente. Veja o exemplo abaixo e escreva brevemente  sobre o que você entendeu dessas funções. Usando a função ~ones~ e a propriedade multiplicativa de arrays que vimos na seção anterior, crie uma matriz 3 por 5 onde todos os elementos são o número 42.
+
+#+begin_src python -n :session pyvenv
+  array1 = np.zeros(10)
+  array2 = np.zeros((3, 4))
+
+  array3 = np.ones(5)
+  array4 = np.ones((2, 3))
+#+end_src
+
+#+RESULTS:
+: [[1. 1. 1.]
+:  [1. 1. 1.]]
+
+O ~numpy~ tem também a função ~arange~ que funciona de forma similar ao ~range~ que já conhecemos. Diferentemente da ~range~, a função ~arange~ cria um array! Outra diferença é que a função ~arange~ permite criar sequências com intervalos não-inteiros. Veja o exemplo abaixo.
+
+#+begin_src python -n :session pyvenv
+  array1 = np.arange(10)
+  array2 = np.arange(10, 20)
+  array3 = np.arange(0, 110, 10)
+  array4 = np.arange(0, 1, 0.1)  # o intervalo não precisa ser inteiro!
+
+  for array in [array1, array2, array3, array4]:
+      print(array)
+#+end_src
+
+#+RESULTS:
+: [0 1 2 3 4 5 6 7 8 9]
+: [10 11 12 13 14 15 16 17 18 19]
+: [  0  10  20  30  40  50  60  70  80  90 100]
+: [0.  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9]
+
+Existe também a função ~linspace~ que serve para criar um array com $n$ valores _igualmente espaçados_ dentro de um certo intervalo numérico. Vamos ver alguns exemplos.
+
+#+begin_src python -n :session pyvenv
+  array1 = np.linspace(0, 1, 101)  # array com 101 valores entre 0 e 1
+  array2 = np.linspace(0, 10, 5)  # array com 5 valores entre 0 e 10
+  array3 = np.linspace(0, 10)  # sem o último argumento ele gera 50 números
+
+  for array in [array1, array2, array3]:
+      print(array)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+[0.   0.01 0.02 0.03 0.04 0.05 0.06 0.07 0.08 0.09 0.1  0.11 0.12 0.13
+ 0.14 0.15 0.16 0.17 0.18 0.19 0.2  0.21 0.22 0.23 0.24 0.25 0.26 0.27
+ 0.28 0.29 0.3  0.31 0.32 0.33 0.34 0.35 0.36 0.37 0.38 0.39 0.4  0.41
+ 0.42 0.43 0.44 0.45 0.46 0.47 0.48 0.49 0.5  0.51 0.52 0.53 0.54 0.55
+ 0.56 0.57 0.58 0.59 0.6  0.61 0.62 0.63 0.64 0.65 0.66 0.67 0.68 0.69
+ 0.7  0.71 0.72 0.73 0.74 0.75 0.76 0.77 0.78 0.79 0.8  0.81 0.82 0.83
+ 0.84 0.85 0.86 0.87 0.88 0.89 0.9  0.91 0.92 0.93 0.94 0.95 0.96 0.97
+ 0.98 0.99 1.  ]
+[ 0.   2.5  5.   7.5 10. ]
+[ 0.          0.20408163  0.40816327  0.6122449   0.81632653  1.02040816
+  1.2244898   1.42857143  1.63265306  1.83673469  2.04081633  2.24489796
+  2.44897959  2.65306122  2.85714286  3.06122449  3.26530612  3.46938776
+  3.67346939  3.87755102  4.08163265  4.28571429  4.48979592  4.69387755
+  4.89795918  5.10204082  5.30612245  5.51020408  5.71428571  5.91836735
+  6.12244898  6.32653061  6.53061224  6.73469388  6.93877551  7.14285714
+  7.34693878  7.55102041  7.75510204  7.95918367  8.16326531  8.36734694
+  8.57142857  8.7755102   8.97959184  9.18367347  9.3877551   9.59183673
+  9.79591837 10.        ]
+#+end_example
+
+Por fim, podemos gerar um array aleatório com o comando ~random~ do ~numpy~. Ele gera arrays contendo valores aleatórios entre 0 e 1.
+
+#+begin_src python -n :session pyvenv
+  array_1d = np.random.random(10)
+
+  array_2d_3x3 = np.random.random((3, 3))
+  array_2d_5x4 = np.random.random((5, 4))
+
+  print(array_1d)
+  print(array_2d_3x3)
+  print(array_2d_5x4)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+[0.78459876 0.70643543 0.03379155 0.03525707 0.98959662 0.43755816
+ 0.27687816 0.85687271 0.0231125  0.32996954]
+[[0.88358629 0.86299388 0.42355928]
+ [0.49502425 0.88376125 0.09668543]
+ [0.60909926 0.92862117 0.72223277]]
+[[0.60027341 0.86250924 0.74419914 0.54000965]
+ [0.39380561 0.11596089 0.97158986 0.54952193]
+ [0.98834545 0.71971824 0.33617425 0.14113405]
+ [0.53876703 0.44077033 0.02973686 0.17224248]
+ [0.44180125 0.95462162 0.1489127  0.42849787]]
+#+end_example
+
+** Funções universais
+
+Quando trabalhamos com dados é bastante comum situações onde temos que aplicar uma função matemática em um certo conjunto de dados. Por exemplo: calcular o logaritmo dos valores em uma coluna de uma tabela. O código abaixo mostra que isso não é possível com a função ~log~ do módulo ~math~... essa função funciona apenas em variáveis numéricas... e agora?
+
+#+begin_src python -n :session pyvenv
+  from math import log
+
+
+  lista = [1, 2, 3]
+  print(log(lista))
+#+end_src
+
+#+RESULTS:
+
+Precisamos de funções que "entendem" como operar nos elementos de uma lista ou array. Essas são as chamadas funções universais do ~numpy~ (chamadas de ~ufunc~ na documentação). Veja o exemplo abaixo:
+
+#+begin_src python -n :session pyvenv
+  lista = [1, 2, 3]
+  print(np.log(lista))  # estamos usando o `log` do numpy aqui
+#+end_src
+
+#+RESULTS:
+: [0.         0.69314718 1.09861229]
+
+O ~numpy~ tem diversas funções universais como ~log~, ~log10~, ~sqrt~, ~sin~, ~cos~, ~tan~, ~exp~, ~absolute~ e outras. Como sempre, a [[https://numpy.org/doc/stable/reference/ufuncs.html][documentação oficial]] é uma excelente fonte de informação.
+
+*[A]* Use o ~numpy~ e o ~pandas~ para gerar um gráfico de uma função matemática. Os valores do eixo $x$ devem ser gerados pelo ~numpy~ usando ~arange~ ou ~linspace~ (escolha o que julgar mais apropriado). Os valores do eixo $y$ devem ser calculados usando funções universais se necessário. O tipo de função a ser plotada depende do último digito do seu RM:
+
+0) [@0] polinomial de grau 2 em $x$
+1) exponencial de $x$
+2) logaritimo base 10 de $x$
+3) raiz quadrada de $x$
+4) seno de $x$
+5) coseno de $x$
+6) arco tangente de $x$
+7) dez elevado a $x$
+8) absoluto de $x$
+9) coseno hiperbólico de $x$
+
+** Funções agregadoras
+
+Soma dos elementos, mínimo, máximo, média e desvio padrão são operações chamadas agregadoras que são muito utilizadas. Arrays de ~numpy~ nos permitem computar esses valores de maneira muito fácil! Veja o exemplo abaixo.
+
+#+begin_src python -n :session pyvenv
+  array1 = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+  soma = array1.sum()
+  minimo = array1.min()
+  maximo = array1.max()
+  media = array1.mean()
+  desvio_padrao = array1.std()
+
+  for valor in [soma, minimo, maximo, media, desvio_padrao]:
+      print(valor)
+#+end_src
+
+#+RESULTS:
+: 45
+: 1
+: 9
+: 5.0
+: 2.581988897471611
+
+O que acontece quando usamos essas funções em arrays com mais de uma dimensão? Absolutamente a mesma coisa! Veja que o ~numpy~ completamente ignorou o que é linha e o que é coluna do seu array de entrada e computou um valor considerando todos os números do seu array.
+
+#+begin_src python -n :session pyvenv
+  array2 = np.array(
+      [
+          [1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9],
+      ]
+  )
+
+  soma = array2.sum()
+  minimo = array2.min()
+  maximo = array2.max()
+  media = array2.mean()
+  desvio_padrao = array2.std()
+
+  for valor in [soma, minimo, maximo, media, desvio_padrao]:
+      print(valor)
+#+end_src
+
+#+RESULTS:
+: 45
+: 1
+: 9
+: 5.0
+: 2.581988897471611
+
+Mas nem sempre é isso que queremos! As vezes queremos o valor médio de cada coluna da nossa tabela. As vezes queremos a soma dos valores de cada linha. Enfim, a vida científica nos dá tarefas e precisamos que o ~numpy~ resolva elas. Para resolver isso temos que usar o argumento ~axis~ que define o eixo onde a conta será realizada. Quando usamos ~axis=0~ nós estamos pedindo para o ~numpy~ realizar sua tarefa na direção das _linhas_ do nosso array. Diferentemente, quando usamos ~axis=1~ nós queremos que ele realize a sua tarefa na direção das _colunas_ do nosso array.
+
+Para ser absurdamente sincero, leva um tempo até se acostumar com essa notação do argumento ~axis~. Veja se com o exemplo abaixo fica mais fácil de entender. Preste atenção principalmente nos valores mínimos e máximos que são os mais diretos de acompanhar o que acontece.
+
+#+begin_src python -n :session pyvenv
+  array2 = np.array(
+      [
+          [1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9],
+      ]
+  )
+
+  print("Calculos realizados na direção das linhas da matriz")
+  soma = array2.sum(axis=0)
+  minimo = array2.min(axis=0)
+  maximo = array2.max(axis=0)
+  media = array2.mean(axis=0)
+  desvio_padrao = array2.std(axis=0)
+
+  for valor in [soma, minimo, maximo, media, desvio_padrao]:
+      print(valor)
+
+
+  print()
+  print("Calculos realizados na direção das colunas da matriz")
+  soma = array2.sum(axis=1)
+  minimo = array2.min(axis=1)
+  maximo = array2.max(axis=1)
+  media = array2.mean(axis=1)
+  desvio_padrao = array2.std(axis=1)
+
+  for valor in [soma, minimo, maximo, media, desvio_padrao]:
+      print(valor)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+Calculos considerando as linhas da matriz
+[12 15 18]
+[1 2 3]
+[7 8 9]
+[4. 5. 6.]
+[2.44948974 2.44948974 2.44948974]
+
+Calculos considerando as colunas da matriz
+[ 6 15 24]
+[1 4 7]
+[3 6 9]
+[2. 5. 8.]
+[0.81649658 0.81649658 0.81649658]
+#+end_example
+
+** Indexando arrays
+
+Existem diversas formas de indexar arrays. Veremos as mais simples por enquanto. A sintaxe que aprendemos com listas funciona aqui:
+
+#+begin_src python -n :session pyvenv
+  array = np.array(
+      [
+          [1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9],
+      ]
+  )
+
+  linha_0 = array[0]
+  linha_1 = array[1]
+  linha_2 = array[2]
+
+  linhas_0_e_1 = array[:2]
+  linhas_1_e_2 = array[1:]
+
+  linha_0_coluna_0 = array[0][0]
+  linha_1_coluna_2 = array[1][2]
+#+end_src
+
+#+RESULTS:
+
+Também podemos usar a sintaxe própria do ~numpy~ (que não funciona para listas!):
+
+#+begin_src python -n :session pyvenv
+  linha_0_coluna_0 = array[0, 0]
+  linha_1_coluna_2 = array[1, 2]
+
+  # O `:` indica `todos os elementos desta posição`
+  coluna_0 = array[:, 0]
+  coluna_1 = array[:, 1]
+  coluna_2 = array[:, 2]
+#+end_src
+
+Pela natureza iterativa dos arrays, podemos usar eles em laços de repetição ~for~ de maneira similar ao que faziamos com listas. Veja um exemplo:
+
+#+begin_src python -n :session pyvenv
+  array_1d = np.array([1, 2, 3, 4])
+
+  for valor in array_1d:
+      print(valor)
+
+
+  array_2d = np.array(
+      [
+          [1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9],
+      ]
+  )
+
+  for linha in array_2d:
+      print(linha)
+#+end_src
+
+#+RESULTS:
+: 1
+: 2
+: 3
+: 4
+: [1 2 3]
+: [4 5 6]
+: [7 8 9]
+
+*[A]* A tabela abaixo, armazenada na variável ~dados~, tem 3 colunas: ano, quantidade de pessoas que comeram sorvete de pistache (por mil habitantes) e o logaritmo na base 10 de unidades invididuais de pipoca consumidas (por mil habitantes). Usando indexação de arrays e funções agregadoras, encontre os seguintes valores:
+
+1) Consumo médio de sorvete de pistache entre 2010 e 2021.
+2) Consumo médio de unidades de pipoca entre 2010 e 2021 (dica: não é em log que a pergunta pede!).
+3) Desvio padrão do número de unidades individuais de pipoca consumidas entre os anos de 2015 e 2019.
+4) A diferença entre o valor máximo e o valor mínimo de pessoas que consumiram sorvete de pistache entre 2011 e 2018.
+5) A soma de todas a unidades individuais de pipoca consumidas de 2011 até 2021.
+
+#+begin_src python
+  dados = [
+      [2010, 20, 8],
+      [2011, 22, 9],
+      [2012, 27, 8],
+      [2013, 27, 6],
+      [2014, 25, 5],
+      [2015, 21, 7],
+      [2016, 18, 9],
+      [2017, 16, 12],
+      [2018, 17, 11],
+      [2019, 21, 10],
+      [2020, 28, 9],
+      [2021, 30, 8],
+  ]
+#+end_src
+
+** Atributos e peculiaridades de arrays
+
+Arrays têm alguns atributos que ajudam muito nossa vida:
+
+#+begin_src python -n :session pyvenv
+  array = np.array(
+      [
+          [1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9],
+      ]
+  )
+
+  print(array.shape)  # formato do array
+  print(array.ndim)   # número de dimensões
+  print(array.size)   # quantidade de valores que tem no array
+  print(array.dtype)  # tipo dos dados armazenados no array
+#+end_src
+
+#+RESULTS:
+: (3, 3)
+: 2
+: 9
+: int64
+
+*[A]* Escreva uma função que recebe um array e checa se ele é uma matriz quadrada. Se for, retorne a soma da diagonal principal. Se não for uma matriz quadrada, retorne ~False~.
+
+Diferentemente de listas, arrays não têm os métodos ~append~, ~remove~, ~pop~ e ~extend~. Uma vez que o array foi criado, seu tamanho não pode ser alterado. Mas podemos alterar seu formato! Para isso usamos o método ~reshape~.
+
+#+begin_src python -n :session pyvenv
+  array = np.array(
+      [
+          [1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9],
+      ]
+  )
+
+  array_2 = array.reshape((1, 9))  # 1 linha e 9 colunas
+  array_3 = array.reshape((9, 1))  # 9 linhas e 1 coluna
+
+  print(array)
+  print(array_2)
+  print(array_3)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+[[1 2 3 4 5 6 7 8 9]]
+[[1]
+ [2]
+ [3]
+ [4]
+ [5]
+ [6]
+ [7]
+ [8]
+ [9]]
+#+end_example
+
+Veja que as operações do ~numpy~ nunca geram uma /cópia/ do seu array, apenas uma /visão/ dele. Sabemos que visões de objetos podem nos levar a erros quando alteramos os valores do objeto! Vamos ver um exemplo:
+
+#+begin_src python -n :session pyvenv
+  array = np.array(
+      [
+          [1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9],
+      ]
+  )
+
+  array_2 = array.reshape((1, 9))  # 1 linha e 9 colunas
+  array_3 = array.reshape((9, 1))  # 9 linhas e 1 coluna
+
+  array_2[0, 0] = 10  # alteramos o valor da linha 0 e da coluna 0 apenas do array_2
+
+  # veja que todos os arrays foram alterados!!!
+  print(array)
+  print(array_2)
+  print(array_3)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+[[10  2  3]
+ [ 4  5  6]
+ [ 7  8  9]]
+[[10  2  3  4  5  6  7  8  9]]
+[[10]
+ [ 2]
+ [ 3]
+ [ 4]
+ [ 5]
+ [ 6]
+ [ 7]
+ [ 8]
+ [ 9]]
+#+end_example
+
+Então sempre que precisar, crie uma cópia do seu array com o método ~copy~.
+
+#+begin_src python -n :session pyvenv
+  array = np.array(
+      [
+          [1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9],
+      ]
+  )
+
+  array_2 = array.reshape((1, 9)).copy()  # cópia!!
+  array_3 = array.reshape((9, 1))
+
+  array_2[0, 0] = 10  # alteramos o valor da linha 0 e da coluna 0 apenas do array_2
+
+  print(array)
+  print(array_2) # apenas esse foi modificado pois ele é uma cópia!
+  print(array_3)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+[[10  2  3  4  5  6  7  8  9]]
+[[1]
+ [2]
+ [3]
+ [4]
+ [5]
+ [6]
+ [7]
+ [8]
+ [9]]
+#+end_example
+
+** Algumas operações de álgebra linear
+
+Multiplicação matricial entre dois arrays pode ser feita com o operador ~@~ (também conhecido com operador de multiplicação matricial).
+
+#+begin_src python -n :session pyvenv
+  array = np.array(
+      [
+          [1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9],
+      ]
+  )
+
+  multiplicacao = array @ array
+
+  print(multiplicacao)
+#+end_src
+
+#+RESULTS:
+: [[ 30  36  42]
+:  [ 66  81  96]
+:  [102 126 150]]
+
+A matriz transposta de um array pode ser obtida com o atributo ~T~.
+
+#+begin_src python -n :session pyvenv
+  array = np.array(
+      [
+          [1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9],
+      ]
+  )
+
+  transposta = array.T
+
+  print(array)
+  print()
+  print(transposta)
+#+end_src
+
+#+RESULTS:
+: [[1 2 3]
+:  [4 5 6]
+:  [7 8 9]]
+:
+: [[1 4 7]
+:  [2 5 8]
+:  [3 6 9]]
+
+O determinante de uma matriz pode ser calculado com a função ~linalg.det~ e a inversa de uma matriz pode ser calculada com a função ~linalg.inv~.
+
+#+begin_src python -n :session pyvenv
+  array = np.array(
+      [
+          [5, 2, 3],
+          [4, 5, 6],
+          [7, 8, 5],
+      ]
+  )
+
+  determinante = np.linalg.det(array)
+  inversa = np.linalg.inv(array)
+
+  print(determinante)
+  print()
+  print(inversa)
+#+end_src
+
+#+RESULTS:
+: -79.99999999999997
+:
+: [[ 0.2875 -0.175   0.0375]
+:  [-0.275  -0.05    0.225 ]
+:  [ 0.0375  0.325  -0.2125]]
+
+Outras operações de algebra linear podem ser checadas na [[https://numpy.org/doc/stable/reference/routines.linalg.html][documentação oficial]], como sempre.
+
+*[A]* Crie uma função que recebe um array 3 $\times$ 4. Este array representa a matriz de um sistema linear de equações. A função deve checar se o sistema tem solução única. Em caso positivo, utilize o método de eliminação de Gauss para resolver o sistema e retorne para o usuário um array de 1 dimensão com os 3 valores da solução. Teste seu algoritmo com o array abaixo. Se seu algoritmo estiver correto, a resposta para esse sistema deve ser [2, 3, -1]. _Nota_: não precisamos dizer que não é permitido usar uma função pronta do ~numpy~ (ou de qualquer outra biblioteca) que resolve sistemas lineares, não é? [Problema sugerido pelo Prof. Vinicius]
+
+#+begin_src python -n :session pyvenv
+  teste = np.array(
+      [
+          [2, 1, -1, 8],
+          [-3, -1, 2, -11],
+          [-2, 1, 2, -3],
+      ]
+  )
+#+end_src
+
+*[B]* Considere a série de Taylor da função exponencial ($e^x$) com $x_0=0$. Faça três gráficos do erro da série de Taylor em função no número de termos da série, cada gráfico deve ser feito para um valor de $x$ diferente. Calcule o erro considerando o retorno da função ~exp~ do módulo ~math~ ou ~numpy~. [Problema sugerido pelo Prof. Vinicius]
 
 * Depuração de programas :noexport:
 :PROPERTIES:

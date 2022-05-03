@@ -2958,6 +2958,10 @@ Veja que para salvar o gráfico primeiro precisamos obter o objeto ~fig~ a parti
 * Vetores e matrizes
 ** Listas não foram feitas para cálculos de álgebra linear
 
+#+begin_quote
+"/Todo mundo é um gênio. Mas se você julgar um peixe por sua capacidade de subir em uma árvore, ele vai gastar toda a vida acreditando que é estúpido./" --- Autor desconhecido
+#+end_quote
+
 Listas de Python são objetos muito úteis para diversas tarefas, porém não para cálculos de álgebra linear. Isto pois listas não são vetores e listas não são matrizes; listas são apenas um conjunto de objetos agrupados em uma certa ordem, nada mais nada menos.
 
 Para cálculos de álgebra linear nós temos a disposição a excelente biblioteca ~numpy~. O objeto principal que esta biblioteca nos fornece é o ~ndarray~ (array de $n$ dimensões) que costuma ser carinhosamente chamado apenas de ~array~ ou ~numpy array~. Vamos ver um exemplo de como criamos esses arrays.
@@ -3021,6 +3025,10 @@ Como você deve ter percebido na prática, arrays não se comportam como listas 
 *[B]* Crie uma função que recebe um array numérico de 1 dimensão de tamanho arbitrário. Considere que todos os números deste array são medidas de temperatura em Celsius. Retorne para o usuário um array de mesmo tamanho com as temperaturas convertidas para [[https://pt.wikipedia.org/wiki/Rankine][Rankine]]. Não use laço de repetição aqui, se aproveite das propriedades dos arrays!!
 
 ** Criando arrays sem usar listas
+
+#+begin_quote
+"/Não podemos resolver nossos problemas com o mesmo nível de pensamento que usamos para criá-los./" --- Albert Einstein
+#+end_quote
 
 Podemos criar arrays sem a necessidade de fornecer uma lista como dado de entrada, o que costuma ser muito útil!
 
@@ -3116,7 +3124,13 @@ Por fim, podemos gerar um array aleatório com o comando ~random~ do ~numpy~. El
  [0.44180125 0.95462162 0.1489127  0.42849787]]
 #+end_example
 
+*[B]* Crie um array utilizando o ~linspace~ e outro array utilizando o ~random~. Após criá-los, multiplique os dois arrays e exiba o resultado.
+
 ** Funções universais
+
+#+begin_quote
+"/A matemática expressa valores que refletem o cosmos, incluindo ordem, equilíbrio, harmonia, lógica e beleza abstrata./" --- Deepak Chopra
+#+end_quote
 
 Quando trabalhamos com dados é bastante comum situações onde temos que aplicar uma função matemática em um certo conjunto de dados. Por exemplo: calcular o logaritmo dos valores em uma coluna de uma tabela. O código abaixo mostra que isso não é possível com a função ~log~ do módulo ~math~... essa função funciona apenas em variáveis numéricas... e agora?
 
@@ -3146,16 +3160,20 @@ O ~numpy~ tem diversas funções universais como ~log~, ~log10~, ~sqrt~, ~sin~, 
 
 0) [@0] polinomial de grau 2 em $x$
 1) exponencial de $x$
-2) logaritimo base 10 de $x$
+2) logaritmo base 10 de $x$
 3) raiz quadrada de $x$
 4) seno de $x$
-5) coseno de $x$
+5) cosseno de $x$
 6) arco tangente de $x$
 7) dez elevado a $x$
 8) absoluto de $x$
-9) coseno hiperbólico de $x$
+9) cosseno hiperbólico de $x$
 
 ** Funções agregadoras
+
+#+begin_quote
+"/Se nós dois estamos com fome e eu como um frango inteiro, na média estamos nós dois saciados./" --- Autor desconhecido
+#+end_quote
 
 Soma dos elementos, mínimo, máximo, média e desvio padrão são operações chamadas agregadoras que são muito utilizadas. Arrays de ~numpy~ nos permitem computar esses valores de maneira muito fácil! Veja o exemplo abaixo.
 
@@ -3262,6 +3280,10 @@ Calculos considerando as colunas da matriz
 
 ** Indexando arrays
 
+#+begin_quote
+"/Eu poderia ser vendado e jogado no oceano mais profundo e saberia onde encontrá-lo. Eu poderia ser enterrado a cem milhas de profundidade e saberia onde você está./" --- Neil Gaiman, Deuses Americanos
+#+end_quote
+
 Existem diversas formas de indexar arrays. Veremos as mais simples por enquanto. A sintaxe que aprendemos com listas funciona aqui:
 
 #+begin_src python -n :session pyvenv
@@ -3298,7 +3320,7 @@ Também podemos usar a sintaxe própria do ~numpy~ (que não funciona para lista
   coluna_2 = array[:, 2]
 #+end_src
 
-Pela natureza iterativa dos arrays, podemos usar eles em laços de repetição ~for~ de maneira similar ao que faziamos com listas. Veja um exemplo:
+Pela natureza iterativa dos arrays, podemos usar eles em laços de repetição ~for~ de maneira similar ao que fazíamos com listas. Veja um exemplo:
 
 #+begin_src python -n :session pyvenv
   array_1d = np.array([1, 2, 3, 4])
@@ -3328,7 +3350,9 @@ Pela natureza iterativa dos arrays, podemos usar eles em laços de repetição ~
 : [4 5 6]
 : [7 8 9]
 
-*[A]* A tabela abaixo, armazenada na variável ~dados~, tem 3 colunas: ano, quantidade de pessoas que comeram sorvete de pistache (por mil habitantes) e o logaritmo na base 10 de unidades invididuais de pipoca consumidas (por mil habitantes). Usando indexação de arrays e funções agregadoras, encontre os seguintes valores:
+*[A]* Crie um array 4 $\times$ 4. Compute a multiplicação da primeira linha do array pela terceira. Após isso, subtraia do resultado a segunda linha e exiba para o usuário.
+
+*[B]* A tabela abaixo, armazenada na variável ~dados~, tem 3 colunas: ano, quantidade de pessoas que comeram sorvete de pistache (por mil habitantes) e o logaritmo na base 10 de unidades individuais de pipoca consumidas (por mil habitantes). Usando indexação de arrays e funções agregadoras, encontre os seguintes valores:
 
 1) Consumo médio de sorvete de pistache entre 2010 e 2021.
 2) Consumo médio de unidades de pipoca entre 2010 e 2021 (dica: não é em log que a pergunta pede!).
@@ -3354,6 +3378,10 @@ Pela natureza iterativa dos arrays, podemos usar eles em laços de repetição ~
 #+end_src
 
 ** Atributos e peculiaridades de arrays
+
+#+begin_quote
+"/Mas minha rosa, sozinha, é mais importante do que todos vocês juntos, já que ela é a que eu reguei./" --- Antoine de Saint-Exupéry, O Pequeno Príncipe
+#+end_quote
 
 Arrays têm alguns atributos que ajudam muito nossa vida:
 
@@ -3495,6 +3523,10 @@ Então sempre que precisar, crie uma cópia do seu array com o método ~copy~.
 
 ** Algumas operações de álgebra linear
 
+#+begin_quote
+"/Se álgebra linear já não é lá muito fácil, imagina a não-linear.../" --- D. R. Cassar
+#+end_quote
+
 Multiplicação matricial entre dois arrays pode ser feita com o operador ~@~ (também conhecido com operador de multiplicação matricial).
 
 #+begin_src python -n :session pyvenv
@@ -3569,21 +3601,7 @@ O determinante de uma matriz pode ser calculado com a função ~linalg.det~ e a 
 :  [-0.275  -0.05    0.225 ]
 :  [ 0.0375  0.325  -0.2125]]
 
-Outras operações de algebra linear podem ser checadas na [[https://numpy.org/doc/stable/reference/routines.linalg.html][documentação oficial]], como sempre.
-
-*[A]* Crie uma função que recebe um array 3 $\times$ 4. Este array representa a matriz de um sistema linear de equações. A função deve checar se o sistema tem solução única. Em caso positivo, utilize o método de eliminação de Gauss para resolver o sistema e retorne para o usuário um array de 1 dimensão com os 3 valores da solução. Teste seu algoritmo com o array abaixo. Se seu algoritmo estiver correto, a resposta para esse sistema deve ser [2, 3, -1]. _Nota_: não precisamos dizer que não é permitido usar uma função pronta do ~numpy~ (ou de qualquer outra biblioteca) que resolve sistemas lineares, não é? [Problema sugerido pelo Prof. Vinicius]
-
-#+begin_src python -n :session pyvenv
-  teste = np.array(
-      [
-          [2, 1, -1, 8],
-          [-3, -1, 2, -11],
-          [-2, 1, 2, -3],
-      ]
-  )
-#+end_src
-
-*[B]* Considere a série de Taylor da função exponencial ($e^x$) com $x_0=0$. Faça três gráficos do erro da série de Taylor em função no número de termos da série, cada gráfico deve ser feito para um valor de $x$ diferente. Calcule o erro considerando o retorno da função ~exp~ do módulo ~math~ ou ~numpy~. [Problema sugerido pelo Prof. Vinicius]
+Outras operações de álgebra linear podem ser checadas na [[https://numpy.org/doc/stable/reference/routines.linalg.html][documentação oficial]], como sempre.
 
 * Depuração de programas :noexport:
 :PROPERTIES:
@@ -3894,6 +3912,28 @@ Checar uma condição e acusar um erro caso esta condição seja falsa é uma es
 A sintaxe da instrução ~assert~ requer uma condição a ser checada logo após a instrução. Caso a condição retorne ~False~ o código é interrompido e acusa um ~AssertionError~. Caso queira exibir uma mensagem ao usuário para ajudá-lo a entender o que ocorre, escreva uma string e coloque ela após uma vírgula. A mensagem não é obrigatória mas altamente recomendada.
 
 Uma forma mais fácil de entender a instrução ~assert~ é lendo ela como "assegure-se que". Na linha 18 do código acima podemos ler como "assegure-se que o valor de ~x~ é maior que zero e menor ou igual a dois, do contrário, exiba uma mensagem de erro ao usuário alertando ele que esse é um requerimento necessário para executar a função".
+* Aula de problemas :noexport:
+
+*[A]* Crie uma função que recebe um array 3 $\times$ 4. Este array representa a matriz de um sistema linear de equações com 3 equações e 3 incógnitas (veja o exemplo abaixo). A função deve checar se o sistema tem solução única. Em caso positivo, utilize o método de eliminação de Gauss para resolver o sistema e retorne para o usuário um array de 1 dimensão com os 3 valores da solução. Teste seu algoritmo com o array abaixo. Se seu algoritmo estiver correto, a resposta para esse sistema deve ser [2, 3, -1]. _Nota_: não precisamos dizer que não é permitido usar uma função pronta do ~numpy~ (ou de qualquer outra biblioteca) que resolve sistemas lineares, não é? [Problema sugerido pelo Prof. Vinicius]
+
+\begin{cases}
+2x+y-z & =8\\
+-3x-y+2z & =-11\\
+-2x+y+2z & =-3
+\end{cases}
+
+#+begin_src python -n :session pyvenv
+  teste = np.array(
+      [
+          [2, 1, -1, 8],
+          [-3, -1, 2, -11],
+          [-2, 1, 2, -3],
+      ]
+  )
+#+end_src
+
+*[B]* Considere a série de Taylor da função exponencial ($e^x$) com $x_0=0$. Faça três gráficos do erro da série de Taylor em função no número de termos da série, cada gráfico deve ser feito para um valor de $x$ diferente. Calcule o erro considerando o retorno da função ~exp~ do módulo ~math~ ou ~numpy~. [Problema sugerido pelo Prof. Vinicius]
+
 
 * JAMES Dicionários :noexport:
 :PROPERTIES:

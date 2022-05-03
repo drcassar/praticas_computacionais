@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-05-02 seg 16:35 -->
+<!-- 2022-05-03 Tue 11:46 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Práticas em Ciência de Dados</title>
@@ -191,7 +191,7 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
+  .org-svg { }
 </style>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -222,80 +222,80 @@
 <h2>Índice</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgc594262">1. Introdução</a>
+<li><a href="#orgeb03154">1. Introdução</a>
 <ul>
-<li><a href="#org7d372a6">1.1. Olá! Que bom que você veio, aprochegue-se!</a></li>
-<li><a href="#org04ef05f">1.2. Python e o caderno de notas Jupyter</a></li>
-<li><a href="#orgf06b267">1.3. Links interessantes</a></li>
+<li><a href="#orga828561">1.1. Olá! Que bom que você veio, aprochegue-se!</a></li>
+<li><a href="#org261c731">1.2. Python e o caderno de notas Jupyter</a></li>
+<li><a href="#org7425f14">1.3. Links interessantes</a></li>
 </ul>
 </li>
-<li><a href="#orgb41769d">2. Jupyter, variáveis e como buscar ajuda</a>
+<li><a href="#orge50272a">2. Jupyter, variáveis e como buscar ajuda</a>
 <ul>
-<li><a href="#orgdf88b6a">2.1. Meu primeiro caderno de notas Jupyter</a></li>
-<li><a href="#orga42371d">2.2. Criando variáveis de diferentes tipos</a></li>
-<li><a href="#org430c3fb">2.3. Buscando ajuda</a></li>
+<li><a href="#org69d8627">2.1. Meu primeiro caderno de notas Jupyter</a></li>
+<li><a href="#org077cd45">2.2. Criando variáveis de diferentes tipos</a></li>
+<li><a href="#org4fa9656">2.3. Buscando ajuda</a></li>
 </ul>
 </li>
-<li><a href="#orge1cb8b5">3. Operadores e estrutura de decisão</a>
+<li><a href="#org640af9c">3. Operadores e estrutura de decisão</a>
 <ul>
-<li><a href="#org26341b2">3.1. Operadores aritméticos</a></li>
-<li><a href="#org25a2d9a">3.2. Operadores lógicos</a></li>
-<li><a href="#orgc0f3787">3.3. Operadores de comparação</a></li>
-<li><a href="#orge1d3c45">3.4. Estrutura de decisão e operador condicional</a></li>
-<li><a href="#orgc8a2bdd">3.5. Uma breve introdução sobre estilo</a></li>
+<li><a href="#org36b1fac">3.1. Operadores aritméticos</a></li>
+<li><a href="#org4003d94">3.2. Operadores lógicos</a></li>
+<li><a href="#orgd6b2020">3.3. Operadores de comparação</a></li>
+<li><a href="#orge809e19">3.4. Estrutura de decisão e operador condicional</a></li>
+<li><a href="#org6d5c128">3.5. Uma breve introdução sobre estilo</a></li>
 </ul>
 </li>
-<li><a href="#org3ca1b79">4. Funções</a>
+<li><a href="#orgc34df21">4. Funções</a>
 <ul>
-<li><a href="#org6572a45">4.1. O que é uma função?</a></li>
-<li><a href="#orgd9a8bb0">4.2. Funções embutidas</a></li>
-<li><a href="#orge3e738a">4.3. Definindo novas funções</a></li>
-<li><a href="#org347e093">4.4. Argumentos posicionais, argumentos nomeados e argumentos com valor padrão</a></li>
-<li><a href="#orgd3fa868">4.5. Variáveis globais e variáveis locais</a></li>
-<li><a href="#orgc2e334e">4.6. Documentando suas funções com a docstring</a></li>
-<li><a href="#org336bc7a">4.7. Funções também são objetos!</a></li>
+<li><a href="#org38d4b32">4.1. O que é uma função?</a></li>
+<li><a href="#org26155c4">4.2. Funções embutidas</a></li>
+<li><a href="#org19272fa">4.3. Definindo novas funções</a></li>
+<li><a href="#org98c8d8c">4.4. Argumentos posicionais, argumentos nomeados e argumentos com valor padrão</a></li>
+<li><a href="#org33b9fe5">4.5. Variáveis globais e variáveis locais</a></li>
+<li><a href="#orga9fc195">4.6. Documentando suas funções com a docstring</a></li>
+<li><a href="#orgebd95f5">4.7. Funções também são objetos!</a></li>
 </ul>
 </li>
-<li><a href="#orgf4cad88">5. Listas, tuplas e conjuntos</a>
+<li><a href="#org86e6ea0">5. Listas, tuplas e conjuntos</a>
 <ul>
-<li><a href="#orgbf35573">5.1. Agrupando objetos com listas</a></li>
-<li><a href="#orgb01c32a">5.2. Listas dentro de listas.</a></li>
-<li><a href="#orged193d0">5.3. Modificando, particionando e desempacotando listas</a></li>
-<li><a href="#org27f362d">5.4. Particionamento de listas</a></li>
-<li><a href="#orgc96d7fa">5.5. Copiando listas</a></li>
-<li><a href="#org225b373">5.6. Desempacotamento e Operador Asterisco</a></li>
-<li><a href="#org28df4ce">5.7. Tuplas</a></li>
-<li><a href="#org3320695">5.8. Conjuntos</a></li>
+<li><a href="#org19be0c9">5.1. Agrupando objetos com listas</a></li>
+<li><a href="#org9c974f5">5.2. Listas dentro de listas.</a></li>
+<li><a href="#org689009a">5.3. Modificando, particionando e desempacotando listas</a></li>
+<li><a href="#org6ea4aa3">5.4. Particionamento de listas</a></li>
+<li><a href="#orge9c6a85">5.5. Copiando listas</a></li>
+<li><a href="#org09ab3ad">5.6. Desempacotamento e Operador Asterisco</a></li>
+<li><a href="#org9dec176">5.7. Tuplas</a></li>
+<li><a href="#orgb156eef">5.8. Conjuntos</a></li>
 </ul>
 </li>
-<li><a href="#org04cf0f6">6. Laço de repetição</a>
+<li><a href="#org646bc57">6. Laço de repetição</a>
 <ul>
-<li><a href="#org7d3b28f">6.1. Laço de repetição usando <code>while</code></a></li>
-<li><a href="#org609a9ad">6.2. Laço de repetição usando <code>for</code></a></li>
-<li><a href="#org03b57f0">6.3. Laços Aninhados</a></li>
-<li><a href="#orgc5ea257">6.4. Compreensão de listas</a></li>
+<li><a href="#orgbd2ddd6">6.1. Laço de repetição usando <code>while</code></a></li>
+<li><a href="#orge7e4815">6.2. Laço de repetição usando <code>for</code></a></li>
+<li><a href="#org09c229e">6.3. Laços Aninhados</a></li>
+<li><a href="#org689600c">6.4. Compreensão de listas</a></li>
 </ul>
 </li>
-<li><a href="#orgbd4ca68">7. Importando bibliotecas e lendo dados</a>
+<li><a href="#orgbfa4f57">7. Importando bibliotecas e lendo dados</a>
 <ul>
-<li><a href="#org49b1957">7.1. Bibliotecas nos ajudam a não ter que reinventar a roda</a></li>
-<li><a href="#org05c08d3">7.2. Espaço de nome</a></li>
-<li><a href="#org4b4ce18">7.3. Importando apenas o necessário</a></li>
-<li><a href="#orgabebb2b">7.4. Documentação da biblioteca padrão</a></li>
-<li><a href="#orgf6a356b">7.5. Lendo dados externos ao Python</a></li>
-<li><a href="#org64361c6">7.6. Manipulando dados armazenados em <code>DataFrames</code></a></li>
-<li><a href="#org3fa98c2">7.7. Plotando gráficos com <code>pandas</code></a></li>
+<li><a href="#org53fb50e">7.1. Bibliotecas nos ajudam a não ter que reinventar a roda</a></li>
+<li><a href="#orgaaceddf">7.2. Espaço de nome</a></li>
+<li><a href="#org9e7172a">7.3. Importando apenas o necessário</a></li>
+<li><a href="#orgddbd367">7.4. Documentação da biblioteca padrão</a></li>
+<li><a href="#org65aa2e7">7.5. Lendo dados externos ao Python</a></li>
+<li><a href="#orgc9bec5f">7.6. Manipulando dados armazenados em <code>DataFrames</code></a></li>
+<li><a href="#orga1c152c">7.7. Plotando gráficos com <code>pandas</code></a></li>
 </ul>
 </li>
-<li><a href="#org6096979">8. Vetores e matrizes</a>
+<li><a href="#orge93c1cf">8. Vetores e matrizes</a>
 <ul>
-<li><a href="#orge5c57d3">8.1. Listas não foram feitas para cálculos de álgebra linear</a></li>
-<li><a href="#org7d019aa">8.2. Criando arrays sem usar listas</a></li>
-<li><a href="#org091fe72">8.3. Funções universais</a></li>
-<li><a href="#orgd2d340d">8.4. Funções agregadoras</a></li>
-<li><a href="#org0f10ca3">8.5. Indexando arrays</a></li>
-<li><a href="#org5c0e4bb">8.6. Atributos e peculiaridades de arrays</a></li>
-<li><a href="#orga172f3e">8.7. Algumas operações de álgebra linear</a></li>
+<li><a href="#org62ac227">8.1. Listas não foram feitas para cálculos de álgebra linear</a></li>
+<li><a href="#org4f657de">8.2. Criando arrays sem usar listas</a></li>
+<li><a href="#org668e086">8.3. Funções universais</a></li>
+<li><a href="#org20c2e71">8.4. Funções agregadoras</a></li>
+<li><a href="#orgc528cb9">8.5. Indexando arrays</a></li>
+<li><a href="#org0d5355d">8.6. Atributos e peculiaridades de arrays</a></li>
+<li><a href="#org7548c4f">8.7. Algumas operações de álgebra linear</a></li>
 </ul>
 </li>
 </ul>
@@ -337,13 +337,13 @@
   <!-- } -->
 </style>
 
-<div id="outline-container-orgc594262" class="outline-2">
-<h2 id="orgc594262"><span class="section-number-2">1.</span> Introdução</h2>
+<div id="outline-container-orgeb03154" class="outline-2">
+<h2 id="orgeb03154"><span class="section-number-2">1.</span> Introdução</h2>
 <div class="outline-text-2" id="text-1">
 </div>
 
-<div id="outline-container-org7d372a6" class="outline-3">
-<h3 id="org7d372a6"><span class="section-number-3">1.1.</span> Olá! Que bom que você veio, aprochegue-se!</h3>
+<div id="outline-container-orga828561" class="outline-3">
+<h3 id="orga828561"><span class="section-number-3">1.1.</span> Olá! Que bom que você veio, aprochegue-se!</h3>
 <div class="outline-text-3" id="text-1-1">
 <blockquote>
 <p>
@@ -377,8 +377,8 @@ Realize as práticas seguindo as instruções discutidas em sala de aula. Lembre
 </div>
 </div>
 
-<div id="outline-container-org04ef05f" class="outline-3">
-<h3 id="org04ef05f"><span class="section-number-3">1.2.</span> Python e o caderno de notas Jupyter</h3>
+<div id="outline-container-org261c731" class="outline-3">
+<h3 id="org261c731"><span class="section-number-3">1.2.</span> Python e o caderno de notas Jupyter</h3>
 <div class="outline-text-3" id="text-1-2">
 <blockquote>
 <p>
@@ -400,8 +400,8 @@ Apesar de não ser estritamente necessário utilizar os cadernos de notas Jupyte
 </div>
 </div>
 
-<div id="outline-container-orgf06b267" class="outline-3">
-<h3 id="orgf06b267"><span class="section-number-3">1.3.</span> Links interessantes</h3>
+<div id="outline-container-org7425f14" class="outline-3">
+<h3 id="org7425f14"><span class="section-number-3">1.3.</span> Links interessantes</h3>
 <div class="outline-text-3" id="text-1-3">
 <blockquote>
 <p>
@@ -452,13 +452,13 @@ Por fim, existem diversos materiais (tanto pagos quanto gratuitos) para aprendiz
 </div>
 </div>
 
-<div id="outline-container-orgb41769d" class="outline-2">
-<h2 id="orgb41769d"><span class="section-number-2">2.</span> Jupyter, variáveis e como buscar ajuda</h2>
+<div id="outline-container-orge50272a" class="outline-2">
+<h2 id="orge50272a"><span class="section-number-2">2.</span> Jupyter, variáveis e como buscar ajuda</h2>
 <div class="outline-text-2" id="text-2">
 </div>
 
-<div id="outline-container-orgdf88b6a" class="outline-3">
-<h3 id="orgdf88b6a"><span class="section-number-3">2.1.</span> Meu primeiro caderno de notas Jupyter</h3>
+<div id="outline-container-org69d8627" class="outline-3">
+<h3 id="org69d8627"><span class="section-number-3">2.1.</span> Meu primeiro caderno de notas Jupyter</h3>
 <div class="outline-text-3" id="text-2-1">
 <blockquote>
 <p>
@@ -475,7 +475,7 @@ Usualmente, a primeira prática quando se está aprendendo uma linguagem de prog
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Ol&#225;, mundo!"</span>)
+<pre class="src src-python"><span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"Ol&#225;, mundo!"</span>)
 </pre>
 </div>
 
@@ -496,7 +496,7 @@ Por fim, dentro dos parênteses que usamos para chamar a função <code>print</c
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #859900; font-weight: bold;">print</span> <span style="color: #2aa198;">"Ol&#225;, mundo!"</span>
+<pre class="src src-python"><span style="color: #d33682; font-style: italic;">print</span> <span style="color: #2aa198;">"Ol&#225;, mundo!"</span>
 </pre>
 </div>
 
@@ -505,7 +505,7 @@ Por fim, dentro dos parênteses que usamos para chamar a função <code>print</c
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #859900; font-weight: bold;">print</span>(Ol&#225;, mundo!)
+<pre class="src src-python"><span style="color: #d33682; font-style: italic;">print</span>(Ol&#225;, mundo!)
 </pre>
 </div>
 
@@ -519,8 +519,8 @@ Aprender qualquer linguagem, seja ela de programação ou não, requer treino. N
 </div>
 </div>
 
-<div id="outline-container-orga42371d" class="outline-3">
-<h3 id="orga42371d"><span class="section-number-3">2.2.</span> Criando variáveis de diferentes tipos</h3>
+<div id="outline-container-org077cd45" class="outline-3">
+<h3 id="org077cd45"><span class="section-number-3">2.2.</span> Criando variáveis de diferentes tipos</h3>
 <div class="outline-text-3" id="text-2-2">
 <blockquote>
 <p>
@@ -542,7 +542,7 @@ Para criar uma variável basta escolher um nome válido e usar o sinal de igual 
 
 <div class="org-src-container">
 <pre class="src src-python"><span class="linenr">1: </span><span style="color: #268bd2;">frase</span> = <span style="color: #2aa198;">"Ol&#225;, mundo!"</span>
-<span class="linenr">2: </span><span style="color: #859900; font-weight: bold;">print</span>(frase)
+<span class="linenr">2: </span><span style="color: #d33682; font-style: italic;">print</span>(frase)
 </pre>
 </div>
 
@@ -590,7 +590,7 @@ Além de <code>strings</code>, variáveis podem armazenar objetos de outros tipo
 <span class="linenr">13: </span><span style="color: #268bd2;">numero_complexo_apenas_parte_imaginaria</span> = 5j
 <span class="linenr">14: </span><span style="color: #268bd2;">numero_complexo_apenas_parte_real</span> = <span style="color: #6c71c4; font-weight: bold;">1</span> + 0j
 <span class="linenr">15: </span>
-<span class="linenr">16: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #d33682; font-style: italic;">type</span>(numero_inteiro))
+<span class="linenr">16: </span><span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #d33682; font-style: italic;">type</span>(numero_inteiro))
 </pre>
 </div>
 
@@ -612,7 +612,7 @@ Além de <code>strings</code>, variáveis podem armazenar objetos de outros tipo
 
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #268bd2;">variavel_que_o_nome_termina_com_numero_100</span> = <span style="color: #6c71c4; font-weight: bold;">1</span>
-<span style="color: #268bd2;">100_variavel_que_o_nome_comeca_com_numero</span> = <span style="color: #6c71c4; font-weight: bold;">1</span>
+100<span style="color: #268bd2;">_variavel_que_o_nome_comeca_com_numero</span> = <span style="color: #6c71c4; font-weight: bold;">1</span>
 <span style="color: #268bd2;">numero_do_agente_secreto</span> = <span style="color: #6c71c4; font-weight: bold;">007</span>
 
 <span style="color: #268bd2;">nome_da_vari&#225;vel_com_acento</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
@@ -644,8 +644,8 @@ Existem diversos outros tipos de variáveis que veremos ao longo desta apostila.
 </div>
 </div>
 
-<div id="outline-container-org430c3fb" class="outline-3">
-<h3 id="org430c3fb"><span class="section-number-3">2.3.</span> Buscando ajuda</h3>
+<div id="outline-container-org4fa9656" class="outline-3">
+<h3 id="org4fa9656"><span class="section-number-3">2.3.</span> Buscando ajuda</h3>
 <div class="outline-text-3" id="text-2-3">
 <p class="verse">
 &ldquo;<i>Socorro! Eu preciso de alguém.<br />
@@ -675,7 +675,7 @@ O que você faria se não soubesse o que função <code>print</code> faz? Digamo
 </ol>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #859900; font-weight: bold;">print</span>?
+<pre class="src src-python"><span style="color: #d33682; font-style: italic;">print</span>?
 </pre>
 </div>
 
@@ -697,13 +697,13 @@ O que você faria se não soubesse o que função <code>print</code> faz? Digamo
 </div>
 </div>
 
-<div id="outline-container-orge1cb8b5" class="outline-2">
-<h2 id="orge1cb8b5"><span class="section-number-2">3.</span> Operadores e estrutura de decisão</h2>
+<div id="outline-container-org640af9c" class="outline-2">
+<h2 id="org640af9c"><span class="section-number-2">3.</span> Operadores e estrutura de decisão</h2>
 <div class="outline-text-2" id="text-3">
 </div>
 
-<div id="outline-container-org26341b2" class="outline-3">
-<h3 id="org26341b2"><span class="section-number-3">3.1.</span> Operadores aritméticos</h3>
+<div id="outline-container-org36b1fac" class="outline-3">
+<h3 id="org36b1fac"><span class="section-number-3">3.1.</span> Operadores aritméticos</h3>
 <div class="outline-text-3" id="text-3-1">
 <blockquote>
 <p>
@@ -734,8 +734,8 @@ A ordem de precedência dos operadores aritméticos (isto é, a ordem de execuç
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #6c71c4; font-weight: bold;">10</span> // <span style="color: #6c71c4; font-weight: bold;">3</span>)
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #6c71c4; font-weight: bold;">17</span> % <span style="color: #6c71c4; font-weight: bold;">2</span>)
+<pre class="src src-python"><span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #6c71c4; font-weight: bold;">10</span> // <span style="color: #6c71c4; font-weight: bold;">3</span>)
+<span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #6c71c4; font-weight: bold;">17</span> % <span style="color: #6c71c4; font-weight: bold;">2</span>)
 </pre>
 </div>
 
@@ -749,19 +749,19 @@ A ordem de precedência dos operadores aritméticos (isto é, a ordem de execuç
 
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #268bd2;">inteiro_mais_inteiro</span> = <span style="color: #6c71c4; font-weight: bold;">1</span> + <span style="color: #6c71c4; font-weight: bold;">1</span>
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #d33682; font-style: italic;">type</span>(inteiro_mais_inteiro))
+<span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #d33682; font-style: italic;">type</span>(inteiro_mais_inteiro))
 
 <span style="color: #268bd2;">inteiro_mais_real</span> = <span style="color: #6c71c4; font-weight: bold;">1</span> + <span style="color: #6c71c4; font-weight: bold;">1.5</span>
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #d33682; font-style: italic;">type</span>(inteiro_mais_real))
+<span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #d33682; font-style: italic;">type</span>(inteiro_mais_real))
 
 <span style="color: #268bd2;">real_mais_real</span> = <span style="color: #6c71c4; font-weight: bold;">1.5</span> + <span style="color: #6c71c4; font-weight: bold;">1.5</span>
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #d33682; font-style: italic;">type</span>(real_mais_real))
+<span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #d33682; font-style: italic;">type</span>(real_mais_real))
 
 <span style="color: #268bd2;">inteiro_mais_complexo</span> = <span style="color: #6c71c4; font-weight: bold;">10</span> + (<span style="color: #6c71c4; font-weight: bold;">1</span> - 2j)
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #d33682; font-style: italic;">type</span>(inteiro_mais_complexo))
+<span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #d33682; font-style: italic;">type</span>(inteiro_mais_complexo))
 
 <span style="color: #268bd2;">real_mais_complexo</span> = <span style="color: #6c71c4; font-weight: bold;">10.5</span> + (<span style="color: #6c71c4; font-weight: bold;">1</span> - 2j)
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #d33682; font-style: italic;">type</span>(real_mais_complexo))
+<span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #d33682; font-style: italic;">type</span>(real_mais_complexo))
 </pre>
 </div>
 
@@ -780,14 +780,14 @@ A ordem de precedência dos operadores aritméticos (isto é, a ordem de execuç
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #268bd2;">pi</span> = <span style="color: #6c71c4; font-weight: bold;">3.14</span>
 <span style="color: #268bd2;">valor</span> = pi + <span style="color: #6c71c4; font-weight: bold;">2</span>
-<span style="color: #859900; font-weight: bold;">print</span>(valor)
+<span style="color: #d33682; font-style: italic;">print</span>(valor)
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org25a2d9a" class="outline-3">
-<h3 id="org25a2d9a"><span class="section-number-3">3.2.</span> Operadores lógicos</h3>
+<div id="outline-container-org4003d94" class="outline-3">
+<h3 id="org4003d94"><span class="section-number-3">3.2.</span> Operadores lógicos</h3>
 <div class="outline-text-3" id="text-3-2">
 <blockquote>
 <p>
@@ -808,15 +808,15 @@ Uma expressão booleana é uma expressão que, quando resolvida, resulta em um v
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #6c71c4; font-weight: bold;">True</span> <span style="color: #859900; font-weight: bold;">and</span> <span style="color: #6c71c4; font-weight: bold;">True</span>)
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #6c71c4; font-weight: bold;">True</span> <span style="color: #859900; font-weight: bold;">and</span> <span style="color: #6c71c4; font-weight: bold;">False</span>)
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #6c71c4; font-weight: bold;">False</span> <span style="color: #859900; font-weight: bold;">and</span> <span style="color: #6c71c4; font-weight: bold;">True</span>)
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #6c71c4; font-weight: bold;">False</span> <span style="color: #859900; font-weight: bold;">and</span> <span style="color: #6c71c4; font-weight: bold;">False</span>)
+<pre class="src src-python"><span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #6c71c4; font-weight: bold;">True</span> <span style="color: #859900; font-weight: bold;">and</span> <span style="color: #6c71c4; font-weight: bold;">True</span>)
+<span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #6c71c4; font-weight: bold;">True</span> <span style="color: #859900; font-weight: bold;">and</span> <span style="color: #6c71c4; font-weight: bold;">False</span>)
+<span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #6c71c4; font-weight: bold;">False</span> <span style="color: #859900; font-weight: bold;">and</span> <span style="color: #6c71c4; font-weight: bold;">True</span>)
+<span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #6c71c4; font-weight: bold;">False</span> <span style="color: #859900; font-weight: bold;">and</span> <span style="color: #6c71c4; font-weight: bold;">False</span>)
 
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #6c71c4; font-weight: bold;">False</span> <span style="color: #859900; font-weight: bold;">and</span> <span style="color: #6c71c4; font-weight: bold;">False</span> <span style="color: #859900; font-weight: bold;">and</span> <span style="color: #6c71c4; font-weight: bold;">False</span>)
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #6c71c4; font-weight: bold;">False</span> <span style="color: #859900; font-weight: bold;">and</span> <span style="color: #6c71c4; font-weight: bold;">False</span> <span style="color: #859900; font-weight: bold;">and</span> <span style="color: #6c71c4; font-weight: bold;">True</span>)
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #6c71c4; font-weight: bold;">False</span> <span style="color: #859900; font-weight: bold;">and</span> <span style="color: #6c71c4; font-weight: bold;">True</span> <span style="color: #859900; font-weight: bold;">and</span> <span style="color: #6c71c4; font-weight: bold;">True</span>)
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #6c71c4; font-weight: bold;">True</span> <span style="color: #859900; font-weight: bold;">and</span> <span style="color: #6c71c4; font-weight: bold;">True</span> <span style="color: #859900; font-weight: bold;">and</span> <span style="color: #6c71c4; font-weight: bold;">True</span>)
+<span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #6c71c4; font-weight: bold;">False</span> <span style="color: #859900; font-weight: bold;">and</span> <span style="color: #6c71c4; font-weight: bold;">False</span> <span style="color: #859900; font-weight: bold;">and</span> <span style="color: #6c71c4; font-weight: bold;">False</span>)
+<span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #6c71c4; font-weight: bold;">False</span> <span style="color: #859900; font-weight: bold;">and</span> <span style="color: #6c71c4; font-weight: bold;">False</span> <span style="color: #859900; font-weight: bold;">and</span> <span style="color: #6c71c4; font-weight: bold;">True</span>)
+<span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #6c71c4; font-weight: bold;">False</span> <span style="color: #859900; font-weight: bold;">and</span> <span style="color: #6c71c4; font-weight: bold;">True</span> <span style="color: #859900; font-weight: bold;">and</span> <span style="color: #6c71c4; font-weight: bold;">True</span>)
+<span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #6c71c4; font-weight: bold;">True</span> <span style="color: #859900; font-weight: bold;">and</span> <span style="color: #6c71c4; font-weight: bold;">True</span> <span style="color: #859900; font-weight: bold;">and</span> <span style="color: #6c71c4; font-weight: bold;">True</span>)
 </pre>
 </div>
 
@@ -828,15 +828,15 @@ Se quisermos, podemos rescrever o código acima usando variáveis para facilitar
 <pre class="src src-python"><span style="color: #268bd2;">A</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
 <span style="color: #268bd2;">B</span> = <span style="color: #6c71c4; font-weight: bold;">False</span>
 
-<span style="color: #859900; font-weight: bold;">print</span>(A <span style="color: #859900; font-weight: bold;">and</span> A)
-<span style="color: #859900; font-weight: bold;">print</span>(A <span style="color: #859900; font-weight: bold;">and</span> B)
-<span style="color: #859900; font-weight: bold;">print</span>(B <span style="color: #859900; font-weight: bold;">and</span> A)
-<span style="color: #859900; font-weight: bold;">print</span>(B <span style="color: #859900; font-weight: bold;">and</span> B)
+<span style="color: #d33682; font-style: italic;">print</span>(A <span style="color: #859900; font-weight: bold;">and</span> A)
+<span style="color: #d33682; font-style: italic;">print</span>(A <span style="color: #859900; font-weight: bold;">and</span> B)
+<span style="color: #d33682; font-style: italic;">print</span>(B <span style="color: #859900; font-weight: bold;">and</span> A)
+<span style="color: #d33682; font-style: italic;">print</span>(B <span style="color: #859900; font-weight: bold;">and</span> B)
 
-<span style="color: #859900; font-weight: bold;">print</span>(B <span style="color: #859900; font-weight: bold;">and</span> B <span style="color: #859900; font-weight: bold;">and</span> B)
-<span style="color: #859900; font-weight: bold;">print</span>(B <span style="color: #859900; font-weight: bold;">and</span> B <span style="color: #859900; font-weight: bold;">and</span> A)
-<span style="color: #859900; font-weight: bold;">print</span>(B <span style="color: #859900; font-weight: bold;">and</span> A <span style="color: #859900; font-weight: bold;">and</span> A)
-<span style="color: #859900; font-weight: bold;">print</span>(A <span style="color: #859900; font-weight: bold;">and</span> A <span style="color: #859900; font-weight: bold;">and</span> A)
+<span style="color: #d33682; font-style: italic;">print</span>(B <span style="color: #859900; font-weight: bold;">and</span> B <span style="color: #859900; font-weight: bold;">and</span> B)
+<span style="color: #d33682; font-style: italic;">print</span>(B <span style="color: #859900; font-weight: bold;">and</span> B <span style="color: #859900; font-weight: bold;">and</span> A)
+<span style="color: #d33682; font-style: italic;">print</span>(B <span style="color: #859900; font-weight: bold;">and</span> A <span style="color: #859900; font-weight: bold;">and</span> A)
+<span style="color: #d33682; font-style: italic;">print</span>(A <span style="color: #859900; font-weight: bold;">and</span> A <span style="color: #859900; font-weight: bold;">and</span> A)
 </pre>
 </div>
 
@@ -853,8 +853,8 @@ O operador <code>not</code> é um operador unário; ele requer apenas um argumen
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #859900; font-weight: bold;">not</span> <span style="color: #6c71c4; font-weight: bold;">True</span>)
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #859900; font-weight: bold;">not</span> <span style="color: #6c71c4; font-weight: bold;">False</span>)
+<pre class="src src-python"><span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #859900; font-weight: bold;">not</span> <span style="color: #6c71c4; font-weight: bold;">True</span>)
+<span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #859900; font-weight: bold;">not</span> <span style="color: #6c71c4; font-weight: bold;">False</span>)
 </pre>
 </div>
 
@@ -865,7 +865,7 @@ Operadores lógicos podem ser combinados na mesma declaração. Quando for fazer
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #268bd2;">A</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
 <span style="color: #268bd2;">B</span> = <span style="color: #6c71c4; font-weight: bold;">False</span>
-<span style="color: #859900; font-weight: bold;">print</span>((A <span style="color: #859900; font-weight: bold;">or</span> B) <span style="color: #859900; font-weight: bold;">and</span> <span style="color: #859900; font-weight: bold;">not</span> (B <span style="color: #859900; font-weight: bold;">and</span> A))
+<span style="color: #d33682; font-style: italic;">print</span>((A <span style="color: #859900; font-weight: bold;">or</span> B) <span style="color: #859900; font-weight: bold;">and</span> <span style="color: #859900; font-weight: bold;">not</span> (B <span style="color: #859900; font-weight: bold;">and</span> A))
 </pre>
 </div>
 
@@ -879,8 +879,8 @@ Operadores lógicos podem ser combinados na mesma declaração. Quando for fazer
 </div>
 </div>
 
-<div id="outline-container-orgc0f3787" class="outline-3">
-<h3 id="orgc0f3787"><span class="section-number-3">3.3.</span> Operadores de comparação</h3>
+<div id="outline-container-orgd6b2020" class="outline-3">
+<h3 id="orgd6b2020"><span class="section-number-3">3.3.</span> Operadores de comparação</h3>
 <div class="outline-text-3" id="text-3-3">
 <blockquote>
 <p>
@@ -929,8 +929,8 @@ A != B &lt; C == E - D - C
 </div>
 </div>
 
-<div id="outline-container-orge1d3c45" class="outline-3">
-<h3 id="orge1d3c45"><span class="section-number-3">3.4.</span> Estrutura de decisão e operador condicional</h3>
+<div id="outline-container-orge809e19" class="outline-3">
+<h3 id="orge809e19"><span class="section-number-3">3.4.</span> Estrutura de decisão e operador condicional</h3>
 <div class="outline-text-3" id="text-3-4">
 <blockquote>
 <p>
@@ -950,13 +950,13 @@ O exemplo do guarda-chuva pode ser escrito em Python. Vamos supor que a variáve
 <pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #268bd2;">esta_chovendo</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
 <span class="linenr"> 2: </span>
 <span class="linenr"> 3: </span><span style="color: #859900; font-weight: bold;">if</span> esta_chovendo == <span style="color: #6c71c4; font-weight: bold;">True</span>:
-<span class="linenr"> 4: </span>    <span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
-<span class="linenr"> 5: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Vou pegar o guarda-chuva"</span>)
+<span class="linenr"> 4: </span>    pegar_guardachuva = <span style="color: #6c71c4; font-weight: bold;">True</span>
+<span class="linenr"> 5: </span>    <span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"Vou pegar o guarda-chuva"</span>)
 <span class="linenr"> 6: </span><span style="color: #859900; font-weight: bold;">else</span>:
-<span class="linenr"> 7: </span>    <span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">False</span>
-<span class="linenr"> 8: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"N&#227;o vou pegar o guarda-chuva"</span>)
+<span class="linenr"> 7: </span>    pegar_guardachuva = <span style="color: #6c71c4; font-weight: bold;">False</span>
+<span class="linenr"> 8: </span>    <span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"N&#227;o vou pegar o guarda-chuva"</span>)
 <span class="linenr"> 9: </span>
-<span class="linenr">10: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Fim do programa"</span>)
+<span class="linenr">10: </span><span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"Fim do programa"</span>)
 </pre>
 </div>
 
@@ -986,13 +986,13 @@ Observe que a sintaxe de estruturas de decisão requer que o bloco referente ao 
 <pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #268bd2;">esta_chovendo</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
 <span class="linenr"> 2: </span>
 <span class="linenr"> 3: </span><span style="color: #859900; font-weight: bold;">if</span> esta_chovendo == <span style="color: #6c71c4; font-weight: bold;">True</span>:
-<span class="linenr"> 4: </span><span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
-<span class="linenr"> 5: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Vou pegar o guarda-chuva"</span>)
+<span class="linenr"> 4: </span>pegar_guardachuva = <span style="color: #6c71c4; font-weight: bold;">True</span>
+<span class="linenr"> 5: </span><span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"Vou pegar o guarda-chuva"</span>)
 <span class="linenr"> 6: </span><span style="color: #859900; font-weight: bold;">else</span>:
-<span class="linenr"> 7: </span><span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">False</span>
-<span class="linenr"> 8: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"N&#227;o vou pegar o guarda-chuva"</span>)
+<span class="linenr"> 7: </span>pegar_guardachuva = <span style="color: #6c71c4; font-weight: bold;">False</span>
+<span class="linenr"> 8: </span><span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"N&#227;o vou pegar o guarda-chuva"</span>)
 <span class="linenr"> 9: </span>
-<span class="linenr">10: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Fim do programa"</span>)
+<span class="linenr">10: </span><span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"Fim do programa"</span>)
 </pre>
 </div>
 
@@ -1010,16 +1010,16 @@ Observe que a sintaxe de estruturas de decisão requer que o bloco referente ao 
 <span class="linenr"> 3: </span>
 <span class="linenr"> 4: </span><span style="color: #859900; font-weight: bold;">if</span> esta_chovendo == <span style="color: #6c71c4; font-weight: bold;">True</span>:
 <span class="linenr"> 5: </span>    <span style="color: #859900; font-weight: bold;">if</span> final_de_semana == <span style="color: #6c71c4; font-weight: bold;">False</span>:
-<span class="linenr"> 6: </span>        <span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">True</span>
-<span class="linenr"> 7: </span>        <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Vou pegar o guarda-chuva"</span>)
+<span class="linenr"> 6: </span>        pegar_guardachuva = <span style="color: #6c71c4; font-weight: bold;">True</span>
+<span class="linenr"> 7: </span>        <span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"Vou pegar o guarda-chuva"</span>)
 <span class="linenr"> 8: </span>    <span style="color: #859900; font-weight: bold;">else</span>:
-<span class="linenr"> 9: </span>        <span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">False</span>
-<span class="linenr">10: </span>        <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"N&#227;o vou pegar o guarda-chuva"</span>)
+<span class="linenr"> 9: </span>        pegar_guardachuva = <span style="color: #6c71c4; font-weight: bold;">False</span>
+<span class="linenr">10: </span>        <span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"N&#227;o vou pegar o guarda-chuva"</span>)
 <span class="linenr">11: </span><span style="color: #859900; font-weight: bold;">else</span>:
-<span class="linenr">12: </span>    <span style="color: #268bd2;">pegar_guardachuva</span> = <span style="color: #6c71c4; font-weight: bold;">False</span>
-<span class="linenr">13: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"N&#227;o vou pegar o guarda-chuva"</span>)
+<span class="linenr">12: </span>    pegar_guardachuva = <span style="color: #6c71c4; font-weight: bold;">False</span>
+<span class="linenr">13: </span>    <span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"N&#227;o vou pegar o guarda-chuva"</span>)
 <span class="linenr">14: </span>
-<span class="linenr">15: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Fim do programa"</span>)
+<span class="linenr">15: </span><span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"Fim do programa"</span>)
 </pre>
 </div>
 
@@ -1039,16 +1039,16 @@ O código abaixo checa em qual faixa está um certo valor de pH fornecido (relem
 <pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #268bd2;">ph</span> = <span style="color: #6c71c4; font-weight: bold;">7</span>
 <span class="linenr"> 2: </span>
 <span class="linenr"> 3: </span><span style="color: #859900; font-weight: bold;">if</span> (ph &lt; <span style="color: #6c71c4; font-weight: bold;">0</span>) <span style="color: #859900; font-weight: bold;">or</span> (ph &gt; <span style="color: #6c71c4; font-weight: bold;">14</span>):
-<span class="linenr"> 4: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"pH inv&#225;lido"</span>)
+<span class="linenr"> 4: </span>    <span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"pH inv&#225;lido"</span>)
 <span class="linenr"> 5: </span>
 <span class="linenr"> 6: </span><span style="color: #859900; font-weight: bold;">if</span> <span style="color: #6c71c4; font-weight: bold;">0</span> &lt;= ph &lt; <span style="color: #6c71c4; font-weight: bold;">6.5</span>:
-<span class="linenr"> 7: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"pH &#225;cido"</span>)
+<span class="linenr"> 7: </span>    <span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"pH &#225;cido"</span>)
 <span class="linenr"> 8: </span>
 <span class="linenr"> 9: </span><span style="color: #859900; font-weight: bold;">if</span> <span style="color: #6c71c4; font-weight: bold;">6.5</span> &lt;= ph &lt;= <span style="color: #6c71c4; font-weight: bold;">7.5</span>:
-<span class="linenr">10: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"pH neutro"</span>)
+<span class="linenr">10: </span>    <span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"pH neutro"</span>)
 <span class="linenr">11: </span>
 <span class="linenr">12: </span><span style="color: #859900; font-weight: bold;">if</span> <span style="color: #6c71c4; font-weight: bold;">7.5</span> &lt; ph &lt;= <span style="color: #6c71c4; font-weight: bold;">14</span>:
-<span class="linenr">13: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"pH b&#225;sico"</span>)
+<span class="linenr">13: </span>    <span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"pH b&#225;sico"</span>)
 </pre>
 </div>
 
@@ -1068,16 +1068,16 @@ Uma estrutura muito comum em programação é quando queremos dizer &ldquo;se a 
 <pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #268bd2;">ph</span> = <span style="color: #6c71c4; font-weight: bold;">7</span>
 <span class="linenr"> 2: </span>
 <span class="linenr"> 3: </span><span style="color: #859900; font-weight: bold;">if</span> <span style="color: #6c71c4; font-weight: bold;">0</span> &lt;= ph &lt; <span style="color: #6c71c4; font-weight: bold;">6.5</span>:
-<span class="linenr"> 4: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"pH &#225;cido"</span>)
+<span class="linenr"> 4: </span>    <span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"pH &#225;cido"</span>)
 <span class="linenr"> 5: </span>
 <span class="linenr"> 6: </span><span style="color: #859900; font-weight: bold;">elif</span> <span style="color: #6c71c4; font-weight: bold;">6.5</span> &lt;= ph &lt;= <span style="color: #6c71c4; font-weight: bold;">7.5</span>:
-<span class="linenr"> 7: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"pH neutro"</span>)
+<span class="linenr"> 7: </span>    <span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"pH neutro"</span>)
 <span class="linenr"> 8: </span>
 <span class="linenr"> 9: </span><span style="color: #859900; font-weight: bold;">elif</span> <span style="color: #6c71c4; font-weight: bold;">7.5</span> &lt; ph &lt;= <span style="color: #6c71c4; font-weight: bold;">14</span>:
-<span class="linenr">10: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"pH b&#225;sico"</span>)
+<span class="linenr">10: </span>    <span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"pH b&#225;sico"</span>)
 <span class="linenr">11: </span>
 <span class="linenr">12: </span><span style="color: #859900; font-weight: bold;">else</span>:
-<span class="linenr">13: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"pH inv&#225;lido"</span>)
+<span class="linenr">13: </span>    <span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"pH inv&#225;lido"</span>)
 </pre>
 </div>
 
@@ -1119,8 +1119,8 @@ O código acima checa se o pH é ácido. Caso seja ácido o programa exibe &ldqu
 </div>
 </div>
 
-<div id="outline-container-orgc8a2bdd" class="outline-3">
-<h3 id="orgc8a2bdd"><span class="section-number-3">3.5.</span> Uma breve introdução sobre estilo</h3>
+<div id="outline-container-org6d5c128" class="outline-3">
+<h3 id="org6d5c128"><span class="section-number-3">3.5.</span> Uma breve introdução sobre estilo</h3>
 <div class="outline-text-3" id="text-3-5">
 <p class="verse">
 &ldquo;<i>Bonito é melhor que feio.<br />
@@ -1154,7 +1154,7 @@ Veja o código abaixo. Qual você acha que é o valor exibido pela função <cod
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #268bd2;">x</span> = <span style="color: #6c71c4; font-weight: bold;">10</span>
 <span style="color: #268bd2;">y</span> = x + x
-<span style="color: #859900; font-weight: bold;">print</span>(y)
+<span style="color: #d33682; font-style: italic;">print</span>(y)
 </pre>
 </div>
 
@@ -1175,7 +1175,7 @@ Agora veja o código abaixo. Novamente, qual valor você acha que é o valor exi
     ][<span style="color: #6c71c4; font-weight: bold;">0</span>]
      ][<span style="color: #6c71c4; font-weight: bold;">0</span>]
 )
-<span style="color: #859900; font-weight: bold;">print</span>(y)
+<span style="color: #d33682; font-style: italic;">print</span>(y)
 </pre>
 </div>
 
@@ -1194,7 +1194,7 @@ Veja que nem sempre conseguimos nos expressar em Python de forma que a leitura s
 <span style="color: #268bd2;">y</span> = <span style="color: #d33682; font-style: italic;">abs</span>(x)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">`y` recebe o valor absoluto de `x` (explica&#231;&#227;o na linha)</span>
 
 <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">exibe o valor de `y` (explica&#231;&#227;o antes do que ser&#225; executado)</span>
-<span style="color: #859900; font-weight: bold;">print</span>(y)
+<span style="color: #d33682; font-style: italic;">print</span>(y)
 </pre>
 </div>
 
@@ -1215,8 +1215,8 @@ Para iniciantes é recomendado sempre comentar seu código. Isso não só irá t
 <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">delete este coment&#225;rio e escreva seu c&#243;digo aqui.</span>
 
 <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">mostra as ra&#237;zes para o usu&#225;rio</span>
-<span style="color: #859900; font-weight: bold;">print</span>(raiz_1)
-<span style="color: #859900; font-weight: bold;">print</span>(raiz_2)
+<span style="color: #d33682; font-style: italic;">print</span>(raiz_1)
+<span style="color: #d33682; font-style: italic;">print</span>(raiz_2)
 </pre>
 </div>
 
@@ -1227,13 +1227,13 @@ Para iniciantes é recomendado sempre comentar seu código. Isso não só irá t
 </div>
 </div>
 
-<div id="outline-container-org3ca1b79" class="outline-2">
-<h2 id="org3ca1b79"><span class="section-number-2">4.</span> Funções</h2>
+<div id="outline-container-orgc34df21" class="outline-2">
+<h2 id="orgc34df21"><span class="section-number-2">4.</span> Funções</h2>
 <div class="outline-text-2" id="text-4">
 </div>
 
-<div id="outline-container-org6572a45" class="outline-3">
-<h3 id="org6572a45"><span class="section-number-3">4.1.</span> O que é uma função?</h3>
+<div id="outline-container-org38d4b32" class="outline-3">
+<h3 id="org38d4b32"><span class="section-number-3">4.1.</span> O que é uma função?</h3>
 <div class="outline-text-3" id="text-4-1">
 <blockquote>
 <p>
@@ -1262,8 +1262,8 @@ Basicamente, ao executar uma função ela recebe zero ou mais objetos (argumento
 </div>
 </div>
 
-<div id="outline-container-orgd9a8bb0" class="outline-3">
-<h3 id="orgd9a8bb0"><span class="section-number-3">4.2.</span> Funções embutidas</h3>
+<div id="outline-container-org26155c4" class="outline-3">
+<h3 id="org26155c4"><span class="section-number-3">4.2.</span> Funções embutidas</h3>
 <div class="outline-text-3" id="text-4-2">
 <blockquote>
 <p>
@@ -1277,8 +1277,8 @@ Existem diversas funções embutidas em Python. Estas funções podem ser usadas
 </div>
 </div>
 
-<div id="outline-container-orge3e738a" class="outline-3">
-<h3 id="orge3e738a"><span class="section-number-3">4.3.</span> Definindo novas funções</h3>
+<div id="outline-container-org19272fa" class="outline-3">
+<h3 id="org19272fa"><span class="section-number-3">4.3.</span> Definindo novas funções</h3>
 <div class="outline-text-3" id="text-4-3">
 <blockquote>
 <p>
@@ -1292,70 +1292,70 @@ Podemos definir nossas próprias funções utilizando a instrução <code>def</c
 
 <div class="org-src-container">
 <pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #859900; font-weight: bold;">def</span> <span style="color: #b58900;">funcao_1</span>():
-<span class="linenr"> 2: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Esta &#233; a fun&#231;&#227;o 1"</span>)
+<span class="linenr"> 2: </span>    <span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"Esta &#233; a fun&#231;&#227;o 1"</span>)
 <span class="linenr"> 3: </span>
 <span class="linenr"> 4: </span>
 <span class="linenr"> 5: </span><span style="color: #859900; font-weight: bold;">def</span> <span style="color: #b58900;">funcao_2</span>(argumento1):
-<span class="linenr"> 6: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Esta &#233; a fun&#231;&#227;o 2"</span>)
-<span class="linenr"> 7: </span>    <span style="color: #859900; font-weight: bold;">print</span>(argumento1)
+<span class="linenr"> 6: </span>    <span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"Esta &#233; a fun&#231;&#227;o 2"</span>)
+<span class="linenr"> 7: </span>    <span style="color: #d33682; font-style: italic;">print</span>(argumento1)
 <span class="linenr"> 8: </span>
 <span class="linenr"> 9: </span>
 <span class="linenr">10: </span><span style="color: #859900; font-weight: bold;">def</span> <span style="color: #b58900;">funcao_3</span>(argumento1, argumento2):
-<span class="linenr">11: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Esta &#233; a fun&#231;&#227;o 3"</span>)
-<span class="linenr">12: </span>    <span style="color: #859900; font-weight: bold;">print</span>(argumento1)
-<span class="linenr">13: </span>    <span style="color: #859900; font-weight: bold;">print</span>(argumento2)
+<span class="linenr">11: </span>    <span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"Esta &#233; a fun&#231;&#227;o 3"</span>)
+<span class="linenr">12: </span>    <span style="color: #d33682; font-style: italic;">print</span>(argumento1)
+<span class="linenr">13: </span>    <span style="color: #d33682; font-style: italic;">print</span>(argumento2)
 <span class="linenr">14: </span>
 <span class="linenr">15: </span>
 <span class="linenr">16: </span><span style="color: #859900; font-weight: bold;">def</span> <span style="color: #b58900;">funcao_4</span>(argumento1, argumento2):
-<span class="linenr">17: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Esta &#233; a fun&#231;&#227;o 4"</span>)
+<span class="linenr">17: </span>    <span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"Esta &#233; a fun&#231;&#227;o 4"</span>)
 <span class="linenr">18: </span>    <span style="color: #268bd2;">soma</span> = argumento1 + argumento2
 <span class="linenr">19: </span>    <span style="color: #859900; font-weight: bold;">return</span> soma
 <span class="linenr">20: </span>
 <span class="linenr">21: </span>
 <span class="linenr">22: </span><span style="color: #859900; font-weight: bold;">def</span> <span style="color: #b58900;">funcao_5</span>(argumento1, argumento2):
-<span class="linenr">23: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Esta &#233; a fun&#231;&#227;o 5"</span>)
+<span class="linenr">23: </span>    <span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"Esta &#233; a fun&#231;&#227;o 5"</span>)
 <span class="linenr">24: </span>    <span style="color: #859900; font-weight: bold;">return</span> <span style="color: #6c71c4; font-weight: bold;">10</span>
 <span class="linenr">25: </span>
 <span class="linenr">26: </span>
 <span class="linenr">27: </span><span style="color: #859900; font-weight: bold;">def</span> <span style="color: #b58900;">funcao_6</span>(argumento1, argumento2, argumento3):
-<span class="linenr">28: </span>    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Esta &#233; a fun&#231;&#227;o 6"</span>)
+<span class="linenr">28: </span>    <span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"Esta &#233; a fun&#231;&#227;o 6"</span>)
 <span class="linenr">29: </span>    <span style="color: #859900; font-weight: bold;">return</span> argumento3, argumento2, argumento1
 <span class="linenr">30: </span>
 <span class="linenr">31: </span>
-<span class="linenr">32: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">'Testando a funcao_1'</span>)
+<span class="linenr">32: </span><span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">'Testando a funcao_1'</span>)
 <span class="linenr">33: </span><span style="color: #268bd2;">retorno</span> = funcao_1()
-<span class="linenr">34: </span><span style="color: #859900; font-weight: bold;">print</span>(retorno)
-<span class="linenr">35: </span><span style="color: #859900; font-weight: bold;">print</span>()
+<span class="linenr">34: </span><span style="color: #d33682; font-style: italic;">print</span>(retorno)
+<span class="linenr">35: </span><span style="color: #d33682; font-style: italic;">print</span>()
 <span class="linenr">36: </span>
-<span class="linenr">37: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">'Testando a funcao_2'</span>)
+<span class="linenr">37: </span><span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">'Testando a funcao_2'</span>)
 <span class="linenr">38: </span><span style="color: #268bd2;">retorno</span> = funcao_2(<span style="color: #2aa198;">"Ol&#225;"</span>)
-<span class="linenr">39: </span><span style="color: #859900; font-weight: bold;">print</span>(retorno)
-<span class="linenr">40: </span><span style="color: #859900; font-weight: bold;">print</span>()
+<span class="linenr">39: </span><span style="color: #d33682; font-style: italic;">print</span>(retorno)
+<span class="linenr">40: </span><span style="color: #d33682; font-style: italic;">print</span>()
 <span class="linenr">41: </span>
-<span class="linenr">42: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">'Testando a funcao_3'</span>)
+<span class="linenr">42: </span><span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">'Testando a funcao_3'</span>)
 <span class="linenr">43: </span><span style="color: #268bd2;">retorno</span> = funcao_3(<span style="color: #2aa198;">"Ol&#225;"</span>, <span style="color: #2aa198;">"mundo"</span>)
-<span class="linenr">44: </span><span style="color: #859900; font-weight: bold;">print</span>(retorno)
-<span class="linenr">45: </span><span style="color: #859900; font-weight: bold;">print</span>()
+<span class="linenr">44: </span><span style="color: #d33682; font-style: italic;">print</span>(retorno)
+<span class="linenr">45: </span><span style="color: #d33682; font-style: italic;">print</span>()
 <span class="linenr">46: </span>
-<span class="linenr">47: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">'Testando a funcao_4'</span>)
+<span class="linenr">47: </span><span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">'Testando a funcao_4'</span>)
 <span class="linenr">48: </span><span style="color: #268bd2;">retorno</span> = funcao_4(<span style="color: #6c71c4; font-weight: bold;">1</span>, <span style="color: #6c71c4; font-weight: bold;">2</span>)
-<span class="linenr">49: </span><span style="color: #859900; font-weight: bold;">print</span>(retorno)
-<span class="linenr">50: </span><span style="color: #859900; font-weight: bold;">print</span>()
+<span class="linenr">49: </span><span style="color: #d33682; font-style: italic;">print</span>(retorno)
+<span class="linenr">50: </span><span style="color: #d33682; font-style: italic;">print</span>()
 <span class="linenr">51: </span>
-<span class="linenr">52: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">'Testando a funcao_5'</span>)
+<span class="linenr">52: </span><span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">'Testando a funcao_5'</span>)
 <span class="linenr">53: </span><span style="color: #268bd2;">retorno</span> = funcao_5(<span style="color: #6c71c4; font-weight: bold;">1</span>, <span style="color: #6c71c4; font-weight: bold;">2</span>)
-<span class="linenr">54: </span><span style="color: #859900; font-weight: bold;">print</span>(retorno)
-<span class="linenr">55: </span><span style="color: #859900; font-weight: bold;">print</span>()
+<span class="linenr">54: </span><span style="color: #d33682; font-style: italic;">print</span>(retorno)
+<span class="linenr">55: </span><span style="color: #d33682; font-style: italic;">print</span>()
 <span class="linenr">56: </span>
-<span class="linenr">57: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">'Testando a funcao_6'</span>)
+<span class="linenr">57: </span><span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">'Testando a funcao_6'</span>)
 <span class="linenr">58: </span><span style="color: #268bd2;">retorno</span> = funcao_6(<span style="color: #2aa198;">"a"</span>, <span style="color: #2aa198;">"b"</span>, <span style="color: #2aa198;">"c"</span>)
-<span class="linenr">59: </span><span style="color: #859900; font-weight: bold;">print</span>(retorno)
-<span class="linenr">60: </span><span style="color: #859900; font-weight: bold;">print</span>()
+<span class="linenr">59: </span><span style="color: #d33682; font-style: italic;">print</span>(retorno)
+<span class="linenr">60: </span><span style="color: #d33682; font-style: italic;">print</span>()
 <span class="linenr">61: </span>
-<span class="linenr">62: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">'Testando a funcao_6 novamente'</span>)
+<span class="linenr">62: </span><span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">'Testando a funcao_6 novamente'</span>)
 <span class="linenr">63: </span><span style="color: #268bd2;">retorno1</span>, <span style="color: #268bd2;">retorno2</span>, <span style="color: #268bd2;">retorno3</span> = funcao_6(<span style="color: #2aa198;">"a"</span>, <span style="color: #2aa198;">"b"</span>, <span style="color: #2aa198;">"c"</span>)
-<span class="linenr">64: </span><span style="color: #859900; font-weight: bold;">print</span>(retorno1, retorno2, retorno3)
-<span class="linenr">65: </span><span style="color: #859900; font-weight: bold;">print</span>()
+<span class="linenr">64: </span><span style="color: #d33682; font-style: italic;">print</span>(retorno1, retorno2, retorno3)
+<span class="linenr">65: </span><span style="color: #d33682; font-style: italic;">print</span>()
 </pre>
 </div>
 
@@ -1406,8 +1406,8 @@ Finalmente, a <code>funcao_6</code> recebe três argumentos e retorna os mesmos 
 <span class="linenr">2: </span>    <span style="color: #859900; font-weight: bold;">return</span> <span style="color: #2aa198;">"Ol&#225;!"</span>
 <span class="linenr">3: </span>
 <span class="linenr">4: </span>
-<span class="linenr">5: </span><span style="color: #859900; font-weight: bold;">print</span>(ola())
-<span class="linenr">6: </span><span style="color: #859900; font-weight: bold;">print</span>(ola)
+<span class="linenr">5: </span><span style="color: #d33682; font-style: italic;">print</span>(ola())
+<span class="linenr">6: </span><span style="color: #d33682; font-style: italic;">print</span>(ola)
 </pre>
 </div>
 
@@ -1421,8 +1421,8 @@ Finalmente, a <code>funcao_6</code> recebe três argumentos e retorna os mesmos 
 </div>
 </div>
 
-<div id="outline-container-org347e093" class="outline-3">
-<h3 id="org347e093"><span class="section-number-3">4.4.</span> Argumentos posicionais, argumentos nomeados e argumentos com valor padrão</h3>
+<div id="outline-container-org98c8d8c" class="outline-3">
+<h3 id="org98c8d8c"><span class="section-number-3">4.4.</span> Argumentos posicionais, argumentos nomeados e argumentos com valor padrão</h3>
 <div class="outline-text-3" id="text-4-4">
 <blockquote>
 <p>
@@ -1439,8 +1439,8 @@ A ordem dos argumentos é muito importante durante a execução de funções com
     <span style="color: #859900; font-weight: bold;">return</span> base ** expoente
 
 
-<span style="color: #859900; font-weight: bold;">print</span>(exponenciacao(<span style="color: #6c71c4; font-weight: bold;">10</span>, <span style="color: #6c71c4; font-weight: bold;">2</span>))  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">resulta em 100</span>
-<span style="color: #859900; font-weight: bold;">print</span>(exponenciacao(<span style="color: #6c71c4; font-weight: bold;">2</span>, <span style="color: #6c71c4; font-weight: bold;">10</span>))  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">resulta em 1024</span>
+<span style="color: #d33682; font-style: italic;">print</span>(exponenciacao(<span style="color: #6c71c4; font-weight: bold;">10</span>, <span style="color: #6c71c4; font-weight: bold;">2</span>))  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">resulta em 100</span>
+<span style="color: #d33682; font-style: italic;">print</span>(exponenciacao(<span style="color: #6c71c4; font-weight: bold;">2</span>, <span style="color: #6c71c4; font-weight: bold;">10</span>))  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">resulta em 1024</span>
 </pre>
 </div>
 
@@ -1453,12 +1453,12 @@ Todo argumento tem um <span class="underline">nome</span><sup><a id="fnr.4" clas
 <span class="linenr"> 2: </span>    <span style="color: #859900; font-weight: bold;">return</span> base ** expoente
 <span class="linenr"> 3: </span>
 <span class="linenr"> 4: </span>
-<span class="linenr"> 5: </span><span style="color: #859900; font-weight: bold;">print</span>(exponenciacao(base=<span style="color: #6c71c4; font-weight: bold;">10</span>, expoente=<span style="color: #6c71c4; font-weight: bold;">2</span>))  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">resulta em 100</span>
-<span class="linenr"> 6: </span><span style="color: #859900; font-weight: bold;">print</span>(exponenciacao(expoente=<span style="color: #6c71c4; font-weight: bold;">2</span>, base=<span style="color: #6c71c4; font-weight: bold;">10</span>))  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">resulta em 100</span>
-<span class="linenr"> 7: </span><span style="color: #859900; font-weight: bold;">print</span>(exponenciacao(<span style="color: #6c71c4; font-weight: bold;">10</span>, expoente=<span style="color: #6c71c4; font-weight: bold;">2</span>))       <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">resulta em 100</span>
-<span class="linenr"> 8: </span><span style="color: #859900; font-weight: bold;">print</span>(exponenciacao(expoente=<span style="color: #6c71c4; font-weight: bold;">2</span>, <span style="color: #6c71c4; font-weight: bold;">10</span>))       <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">ERRO!</span>
-<span class="linenr"> 9: </span><span style="color: #859900; font-weight: bold;">print</span>(exponenciacao(expoente=<span style="color: #6c71c4; font-weight: bold;">2</span>))           <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">ERRO!</span>
-<span class="linenr">10: </span><span style="color: #859900; font-weight: bold;">print</span>(exponenciacao(base=<span style="color: #6c71c4; font-weight: bold;">10</span>))              <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">ERRO!</span>
+<span class="linenr"> 5: </span><span style="color: #d33682; font-style: italic;">print</span>(exponenciacao(base=<span style="color: #6c71c4; font-weight: bold;">10</span>, expoente=<span style="color: #6c71c4; font-weight: bold;">2</span>))  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">resulta em 100</span>
+<span class="linenr"> 6: </span><span style="color: #d33682; font-style: italic;">print</span>(exponenciacao(expoente=<span style="color: #6c71c4; font-weight: bold;">2</span>, base=<span style="color: #6c71c4; font-weight: bold;">10</span>))  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">resulta em 100</span>
+<span class="linenr"> 7: </span><span style="color: #d33682; font-style: italic;">print</span>(exponenciacao(<span style="color: #6c71c4; font-weight: bold;">10</span>, expoente=<span style="color: #6c71c4; font-weight: bold;">2</span>))       <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">resulta em 100</span>
+<span class="linenr"> 8: </span><span style="color: #d33682; font-style: italic;">print</span>(exponenciacao(expoente=<span style="color: #6c71c4; font-weight: bold;">2</span>, <span style="color: #6c71c4; font-weight: bold;">10</span>))       <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">ERRO!</span>
+<span class="linenr"> 9: </span><span style="color: #d33682; font-style: italic;">print</span>(exponenciacao(expoente=<span style="color: #6c71c4; font-weight: bold;">2</span>))           <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">ERRO!</span>
+<span class="linenr">10: </span><span style="color: #d33682; font-style: italic;">print</span>(exponenciacao(base=<span style="color: #6c71c4; font-weight: bold;">10</span>))              <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">ERRO!</span>
 </pre>
 </div>
 
@@ -1495,10 +1495,10 @@ Por fim, além de uma posição e um nome, argumentos opcionalmente podem ter um
 <span class="linenr">2: </span>    <span style="color: #859900; font-weight: bold;">return</span> base ** expoente
 <span class="linenr">3: </span>
 <span class="linenr">4: </span>
-<span class="linenr">5: </span><span style="color: #859900; font-weight: bold;">print</span>(exponenciacao(base=<span style="color: #6c71c4; font-weight: bold;">10</span>, expoente=<span style="color: #6c71c4; font-weight: bold;">2</span>))  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">resulta em 100</span>
-<span class="linenr">6: </span><span style="color: #859900; font-weight: bold;">print</span>(exponenciacao(base=<span style="color: #6c71c4; font-weight: bold;">10</span>))              <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">resulta em 100000</span>
-<span class="linenr">7: </span><span style="color: #859900; font-weight: bold;">print</span>(exponenciacao(<span style="color: #6c71c4; font-weight: bold;">10</span>))                   <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">resulta em 100000</span>
-<span class="linenr">8: </span><span style="color: #859900; font-weight: bold;">print</span>(exponenciacao(expoente=<span style="color: #6c71c4; font-weight: bold;">2</span>))           <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">ERRO! Falta o valor da base</span>
+<span class="linenr">5: </span><span style="color: #d33682; font-style: italic;">print</span>(exponenciacao(base=<span style="color: #6c71c4; font-weight: bold;">10</span>, expoente=<span style="color: #6c71c4; font-weight: bold;">2</span>))  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">resulta em 100</span>
+<span class="linenr">6: </span><span style="color: #d33682; font-style: italic;">print</span>(exponenciacao(base=<span style="color: #6c71c4; font-weight: bold;">10</span>))              <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">resulta em 100000</span>
+<span class="linenr">7: </span><span style="color: #d33682; font-style: italic;">print</span>(exponenciacao(<span style="color: #6c71c4; font-weight: bold;">10</span>))                   <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">resulta em 100000</span>
+<span class="linenr">8: </span><span style="color: #d33682; font-style: italic;">print</span>(exponenciacao(expoente=<span style="color: #6c71c4; font-weight: bold;">2</span>))           <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">ERRO! Falta o valor da base</span>
 </pre>
 </div>
 
@@ -1526,8 +1526,8 @@ Observe que não é permitido declarar argumentos sem valor padrão após argume
 </div>
 </div>
 
-<div id="outline-container-orgd3fa868" class="outline-3">
-<h3 id="orgd3fa868"><span class="section-number-3">4.5.</span> Variáveis globais e variáveis locais</h3>
+<div id="outline-container-org33b9fe5" class="outline-3">
+<h3 id="org33b9fe5"><span class="section-number-3">4.5.</span> Variáveis globais e variáveis locais</h3>
 <div class="outline-text-3" id="text-4-5">
 <blockquote>
 <p>
@@ -1552,7 +1552,7 @@ Variáveis criadas dentro de funções são <i>locais</i> e só existem dentro d
 <span class="linenr">6: </span>    <span style="color: #859900; font-weight: bold;">return</span> opcao_1, opcao_2, opcao_3, opcao_4
 <span class="linenr">7: </span>
 <span class="linenr">8: </span><span style="color: #268bd2;">lanche_da_tarde</span> = refeicao()
-<span class="linenr">9: </span><span style="color: #859900; font-weight: bold;">print</span>(opcao_1)
+<span class="linenr">9: </span><span style="color: #d33682; font-style: italic;">print</span>(opcao_1)
 </pre>
 </div>
 
@@ -1573,8 +1573,8 @@ Variáveis declaradas fora do escopo de funções são variáveis <i>globais</i>
 
 
 <span style="color: #859900; font-weight: bold;">def</span> <span style="color: #b58900;">qual_o_melhor_album</span>():
-    <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"O melhor album de todos os tempos &#233; :"</span>)
-    <span style="color: #859900; font-weight: bold;">print</span>(melhor_album)
+    <span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"O melhor album de todos os tempos &#233; :"</span>)
+    <span style="color: #d33682; font-style: italic;">print</span>(melhor_album)
 
 
 qual_o_melhor_album()
@@ -1595,8 +1595,8 @@ Mesmo sabendo que variáveis globais podem ser utilizadas dentro de funções, e
 </div>
 </div>
 
-<div id="outline-container-orgc2e334e" class="outline-3">
-<h3 id="orgc2e334e"><span class="section-number-3">4.6.</span> Documentando suas funções com a docstring</h3>
+<div id="outline-container-orga9fc195" class="outline-3">
+<h3 id="orga9fc195"><span class="section-number-3">4.6.</span> Documentando suas funções com a docstring</h3>
 <div class="outline-text-3" id="text-4-6">
 <blockquote>
 <p>
@@ -1637,12 +1637,12 @@ A docstring mais simples de todas é a &ldquo;docstring em uma linha&rdquo;. Tra
 <span class="linenr">14: </span>    <span style="color: #859900; font-weight: bold;">return</span> soma
 <span class="linenr">15: </span>
 <span class="linenr">16: </span>
-<span class="linenr">17: </span><span style="color: #859900; font-weight: bold;">print</span>(soma_pares(<span style="color: #6c71c4; font-weight: bold;">10</span>, <span style="color: #6c71c4; font-weight: bold;">5</span>, <span style="color: #6c71c4; font-weight: bold;">6</span>))
+<span class="linenr">17: </span><span style="color: #d33682; font-style: italic;">print</span>(soma_pares(<span style="color: #6c71c4; font-weight: bold;">10</span>, <span style="color: #6c71c4; font-weight: bold;">5</span>, <span style="color: #6c71c4; font-weight: bold;">6</span>))
 <span class="linenr">18: </span>
-<span class="linenr">19: </span><span style="color: #859900; font-weight: bold;">print</span>()
+<span class="linenr">19: </span><span style="color: #d33682; font-style: italic;">print</span>()
 <span class="linenr">20: </span><span style="color: #d33682; font-style: italic;">help</span>(soma_pares)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">mostra informa&#231;&#245;es sobre a fun&#231;&#227;o</span>
 <span class="linenr">21: </span>
-<span class="linenr">22: </span><span style="color: #859900; font-weight: bold;">print</span>(soma_pares.<span style="color: #d33682; font-style: italic;">__doc__</span>)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">mostra a doscring da fun&#231;&#227;o</span>
+<span class="linenr">22: </span><span style="color: #d33682; font-style: italic;">print</span>(soma_pares.<span style="color: #d33682; font-style: italic;">__doc__</span>)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">mostra a doscring da fun&#231;&#227;o</span>
 </pre>
 </div>
 
@@ -1697,34 +1697,34 @@ Para armazenar mais informações, precisamos fazer uso das &ldquo;docstrings de
 <span class="linenr">27: </span><span style="color: #35a69c; font-style: italic;">    """</span>
 <span class="linenr">28: </span>
 <span class="linenr">29: </span>    <span style="color: #859900; font-weight: bold;">if</span> tipo == <span style="color: #2aa198;">"pares"</span>:
-<span class="linenr">30: </span>        <span style="color: #268bd2;">resto_divisao_por_dois</span> = <span style="color: #6c71c4; font-weight: bold;">0</span>
+<span class="linenr">30: </span>        resto_divisao_por_dois = <span style="color: #6c71c4; font-weight: bold;">0</span>
 <span class="linenr">31: </span>    <span style="color: #859900; font-weight: bold;">elif</span> tipo == <span style="color: #2aa198;">"impares"</span>:
-<span class="linenr">32: </span>        <span style="color: #268bd2;">resto_divisao_por_dois</span> = <span style="color: #6c71c4; font-weight: bold;">1</span>
+<span class="linenr">32: </span>        resto_divisao_por_dois = <span style="color: #6c71c4; font-weight: bold;">1</span>
 <span class="linenr">33: </span>    <span style="color: #859900; font-weight: bold;">else</span>:
 <span class="linenr">34: </span>        <span style="color: #859900; font-weight: bold;">raise</span> <span style="color: #b58900; font-style: italic;">ValueError</span>(<span style="color: #2aa198;">"Valor incorreto da vari&#225;vel `tipo`."</span>)
 <span class="linenr">35: </span>
-<span class="linenr">36: </span>    <span style="color: #268bd2;">soma</span> = <span style="color: #6c71c4; font-weight: bold;">0</span>
+<span class="linenr">36: </span>    soma = <span style="color: #6c71c4; font-weight: bold;">0</span>
 <span class="linenr">37: </span>
 <span class="linenr">38: </span>    <span style="color: #859900; font-weight: bold;">if</span> numero1 % <span style="color: #6c71c4; font-weight: bold;">2</span> == resto_divisao_por_dois:
-<span class="linenr">39: </span>        <span style="color: #268bd2;">soma</span> = soma + numero1
+<span class="linenr">39: </span>        soma = soma + numero1
 <span class="linenr">40: </span>
 <span class="linenr">41: </span>    <span style="color: #859900; font-weight: bold;">if</span> numero2 % <span style="color: #6c71c4; font-weight: bold;">2</span> == resto_divisao_por_dois:
-<span class="linenr">42: </span>        <span style="color: #268bd2;">soma</span> = soma + numero2
+<span class="linenr">42: </span>        soma = soma + numero2
 <span class="linenr">43: </span>
 <span class="linenr">44: </span>    <span style="color: #859900; font-weight: bold;">if</span> numero3 % <span style="color: #6c71c4; font-weight: bold;">2</span> == resto_divisao_por_dois:
-<span class="linenr">45: </span>        <span style="color: #268bd2;">soma</span> = soma + numero3
+<span class="linenr">45: </span>        soma = soma + numero3
 <span class="linenr">46: </span>
 <span class="linenr">47: </span>    <span style="color: #859900; font-weight: bold;">if</span> verbose:
-<span class="linenr">48: </span>        <span style="color: #859900; font-weight: bold;">print</span>(soma)
+<span class="linenr">48: </span>        <span style="color: #d33682; font-style: italic;">print</span>(soma)
 <span class="linenr">49: </span>
 <span class="linenr">50: </span>    <span style="color: #859900; font-weight: bold;">return</span> soma
 <span class="linenr">51: </span>
 <span class="linenr">52: </span>
-<span class="linenr">53: </span><span style="color: #268bd2;">soma_pares</span> = soma_pares_ou_impares(<span style="color: #6c71c4; font-weight: bold;">10</span>, <span style="color: #6c71c4; font-weight: bold;">5</span>, <span style="color: #6c71c4; font-weight: bold;">6</span>, <span style="color: #2aa198;">"pares"</span>, <span style="color: #6c71c4; font-weight: bold;">True</span>)
-<span class="linenr">54: </span><span style="color: #268bd2;">soma_impares</span> = soma_pares_ou_impares(<span style="color: #6c71c4; font-weight: bold;">10</span>, <span style="color: #6c71c4; font-weight: bold;">5</span>, <span style="color: #6c71c4; font-weight: bold;">6</span>, <span style="color: #2aa198;">"impares"</span>, <span style="color: #6c71c4; font-weight: bold;">True</span>)
+<span class="linenr">53: </span>soma_pares = soma_pares_ou_impares(<span style="color: #6c71c4; font-weight: bold;">10</span>, <span style="color: #6c71c4; font-weight: bold;">5</span>, <span style="color: #6c71c4; font-weight: bold;">6</span>, <span style="color: #2aa198;">"pares"</span>, <span style="color: #6c71c4; font-weight: bold;">True</span>)
+<span class="linenr">54: </span>soma_impares = soma_pares_ou_impares(<span style="color: #6c71c4; font-weight: bold;">10</span>, <span style="color: #6c71c4; font-weight: bold;">5</span>, <span style="color: #6c71c4; font-weight: bold;">6</span>, <span style="color: #2aa198;">"impares"</span>, <span style="color: #6c71c4; font-weight: bold;">True</span>)
 <span class="linenr">55: </span>
 <span class="linenr">56: </span><span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">da erro!</span>
-<span class="linenr">57: </span><span style="color: #268bd2;">soma_complexos</span> = soma_pares_ou_impares(<span style="color: #6c71c4; font-weight: bold;">10</span>, <span style="color: #6c71c4; font-weight: bold;">5</span>, <span style="color: #6c71c4; font-weight: bold;">6</span>, <span style="color: #2aa198;">"complexos"</span>, <span style="color: #6c71c4; font-weight: bold;">True</span>)
+<span class="linenr">57: </span>soma_complexos = soma_pares_ou_impares(<span style="color: #6c71c4; font-weight: bold;">10</span>, <span style="color: #6c71c4; font-weight: bold;">5</span>, <span style="color: #6c71c4; font-weight: bold;">6</span>, <span style="color: #2aa198;">"complexos"</span>, <span style="color: #6c71c4; font-weight: bold;">True</span>)
 </pre>
 </div>
 
@@ -1750,8 +1750,8 @@ Vamos analisar as diversas partes do exemplo acima:
 </div>
 </div>
 
-<div id="outline-container-org336bc7a" class="outline-3">
-<h3 id="org336bc7a"><span class="section-number-3">4.7.</span> Funções também são objetos!</h3>
+<div id="outline-container-orgebd95f5" class="outline-3">
+<h3 id="orgebd95f5"><span class="section-number-3">4.7.</span> Funções também são objetos!</h3>
 <div class="outline-text-3" id="text-4-7">
 <blockquote>
 <p>
@@ -1780,10 +1780,10 @@ Funções em Python são objetos assim como números e strings. Desta forma, pod
 <span class="linenr">14: </span>
 <span class="linenr">15: </span>
 <span class="linenr">16: </span><span style="color: #268bd2;">retorno</span> = aplica_funcao_composta(soma_dois, multiplica_dois, <span style="color: #6c71c4; font-weight: bold;">10</span>)
-<span class="linenr">17: </span><span style="color: #859900; font-weight: bold;">print</span>(retorno)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">mostra o n&#250;mero 22</span>
+<span class="linenr">17: </span><span style="color: #d33682; font-style: italic;">print</span>(retorno)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">mostra o n&#250;mero 22</span>
 <span class="linenr">18: </span>
 <span class="linenr">19: </span><span style="color: #268bd2;">retorno</span> = aplica_funcao_composta(multiplica_dois, soma_dois, <span style="color: #6c71c4; font-weight: bold;">10</span>)
-<span class="linenr">20: </span><span style="color: #859900; font-weight: bold;">print</span>(retorno)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">mostra o n&#250;mero 24</span>
+<span class="linenr">20: </span><span style="color: #d33682; font-style: italic;">print</span>(retorno)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">mostra o n&#250;mero 24</span>
 <span class="linenr">21: </span>
 <span class="linenr">22: </span>
 <span class="linenr">23: </span><span style="color: #859900; font-weight: bold;">def</span> <span style="color: #b58900;">retorna_funcao_composta</span>(f1, f2):
@@ -1796,10 +1796,10 @@ Funções em Python são objetos assim como números e strings. Desta forma, pod
 <span class="linenr">30: </span>
 <span class="linenr">31: </span>
 <span class="linenr">32: </span><span style="color: #268bd2;">funcao_composta</span> = retorna_funcao_composta(soma_dois, multiplica_dois)
-<span class="linenr">33: </span><span style="color: #859900; font-weight: bold;">print</span>(funcao_composta(<span style="color: #6c71c4; font-weight: bold;">10</span>))  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">retorna 22</span>
+<span class="linenr">33: </span><span style="color: #d33682; font-style: italic;">print</span>(funcao_composta(<span style="color: #6c71c4; font-weight: bold;">10</span>))  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">retorna 22</span>
 <span class="linenr">34: </span>
 <span class="linenr">35: </span><span style="color: #268bd2;">funcao_composta</span> = retorna_funcao_composta(multiplica_dois, soma_dois)
-<span class="linenr">36: </span><span style="color: #859900; font-weight: bold;">print</span>(funcao_composta(<span style="color: #6c71c4; font-weight: bold;">10</span>))  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">retorna 24</span>
+<span class="linenr">36: </span><span style="color: #d33682; font-style: italic;">print</span>(funcao_composta(<span style="color: #6c71c4; font-weight: bold;">10</span>))  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">retorna 24</span>
 </pre>
 </div>
 
@@ -1810,13 +1810,13 @@ Funções em Python são objetos assim como números e strings. Desta forma, pod
 </div>
 </div>
 
-<div id="outline-container-orgf4cad88" class="outline-2">
-<h2 id="orgf4cad88"><span class="section-number-2">5.</span> Listas, tuplas e conjuntos</h2>
+<div id="outline-container-org86e6ea0" class="outline-2">
+<h2 id="org86e6ea0"><span class="section-number-2">5.</span> Listas, tuplas e conjuntos</h2>
 <div class="outline-text-2" id="text-5">
 </div>
 
-<div id="outline-container-orgbf35573" class="outline-3">
-<h3 id="orgbf35573"><span class="section-number-3">5.1.</span> Agrupando objetos com listas</h3>
+<div id="outline-container-org19be0c9" class="outline-3">
+<h3 id="org19be0c9"><span class="section-number-3">5.1.</span> Agrupando objetos com listas</h3>
 <div class="outline-text-3" id="text-5-1">
 <blockquote>
 <p>
@@ -1850,7 +1850,7 @@ Este tipo de organização de itens ou objetos em listas é muito prático, pode
 
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #268bd2;">listadecompras</span> = [<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Queijo ralado"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Pasta de dentes"</span>]
-<span style="color: #859900; font-weight: bold;">print</span>(listadecompras)
+<span style="color: #d33682; font-style: italic;">print</span>(listadecompras)
 </pre>
 </div>
 
@@ -1860,10 +1860,10 @@ Poxa, mas esqueci de incluir o papel higiênico na lista! Tudo bem, podemos adic
 
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #268bd2;">listadecompras</span> = [<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Queijo ralado"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Pasta de dentes"</span>]
-<span style="color: #859900; font-weight: bold;">print</span>(listadecompras)
+<span style="color: #d33682; font-style: italic;">print</span>(listadecompras)
 
 listadecompras.append(<span style="color: #2aa198;">"Papel higi&#234;nico"</span>)
-<span style="color: #859900; font-weight: bold;">print</span>(listadecompras)
+<span style="color: #d33682; font-style: italic;">print</span>(listadecompras)
 </pre>
 </div>
 
@@ -1881,8 +1881,8 @@ A resposta da primeira pergunta está intimamente relacionada ao fato de Python 
 </div>
 </div>
 
-<div id="outline-container-orgb01c32a" class="outline-3">
-<h3 id="orgb01c32a"><span class="section-number-3">5.2.</span> Listas dentro de listas.</h3>
+<div id="outline-container-org9c974f5" class="outline-3">
+<h3 id="org9c974f5"><span class="section-number-3">5.2.</span> Listas dentro de listas.</h3>
 <div class="outline-text-3" id="text-5-2">
 <blockquote>
 <p>
@@ -1910,7 +1910,7 @@ No Python, podemos fazer listas dentro de listas, então vamos fazer uma lista d
     [<span style="color: #2aa198;">"Caderno"</span>, <span style="color: #2aa198;">"Papel"</span>, <span style="color: #2aa198;">"Caneta"</span>],
 ]
 
-<span style="color: #859900; font-weight: bold;">print</span>(listadecompras)
+<span style="color: #d33682; font-style: italic;">print</span>(listadecompras)
 </pre>
 </div>
 
@@ -1924,8 +1924,8 @@ Agora você pode notar que temos duas listas na variável <code>listadecompras</
     [<span style="color: #2aa198;">"Caderno"</span>, <span style="color: #2aa198;">"Papel"</span>, <span style="color: #2aa198;">"Caneta"</span>],
 ]
 
-<span style="color: #859900; font-weight: bold;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>])
-<span style="color: #859900; font-weight: bold;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">1</span>])
+<span style="color: #d33682; font-style: italic;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>])
+<span style="color: #d33682; font-style: italic;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">1</span>])
 </pre>
 </div>
 
@@ -1946,8 +1946,8 @@ Perfeito, mas agora deu vontade de comer uma sobremesa após o miojo incrementad
 listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>].append(<span style="color: #2aa198;">"Chocolate"</span>)
 listadecompras[<span style="color: #6c71c4; font-weight: bold;">1</span>].append(<span style="color: #2aa198;">"Post-it"</span>)
 
-<span style="color: #859900; font-weight: bold;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>])
-<span style="color: #859900; font-weight: bold;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">1</span>])
+<span style="color: #d33682; font-style: italic;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>])
+<span style="color: #d33682; font-style: italic;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">1</span>])
 </pre>
 </div>
 
@@ -1969,8 +1969,8 @@ Pronto, as listas estão atualizadas com os itens que você incluiu.
 </div>
 </div>
 
-<div id="outline-container-orged193d0" class="outline-3">
-<h3 id="orged193d0"><span class="section-number-3">5.3.</span> Modificando, particionando e desempacotando listas</h3>
+<div id="outline-container-org689009a" class="outline-3">
+<h3 id="org689009a"><span class="section-number-3">5.3.</span> Modificando, particionando e desempacotando listas</h3>
 <div class="outline-text-3" id="text-5-3">
 <p>
 Já foi apresentado um dos métodos utilizados em listas, o <code>append</code>. Mas, existem outros métodos para listas, a seguir veremos alguns deles.
@@ -1988,12 +1988,12 @@ Vamos voltar a nossa lista de compras. Você mudou de ideia quanto a sua sobreme
 
 listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>].append(<span style="color: #2aa198;">"Chocolate"</span>)
 
-<span style="color: #859900; font-weight: bold;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>])
+<span style="color: #d33682; font-style: italic;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>])
 
 listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>].remove(<span style="color: #2aa198;">"Chocolate"</span>)
 listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>].append(<span style="color: #2aa198;">"Flan"</span>)
 
-<span style="color: #859900; font-weight: bold;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>])
+<span style="color: #d33682; font-style: italic;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>])
 </pre>
 </div>
 
@@ -2010,7 +2010,7 @@ E caso você queira saber se já existe algo na lista, seria tedioso consultar t
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #859900; font-weight: bold;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>].count(<span style="color: #2aa198;">"Miojo"</span>))
+<pre class="src src-python"><span style="color: #d33682; font-style: italic;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>].count(<span style="color: #2aa198;">"Miojo"</span>))
 </pre>
 </div>
 
@@ -2062,8 +2062,8 @@ Exemplo: <code>listadecompras[0].pop(5)</code><br />
 </div>
 </div>
 
-<div id="outline-container-org27f362d" class="outline-3">
-<h3 id="org27f362d"><span class="section-number-3">5.4.</span> Particionamento de listas</h3>
+<div id="outline-container-org6ea4aa3" class="outline-3">
+<h3 id="org6ea4aa3"><span class="section-number-3">5.4.</span> Particionamento de listas</h3>
 <div class="outline-text-3" id="text-5-4">
 <p>
 Já foi apresentado como acessar um item específico da lista anteriormente, com o argumento entre colchetes (<code>listadecompras[0]</code>). Porém, podemos particinar as listas, pegando vários elementos de interesse. Novamente utilizaremos índices entre colchetes, com a seguinte sintaxe: lista[Inicial:Final:Passo]. O &rsquo;Inicial&rsquo; é o primeiro elemento da lista que desejamos, &rsquo;Final&rsquo; é o elemento final desejado. Já &rsquo;Passo&rsquo; é o de quantos em quantos elementos queremos, por exemplo, se o passo for 1, todos elementos na faixa específicada são impressos, se o passo for 2, só serão fornecidos elementos a cada dois. Vamos exemplificar para facilitar:
@@ -2089,7 +2089,7 @@ Já foi apresentado como acessar um item específico da lista anteriormente, com
     ],
 ]
 
-<span style="color: #859900; font-weight: bold;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>][<span style="color: #6c71c4; font-weight: bold;">0</span>:<span style="color: #6c71c4; font-weight: bold;">6</span>:<span style="color: #6c71c4; font-weight: bold;">2</span>])
+<span style="color: #d33682; font-style: italic;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>][<span style="color: #6c71c4; font-weight: bold;">0</span>:<span style="color: #6c71c4; font-weight: bold;">6</span>:<span style="color: #6c71c4; font-weight: bold;">2</span>])
 </pre>
 </div>
 
@@ -2102,7 +2102,7 @@ A saída do código anterior é <code>['Queijo Ralado', 'Pão', 'Ovo']</code>, s
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #859900; font-weight: bold;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>][<span style="color: #6c71c4; font-weight: bold;">0</span>:<span style="color: #6c71c4; font-weight: bold;">7</span>:<span style="color: #6c71c4; font-weight: bold;">2</span>])
+<pre class="src src-python"><span style="color: #d33682; font-style: italic;">print</span>(listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>][<span style="color: #6c71c4; font-weight: bold;">0</span>:<span style="color: #6c71c4; font-weight: bold;">7</span>:<span style="color: #6c71c4; font-weight: bold;">2</span>])
 </pre>
 </div>
 
@@ -2144,8 +2144,8 @@ Também podemos utilizar índices negativos no particionamento de listas, mas co
 </div>
 </div>
 
-<div id="outline-container-orgc96d7fa" class="outline-3">
-<h3 id="orgc96d7fa"><span class="section-number-3">5.5.</span> Copiando listas</h3>
+<div id="outline-container-orge9c6a85" class="outline-3">
+<h3 id="orge9c6a85"><span class="section-number-3">5.5.</span> Copiando listas</h3>
 <div class="outline-text-3" id="text-5-5">
 <p>
 Agora vamos tratar de cópias no Python. Para listas o Python tem uma maneira bastante peculiar para cópias, onde são criados links entre as listas e não simplesmente copiados os objetos. Vamos a um exemplo para deixar mais claro:
@@ -2155,19 +2155,19 @@ Agora vamos tratar de cópias no Python. Para listas o Python tem uma maneira ba
 <pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #268bd2;">lista1</span> = [<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo Ralado"</span>]
 <span class="linenr"> 2: </span><span style="color: #268bd2;">lista2</span> = lista1  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Criamos uma lista2 igual a lista1</span>
 <span class="linenr"> 3: </span>
-<span class="linenr"> 4: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Lista 1 Original"</span>)
-<span class="linenr"> 5: </span><span style="color: #859900; font-weight: bold;">print</span>(lista1)
-<span class="linenr"> 6: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Lista 2 Original"</span>)
-<span class="linenr"> 7: </span><span style="color: #859900; font-weight: bold;">print</span>(lista2)
+<span class="linenr"> 4: </span><span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"Lista 1 Original"</span>)
+<span class="linenr"> 5: </span><span style="color: #d33682; font-style: italic;">print</span>(lista1)
+<span class="linenr"> 6: </span><span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"Lista 2 Original"</span>)
+<span class="linenr"> 7: </span><span style="color: #d33682; font-style: italic;">print</span>(lista2)
 <span class="linenr"> 8: </span>
-<span class="linenr"> 9: </span><span style="color: #859900; font-weight: bold;">print</span>()
+<span class="linenr"> 9: </span><span style="color: #d33682; font-style: italic;">print</span>()
 <span class="linenr">10: </span>
 <span class="linenr">11: </span><span style="color: #268bd2;">lista2</span>[<span style="color: #6c71c4; font-weight: bold;">2</span>] = <span style="color: #2aa198;">"Or&#233;gano"</span>  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Altera o elemento 2 da lista2 para Or&#233;gano</span>
 <span class="linenr">12: </span>
-<span class="linenr">13: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Lista 2 Alterada"</span>)
-<span class="linenr">14: </span><span style="color: #859900; font-weight: bold;">print</span>(lista2)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Exibe a lista2 alterada</span>
-<span class="linenr">15: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Lista 1 depois de alterar lista 2"</span>)
-<span class="linenr">16: </span><span style="color: #859900; font-weight: bold;">print</span>(lista1)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Exibe a lista1 ap&#243;s a altera&#231;&#227;o da lista2</span>
+<span class="linenr">13: </span><span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"Lista 2 Alterada"</span>)
+<span class="linenr">14: </span><span style="color: #d33682; font-style: italic;">print</span>(lista2)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Exibe a lista2 alterada</span>
+<span class="linenr">15: </span><span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"Lista 1 depois de alterar lista 2"</span>)
+<span class="linenr">16: </span><span style="color: #d33682; font-style: italic;">print</span>(lista1)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Exibe a lista1 ap&#243;s a altera&#231;&#227;o da lista2</span>
 </pre>
 </div>
 
@@ -2179,19 +2179,19 @@ Bom, nesse código definimos uma <code>lista1</code>, criamos uma <code>lista2</
 <pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #268bd2;">lista1</span> = [<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo Ralado"</span>]
 <span class="linenr"> 2: </span><span style="color: #268bd2;">lista2</span> = lista1.copy()  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Usando o m&#233;todo `copy`</span>
 <span class="linenr"> 3: </span>
-<span class="linenr"> 4: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Lista 1 Original"</span>)
-<span class="linenr"> 5: </span><span style="color: #859900; font-weight: bold;">print</span>(lista1)
-<span class="linenr"> 6: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Lista 2 Original"</span>)
-<span class="linenr"> 7: </span><span style="color: #859900; font-weight: bold;">print</span>(lista2)
+<span class="linenr"> 4: </span><span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"Lista 1 Original"</span>)
+<span class="linenr"> 5: </span><span style="color: #d33682; font-style: italic;">print</span>(lista1)
+<span class="linenr"> 6: </span><span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"Lista 2 Original"</span>)
+<span class="linenr"> 7: </span><span style="color: #d33682; font-style: italic;">print</span>(lista2)
 <span class="linenr"> 8: </span>
-<span class="linenr"> 9: </span><span style="color: #859900; font-weight: bold;">print</span>()
+<span class="linenr"> 9: </span><span style="color: #d33682; font-style: italic;">print</span>()
 <span class="linenr">10: </span>
 <span class="linenr">11: </span><span style="color: #268bd2;">lista2</span>[<span style="color: #6c71c4; font-weight: bold;">2</span>] = <span style="color: #2aa198;">"Or&#233;gano"</span>  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Altera o elemento 2 da lista2 para Or&#233;gano</span>
 <span class="linenr">12: </span>
-<span class="linenr">13: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Lista 2 Alterada"</span>)
-<span class="linenr">14: </span><span style="color: #859900; font-weight: bold;">print</span>(lista2)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Exibe a lista2 alterada</span>
-<span class="linenr">15: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Lista 1 depois de alterar lista 2"</span>)
-<span class="linenr">16: </span><span style="color: #859900; font-weight: bold;">print</span>(lista1)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Exibe a lista1 ap&#243;s a altera&#231;&#227;o da lista2</span>
+<span class="linenr">13: </span><span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"Lista 2 Alterada"</span>)
+<span class="linenr">14: </span><span style="color: #d33682; font-style: italic;">print</span>(lista2)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Exibe a lista2 alterada</span>
+<span class="linenr">15: </span><span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"Lista 1 depois de alterar lista 2"</span>)
+<span class="linenr">16: </span><span style="color: #d33682; font-style: italic;">print</span>(lista1)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Exibe a lista1 ap&#243;s a altera&#231;&#227;o da lista2</span>
 </pre>
 </div>
 
@@ -2201,8 +2201,8 @@ Bom, nesse código definimos uma <code>lista1</code>, criamos uma <code>lista2</
 </div>
 </div>
 
-<div id="outline-container-org225b373" class="outline-3">
-<h3 id="org225b373"><span class="section-number-3">5.6.</span> Desempacotamento e Operador Asterisco</h3>
+<div id="outline-container-org09ab3ad" class="outline-3">
+<h3 id="org09ab3ad"><span class="section-number-3">5.6.</span> Desempacotamento e Operador Asterisco</h3>
 <div class="outline-text-3" id="text-5-6">
 <p>
 No Python podemos utilizar uma notação específica para definir várias variáveis ao mesmo tempo, como segue:
@@ -2211,9 +2211,9 @@ No Python podemos utilizar uma notação específica para definir várias variá
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #268bd2;">item0</span>, <span style="color: #268bd2;">item1</span>, <span style="color: #268bd2;">item2</span> = <span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo"</span>
 
-<span style="color: #859900; font-weight: bold;">print</span>(item0)
-<span style="color: #859900; font-weight: bold;">print</span>(item1)
-<span style="color: #859900; font-weight: bold;">print</span>(item2)
+<span style="color: #d33682; font-style: italic;">print</span>(item0)
+<span style="color: #d33682; font-style: italic;">print</span>(item1)
+<span style="color: #d33682; font-style: italic;">print</span>(item2)
 </pre>
 </div>
 
@@ -2226,9 +2226,9 @@ Notem que item0=&ldquo;Miojo&rdquo;, item1=&ldquo;Ovo&rdquo; e item2=&ldquo;Quei
 
 <span style="color: #268bd2;">item0</span>, <span style="color: #268bd2;">item1</span>, <span style="color: #268bd2;">item2</span> = lista
 
-<span style="color: #859900; font-weight: bold;">print</span>(item0)
-<span style="color: #859900; font-weight: bold;">print</span>(item1)
-<span style="color: #859900; font-weight: bold;">print</span>(item2)
+<span style="color: #d33682; font-style: italic;">print</span>(item0)
+<span style="color: #d33682; font-style: italic;">print</span>(item1)
+<span style="color: #d33682; font-style: italic;">print</span>(item2)
 </pre>
 </div>
 
@@ -2249,9 +2249,9 @@ Os itens0, 1 e 2 foram definidos de acordo com os elementos da lista, no código
 
 <span style="color: #268bd2;">item0</span>, <span style="color: #268bd2;">item1</span>, <span style="color: #268bd2;">item2</span> = lista
 
-<span style="color: #859900; font-weight: bold;">print</span>(item0)
-<span style="color: #859900; font-weight: bold;">print</span>(item1)
-<span style="color: #859900; font-weight: bold;">print</span>(item2)
+<span style="color: #d33682; font-style: italic;">print</span>(item0)
+<span style="color: #d33682; font-style: italic;">print</span>(item1)
+<span style="color: #d33682; font-style: italic;">print</span>(item2)
 </pre>
 </div>
 
@@ -2262,11 +2262,11 @@ Para lidar com este tipo de situação podemos utilizar o operador asterisco (ta
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #268bd2;">lista</span> = [<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo"</span>, <span style="color: #2aa198;">"P&#227;o"</span>, <span style="color: #2aa198;">"Or&#233;gano"</span>]
 
-item0, item1, *<span style="color: #268bd2;">resto</span> = lista
+<span style="color: #268bd2;">item0</span>, <span style="color: #268bd2;">item1</span>, *<span style="color: #268bd2;">resto</span> = lista
 
-<span style="color: #859900; font-weight: bold;">print</span>(item0)
-<span style="color: #859900; font-weight: bold;">print</span>(item1)
-<span style="color: #859900; font-weight: bold;">print</span>(resto)
+<span style="color: #d33682; font-style: italic;">print</span>(item0)
+<span style="color: #d33682; font-style: italic;">print</span>(item1)
+<span style="color: #d33682; font-style: italic;">print</span>(resto)
 </pre>
 </div>
 
@@ -2281,19 +2281,19 @@ A posição do operador asterisco não precisa ser necessáriamente na última v
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #268bd2;">lista</span> = [<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo"</span>, <span style="color: #2aa198;">"P&#227;o"</span>, <span style="color: #2aa198;">"Or&#233;gano"</span>]
 
-item0, *<span style="color: #268bd2;">item1</span>, <span style="color: #268bd2;">item2</span> = lista
+<span style="color: #268bd2;">item0</span>, *<span style="color: #268bd2;">item1</span>, <span style="color: #268bd2;">item2</span> = lista
 
-<span style="color: #859900; font-weight: bold;">print</span>(item0)
-<span style="color: #859900; font-weight: bold;">print</span>(item1)
-<span style="color: #859900; font-weight: bold;">print</span>(item2)
+<span style="color: #d33682; font-style: italic;">print</span>(item0)
+<span style="color: #d33682; font-style: italic;">print</span>(item1)
+<span style="color: #d33682; font-style: italic;">print</span>(item2)
 
-<span style="color: #859900; font-weight: bold;">print</span>()
+<span style="color: #d33682; font-style: italic;">print</span>()
 
 *<span style="color: #268bd2;">item0</span>, <span style="color: #268bd2;">item1</span>, <span style="color: #268bd2;">item2</span> = lista
 
-<span style="color: #859900; font-weight: bold;">print</span>(item0)
-<span style="color: #859900; font-weight: bold;">print</span>(item1)
-<span style="color: #859900; font-weight: bold;">print</span>(item2)
+<span style="color: #d33682; font-style: italic;">print</span>(item0)
+<span style="color: #d33682; font-style: italic;">print</span>(item1)
+<span style="color: #d33682; font-style: italic;">print</span>(item2)
 </pre>
 </div>
 
@@ -2303,8 +2303,8 @@ item0, *<span style="color: #268bd2;">item1</span>, <span style="color: #268bd2;
 </div>
 </div>
 
-<div id="outline-container-org28df4ce" class="outline-3">
-<h3 id="org28df4ce"><span class="section-number-3">5.7.</span> Tuplas</h3>
+<div id="outline-container-org9dec176" class="outline-3">
+<h3 id="org9dec176"><span class="section-number-3">5.7.</span> Tuplas</h3>
 <div class="outline-text-3" id="text-5-7">
 <p>
 Existe outro tipo de dados no Python que são chamadas tuplas. As tuplas são basicamente listas imutáveis. Como assim imutáveis? Isso significa que uma vez que ela foi definida, não podemos mais adicionar ou remover elementos, bem como não é possível modificar sua ordem. Então, voltando ao nosso exemplo do supermercado, se você quiser estabelecer uma lista perpétua de itens a serem comprados (que jamais serão alterados), você pode colocá-los em uma tupla. Vamos a um exemplo:
@@ -2312,7 +2312,7 @@ Existe outro tipo de dados no Python que são chamadas tuplas. As tuplas são ba
 
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #268bd2;">itensrecorrentes</span> = (<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo Ralado"</span>)
-<span style="color: #859900; font-weight: bold;">print</span>(itensrecorrentes)
+<span style="color: #d33682; font-style: italic;">print</span>(itensrecorrentes)
 </pre>
 </div>
 
@@ -2334,7 +2334,7 @@ O interessante é que podemos utilizar o método <code>extend</code> com uma tup
 <span class="linenr">3: </span><span style="color: #268bd2;">listadecompras</span> = []
 <span class="linenr">4: </span>listadecompras.extend(itensrecorrentes)
 <span class="linenr">5: </span>
-<span class="linenr">6: </span><span style="color: #859900; font-weight: bold;">print</span>(listadecompras)
+<span class="linenr">6: </span><span style="color: #d33682; font-style: italic;">print</span>(listadecompras)
 </pre>
 </div>
 
@@ -2348,8 +2348,8 @@ Na linha 3 inicializamos uma lista vazia, apenas para criá-la, para poder utili
 </div>
 </div>
 
-<div id="outline-container-org3320695" class="outline-3">
-<h3 id="org3320695"><span class="section-number-3">5.8.</span> Conjuntos</h3>
+<div id="outline-container-orgb156eef" class="outline-3">
+<h3 id="orgb156eef"><span class="section-number-3">5.8.</span> Conjuntos</h3>
 <div class="outline-text-3" id="text-5-8">
 <p>
 Outro objeto de Python são os conjuntos, que são basicamente listas sem elementos repetidos. Os conjuntos possuem seus métodos específicos também, que englobam métodos equivalentes aos das listas, como: <code>remove</code> e <code>pop</code>. Mas especificamente para conjuntos, temos operações matemáticas já conhecidas, como união e intersecção. Vamos definir dois conjuntos e operá-los, com nossa analogia de listas de compras, vamos pensar que você fez anotações para compras em dois lugares diferentes e agora você quer juntá-las.
@@ -2359,8 +2359,8 @@ Outro objeto de Python são os conjuntos, que são basicamente listas sem elemen
 <pre class="src src-python"><span style="color: #268bd2;">conjunto1</span> = {<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo"</span>}
 <span style="color: #268bd2;">conjunto2</span> = {<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"P&#227;o"</span>, <span style="color: #2aa198;">"Queijo"</span>, <span style="color: #2aa198;">"Or&#233;gano"</span>, <span style="color: #2aa198;">"P&#227;o"</span>}
 
-<span style="color: #859900; font-weight: bold;">print</span>(conjunto1)
-<span style="color: #859900; font-weight: bold;">print</span>(conjunto2)
+<span style="color: #d33682; font-style: italic;">print</span>(conjunto1)
+<span style="color: #d33682; font-style: italic;">print</span>(conjunto2)
 </pre>
 </div>
 
@@ -2381,10 +2381,10 @@ Agora vamos realizar algumas operações com os conjuntos:
 <span style="color: #268bd2;">conjunto2</span> = {<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"P&#227;o"</span>, <span style="color: #2aa198;">"Queijo"</span>, <span style="color: #2aa198;">"Or&#233;gano"</span>, <span style="color: #2aa198;">"P&#227;o"</span>}
 
 <span style="color: #268bd2;">intersection</span> = conjunto1.intersection(conjunto2)
-<span style="color: #859900; font-weight: bold;">print</span>(intersection)
+<span style="color: #d33682; font-style: italic;">print</span>(intersection)
 
 <span style="color: #268bd2;">union</span> = conjunto1.union(conjunto2)
-<span style="color: #859900; font-weight: bold;">print</span>(union)
+<span style="color: #d33682; font-style: italic;">print</span>(union)
 </pre>
 </div>
 
@@ -2410,8 +2410,8 @@ Além desses métodos temos outros exclusivos de conjuntos, como segue:
 </div>
 </div>
 
-<div id="outline-container-org04cf0f6" class="outline-2">
-<h2 id="org04cf0f6"><span class="section-number-2">6.</span> Laço de repetição</h2>
+<div id="outline-container-org646bc57" class="outline-2">
+<h2 id="org646bc57"><span class="section-number-2">6.</span> Laço de repetição</h2>
 <div class="outline-text-2" id="text-6">
 <blockquote>
 <p>
@@ -2428,8 +2428,8 @@ Laços de repetição, ou seu termo mais comum em inglês o <i>loop</i>, serve p
 </p>
 </div>
 
-<div id="outline-container-org7d3b28f" class="outline-3">
-<h3 id="org7d3b28f"><span class="section-number-3">6.1.</span> Laço de repetição usando <code>while</code></h3>
+<div id="outline-container-orgbd2ddd6" class="outline-3">
+<h3 id="orgbd2ddd6"><span class="section-number-3">6.1.</span> Laço de repetição usando <code>while</code></h3>
 <div class="outline-text-3" id="text-6-1">
 <blockquote>
 <p>
@@ -2448,8 +2448,8 @@ Vamos iniciar com um <code>while</code> loop, ou laço de repetição com <code>
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #268bd2;">i</span> = <span style="color: #6c71c4; font-weight: bold;">0</span>
 <span style="color: #859900; font-weight: bold;">while</span> i &lt; <span style="color: #6c71c4; font-weight: bold;">10</span>:  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Leia como "Enquanto o valor de i for menor que 10, fa&#231;a:"</span>
-    <span style="color: #859900; font-weight: bold;">print</span>(i)
-    <span style="color: #268bd2;">i</span> += <span style="color: #6c71c4; font-weight: bold;">1</span>  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">mesma coisa que escrever `i = i + 1`</span>
+    <span style="color: #d33682; font-style: italic;">print</span>(i)
+    i += <span style="color: #6c71c4; font-weight: bold;">1</span>  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">mesma coisa que escrever `i = i + 1`</span>
 </pre>
 </div>
 
@@ -2464,9 +2464,9 @@ Fique atento a identação! Assim como no caso dos condicionais (<code>if</code>
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #268bd2;">i</span> = <span style="color: #6c71c4; font-weight: bold;">0</span>
 <span style="color: #859900; font-weight: bold;">while</span> i &lt; <span style="color: #6c71c4; font-weight: bold;">10</span>:
-    <span style="color: #859900; font-weight: bold;">print</span>(i, i &lt; <span style="color: #6c71c4; font-weight: bold;">10</span>)
+    <span style="color: #d33682; font-style: italic;">print</span>(i, i &lt; <span style="color: #6c71c4; font-weight: bold;">10</span>)
     <span style="color: #268bd2;">i</span> += <span style="color: #6c71c4; font-weight: bold;">1</span>
-<span style="color: #859900; font-weight: bold;">print</span>(i, i &lt; <span style="color: #6c71c4; font-weight: bold;">10</span>)
+<span style="color: #d33682; font-style: italic;">print</span>(i, i &lt; <span style="color: #6c71c4; font-weight: bold;">10</span>)
 </pre>
 </div>
 
@@ -2481,7 +2481,7 @@ O uso de loops pode facilmente levar o seu código a loops infinitos! Sempre ava
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #268bd2;">i</span> = <span style="color: #6c71c4; font-weight: bold;">0</span>
 <span style="color: #859900; font-weight: bold;">while</span> i &lt; <span style="color: #6c71c4; font-weight: bold;">10</span>:
-    <span style="color: #859900; font-weight: bold;">print</span>(i, i &lt; <span style="color: #6c71c4; font-weight: bold;">10</span>)
+    <span style="color: #d33682; font-style: italic;">print</span>(i, i &lt; <span style="color: #6c71c4; font-weight: bold;">10</span>)
 </pre>
 </div>
 
@@ -2515,12 +2515,12 @@ Também temos outra maneira de sair ou continuar em loops, usando os comandos <c
 <span class="linenr">15: </span>
 <span class="linenr">16: </span>        <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Caso a divis&#227;o tenha a parte decimal igual a zero</span>
 <span class="linenr">17: </span>        <span style="color: #859900; font-weight: bold;">if</span> b - <span style="color: #d33682; font-style: italic;">int</span>(b) == <span style="color: #6c71c4; font-weight: bold;">0</span>:
-<span class="linenr">18: </span>            <span style="color: #859900; font-weight: bold;">print</span>(a, <span style="color: #2aa198;">"&#233; divis&#237;vel por"</span>, i)
+<span class="linenr">18: </span>            <span style="color: #d33682; font-style: italic;">print</span>(a, <span style="color: #2aa198;">"&#233; divis&#237;vel por"</span>, i)
 <span class="linenr">19: </span>            <span style="color: #859900; font-weight: bold;">break</span>  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Com este break o programa sai do loop</span>
 <span class="linenr">20: </span>
 <span class="linenr">21: </span>        <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Caso a divis&#227;o n&#227;o tenha a parte decimal igual a zero</span>
 <span class="linenr">22: </span>        <span style="color: #859900; font-weight: bold;">else</span>:
-<span class="linenr">23: </span>            <span style="color: #268bd2;">i</span> -= <span style="color: #6c71c4; font-weight: bold;">1</span>  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Diminu&#237;mos 1 do i</span>
+<span class="linenr">23: </span>            i -= <span style="color: #6c71c4; font-weight: bold;">1</span>  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Diminu&#237;mos 1 do i</span>
 <span class="linenr">24: </span>
 <span class="linenr">25: </span>
 <span class="linenr">26: </span>maximo_divisor_comum(<span style="color: #6c71c4; font-weight: bold;">8733</span>)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">teste</span>
@@ -2545,8 +2545,8 @@ O código apresentado está comentado e a função tem uma docstring, lembrem-se
 </div>
 </div>
 
-<div id="outline-container-org609a9ad" class="outline-3">
-<h3 id="org609a9ad"><span class="section-number-3">6.2.</span> Laço de repetição usando <code>for</code></h3>
+<div id="outline-container-orge7e4815" class="outline-3">
+<h3 id="orge7e4815"><span class="section-number-3">6.2.</span> Laço de repetição usando <code>for</code></h3>
 <div class="outline-text-3" id="text-6-2">
 <blockquote>
 <p>
@@ -2560,8 +2560,8 @@ A outra maneira de implementarmos loops no Python é utilizando o <code>for</cod
 
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #268bd2;">lista</span> = [<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo"</span>]
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Ovo"</span> <span style="color: #859900; font-weight: bold;">in</span> lista)
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"P&#227;o"</span> <span style="color: #859900; font-weight: bold;">in</span> lista)
+<span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"Ovo"</span> <span style="color: #859900; font-weight: bold;">in</span> lista)
+<span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"P&#227;o"</span> <span style="color: #859900; font-weight: bold;">in</span> lista)
 </pre>
 </div>
 
@@ -2580,7 +2580,7 @@ Para implementarmos um loop com <code>for</code>, iremos utilizar a seguinte sin
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #268bd2;">lista</span> = [<span style="color: #2aa198;">"Miojo"</span>, <span style="color: #2aa198;">"Ovo"</span>, <span style="color: #2aa198;">"Queijo"</span>, <span style="color: #2aa198;">"Or&#233;gano"</span>, <span style="color: #2aa198;">"P&#227;o"</span>]
 <span style="color: #859900; font-weight: bold;">for</span> item <span style="color: #859900; font-weight: bold;">in</span> lista:
-    <span style="color: #859900; font-weight: bold;">print</span>(item)
+    <span style="color: #d33682; font-style: italic;">print</span>(item)
 </pre>
 </div>
 
@@ -2601,13 +2601,13 @@ Existe uma regra de ouro sempre que usar um loop com <code>for</code>: <b>nunca 
 <span class="linenr"> 2: </span><span style="color: #268bd2;">lista_copia</span> = lista.copy()  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">criando uma c&#243;pia de `lista`</span>
 <span class="linenr"> 3: </span>
 <span class="linenr"> 4: </span><span style="color: #859900; font-weight: bold;">for</span> item <span style="color: #859900; font-weight: bold;">in</span> lista:  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">`lista` &#233; o objeto sendo iterado</span>
-<span class="linenr"> 5: </span>    <span style="color: #859900; font-weight: bold;">print</span>(item)
+<span class="linenr"> 5: </span>    <span style="color: #d33682; font-style: italic;">print</span>(item)
 <span class="linenr"> 6: </span>    <span style="color: #859900; font-weight: bold;">if</span> item == <span style="color: #2aa198;">"Ovo"</span>:
 <span class="linenr"> 7: </span>        lista_copia.append(<span style="color: #2aa198;">"Bacon"</span>)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">alterando a `lista_copia`, n&#227;o `lista`</span>
 <span class="linenr"> 8: </span>
-<span class="linenr"> 9: </span><span style="color: #859900; font-weight: bold;">print</span>(lista)
-<span class="linenr">10: </span><span style="color: #859900; font-weight: bold;">print</span>()
-<span class="linenr">11: </span><span style="color: #859900; font-weight: bold;">print</span>(lista_copia)
+<span class="linenr"> 9: </span><span style="color: #d33682; font-style: italic;">print</span>(lista)
+<span class="linenr">10: </span><span style="color: #d33682; font-style: italic;">print</span>()
+<span class="linenr">11: </span><span style="color: #d33682; font-style: italic;">print</span>(lista_copia)
 </pre>
 </div>
 
@@ -2621,7 +2621,7 @@ Além de iterar em listas, o <code>for</code> loop pode ser utilizado em faixas 
 
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #859900; font-weight: bold;">for</span> number <span style="color: #859900; font-weight: bold;">in</span> <span style="color: #d33682; font-style: italic;">range</span>(<span style="color: #6c71c4; font-weight: bold;">0</span>, <span style="color: #6c71c4; font-weight: bold;">11</span>):
-    <span style="color: #859900; font-weight: bold;">print</span>(number)
+    <span style="color: #d33682; font-style: italic;">print</span>(number)
 </pre>
 </div>
 
@@ -2635,7 +2635,7 @@ Também podemos definir o passo a ser utilizado, como fizemos no particionamento
 
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #859900; font-weight: bold;">for</span> number <span style="color: #859900; font-weight: bold;">in</span> <span style="color: #d33682; font-style: italic;">range</span>(<span style="color: #6c71c4; font-weight: bold;">0</span>, <span style="color: #6c71c4; font-weight: bold;">11</span>, <span style="color: #6c71c4; font-weight: bold;">2</span>):
-    <span style="color: #859900; font-weight: bold;">print</span>(number)
+    <span style="color: #d33682; font-style: italic;">print</span>(number)
 </pre>
 </div>
 
@@ -2653,8 +2653,8 @@ O código acima exibe os números 0, 2, 4, 6, 8 e 10. Ou seja, o passo mudou par
 </div>
 </div>
 
-<div id="outline-container-org03b57f0" class="outline-3">
-<h3 id="org03b57f0"><span class="section-number-3">6.3.</span> Laços Aninhados</h3>
+<div id="outline-container-org09c229e" class="outline-3">
+<h3 id="org09c229e"><span class="section-number-3">6.3.</span> Laços Aninhados</h3>
 <div class="outline-text-3" id="text-6-3">
 <blockquote>
 <p>
@@ -2672,11 +2672,11 @@ Além de utilizarmos laços (loops) aliados a condicionais, também podemos ter 
     [<span style="color: #2aa198;">"P&#227;o"</span>, <span style="color: #2aa198;">"Queijo"</span>, <span style="color: #2aa198;">"Presunto"</span>, <span style="color: #2aa198;">"Sonho"</span>],
 ]
 
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Lista do supermercado antes da confer&#234;ncia:"</span>, listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>])
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Lista da padaria antes da confer&#234;ncia:"</span>, listadecompras[<span style="color: #6c71c4; font-weight: bold;">1</span>])
+<span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"Lista do supermercado antes da confer&#234;ncia:"</span>, listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>])
+<span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"Lista da padaria antes da confer&#234;ncia:"</span>, listadecompras[<span style="color: #6c71c4; font-weight: bold;">1</span>])
 
 <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">c&#243;pia para n&#227;o alterar o original dentro do loop (regra de ouro!)</span>
-<span style="color: #268bd2;">lista_copia</span> = listadecompras.copy()
+lista_copia = listadecompras.copy()
 
 <span style="color: #859900; font-weight: bold;">for</span> item1 <span style="color: #859900; font-weight: bold;">in</span> listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>]:  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Loop nos itens do supermercado</span>
     <span style="color: #859900; font-weight: bold;">for</span> item2 <span style="color: #859900; font-weight: bold;">in</span> listadecompras[<span style="color: #6c71c4; font-weight: bold;">1</span>]:  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Loop nos itens da padaria</span>
@@ -2685,10 +2685,10 @@ Além de utilizarmos laços (loops) aliados a condicionais, também podemos ter 
             <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Se forem iguais, s&#227;o removidos da lista do supermercado</span>
             lista_copia[<span style="color: #6c71c4; font-weight: bold;">0</span>].remove(item1)
 
-<span style="color: #268bd2;">listadecompras</span> = lista_copia  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">atualizando a lista original</span>
+listadecompras = lista_copia  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">atualizando a lista original</span>
 
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Lista do supermercado ap&#243;s a confer&#234;ncia:"</span>, listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>])
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Lista da padaria ap&#243;s a confer&#234;ncia:"</span>, listadecompras[<span style="color: #6c71c4; font-weight: bold;">1</span>])
+<span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"Lista do supermercado ap&#243;s a confer&#234;ncia:"</span>, listadecompras[<span style="color: #6c71c4; font-weight: bold;">0</span>])
+<span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"Lista da padaria ap&#243;s a confer&#234;ncia:"</span>, listadecompras[<span style="color: #6c71c4; font-weight: bold;">1</span>])
 </pre>
 </div>
 
@@ -2710,8 +2710,8 @@ Note que o <code>"Queijo"</code> foi removido da lista do supermercado, que era 
 </div>
 </div>
 
-<div id="outline-container-orgc5ea257" class="outline-3">
-<h3 id="orgc5ea257"><span class="section-number-3">6.4.</span> Compreensão de listas</h3>
+<div id="outline-container-org689600c" class="outline-3">
+<h3 id="org689600c"><span class="section-number-3">6.4.</span> Compreensão de listas</h3>
 <div class="outline-text-3" id="text-6-4">
 <blockquote>
 <p>
@@ -2740,7 +2740,7 @@ Esta ferramenta serve para criarmos novas listas a partir de uma lista existente
 <span class="linenr">14: </span>    <span style="color: #859900; font-weight: bold;">if</span> item == <span style="color: #2aa198;">"P&#227;o"</span> <span style="color: #859900; font-weight: bold;">or</span> item == <span style="color: #2aa198;">"Queijo"</span> <span style="color: #859900; font-weight: bold;">or</span> item == <span style="color: #2aa198;">"Presunto"</span>:
 <span class="linenr">15: </span>        listadapadaria.append(item)
 <span class="linenr">16: </span>
-<span class="linenr">17: </span><span style="color: #859900; font-weight: bold;">print</span>(listadapadaria)
+<span class="linenr">17: </span><span style="color: #d33682; font-style: italic;">print</span>(listadapadaria)
 </pre>
 </div>
 
@@ -2765,7 +2765,7 @@ No código acima definimos a <code>listadecompras</code>, mas separamos alguns i
     <span style="color: #859900; font-weight: bold;">if</span> <span style="color: #2aa198;">"P&#227;o"</span> <span style="color: #859900; font-weight: bold;">in</span> item <span style="color: #859900; font-weight: bold;">or</span> <span style="color: #2aa198;">"Queijo"</span> <span style="color: #859900; font-weight: bold;">in</span> item <span style="color: #859900; font-weight: bold;">or</span> <span style="color: #2aa198;">"Presunto"</span> <span style="color: #859900; font-weight: bold;">in</span> item
 ]
 
-<span style="color: #859900; font-weight: bold;">print</span>(listadapadaria)
+<span style="color: #d33682; font-style: italic;">print</span>(listadapadaria)
 </pre>
 </div>
 
@@ -2780,7 +2780,7 @@ Temos o mesmo resultado do loop <code>for</code>, com um código de três linhas
 <span class="linenr">4: </span>    <span style="color: #859900; font-weight: bold;">if</span> numero % <span style="color: #6c71c4; font-weight: bold;">2</span> != <span style="color: #6c71c4; font-weight: bold;">0</span>
 <span class="linenr">5: </span>]
 <span class="linenr">6: </span>
-<span class="linenr">7: </span><span style="color: #859900; font-weight: bold;">print</span>(quadradosimpares)
+<span class="linenr">7: </span><span style="color: #d33682; font-style: italic;">print</span>(quadradosimpares)
 </pre>
 </div>
 
@@ -2794,7 +2794,7 @@ Veja que não é necessário pular linhas dentro da sua compreensão de listas, 
 
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #268bd2;">quadradosimpares</span> = [numero ** <span style="color: #6c71c4; font-weight: bold;">2</span> <span style="color: #859900; font-weight: bold;">for</span> numero <span style="color: #859900; font-weight: bold;">in</span> <span style="color: #d33682; font-style: italic;">range</span>(<span style="color: #6c71c4; font-weight: bold;">10</span>) <span style="color: #859900; font-weight: bold;">if</span> numero % <span style="color: #6c71c4; font-weight: bold;">2</span> != <span style="color: #6c71c4; font-weight: bold;">0</span>]
-<span style="color: #859900; font-weight: bold;">print</span>(quadradosimpares)
+<span style="color: #d33682; font-style: italic;">print</span>(quadradosimpares)
 </pre>
 </div>
 
@@ -2815,20 +2815,20 @@ Mas porque utilizar esta sintaxe de compreensão de listas e não continuar util
 <span style="color: #268bd2;">start</span> = time.time()  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Setando o tempo inicial</span>
 <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">M&#233;todo de compreenss&#227;o de listas para calcular os divisores</span>
 <span style="color: #268bd2;">divisor</span> = [i <span style="color: #859900; font-weight: bold;">for</span> i <span style="color: #859900; font-weight: bold;">in</span> <span style="color: #d33682; font-style: italic;">range</span>(<span style="color: #6c71c4; font-weight: bold;">1</span>, a) <span style="color: #859900; font-weight: bold;">if</span> a % i == <span style="color: #6c71c4; font-weight: bold;">0</span>]
-<span style="color: #859900; font-weight: bold;">print</span>(divisor)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Imprime os divisores</span>
+<span style="color: #d33682; font-style: italic;">print</span>(divisor)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Imprime os divisores</span>
 <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Imprime o tempo que o c&#243;digo levou para executar</span>
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"--- Comprehenssion %s seconds ---"</span> % (time.time() - start))
+<span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"--- Comprehenssion %s seconds ---"</span> % (time.time() - start))
 
 
-<span style="color: #268bd2;">start</span> = time.time()  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Setando novamente o tempo inicial</span>
-<span style="color: #268bd2;">divisor</span> = []  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Inicializando a lista dos divisores</span>
+start = time.time()  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Setando novamente o tempo inicial</span>
+divisor = []  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Inicializando a lista dos divisores</span>
 <span style="color: #859900; font-weight: bold;">for</span> i <span style="color: #859900; font-weight: bold;">in</span> <span style="color: #d33682; font-style: italic;">range</span>(<span style="color: #6c71c4; font-weight: bold;">1</span>, a):  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">In&#237;cio do loop</span>
     <span style="color: #859900; font-weight: bold;">if</span> a % i == <span style="color: #6c71c4; font-weight: bold;">0</span>:  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Testa o resto da divis&#227;o</span>
         divisor.append(i)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Acrescenta como divisor se o resto &#233; zero</span>
 
-<span style="color: #859900; font-weight: bold;">print</span>(divisor)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Imprime os divisores</span>
+<span style="color: #d33682; font-style: italic;">print</span>(divisor)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Imprime os divisores</span>
 <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">Imprime o tempo de execu&#231;&#227;o</span>
-<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"--- Loop %s seconds ---"</span> % (time.time() - start))
+<span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"--- Loop %s seconds ---"</span> % (time.time() - start))
 </pre>
 </div>
 
@@ -2846,12 +2846,12 @@ Maravilha, conseguimos ganhar um pouco de performance, mas, o código apresentad
 </div>
 </div>
 </div>
-<div id="outline-container-orgbd4ca68" class="outline-2">
-<h2 id="orgbd4ca68"><span class="section-number-2">7.</span> Importando bibliotecas e lendo dados</h2>
+<div id="outline-container-orgbfa4f57" class="outline-2">
+<h2 id="orgbfa4f57"><span class="section-number-2">7.</span> Importando bibliotecas e lendo dados</h2>
 <div class="outline-text-2" id="text-7">
 </div>
-<div id="outline-container-org49b1957" class="outline-3">
-<h3 id="org49b1957"><span class="section-number-3">7.1.</span> Bibliotecas nos ajudam a não ter que reinventar a roda</h3>
+<div id="outline-container-org53fb50e" class="outline-3">
+<h3 id="org53fb50e"><span class="section-number-3">7.1.</span> Bibliotecas nos ajudam a não ter que reinventar a roda</h3>
 <div class="outline-text-3" id="text-7-1">
 <blockquote>
 <p>
@@ -2875,9 +2875,9 @@ E agora? Teremos que programar nossa própria função que calcula o log toda ve
 <pre class="src src-python"><span class="linenr">1: </span><span style="color: #859900; font-weight: bold;">import</span> math
 <span class="linenr">2: </span>
 <span class="linenr">3: </span><span style="color: #268bd2;">valor</span> = <span style="color: #6c71c4; font-weight: bold;">100000000000000000</span>
-<span class="linenr">4: </span><span style="color: #859900; font-weight: bold;">print</span>(math.log10(valor))
+<span class="linenr">4: </span><span style="color: #d33682; font-style: italic;">print</span>(math.log10(valor))
 <span class="linenr">5: </span>
-<span class="linenr">6: </span><span style="color: #859900; font-weight: bold;">print</span>()
+<span class="linenr">6: </span><span style="color: #d33682; font-style: italic;">print</span>()
 <span class="linenr">7: </span><span style="color: #d33682; font-style: italic;">help</span>(math.log10)
 </pre>
 </div>
@@ -2901,7 +2901,7 @@ Finalmente, na linha 7 do código nós usamos a função <code>help</code> para 
 <div class="org-src-container">
 <pre class="src src-python"><span class="linenr">1: </span><span style="color: #859900; font-weight: bold;">import</span> math
 <span class="linenr">2: </span>
-<span class="linenr">3: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #d33682; font-style: italic;">dir</span>(math))
+<span class="linenr">3: </span><span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #d33682; font-style: italic;">dir</span>(math))
 </pre>
 </div>
 
@@ -2915,8 +2915,8 @@ Finalmente, na linha 7 do código nós usamos a função <code>help</code> para 
 </div>
 </div>
 
-<div id="outline-container-org05c08d3" class="outline-3">
-<h3 id="org05c08d3"><span class="section-number-3">7.2.</span> Espaço de nome</h3>
+<div id="outline-container-orgaaceddf" class="outline-3">
+<h3 id="orgaaceddf"><span class="section-number-3">7.2.</span> Espaço de nome</h3>
 <div class="outline-text-3" id="text-7-2">
 <blockquote>
 <p>
@@ -2935,7 +2935,7 @@ Vamos fazer uma importação diferente agora, veja no exemplo abaixo.
 <div class="org-src-container">
 <pre class="src src-python"><span class="linenr">1: </span><span style="color: #859900; font-weight: bold;">import</span> random <span style="color: #859900; font-weight: bold;">as</span> rd
 <span class="linenr">2: </span>
-<span class="linenr">3: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #d33682; font-style: italic;">dir</span>(rd))
+<span class="linenr">3: </span><span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #d33682; font-style: italic;">dir</span>(rd))
 </pre>
 </div>
 
@@ -2963,8 +2963,8 @@ Na linha 1 temos novamente a instrução <code>import</code>. Estamos importando
 </div>
 </div>
 
-<div id="outline-container-org4b4ce18" class="outline-3">
-<h3 id="org4b4ce18"><span class="section-number-3">7.3.</span> Importando apenas o necessário</h3>
+<div id="outline-container-org9e7172a" class="outline-3">
+<h3 id="org9e7172a"><span class="section-number-3">7.3.</span> Importando apenas o necessário</h3>
 <div class="outline-text-3" id="text-7-3">
 <p class="verse">
 Eu uso o necessário<br />
@@ -2984,7 +2984,7 @@ Digamos que você queira calcular o logaritmo natural de um número e não preci
 <pre class="src src-python"><span class="linenr">1: </span><span style="color: #859900; font-weight: bold;">from</span> math <span style="color: #859900; font-weight: bold;">import</span> log  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">leia-se "do m&#243;dulo `math`, importe o objeto `log`"</span>
 <span class="linenr">2: </span>
 <span class="linenr">3: </span><span style="color: #268bd2;">valor</span> = <span style="color: #6c71c4; font-weight: bold;">10000</span>
-<span class="linenr">4: </span><span style="color: #859900; font-weight: bold;">print</span>(log(valor))
+<span class="linenr">4: </span><span style="color: #d33682; font-style: italic;">print</span>(log(valor))
 </pre>
 </div>
 
@@ -3003,9 +3003,9 @@ Para importar mais de um objeto de um módulo, use vírgulas. Veja no exemplo ab
 <div class="org-src-container">
 <pre class="src src-python"><span class="linenr">1: </span><span style="color: #859900; font-weight: bold;">from</span> math <span style="color: #859900; font-weight: bold;">import</span> factorial, pi, e
 <span class="linenr">2: </span>
-<span class="linenr">3: </span><span style="color: #859900; font-weight: bold;">print</span>(pi)
-<span class="linenr">4: </span><span style="color: #859900; font-weight: bold;">print</span>(e)
-<span class="linenr">5: </span><span style="color: #859900; font-weight: bold;">print</span>(factorial(<span style="color: #6c71c4; font-weight: bold;">5</span>))
+<span class="linenr">3: </span><span style="color: #d33682; font-style: italic;">print</span>(pi)
+<span class="linenr">4: </span><span style="color: #d33682; font-style: italic;">print</span>(e)
+<span class="linenr">5: </span><span style="color: #d33682; font-style: italic;">print</span>(factorial(<span style="color: #6c71c4; font-weight: bold;">5</span>))
 </pre>
 </div>
 
@@ -3020,16 +3020,16 @@ Existe uma sintaxe que nos permite importar <i>todos</i> os objetos de um módul
 <span class="linenr">4: </span><span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">chamar o namespace `math`. Por&#233;m, com a importa&#231;&#227;o com  aster&#237;sco,</span>
 <span class="linenr">5: </span><span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">n&#227;o fica claro de onde elas vieram (imagina isso num c&#243;dico com milhares</span>
 <span class="linenr">6: </span><span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">de linhas...)</span>
-<span class="linenr">7: </span><span style="color: #859900; font-weight: bold;">print</span>(exp(<span style="color: #6c71c4; font-weight: bold;">10</span>))
-<span class="linenr">8: </span><span style="color: #859900; font-weight: bold;">print</span>(log2(<span style="color: #6c71c4; font-weight: bold;">100</span>))
-<span class="linenr">9: </span><span style="color: #859900; font-weight: bold;">print</span>(tan(<span style="color: #6c71c4; font-weight: bold;">5</span>))
+<span class="linenr">7: </span><span style="color: #d33682; font-style: italic;">print</span>(exp(<span style="color: #6c71c4; font-weight: bold;">10</span>))
+<span class="linenr">8: </span><span style="color: #d33682; font-style: italic;">print</span>(log2(<span style="color: #6c71c4; font-weight: bold;">100</span>))
+<span class="linenr">9: </span><span style="color: #d33682; font-style: italic;">print</span>(tan(<span style="color: #6c71c4; font-weight: bold;">5</span>))
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgabebb2b" class="outline-3">
-<h3 id="orgabebb2b"><span class="section-number-3">7.4.</span> Documentação da biblioteca padrão</h3>
+<div id="outline-container-orgddbd367" class="outline-3">
+<h3 id="orgddbd367"><span class="section-number-3">7.4.</span> Documentação da biblioteca padrão</h3>
 <div class="outline-text-3" id="text-7-4">
 <blockquote>
 <p>
@@ -3068,8 +3068,8 @@ A biblioteca padrão do Python é bastante extensa. Uma forma de checar o que j�
 </div>
 </div>
 
-<div id="outline-container-orgf6a356b" class="outline-3">
-<h3 id="orgf6a356b"><span class="section-number-3">7.5.</span> Lendo dados externos ao Python</h3>
+<div id="outline-container-org65aa2e7" class="outline-3">
+<h3 id="org65aa2e7"><span class="section-number-3">7.5.</span> Lendo dados externos ao Python</h3>
 <div class="outline-text-3" id="text-7-5">
 <blockquote>
 <p>
@@ -3145,7 +3145,7 @@ Agora rode o código abaixo (certifique-se que seu kernel do Jupyter tem a bibli
 <pre class="src src-python"><span class="linenr">1: </span><span style="color: #859900; font-weight: bold;">import</span> pandas <span style="color: #859900; font-weight: bold;">as</span> pd
 <span class="linenr">2: </span>
 <span class="linenr">3: </span><span style="color: #268bd2;">dados</span> = pd.read_excel(<span style="color: #2aa198;">"populacao.xlsx"</span>)
-<span class="linenr">4: </span><span style="color: #859900; font-weight: bold;">print</span>(dados)
+<span class="linenr">4: </span><span style="color: #d33682; font-style: italic;">print</span>(dados)
 </pre>
 </div>
 
@@ -3170,9 +3170,9 @@ Vamos ver como isso aconteceu. Primeiramente nós importamos a biblioteca <code>
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span class="linenr">1: </span><span style="color: #859900; font-weight: bold;">print</span>(dados[<span style="color: #2aa198;">'Pa&#237;s'</span>])
-<span class="linenr">2: </span><span style="color: #859900; font-weight: bold;">print</span>(dados[<span style="color: #2aa198;">'Continente'</span>])
-<span class="linenr">3: </span><span style="color: #859900; font-weight: bold;">print</span>(dados[<span style="color: #2aa198;">'Popula&#231;&#227;o'</span>])
+<pre class="src src-python"><span class="linenr">1: </span><span style="color: #d33682; font-style: italic;">print</span>(dados[<span style="color: #2aa198;">'Pa&#237;s'</span>])
+<span class="linenr">2: </span><span style="color: #d33682; font-style: italic;">print</span>(dados[<span style="color: #2aa198;">'Continente'</span>])
+<span class="linenr">3: </span><span style="color: #d33682; font-style: italic;">print</span>(dados[<span style="color: #2aa198;">'Popula&#231;&#227;o'</span>])
 </pre>
 </div>
 
@@ -3181,14 +3181,14 @@ Antes de seguir em frente, vamos ver uma nomenclatura. O objeto <code>dados</cod
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #d33682; font-style: italic;">type</span>(dados))
+<pre class="src src-python"><span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #d33682; font-style: italic;">type</span>(dados))
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org64361c6" class="outline-3">
-<h3 id="org64361c6"><span class="section-number-3">7.6.</span> Manipulando dados armazenados em <code>DataFrames</code></h3>
+<div id="outline-container-orgc9bec5f" class="outline-3">
+<h3 id="orgc9bec5f"><span class="section-number-3">7.6.</span> Manipulando dados armazenados em <code>DataFrames</code></h3>
 <div class="outline-text-3" id="text-7-6">
 <blockquote>
 <p>
@@ -3205,9 +3205,9 @@ Os objetos do tipo <code>DataFrame</code> são absurdamente poderosos! Eles nos 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span class="linenr">1: </span><span style="color: #859900; font-weight: bold;">print</span>(dados.sort_values(<span style="color: #2aa198;">"Popula&#231;&#227;o"</span>))
-<span class="linenr">2: </span><span style="color: #859900; font-weight: bold;">print</span>()
-<span class="linenr">3: </span><span style="color: #859900; font-weight: bold;">print</span>(dados.sort_values(<span style="color: #2aa198;">"Popula&#231;&#227;o"</span>, ascending=<span style="color: #6c71c4; font-weight: bold;">False</span>))
+<pre class="src src-python"><span class="linenr">1: </span><span style="color: #d33682; font-style: italic;">print</span>(dados.sort_values(<span style="color: #2aa198;">"Popula&#231;&#227;o"</span>))
+<span class="linenr">2: </span><span style="color: #d33682; font-style: italic;">print</span>()
+<span class="linenr">3: </span><span style="color: #d33682; font-style: italic;">print</span>(dados.sort_values(<span style="color: #2aa198;">"Popula&#231;&#227;o"</span>, ascending=<span style="color: #6c71c4; font-weight: bold;">False</span>))
 </pre>
 </div>
 
@@ -3222,9 +3222,9 @@ Os dois exercícios anteriores são apenas exemplos para mostrar que <span class
 <div class="org-src-container">
 <pre class="src src-python"><span class="linenr">1: </span><span style="color: #268bd2;">dados_modificados</span> = dados.sort_values(<span style="color: #2aa198;">"Popula&#231;&#227;o"</span>)
 <span class="linenr">2: </span>
-<span class="linenr">3: </span><span style="color: #859900; font-weight: bold;">print</span>(dados_modificados)
-<span class="linenr">4: </span><span style="color: #859900; font-weight: bold;">print</span>()
-<span class="linenr">5: </span><span style="color: #859900; font-weight: bold;">print</span>(dados)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">esse &#233; o original!</span>
+<span class="linenr">3: </span><span style="color: #d33682; font-style: italic;">print</span>(dados_modificados)
+<span class="linenr">4: </span><span style="color: #d33682; font-style: italic;">print</span>()
+<span class="linenr">5: </span><span style="color: #d33682; font-style: italic;">print</span>(dados)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">esse &#233; o original!</span>
 </pre>
 </div>
 
@@ -3235,7 +3235,7 @@ Nada nos impede de guardar essa &ldquo;visão&rdquo; na própria variável origi
 <div class="org-src-container">
 <pre class="src src-python"><span class="linenr">1: </span><span style="color: #268bd2;">dados</span> = dados.sort_values(<span style="color: #2aa198;">"Popula&#231;&#227;o"</span>)
 <span class="linenr">2: </span>
-<span class="linenr">3: </span><span style="color: #859900; font-weight: bold;">print</span>(dados)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">agora a vari&#225;vel orinal foi subsitituida</span>
+<span class="linenr">3: </span><span style="color: #d33682; font-style: italic;">print</span>(dados)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">agora a vari&#225;vel orinal foi subsitituida</span>
 </pre>
 </div>
 
@@ -3246,9 +3246,9 @@ Digamos que você queira saber quantos Equadores &ldquo;cabem&rdquo; em cada um 
 <div class="org-src-container">
 <pre class="src src-python"><span class="linenr">1: </span><span style="color: #268bd2;">dados_modificados</span> = dados.copy()
 <span class="linenr">2: </span><span style="color: #268bd2;">dados_modificados</span>[<span style="color: #2aa198;">'Popula&#231;&#227;o'</span>] = dados_modificados[<span style="color: #2aa198;">'Popula&#231;&#227;o'</span>] / <span style="color: #6c71c4; font-weight: bold;">17715822</span>
-<span class="linenr">3: </span><span style="color: #859900; font-weight: bold;">print</span>(dados_modificados)
-<span class="linenr">4: </span><span style="color: #859900; font-weight: bold;">print</span>()
-<span class="linenr">5: </span><span style="color: #859900; font-weight: bold;">print</span>(dados)
+<span class="linenr">3: </span><span style="color: #d33682; font-style: italic;">print</span>(dados_modificados)
+<span class="linenr">4: </span><span style="color: #d33682; font-style: italic;">print</span>()
+<span class="linenr">5: </span><span style="color: #d33682; font-style: italic;">print</span>(dados)
 </pre>
 </div>
 
@@ -3262,8 +3262,8 @@ Primeiramente, na linha 1, nós criamos uma cópia dos nossos dados para não al
 </div>
 </div>
 
-<div id="outline-container-org3fa98c2" class="outline-3">
-<h3 id="org3fa98c2"><span class="section-number-3">7.7.</span> Plotando gráficos com <code>pandas</code></h3>
+<div id="outline-container-orga1c152c" class="outline-3">
+<h3 id="orga1c152c"><span class="section-number-3">7.7.</span> Plotando gráficos com <code>pandas</code></h3>
 <div class="outline-text-3" id="text-7-7">
 <blockquote>
 <p>
@@ -3333,13 +3333,19 @@ Veja que para salvar o gráfico primeiro precisamos obter o objeto <code>fig</co
 </div>
 </div>
 </div>
-<div id="outline-container-org6096979" class="outline-2">
-<h2 id="org6096979"><span class="section-number-2">8.</span> Vetores e matrizes</h2>
+<div id="outline-container-orge93c1cf" class="outline-2">
+<h2 id="orge93c1cf"><span class="section-number-2">8.</span> Vetores e matrizes</h2>
 <div class="outline-text-2" id="text-8">
 </div>
-<div id="outline-container-orge5c57d3" class="outline-3">
-<h3 id="orge5c57d3"><span class="section-number-3">8.1.</span> Listas não foram feitas para cálculos de álgebra linear</h3>
+<div id="outline-container-org62ac227" class="outline-3">
+<h3 id="org62ac227"><span class="section-number-3">8.1.</span> Listas não foram feitas para cálculos de álgebra linear</h3>
 <div class="outline-text-3" id="text-8-1">
+<blockquote>
+<p>
+&ldquo;<i>Todo mundo é um gênio. Mas se você julgar um peixe por sua capacidade de subir em uma árvore, ele vai gastar toda a vida acreditando que é estúpido.</i>&rdquo; &#x2014; Autor desconhecido
+</p>
+</blockquote>
+
 <p>
 Listas de Python são objetos muito úteis para diversas tarefas, porém não para cálculos de álgebra linear. Isto pois listas não são vetores e listas não são matrizes; listas são apenas um conjunto de objetos agrupados em uma certa ordem, nada mais nada menos.
 </p>
@@ -3354,8 +3360,8 @@ Para cálculos de álgebra linear nós temos a disposição a excelente bibliote
 <span class="linenr"> 3: </span>
 <span class="linenr"> 4: </span><span style="color: #268bd2;">array_1d</span> = np.array([<span style="color: #6c71c4; font-weight: bold;">1</span>, <span style="color: #6c71c4; font-weight: bold;">2</span>, <span style="color: #6c71c4; font-weight: bold;">3</span>])  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">array de 1 dimens&#227;o</span>
 <span class="linenr"> 5: </span>
-<span class="linenr"> 6: </span><span style="color: #859900; font-weight: bold;">print</span>(array_1d)
-<span class="linenr"> 7: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #d33682; font-style: italic;">type</span>(array_1d))
+<span class="linenr"> 6: </span><span style="color: #d33682; font-style: italic;">print</span>(array_1d)
+<span class="linenr"> 7: </span><span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #d33682; font-style: italic;">type</span>(array_1d))
 <span class="linenr"> 8: </span>
 <span class="linenr"> 9: </span><span style="color: #268bd2;">lista_de_listas</span> = [
 <span class="linenr">10: </span>    [<span style="color: #6c71c4; font-weight: bold;">1</span>, <span style="color: #6c71c4; font-weight: bold;">2</span>, <span style="color: #6c71c4; font-weight: bold;">3</span>],
@@ -3365,8 +3371,8 @@ Para cálculos de álgebra linear nós temos a disposição a excelente bibliote
 <span class="linenr">14: </span>
 <span class="linenr">15: </span><span style="color: #268bd2;">array_2d</span> = np.array(lista_de_listas)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">array de 2 dimens&#245;es</span>
 <span class="linenr">16: </span>
-<span class="linenr">17: </span><span style="color: #859900; font-weight: bold;">print</span>(array_2d)
-<span class="linenr">18: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #d33682; font-style: italic;">type</span>(array_2d))
+<span class="linenr">17: </span><span style="color: #d33682; font-style: italic;">print</span>(array_2d)
+<span class="linenr">18: </span><span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #d33682; font-style: italic;">type</span>(array_2d))
 </pre>
 </div>
 
@@ -3388,9 +3394,15 @@ Como você deve ter percebido na prática, arrays não se comportam como listas 
 </div>
 </div>
 
-<div id="outline-container-org7d019aa" class="outline-3">
-<h3 id="org7d019aa"><span class="section-number-3">8.2.</span> Criando arrays sem usar listas</h3>
+<div id="outline-container-org4f657de" class="outline-3">
+<h3 id="org4f657de"><span class="section-number-3">8.2.</span> Criando arrays sem usar listas</h3>
 <div class="outline-text-3" id="text-8-2">
+<blockquote>
+<p>
+&ldquo;<i>Não podemos resolver nossos problemas com o mesmo nível de pensamento que usamos para criá-los.</i>&rdquo; &#x2014; Albert Einstein
+</p>
+</blockquote>
+
 <p>
 Podemos criar arrays sem a necessidade de fornecer uma lista como dado de entrada, o que costuma ser muito útil!
 </p>
@@ -3419,7 +3431,7 @@ O <code>numpy</code> tem também a função <code>arange</code> que funciona de 
 <span class="linenr">4: </span><span style="color: #268bd2;">array4</span> = np.arange(<span style="color: #6c71c4; font-weight: bold;">0</span>, <span style="color: #6c71c4; font-weight: bold;">1</span>, <span style="color: #6c71c4; font-weight: bold;">0.1</span>)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">o intervalo n&#227;o precisa ser inteiro!</span>
 <span class="linenr">5: </span>
 <span class="linenr">6: </span><span style="color: #859900; font-weight: bold;">for</span> array <span style="color: #859900; font-weight: bold;">in</span> [array1, array2, array3, array4]:
-<span class="linenr">7: </span>    <span style="color: #859900; font-weight: bold;">print</span>(array)
+<span class="linenr">7: </span>    <span style="color: #d33682; font-style: italic;">print</span>(array)
 </pre>
 </div>
 
@@ -3433,7 +3445,7 @@ Existe também a função <code>linspace</code> que serve para criar um array co
 <span class="linenr">3: </span><span style="color: #268bd2;">array3</span> = np.linspace(<span style="color: #6c71c4; font-weight: bold;">0</span>, <span style="color: #6c71c4; font-weight: bold;">10</span>)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">sem o &#250;ltimo argumento ele gera 50 n&#250;meros</span>
 <span class="linenr">4: </span>
 <span class="linenr">5: </span><span style="color: #859900; font-weight: bold;">for</span> array <span style="color: #859900; font-weight: bold;">in</span> [array1, array2, array3]:
-<span class="linenr">6: </span>    <span style="color: #859900; font-weight: bold;">print</span>(array)
+<span class="linenr">6: </span>    <span style="color: #d33682; font-style: italic;">print</span>(array)
 </pre>
 </div>
 
@@ -3447,17 +3459,27 @@ Por fim, podemos gerar um array aleatório com o comando <code>random</code> do 
 <span class="linenr">3: </span><span style="color: #268bd2;">array_2d_3x3</span> = np.random.random((<span style="color: #6c71c4; font-weight: bold;">3</span>, <span style="color: #6c71c4; font-weight: bold;">3</span>))
 <span class="linenr">4: </span><span style="color: #268bd2;">array_2d_5x4</span> = np.random.random((<span style="color: #6c71c4; font-weight: bold;">5</span>, <span style="color: #6c71c4; font-weight: bold;">4</span>))
 <span class="linenr">5: </span>
-<span class="linenr">6: </span><span style="color: #859900; font-weight: bold;">print</span>(array_1d)
-<span class="linenr">7: </span><span style="color: #859900; font-weight: bold;">print</span>(array_2d_3x3)
-<span class="linenr">8: </span><span style="color: #859900; font-weight: bold;">print</span>(array_2d_5x4)
+<span class="linenr">6: </span><span style="color: #d33682; font-style: italic;">print</span>(array_1d)
+<span class="linenr">7: </span><span style="color: #d33682; font-style: italic;">print</span>(array_2d_3x3)
+<span class="linenr">8: </span><span style="color: #d33682; font-style: italic;">print</span>(array_2d_5x4)
 </pre>
 </div>
+
+<p>
+<b>[B]</b> Crie um array utilizando o <code>linspace</code> e outro array utilizando o <code>random</code>. Após criá-los, multiplique os dois arrays e exiba o resultado.
+</p>
 </div>
 </div>
 
-<div id="outline-container-org091fe72" class="outline-3">
-<h3 id="org091fe72"><span class="section-number-3">8.3.</span> Funções universais</h3>
+<div id="outline-container-org668e086" class="outline-3">
+<h3 id="org668e086"><span class="section-number-3">8.3.</span> Funções universais</h3>
 <div class="outline-text-3" id="text-8-3">
+<blockquote>
+<p>
+&ldquo;<i>A matemática expressa valores que refletem o cosmos, incluindo ordem, equilíbrio, harmonia, lógica e beleza abstrata.</i>&rdquo; &#x2014; Deepak Chopra
+</p>
+</blockquote>
+
 <p>
 Quando trabalhamos com dados é bastante comum situações onde temos que aplicar uma função matemática em um certo conjunto de dados. Por exemplo: calcular o logaritmo dos valores em uma coluna de uma tabela. O código abaixo mostra que isso não é possível com a função <code>log</code> do módulo <code>math</code>&#x2026; essa função funciona apenas em variáveis numéricas&#x2026; e agora?
 </p>
@@ -3467,7 +3489,7 @@ Quando trabalhamos com dados é bastante comum situações onde temos que aplica
 <span class="linenr">2: </span>
 <span class="linenr">3: </span>
 <span class="linenr">4: </span><span style="color: #268bd2;">lista</span> = [<span style="color: #6c71c4; font-weight: bold;">1</span>, <span style="color: #6c71c4; font-weight: bold;">2</span>, <span style="color: #6c71c4; font-weight: bold;">3</span>]
-<span class="linenr">5: </span><span style="color: #859900; font-weight: bold;">print</span>(log(lista))
+<span class="linenr">5: </span><span style="color: #d33682; font-style: italic;">print</span>(log(lista))
 </pre>
 </div>
 
@@ -3477,7 +3499,7 @@ Precisamos de funções que &ldquo;entendem&rdquo; como operar nos elementos de 
 
 <div class="org-src-container">
 <pre class="src src-python"><span class="linenr">1: </span><span style="color: #268bd2;">lista</span> = [<span style="color: #6c71c4; font-weight: bold;">1</span>, <span style="color: #6c71c4; font-weight: bold;">2</span>, <span style="color: #6c71c4; font-weight: bold;">3</span>]
-<span class="linenr">2: </span><span style="color: #859900; font-weight: bold;">print</span>(np.log(lista))  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">estamos usando o `log` do numpy aqui</span>
+<span class="linenr">2: </span><span style="color: #d33682; font-style: italic;">print</span>(np.log(lista))  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">estamos usando o `log` do numpy aqui</span>
 </pre>
 </div>
 
@@ -3492,21 +3514,27 @@ O <code>numpy</code> tem diversas funções universais como <code>log</code>, <c
 <ol class="org-ol">
 <li value="0">polinomial de grau 2 em \(x\)</li>
 <li>exponencial de \(x\)</li>
-<li>logaritimo base 10 de \(x\)</li>
+<li>logaritmo base 10 de \(x\)</li>
 <li>raiz quadrada de \(x\)</li>
 <li>seno de \(x\)</li>
-<li>coseno de \(x\)</li>
+<li>cosseno de \(x\)</li>
 <li>arco tangente de \(x\)</li>
 <li>dez elevado a \(x\)</li>
 <li>absoluto de \(x\)</li>
-<li>coseno hiperbólico de \(x\)</li>
+<li>cosseno hiperbólico de \(x\)</li>
 </ol>
 </div>
 </div>
 
-<div id="outline-container-orgd2d340d" class="outline-3">
-<h3 id="orgd2d340d"><span class="section-number-3">8.4.</span> Funções agregadoras</h3>
+<div id="outline-container-org20c2e71" class="outline-3">
+<h3 id="org20c2e71"><span class="section-number-3">8.4.</span> Funções agregadoras</h3>
 <div class="outline-text-3" id="text-8-4">
+<blockquote>
+<p>
+&ldquo;<i>Se nós dois estamos com fome e eu como um frango inteiro, na média estamos nós dois saciados.</i>&rdquo; &#x2014; Autor desconhecido
+</p>
+</blockquote>
+
 <p>
 Soma dos elementos, mínimo, máximo, média e desvio padrão são operações chamadas agregadoras que são muito utilizadas. Arrays de <code>numpy</code> nos permitem computar esses valores de maneira muito fácil! Veja o exemplo abaixo.
 </p>
@@ -3521,7 +3549,7 @@ Soma dos elementos, mínimo, máximo, média e desvio padrão são operações c
 <span class="linenr"> 7: </span><span style="color: #268bd2;">desvio_padrao</span> = array1.std()
 <span class="linenr"> 8: </span>
 <span class="linenr"> 9: </span><span style="color: #859900; font-weight: bold;">for</span> valor <span style="color: #859900; font-weight: bold;">in</span> [soma, minimo, maximo, media, desvio_padrao]:
-<span class="linenr">10: </span>    <span style="color: #859900; font-weight: bold;">print</span>(valor)
+<span class="linenr">10: </span>    <span style="color: #d33682; font-style: italic;">print</span>(valor)
 </pre>
 </div>
 
@@ -3545,7 +3573,7 @@ O que acontece quando usamos essas funções em arrays com mais de uma dimensão
 <span class="linenr">13: </span><span style="color: #268bd2;">desvio_padrao</span> = array2.std()
 <span class="linenr">14: </span>
 <span class="linenr">15: </span><span style="color: #859900; font-weight: bold;">for</span> valor <span style="color: #859900; font-weight: bold;">in</span> [soma, minimo, maximo, media, desvio_padrao]:
-<span class="linenr">16: </span>    <span style="color: #859900; font-weight: bold;">print</span>(valor)
+<span class="linenr">16: </span>    <span style="color: #d33682; font-style: italic;">print</span>(valor)
 </pre>
 </div>
 
@@ -3566,35 +3594,41 @@ Para ser absurdamente sincero, leva um tempo até se acostumar com essa notaçã
 <span class="linenr"> 6: </span>    ]
 <span class="linenr"> 7: </span>)
 <span class="linenr"> 8: </span>
-<span class="linenr"> 9: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Calculos realizados na dire&#231;&#227;o das linhas da matriz"</span>)
+<span class="linenr"> 9: </span><span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"Calculos realizados na dire&#231;&#227;o das linhas da matriz"</span>)
 <span class="linenr">10: </span><span style="color: #268bd2;">soma</span> = array2.<span style="color: #d33682; font-style: italic;">sum</span>(axis=<span style="color: #6c71c4; font-weight: bold;">0</span>)
-<span class="linenr">11: </span><span style="color: #268bd2;">minimo</span> = array2.<span style="color: #d33682; font-style: italic;">min</span>(axis=<span style="color: #6c71c4; font-weight: bold;">0</span>)
-<span class="linenr">12: </span><span style="color: #268bd2;">maximo</span> = array2.<span style="color: #d33682; font-style: italic;">max</span>(axis=<span style="color: #6c71c4; font-weight: bold;">0</span>)
-<span class="linenr">13: </span><span style="color: #268bd2;">media</span> = array2.mean(axis=<span style="color: #6c71c4; font-weight: bold;">0</span>)
-<span class="linenr">14: </span><span style="color: #268bd2;">desvio_padrao</span> = array2.std(axis=<span style="color: #6c71c4; font-weight: bold;">0</span>)
+<span class="linenr">11: </span>minimo = array2.<span style="color: #d33682; font-style: italic;">min</span>(axis=<span style="color: #6c71c4; font-weight: bold;">0</span>)
+<span class="linenr">12: </span>maximo = array2.<span style="color: #d33682; font-style: italic;">max</span>(axis=<span style="color: #6c71c4; font-weight: bold;">0</span>)
+<span class="linenr">13: </span>media = array2.mean(axis=<span style="color: #6c71c4; font-weight: bold;">0</span>)
+<span class="linenr">14: </span>desvio_padrao = array2.std(axis=<span style="color: #6c71c4; font-weight: bold;">0</span>)
 <span class="linenr">15: </span>
 <span class="linenr">16: </span><span style="color: #859900; font-weight: bold;">for</span> valor <span style="color: #859900; font-weight: bold;">in</span> [soma, minimo, maximo, media, desvio_padrao]:
-<span class="linenr">17: </span>    <span style="color: #859900; font-weight: bold;">print</span>(valor)
+<span class="linenr">17: </span>    <span style="color: #d33682; font-style: italic;">print</span>(valor)
 <span class="linenr">18: </span>
 <span class="linenr">19: </span>
-<span class="linenr">20: </span><span style="color: #859900; font-weight: bold;">print</span>()
-<span class="linenr">21: </span><span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"Calculos realizados na dire&#231;&#227;o das colunas da matriz"</span>)
-<span class="linenr">22: </span><span style="color: #268bd2;">soma</span> = array2.<span style="color: #d33682; font-style: italic;">sum</span>(axis=<span style="color: #6c71c4; font-weight: bold;">1</span>)
-<span class="linenr">23: </span><span style="color: #268bd2;">minimo</span> = array2.<span style="color: #d33682; font-style: italic;">min</span>(axis=<span style="color: #6c71c4; font-weight: bold;">1</span>)
-<span class="linenr">24: </span><span style="color: #268bd2;">maximo</span> = array2.<span style="color: #d33682; font-style: italic;">max</span>(axis=<span style="color: #6c71c4; font-weight: bold;">1</span>)
-<span class="linenr">25: </span><span style="color: #268bd2;">media</span> = array2.mean(axis=<span style="color: #6c71c4; font-weight: bold;">1</span>)
-<span class="linenr">26: </span><span style="color: #268bd2;">desvio_padrao</span> = array2.std(axis=<span style="color: #6c71c4; font-weight: bold;">1</span>)
+<span class="linenr">20: </span><span style="color: #d33682; font-style: italic;">print</span>()
+<span class="linenr">21: </span><span style="color: #d33682; font-style: italic;">print</span>(<span style="color: #2aa198;">"Calculos realizados na dire&#231;&#227;o das colunas da matriz"</span>)
+<span class="linenr">22: </span>soma = array2.<span style="color: #d33682; font-style: italic;">sum</span>(axis=<span style="color: #6c71c4; font-weight: bold;">1</span>)
+<span class="linenr">23: </span>minimo = array2.<span style="color: #d33682; font-style: italic;">min</span>(axis=<span style="color: #6c71c4; font-weight: bold;">1</span>)
+<span class="linenr">24: </span>maximo = array2.<span style="color: #d33682; font-style: italic;">max</span>(axis=<span style="color: #6c71c4; font-weight: bold;">1</span>)
+<span class="linenr">25: </span>media = array2.mean(axis=<span style="color: #6c71c4; font-weight: bold;">1</span>)
+<span class="linenr">26: </span>desvio_padrao = array2.std(axis=<span style="color: #6c71c4; font-weight: bold;">1</span>)
 <span class="linenr">27: </span>
 <span class="linenr">28: </span><span style="color: #859900; font-weight: bold;">for</span> valor <span style="color: #859900; font-weight: bold;">in</span> [soma, minimo, maximo, media, desvio_padrao]:
-<span class="linenr">29: </span>    <span style="color: #859900; font-weight: bold;">print</span>(valor)
+<span class="linenr">29: </span>    <span style="color: #d33682; font-style: italic;">print</span>(valor)
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org0f10ca3" class="outline-3">
-<h3 id="org0f10ca3"><span class="section-number-3">8.5.</span> Indexando arrays</h3>
+<div id="outline-container-orgc528cb9" class="outline-3">
+<h3 id="orgc528cb9"><span class="section-number-3">8.5.</span> Indexando arrays</h3>
 <div class="outline-text-3" id="text-8-5">
+<blockquote>
+<p>
+&ldquo;<i>Eu poderia ser vendado e jogado no oceano mais profundo e saberia onde encontrá-lo. Eu poderia ser enterrado a cem milhas de profundidade e saberia onde você está.</i>&rdquo; &#x2014; Neil Gaiman, Deuses Americanos
+</p>
+</blockquote>
+
 <p>
 Existem diversas formas de indexar arrays. Veremos as mais simples por enquanto. A sintaxe que aprendemos com listas funciona aqui:
 </p>
@@ -3636,17 +3670,17 @@ Também podemos usar a sintaxe própria do <code>numpy</code> (que não funciona
 </div>
 
 <p>
-Pela natureza iterativa dos arrays, podemos usar eles em laços de repetição <code>for</code> de maneira similar ao que faziamos com listas. Veja um exemplo:
+Pela natureza iterativa dos arrays, podemos usar eles em laços de repetição <code>for</code> de maneira similar ao que fazíamos com listas. Veja um exemplo:
 </p>
 
 <div class="org-src-container">
 <pre class="src src-python"><span class="linenr"> 1: </span><span style="color: #268bd2;">array_1d</span> = np.array([<span style="color: #6c71c4; font-weight: bold;">1</span>, <span style="color: #6c71c4; font-weight: bold;">2</span>, <span style="color: #6c71c4; font-weight: bold;">3</span>, <span style="color: #6c71c4; font-weight: bold;">4</span>])
 <span class="linenr"> 2: </span>
-<span class="linenr"> 3: </span><span style="color: #859900; font-weight: bold;">for</span> valor <span style="color: #859900; font-weight: bold;">in</span> array_1d:
-<span class="linenr"> 4: </span>    <span style="color: #859900; font-weight: bold;">print</span>(valor)
+<span class="linenr"> 3: </span><span style="color: #859900; font-weight: bold;">for</span> valor <span style="color: #859900; font-weight: bold;">in</span> <span style="color: #268bd2;">array_1d</span>:
+<span class="linenr"> 4: </span>    <span style="color: #d33682; font-style: italic;">print</span>(valor)
 <span class="linenr"> 5: </span>
 <span class="linenr"> 6: </span>
-<span class="linenr"> 7: </span><span style="color: #268bd2;">array_2d</span> = np.array(
+<span class="linenr"> 7: </span>array_2d = np.array(
 <span class="linenr"> 8: </span>    [
 <span class="linenr"> 9: </span>        [<span style="color: #6c71c4; font-weight: bold;">1</span>, <span style="color: #6c71c4; font-weight: bold;">2</span>, <span style="color: #6c71c4; font-weight: bold;">3</span>],
 <span class="linenr">10: </span>        [<span style="color: #6c71c4; font-weight: bold;">4</span>, <span style="color: #6c71c4; font-weight: bold;">5</span>, <span style="color: #6c71c4; font-weight: bold;">6</span>],
@@ -3655,12 +3689,16 @@ Pela natureza iterativa dos arrays, podemos usar eles em laços de repetição <
 <span class="linenr">13: </span>)
 <span class="linenr">14: </span>
 <span class="linenr">15: </span><span style="color: #859900; font-weight: bold;">for</span> linha <span style="color: #859900; font-weight: bold;">in</span> array_2d:
-<span class="linenr">16: </span>    <span style="color: #859900; font-weight: bold;">print</span>(linha)
+<span class="linenr">16: </span>    <span style="color: #d33682; font-style: italic;">print</span>(linha)
 </pre>
 </div>
 
 <p>
-<b>[A]</b> A tabela abaixo, armazenada na variável <code>dados</code>, tem 3 colunas: ano, quantidade de pessoas que comeram sorvete de pistache (por mil habitantes) e o logaritmo na base 10 de unidades invididuais de pipoca consumidas (por mil habitantes). Usando indexação de arrays e funções agregadoras, encontre os seguintes valores:
+<b>[A]</b> Crie um array 4 \(\times\) 4. Compute a multiplicação da primeira linha do array pela terceira. Após isso, subtraia do resultado a segunda linha e exiba para o usuário.
+</p>
+
+<p>
+<b>[B]</b> A tabela abaixo, armazenada na variável <code>dados</code>, tem 3 colunas: ano, quantidade de pessoas que comeram sorvete de pistache (por mil habitantes) e o logaritmo na base 10 de unidades individuais de pipoca consumidas (por mil habitantes). Usando indexação de arrays e funções agregadoras, encontre os seguintes valores:
 </p>
 
 <ol class="org-ol">
@@ -3691,9 +3729,15 @@ Pela natureza iterativa dos arrays, podemos usar eles em laços de repetição <
 </div>
 </div>
 
-<div id="outline-container-org5c0e4bb" class="outline-3">
-<h3 id="org5c0e4bb"><span class="section-number-3">8.6.</span> Atributos e peculiaridades de arrays</h3>
+<div id="outline-container-org0d5355d" class="outline-3">
+<h3 id="org0d5355d"><span class="section-number-3">8.6.</span> Atributos e peculiaridades de arrays</h3>
 <div class="outline-text-3" id="text-8-6">
+<blockquote>
+<p>
+&ldquo;<i>Mas minha rosa, sozinha, é mais importante do que todos vocês juntos, já que ela é a que eu reguei.</i>&rdquo; &#x2014; Antoine de Saint-Exupéry, O Pequeno Príncipe
+</p>
+</blockquote>
+
 <p>
 Arrays têm alguns atributos que ajudam muito nossa vida:
 </p>
@@ -3707,10 +3751,10 @@ Arrays têm alguns atributos que ajudam muito nossa vida:
 <span class="linenr"> 6: </span>    ]
 <span class="linenr"> 7: </span>)
 <span class="linenr"> 8: </span>
-<span class="linenr"> 9: </span><span style="color: #859900; font-weight: bold;">print</span>(array.shape)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">formato do array</span>
-<span class="linenr">10: </span><span style="color: #859900; font-weight: bold;">print</span>(array.ndim)   <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">n&#250;mero de dimens&#245;es</span>
-<span class="linenr">11: </span><span style="color: #859900; font-weight: bold;">print</span>(array.size)   <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">quantidade de valores que tem no array</span>
-<span class="linenr">12: </span><span style="color: #859900; font-weight: bold;">print</span>(array.dtype)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">tipo dos dados armazenados no array</span>
+<span class="linenr"> 9: </span><span style="color: #d33682; font-style: italic;">print</span>(array.shape)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">formato do array</span>
+<span class="linenr">10: </span><span style="color: #d33682; font-style: italic;">print</span>(array.ndim)   <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">n&#250;mero de dimens&#245;es</span>
+<span class="linenr">11: </span><span style="color: #d33682; font-style: italic;">print</span>(array.size)   <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">quantidade de valores que tem no array</span>
+<span class="linenr">12: </span><span style="color: #d33682; font-style: italic;">print</span>(array.dtype)  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">tipo dos dados armazenados no array</span>
 </pre>
 </div>
 
@@ -3734,9 +3778,9 @@ Diferentemente de listas, arrays não têm os métodos <code>append</code>, <cod
 <span class="linenr"> 9: </span><span style="color: #268bd2;">array_2</span> = array.reshape((<span style="color: #6c71c4; font-weight: bold;">1</span>, <span style="color: #6c71c4; font-weight: bold;">9</span>))  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">1 linha e 9 colunas</span>
 <span class="linenr">10: </span><span style="color: #268bd2;">array_3</span> = array.reshape((<span style="color: #6c71c4; font-weight: bold;">9</span>, <span style="color: #6c71c4; font-weight: bold;">1</span>))  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">9 linhas e 1 coluna</span>
 <span class="linenr">11: </span>
-<span class="linenr">12: </span><span style="color: #859900; font-weight: bold;">print</span>(array)
-<span class="linenr">13: </span><span style="color: #859900; font-weight: bold;">print</span>(array_2)
-<span class="linenr">14: </span><span style="color: #859900; font-weight: bold;">print</span>(array_3)
+<span class="linenr">12: </span><span style="color: #d33682; font-style: italic;">print</span>(array)
+<span class="linenr">13: </span><span style="color: #d33682; font-style: italic;">print</span>(array_2)
+<span class="linenr">14: </span><span style="color: #d33682; font-style: italic;">print</span>(array_3)
 </pre>
 </div>
 
@@ -3759,9 +3803,9 @@ Veja que as operações do <code>numpy</code> nunca geram uma <i>cópia</i> do s
 <span class="linenr">12: </span><span style="color: #268bd2;">array_2</span>[<span style="color: #6c71c4; font-weight: bold;">0</span>, <span style="color: #6c71c4; font-weight: bold;">0</span>] = <span style="color: #6c71c4; font-weight: bold;">10</span>  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">alteramos o valor da linha 0 e da coluna 0 apenas do array_2</span>
 <span class="linenr">13: </span>
 <span class="linenr">14: </span><span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">veja que todos os arrays foram alterados!!!</span>
-<span class="linenr">15: </span><span style="color: #859900; font-weight: bold;">print</span>(array)
-<span class="linenr">16: </span><span style="color: #859900; font-weight: bold;">print</span>(array_2)
-<span class="linenr">17: </span><span style="color: #859900; font-weight: bold;">print</span>(array_3)
+<span class="linenr">15: </span><span style="color: #d33682; font-style: italic;">print</span>(array)
+<span class="linenr">16: </span><span style="color: #d33682; font-style: italic;">print</span>(array_2)
+<span class="linenr">17: </span><span style="color: #d33682; font-style: italic;">print</span>(array_3)
 </pre>
 </div>
 
@@ -3783,17 +3827,23 @@ Então sempre que precisar, crie uma cópia do seu array com o método <code>cop
 <span class="linenr">11: </span>
 <span class="linenr">12: </span><span style="color: #268bd2;">array_2</span>[<span style="color: #6c71c4; font-weight: bold;">0</span>, <span style="color: #6c71c4; font-weight: bold;">0</span>] = <span style="color: #6c71c4; font-weight: bold;">10</span>  <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">alteramos o valor da linha 0 e da coluna 0 apenas do array_2</span>
 <span class="linenr">13: </span>
-<span class="linenr">14: </span><span style="color: #859900; font-weight: bold;">print</span>(array)
-<span class="linenr">15: </span><span style="color: #859900; font-weight: bold;">print</span>(array_2) <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">apenas esse foi modificado pois ele &#233; uma c&#243;pia!</span>
-<span class="linenr">16: </span><span style="color: #859900; font-weight: bold;">print</span>(array_3)
+<span class="linenr">14: </span><span style="color: #d33682; font-style: italic;">print</span>(array)
+<span class="linenr">15: </span><span style="color: #d33682; font-style: italic;">print</span>(array_2) <span style="color: #96A7A9; font-style: italic;"># </span><span style="color: #96A7A9; font-style: italic;">apenas esse foi modificado pois ele &#233; uma c&#243;pia!</span>
+<span class="linenr">16: </span><span style="color: #d33682; font-style: italic;">print</span>(array_3)
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orga172f3e" class="outline-3">
-<h3 id="orga172f3e"><span class="section-number-3">8.7.</span> Algumas operações de álgebra linear</h3>
+<div id="outline-container-org7548c4f" class="outline-3">
+<h3 id="org7548c4f"><span class="section-number-3">8.7.</span> Algumas operações de álgebra linear</h3>
 <div class="outline-text-3" id="text-8-7">
+<blockquote>
+<p>
+&ldquo;<i>Se álgebra linear já não é lá muito fácil, imagina a não-linear&#x2026;</i>&rdquo; &#x2014; D. R. Cassar
+</p>
+</blockquote>
+
 <p>
 Multiplicação matricial entre dois arrays pode ser feita com o operador <code>@</code> (também conhecido com operador de multiplicação matricial).
 </p>
@@ -3809,7 +3859,7 @@ Multiplicação matricial entre dois arrays pode ser feita com o operador <code>
 <span class="linenr"> 8: </span>
 <span class="linenr"> 9: </span><span style="color: #268bd2;">multiplicacao</span> = array @ array
 <span class="linenr">10: </span>
-<span class="linenr">11: </span><span style="color: #859900; font-weight: bold;">print</span>(multiplicacao)
+<span class="linenr">11: </span><span style="color: #d33682; font-style: italic;">print</span>(multiplicacao)
 </pre>
 </div>
 
@@ -3828,9 +3878,9 @@ A matriz transposta de um array pode ser obtida com o atributo <code>T</code>.
 <span class="linenr"> 8: </span>
 <span class="linenr"> 9: </span><span style="color: #268bd2;">transposta</span> = array.T
 <span class="linenr">10: </span>
-<span class="linenr">11: </span><span style="color: #859900; font-weight: bold;">print</span>(array)
-<span class="linenr">12: </span><span style="color: #859900; font-weight: bold;">print</span>()
-<span class="linenr">13: </span><span style="color: #859900; font-weight: bold;">print</span>(transposta)
+<span class="linenr">11: </span><span style="color: #d33682; font-style: italic;">print</span>(array)
+<span class="linenr">12: </span><span style="color: #d33682; font-style: italic;">print</span>()
+<span class="linenr">13: </span><span style="color: #d33682; font-style: italic;">print</span>(transposta)
 </pre>
 </div>
 
@@ -3850,33 +3900,14 @@ O determinante de uma matriz pode ser calculado com a função <code>linalg.det<
 <span class="linenr"> 9: </span><span style="color: #268bd2;">determinante</span> = np.linalg.det(array)
 <span class="linenr">10: </span><span style="color: #268bd2;">inversa</span> = np.linalg.inv(array)
 <span class="linenr">11: </span>
-<span class="linenr">12: </span><span style="color: #859900; font-weight: bold;">print</span>(determinante)
-<span class="linenr">13: </span><span style="color: #859900; font-weight: bold;">print</span>()
-<span class="linenr">14: </span><span style="color: #859900; font-weight: bold;">print</span>(inversa)
+<span class="linenr">12: </span><span style="color: #d33682; font-style: italic;">print</span>(determinante)
+<span class="linenr">13: </span><span style="color: #d33682; font-style: italic;">print</span>()
+<span class="linenr">14: </span><span style="color: #d33682; font-style: italic;">print</span>(inversa)
 </pre>
 </div>
 
 <p>
-Outras operações de algebra linear podem ser checadas na <a href="https://numpy.org/doc/stable/reference/routines.linalg.html">documentação oficial</a>, como sempre.
-</p>
-
-<p>
-<b>[A]</b> Crie uma função que recebe um array 3 \(\times\) 4. Este array representa a matriz de um sistema linear de equações. A função deve checar se o sistema tem solução única. Em caso positivo, utilize o método de eliminação de Gauss para resolver o sistema e retorne para o usuário um array de 1 dimensão com os 3 valores da solução. Teste seu algoritmo com o array abaixo. Se seu algoritmo estiver correto, a resposta para esse sistema deve ser [2, 3, -1]. <span class="underline">Nota</span>: não precisamos dizer que não é permitido usar uma função pronta do <code>numpy</code> (ou de qualquer outra biblioteca) que resolve sistemas lineares, não é? [Problema sugerido pelo Prof. Vinicius]
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span class="linenr">1: </span><span style="color: #268bd2;">teste</span> = np.array(
-<span class="linenr">2: </span>    [
-<span class="linenr">3: </span>        [<span style="color: #6c71c4; font-weight: bold;">2</span>, <span style="color: #6c71c4; font-weight: bold;">1</span>, -<span style="color: #6c71c4; font-weight: bold;">1</span>, <span style="color: #6c71c4; font-weight: bold;">8</span>],
-<span class="linenr">4: </span>        [-<span style="color: #6c71c4; font-weight: bold;">3</span>, -<span style="color: #6c71c4; font-weight: bold;">1</span>, <span style="color: #6c71c4; font-weight: bold;">2</span>, -<span style="color: #6c71c4; font-weight: bold;">11</span>],
-<span class="linenr">5: </span>        [-<span style="color: #6c71c4; font-weight: bold;">2</span>, <span style="color: #6c71c4; font-weight: bold;">1</span>, <span style="color: #6c71c4; font-weight: bold;">2</span>, -<span style="color: #6c71c4; font-weight: bold;">3</span>],
-<span class="linenr">6: </span>    ]
-<span class="linenr">7: </span>)
-</pre>
-</div>
-
-<p>
-<b>[B]</b> Considere a série de Taylor da função exponencial (\(e^x\)) com \(x_0=0\). Faça três gráficos do erro da série de Taylor em função no número de termos da série, cada gráfico deve ser feito para um valor de \(x\) diferente. Calcule o erro considerando o retorno da função <code>exp</code> do módulo <code>math</code> ou <code>numpy</code>. [Problema sugerido pelo Prof. Vinicius]
+Outras operações de álgebra linear podem ser checadas na <a href="https://numpy.org/doc/stable/reference/routines.linalg.html">documentação oficial</a>, como sempre.
 </p>
 </div>
 </div>
@@ -3904,7 +3935,7 @@ Outras operações de algebra linear podem ser checadas na <a href="https://nump
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Daniel R. Cassar &amp; James M. de Almeida</p>
-<p class="date">Created: 2022-05-02 seg 16:35</p>
+<p class="date">Created: 2022-05-03 Tue 11:46</p>
 </div>
 </body>
 </html>

@@ -4415,7 +4415,7 @@ O método "oposto" ao ~split~ é o ~join~. Este método recebe uma lista de stri
 :
 : O*_ . _*último*_ . _*ser*_ . _*vivo*_ . _*do*_ . _*planeta*_ . _*estava*_ . _*na*_ . _*sua*_ . _*casa,*_ . _*sozinho.*_ . _*De*_ . _*repente,*_ . _*alguém*_ . _*bateu*_ . _*na*_ . _*sua*_ . _*porta.
 
-*[A]* Escolha uma notícia de jornal que tenha mais de 500 palavras. Crie uma string com o texto desta notícia (_dica_: strings com três aspas permitem texto com mais de uma linha!). Seu objetivo é processar este texto e mostrar quais são as 10 palavras mais usadas nele. Use apenas funções, módulos e estruturas de dados embutidos de Python para resolver esta questão (em outras palavras, não use nada de bibliotecas externas aqui).
+*[A]* Escolha uma notícia de jornal que tenha mais de 500 palavras. Crie uma string com o texto desta notícia (dica: strings com três aspas permitem texto com mais de uma linha!). Seu objetivo é processar este texto e mostrar quais são as 10 palavras mais usadas nele. Use apenas funções, módulos e estruturas de dados embutidos de Python para resolver esta questão (em outras palavras, não use nada de bibliotecas externas aqui).
 
 *[B]* Faça uma função que recebe uma string qualquer e retorna uma lista contendo todos os números presentes na sua string. Por exemplo, se a função receber a string "Hoje fazem 2 dias que eu fiz 65 anos." ela deve retornar a lista "[2, 65]".
 

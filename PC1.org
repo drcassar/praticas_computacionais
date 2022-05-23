@@ -3648,16 +3648,15 @@ O determinante de uma matriz pode ser calculado com a função ~linalg.det~ e a 
 Outras operações de álgebra linear podem ser checadas na [[https://numpy.org/doc/stable/reference/routines.linalg.html][documentação oficial]], como sempre.
 
 * Bash e computação de alta performance
-
 ** Breve introdução a computação de alta performance
 
-A computação de alta performance (HPC do termo em inglês /High Performance Computing/) já tiveram muitas tecnologias e formas, desde sistemas mecânicos de engrenagens, válvulas e mais atualmente circuitos integrados de silício. A arquitetura dos computadores de chips integrados também já mudou bastante ao longo do tempo, mas agora a grande maioria dos sistemas de HPC são /clusters/, que são basicamente vários computadores interligados por redes de alta banda e baixa latência, sendo a mais adotada a rede /infiniband/ (atualmente com banda de 200 gbit/s e 130 nanosegundos de latencia). Quanto aos sistemas operacionais, muitos já foram utilizados também, porém, uma consulta no TOP500 (www.top500.org) mostra que todos os 500 computadores mais rápidos do mundo usam alguma forma de Linux. No sistema de HPC da Ilum a escolha não é diferente, utilizamos Linux também, com suas ferramentas de acesso e gerenciamento.
+A computação de alta performance (HPC do termo em inglês /High Performance Computing/) já tiveram muitas tecnologias e formas, desde sistemas mecânicos de engrenagens, válvulas e atualmente circuitos integrados de silício. A arquitetura dos computadores de chips integrados também já mudou bastante ao longo do tempo, mas agora a grande maioria dos sistemas de HPC são /clusters/, que são basicamente vários computadores interligados por redes de alta banda e baixa latência, sendo a mais adotada a rede /infiniband/ (atualmente com banda de 200 gbit/s e 130 nanosegundos de latencia). Quanto aos sistemas operacionais, muitos já foram utilizados também, porém, uma consulta no TOP500 (www.top500.org) mostra que todos os 500 computadores mais rápidos do mundo usam alguma forma de Linux. No sistema de HPC da Ilum a escolha não é diferente, utilizamos Linux também, com suas ferramentas de acesso e gerenciamento.
 
-Como os sistemas de HPC são acessados remotamente, devido ao ambiente não muito agradável de /datacenters/, basicamente só realizamos operações via terminal (a tela preta só com caracteres). No linux, o tipo de interpretador de comandos no terminal mais usado atualmente é o bash, que é basicamente a linguagem de programação do terminal. Agora que vocês já sabem o básico de python, torna-se mais simples o processo de aprender outras linguagens. Então, ensinaremos a vocês um básico de bash, para executar comandos básicos e manipular arquivos, assim como escrever alguns scripts utilizando bash e programas como grep, awk, entre outros.
+Como os sistemas de HPC são acessados remotamente, devido ao ambiente não muito agradável de /datacenters/, basicamente só realizamos operações via terminal (a tela preta só com caracteres). No linux, o tipo de interpretador de comandos no terminal mais usado atualmente é o bash, que é basicamente a linguagem de programação do terminal. Agora que vocês já sabem o básico de python, torna-se mais simples o processo de aprender outras linguagens. Então, ao longo do curso ensinaremos a vocês um básico de bash, para executar comandos básicos e manipular arquivos, assim como escrever alguns scripts utilizando bash e programas como grep, awk, entre outros.
 
 ** Acessando uma máquina remotamente
 
-Para acessarmos uma máquina remotamente vamos utilizar o PowerShell do windows e então o protocolo SSH (Secure Shell). Como na imagem abaixo, aperte o menu iniciar da sua máquina e digite powershell, abre então o windows powershell.
+Para acessarmos uma máquina remotamente vamos utilizar o PowerShell do windows e então o protocolo SSH (Secure Shell). Como na imagem abaixo, aperte o menu iniciar da sua máquina e digite powershell, abra então o windows powershell.
 #+ATTR_ORG: :width 300
 #+ATTR_HTML: width="300px"
 [[file:img/powershell.png]]
@@ -3667,7 +3666,7 @@ O Windows Powershell deve ter aberto uma janela como a mostrada na figura abaixo
 #+ATTR_HTML: width="300px"
 [[file:img/winpower.png]]
 
-Vamos agora acessar o HPC da Ilum, carinhosamente nomeado como Heisenberg. Execute o comando abaixo substituindo o nome.ultimo_nome com seu primeiro nome e último nome, por exemplo, James Moraes de Almeida fica ~ssh james.almeida@172.20.10.15~.
+Vamos agora acessar o HPC da Ilum, carinhosamente nomeado como Heisenberg. Execute o comando abaixo substituindo o nome.ultimo_nome com seu primeiro nome e último nome, por exemplo, James Moraes de Almeida fica ~ssh james.almeida@172.20.10.15~. Sua senha temporária é senhateste logo que vocês logarem será pedido para alterar a senha, por favor, usem uma senha forte!
 #+BEGIN_SRC bash
   ssh nome.ultimo_nome@172.20.10.15
 #+END_SRC
@@ -3690,7 +3689,7 @@ Vamos realizar então a primeira atividade, crie um diretório chamado work e en
 
 Pronto, agora você criou um diretório entrou nele e voltou ao seu ~home~. Mas ~home~ professor, o que é isso? É basicamente o local onde ficam todos os seus arquivos, cada usuário da máquina possui um diretório na partição ~home~ do linux.
 
-Ótimo! Mas agora precisamos executar nossos códigos de python na máquina, para isso, vamos instalar o gerenciador de pacotes Anaconda. Execute os seguintes passos mostrados abaixo:
+Ótimo! Mas agora precisamos executar nossos códigos de Python na máquina, para isso, vamos instalar o gerenciador de pacotes Anaconda. Execute os seguintes passos mostrados abaixo:
 #+BEGIN_SRC bash
   cd #Esse comando lhe leva ao seu home
   mkdir Packages #Crie um diretório para guardar seus programas
@@ -3747,7 +3746,7 @@ Faça o download do arquivo =job.sh= da atividade do capítulo 9 do Moodle para 
 
 Clique em Salvar e dê o nome de Heisenberg para a máquina, assim você não precisa digitar os dados de acesso toda a vez que for acessar a máquina. Clique então em login, agora você estará na Heisenberg, podendo transferir arquivos do seu computador para ela e vice-versa. Note que, a janela da esquerda é a janela com os arquivos do seu computador, a janela da direita é a janela com os arquivos da sua área na Heisenberg. Para transferir os arquivos basta arrastar de uma máquina para outra, simples assim. Faça isso para o arquivo job.sh que você acabou de fazer download, envie ele para a sua pasta work na Heisenberg. Pronto! Agora podemos submeter o /job/!
 
-Antes de submetermos o /job/, vamos entender a sintaxe básica do slurm. Primeiro digite ~squeue~, esse comando lhe mostrará os /jobs/ em execução, caso você queira averiguar apenas os jobs que você está rodando, digite ~squeue -u seu.usuário~. Para cancelar um /job/ que está rodando, digite, ~scancel número.do.job~, esse número do /job/ você obtem com o comando ~squeue~, onde a primeira coluna é o número do /job/. Ótimo, vamos então a submissão do /job/ para podermos começar a utilizar o Jupyter, vá até a sua pasta work, onde o job.sh deve estar salvo após a transferência com o WinSCP, e digite ~sbatch job.sh~. Com isso seu /job/ deve iniciar a rodar e o servidor Jupyter. Porém, não abriu a janela do Jupyter como normalmente abre em seus computadores, isso acontece porque o servidor foi iniciado na Heisenberg, então precisamos abrir no navegador o servidor com o ip da Heisenberg. Dê um ~ls~ nos arquivos da sua pasta work, note que um arquivo ~slurm-número.do.job.out~ foi gerado, nele são gravadas as saídas do que está sendo rodado. Digite ~cat slurm-número.do.job.out~, obviamente substituindo o ~número.do.job~ pelo número que aparece em seu ~ls~. Esse comando cat joga para a tela o conteúdo do arquivo, você deve visualizar algo semelhante ao mostrado na tela abaixo:
+Antes de submetermos o /job/, vamos entender a sintaxe básica do slurm. Primeiro digite ~squeue~, esse comando lhe mostrará os /jobs/ em execução, caso você queira averiguar apenas os jobs que você está rodando, digite ~squeue -u seu.usuário~. Para cancelar um /job/ que está rodando, digite, ~scancel número.do.job~, esse número do /job/ você obtem com o comando ~squeue -u seu.usuário~, onde a primeira coluna é o número do /job/. Ótimo, vamos então a submissão do /job/ para podermos começar a utilizar o Jupyter, vá até a sua pasta work, onde o job.sh deve estar salvo após a transferência com o WinSCP, e digite ~sbatch job.sh~. Com isso seu /job/ deve iniciar a rodar e o servidor Jupyter. Porém, não abriu a janela do Jupyter como normalmente abre em seus computadores, isso acontece porque o servidor foi iniciado na Heisenberg, então precisamos abrir no navegador o servidor com o ip da Heisenberg. Dê um ~ls~ nos arquivos da sua pasta work, note que um arquivo ~slurm-número.do.job.out~ foi gerado, nele são gravadas as saídas do que está sendo rodado. Digite ~cat slurm-número.do.job.out~, obviamente substituindo o ~número.do.job~ pelo número que aparece em seu ~ls~. Esse comando cat joga para a tela o conteúdo do arquivo, você deve visualizar algo semelhante ao mostrado na tela abaixo:
 #+ATTR_ORG: :width 300
 #+ATTR_HTML: width="300px"
 [[file:img/job-jupyter.PNG]]
@@ -3758,6 +3757,7 @@ Abram no seu navegador o link apresentado, no caso da imagem é o http://172.20.
 [[file:img/jupyter-browser.png]]
 
 Este é o Jupyter puro, não o Jupyter-Lab que vocês costumam utilizar em aula, mas a parte que executará o Notebook é igual a que vocês utilizam no Jupyter-Lab. Perfeito, agora podemos fazer upload do Jupyter Notebook do capítulo 9 para a Heisenberg, utilizando o próprio Jupyter. Bom, primeiro faça o download do Jupyter Notebook da atividade do Capítulo 9 para seu computador, depois na sua janela do browser do Jupyter clique no botão ~Upload~ (fica na parte direita superior, não no topo mas um pouco abaixo dos botões ~Quit~ e ~Logout~). Após fazer o upload, basta abrir o Notebook e vamos começar a fazer os cálculos :)
+
 * Depuração de programas :noexport:
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_debug
@@ -4088,7 +4088,6 @@ Uma forma mais fácil de entender a instrução ~assert~ é lendo ela como "asse
 #+end_src
 
 *[B]* Considere a série de Taylor da função exponencial ($e^x$) com $x_0=0$. Faça três gráficos do erro da série de Taylor em função no número de termos da série, cada gráfico deve ser feito para um valor de $x$ diferente. Calcule o erro considerando o retorno da função ~exp~ do módulo ~math~ ou ~numpy~. [Problema sugerido pelo Prof. Vinicius]
-
 
 * JAMES Dicionários :noexport:
 :PROPERTIES:

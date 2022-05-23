@@ -3129,7 +3129,7 @@ Por fim, podemos gerar um array aleatório com o comando ~random~ do ~numpy~. El
 ** Funções universais
 
 #+begin_quote
-"/A matemática expressa valores que refletem o cosmos, incluindo ordem, equilíbrio, harmonia, lógica e beleza abstrata./" --- Deepak Chopra
+"/A matemática expressa valores que refletem o cosmos, incluindo ordem, equilíbrio, harmonia, lógica e beleza abstrata./" --- Deepak Chopa
 #+end_quote
 
 Quando trabalhamos com dados é bastante comum situações onde temos que aplicar uma função matemática em um certo conjunto de dados. Por exemplo: calcular o logaritmo dos valores em uma coluna de uma tabela. O código abaixo mostra que isso não é possível com a função ~log~ do módulo ~math~... essa função funciona apenas em variáveis numéricas... e agora?
@@ -3758,6 +3758,676 @@ Abram no seu navegador o link apresentado, no caso da imagem é o http://172.20.
 
 Este é o Jupyter puro, não o Jupyter-Lab que vocês costumam utilizar em aula, mas a parte que executará o Notebook é igual a que vocês utilizam no Jupyter-Lab. Perfeito, agora podemos fazer upload do Jupyter Notebook do capítulo 9 para a Heisenberg, utilizando o próprio Jupyter. Bom, primeiro faça o download do Jupyter Notebook da atividade do Capítulo 9 para seu computador, depois na sua janela do browser do Jupyter clique no botão ~Upload~ (fica na parte direita superior, não no topo mas um pouco abaixo dos botões ~Quit~ e ~Logout~). Após fazer o upload, basta abrir o Notebook e vamos começar a fazer os cálculos :)
 
+* Dicionários
+:PROPERTIES:
+:EXPORT_FILE_NAME: PC1/PC1_dicionarios
+:EXPORT_OPTIONS: toc:t
+:ID:       982992c4-400b-4d79-a738-e86116b14ebc
+:END:
+
+** Associando objetos com dicionários
+
+Dicionários são mais uma maneira de guardarmos informações, que pode ser bastante interessante para organização. Vamos dar um exemplo que já foi tratado nesse curso, as listas de compras. Lembram do nosso miojo incrementado, os itens para comprar na papelaria e os da padaria para fazer o misto quente? Estavamos os guardando em listas de listas, mas, podemos os guardar em dicionários também e com uma melhor organização. Vamos para um exemplo onde mostramos a sintaxe e a estrutura dos dicionários:
+
+#+begin_src python
+  #Iniciamos a definição do dicionário
+  dicionariodecompras = {
+    "mercado": ["Miojo", "Ovo", "Orégano", "Papel Higiênico"],	#Definimos a primeira chave do dicionário, com seu valor associado, que no caso é uma lista
+    "padaria": ["Pão", "Queijo", "Presunto"],			#Definimos a segunda chave e seu valor
+    "papelaria": ["Caderno", "Caneta", "Lápis"],			#Terceira chave e valor definidos
+  }	# Término do dicionário
+
+  #Imprimimos o dicionário todo
+  print(dicionariodecompras)
+
+  #Imprimimos apenas uma chave do dicionário
+  print(dicionariodecompras['mercado'])
+  print(dicionariodecompras['padaria'])
+  print(dicionariodecompras['papelaria'])
+#+end_src
+
+#+RESULTS:
+: {'mercado': ['Miojo', 'Ovo', 'Orégano', 'Papel Higiênico'], 'padaria': ['Pão', 'Queijo', 'Presunto'], 'papelaria': ['Caderno', 'Caneta', 'Lápis']}
+: ['Miojo', 'Ovo', 'Orégano', 'Papel Higiênico']
+: ['Pão', 'Queijo', 'Presunto']
+: ['Caderno', 'Caneta', 'Lápis']
+
+Notem a sintaxe, os dicionários ficam entre chaves ={ }=, assim como os conjuntos, então cuidado, pois isso pode trazer ambiguidades no código, por exemplo para inicializar um conjunto vazio. Na definição interna do dicionário temos a seguinte sintaxe: ="chave": valor=, onde as chaves vão funcionar como se fossem índices do dicionário, e os valores são os itens associados a chave. No exemplo acima definimos cada chave como uma string e cada valor como uma lista, convenientemente organizadas. Os valores dos dicionários não precisam ser listas, podem ser números ou strings, e podemos misturar diferentes tipos de chaves (umas sendo strings e outras sendo números, por exemplo). Vamos a mais um exemplo para ilustrar isto:
+
+#+begin_src python
+  print(aluno)
+  print(
+      aluno["Nome"], "teve as seguintes notas:",
+      aluno["Nota 1"], aluno["Nota 2"], aluno["Nota 3"],
+      "com média final",
+      (aluno["Nota 1"] + aluno["Nota 2"] + aluno["Nota 3"]) / 3,
+  )
+#+end_src
+
+#+RESULTS:
+
+*[A]* Note que o código acima não irá funcionar, pois o dicionário aluno e suas notas não foram definidas. Portanto, defina o dicionário aluno com as chaves "Nota 1", "Nota 2" e "Nota 3", então use o código acima para exibir o dicionário as notas e a média.
+
+*[B]* Faça um novo dicionário que não possua as notas uma a uma, mas apenas em uma chave "Notas", com uma lista que agrupe todas as notas. Adapte o código para exibir as notas e média, sendo feito a partir da lista da chave "Notas".
+
+** Métodos de dicionários
+
+Assim como listas e conjuntos, os dicionários também possuem métodos associados. Como sempre os métodos facilitam a vida na programação, por fazer diretamente uma função que poderia ser extensa de implementar. Abaixo os principais métodos de dicionários são apresentados:
+
++ keys: Retorna um iterável (similar a uma lista) contendo todas as chaves do dicionário. Sintaxe: dicionario.keys()
++ get: Retorna o valor da chave especificada. Sintaxe: dicionario.get("chave"). É similar a fazer ~dicionario["chave"]~
++ items: Retorna um iterável (similar a uma lista) contendo uma tupla para cada par chave-valor. Sintaxe: dicionario.items()
++ values: Retorna um iterável (similar a uma lista) com todos os valores no dicionário. Sintaxe: dicionario.values()
++ update: Insere um par chave-valor no dicionário. Sintaxe: dicionario.update({"chave": "valor"}). É similar a fazer ~dicionario["chave"] = "valor"~
++ pop: Assim como já visto em listas e conjuntos,
+
+*[A]* Defina um dicionário com pelo menos três chaves, pelo menos uma das chaves deve conter uma lista com pelo menos três elementos. A partir do dicionário definido, itere em um loop ~for~, em todos os elementos da chave que possui uma lista, exibindo cada elemento.
+
+*[C]* Assim como feito em [B], itere em um loop ~for~ para todos elementos da chave com lista, desta vez crie um condicional que faça um teste, que caso seja verdadeiro um novo par chave-valor será inserido no dicionário.
+
+** Dicionários aninhados
+
+Podemos criar dicionários aninhados, ou seja, dicionários dentro de dicionários. Vamos utilizar o exemplo dos alunos para criar uma lista de alunos com diferentes atributos:
+
+#+begin_src python
+  alunos = {
+      1: {
+          "Nome": "João da Silva Sauro",
+          "Notas": [8.0, 8.5, 10.0],
+          "Faltas": 2,
+          "Participação": 8.0,
+          "Trabalho Final": 7.0,
+      },
+      2: {
+          "Nome": "Maria das Graças",
+          "Notas": [9.0, 9.5, 10.0],
+          "Faltas": 0,
+          "Participação": 9.0,
+          "Trabalho Final": 7.5,
+      },
+      3: {
+          "Nome": "Cabra da Peste",
+          "Notas": [9.5, 8.5, 9.0],
+          "Faltas": 4,
+          "Participação": 0.0,
+          "Trabalho Final": 8.0,
+      },
+  }
+#+end_src
+
+#+RESULTS:
+
+*[A]* Com esse dicionário, escreva um código que itere entre cada aluno e cada chave do aluno. Por exemplo, para o terceiro aluno seu código deverá exibir algo semelhante a isto:
+
+#+begin_example
+Número do aluno: 3
+Nome: Cabra da Peste
+Notas: [9.5, 8.5, 9.0]
+Faltas: 4
+Participação: 0.0
+Trabalho Final: 8.0
+#+end_example
+
+*[B]* Escreva um código que calcule a média final de cada aluno, sendo composta de:
+
+NF=( (<Notas> + Trabalho Final)/2 ) + 0.15*Participação
+
+Note que ~<Notas>~ é a média da chave ~Notas~.
+Além de exibir as médias finais, o código deve exibir se cada aluno está aprovado ou reprovado.
+
+* Strings e processamento de texto
+:PROPERTIES:
+:EXPORT_FILE_NAME: PC1/PC1_strings
+:EXPORT_OPTIONS: toc:t
+:ID:       6feb275c-31de-49dd-87a1-d3576f4dbfc2
+:END:
+
+** Agrupando caracteres com strings
+
+Já vimos que strings são objetos que armazenam texto e que para declarar strings usamos aspas simples ou aspas duplas. Texto nada mais é do que uma lista de zero ou mais caracteres. Assim como listas, podemos segmentar strings usando a notação dos índices dentro de colchetes. Veja no exemplo abaixo.
+
+#+begin_src python -n
+  string_com_zero_letras = ""
+  string_com_uma_letra = "a"
+  string_com_varias_letras = "abcdefghijklmnopqrstuvwxyz"
+
+  print(string_com_varias_letras[0])
+  print(string_com_varias_letras[1])
+  print(string_com_varias_letras[2])
+
+  print(string_com_varias_letras[3:8])
+  print(string_com_varias_letras[8:])
+
+  print(string_com_varias_letras[::2])
+#+end_src
+
+#+RESULTS:
+: a
+: b
+: c
+: defgh
+: ijklmnopqrstuvwxyz
+: acegikmoqsuwy
+
+Como strings são listas de letras, também podemos usar o ~for~ da mesma maneira que usamos em listas! Veja no exemplo abaixo.
+
+#+begin_src python -n
+  texto = "Bravo, Vince!"
+
+  for letra in texto:
+      print(letra)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+B
+r
+a
+v
+o
+,
+
+V
+i
+n
+c
+e
+!
+#+end_example
+
+É possível converter objetos que não são texto para texto usando a função ~str~.
+
+#+begin_src python -n
+  numero = 1234
+  texto_a_partir_do_numero = str(1234)
+
+  print(numero)
+  print(texto_a_partir_do_numero)
+
+  # agora que temos um texto, é fácil separar os digitos do número
+  print(texto_a_partir_do_numero[0])  # este é o digito 1 do número 1234
+
+  # note que essa sintaxe não funciona para variáveis numéricas (dá erro!)
+  print(numero[0])
+#+end_src
+
+#+RESULTS:
+: 1234
+: 1234
+: 1
+: Variáveis numéricas não permitem usar a notação de índices com chaves
+: 1234
+: 1234
+
+Também podemos converter texto contendo dígitos em variáveis numéricas usando as funções ~int~ e ~float~. Veja o exemplo abaixo:
+
+#+begin_src python -n
+  texto = "1234"
+  numero_a_partir_do_texto = int(texto)
+
+  print(texto)
+  print(numero_a_partir_do_texto)
+
+  # agora que temos um número, podemos fazer contas
+  print(numero_a_partir_do_texto + 4321)
+
+  # note que não podemos fazer contas com variáveis que são texto (dá erro!)
+  print(texto + 4321)
+
+#+end_src
+
+#+RESULTS:
+: 1234
+: 1234
+: 5555
+
+Podemos multiplicar strings por um número natural e podemos somar strings com strings!
+
+#+begin_src python -n
+  nome = "Penny! "
+  chamando_penny = nome * 3
+  print(chamando_penny)
+
+  metade1 = "comp"
+  metade2 = "leto"
+  completo = metade1 + metade2
+  print(completo)
+#+end_src
+
+#+RESULTS:
+: Penny! Penny! Penny!
+: completo
+
+Uma diferença muito importante entre strings e listas é que strings são variáveis imutáveis (assim como tuplas) e listas são variáveis mutáveis. Isso significa que após uma string ser criada não é possível alterá-la!
+
+*[A]* Faça uma função que recebe uma string qualquer e retorna um dicionário. As chaves do dicionário de retorno são caracteres e os valores são a quantidade de vezes que estes caracteres aparecem na string de entrada.
+
+** Métodos condicionais de strings
+
+Existem diversos métodos de strings. Você pode checar todos eles [[https://docs.python.org/3/library/stdtypes.html?highlight=startswith#text-sequence-type-str][na documentação oficial]]. Existem dois métodos para checar strings que são particularmente muito utilizados: o ~startswith~ e o ~endswith~. Como o próprio nome sugere, o ~startswith~ checa se sua string começa com uma certa sequência de caracteres e o ~endswith~ checa se sua string termina com uma certa sequência de caracteres. São, portanto, métodos excelentes para checar prexifos e sufixos de palavras!
+
+#+begin_src python -n
+  palavras = [
+      "pato",
+      "cachorro",
+      "feldspato",
+      "caolinita",
+      "sapato",
+      "tênis",
+      "carrapato",
+      "caranguejo",
+      "empato",
+      "capoto",
+  ]
+
+  palavras_que_terminam_em_pato = []
+  for palavra in palavras:
+      if palavra.endswith("pato"):
+          palavras_que_terminam_em_pato.append(palavra)
+  print(palavras_que_terminam_em_pato)
+
+  palavras_que_comecam_em_ca = []
+  for palavra in palavras:
+      if palavra.startswith("ca"):
+          palavras_que_comecam_em_ca.append(palavra)
+  print(palavras_que_comecam_em_ca)
+#+end_src
+
+#+RESULTS:
+: ['pato', 'feldspato', 'sapato', 'carrapato', 'empato']
+: ['cachorro', 'caolinita', 'carrapato', 'caranguejo', 'capoto']
+
+Outros métodos de strings bastante úteis são:
+
++ ~isnumeric~: retorna ~True~ se sua string é um valor numérico e ~False~ do contrário. Este método não recebe nenhum argumento.
++ ~isupper~: retorna ~True~ se sua string está escrita em caixa alta e ~False~ do contrário. Este método não recebe nenhum argumento.
++ ~islower~: retorna ~True~ se sua string está escrita em caixa baixa e ~False~ do contrário. Este método não recebe nenhum argumento.
+
+#+begin_src python
+  numero = "1234"
+  caixa_alta = "AAAAHHHHH"
+  caixa_baixa = "sussurando..."
+
+  print("Testando o método isnumeric")
+  print(numero.isnumeric())
+  print(caixa_alta.isnumeric())
+  print(caixa_baixa.isnumeric())
+  print()
+
+  print("Testando o método isupper")
+  print(numero.isupper())
+  print(caixa_alta.isupper())
+  print(caixa_baixa.isupper())
+  print()
+
+  print("Testando o método islower")
+  print(numero.islower())
+  print(caixa_alta.islower())
+  print(caixa_baixa.islower())
+  print()
+#+end_src
+
+#+RESULTS:
+#+begin_example
+Testando o método isnumeric
+True
+False
+False
+
+Testando o método isupper
+False
+True
+False
+
+Testando o método islower
+False
+False
+True
+
+#+end_example
+
+
+** Recebendo informações do usuário com a função ~input~
+
+Se em algum momento você precisar receber informações do usuário, basta usar a função ~input~. Vamos ver um exemplo:
+
+#+begin_src python -n
+  nome = input("Qual é o seu nome?")
+  missao = input("Qual é a sua missão?")
+  velocidade = input("Qual é a velocidade de vôo de uma andorinha livre de carga?")
+
+  print(nome)
+  print(missao)
+  print(velocidade)
+#+end_src
+
+Preste atenção que a informação recebida pelo comando ~input~ será sempre _convertida para uma string_. Então veja que caso o usuário digite um número, este será convertido para uma string! Tenha isso em mente caso venha a usar essa função.
+
+** Alguns caracteres especiais
+
+Existem duas formas de fazer uma string em múltiplas linhas. Uma delas é usando aspas triplas como nós já vimos:
+
+#+begin_src python -n :session pyvenv
+  string_com_multiplas_linhas = """Olá!
+  Eu sou uma string com múltiplas linhas.
+  Prazer!"""
+
+  print(string_com_multiplas_linhas)
+#+end_src
+
+#+RESULTS:
+: Olá!
+: Eu sou uma string com múltiplas linhas.
+: Prazer!
+
+Outra forma é escrevendo ~\n~ para simbolizar uma quebra de linha:
+
+#+begin_src python -n :session pyvenv
+  string_com_multiplas_linhas_2 = "Olá!\nEu sou uma string com múltiplas linhas.\nPrazer!"
+
+  print(string_com_multiplas_linhas_2)
+#+end_src
+
+#+RESULTS:
+: Olá!
+: Eu sou uma string com múltiplas linhas.
+: Prazer!
+
+Qual destas duas estratégias é a melhor? Tanto faz, use a que julgar mais interessante. As duas retornam exatamente a mesma string como pode ser checado com o operador de comparação abaixo.
+
+#+begin_src python :session pyvenv
+  print(string_com_multiplas_linhas == string_com_multiplas_linhas_2)
+#+end_src
+
+#+RESULTS:
+: True
+
+Outro caractere especial que vale a pena mencionar é o ~\t~ que serve para incluir uma tabulação horizontal (costumeiramente chamado de "tab").
+
+#+begin_src python -n
+  tabulacao = """Ano\tConsumo de pipoca
+  2017\t9
+  2018\t6
+  2019\t7
+  2020\t13
+  2021\t12
+  2022\t11"""
+
+  print(tabulacao)
+#+end_src
+
+#+RESULTS:
+: Ano	Consumo de pipoca
+: 2017	9
+: 2018	6
+: 2019	7
+: 2020	13
+: 2021	12
+: 2022	11
+
+Mas... e se eu quero escrever uma barra invertida (~\~) no meu texto? Daí fica difícil com esses caracteres especiais atrapalhando! Neste caso, você tem duas opções. A primeira é escrever ~\\~. A segunda é usar uma /string bruta/ (/raw/, em inglês), para isso basta acrescenta um ~r~ no início da string, antes das aspas e sem espaço. Vamos ver um exemplo.
+
+#+begin_src python
+  barra_invertida_tecnica_1 = "C:\\trabalhos\\nova pasta\\praticas_cap_10.ipynb"
+  barra_invertida_string_bruta = r"C:\trabalhos\nova pasta\praticas_cap_10.ipynb"
+
+  print(barra_invertida_tecnica_1)
+  print(barra_invertida_string_bruta)
+
+  print()
+
+  # exemplo de uso errado
+  barra_invertida_deu_ruim = "C:\trabalhos\nova pasta\praticas_cap_10.ipynb"
+  print(barra_invertida_deu_ruim)
+#+end_src
+
+#+RESULTS:
+: C:\trabalhos\nova pasta\praticas_cap_10.ipynb
+: C:\trabalhos\nova pasta\praticas_cap_10.ipynb
+:
+: C:	rabalhos
+: ova pasta\praticas_cap_10.ipynb
+
+Para mais informações sobre carateres especiais consulte a [[https://docs.python.org/pt-br/3.9/reference/lexical_analysis.html#string-and-bytes-literals][documentação oficial]].
+
+** Formatação de texto
+
+Muitas vezes queremos exibir para o usuário uma informação contida em uma variável junto com um texto. Por exemplo:
+
+#+begin_src python
+  seu_nome = "Feiticeira Escarlate"
+  meu_nome = "Visão"
+
+  print("Olá,", seu_nome, ". Eu me chamo", meu_nome, ". Prazer!")
+#+end_src
+
+#+RESULTS:
+: Olá, Feiticeira Escarlate . Eu me chamo Visão . Prazer!
+
+As f-strings nos ajudam justamente nisso! Vamos ver o exemplo anterior usando f-strings.
+
+#+begin_src python
+  seu_nome = "Feiticeira Escarlate"
+  meu_nome = "Visão"
+
+  print(f"Olá, {seu_nome}. Eu me chamo {meu_nome}. Prazer!")
+#+end_src
+
+#+RESULTS:
+: Olá, Feiticeira Escarlate. Eu me chamo Visão. Prazer!
+
+Para usar uma f-string, basta colocar a letra ~f~ na frente das aspas da sua string (sem dar espaço!). Em uma f-string, você pode referenciar uma variável dentro de colchetes e ela será incorporada na sua string. Simples assim.
+
+F-strings são bastante poderosas. Existem diversos "truques" que podemos fazer com elas! Como sempre, a [[https://docs.python.org/pt-br/3.9/reference/lexical_analysis.html#f-strings][documentação oficial]] está lá para nos ajudar. Veja no exemplo abaixo uma seleção de possíveis configurações para sua f-string.
+
+#+begin_src python
+  from math import pi
+
+  tau = 2 * pi
+
+  print(f"O valor de pi é: {pi}")
+  print()
+
+  print(f"O valor de pi com cinco algarismos significativos é: {pi:.5}")
+  print()
+
+  print(f"O valor de pi com apenas duas casas decimais é: {pi:.2f}")
+  print()
+
+  # nome e valor de uma variável
+  print(f"{tau = }")
+  print()
+
+  # executando operações dentro dos colchetes
+  print(f"Tau é maior que pi? {tau > pi}")
+  print()
+
+  print(f"Converter um número para porcentagem com duas casas decimais: {(1/3):.2%}")
+  print()
+
+  # combinando execução com exibição
+  print(f"{tau * 2 = }")
+  print()
+
+  print(f"Para exibir colchetes dentro de f-strings use eles dobrados. {{Desta forma!}}. O valor de pi é {pi}.")
+
+#+end_src
+
+#+RESULTS:
+#+begin_example
+O valor de pi é: 3.141592653589793
+
+O valor de pi com cinco algarismos significativos é: 3.1416
+
+O valor de pi com apenas duas casas decimais é: 3.14
+
+tau = 6.283185307179586
+
+Tau é maior que pi? True
+
+Converter um número para porcentagem com duas casas decimais: 33.33%
+
+tau * 2 = 12.566370614359172
+
+Para exibir colchetes dentro de f-strings use eles dobrados. {Desta forma!}. O valor de pi é 3.141592653589793.
+#+end_example
+
+Existem duas outras maneiras de formatar uma string, porém elas não são mais recomendadas para uso geral e sim para casos muito específicos. Vale a pena saber que elas existem:
+
++ *%-strings*: leia sobre isso na [[https://docs.python.org/pt-br/3.9/library/stdtypes.html#printf-style-string-formatting][documentação oficial]]. Essa é a uma excelente forma para se formatar strings contendo códigos em LaTeX pois estes códigos contém muitos colchetes. No entanto, este método deve ser evitado caso possível. Diversos textos mais antigos ainda ensinam esse método pois as f-strings são uma invenção mais recente.
+
++ *método format*: leia sobre isso na [[https://docs.python.org/pt-br/3.9/library/stdtypes.html#str.format][documentação oficial]]. Não apresenta muita vantagem perante as f-strings. Uma pequena vantagem é quando queremos formatar uma string em várias posições com a mesma variável. Outra vantagem do método ~format~ é que ele é uma função, logo é um objeto de Python e pode ser utilizado como argumento de outras funções caso necessário. Ambos os casos atendem situações bastante específicas e não muito usuais.
+
+** Processamento de texto
+
+Podemos processar strings alterando a caixa de seus caracteres.
+
+#+begin_src python
+  texto = "Obrigado Mario! Mas a nossa princesa está em outro castelo..."
+
+  # Apenas a primeira letra escrita com maiúscula
+  print(texto.capitalize())
+
+  # As primeiras letras de todas as palavras escritas com maiúsculas
+  print(texto.title())
+
+  # Todas as letras minúsculas
+  print(texto.lower())
+
+  # Todas as letras maiúsculas
+  print(texto.upper())
+
+  # Inverte a caixa das letras
+  print(texto.swapcase())
+#+end_src
+
+#+RESULTS:
+: Obrigado mario! mas a nossa princesa está em outro castelo...
+: Obrigado Mario! Mas A Nossa Princesa Está Em Outro Castelo...
+: obrigado mario! mas a nossa princesa está em outro castelo...
+: OBRIGADO MARIO! MAS A NOSSA PRINCESA ESTÁ EM OUTRO CASTELO...
+: oBRIGADO mARIO! mAS A NOSSA PRINCESA ESTÁ EM OUTRO CASTELO...
+
+Podemos substituir certas partes de uma string por outras.
+
+#+begin_src python
+  texto = "Eu gosto de acarajé."
+
+  print(texto.replace("gosto de", "aprecio"))
+  print(texto.replace("gosto de", "adoro"))
+  print(texto.replace("gosto de", "amo"))
+  print(texto.replace("gosto de", "acredito que todas as refeições poderiam ter"))
+#+end_src
+
+#+RESULTS:
+: Eu aprecio acarajé.
+: Eu adoro acarajé.
+: Eu amo acarajé.
+: Eu acredito que todas as refeições poderiam ter acarajé.
+
+Mas lembre-se que strings são imutáveis! Então quando usamos os métodos não estamos alterando as strings originais, mas sim criando strings novas.
+
+#+begin_src python
+  texto1 = "Seu nome é Jackie, Jackie Tequila"
+
+  texto2 = texto1.upper()
+
+  print(texto1)  # esta variável não foi alterada!
+  print(texto2)
+#+end_src
+
+#+RESULTS:
+: Seu nome é Jackie, Jackie Tequila
+: SEU NOME É JACKIE, JACKIE TEQUILA
+
+Uma parte importante do processamento de strings é a habilidade de dividir uma string longa e partes menores. Podemos fazer isso com o método ~split~. Este método recebe uma string como argumento e retorna uma lista. O argumento de entrada é o separador, ele que será usado para "dividir" sua string original. Vamos ver um exemplo.
+
+#+begin_src python
+  mini_historia_de_terror = "O último ser vivo do planeta estava na sua casa, sozinho. De repente, alguém bateu na sua porta."
+
+  palavras = mini_historia_de_terror.split(" ")
+
+  print(palavras)
+  print(f"O texto tem {len(palavras)} palavras")
+
+  frases = mini_historia_de_terror.split(".")
+  print(frases)
+  print(f"O texto tem {len(frases)} frases? ... acho que não!")
+#+end_src
+
+#+RESULTS:
+: ['O', 'último', 'ser', 'vivo', 'do', 'planeta', 'estava', 'na', 'sua', 'casa,', 'sozinho.', 'De', 'repente,', 'alguém', 'bateu', 'na', 'sua', 'porta.']
+: O texto tem 18 palavras
+: ['O último ser vivo do planeta estava na sua casa, sozinho', ' De repente, alguém bateu na sua porta', '']
+: O texto tem 3 frases? ... acho que não!
+
+O método "oposto" ao ~split~ é o ~join~. Este método recebe uma lista de strings e agrupa elas. O exemplo abaixo ilustra a utilização desse método.
+
+#+begin_src python
+  lista = ['O', 'último', 'ser', 'vivo', 'do', 'planeta', 'estava', 'na', 'sua', 'casa,', 'sozinho.', 'De', 'repente,', 'alguém', 'bateu', 'na', 'sua', 'porta.']
+
+  cola = " "
+  tudo_junto = cola.join(lista)
+  print(tudo_junto)
+  print()
+
+  cola = "_"
+  tudo_junto2 = cola.join(lista)
+  print(tudo_junto2)
+  print()
+
+  cola = "👏"
+  tudo_junto3 = cola.join(lista)
+  print(tudo_junto3)
+  print()
+
+  cola = "*_ . _*" # a cola pode ser o que você quiser
+  tudo_junto4 = cola.join(lista)
+  print(tudo_junto4)
+#+end_src
+
+#+RESULTS:
+: O último ser vivo do planeta estava na sua casa, sozinho. De repente, alguém bateu na sua porta.
+:
+: O_último_ser_vivo_do_planeta_estava_na_sua_casa,_sozinho._De_repente,_alguém_bateu_na_sua_porta.
+:
+: O👏último👏ser👏vivo👏do👏planeta👏estava👏na👏sua👏casa,👏sozinho.👏De👏repente,👏alguém👏bateu👏na👏sua👏porta.
+:
+: O*_ . _*último*_ . _*ser*_ . _*vivo*_ . _*do*_ . _*planeta*_ . _*estava*_ . _*na*_ . _*sua*_ . _*casa,*_ . _*sozinho.*_ . _*De*_ . _*repente,*_ . _*alguém*_ . _*bateu*_ . _*na*_ . _*sua*_ . _*porta.
+
+*[A]* Escolha uma notícia de jornal que tenha mais de 500 palavras. Crie uma string com o texto desta notícia (_dica_: strings com três aspas permitem texto com mais de uma linha!). Seu objetivo é processar este texto e mostrar quais são as 10 palavras mais usadas nele. Use apenas funções, módulos e estruturas de dados embutidos de Python para resolver esta questão (em outras palavras, não use nada de bibliotecas externas aqui).
+
+*[B]* Faça uma função que recebe uma string qualquer e retorna uma lista contendo todos os números presentes na sua string. Por exemplo, se a função receber a string "Hoje fazem 2 dias que eu fiz 65 anos." ela deve retornar a lista "[2, 65]".
+
+*[Desafio]* Faça uma função que recebe uma string contendo uma frase. A função deve retornar uma string contendo as mesmas palavras, porém invertidas. Por exemplo, caso a função receba a string "Ser ou não ser eis a questão" ela retorna "reS uo oãn res sie a oãtseuq".
+
+
+** Expressões regulares :noexport:
+
+Expressão regular (também conhecidas como regex que vem da expressão em inglês /regular expression/)
+
+* Aula de problemas :noexport:
+
+*[A]* Crie uma função que recebe um array 3 $\times$ 4. Este array representa a matriz de um sistema linear de equações com 3 equações e 3 incógnitas (veja o exemplo abaixo). A função deve checar se o sistema tem solução única. Em caso positivo, utilize o método de eliminação de Gauss para resolver o sistema e retorne para o usuário um array de 1 dimensão com os 3 valores da solução. Teste seu algoritmo com o array abaixo. Se seu algoritmo estiver correto, a resposta para esse sistema deve ser [2, 3, -1]. _Nota_: não precisamos dizer que não é permitido usar uma função pronta do ~numpy~ (ou de qualquer outra biblioteca) que resolve sistemas lineares, não é? [Problema sugerido pelo Prof. Vinicius]
+
+\begin{cases}
+2x+y-z & =8\\
+-3x-y+2z & =-11\\
+-2x+y+2z & =-3
+\end{cases}
+
+#+begin_src python -n :session pyvenv
+  teste = np.array(
+      [
+          [2, 1, -1, 8],
+          [-3, -1, 2, -11],
+          [-2, 1, 2, -3],
+      ]
+  )
+#+end_src
+
+*[B]* Considere a série de Taylor da função exponencial ($e^x$) com $x_0=0$. Faça três gráficos do erro da série de Taylor em função no número de termos da série, cada gráfico deve ser feito para um valor de $x$ diferente. Calcule o erro considerando o retorno da função ~exp~ do módulo ~math~ ou ~numpy~. [Problema sugerido pelo Prof. Vinicius]
+
 * Depuração de programas :noexport:
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_debug
@@ -4067,224 +4737,6 @@ Checar uma condição e acusar um erro caso esta condição seja falsa é uma es
 A sintaxe da instrução ~assert~ requer uma condição a ser checada logo após a instrução. Caso a condição retorne ~False~ o código é interrompido e acusa um ~AssertionError~. Caso queira exibir uma mensagem ao usuário para ajudá-lo a entender o que ocorre, escreva uma string e coloque ela após uma vírgula. A mensagem não é obrigatória mas altamente recomendada.
 
 Uma forma mais fácil de entender a instrução ~assert~ é lendo ela como "assegure-se que". Na linha 18 do código acima podemos ler como "assegure-se que o valor de ~x~ é maior que zero e menor ou igual a dois, do contrário, exiba uma mensagem de erro ao usuário alertando ele que esse é um requerimento necessário para executar a função".
-* Aula de problemas :noexport:
-
-*[A]* Crie uma função que recebe um array 3 $\times$ 4. Este array representa a matriz de um sistema linear de equações com 3 equações e 3 incógnitas (veja o exemplo abaixo). A função deve checar se o sistema tem solução única. Em caso positivo, utilize o método de eliminação de Gauss para resolver o sistema e retorne para o usuário um array de 1 dimensão com os 3 valores da solução. Teste seu algoritmo com o array abaixo. Se seu algoritmo estiver correto, a resposta para esse sistema deve ser [2, 3, -1]. _Nota_: não precisamos dizer que não é permitido usar uma função pronta do ~numpy~ (ou de qualquer outra biblioteca) que resolve sistemas lineares, não é? [Problema sugerido pelo Prof. Vinicius]
-
-\begin{cases}
-2x+y-z & =8\\
--3x-y+2z & =-11\\
--2x+y+2z & =-3
-\end{cases}
-
-#+begin_src python -n :session pyvenv
-  teste = np.array(
-      [
-          [2, 1, -1, 8],
-          [-3, -1, 2, -11],
-          [-2, 1, 2, -3],
-      ]
-  )
-#+end_src
-
-*[B]* Considere a série de Taylor da função exponencial ($e^x$) com $x_0=0$. Faça três gráficos do erro da série de Taylor em função no número de termos da série, cada gráfico deve ser feito para um valor de $x$ diferente. Calcule o erro considerando o retorno da função ~exp~ do módulo ~math~ ou ~numpy~. [Problema sugerido pelo Prof. Vinicius]
-
-* JAMES Dicionários :noexport:
-:PROPERTIES:
-:EXPORT_FILE_NAME: PC1/PC1_dicionarios
-:EXPORT_OPTIONS: toc:t
-:ID:       982992c4-400b-4d79-a738-e86116b14ebc
-:END:
-
-** Associando objetos com dicionários
-Dicionários são mais uma maneira de guardarmos informações, que pode ser bastante interessante para organização. Vamos dar um exemplo que já foi tratado nesse curso, as listas de compras. Lembram do nosso miojo incrementado, os itens para comprar na papelaria e os da padaria para fazer o misto quente? Estavamos os guardando em listas de listas, mas, podemos os guardar em dicionários também e com uma melhor organização. Vamos para um exemplo onde mostramos a sintaxe e a estrutura dos dicionários:
-
-#+begin_src python
-dicionariodecompras = {						#Iniciamos a definição do dicionário
-  "mercado": ["Miojo", "Ovo", "Orégano", "Papel Higiênico"],	#Definimos a primeira chave do dicionário, com seu valro associado, que no caso é uma lista
-  "padaria": ["Pão", "Queijo", "Presunto"],			#Definimos a segunda chave e seu valor
-  "papelaria": ["Caderno", "Caneta", "Lápis"]			#Terceira chave e valor definidos
-}								#Término do dicionário
-print(dicionariodecompras)					#Imprimimos o dicionário todo
-print(dicionariodecompras['mercado'])				#Imprimimos apenas a chave mercado do dicionário
-print(dicionariodecompras['padaria'])                           #Imprimimos a chave padaria
-print(dicionariodecompras['papelaria'])                         #Por fim, a chava papelaria é impressa
-#+end_src
-
-Notem a sintaxe, os dicionários ficam entre chaves ={ }=, assim como os conjuntos, então cuidado, pois isso pode trazer ambiguidades no código, por exemplo para inicializar um conjunto vazio. Na definição interna do dicionário temos a seguinte sintaxe: ="chave": valor=, onde as chaves vão funcionar como se fossem índices do dicionário, e os valores são os itens associados a chave. No exemplo acima definimos cada chave como uma lista, convenientemente organizadas, sendo uma chave para cada lista de compras. Os valores dos dicionários não precisam ser listas, podem ser números, strings e misturadas. Vamos a mais um exemplo para ilustrar isto:
-
-#+begin_src python
-print(aluno)
-print(aluno["Nome"])
-print(aluno["Nota 1"])
-print(aluno["Nome"], 'teve as seguintes notas:', aluno["Nota 1"], aluno["Nota 2"], aluno["Nota 3"], 'com média final', ((aluno["Nota 1"]+aluno["Nota 2"]+aluno["Nota 3"])/3))
-#+end_src
-
-** Métodos de dicionários
-Assim como listas e conjuntos, os dicionários também possuem métodos associados. Como sempre os métodos facilitam a vida na programação, por fazer diretamente uma função que poderia ser extensa de implementar. Abaixo os principais métodos de dicionários são apresentados:
-
-+ keys: Retorna uma lista contendo todas as chaves do dicionário. Sintaxe: dicionario.keys()
-+ get: Retorna o valor da chave especificada. Sintaxe: dicionario.get("chave")
-+ items: Retorna uma lista contendo uma tupla para cada par chave-valor. Sintaxe: dicionario.items()
-+ values: Retorna uma lista com todos os valores no dicionário. Sintaxe: dicionario.values()
-+ update: Insere um par chave-valor no dicionário. Sintaxe: dicionario.update({"chave": "valor"})
-+ pop: Assim como já visto em listas e conjuntos,
-
-** Modificando e desempacotando dicionários
-
-
-+ método =pop=
-+ adicionando nova chave
-+ deletando uma chave
-
-** Iterando sobre dicionários
-+ métodos =items=, =get=, =keys=, =values=
-
-** Funções com argumentos estrela \ast{}args e \ast\ast{}kwargs
-
-* DANIEL Strings e processamento de texto :noexport:
-:PROPERTIES:
-:EXPORT_FILE_NAME: PC1/PC1_strings
-:EXPORT_OPTIONS: toc:t
-:ID:       6feb275c-31de-49dd-87a1-d3576f4dbfc2
-:END:
-
-** Agrupando caracteres com strings
-
-Já vimos que strings são objetos que armazenam texto e que para declarar strings usamos aspas simples ou aspas duplas. Texto nada mais é do que uma lista de zero ou mais letras. Assim como listas, podemos segmentar strings usando a notação dos índices dentro de colchetes. Veja no exemplo abaixo.
-
-#+begin_src python -n
-  string_com_zero_letras = ""
-  string_com_uma_letra = "a"
-  string_com_varias_letras = "abcdefghijklmnopqrstuvwxyz"
-
-  print(string_com_varias_letras[0])
-  print(string_com_varias_letras[1])
-  print(string_com_varias_letras[2])
-
-  print(string_com_varias_letras[3:8])
-  print(string_com_varias_letras[8:])
-
-  print(string_com_varias_letras[::2])
-#+end_src
-
-#+RESULTS:
-: a
-: b
-: c
-: defgh
-: ijklmnopqrstuvwxyz
-: acegikmoqsuwy
-
-Como strings são listas de letras, também podemos usar o ~for~ da mesma maneira que usamos em listas! Veja no exemplo abaixo.
-
-#+begin_src python -n
-  texto = "Bravo, Vince!"
-
-  for letra in texto:
-      print(letra)
-#+end_src
-
-#+RESULTS:
-#+begin_example
-B
-r
-a
-v
-o
-,
-
-V
-i
-n
-c
-e
-!
-#+end_example
-
-É possível converter objetos que não são texto para texto usando a função ~str~.
-
-#+begin_src python -n
-  numero = 1234
-  texto_a_partir_do_numero = str(1234)
-
-  print(numero)
-  print(texto_a_partir_do_numero)
-
-  try:
-      # agora que temos um texto, é fácil separar os digitos do número
-      print(texto_a_partir_do_numero[0])  # este é o digito 1 do número 1234
-
-      # note que essa sintaxe não funciona para variáveis numéricas
-      print(numero[0])
-
-  except TypeError:
-      print('Variáveis numéricas não permitem usar a notação de índices '
-            'com chaves.')
-#+end_src
-
-#+RESULTS:
-: 1234
-: 1234
-: 1
-: Variáveis numéricas não permitem usar a notação de índices com chaves
-: 1234
-: 1234
-
-Também podemos converter texto numérico em variáveis numéricas usando as funções ~int~ e ~float~. Veja o exemplo abaixo:
-
-#+begin_src python -n
-  texto = "1234"
-  numero_a_partir_do_texto = int(texto)
-
-  print(texto)
-  print(numero_a_partir_do_texto)
-
-  try:
-      # agora que temos um nlumero, podemos fazer contas
-      print(numero_a_partir_do_texto + 4321)
-
-      # note que não podemos fazer contas com variáveis que são texto
-      print(texto + 4321)
-
-  except TypeError:
-      print('Não podemos fazer contas com variáveis tipo string, mesmo'
-            'que elas tenham um número armazenado nelas.')
-
-#+end_src
-
-#+RESULTS:
-: 1234
-: 1234
-: 5555
-: Não podemos fazer contas com variáveis tipo string, mesmoque elas tenham um número armazenado nelas.
-
-Uma diferença muito importante entre strings e listas é que strings são variáveis imutáveis (assim como tuplas) e listas são variáveis mutáveis. Isso significa que após uma string ser criada não é possível altera-la.
-
-** Métodos condicionais de strings
-
-Existem diversos métodos de strings. Você pode checar todos eles [[https://docs.python.org/3/library/stdtypes.html?highlight=startswith#text-sequence-type-str][na documentação oficial]]. Existem dois métodos para checar strings que são particularmente muito utilizados: o ~startswith~ e o ~endswith~
-
-
-+ checando prefixos e sufixos com =startswith= e =endswith=
-+ checando caracteres com =isnumeric=, =isupper=, =islower=
-
-** Recebendo informações do usuário com o comando =input=
-
-** Tipos de strings
-+ utf-8
-  - caracteres especiais tipo \n e \t
-+ raw
-+ fstring
-
-** Processamento de texto
-+ =split= e =join=
-+ =translate= e =maketrans=
-+ =capitalize=, =title=, =lower=, =upper=, =swapcase=
-+ =replace=
-
-** Expressões regulares
-* JAMES Scripts de python, bash e HPC :noexport:
 * TODO Programação orientada a objetos :noexport:
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_classes
@@ -4453,7 +4905,6 @@ https://github.com/jerry-git/learn-python3
 + programa que calcula o fatorial de um inteiro positivo
 + programa que cria uma lista apenas com os itens nas posições impares de uma lista original
 + função que conta quantas letras, dígitos e caracteres especiais tem em uma string
-+ histograma de contagem de caracteres em uma string
 + encontrar números em uma string e armazena-los em uma lista
 + histograma de valores em uma lista
 + separar valores e chaves de dicionários em duas listas
@@ -4465,9 +4916,6 @@ https://github.com/jerry-git/learn-python3
 
 
 intermediário:
-+ reverter cada palavra de uma lista
-  - 'My Name is Jessa'
-  - yM emaN si asseJ
 + inverter chave e valores de um dicionário
 + mostrar todos os itens duplicados em uma lista
 

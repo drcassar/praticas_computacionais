@@ -3169,6 +3169,50 @@ O ~numpy~ tem diversas funções universais como ~log~, ~log10~, ~sqrt~, ~sin~, 
 8) absoluto de $x$
 9) cosseno hiperbólico de $x$
 
+# Para resolver a prática anterior, veja as seguintes dicas.
+
+# Para criar um ~DataFrame~ de ~pandas~ a partir de um array use a seguinte sintaxe:
+
+# #+begin_src python -n :session pyvenv
+#   import pandas as pd
+#   import numpy as np
+
+
+#   array = np.linspace(0,1)
+#   data = pd.DataFrame(array)
+#   print(data)
+# #+end_src
+
+# Para concatenar arrays verticalmente use o ~vstack~. Para concatenar arrays horizontalmente use o ~hstack~. Veja o exemplo abaixo.
+
+# #+begin_src python -n :session pyvenv
+#   array_1 = np.array([1, 2, 3])
+#   array_2 = np.array([4, 5, 6])
+
+#   array_concatenado_verticalmente = np.vstack([array_1, array_2])
+#   array_concatenado_horizontalmente = np.hstack([array_1, array_2])
+
+#   print(array_concatenado_verticalmente)
+#   print(array_concatenado_horizontalmente)
+# #+end_src
+
+# #+RESULTS:
+# : [[1 2 3]
+# :  [4 5 6]]
+# : [1 2 3 4 5 6]
+
+# Para obter a transposta de um array, use o atributo ~T~.
+
+# #+begin_src python -n :session pyvenv
+#   array_transposto = array_concatenado_verticalmente.T
+#   print(array_transposto)
+# #+end_src
+
+# #+RESULTS:
+# : [[1 4]
+# :  [2 5]
+# :  [3 6]]
+
 ** Funções agregadoras
 
 #+begin_quote
@@ -3603,6 +3647,117 @@ O determinante de uma matriz pode ser calculado com a função ~linalg.det~ e a 
 
 Outras operações de álgebra linear podem ser checadas na [[https://numpy.org/doc/stable/reference/routines.linalg.html][documentação oficial]], como sempre.
 
+* Bash e computação de alta performance
+
+** Breve introdução a computação de alta performance
+
+A computação de alta performance (HPC do termo em inglês /High Performance Computing/) já tiveram muitas tecnologias e formas, desde sistemas mecânicos de engrenagens, válvulas e mais atualmente circuitos integrados de silício. A arquitetura dos computadores de chips integrados também já mudou bastante ao longo do tempo, mas agora a grande maioria dos sistemas de HPC são /clusters/, que são basicamente vários computadores interligados por redes de alta banda e baixa latência, sendo a mais adotada a rede /infiniband/ (atualmente com banda de 200 gbit/s e 130 nanosegundos de latencia). Quanto aos sistemas operacionais, muitos já foram utilizados também, porém, uma consulta no TOP500 (www.top500.org) mostra que todos os 500 computadores mais rápidos do mundo usam alguma forma de Linux. No sistema de HPC da Ilum a escolha não é diferente, utilizamos Linux também, com suas ferramentas de acesso e gerenciamento.
+
+Como os sistemas de HPC são acessados remotamente, devido ao ambiente não muito agradável de /datacenters/, basicamente só realizamos operações via terminal (a tela preta só com caracteres). No linux, o tipo de interpretador de comandos no terminal mais usado atualmente é o bash, que é basicamente a linguagem de programação do terminal. Agora que vocês já sabem o básico de python, torna-se mais simples o processo de aprender outras linguagens. Então, ensinaremos a vocês um básico de bash, para executar comandos básicos e manipular arquivos, assim como escrever alguns scripts utilizando bash e programas como grep, awk, entre outros.
+
+** Acessando uma máquina remotamente
+
+Para acessarmos uma máquina remotamente vamos utilizar o PowerShell do windows e então o protocolo SSH (Secure Shell). Como na imagem abaixo, aperte o menu iniciar da sua máquina e digite powershell, abre então o windows powershell.
+#+ATTR_ORG: :width 300
+#+ATTR_HTML: width="300px"
+[[file:img/powershell.png]]
+
+O Windows Powershell deve ter aberto uma janela como a mostrada na figura abaixo:
+#+ATTR_ORG: :width 300
+#+ATTR_HTML: width="300px"
+[[file:img/winpower.png]]
+
+Vamos agora acessar o HPC da Ilum, carinhosamente nomeado como Heisenberg. Execute o comando abaixo substituindo o nome.ultimo_nome com seu primeiro nome e último nome, por exemplo, James Moraes de Almeida fica ~ssh james.almeida@172.20.10.15~.
+#+BEGIN_SRC bash
+  ssh nome.ultimo_nome@172.20.10.15
+#+END_SRC
+
+Pronto, agora você está no HPC da Ilum! Mas vamos com calma, usem com parcimônia, apenas para usos estritamente acadêmicos. Como é uma máquina adquirida com recursos públicos, temos regras de uso. Nada que envolva ganhos pessoais pode ser efetuado nesta máquina, devido a legislação vigente.
+
+Vamos então aos comandos básicos:
++ ls : lista os arquivos do diretório. Por hora vocês não possuem nada no seu diretório, então nada aparecerá.
++ mkdir nome-do-diretorio : cria um diretório.
++ cd nome-do-diretorio : entra no diretório.
++ cd .. : volta ao diretório um nível acima.
+
+Vamos realizar então a primeira atividade, crie um diretório chamado work e entre nesse diretório, liste os arquivos do diretório (estará vazio), após isso volte ao diretório anterior.
+#+BEGIN_SRC bash
+  mkdir work
+  cd work
+  ls
+  cd ..
+#+END_SRC
+
+Pronto, agora você criou um diretório entrou nele e voltou ao seu ~home~. Mas ~home~ professor, o que é isso? É basicamente o local onde ficam todos os seus arquivos, cada usuário da máquina possui um diretório na partição ~home~ do linux.
+
+Ótimo! Mas agora precisamos executar nossos códigos de python na máquina, para isso, vamos instalar o gerenciador de pacotes Anaconda. Execute os seguintes passos mostrados abaixo:
+#+BEGIN_SRC bash
+  cd #Esse comando lhe leva ao seu home
+  mkdir Packages #Crie um diretório para guardar seus programas
+  cd Packages #Entre no diretório de pacotes
+  wget https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh #Este comando faz o download do instalador da versão mais atual no dia 05/05/2022
+  bash Anaconda3-2021.11-Linux-x86_64.sh #Inicia a instalação do Anaconda
+#+END_SRC
+
+A instalação do Anaconda pedirá algumas confirmações e a aceitação da licensa. Como nosso uso é acadêmico, podemos utilizá-lo sem custos. Podem utilizar o diretório padrão para a instalação. Ao final, digitem ~yes~ para a inicialização do Anaconda3, como mostrado abaixo:
+#+ATTR_ORG: :width 300
+#+ATTR_HTML: width="300px"
+[[file:img/conda1.png]]
+
+Para inicializar o conda (apelido do Anaconda), precisamos reler o script de inicialização do seu usuário, para isso, digite o seguinte comando:
+#+BEGIN_SRC bash
+  source ~/.bashrc
+#+END_SRC
+
+Algo como o mostrado na imagem abaixo deve aparecer:
+#+ATTR_ORG: :width 300
+#+ATTR_HTML: width="300px"
+[[file:img/bashrc.PNG]]
+
+Agora o ambiente base do seu conda está ativado. Não é recomendável modificar este ambiente base, devemos criar um ambiente separado para instalarmos nossos pacotes, evitando /quebrar/ nosso ambiente principal. Vamos criar um ambiente chamado ilumpy:
+
+#+BEGIN_SRC bash
+  conda create --name ilumpy
+#+END_SRC
+
+Aceite a instalação no local indicado com /y/. Agora o ambiente ilumpy está criado, o próximo passo é ativá-lo!
+
+#+BEGIN_SRC bash
+  conda activate ilumpy
+#+END_SRC
+
+Agora seu terminal deve estar indicando o ambiente conda logo antes do seu nome de usuário, como mostrado na figura abaixo:
+#+ATTR_ORG: :width 300
+#+ATTR_HTML: width="300px"
+[[file:img/ilumpy.PNG]]
+
+Note que o ambiente mudou de (base) para (ilumpy). Agora vamos instalar o Python e o Jupyter neste ambiente, para isso digite os comandos abaixo:
+
+#+BEGIN_SRC bash
+  conda install python
+  conda install jupyter
+#+END_SRC
+
+Quando for perguntado ~Proceed ([y]/n)?~ Digite ~y~ e de enter. Com isso o Python estará instalado em seu ambiente e podemos começar a programar no Jupyter. Existem maneiras de programar diretamente no HPC, com algum editor de texto para terminal, como vi ou o nano, porém, aprender a utilizar esses editores é uma tarefa um tanto árdua, e sua interface é um tanto precária. Então, vamos continuar utilizando o Jupyter, que vocês já estão acostumados. Porém, a maneira de utilizá-lo é diferente, pois rodaremos os códigos a partir da Heisenberg, e não nos seus computadores. Para isso, precisamos também utilizar o gerenciador de processos da máquina, pois como a máquina é compartilhada, precisamos gerenciar os recursos utilizados, alocando o que há disponível para cada processo e deixando na fila de espera o que não tem recursos disponíveis para rodar. Quem gerencia esses recursos na Heisenberg é o programa ~slurm~, que é um dos mais utilizados no mundo de HPC. Para ele alocar um processo, ou como comumente chamado /job/, precisamos de um script com as instruções necessárias, tal script interpretará a linguagem bash em nosso caso.
+
+Faça o download do arquivo =job.sh= da atividade do capítulo 9 do Moodle para seu computador, agora precisamos transferir este arquivo para a Heisenberg, mas como? Vamos utilizar um programa chamado WinSCP, que possui uma interface gráfica amigável para essas operações. O WinSCP usa o protocolo de tranferência de arquivos SCP, o mesmo do Secure Shell, porém para tranferências. Vá para o endereço https://winscp.net/eng/download.php e faça o download do WinSCP. Ao iniciar o instalador, selecione a opção, ~Instalar só para mim~, instale com todas opções padrão e execute o WinSCP no final. Com o programa aberto digite os dados de acesso como mostrado abaixo:
+#+ATTR_ORG: :width 300
+#+ATTR_HTML: width="300px"
+[[file:img/winscp1.PNG]]
+
+Clique em Salvar e dê o nome de Heisenberg para a máquina, assim você não precisa digitar os dados de acesso toda a vez que for acessar a máquina. Clique então em login, agora você estará na Heisenberg, podendo transferir arquivos do seu computador para ela e vice-versa. Note que, a janela da esquerda é a janela com os arquivos do seu computador, a janela da direita é a janela com os arquivos da sua área na Heisenberg. Para transferir os arquivos basta arrastar de uma máquina para outra, simples assim. Faça isso para o arquivo job.sh que você acabou de fazer download, envie ele para a sua pasta work na Heisenberg. Pronto! Agora podemos submeter o /job/!
+
+Antes de submetermos o /job/, vamos entender a sintaxe básica do slurm. Primeiro digite ~squeue~, esse comando lhe mostrará os /jobs/ em execução, caso você queira averiguar apenas os jobs que você está rodando, digite ~squeue -u seu.usuário~. Para cancelar um /job/ que está rodando, digite, ~scancel número.do.job~, esse número do /job/ você obtem com o comando ~squeue~, onde a primeira coluna é o número do /job/. Ótimo, vamos então a submissão do /job/ para podermos começar a utilizar o Jupyter, vá até a sua pasta work, onde o job.sh deve estar salvo após a transferência com o WinSCP, e digite ~sbatch job.sh~. Com isso seu /job/ deve iniciar a rodar e o servidor Jupyter. Porém, não abriu a janela do Jupyter como normalmente abre em seus computadores, isso acontece porque o servidor foi iniciado na Heisenberg, então precisamos abrir no navegador o servidor com o ip da Heisenberg. Dê um ~ls~ nos arquivos da sua pasta work, note que um arquivo ~slurm-número.do.job.out~ foi gerado, nele são gravadas as saídas do que está sendo rodado. Digite ~cat slurm-número.do.job.out~, obviamente substituindo o ~número.do.job~ pelo número que aparece em seu ~ls~. Esse comando cat joga para a tela o conteúdo do arquivo, você deve visualizar algo semelhante ao mostrado na tela abaixo:
+#+ATTR_ORG: :width 300
+#+ATTR_HTML: width="300px"
+[[file:img/job-jupyter.PNG]]
+
+Abram no seu navegador o link apresentado, no caso da imagem é o http://172.20.10.15:8888/?token=eb81db62cffaa91eba1b2f6ec37bd51dcf789cc3d7cca3da, no caso de vocês o token será diferente, pois ele é único para cada sessão. Vocês devem visualizar algo semelhante a imagem abaixo:
+#+ATTR_ORG: :width 300
+#+ATTR_HTML: width="300px"
+[[file:img/jupyter-browser.png]]
+
+Este é o Jupyter puro, não o Jupyter-Lab que vocês costumam utilizar em aula, mas a parte que executará o Notebook é igual a que vocês utilizam no Jupyter-Lab. Perfeito, agora podemos fazer upload do Jupyter Notebook do capítulo 9 para a Heisenberg, utilizando o próprio Jupyter. Bom, primeiro faça o download do Jupyter Notebook da atividade do Capítulo 9 para seu computador, depois na sua janela do browser do Jupyter clique no botão ~Upload~ (fica na parte direita superior, não no topo mas um pouco abaixo dos botões ~Quit~ e ~Logout~). Após fazer o upload, basta abrir o Notebook e vamos começar a fazer os cálculos :)
 * Depuração de programas :noexport:
 :PROPERTIES:
 :EXPORT_FILE_NAME: PC1/PC1_debug

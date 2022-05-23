@@ -3990,8 +3990,8 @@ Podemos multiplicar strings por um número natural e podemos somar strings com s
 
   metade1 = "comp"
   metade2 = "leto"
-  completo = metade1 + metade2
-  print(completo)
+  palavra = metade1 + metade2
+  print(palavra)
 #+end_src
 
 #+RESULTS:
@@ -4046,7 +4046,7 @@ Outros métodos de strings bastante úteis são:
 #+begin_src python
   numero = "1234"
   caixa_alta = "AAAAHHHHH"
-  caixa_baixa = "sussurando..."
+  caixa_baixa = "sussurrando..."
 
   print("Testando o método isnumeric")
   print(numero.isnumeric())
@@ -4085,7 +4085,6 @@ False
 True
 
 #+end_example
-
 
 ** Recebendo informações do usuário com a função ~input~
 
@@ -4278,6 +4277,8 @@ Existem duas outras maneiras de formatar uma string, porém elas não são mais 
 
 + *método format*: leia sobre isso na [[https://docs.python.org/pt-br/3.9/library/stdtypes.html#str.format][documentação oficial]]. Não apresenta muita vantagem perante as f-strings. Uma pequena vantagem é quando queremos formatar uma string em várias posições com a mesma variável. Outra vantagem do método ~format~ é que ele é uma função, logo é um objeto de Python e pode ser utilizado como argumento de outras funções caso necessário. Ambos os casos atendem situações bastante específicas e não muito usuais.
 
+*[A]* Faça um programa que recebe o nome do usuário pelo comando ~input~. Usando f-strings, inicie uma conversa chamando o usuário pelo nome dele e pergunte a sua cor favorita. Se a cor favorita do usuário começar com a letra "v", diga para ele que ele tem muito bom gosto. Do contrário, diga que hoje é um belo dia e deseje boa sorte na sua jornada.
+
 ** Processamento de texto
 
 Podemos processar strings alterando a caixa de seus caracteres.
@@ -4364,7 +4365,26 @@ Uma parte importante do processamento de strings é a habilidade de dividir uma 
 O método "oposto" ao ~split~ é o ~join~. Este método recebe uma lista de strings e agrupa elas. O exemplo abaixo ilustra a utilização desse método.
 
 #+begin_src python
-  lista = ['O', 'último', 'ser', 'vivo', 'do', 'planeta', 'estava', 'na', 'sua', 'casa,', 'sozinho.', 'De', 'repente,', 'alguém', 'bateu', 'na', 'sua', 'porta.']
+  lista = [
+      "O",
+      "último",
+      "ser",
+      "vivo",
+      "do",
+      "planeta",
+      "estava",
+      "na",
+      "sua",
+      "casa,",
+      "sozinho.",
+      "De",
+      "repente,",
+      "alguém",
+      "bateu",
+      "na",
+      "sua",
+      "porta.",
+  ]
 
   cola = " "
   tudo_junto = cola.join(lista)
@@ -4381,7 +4401,7 @@ O método "oposto" ao ~split~ é o ~join~. Este método recebe uma lista de stri
   print(tudo_junto3)
   print()
 
-  cola = "*_ . _*" # a cola pode ser o que você quiser
+  cola = "*_ . _*"  # a cola pode ser o que você quiser
   tudo_junto4 = cola.join(lista)
   print(tudo_junto4)
 #+end_src
@@ -4399,8 +4419,9 @@ O método "oposto" ao ~split~ é o ~join~. Este método recebe uma lista de stri
 
 *[B]* Faça uma função que recebe uma string qualquer e retorna uma lista contendo todos os números presentes na sua string. Por exemplo, se a função receber a string "Hoje fazem 2 dias que eu fiz 65 anos." ela deve retornar a lista "[2, 65]".
 
-*[Desafio]* Faça uma função que recebe uma string contendo uma frase. A função deve retornar uma string contendo as mesmas palavras, porém invertidas. Por exemplo, caso a função receba a string "Ser ou não ser eis a questão" ela retorna "reS uo oãn res sie a oãtseuq".
+*[C]* Faça uma função que recebe uma string e checa se ela é um palíndromo. Palíndromos são palavras que não se alteram mesmo quando a ordem das suas letras é invertida. Exemplos de palíndromos: rir, salas, rever, sopapos e arara.
 
+*[Desafio]* Faça uma função que recebe uma string contendo uma frase. A função deve retornar uma string contendo as mesmas palavras, porém invertidas. Por exemplo, caso a função receba a string "Ser ou não ser eis a questão" ela retorna "reS uo oãn res sie a oãtseuq".
 
 ** Expressões regulares :noexport:
 

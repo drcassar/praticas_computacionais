@@ -4182,7 +4182,7 @@ Outro caractere especial que vale a pena mencionar é o ~\t~ que serve para incl
 
 Mas... e se eu quero escrever uma barra invertida (~\~) no meu texto? Daí fica difícil com esses caracteres especiais atrapalhando! Neste caso, você tem duas opções. A primeira é escrever ~\\~. A segunda é usar uma /string bruta/ (/raw/, em inglês), para isso basta acrescenta um ~r~ no início da string, antes das aspas e sem espaço. Vamos ver um exemplo.
 
-#+begin_src python
+#+begin_src python -n
   barra_invertida_tecnica_1 = "C:\\trabalhos\\nova pasta\\praticas_cap_10.ipynb"
   barra_invertida_string_bruta = r"C:\trabalhos\nova pasta\praticas_cap_10.ipynb"
 
@@ -4213,7 +4213,7 @@ Para mais informações sobre carateres especiais consulte a [[https://docs.pyth
 
 Muitas vezes queremos exibir para o usuário uma informação contida em uma variável junto com um texto. Por exemplo:
 
-#+begin_src python
+#+begin_src python -n
   seu_nome = "Feiticeira Escarlate"
   meu_nome = "Visão"
 
@@ -4225,7 +4225,7 @@ Muitas vezes queremos exibir para o usuário uma informação contida em uma var
 
 As f-strings nos ajudam justamente nisso! Vamos ver o exemplo anterior usando f-strings.
 
-#+begin_src python
+#+begin_src python -n
   seu_nome = "Feiticeira Escarlate"
   meu_nome = "Visão"
 
@@ -4239,7 +4239,7 @@ Para usar uma f-string, basta colocar a letra ~f~ na frente das aspas da sua str
 
 F-strings são bastante poderosas. Existem diversos "truques" que podemos fazer com elas! Como sempre, a [[https://docs.python.org/pt-br/3.9/reference/lexical_analysis.html#f-strings][documentação oficial]] está lá para nos ajudar. Veja no exemplo abaixo uma seleção de possíveis configurações para sua f-string.
 
-#+begin_src python
+#+begin_src python -n
   from math import pi
 
   tau = 2 * pi
@@ -4269,7 +4269,6 @@ F-strings são bastante poderosas. Existem diversos "truques" que podemos fazer 
   print()
 
   print(f"Para exibir colchetes dentro de f-strings use eles dobrados. {{Desta forma!}}. O valor de pi é {pi}.")
-
 #+end_src
 
 #+RESULTS:
@@ -4307,7 +4306,7 @@ Existem duas outras maneiras de formatar uma string, porém elas não são mais 
 
 Podemos processar strings alterando a caixa de seus caracteres.
 
-#+begin_src python
+#+begin_src python -n
   texto = "Obrigado Mario! Mas a nossa princesa está em outro castelo..."
 
   # Apenas a primeira letra escrita com maiúscula
@@ -4335,7 +4334,7 @@ Podemos processar strings alterando a caixa de seus caracteres.
 
 Podemos substituir certas partes de uma string por outras.
 
-#+begin_src python
+#+begin_src python -n
   texto = "Eu gosto de acarajé."
 
   print(texto.replace("gosto de", "aprecio"))
@@ -4352,7 +4351,7 @@ Podemos substituir certas partes de uma string por outras.
 
 Mas lembre-se que strings são imutáveis! Então quando usamos os métodos não estamos alterando as strings originais, mas sim criando strings novas.
 
-#+begin_src python
+#+begin_src python -n
   texto1 = "Seu nome é Jackie, Jackie Tequila"
 
   texto2 = texto1.upper()
@@ -4367,7 +4366,7 @@ Mas lembre-se que strings são imutáveis! Então quando usamos os métodos não
 
 Uma parte importante do processamento de strings é a habilidade de dividir uma string longa e partes menores. Podemos fazer isso com o método ~split~. Este método recebe uma string como argumento e retorna uma lista. O argumento de entrada é o separador, ele que será usado para "dividir" sua string original. Vamos ver um exemplo.
 
-#+begin_src python
+#+begin_src python -n
   mini_historia_de_terror = "O último ser vivo do planeta estava na sua casa, sozinho. De repente, alguém bateu na sua porta."
 
   palavras = mini_historia_de_terror.split(" ")
@@ -4388,7 +4387,7 @@ Uma parte importante do processamento de strings é a habilidade de dividir uma 
 
 O método "oposto" ao ~split~ é o ~join~. Este método recebe uma lista de strings e agrupa elas. O exemplo abaixo ilustra a utilização desse método.
 
-#+begin_src python
+#+begin_src python -n
   lista = [
       "O",
       "último",

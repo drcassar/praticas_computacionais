@@ -3814,16 +3814,16 @@ Notem a sintaxe, os dicionários ficam entre chaves ={ }=, assim como os conjunt
 
 Assim como listas e conjuntos, os dicionários também possuem métodos associados. Como sempre os métodos facilitam a vida na programação, por fazer diretamente uma função que poderia ser extensa de implementar. Abaixo os principais métodos de dicionários são apresentados:
 
-+ keys: Retorna um iterável (similar a uma lista) contendo todas as chaves do dicionário. Sintaxe: dicionario.keys()
-+ get: Retorna o valor da chave especificada. Sintaxe: dicionario.get("chave"). É similar a fazer ~dicionario["chave"]~
-+ items: Retorna um iterável (similar a uma lista) contendo uma tupla para cada par chave-valor. Sintaxe: dicionario.items()
-+ values: Retorna um iterável (similar a uma lista) com todos os valores no dicionário. Sintaxe: dicionario.values()
-+ update: Insere um par chave-valor no dicionário. Sintaxe: dicionario.update({"chave": "valor"}). É similar a fazer ~dicionario["chave"] = "valor"~
-+ pop: Assim como já visto em listas e conjuntos,
++ keys: Retorna um iterável (similar a uma lista) contendo todas as chaves do dicionário. Sintaxe: ~dicionario.keys()~
++ get: Retorna o valor da chave especificada. Sintaxe: ~dicionario.get("chave")~. É similar a fazer ~dicionario["chave"]~
++ items: Retorna um iterável (similar a uma lista) contendo uma tupla para cada par chave-valor. Sintaxe: ~dicionario.items()~
++ values: Retorna um iterável (similar a uma lista) com todos os valores no dicionário. Sintaxe: ~dicionario.values()~
++ update: Insere um par chave-valor no dicionário. Sintaxe: ~dicionario.update({"chave": "valor"})~. É similar a fazer ~dicionario["chave"] = "valor"~
++ pop: Assim como já visto em listas e conjuntos, este método irá remover uma chave do dicionario. Sintaxe ~dicionario.pop("chave")~
 
 *[A]* Defina um dicionário com pelo menos três chaves, pelo menos uma das chaves deve conter uma lista com pelo menos três elementos. A partir do dicionário definido, itere em um loop ~for~, em todos os elementos da chave que possui uma lista, exibindo cada elemento.
 
-*[C]* Assim como feito em [B], itere em um loop ~for~ para todos elementos da chave com lista, desta vez crie um condicional que faça um teste, que caso seja verdadeiro um novo par chave-valor será inserido no dicionário.
+*[B]* Assim como feito em [A], itere em um loop ~for~ para todos elementos da chave que contém lista, desta vez crie um condicional que faça um teste, que caso seja verdadeiro um novo par chave-valor será inserido no dicionário.
 
 ** Dicionários aninhados
 
@@ -3883,6 +3883,10 @@ Além de exibir as médias finais, o código deve exibir se cada aluno está apr
 :END:
 
 ** Agrupando caracteres com strings
+
+#+begin_quote
+"/Is string theory right? Is it just fantasy?/" --- [[https://www.youtube.com/watch?v=2rjbtsX7twc][Bohemian Gravity]], A Capella Science
+#+end_quote
 
 Já vimos que strings são objetos que armazenam texto e que para declarar strings usamos aspas simples ou aspas duplas. Texto nada mais é do que uma lista de zero ou mais caracteres. Assim como listas, podemos segmentar strings usando a notação dos índices dentro de colchetes. Veja no exemplo abaixo.
 
@@ -4004,6 +4008,10 @@ Uma diferença muito importante entre strings e listas é que strings são vari�
 
 ** Métodos condicionais de strings
 
+#+begin_quote
+"/Existem apenas 5 palavras que terminam em pato na língua portuguesa./" --- D. R. Cassar
+#+end_quote
+
 Existem diversos métodos de strings. Você pode checar todos eles [[https://docs.python.org/3/library/stdtypes.html?highlight=startswith#text-sequence-type-str][na documentação oficial]]. Existem dois métodos para checar strings que são particularmente muito utilizados: o ~startswith~ e o ~endswith~. Como o próprio nome sugere, o ~startswith~ checa se sua string começa com uma certa sequência de caracteres e o ~endswith~ checa se sua string termina com uma certa sequência de caracteres. São, portanto, métodos excelentes para checar prexifos e sufixos de palavras!
 
 #+begin_src python -n
@@ -4088,6 +4096,10 @@ True
 
 ** Recebendo informações do usuário com a função ~input~
 
+#+begin_quote
+"/Qual é a capital da Assíria?/" --- Guardião da ponte da morte, Monty Python e o Cálice Sagrado
+#+end_quote
+
 Se em algum momento você precisar receber informações do usuário, basta usar a função ~input~. Vamos ver um exemplo:
 
 #+begin_src python -n
@@ -4103,6 +4115,10 @@ Se em algum momento você precisar receber informações do usuário, basta usar
 Preste atenção que a informação recebida pelo comando ~input~ será sempre _convertida para uma string_. Então veja que caso o usuário digite um número, este será convertido para uma string! Tenha isso em mente caso venha a usar essa função.
 
 ** Alguns caracteres especiais
+
+#+begin_quote
+"/Casos especiais não são especiais o suficiente para justificar a quebra das regras/" --- [[https://peps.python.org/pep-0020/][Zen do Python]]
+#+end_quote
 
 Existem duas formas de fazer uma string em múltiplas linhas. Uma delas é usando aspas triplas como nós já vimos:
 
@@ -4190,6 +4206,10 @@ Mas... e se eu quero escrever uma barra invertida (~\~) no meu texto? Daí fica 
 Para mais informações sobre carateres especiais consulte a [[https://docs.python.org/pt-br/3.9/reference/lexical_analysis.html#string-and-bytes-literals][documentação oficial]].
 
 ** Formatação de texto
+
+#+begin_quote
+"/Se você está pensando sem escrever, você só acha que está pensando./" --- Leslie Lamport, criador do LaTeX
+#+end_quote
 
 Muitas vezes queremos exibir para o usuário uma informação contida em uma variável junto com um texto. Por exemplo:
 
@@ -4280,6 +4300,10 @@ Existem duas outras maneiras de formatar uma string, porém elas não são mais 
 *[A]* Faça um programa que recebe o nome do usuário pelo comando ~input~. Usando f-strings, inicie uma conversa chamando o usuário pelo nome dele e pergunte a sua cor favorita. Se a cor favorita do usuário começar com a letra "v", diga para ele que ele tem muito bom gosto. Do contrário, diga que hoje é um belo dia e deseje boa sorte na sua jornada.
 
 ** Processamento de texto
+
+#+begin_quote
+"/Se você gosta de salsicha, então melhor não saber como ela é feita./" --- Sabedoria popular
+#+end_quote
 
 Podemos processar strings alterando a caixa de seus caracteres.
 
@@ -4419,7 +4443,7 @@ O método "oposto" ao ~split~ é o ~join~. Este método recebe uma lista de stri
 
 *[B]* Faça uma função que recebe uma string qualquer e retorna uma lista contendo todos os números presentes na sua string. Por exemplo, se a função receber a string "Hoje fazem 2 dias que eu fiz 65 anos." ela deve retornar a lista "[2, 65]".
 
-*[C]* Faça uma função que recebe uma string e checa se ela é um palíndromo. Palíndromos são palavras que não se alteram mesmo quando a ordem das suas letras é invertida. Exemplos de palíndromos: rir, salas, rever, sopapos e arara.
+*[C]* Faça uma função que recebe uma string e checa se ela é um palíndromo (retorna ~True~ caso seja ou ~False~ caso não seja). Palíndromos são palavras que não se alteram mesmo quando a ordem das suas letras é invertida. Exemplos de palíndromos: rir, salas, rever, sopapos e arara.
 
 *[Desafio]* Faça uma função que recebe uma string contendo uma frase. A função deve retornar uma string contendo as mesmas palavras, porém invertidas. Por exemplo, caso a função receba a string "Ser ou não ser eis a questão" ela retorna "reS uo oãn res sie a oãtseuq".
 

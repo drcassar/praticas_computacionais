@@ -4006,6 +4006,30 @@ Uma diferença muito importante entre strings e listas é que strings são vari�
 
 *[A]* Faça uma função que recebe uma string qualquer e retorna um dicionário. As chaves do dicionário de retorno são caracteres e os valores são a quantidade de vezes que estes caracteres aparecem na string de entrada.
 
+# #+begin_src python
+#   def histograma_letras(texto):
+#       resposta = {}
+#       for letra in texto:
+#           if letra not in resposta:
+#               resposta[letra] = 1
+#           else:
+#               resposta[letra] += 1
+#       return resposta
+
+#   print(histograma_letras("teste"))
+#   print()
+#   print(histograma_letras("bacon"))
+#   print()
+#   print(histograma_letras("string mais longa que as outras"))
+# #+end_src
+
+# #+RESULTS:
+# : {'t': 2, 'e': 2, 's': 1}
+# :
+# : {'b': 1, 'a': 1, 'c': 1, 'o': 1, 'n': 1}
+# :
+# : {'s': 4, 't': 2, 'r': 2, 'i': 2, 'n': 2, 'g': 2, ' ': 5, 'm': 1, 'a': 4, 'l': 1, 'o': 2, 'q': 1, 'u': 2, 'e': 1}
+
 ** Métodos condicionais de strings
 
 #+begin_quote
@@ -4439,6 +4463,41 @@ O método "oposto" ao ~split~ é o ~join~. Este método recebe uma lista de stri
 : O*_ . _*último*_ . _*ser*_ . _*vivo*_ . _*do*_ . _*planeta*_ . _*estava*_ . _*na*_ . _*sua*_ . _*casa,*_ . _*sozinho.*_ . _*De*_ . _*repente,*_ . _*alguém*_ . _*bateu*_ . _*na*_ . _*sua*_ . _*porta.
 
 *[A]* Escolha uma notícia de jornal que tenha mais de 500 palavras. Crie uma string com o texto desta notícia (dica: strings com três aspas permitem texto com mais de uma linha!). Seu objetivo é processar este texto e mostrar quais são as 10 palavras mais usadas nele. Use apenas funções, módulos e estruturas de dados embutidos de Python para resolver esta questão (em outras palavras, não use nada de bibliotecas externas aqui).
+
+# #+begin_src python
+#   noticia = "Texto qualquer. Qualquer mesmo. Sem restrições. " * 100 + "Teste palavra bacon coisa bacon testes coisas python"
+
+#   lista_palavras = (
+#       noticia.lower()
+#       .replace(".", "")
+#       .replace(",", "")
+#       .replace("!", "")
+#       .replace("?", "")
+#       .split(" ")
+#   )
+
+#   histograma = {
+#       palavra: lista_palavras.count(palavra) for palavra in lista_palavras
+#   }
+
+#   if len(histograma) < 10:
+#       print(
+#           f"As {len(histograma)} palavras mais frequentes são: {list(histograma)}"
+#       )
+
+#   else:
+#       corte = list(sorted(histograma.values(), reverse=True))[10]
+
+#       # print(histograma)
+
+#       dez_mais_frequentes = [
+#           palavra for palavra, freq in histograma.items() if freq >= corte
+#       ]
+
+#       print(
+#           f"As {len(dez_mais_frequentes)} palavras mais frequentes são: {dez_mais_frequentes}"
+#       )
+# #+end_src
 
 *[B]* Faça uma função que recebe uma string qualquer e retorna uma lista contendo todos os números presentes na sua string. Por exemplo, se a função receber a string "Hoje fazem 2 dias que eu fiz 65 anos." ela deve retornar a lista "[2, 65]".
 
